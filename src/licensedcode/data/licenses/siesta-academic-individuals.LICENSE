@@ -1,0 +1,177 @@
+---
+key: siesta-academic-individuals
+short_name: Siesta Academic Licence for Individuals
+name: Siesta Academic Licence for Individuals
+category: Proprietary Free
+owner: ICMAB
+homepage_url: https://web.archive.org/web/20160302091445/http://departments.icmab.es/leem/siesta/CodeAccess/academic-licence.html
+spdx_license_key: LicenseRef-scancode-siesta-academic-individuals
+---
+
+Siesta ACADEMIC LICENCE for INDIVIDUALS
+
+Motivation and Preamble
+
+The Siesta program has been devised for its general use in research
+within the academic community. Some conditions have been defined for
+the use, distribution, and modification of Siesta, which the authors
+consider fair and within the common fair practices in the academic
+community.
+
+1. Definitions
+
+"The Authors" are:
+
+    * Emilio Artacho, University of Cambridge, and IkerBasque and
+    CIC-Nanogune, San Sebastián * José María Cela,
+    Barcelona Supercomputing Center * Julian Gale, Curtin University
+    of Technology, Perth * Alberto García, ICMAB-CSIC, Barcelona *
+    Javier Junquera, Universidad de Cantabria, Santander * Pablo
+    Ordejón, CIN2-CSIC, Barcelona * Daniel Sánchez-Portal, Centro
+    de Física de Materiales, CSIC-UPV/EHU, San Sebastián * 
+    José M. Soler, Universidad Autónoma de Madrid
+
+Although we, the Authors, acknowledge that a limited number of
+auxiliary subroutines were written by (or are based on previous
+subroutines written by) other authors consider that the implementation
+of all the basic algorithms of the Siesta program is ours.
+
+The Siesta team ("the Developers") are the Authors and:
+
+    * Richard M. Martin, University of Illinois at Urbana-Champaign
+
+"The Copyright-Holder" is the set of Authors.
+
+The valid distributors of the Siesta package ("The Distributors") are
+the Developers as specified above.
+
+"The Siesta package" is the suite of software, including the Siesta
+code itself, but also all other software, documentation, scripts, and
+ancillary support material distributed as a single entity. This
+Licence covers the entirety of said data.
+
+The Licensee is the person (never an institution) to whom the Siesta
+package is distributed (under the terms of this Licence) by the
+Distributors; they are bound by this agreement.
+
+2. NO WARRANTY
+
+There is no warranty for any part of the Siesta package. The Siesta
+package is provided by the Distributors "as-is" without warranty of
+any kind, either express or implied, including but not limited to the
+implied warranties of merchantability or fitness for a particular
+purpose. In no event shall the Distributors be liable for any direct,
+indirect, incidental, special, exemplary, or consequential damages
+(including, but not limited to, procurement of substitute goods or
+services; loss of use, data, or profits; or business interruption)
+however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising
+in any way out of the use of this software, even if advised of the
+possibility of such damage. The entire risk as to the quality or
+performance of the program, or any action the Licensee may take based
+on the output of any part of the Siesta package, is with the Licensee.
+
+3. Limitation of Usage
+
+The use of the Siesta package under the present Licence is restricted
+solely to members of academic institutions (including universities and
+non-military public research laboratories) and to academic purposes,
+i.e., leading to open publication of results, with neither withhold of
+information nor intentional delay in publication. Notwithstanding
+these general definitions, the Authors reserve the exclusive right to
+determine what purposes and persons are elegible for using the
+Siesta package under this Licence, and to withhold the right to use
+the software where they are not satisfied that either condition is
+fulfilled.
+
+The Licensee is hereby provided with a non-exclusive, royalty-free
+right to use any part of the Siesta package, and to display, publish,
+perform, or otherwise use results obtained by use of the Siesta
+package in any form, subject to the restriction that in any paper or
+other academic publication containing results wholly or partially
+derived from the results of use of the Siesta package, the following
+papers must be cited in the normal manner:
+
+   1. Self-consistent order-N density-functional calculations for very
+   large systems, P. Ordejón, E. Artacho and J. M. Soler, Phys. Rev. B
+   (Rapid Comm.) 53, R10441 (1996).  
+   
+   2. The Siesta method for ab initio order-N materials simulation,
+   José M. Soler, Emilio Artacho, Julian D. Gale, Alberto García,
+   Javier Junquera, Pablo Ordejón and Daniel Sánchez-Portal, J. Phys.:
+   Condens. Matter 14, 2745 (2002).
+
+Other papers relevant to the Siesta package and method should be cited
+as best scientific practice dictates.
+
+Licensees are recommended to send reference to the Developers of any
+publication containing results wholly or partially derived from the
+results of use of the Siesta package.
+
+The above-mentioned right to use the code is extensive to the members
+of the research group of the Licensee as long as the use is in
+collaboration with the Licensee leading to co-authored publication(s).
+
+4. Support
+
+The present Licence does not imply support services of any kind to the
+Licensee by the Distributors, including, but not limited to,
+installation, compilation and use of the software in the package.
+
+5. Modification
+
+Licensees are permitted to modify Siesta for their own private use; in
+any paper containing results wholly or partially derived from the use
+of a modified version of Siesta, the authors are required to state
+that a privately modified version of Siesta is used, and satisfy the
+conditions of use stated above.
+
+The Developers encourage Licensees to submit their modifications of
+the Siesta package to them, so that the Siesta package does not fork,
+and furthermore so that the package can be improved for all
+users. Licensees can thereby benefit from the ulterior developments of
+Siesta.
+
+To this end, the Developers wish to encourage Licensees to make any
+modifications to the Siesta package in as modular a fashion as
+possible: for example, interacting via files, or via well-defined
+interface calls. This permits maintenance of these modifications as a
+separate entity in many cases, and may allow their separation from
+Siesta and distribution as a separate piece of software: in that case,
+such software is not subject to this Licence, and the authors of the
+separate software are free to choose any licensing terms they desire.
+
+However, if a given modification must be incorporated directly into
+the Siesta package, the author(s) of any such modifications must
+provide a perpetual, royalty-free, irrevocable license to the 
+Copyright-Holder, to further modify their modifications 
+("the Contributed Code") as may prove necessary for the
+future development of Siesta, and to distribute the Contributed Code
+(in its original or any later modified form) as part of the Siesta
+package.
+
+The Developers, in the interests of maintaining the efficiency of the
+Siesta package and the modularity of its code base, actively encourage
+all those considering modifications to the Siesta package to discuss
+their planned modifications with the Developers beforehand.
+
+6. Redistribution
+
+The authors reserve the exclusive right to distribute the Siesta
+package. Licensees have no right to distribute the Siesta package, a
+modified or alternative version thereof, or any other program making
+direct use of parts of the Siesta package, without the prior written
+consent of the Distributors.
+
+7. All Other Rights
+
+All other rights not explicitly mentioned in this document are
+reserved. In particular, the Authors reserve all rights to resolve any
+and all conflicts arising in the development and distribution policies
+of the Siesta package.
+
+Without accepting the Licence, a prospective Licensee does not have the
+right to use or modify the Siesta package.
+
+Everyone is permitted to copy and distribute verbatim copies of this
+Licence document, but changing it is not permitted.

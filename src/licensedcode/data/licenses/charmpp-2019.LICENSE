@@ -1,0 +1,205 @@
+---
+key: charmpp-2019
+short_name: Charm++ Software License 2019
+name: Charm++ Software License 2019
+category: Proprietary Free
+owner: NCSA - University of Illinois
+homepage_url: https://github.com/charmplusplus/charm/blob/046c0b5b4231a2e2c1dc20e55d7fe02668356b36/LICENSE
+spdx_license_key: LicenseRef-scancode-charmpp-2019
+ignorable_copyrights:
+    - Copyright 2019 The Board of Trustees of the University of Illinois
+ignorable_holders:
+    - The Board of Trustees of the University of Illinois
+ignorable_authors:
+    - the Parallel Programming Laboratory research group
+ignorable_urls:
+    - http://charm.cs.illinois.edu/research/charm
+ignorable_emails:
+    - info@hpccharm.com
+    - kale@illinois.edu
+    - otm@illinois.edu
+---
+
+Non-Commercial Non-Exclusive License for Charm++ Software
+
+The Software (as defined below) will only be licensed to You (as
+defined below) upon the condition that You accept all of the terms and
+conditions contained in this license agreement ("License").  Please
+read this License carefully. By downloading and using the Software,
+You accept the terms and conditions of this License.
+
+1 Definitions.  
+
+  1.1 "Illinois" means The Board of Trustees of the University of
+      Illinois.
+ 
+  1.2 "Software" means the Charm++/Converse parallel programming 
+      software source code and object code.
+
+  1.3 "You" (or "Your") means an individual or legal entity exercising
+      rights under, and complying with all of the terms of, this
+      License.  For legal entities, "You" includes any entity that
+      controls, is controlled by, or is under common control with
+      You. For purposes of this License, "control" means ownership,
+      directly or indirectly, of more than fifty percent (50%) of the
+      equity capital of the legal entity.
+
+2 License Grant.  Subject to Your compliance with the terms and
+  conditions of this License, Illinois on behalf of Prof. Sanjay
+  Kale's Parallel Programming Laboratory (PPL) group in the Department
+  of Computer Science, hereby grants You a non-commercial,
+  non-exclusive, non-transferable, royalty-free, restrictive license
+  to download, use, and create derivative works of the Software for
+  academic and research purposes only.
+
+License Restrictions.  Any uses of Software or Software derivative
+works beyond those granted in Section 2 above require a separate for a
+fee license.  To negotiate a license with additional rights, You may
+contact Illinois at the Office of Technology Management at
+otm@illinois.edu or Charmworks, Inc. at info@hpccharm.com.
+
+3 The following are some of the restricted use cases:
+
+  3.1 Integration of all or part of the Software or Software
+      derivative works into a product for sale, lease or license by or
+      on behalf of You to third parties; or
+
+  3.2 Distribution of all or part of the Software or Software
+      derivative works to third parties for any reason, including for
+      commercializing products sold or licensed by or on behalf of
+      You, except for contributing changes to Software;
+
+  3.3 Use of Software or Software derivative works for internal
+      commercial purposes.  
+
+  3.4 For avoidance of doubt, You may at Your own expense, create and
+      freely distribute Your works that interoperate with the
+      Software, directing the users of such works to license and
+      download the Software itself from Illinois' site at
+      http://charm.cs.illinois.edu/research/charm.
+
+4 Derivative works: You may at Your own expense, modify the Software
+  to make derivative works as outlined in Section 2.  Any derivative
+  work should be clearly marked and renamed to notify users that it is
+  a modified version and not the original Software distributed by
+  Illinois.  You agree to reproduce the copyright notice per Section 7
+  and other proprietary markings on any derivative work and to include
+  in the documentation of such work the acknowledgement: "This
+  software includes code developed by Parallel Programming Laboratory
+  research group in the Department of Computer Science, at the
+  University of Illinois at Urbana-Champaign."
+
+5 Contributing derivative works: Software is being freely distributed
+  as a research and teaching tool and as such, PPL research group
+  encourages feedback and contributions from users of the code that
+  might, at Illinois' sole discretion, be used or incorporated to make
+  the basic operating framework of the Software a more stable,
+  flexible, and/or useful product.  If You wish to contribute Your
+  code to become an internal portion of the Software:
+
+  5.1 You agree that such code may be distributed by Illinois under
+      the terms of this License; and
+
+  5.2 You may be required to sign an "Agreement Regarding Contributory
+      Code for Charm++ Software" (contact kale@illinois.edu), before
+      Illinois can accept it.
+
+6 Acknowledgment.  
+
+  6.1 You shall own the results obtained by using the outputs of
+      Software and Software derivative works. If You publish such
+      results, You shall acknowledge the use of Software and its
+      derivative works by the appropriate citation as follows:
+      "Charm++ software was developed by the Parallel Programming
+      Laboratory research group in the Department of Computer Science
+      at the University of Illinois at Urbana-Champaign."
+
+ 6.2 Any published work, which utilizes Software, shall include the
+     following the references listed in the file named CITATION.cff 
+     in the distribution.
+
+ 6.3 Electronic documents will include a direct link to the official
+	 Software page at http://charm.cs.illinois.edu/research/charm.
+
+7 Copyright Notices.  All copies of the Software or derivative works
+  shall include the following copyright notice: "Copyright 2019 The
+  Board of Trustees of the University of Illinois. All rights
+  reserved."
+
+8 Confidential Information. You acknowledge that the Software is
+  proprietary to Illinois.  You agree to protect the Software from
+  unauthorized disclosure, use, or release and to treat the Software
+  with at least the same level of care as You use to protect Your own
+  proprietary software and/or confidential information, but in no
+  event less than a reasonable standard of care.  If You become aware
+  of any unauthorized licensing, copying or use of the Software, You
+  shall promptly notify Illinois in writing at otm@illinois.edu.
+
+9 Limitation of Warranties. Limitation of
+  Liability. Indemnification. THIS SOFTWARE IS PROVIDED "AS IS" AND
+  ILLINOIS MAKES NO REPRESENTATIONS AND EXTENDS NO WARRANTIES OF ANY
+  KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+  WARRANTIES OR MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE,
+  OR THAT THE USE OF THE SOFTWARE AND DERIVATIVE WORKS WILL NOT
+  INFRINGE ANY PATENT, TRADEMARK, OR OTHER RIGHTS.  YOU ASSUME THE
+  ENTIRE RISK AS TO THE RESULTS AND PERFORMANCE OF THE SOFTWARE AND/OR
+  DERIVATIVE WORKS.  YOU AGREE THAT ILLINOIS SHALL NOT BE HELD LIABLE
+  FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, OR INCIDENTAL DAMAGES WITH
+  RESPECT TO ANY CLAIM BY YOU OR ANY THIRD PARTY ON ACCOUNT OF OR
+  ARISING FROM THIS LICENSE OR USE OF THE SOFTWARE AND/OR DERIVATIVE
+  WORKS.  YOU SHALL INDEMNIFY AND HOLD HARMLESS ILLINOIS (INCLUDING
+  ITS TRUSTEES, FELLOWS, OFFICERS, EMPLOYEES, STUDENTS, AND AGENTS)
+  AGAINST ANY AND ALL CLAIMS, LOSSES, DAMAGES, AND/OR LIABILITY, AS
+  WELL AS COSTS AND EXPENSES (INCLUDING LEGAL EXPENSES AND REASONABLE
+  ATTORNEYS' FEES) ARISING OUT OF OR RELATED TO YOUR USE, OR INABILITY
+  TO USE, THE SOFTWARE OR SOFTWARE DERIVATIVE WORKS, REGARDLESS OF
+  THEORY OF LIABILITY, WHETHER FOR BREACH OR IN TORT (INCLUDING
+  NEGLIGENCE).
+
+10 Termination.
+
+   10.1 This License is effective until terminated, as provided
+        herein, or until all intellectual property rights in the
+        Software expire.
+
+   10.2 You may terminate this License at any time by destroying all
+        copies of the Software and its derivative works.
+
+   10.3 This License, and the rights granted hereunder, will terminate
+        automatically, and without any further notice from or action
+        by Illinois, if You fail to comply with any obligation of this
+        License.
+
+   10.4 Upon termination, You must immediately cease use of and destroy
+     	all copies of the Software and its derivative works and verify
+     	such destruction in writing.
+
+   10.5 The provisions set forth in Sections 5, 9, 11, 12, 13, 14, 15
+        shall survive termination or expiration of this License.
+
+11 Governing Law. By using this Software, You agree to abide by the
+   laws of the State of Illinois and all other applicable laws of the
+   U.S, including, but not limited to, export control laws, copyright
+   law and the terms of this License.
+
+12 Severability.  If any provision of this License is held to be
+   invalid or unenforceable by a court of competent jurisdiction, such
+   invalidity or unenforceability shall not in any way affect the
+   validity or enforceability of the remaining provisions.
+
+13 Assignment.  You may not assign or otherwise transfer any of Your
+   rights or obligations under this License, without the prior written
+   consent of Illinois.
+
+14 Entire License.  This License represents the parties' entire
+   agreement relating to the Software.  Except as otherwise provided
+   herein, no modification of this License is binding unless in
+   writing and signed by an authorized representative of each party.
+
+15 Waiver.  The failure of either party to enforce any provision of
+   this License shall not constitute a waiver of that right or future
+   enforcement of that or any other provision.
+
+Approved for legal form Illinois Counsel SJA 10/18
+
+University Technology No. TF08023 Commercial Non-Exclusive Software License

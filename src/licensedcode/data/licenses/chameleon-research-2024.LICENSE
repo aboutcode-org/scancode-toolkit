@@ -1,0 +1,68 @@
+---
+key: chameleon-research-2024
+short_name: Chameleon Research License 2024
+name: Chameleon Research License 2024
+category: Proprietary Free
+owner: Facebook
+homepage_url: https://huggingface.co/facebook/chameleon-7b/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-chameleon-research-2024
+ignorable_copyrights:
+    - Copyright (c) Meta Platforms, Inc.
+ignorable_holders:
+    - Meta Platforms, Inc.
+ignorable_urls:
+    - https://ai.meta.com/resources/models-and-libraries/chameleon-downloads
+    - https://ai.meta.com/resources/models-and-libraries/chameleon-license/
+    - https://ai.meta.com/resources/models-and-libraries/chameleon-use-policy
+    - https://github.com/facebookresearch/chameleon
+---
+
+Chameleon Research License
+Chameleon Version Release Date: June 18, 2024
+
+This Chameleon Research License ("Agreement") contains the terms and conditions that govern your access and use of the Chameleon Materials (as defined below). You may not use the Chameleon Materials if you do not accept this Agreement.  By clicking "I Accept" to accept, or accessing, using, or distributing any portion or element of the Chameleon Materials you hereby agree to be bound by the terms of this Agreement.  If you are agreeing to be bound by the Agreement on behalf of your employer or other entity, you represent and warrant to Meta Platforms Ireland Limited (if you are located in or, if you are an entity, your principal place of business is in the EEA or Switzerland) and Meta Platforms, Inc. (if you are located outside of the EEA or Switzerland) ("Meta") that you have full legal authority to bind your employer or such entity to this Agreement.  If you do not have requisite authority, you may not accept the Agreement or access the Chameleon Materials on behalf of your employer or other entity.
+
+This Agreement is effective upon the earlier of the date that you first access the Chameleon Materials or accept this Agreement ("Effective Date"), and is entered into by and between Meta, and you, or if you are entering into this Agreement on behalf of your employer or other entity (if you are entering into this Agreement on such person or entity's behalf), of the age required under applicable laws, rules, or regulations to provide legal consent and, your employer or other entity and that has legal authority to bind your employer or such other person or entity if you are entering in this Agreement on their behalf ("Licensee" or "You").
+
+1. Definitions.
+   1. "Documentation" means the specifications, manuals and documentation accompanying Chameleon distributed by Meta at https://github.com/facebookresearch/chameleon and https://ai.meta.com/resources/models-and-libraries/chameleon-downloads/.
+   2. "Noncommercial Research Uses" means noncommercial research use cases related to research, development, education, processing, or analysis and in each case, is not primarily intended for commercial advantage or monetary compensation to you or others.
+   3. "Chameleon" means the models and software and algorithms, including machine-learning model code, trained model weights, inference-enabling code, training-enabling code, fine-tuning enabling code, demonstration materials and other elements of the foregoing distributed by Meta at [INSERT RESOURCE HYPERLINK].
+   4. "Chameleon Materials" means, collectively, Meta's proprietary Chameleon and Documentation (and any portion thereof) made available under this Agreement.
+   5. "Trade Control Laws" means any applicable U.S. and non-U.S. export control and trade sanctions laws and regulations.
+   6. "Acceptable Use Policy" means the Acceptable Use Policy applicable to Chameleon Materials ([INSERT Chameleon AUP HYPERLINK]) that is incorporated into this Agreement.
+
+
+2. License Rights and Redistribution. Subject to Your compliance with the terms and conditions of this Agreement, Meta hereby grants you the following: 
+   1. Grant of Rights. You are hereby granted a non-exclusive, worldwide, non-transferable and royalty-free limited license under Meta's intellectual property or other rights owned by Meta embodied in the Chameleon Materials to use, reproduce, distribute, copy, create derivative works of, and make modifications to the Chameleon Materials solely for Noncommercial Research Uses.
+   2. Redistribution and Use.
+      1. Distribution of Chameleon Materials, and any derivative works thereof, are subject to the terms of this Agreement. If you distribute or make the Chameleon Materials, or any derivative works thereof, available to a third party, you may only do so under the terms of this Agreement. You shall also provide a copy of this Agreement to such third party.
+      2. If you submit for publication the results of research you perform on, using, or otherwise in connection with Chameleon Materials, you must acknowledge the use of Chameleon Materials in your publication as follows (or an equivalent acknowledgement of your choosing): "This material is based on work supported by the Chameleon Research License, Copyright (c) Meta Platforms, Inc. All Rights Reserved."
+      3. You must retain in all copies of the Chameleon Materials that you distribute and include the following attribution notice within a "Notice" text file distributed as a part of such copies: "Chameleon is licensed under the Chameleon Research License, Copyright (c) Meta Platforms, Inc. All Rights Reserved."
+      4. Your use of the Chameleon Materials must comply with applicable laws and regulations (including Trade Control Laws) and adhere to the Acceptable Use Policy for the Chameleon Materials (https://ai.meta.com/resources/models-and-libraries/chameleon-use-policy/) which is hereby incorporated by reference into this Agreement.
+
+3. Restrictions. You will not, and will not permit, assist or cause any third party to:
+   1. use the Chameleon Materials or any outputs or results of the Chameleon Materials in connection with any commercial uses or for any uses other than Noncommercial Research Uses;
+   2. utilize any equipment, device, software, or other means to circumvent or remove any security or protection used by Meta in connection with the Chameleon Materials, or to circumvent or remove any usage restrictions or other safety measures, or to enable functionality disabled by Meta; 
+   3. disguise your or their location through IP proxying or other methods;
+   4. use or download Chameleon Materials if you or they are: (a) located in a comprehensively sanctioned jurisdiction, (b) currently listed on any U.S. or non-U.S. restricted parties list, or (c) will use Chameleon Materials for any purpose prohibited by Trade Control Laws; or
+   5. directly or indirectly export, re-export, provide, or otherwise transfer Chameleon Materials: (a) to any individual, entity, or country prohibited by Trade Control Laws; (b) to anyone on U.S. or non-U.S. government restricted parties lists; or (c) for any purpose prohibited by Trade Control Laws, including nuclear, chemical or biological weapons, or missile technology applications.
+
+4. User Support. Your Noncommercial Research Use of the Chameleon Materials is done at your own discretion; Meta does not provide any service in relation to such use.  Meta is under no obligation to provide any support services for the Chameleon Materials. Any support provided is "as is", "with all faults", and without warranty of any kind.
+
+5. Disclaimer of Warranty. UNLESS REQUIRED BY APPLICABLE LAW, THE Chameleon MATERIALS AND ANY OUTPUT AND RESULTS THEREFROM ARE PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, THE ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. YOU ARE SOLELY RESPONSIBLE FOR DETERMINING THE APPROPRIATENESS OF USING OR REDISTRIBUTING THE Chameleon MATERIALS AND ASSUME ANY RISKS ASSOCIATED WITH YOUR USE OF THE Chameleon MATERIALS AND ANY OUTPUT AND RESULTS.
+
+6. Limitation of Liability. IN NO EVENT WILL META OR ITS AFFILIATES BE LIABLE UNDER ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, TORT, NEGLIGENCE, PRODUCTS LIABILITY, OR OTHERWISE, ARISING OUT OF THIS AGREEMENT, FOR ANY LOST PROFITS OR ANY INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL, EXEMPLARY OR PUNITIVE DAMAGES, EVEN IF META OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF ANY OF THE FOREGOING.
+
+7. Intellectual Property.
+   1. No trademark licenses are granted under this Agreement, and in connection with the Chameleon Materials, neither Meta nor Licensee may use any name or mark owned by or associated with the other or any of its affiliates, except as required for reasonable and customary use in describing and redistributing the Chameleon Materials.
+   2. Subject to Meta's ownership of Chameleon Materials and derivatives made by or for Meta, with respect to any derivative works and modifications of the Chameleon Materials that are made by you, as between you and Meta, you are and will be the owner of such derivative works and modifications.
+   3. If you institute litigation or other proceedings against Meta or any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Chameleon Materials or Chameleon outputs or results, or any portion of any of the foregoing, constitutes infringement of intellectual property or other rights owned or licensable by you, then any licenses and rights  granted to you under this Agreement shall terminate as of the date such litigation or claim is filed or instituted. You will indemnify and hold harmless Meta from and against any claim by any third party arising out of or related to your use or distribution of the Chameleon Materials.
+
+8. Term and Termination. The term of this Agreement will commence upon your acceptance of this Agreement or access to the Chameleon Materials and will continue in full force and effect until terminated in accordance with the terms and conditions herein. Meta may terminate this Agreement if you are in breach of any term or condition of this Agreement. Upon termination of this Agreement, you shall delete and cease use of the Chameleon Materials. Sections 3, 4, 5, 6(c),  7,  8 and 9 shall survive the termination of this Agreement.
+
+9. Governing Law and Jurisdiction. This Agreement will be governed and construed under the laws of the State of California without regard to choice of law principles, and the UN Convention on Contracts for the International Sale of Goods does not apply to this Agreement. The courts of California shall have exclusive jurisdiction of any dispute arising out of this Agreement.
+
+10. Modifications and Amendments. Meta may modify this Agreement from time to time by posting a revised version at https://ai.meta.com/resources/models-and-libraries/chameleon-license/
+
+11. ; provided that they are similar in spirit to the current version of the Agreement, but may differ in detail to address new problems or concerns. All such changes will be effective immediately. Your continued use of the Chameleon Materials after any modification to this Agreement constitutes your agreement to such modification. Except as provided in this Agreement, no other modification or addition to any provision of this Agreement will be binding unless it is in writing and signed by an authorized representative of both you and Meta.

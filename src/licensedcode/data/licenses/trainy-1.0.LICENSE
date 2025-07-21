@@ -1,0 +1,42 @@
+---
+key: trainy-1.0
+short_name: Trainy Software License v1.0
+name: Trainy Software License Version 1.0
+category: Proprietary Free
+owner: Trainy
+homepage_url: https://github.com/asaiacai/zep/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-trainy-1.0
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
+# Trainy Software License
+## Version 1.0
+
+Last Updated: June 12, 2024
+
+This Trainy Software License (“License”), effective the date we first make the Software available to you (“Effective Date”) is between the individual or legal entity exercising permissions granted by this License (“you” or “your”) and Trainy, Inc. (“Trainy” or “we” or “us” or “our”) concerning your use of the work of authorship, whether in source or object form, made available under this License, as indicated by a copyright notice that is included in or attached to the work (the “Software”). 
+
+# Authority
+If you use the Software on behalf of another person or legal entity, (a) all references to “you” throughout this License will include that person or legal entity, (b) you represent that you are authorized to accept this License on that person’s or legal entity’s behalf, and (c) in the event you or the person or legal entity violates this License, the person or legal entity agrees to be responsible to us.
+ 
+# Licenses.
+
+## Copyright License.
+
+Subject to your compliance with this License, Trainy hereby grants you a non-exclusive, royalty-free copyright license to reproduce, modify, create derivative works, publicly perform, publicly display and redistribute the Software for any purpose that is not a Restriction (as defined below).
+
+## Limited Patent License.
+Subject to your compliance with this License, the license grant above includes a license under our Applicable Patents. Notwithstanding the foregoing, If you initiate any claim, action or proceeding against any third party (including cross-claims or counterclaims) alleging that all or any portion of the Software infringes the patents of any entity or other person, the license granted under this Section 2.b will immediately terminate automatically without further action by either party. “Applicable Patents” are any of patents licensable by us that will be necessarily infringed by using the Software.
+
+## Restrictions.
+A “Restriction” means distributing or otherwise commercially making the Software available in a manner that provides functionality to address the same or substantially similar user requirements as the Software or includes the same or similar functionality as the Software. Without limiting the foregoing, you may use the Software for your internal purposes and for non-commercial purposes. We grant you no rights except as expressly set forth in this License.
+
+## Derivatives; Marking
+If you distribute any copies, improvements, modifications or derivatives (“Derivatives”) of the Software, this License will apply to you must include a copy of or a link to this License and include with such Derivatives any copyright, patent, trademark and attribution notices provided in or with the Software. You may reproduce our trademarks, trade names, service marks and other similar indicia (“Trademarks”) solely to the extent necessary to reproduce and/or link to applicable notices as provided in this Section 4. Except as provided in the prior sentence, we grant you no rights in or to our Trademarks, whether expressly, by implication, estoppel or otherwise.
+
+## Disclaimer. 
+THE SOFTWARE IS PROVIDED "AS IS" AND WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, TITLE OR NON-INFRINGEMENT. IN NO EVENT WILL WE HAVE ANY LIABILITY TO YOU ARISING OUT OF OR RELATED TO THE SOFTWARE, INCLUDING INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES, EVEN IF WE HAVE BEEN INFORMED OF THEIR POSSIBILITY IN ADVANCE.
+
+## Apache License.
+Subject to your compliance with this License, Trainy hereby grants you a license to use the Software under the Apache License, Version 2.0, currently available at http://www.apache.org/licenses/LICENSE-2.0 (the “Apache License”), provided that you hereby covenant and agree not to use the Software under the Apache License until the third anniversary

@@ -1,0 +1,9 @@
+---
+license_expression: acter-psl-1.0
+is_license_reference: yes
+is_required_phrase: yes
+ignorable_urls:
+    - https://github.com/acterglobal/a3/blob/main/LICENSE.txt
+---
+
+(https://github.com/acterglobal/a3/blob/main/LICENSE.txt).

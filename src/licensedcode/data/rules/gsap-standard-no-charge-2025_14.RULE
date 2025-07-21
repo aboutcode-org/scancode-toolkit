@@ -1,0 +1,15 @@
+---
+license_expression: gsap-standard-no-charge-2025
+is_license_notice: yes
+ignorable_urls:
+    - http://greensock.com/licensing/
+    - http://greensock.com/standard-license
+    - http://greensock.com/why-license/
+    - https://greensock.com/club/
+    - https://greensock.com/licensing/
+    - https://greensock.com/standard-license
+    - https://greensock.com/why-license/
+---
+
+### License
+GreenSock's {{standard "no charge" license}} can be viewed at <a href="https://greensock.com/standard-license">http://greensock.com/standard-license https://greensock.com/club/">Club GreenSock  members are granted additional rights. See https://greensock.com/licensing/">http://greensock.com/licensing/ for details. Why doesn't GreenSock use an MIT (or similar) open source license, and why is that a **good** thing? This article explains it all: https://greensock.com/why-license/" http://greensock.com/why-license/

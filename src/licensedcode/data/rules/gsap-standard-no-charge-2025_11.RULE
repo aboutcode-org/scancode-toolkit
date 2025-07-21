@@ -1,0 +1,11 @@
+---
+license_expression: gsap-standard-no-charge-2025
+is_license_notice: yes
+ignorable_urls:
+    - http://greensock.com/standard-license
+    - https://greensock.com/licensing
+    - https://greensock.com/why-license/
+---
+
+"license": "{{Standard 'no charge' license}}: http://greensock.com/standard-license. Club GreenSock members get more: https://greensock.com/licensing/. 
+Why GreenSock doesn't employ an MIT license: https://greensock.com/why-license/",

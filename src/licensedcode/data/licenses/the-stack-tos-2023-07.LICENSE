@@ -3,7 +3,7 @@ key: the-stack-tos-2023-07
 short_name: The Stack TOS 2023-07
 name: HuggingFace The Stack TOS 2023-07
 category: Copyleft Limited
-owner: BigScience
+owner: HuggingFace
 homepage_url: https://huggingface.co/datasets/bigcode/the-stack#terms-of-use-for-the-stack
 spdx_license_key: LicenseRef-scancode-the-stack-tos-2023-07
 ---

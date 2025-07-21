@@ -1,0 +1,44 @@
+---
+key: oknosoft-2021
+short_name: Oknosoft License 2021
+name: Oknosoft License 2021
+category: Commercial
+owner: Oknosoft
+homepage_url: https://github.com/oknosoft/genetic-cutting/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-oknosoft-2021
+ignorable_urls:
+    - http://www.oknosoft.ru/
+    - http://www.oknosoft.ru/produkti.html
+---
+
+This license agreement (LICENSE) is a legal agreement between you (either an individual or a single entity, also referred to as YOU) and [Oknosoft Company](http://www.oknosoft.ru), for the software containing this LICENSE which may also include the software’s source code, associated media, printed materials, and online or electronic documentation (collectively referred to as SOFTWARE).
+
+By purchasing, installing, or otherwise using the SOFTWARE and/or its related materials, you agree to be bound by the terms and conditions of this License Agreement.
+
+### SOFTWARE PRODUCT LICENSE
+The SOFTWARE is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties and contains confidential information and trade secrets. [Oknosoft Company](http://www.oknosoft.ru) retains all rights not expressly granted to you in this LICENSE.
+
+### GRANT OF LICENSE
+- Oknosoft Company hereby grants to you, and you accept, a non-exclusive, non-transferable license to install, copy, use and modify the SOFTWARE only as authorized below.
+- License is permanent and includes **one year of free product upgrades since the purchase date**, including even major version upgrades
+- Legally purchased a commercial license allows you to use the SOFTWARE on any number of servers with no restrictions on the number of client connections.
+- Distribution standalone is prohibited.
+- Distribution as a part of competitive products is prohibited.
+- Distribution as a part of not competitive products is allowed without limitation for number of copies.
+- If you develop any troubleshooting-related modifications of the SOFTWARE, either independently or jointly with Oknosoft Company, such modifications and all rights associated therewith will be the exclusive property of Oknosoft Company. You are granted the right to use such modifications as set forth in this agreement.
+- All title and intellectual property rights in and to the content that may be accessed through use of the SOFTWARE is the property of the respective content owner and may be protected by applicable copyright or other intellectual property laws and treaties. This LICENSE grants you no rights to use such content
+
+### DISCLAIMER OF WARRANTIES
+The Software and documentation is provided AS IS, without a warranty of any kind.
+
+ALL EXPRESS OR IMPLIED REPRESENTATIONS AND WARRANTIES, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, ARE HEREBY EXCLUDED.
+
+### DISCLAIMER OF OF LIABILITY
+[Oknosoft Company](http://www.oknosoft.ru) SHALL NOT BE LIABLE OR RESPONSIBLE FOR ANY LOST DATA, REVENUE OR PROFITS, OR FOR ANY DIRECT OR INDIRECT DAMAGES, INJURIES OR LIABILITIES, CAUSED DIRECTLY OR INDIRECTLY BY THE USE OF THE LICENSED SOFTWARE OR DOCUMENTATION, INCLUDING BUT NOT LIMITED TO, INCIDENTAL, CONSEQUENTIAL OR SPECIAL DAMAGES, EVEN IF Oknosoft Company HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+### SUPPORT
+- The pricing and terms of use for each support type is provided on [Oknosoft website](http://www.oknosoft.ru/produkti.html) and may be changed without notice.
+- Technical support for modified source code is not carried out
+
+### MISCELLANEOUS
+YOU ACKNOWLEDGE THAT YOU HAVE READ THIS AGREEMENT, THAT YOU UNDERSTAND THIS AGREEMENT, AND UNDERSTAND THAT BY CONTINUING THE INSTALLATION OF THE SOFTWARE PRODUCT, BY LOADING OR RUNNING THE SOFTWARE PRODUCT, OR BY PLACING OR COPYING THE SOFTWARE ONTO YOUR COMPUTER HARD DRIVE, YOU AGREE TO BE BOUND BY THIS AGREEMENT’S TERMS AND CONDITIONS. YOU FURTHER AGREE THAT, EXCEPT FOR WRITTEN SEPARATE AGREEMENTS BETWEEN OKNOSOFT COMPANY AND YOU, THIS AGREEMENT IS A COMPLETE AND EXCLUSIVE STATEMENT OF THE RIGHTS AND LIABILITIES OF THE PARTIES.

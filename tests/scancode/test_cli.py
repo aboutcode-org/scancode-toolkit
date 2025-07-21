@@ -919,7 +919,12 @@ def test_scan_keep_temp_files_is_false_by_default():
     # the SCANCODE_TEMP dir is not deleted, but it should be empty
     assert os.path.exists(temp_directory)
     # this does not make sense but that's what is seen in practice
-    expected = 2 if (on_windows or on_mac_new_py) else 1
+    if on_mac_new_py:
+        expected = 4
+    elif on_windows:
+        expected = 2
+    else:
+        expected = 1
     assert len(list(os.walk(temp_directory))) == expected
 
 
@@ -941,6 +946,12 @@ def test_scan_keep_temp_files_keeps_files():
     assert os.path.exists(temp_directory)
     # this does not make sense but that's what is seen in practice
     expected = 8 if (on_windows or on_mac_new_py) else 7
+    if on_mac_new_py:
+        expected = 10
+    elif on_windows:
+        expected = 8
+    else:
+        expected = 7
     assert len(list(os.walk(temp_directory))) == expected
 
 

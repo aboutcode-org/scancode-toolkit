@@ -1,0 +1,33 @@
+---
+key: winidea-sdk-2025
+short_name: winIDEA SDK 2025
+name: winIDEA SDK 2025
+category: Proprietary Free
+owner: Tasking Germany GmbH
+homepage_url: https://www.isystem.com/downloads/winIDEA/SDK/iSYSTEM.Python.SDK/documentation/isystem-connect-api/license.html
+spdx_license_key: LicenseRef-scancode-winidea-sdk-2025
+other_urls:
+    - https://www.isystem.com/downloads/winIDEA/SDK/iSYSTEM.Python.SDK/documentation/isystem-connect-api/index.html
+---
+
+LICENSE AGREEMENT
+
+TASKING Germany GmbH is willing to license the software to you only upon the condition that you accept all of the terms contained in this binary code license agreement. By using the software, you accept these terms. If you do not accept them, do not use the software.
+
+The software is confidential and copyrighted. Title to the software and all associated intellectual property rights is retained by TASKING Germany GmbH and/or its licensors. Unless enforcement is prohibited by applicable law, you may not modify, decompile, or reverse engineer the software.
+
+TASKING grants you a non-exclusive license to use the software in the manner and for purposes described in the documentation. You may make a reasonable number of backup copies of the Software, provided your backup copies are not installed or used for other than archival purposes.
+
+RESTRICTED USE
+
+The software is free to use and distribute but must not be resold without permission of TASKING.
+
+LIMITATION OF LIABILITY
+
+TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT WILL TASKING Germany GmbH OR ITS LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR SPECIAL, INDIRECT, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF OR RELATED TO THE USE OF OR INABILITY TO USE SOFTWARE, EVEN IF TASKING Germany GmbH HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+In no event will TASKING's liability to you, whether in contract, tort (including negligence), or otherwise, exceed the amount paid by you for Software under this Agreement. The foregoing limitations will apply even if the above stated warranty fails of its essential purpose. Some states do not allow the exclusion of incidental or consequential damages, so some of the terms above may not be applicable to you.
+
+TERMINATION
+
+This Agreement is effective until terminated. You may terminate this Agreement at any time by destroying all copies of the software. This Agreement will terminate immediately without notice from TASKING Germany GmbH if you fail to comply with any provision of this Agreement. Either party may terminate this Agreement immediately should the software become, or in either party's opinion be likely to become, the subject of a claim of infringement of any intellectual property right. Upon Termination, you must destroy all copies of Software.

@@ -3,6 +3,9 @@ license_expression: proprietary-license
 is_license_notice: yes
 ignorable_urls:
     - http://greensock.com/club/
+is_deprecated: yes
+replaced_by:
+    - gsap-standard-no-charge-2025
 ---
 
 PLAIN ENGLISH SUMMARY:

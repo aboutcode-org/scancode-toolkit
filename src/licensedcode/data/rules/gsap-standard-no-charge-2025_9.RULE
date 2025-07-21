@@ -1,0 +1,8 @@
+---
+license_expression: gsap-standard-no-charge-2025
+is_license_notice: yes
+ignorable_urls:
+    - http://www.greensock.com/terms_of_use.html
+---
+
+This work is subject to the terms in {{http://www.greensock.com/terms_of_use.html}} or for Club GreenSock members, the software agreement that was issued with the membership.
