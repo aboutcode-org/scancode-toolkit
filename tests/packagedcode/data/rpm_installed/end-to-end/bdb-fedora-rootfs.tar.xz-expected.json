@@ -31133,7 +31133,7 @@
               "end_line": 1,
               "matcher": "5-undetected",
               "score": 100.0,
-              "matched_length": 1,
+              "matched_length": 2,
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "package-manifest-unknown-b9931200c2f732e2ea95da8f66af5f41a403ecf7",
@@ -31141,7 +31141,7 @@
               "matched_text": "license pubkey"
             }
           ],
-          "identifier": "unknown-215a841a-e3aa-2ed9-9dfb-b6db7f0096e1"
+          "identifier": "unknown-6638c8ac-18c2-ed3f-78bb-1c72e6cc0939"
         }
       ],
       "other_license_expression": null,
@@ -260980,7 +260980,7 @@
                   "end_line": 1,
                   "matcher": "5-undetected",
                   "score": 100.0,
-                  "matched_length": 1,
+                  "matched_length": 2,
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "package-manifest-unknown-b9931200c2f732e2ea95da8f66af5f41a403ecf7",
@@ -260988,7 +260988,7 @@
                   "matched_text": "license pubkey"
                 }
               ],
-              "identifier": "unknown-215a841a-e3aa-2ed9-9dfb-b6db7f0096e1"
+              "identifier": "unknown-6638c8ac-18c2-ed3f-78bb-1c72e6cc0939"
             }
           ],
           "other_license_expression": null,
