@@ -68,9 +68,11 @@ Pre-Scan Options
 
     - key-file
 
-        A KEY file is a generic file extension used by various programs when registering legal copies
-        of the software. It may be saved in a plain text format, but generally contains some form of
-        encrypted key string that authenticates the purchase and registers the software.
+        A KEY file serves as a keystone element, containing essential
+        information about a software package — such as its dependencies,
+        versioning, licensing, and more. It often contains the
+        ``primary-license`` or the overall license of the package, among
+        other package metadata which are general or ecosystem specific.
 
     As in, to the JSON object of each file scanned, these extra attributes are added::
 
