@@ -77,6 +77,13 @@ More (advanced) rules options:
   and `}}` tags. Key phrases are words that **must** be matched/present in order
   for a RULE to be considered a match.
 
+- You can add an optional extra phrase marker like ``[[n]]`` in rules where there may be extra words present for example,  
+  extra words like a copyright holder name. Here, ``n`` denotes the **maximum number of extra words** that may appear at that position.  
+  This tag is used in rules where extra words are expected but not required.
+
+  - For example, ``[[5]]`` allows up to 5 extra words at that position. If the extra words appear in the **correct position**,  
+    then match score increased to 100.
+
 See the ``src/licensedcode/models.py`` directory for a list of all possible values
 and other options.
 
