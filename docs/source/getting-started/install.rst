@@ -146,6 +146,7 @@ under assets options.
         sudo add-apt-repository ppa:deadsnakes/ppa --yes
         sudo apt-get install python3.9 python3.9-distutils
 
+.. _linux_mac_app_install:
 
 Installation on Linux and Mac
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -212,7 +213,7 @@ Installation on Windows 10/11
 
 .. note::
 
-  On Windows 10, double-click the new folder, select one of the files inside the folder
+  On Windows, double-click the new folder, select one of the files inside the folder
   (e.g., 'setup.py'), and right-click.
 
 - In the pop-up menu select 'Properties'.
@@ -258,6 +259,14 @@ Un-installation
 - Delete any temporary files created in your system temp and user temp directory
   under a ScanCode-prefixed directory such as .scancode-tk or .cache/scancode-tk.
 
+
+.. note::
+
+  The above installation process can be used with **Command Prompt**
+  ``cmd``, and **PowerShell**. **Git Bash** is not tested and using it may
+  introduce unexpected behavior. If you're using **Windows Subsystem for
+  Linux** ``WSL2``, please refer to :ref:`linux_mac_app_install` section
+  above.
 
 ----
 
