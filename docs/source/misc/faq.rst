@@ -84,24 +84,23 @@ reported are based on the strings extracted from the binaries, typically broken
 as new lines with each NULL character.
 
 
-How does ``--license-text`` for ScanCode works exactly?
+How does ``--license-text`` for ScanCode works exactly?
 -------------------------------------------------------------
 
-I have a question about how ``--license-text`` for ScanCode works exactly:
-Is the matched text that gets included into the result exactly the lines of text
-from the input file that are covered by the ``start_line`` and ``end_line``
+Is the matched text that gets included into the result exactly the lines of text
+from the input file that are covered by the ``start_line`` and ``end_line``
 fields of the result? I.e., if I would post-process the input file and extract
-``start_line`` to ``end_line`` from it, would I get exactly the ``matched_text``
+``start_line`` to ``end_line`` from it, would I get exactly the ``matched_text``
 contents? Or is there some more "magic" involved when populating the
-``matched_text`` field?
+``matched_text`` field?
 
 ScanCode is a bit smarter than just start and end line, as matching is based on
-words, not lines of the actual scanned text.
-And a whole line may not always be matched.
+words, not lines of the actual scanned text. And a whole line may not always be matched.
 
 For instance with this command::
 
-    $ echo "Foo is a wonder piece of code. Licensed under the GPL. For support contact foo@bar.com " > tst
+    $ echo "Foo is a wonder piece of code. Licensed under the GPL. " \
+        "For support contact foo@bar.com " > tst
     $ scancode --license --license-text --license-text-diagnostics --yaml - tst
     ...
         license_detections:
@@ -128,16 +127,8 @@ For instance with this command::
 then:
 
 - ``matched_text`` is based on ``start_line`` and ``end_line``
-- ``matched_text_diagnostics`` is based on the exact matched words (and it includes "tagged" gaps or extra)
+- ``matched_text_diagnostics`` is based on the exact matched words
 
-
-
-
-
-
-
-
-
-
-
+Note that ``matched_text_diagnostics`` also includes "tagged" gaps or extra
+unmatched words highlighted between the matched words.
 
