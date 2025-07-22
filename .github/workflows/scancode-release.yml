@@ -351,6 +351,10 @@ jobs:
         run: |
           for f in `find dist -type f -name "*.zip"`; \
             do \
+                unzip file.zip $f; \
+            done
+          for f in `find dist -type f -name "*.tar.gz"`; \
+            do \
                 python etc/release/scancode_release_tests.py $f; \
             done
 
@@ -391,6 +395,10 @@ jobs:
       - name: test install app archive
         run: |
           for f in `find dist -type f -name "*.zip"`; \
+            do \
+                unzip file.zip $f; \
+            done
+          for f in `find dist -type f -name "*.tar.gz"`; \
             do \
                 python etc/release/scancode_release_tests.py $f; \
             done
