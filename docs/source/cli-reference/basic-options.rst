@@ -623,8 +623,8 @@
         The option ``--license-text-diagnostics`` is a sub-option of and requires the options
         ``--license`` and ``--license-text``.
 
-    In the matched license text, include diagnostic highlights surrounding with square brackets []
-    words that are not matched.
+    This adds a new attribute like the matched license text, but includes diagnostic highlights
+    surrounding with square brackets ``[]`` for words that are not matched.
 
     In a normal scan, whole lines of text are included in the matched license text, including parts
     that are possibly unmatched.
@@ -645,9 +645,14 @@
         obtaining a copy of this software and associated documentation files (the \"Software\"),
         to deal in the Software without restriction
 
-    With Diagnostics on::
+    With Diagnostics on (new attribute with the matched text diagnostics)::
 
         "matched_text":
+        "License Copyright (c) 2000 - 2006 The Legion Of The Bouncy Castle
+        (http://www.bouncycastle.org) Permission is hereby granted, free of charge, to any person
+        obtaining a copy of this software and associated documentation files (the \"Software\"),
+        to deal in the Software without restriction
+        "matched_text_diagnostics":
         "License [Copyright] ([c]) [2000] - [2006] [The] [Legion] [Of] [The] [Bouncy] [Castle]
         ([http]://[www].[bouncycastle].[org]) Permission is hereby granted, free of charge, to any person
         obtaining a copy of this software and associated documentation files (the \"Software\"),
