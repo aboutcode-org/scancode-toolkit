@@ -1,7 +1,7 @@
 ``scancode-reindex-licenses`` Usage
 -----------------------------------
 
-Usage: scancode-reindex-licenses [OPTIONS]
+Usage: ``scancode-reindex-licenses [OPTIONS]``
 
   Reindex scancode licenses and exit
 

@@ -41,3 +41,8 @@ The dumped licenses directory look like this::
     .
     .
     .
+
+In addition, an "index.html" is provided, see ``licenses/index.html``, that
+opens the static LicenseDB website locally. It can be browsed just like the
+public ScanCode LicenseDB webpage at
+https://scancode-licensedb.aboutcode.org/
