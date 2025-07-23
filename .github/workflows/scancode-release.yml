@@ -583,7 +583,7 @@ jobs:
       run:
         shell: bash
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         dist_names: ["wheels-3.9", "wheels-3.10", "wheels-3.11", "wheels-3.12", "wheels-3.13", sdists]
 
