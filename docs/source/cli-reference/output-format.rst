@@ -408,6 +408,8 @@ Comparing Different ``json`` Output Formats
         - Package Information
         - License References (SPDX ID, Links to spdx/scancode/licensedb/License Homepage)
 
+    .. include::  /rst_snippets/note_snippets/output_html_license_references.rst
+
     .. figure:: data/output_html1.png
 
     .. figure:: data/output_html2.png
