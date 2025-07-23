@@ -7,10 +7,9 @@ authors:
       orcid: 'https://orcid.org/0000-0001-5280-9256'
     - family-names: Ayan
       given-names: Sinha Mahapatra
+      orcid: 'https://orcid.org/0009-0006-0174-5727'
     - family-names: Jono
       given-names: Yang
-    - family-names: Georg
-      given-names: Brandl
     - name: 'nexB Inc. and others.'
 license: Apache-2.0
 url: 'https://github.com/aboutcode-org/scancode-toolkit'
