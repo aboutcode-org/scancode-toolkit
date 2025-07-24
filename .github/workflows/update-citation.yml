@@ -1,0 +1,46 @@
+name: Auto-update CITATION.cff
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-citation:
+    runs-on: ubuntu-24.04
+
+    strategy:
+      max-parallel: 4
+      matrix:
+          python-version: [3.13]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+            python-version: ${{ matrix.python-version }}
+
+      - name: Install doi2cff
+        run:
+            pip install
+            git+https://github.com/citation-file-format/doi2cff
+
+      - name: Fetch latest Zenodo DOI
+        env:
+            ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: |
+            python etc/scripts/fetch_latest_doi.py > latest_doi.txt
+            echo "Latest DOI: $(cat latest_doi.txt)"
+
+      - name: Update CITATION.cff
+        run: doi2cff update $(cat latest_doi.txt)
+
+      - name: Commit updated CITATION.cff
+        run: |
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git add CITATION.cff
+            git commit -m "Update CITATION.cff with latest Zenodo DOI"
+            git push origin HEAD:develop
