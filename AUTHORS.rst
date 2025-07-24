@@ -35,6 +35,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Horie Issei @is2ei
 - James Ward @jamesward
 - Jelmer Vernooĳ @jelmer
+- Jens Keim @pepper-jk
 - Kunal Chhabra @kunalchhabra37
 - Jillian Daguil @jdaguil
 - Jiri Popelka @jpopelka

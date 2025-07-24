@@ -4,6 +4,11 @@ Changelog
 Next release
 --------------
 
+- Enable License References table for HTML Output without requiring
+  `--license-references` by implementing a fallback license reference
+  collection based on the behavior of v32.0.0.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4474
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4101
 
 
 v32.4.1 - 2025-07-23

@@ -406,7 +406,9 @@ Comparing Different ``json`` Output Formats
         - Copyright and Licenses Information
         - File Information
         - Package Information
-        - Licenses (Links to Dejacode/License Homepage)
+        - License References (SPDX ID, Links to spdx/scancode/licensedb/License Homepage)
+
+    .. include::  /rst_snippets/note_snippets/output_html_license_references.rst
 
     .. figure:: data/output_html1.png
 
