@@ -4,6 +4,10 @@ on:
   release:
     types: [published]
 
+permissions:
+  contents: write # Required for creating branch and committing updates
+  pull-requests: write # Required for creating the pull request
+
 jobs:
   update-citation:
     runs-on: ubuntu-24.04
