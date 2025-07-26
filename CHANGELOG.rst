@@ -10,6 +10,9 @@ Next release
   https://github.com/aboutcode-org/scancode-toolkit/pull/4474
   https://github.com/aboutcode-org/scancode-toolkit/issues/4101
 
+- Fix: Prevent crash when parent resource is missing in Cargo package assembler. Thanks [@Iron-56](https://github.com/Iron-56)!  
+  https://github.com/nexB/scancode-toolkit/issues/1436
+  
 
 v32.4.1 - 2025-07-23
 --------------------
