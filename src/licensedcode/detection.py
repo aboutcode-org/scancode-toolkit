@@ -1101,14 +1101,6 @@ def is_correct_detection(license_matches):
     )
 
 
-def has_extra_phrases(license_matches):
-    """
-    Return True if any of the matches in `license_matches` list of LicenseMatch
-    have the `extra-phrase` marker in their matches rule.
-    """
-    return any(match.rule.extra_phrase_spans for match in license_matches)
-
-
 def is_match_coverage_less_than_threshold(license_matches, threshold, any_matches=True):
     """
     Return True if any of the matches in ``license_matches`` List of LicenseMatch

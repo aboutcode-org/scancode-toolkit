@@ -18,10 +18,10 @@ from commoncode import text
 from licensedcode import cache
 from licensedcode import models
 from licensedcode.detection import is_correct_detection
-from licensedcode.detection import has_extra_phrases
 from licensedcode.models import licenses_data_dir
 from licensedcode.models import rules_data_dir
 from licensedcode.models import License
+from licensedcode.tokenize import extra_phrase_removal_pattern
 from scancode_config import REGEN_TEST_FIXTURES
 
 """
@@ -90,7 +90,9 @@ def check_rule_or_license_can_be_detected_exactly(licensish):
     """
     idx = cache.get_index()
     deadline = time() + 20  # ms
-    matches = idx.match(query_string=licensish.text, _skip_hash_match=True, deadline=deadline)
+    # remove `extra-phrase` marker from rules like [[2]] for `extra-words`
+    text = extra_phrase_removal_pattern.sub('', licensish.text)
+    matches = idx.match(query_string=text, _skip_hash_match=True, deadline=deadline)
     # ensure we can self-detect exactly
     expected = [licensish.identifier]
     results = [m.rule.identifier for m in matches]
@@ -100,7 +102,7 @@ def check_rule_or_license_can_be_detected_exactly(licensish):
         assert results == expected
 
     icm = is_correct_detection(matches)
-    if not icm and not has_extra_phrases(matches):
+    if not icm:
         expected.append(f'file://{licensish.rule_file()}')
         assert results == expected
 
