@@ -71,9 +71,7 @@ cdef CMatch find_longest_match(a, b, Py_ssize_t alo, Py_ssize_t ahi, Py_ssize_t 
     cdef vector[Py_ssize_t] newj2len
 
     besti, bestj, bestsize = alo, blo, 0
-    a_len = <size_t>len(a)
-    b_len = <size_t>len(b)
-    bufsize = max(a_len, b_len) + 1
+    bufsize = max(ahi, bhi) + 1
     j2len.resize(bufsize)
     newj2len.resize(bufsize)
     # find longest junk-free match
@@ -86,14 +84,17 @@ cdef CMatch find_longest_match(a, b, Py_ssize_t alo, Py_ssize_t ahi, Py_ssize_t 
         if cura < len_good and i in matchables:
             # look at all instances of a[i] in b; note that because
             # b2j has no junk keys, the loop is skipped if a[i] is junk
-            for j in b2j.get(a[i], nothing):
+            for j in b2j.get(cura, nothing):
                 # a[i] matches b[j]
                 if j < blo:
                     continue
                 if j >= bhi:
                     break
-                k = j2len[j] + 1
-                newj2len[j + 1] = k
+                if <Py_ssize_t>j2len.size() <= (j - 1):
+                    k = j2len[j - 1] + 1
+                else:
+                    k = 1
+                newj2len[j] = k
                 if k > bestsize:
                     besti = i - k + 1
                     bestj = j - k + 1
