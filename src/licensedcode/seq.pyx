@@ -3,8 +3,9 @@
 from collections import namedtuple as _namedtuple
 
 cimport cython
+from libcpp.algorithm cimport sort as cpp_sort
+from libcpp.unordered_map cimport unordered_map
 from libcpp.vector cimport vector
-from libcpp.algorithm cimport fill, sort as cpp_sort
 
 
 Match = _namedtuple('Match', 'a b size')
@@ -67,13 +68,10 @@ cdef CMatch find_longest_match(a, b, Py_ssize_t alo, Py_ssize_t ahi, Py_ssize_t 
     """
     cdef Py_ssize_t besti, bestj, bestsize
     cdef Py_ssize_t i, j, k
-    cdef vector[Py_ssize_t] j2len
-    cdef vector[Py_ssize_t] newj2len
+    cdef unordered_map[Py_ssize_t, Py_ssize_t] j2len
+    cdef unordered_map[Py_ssize_t, Py_ssize_t] newj2len
 
     besti, bestj, bestsize = alo, blo, 0
-    bufsize = max(ahi, bhi) + 1
-    j2len.resize(bufsize)
-    newj2len.resize(bufsize)
     # find longest junk-free match
     # during an iteration of the loop, j2len[j] = length of longest
     # junk-free match ending with a[i-1] and b[j]
@@ -90,20 +88,14 @@ cdef CMatch find_longest_match(a, b, Py_ssize_t alo, Py_ssize_t ahi, Py_ssize_t 
                     continue
                 if j >= bhi:
                     break
-                if <Py_ssize_t>j2len.size() <= (j - 1):
-                    k = j2len[j - 1] + 1
-                else:
-                    k = 1
-                newj2len[j] = k
+                k = newj2len[j] = j2len[j - 1] + 1
                 if k > bestsize:
                     besti = i - k + 1
                     bestj = j - k + 1
                     bestsize = k
+        j2len.swap(newj2len)
+        newj2len.clear()
 
-            j2len.swap(newj2len)
-            fill(newj2len.begin() + blo, newj2len.begin() + bhi + 1, 0)
-
-    fill(j2len.begin() + blo, j2len.begin() + bhi + 1, 0)
     return extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, matchables)
 
 
