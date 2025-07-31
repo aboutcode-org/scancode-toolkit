@@ -118,7 +118,7 @@ CFG_ROOT_DIR="$( cd "$( dirname "${CFG_BIN}" )" && pwd )"
 
 CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
-# force relaunching under X86-64 architecture on macOS M1/ARM 
+# force relaunching under X86-64 architecture on macOS M1/ARM
 if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' && $(sysctl -in sysctl.proc_translated) == 0 ]]; then
     arch -x86_64 /bin/bash -c "$CFG_ROOT_DIR/configure $*"
     exit $?
@@ -253,7 +253,6 @@ install_packages() {
     # be reinstalled a second time and reused from the virtualenv and this
     # speeds up the installation.
     # We always have the PEP517 build dependencies installed already.
-
     "$CFG_BIN_DIR/pip" install \
         --upgrade \
         --no-build-isolation \
