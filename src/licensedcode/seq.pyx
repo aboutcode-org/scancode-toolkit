@@ -232,9 +232,9 @@ def match_blocks(
             # the dummy we started with), and make the second block the
             # new block to compare against.
             if k1:
-                non_adjacent.append((i1, j1, k1))
+                non_adjacent.append(Match(i1, j1, k1))
             i1, j1, k1 = i2, j2, k2
     if k1:
-        non_adjacent.append((i1, j1, k1))
+        non_adjacent.append(Match(i1, j1, k1))
 
-    return [Match._make(na) for na in non_adjacent]
+    return non_adjacent
