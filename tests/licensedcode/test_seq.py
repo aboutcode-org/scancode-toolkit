@@ -9,7 +9,7 @@
 
 from unittest.case import TestCase
 
-from licensedcode import seq
+from licensedcode import _seq
 
 """
 This is testing the sequence matching internals using sequences of integers. The
@@ -160,7 +160,7 @@ class TestSeq(TestCase):
         b_start = 0
         b_end = 53
 
-        tests = seq.find_longest_match(
+        tests = _seq.find_longest_match(
             a=a,
             b=b,
             alo=a_start,
@@ -171,4 +171,4 @@ class TestSeq(TestCase):
             len_good=len_good,
             matchables=matchables,
         )
-        assert tests == seq.Match(a=357, b=0, size=8)
+        assert tests == _seq.Match(a=357, b=0, size=8)
