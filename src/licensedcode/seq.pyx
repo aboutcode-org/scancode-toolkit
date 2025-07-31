@@ -7,6 +7,20 @@ from libcpp.algorithm cimport sort as cpp_sort
 from libcpp.unordered_map cimport unordered_map
 from libcpp.vector cimport vector
 
+"""
+Token sequences alignment and diffing based on the longest common substrings of
+"high tokens". This essentially a non-optimal and reasonably fast single local
+sequence alignment between two sequences of integers/token ids.
+
+Based on and heavily modified from Python's difflib.py from the 3.X tip:
+https://hg.python.org/cpython/raw-file/0a69b1e8b7fe/Lib/difflib.py
+
+and CyDifflib:
+https://github.com/rapidfuzz/CyDifflib/blob/ef0d1cb49abbdd551e9a27065032fc5317c731fd/src/cydifflib/_initialize.pyx
+
+license: PSF. See seq.ABOUT file for details.
+"""
+
 
 Match = _namedtuple('Match', 'a b size')
 

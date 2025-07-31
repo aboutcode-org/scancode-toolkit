@@ -3,6 +3,7 @@
 
 # Python compiled files
 *.py[cod]
+/src/*/*.so
 
 # do not commit thirdparty cache of wheels
 /thirdparty

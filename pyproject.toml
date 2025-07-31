@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["cython", "setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
@@ -69,7 +69,7 @@ include = [
   "."
 
 ]
-# ignore test data and testfiles: they should never be linted nor formatted 
+# ignore test data and testfiles: they should never be linted nor formatted
 exclude = [
 # main style
   "**/tests/data/**/*",
