@@ -46,7 +46,17 @@ cdef int CMatch_sorter(const CMatch& lhs, const CMatch& rhs):
     return lhs.size < rhs.size
 
 
-cdef CMatch find_longest_match(a, b, Py_ssize_t alo, Py_ssize_t ahi, Py_ssize_t blo, Py_ssize_t bhi, b2j, Py_ssize_t len_good, matchables) except *:
+cdef CMatch find_longest_match(
+    a,
+    b,
+    Py_ssize_t alo,
+    Py_ssize_t ahi,
+    Py_ssize_t blo,
+    Py_ssize_t bhi,
+    b2j,
+    Py_ssize_t len_good,
+    matchables
+) except *:
     """
     Find longest matching block of a and b in a[alo:ahi] and b[blo:bhi].
 
@@ -113,7 +123,18 @@ cdef CMatch find_longest_match(a, b, Py_ssize_t alo, Py_ssize_t ahi, Py_ssize_t 
     return extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, matchables)
 
 
-cdef CMatch extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, matchables):
+cdef CMatch extend_match(
+    Py_ssize_t besti,
+    Py_ssize_t bestj,
+    Py_ssize_t bestsize,
+    a,
+    b,
+    Py_ssize_t alo,
+    Py_ssize_t ahi,
+    Py_ssize_t blo,
+    Py_ssize_t bhi,
+    matchables
+):
     """
     Extend a match identifier by (besti, bestj, bestsize) with any matching
     tokens on each end. Return a new CMatch.
@@ -136,7 +157,17 @@ cdef CMatch extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, match
     return CMatch(besti, bestj, bestsize)
 
 
-def match_blocks(a, b, Py_ssize_t a_start, Py_ssize_t a_end, b2j, Py_ssize_t len_good, matchables, *args, **kwargs):
+def match_blocks(
+    a,
+    b,
+    Py_ssize_t a_start,
+    Py_ssize_t a_end,
+    b2j,
+    Py_ssize_t len_good,
+    matchables,
+    *args,
+    **kwargs
+):
     """
     Return a list of matching block Match triples describing matching
     subsequences of `a` in `b` starting from the `a_start` position in `a` up to
