@@ -28,12 +28,18 @@ from licensedcode import match_set
 from licensedcode import match_spdx_lid
 from licensedcode import match_unknown
 from licensedcode.dmp import match_blocks as match_blocks_dmp
-from licensedcode.seq import match_blocks as match_blocks_seq
 from licensedcode import query
 from licensedcode import tokenize
 from licensedcode.spans import Span
 from typing import NamedTuple
 from typing import Callable
+
+try:
+    # Use Cython seq.py implementation
+    from cyseq import match_blocks as match_blocks_seq
+except ImportError:
+    # Use Python seq.py if it is not available
+    from licensedcode.seq import match_blocks as match_blocks_seq
 
 """
 Main license index construction, query processing and matching entry points for
