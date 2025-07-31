@@ -118,10 +118,10 @@ cdef CMatch find_longest_match(
         j2len.swap(newj2len)
         newj2len.clear()
 
-    return extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, matchables)
+    return _extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, matchables)
 
 
-cdef CMatch extend_match(
+cdef CMatch _extend_match(
     Py_ssize_t besti,
     Py_ssize_t bestj,
     Py_ssize_t bestsize,
@@ -153,6 +153,26 @@ cdef CMatch extend_match(
             bestsize += 1
 
     return CMatch(besti, bestj, bestsize)
+
+
+def extend_match(
+    Py_ssize_t besti,
+    Py_ssize_t bestj,
+    Py_ssize_t bestsize,
+    a,
+    b,
+    Py_ssize_t alo,
+    Py_ssize_t ahi,
+    Py_ssize_t blo,
+    Py_ssize_t bhi,
+    matchables
+):
+    """
+    Extend a match identifier by (besti, bestj, bestsize) with any matching
+    tokens on each end. Return a new Match.
+    """
+    match = _extend_match(besti, bestj, bestsize, a, b, alo, ahi, blo, bhi, matchables)
+    return Match(match.a, match.b, match.size)
 
 
 def match_blocks(
