@@ -242,7 +242,6 @@ create_virtualenv() {
             --no-vcs-ignore \
             $CFG_QUIET \
             "$CFG_ROOT_DIR/$VENV_DIR"
-        "$CFG_BIN_DIR/pip" install cython
     fi
 }
 
