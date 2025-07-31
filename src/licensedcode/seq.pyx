@@ -1,5 +1,3 @@
-# Based off of https://github.com/rapidfuzz/CyDifflib/blob/ef0d1cb49abbdd551e9a27065032fc5317c731fd/src/cydifflib/_initialize.pyx
-
 from collections import namedtuple as _namedtuple
 
 cimport cython
@@ -15,10 +13,10 @@ sequence alignment between two sequences of integers/token ids.
 Based on and heavily modified from Python's difflib.py from the 3.X tip:
 https://hg.python.org/cpython/raw-file/0a69b1e8b7fe/Lib/difflib.py
 
-and CyDifflib:
+and CyDifflib from the 1.2.X tip:
 https://github.com/rapidfuzz/CyDifflib/blob/ef0d1cb49abbdd551e9a27065032fc5317c731fd/src/cydifflib/_initialize.pyx
 
-license: PSF. See seq.ABOUT file for details.
+license: PSF and MIT. See seq.py.ABOUT file for details.
 """
 
 

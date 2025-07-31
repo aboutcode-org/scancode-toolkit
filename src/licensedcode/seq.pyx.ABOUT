@@ -1,0 +1,22 @@
+about_resource: seq.pyx
+
+download_url: https://github.com/rapidfuzz/CyDifflib/blob/ef0d1cb49abbdd551e9a27065032fc5317c731fd/src/cydifflib/_initialize.pyx
+
+name: CyDifflib
+
+description: Cython implementation of Python difflib modified for use in scancode-toolkit.
+
+notes: |
+ Based on Python's difflib.py from the 3.X tip and CyDifflib from the 1.2.X tip.
+
+homepage_url: https://github.com/rapidfuzz/CyDifflib/
+
+owner: nexB
+
+license_expression: mit
+licenses:
+-   file: seq.pyx.LICENSE
+    key: mit
+    name: MIT License
+
+copyright: Copyright (c) Max Bachmann
