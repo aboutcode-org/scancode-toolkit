@@ -64,6 +64,21 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 92.67,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2009-2015, Kevin Decker <kpdecker@gmail.com>",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Kevin Decker",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
       "scan_errors": []
     }
   ]

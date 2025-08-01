@@ -117,6 +117,7 @@ def test_license_match_extra_words_3_seq():
     result_file = test_env.get_temp_file('json')
     args = [
         '--license',
+        '--copyright',
         '--license-text',
         '--license-text-diagnostics',
         '--license-diagnostics',
@@ -135,6 +136,7 @@ def test_license_match_extra_words_3_seq_with_copyrights():
     result_file = test_env.get_temp_file('json')
     args = [
         '--license',
+        '--copyright',
         '--license-text',
         '--license-text-diagnostics',
         '--license-diagnostics',
