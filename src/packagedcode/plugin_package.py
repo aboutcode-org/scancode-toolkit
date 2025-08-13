@@ -10,6 +10,7 @@
 import functools
 import logging
 import os
+from time import time
 
 import attr
 import click
@@ -17,6 +18,7 @@ import click
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import DOC_GROUP
 from commoncode.cliutils import SCAN_GROUP
+from commoncode.cliutils import CORE_GROUP
 from commoncode.resource import Resource
 from commoncode.resource import strip_first_path_segment
 from plugincode.scan import scan_impl
@@ -133,6 +135,7 @@ class PackageScanner(ScanPlugin):
     codebase_attributes = dict(
         # a list of packages
         packages=attr.ib(default=attr.Factory(list), repr=False),
+        package_timing=attr.ib(default=0, repr=False),
         # a list of dependencies
         dependencies=attr.ib(default=attr.Factory(list), repr=False),
     )
@@ -192,6 +195,14 @@ class PackageScanner(ScanPlugin):
             help='Show the list of supported package manifest parsers and exit.',
             help_group=DOC_GROUP,
         ),
+        PluggableCommandLineOption(
+            ('--package-timing',),
+            is_flag=True,
+            default=False,
+            hidden=True,
+            help='Collect scan timing for package assembly.',
+            help_group=CORE_GROUP,
+        ),
     ]
 
     def is_enabled(self, package, system_package, package_only, **kwargs):
@@ -210,7 +221,7 @@ class PackageScanner(ScanPlugin):
             package_only=package_only,
         )
 
-    def process_codebase(self, codebase, strip_root=False, package_only=False, **kwargs):
+    def process_codebase(self, codebase, strip_root=False, package_only=False, package_timing=False, **kwargs):
         """
         Populate the ``codebase`` top level ``packages`` and ``dependencies``
         with package and dependency instances, assembling parsed package data
@@ -270,7 +281,7 @@ class PackageScanner(ScanPlugin):
                 logger_debug(f'packagedcode: process_codebase: add_license_from_sibling_file: modified: {modified}')
 
         # Create codebase-level packages and dependencies
-        create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
+        create_package_and_deps(codebase, strip_root=strip_root, package_timing=package_timing, **kwargs)
 
         if has_licenses:
             # This step is dependent on top level packages
@@ -367,11 +378,14 @@ def get_installed_packages(root_dir, processes=2, **kwargs):
     yield from packages_by_uid.values()
 
 
-def create_package_and_deps(codebase, package_adder=add_to_package, strip_root=False, **kwargs):
+def create_package_and_deps(codebase, package_adder=add_to_package, strip_root=False, package_timing=False, **kwargs):
     """
     Create and save top-level Package and Dependency from the parsed
     package data present in the codebase.
     """
+    if package_timing:
+        package_assembly_start_time = time()
+
     packages, dependencies = get_package_and_deps(
         codebase,
         package_adder=package_adder,
@@ -381,6 +395,8 @@ def create_package_and_deps(codebase, package_adder=add_to_package, strip_root=F
 
     codebase.attributes.packages.extend(package.to_dict() for package in packages)
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies)
+    if package_timing:
+        codebase.attributes.package_timing = time() - package_assembly_start_time
 
 
 def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=False, **kwargs):
