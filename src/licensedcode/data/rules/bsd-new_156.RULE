@@ -1,6 +1,9 @@
 ---
 license_expression: bsd-new
 is_license_text: yes
+is_deprecated: yes
+replaced_by:
+    - bsd-new
 ---
 
 Redistribution and use in source and binary forms, with or without
@@ -13,7 +16,7 @@ modification, are permitted provided that the following conditions are met:
    this list of conditions and the following disclaimer in the documentation
    and/or other materials provided with the distribution.
 
-3. Neither the name of  nor the names of its contributors
+3. Neither the name of [[6]] nor the names of its contributors
    may be used to endorse or promote products derived from this software
    without specific prior written permission.
 

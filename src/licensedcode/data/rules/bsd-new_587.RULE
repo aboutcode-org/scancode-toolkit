@@ -1,7 +1,10 @@
 ---
 license_expression: bsd-new
 is_license_text: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - bsd-new
 ---
 
 Redistribution and use in source and binary forms, with or without
@@ -16,7 +19,7 @@ Redistribution and use in source and binary forms, with or without
      the documentation and/or other materials provided with the
      distribution.
 
-   * Neither the name of Red Hat, Inc., nor the names of its
+   * Neither the name of [[6]] nor the names of its
      contributors may be used to endorse or promote products derived
      from this software without specific prior written permission.
 

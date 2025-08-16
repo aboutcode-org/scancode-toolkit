@@ -1,8 +1,11 @@
 ---
 license_expression: bsd-new
 is_license_text: yes
+is_deprecated: yes
 minimum_coverage: 90
 notes: an odd formatting of a bsd from Adobe
+replaced_by:
+    - bsd-new
 ---
 
 %Copyright: Redistribution and use in source and binary forms, with or
@@ -18,7 +21,7 @@ notes: an odd formatting of a bsd from Adobe
 %Copyright: disclaimer in the documentation and/or other materials
 %Copyright: provided with the distribution. 
 %Copyright:
-%Copyright: Neither the name of Adobe Systems Incorporated nor the names
+%Copyright: Neither the name of [[6]] nor the names
 %Copyright: of its contributors may be used to endorse or promote
 %Copyright: products derived from this software without specific prior
 %Copyright: written permission. 

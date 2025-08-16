@@ -1,9 +1,12 @@
 ---
 license_expression: proprietary-license
 is_license_text: yes
+is_deprecated: yes
 relevance: 100
 notes: see https://github.com/Safecast/TTProto/blob/d66a002deafc57022467ed491340fd1c82924896/LICENSE
     This looks like a BSD but this is not one
+replaced_by:
+    - proprietary-license    
 ---
 
 Redistribution and use in source and binary forms, with or without
@@ -15,7 +18,7 @@ modification, are not permitted provided that these conditions are met:
      copyright notice, this list of conditions, and the following
      disclaimer in the documentation and/or other materials
      provided with the distribution.
-   * Neither the name of LLC. nor the names of its
+   * Neither the name of [[6]] nor the names of its
      contributors may be used to endorse or promote products derived
      from this software without specific prior written permission.
    * No redistribution or use is permitted without prior written
