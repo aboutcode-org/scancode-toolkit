@@ -1,0 +1,30 @@
+---
+key: salesforce-ai-ethics-2025
+short_name: Salesforce AI Ethics Disclaimer 2025
+name: Salesforce AI Ethics Disclaimer 2025
+category: Proprietary Free
+owner: Salesforce.com
+homepage_url: https://github.com/salesforce/CodeGen/blob/533a6cc52b4dbd46286cfb12f492390f379ed8a1/AI_ETHICS.md
+spdx_license_key: LicenseRef-scancode-salesforce-ai-ethics-2025
+other_urls:
+    - 'https://github.com/search?q=org%3Asalesforce+Ethics+disclaimer+for+Salesforce+AI+models%2C+data%2C+code&type=code '
+    - https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/policies/ExternalFacing_Services_Policy.pdf
+    - https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/policies/ai-acceptable-use-policy.pdf
+ignorable_urls:
+    - https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/policies/ExternalFacing_Services_Policy.pdf
+    - https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/policies/ai-acceptable-use-policy.pdf
+---
+
+Ethics disclaimer for Salesforce AI models, data, code
+
+This release is for research purposes only in support of an academic
+paper. Our models, datasets, and code are not specifically designed or
+evaluated for all downstream purposes. We strongly recommend users
+evaluate and address potential concerns related to accuracy, safety, and
+fairness before deploying this model. We encourage users to consider the
+common limitations of AI, comply with applicable laws, and leverage best
+practices when selecting use cases, particularly for high-risk scenarios
+where errors or misuse could significantly impact people’s lives, rights,
+or safety. For further guidance on use cases, refer to our standard
+[AUP](https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/policies/ExternalFacing_Services_Policy.pdf)
+and [AI AUP](https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/policies/ai-acceptable-use-policy.pdf).
