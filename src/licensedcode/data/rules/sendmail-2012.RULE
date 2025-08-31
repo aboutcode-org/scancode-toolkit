@@ -50,7 +50,7 @@ each of the following conditions is met:
    the "Copyright Notice" refers to the following language:
    "Copyright (c) 1998-2012 Sendmail, Inc.  All rights reserved."
 
-4. Neither the name of [[6]] nor the University of California nor
+4. Neither the name of Sendmail, Inc. nor the University of California nor
    names of their contributors may be used to endorse or promote
    products derived from this software without specific prior written
    permission.  The name "sendmail" is a trademark of Sendmail, Inc.
@@ -74,7 +74,7 @@ each of the following conditions is met:
             disclaimer in the documentation and/or other materials provided
             with the distribution.
 
-      (iii) Neither the name of [[6]] nor the names of its
+      (iii) Neither the name of the University nor the names of its
             contributors may be used to endorse or promote products derived
             from this software without specific prior written permission.
 

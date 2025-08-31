@@ -1,9 +1,6 @@
 ---
 license_expression: bsd-source-code
 is_license_text: yes
-is_deprecated: yes
-replaced_by:
-    - bsd-source-code  
 ---
 
 Redistribution and use in source and binary forms, with or without
@@ -13,7 +10,7 @@ met:
 - Redistributions of source code must retain the above copyright notice,
 this list of conditions and the following disclaimer.
 
-- Neither the name of [[6]] nor the names of its
+- Neither the name of the copyright owner, nor the names of its
 contributors may be used to endorse or promote products derived from
 this software without specific prior written permission.
 
