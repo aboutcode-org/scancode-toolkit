@@ -360,7 +360,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                             if not (isinstance(e, ast.Constant) and isinstance(e.value, str)):
                                 continue
                             value.append(e.value)
-                    if isinstance(statement_v, ast.Constant) and isinstance(statement_v.value, str):
+                    if isinstance(statement_v, ast.Constant):
                         value = statement_v.value
                     metadata_fields[key_name] = value
 
