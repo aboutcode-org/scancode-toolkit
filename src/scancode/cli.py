@@ -376,6 +376,7 @@ def default_processes():
 @click.option(
     "--check-version/--no-check-version",
     help="Whether to check for new versions. Defaults to true.",
+    type=bool,
     default=True,
     # not yet supported in Click 6.7 but added in PluggableCommandLineOption
     hidden=True,
