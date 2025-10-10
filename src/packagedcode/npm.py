@@ -125,7 +125,7 @@ class BaseNpmHandler(models.DatafileHandler):
         workspace_root = package_resource.parent(codebase)
         workspace_root_path = None
         if workspace_root:
-            workspace_root_path = package_resource.parent(codebase).path
+            workspace_root_path = workspace_root.path
         workspaces = pkg_data.extra_data.get('workspaces') or []
 
         # Also look for pnpm workspaces
