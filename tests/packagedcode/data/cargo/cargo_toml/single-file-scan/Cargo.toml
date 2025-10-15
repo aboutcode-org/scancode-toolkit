@@ -1,0 +1,38 @@
+[package]
+name = "constant_time_eq"
+version = "0.4.2"
+edition = "2024"
+authors = ["Cesar Eduardo Barros <cesarb@cesarb.eti.br>"]
+description = "Compares two equal-sized byte strings in constant time."
+documentation = "https://docs.rs/constant_time_eq"
+repository = "https://github.com/cesarb/constant_time_eq"
+readme = "README"
+keywords = ["constant_time"]
+categories = ["cryptography", "no-std"]
+license = "CC0-1.0 OR MIT-0 OR Apache-2.0"
+rust-version = "1.85.0"
+
+[dev-dependencies]
+criterion = { version = "0.5.1", features = ["cargo_bench_support", "html_reports"] }
+count_instructions = "0.2.0"
+
+[features]
+default = ["std"]
+
+# Necessary to detect at runtime whether DIT is available on aarch64.
+std = []
+
+# Enables tests which depend on the count_instructions crate.
+count_instructions_test = []
+
+[[bench]]
+name = "bench"
+harness = false
+
+[[bench]]
+name = "bench_generic"
+harness = false
+
+[[bench]]
+name = "bench_classic"
+harness = false
