@@ -22,6 +22,19 @@ from commoncode.text import toascii
 # Tracing flags
 TRACE = False
 
+try:
+    # Introduced in click 8.3.0 to have a sentinel value
+    # (https://peps.python.org/pep-0661/) for flag values
+    # and default values instead of None to differentiate
+    # between explicitly setting a `None` value and
+    # not setting and value.
+    # See https://github.com/pallets/click/pull/3030 and
+    # https://github.com/pallets/click/releases/tag/8.3.0
+    from click.core import UNSET
+except ImportError:
+    # to maintain compatibility with click < 8.3.0
+    UNSET = None
+
 
 def logger_debug(*args):
     pass
@@ -429,7 +442,7 @@ class PluggableCommandLineOption(click.Option):
         confirmation_prompt=False,
         hide_input=False,
         is_flag=None,
-        flag_value=None,
+        flag_value=UNSET,
         multiple=False,
         count=False,
         allow_from_autoenv=True,
