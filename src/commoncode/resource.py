@@ -389,7 +389,7 @@ class Codebase:
         path = clean_path(path)
 
         # for the cached file name, we use an md5 of the path to avoid things being too long
-        resid = str(md5(path.encode("utf-8")).hexdigest())
+        resid = str(md5(path.encode("utf-8", "surrogateescape")).hexdigest())
         cache_sub_dir, cache_file_name = resid[-2:], resid
 
         parent = join(self.cache_dir, cache_sub_dir)
