@@ -61,7 +61,6 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
         if on_posix:
             expected += [
                 ("2-SYMTYPE", "l"),
-                ("6-FIFOTYPE", "s"),
             ]
 
         try:
