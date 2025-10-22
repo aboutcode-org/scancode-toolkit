@@ -1,7 +1,19 @@
 Release notes
 =============
 
-Version 32.3.0 - (2025-03-06)
+Version 32.4.0 - (2025-10-22)
+-----------------------------
+
+- Fix ``click`` 8.3.0 compatibililty issues.
+  https://github.com/aboutcode-org/commoncode/pull/92
+
+- Drop python 3.9 support and add python 3.14
+  https://github.com/aboutcode-org/commoncode/pull/92
+
+- Handle paths with non-utf-8 bytes
+  https://github.com/aboutcode-org/commoncode/pull/91
+
+Version 32.3.0 - (2025-06-11)
 -----------------------------
 
 - Fix ``click`` compatibililty issues.
