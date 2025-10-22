@@ -695,6 +695,11 @@ class TestCodebaseCache(FileBasedTesting):
         child_2 = codebase.get_resource(path=child.path)
         assert child_2 == child
 
+    def test_codebase_cache_handles_non_utf8_path(self):
+        test_codebase = self.get_test_loc("resource/cache2")
+        codebase = Codebase(test_codebase)
+        codebase._get_resource_cache_location("resource/cache2/\udce9", create_dirs=True)
+
     def test_codebase_cache_all_in_memory(self):
         test_codebase = self.get_test_loc("resource/cache2")
         codebase = Codebase(test_codebase, max_in_memory=0)
