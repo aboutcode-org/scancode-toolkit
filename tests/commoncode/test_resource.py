@@ -694,7 +694,7 @@ class TestCodebaseCache(FileBasedTesting):
         codebase.save_resource(child)
         child_2 = codebase.get_resource(path=child.path)
         assert child_2 == child
-    
+
     def test_codebase_cache_handles_non_utf8_path(self):
         test_codebase = self.get_test_loc("resource/cache2")
         codebase = Codebase(test_codebase)
