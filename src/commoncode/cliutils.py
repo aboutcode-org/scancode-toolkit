@@ -22,6 +22,19 @@ from commoncode.text import toascii
 # Tracing flags
 TRACE = False
 
+try:
+    # Introduced in click 8.3.0 to have a sentinel value
+    # (https://peps.python.org/pep-0661/) for flag values
+    # and default values instead of None to differentiate
+    # between explicitly setting a `None` value and
+    # not setting and value.
+    # See https://github.com/pallets/click/pull/3030 and
+    # https://github.com/pallets/click/releases/tag/8.3.0
+    from click.core import UNSET
+except ImportError:
+    # to maintain compatibility with click < 8.3.0
+    UNSET = None
+
 
 def logger_debug(*args):
     pass
@@ -165,7 +178,7 @@ Try the '--help' option for help on options and arguments."""
 
 
 class CompatProgressBar(ProgressBar):
-    # TODO Remove when dropping support for Python 3.9 or Click 8.1.
+    # TODO Remove when dropping support for Click 8.1.
     @property
     def is_hidden(self) -> bool:
         return self.hidden
@@ -188,7 +201,7 @@ class DebuggedProgressBar(CompatProgressBar):
     # overriden and copied from Click to work around Click woes for
     # https://github.com/aboutcode-org/scancode-toolkit/issues/2583
     def generator(self):
-        if self.is_hidden:
+        if self.hidden:
             yield from self.iter
         else:
             for rv in self.iter:
@@ -207,7 +220,7 @@ class EnhancedProgressBar(DebuggedProgressBar):
     """
 
     def render_progress(self):
-        if not self.is_hidden:
+        if not self.hidden:
             return super(EnhancedProgressBar, self).render_progress()
 
 
@@ -228,7 +241,7 @@ class ProgressLogger(CompatProgressBar):
 
     def __init__(self, *args, **kwargs):
         super(ProgressLogger, self).__init__(*args, **kwargs)
-        self.is_hidden = False
+        self.hidden = False
 
     def render_progress(self):
         line = self.format_progress_line()
@@ -429,7 +442,7 @@ class PluggableCommandLineOption(click.Option):
         confirmation_prompt=False,
         hide_input=False,
         is_flag=None,
-        flag_value=None,
+        flag_value=UNSET,
         multiple=False,
         count=False,
         allow_from_autoenv=True,
