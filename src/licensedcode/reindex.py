@@ -43,7 +43,7 @@ from licensedcode.models import load_dump_licenses
 @click.option(
     '--additional-directory',
     type=click.Path(exists=True, readable=True, file_okay=False, resolve_path=True, path_type=str),
-    default=False,
+    default=None,
     metavar='DIR',
     help='Include this directory with additional custom licenses and license rules '
             'in the license detection index.',
