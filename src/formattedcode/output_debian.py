@@ -33,6 +33,7 @@ class DebianCopyrightOutput(OutputPlugin):
     options = [
         PluggableCommandLineOption(('--debian', 'output_debian',),
             type=FileOptionType(mode='w', lazy=True),
+            default=None,
             metavar='FILE',
             help='Write scan output in machine-readable Debian copyright format to FILE.',
             help_group=OUTPUT_GROUP,
