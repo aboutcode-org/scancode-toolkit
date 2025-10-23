@@ -223,6 +223,7 @@ def default_processes():
 
 @click.option('--strip-root',
     is_flag=True,
+    default=False,
     conflicting_options=['full_root'],
     help='Strip the root directory segment of all paths. The default is to '
          'always include the last directory segment of the scanned path such '
@@ -231,6 +232,7 @@ def default_processes():
 
 @click.option('--full-root',
     is_flag=True,
+    default=False,
     conflicting_options=['strip_root'],
     help='Report full, absolute paths.',
     help_group=cliutils.OUTPUT_CONTROL_GROUP, cls=PluggableCommandLineOption)
@@ -253,12 +255,14 @@ def default_processes():
 
 @click.option('-q', '--quiet',
     is_flag=True,
+    default=False,
     conflicting_options=['verbose'],
     help='Do not print summary or progress.',
     help_group=cliutils.CORE_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
 @click.option('-v', '--verbose',
     is_flag=True,
+    default=False,
     conflicting_options=['quiet'],
     help='Print progress as file-by-file path instead of a progress bar. '
          'Print verbose scan counters.',
@@ -266,17 +270,20 @@ def default_processes():
 
 @click.option('--from-json',
     is_flag=True,
+    default=False,
     help='Load codebase from one or more <input> JSON scan file(s).',
     help_group=cliutils.CORE_GROUP, sort_order=25, cls=PluggableCommandLineOption)
 
 @click.option('--timing',
     is_flag=True,
+    default=False,
     hidden=True,
     help='Collect scan timing for each scan/scanned file.',
     help_group=cliutils.CORE_GROUP, sort_order=250, cls=PluggableCommandLineOption)
 
 @click.option('--max-in-memory',
-    type=int, default=10000,
+    type=int,
+    default=10000,
     show_default=True,
     help='Maximum number of files and directories scan details kept in memory '
          'during a scan. Additional files and directories scan details above this '
@@ -300,6 +307,7 @@ def default_processes():
 
 @click.option('-A', '--about',
     is_flag=True,
+    default=False,
     is_eager=True,
     expose_value=False,
     callback=print_about,
@@ -308,6 +316,7 @@ def default_processes():
 
 @click.option('-V', '--version',
     is_flag=True,
+    default=False,
     is_eager=True,
     expose_value=False,
     callback=print_version,
@@ -316,6 +325,7 @@ def default_processes():
 
 @click.option('--examples',
     is_flag=True,
+    default=False,
     is_eager=True,
     expose_value=False,
     callback=print_examples,
@@ -325,6 +335,7 @@ def default_processes():
 @click.option('--plugins',
     is_flag=True,
     is_eager=True,
+    default=False,
     expose_value=False,
     callback=print_plugins,
     help='Show the list of available ScanCode plugins and exit.',
@@ -358,6 +369,7 @@ def default_processes():
 
 @click.option('--print-options',
     is_flag=True,
+    default=False,
     expose_value=False,
     callback=print_options,
     help='Show the list of selected options and exit.',

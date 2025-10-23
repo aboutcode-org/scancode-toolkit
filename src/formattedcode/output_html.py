@@ -68,6 +68,7 @@ class HtmlOutput(OutputPlugin):
         PluggableCommandLineOption(('--html',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
+            default=None,
             help='Write scan output as HTML to FILE.',
             help_group=OUTPUT_GROUP,
             sort_order=50),
@@ -100,6 +101,7 @@ class CustomTemplateOutput(OutputPlugin):
         PluggableCommandLineOption(('--custom-output',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             required_options=['custom_template'],
+            default=None,
             metavar='FILE',
             help='Write scan output to FILE formatted with '
                  'the custom Jinja template file.',
@@ -114,6 +116,7 @@ class CustomTemplateOutput(OutputPlugin):
                 readable=True,
                 path_type=str
             ),
+            default=None,
             required_options=['custom_output'],
             metavar='FILE',
             help='Use this Jinja template FILE as a custom template.',
@@ -270,6 +273,7 @@ class HtmlAppOutput(OutputPlugin):
         PluggableCommandLineOption(('--html-app',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
+            default=None,
             hidden=True,
             help='(DEPRECATED: use the ScanCode Workbench app instead) '
                   'Write scan output as a mini HTML application to FILE.',

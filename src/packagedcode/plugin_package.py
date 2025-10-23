@@ -187,6 +187,7 @@ class PackageScanner(ScanPlugin):
         PluggableCommandLineOption(
             ('--list-packages',),
             is_flag=True,
+            default=False,
             is_eager=True,
             callback=print_packages,
             help='Show the list of supported package manifest parsers and exit.',
