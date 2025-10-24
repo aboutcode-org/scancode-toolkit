@@ -54,6 +54,7 @@ class LicenseReference(PostScanPlugin):
     options = [
         PluggableCommandLineOption(('--license-references',),
             is_flag=True,
+            default=False,
             help='Return reference data for all licenses and license rules '
                  'present in detections.',
             help_group=POST_SCAN_GROUP,

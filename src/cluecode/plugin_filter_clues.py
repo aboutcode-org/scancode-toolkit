@@ -52,7 +52,8 @@ class RedundantCluesFilter(PostScanPlugin):
 
     options = [
         PluggableCommandLineOption(('--filter-clues',),
-            is_flag=True, default=False,
+            is_flag=True,
+            default=False,
             help='Filter redundant duplicated clues already contained in '
                  'detected license and copyright texts and notices.',
             help_group=POST_SCAN_GROUP)

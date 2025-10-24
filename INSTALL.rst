@@ -16,10 +16,10 @@ Prerequisites
 -------------
 
 Before installing ScanCode make sure you have  installed these prerequisites.
-The main one is to have Python installed version 3.9, 3.10, 3.11, 3.12 or 3.13.
+The main one is to have Python installed version 3.10, 3.11, 3.12 or 3.13.
 
 - For Linux(Ubuntu):
-  ``sudo apt install python3.9-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev``
+  ``sudo apt install python3.10-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev``
 - For MacOS: Install Python 3.x from https://www.python.org/
 - For Windows: Install Python 3.x from https://www.python.org/  using the 64 bits amd64 variant
 - For FreeBSD: (this needs to be documented)
