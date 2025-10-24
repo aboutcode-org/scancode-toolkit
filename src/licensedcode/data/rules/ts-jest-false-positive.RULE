@@ -1,0 +1,6 @@
+---
+is_false_positive: yes          # marks this as not a real license
+notes: Not a license            # short note for maintainers
+---
+# The following text is causing a false positive in ts-jest
+support ts-jest with an open source license
