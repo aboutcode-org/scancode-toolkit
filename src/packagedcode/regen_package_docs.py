@@ -55,6 +55,7 @@ def regenerate(
 @click.option(
     '--path',
     type=click.Path(exists=True, writable=True, file_okay=True, dir_okay=False, path_type=str),
+    default=None,
     metavar='FILE',
     help='Regenerate a reStructuredText documentation page from scancode available package parsers data.',
     help_group=MISC_GROUP,

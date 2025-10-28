@@ -8,8 +8,8 @@ homepage_url: http://www.mozilla.org/MPL/2.0/
 notes: |
     Per SPDX.org, this license was released in January 2012. This license list
     entry is for use when the MPL's Exhibit B, which removes the Sec 3.3
-    copyleft exception.
-is_exception: yes
+    copyleft exception. This is actually an alternative version of the
+    MPL 2.0 license and not an exception.
 spdx_license_key: MPL-2.0-no-copyleft-exception
 osi_url: http://opensource.org/licenses/MPL-2.0
 other_urls:

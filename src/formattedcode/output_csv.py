@@ -54,6 +54,7 @@ class CsvOutput(OutputPlugin):
     options = [
         PluggableCommandLineOption(('--csv',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            default=None,
             metavar='FILE',
             help='[DEPRECATED] Write scan output as CSV to FILE. ' + DEPRECATED_MSG,
             help_group=OUTPUT_GROUP,

@@ -1,0 +1,155 @@
+---
+key: ms-research-license-terms
+short_name: MS Research License Terms
+name: Microsoft Research License Terms
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://download.microsoft.com/download/B/8/8/B88DDDC1-F316-412A-94B3-025788436054/LICENSE.pdf
+spdx_license_key: LicenseRef-scancode-ms-research-license-terms
+other_urls:
+    - https://github.com/search?q=%22MICROSOFT+RESEARCH+LICENSE+TERMS%22&type=code
+    - https://github.com/microsoft/psi/blob/c4c51994a0c59cb3325940be4217a081208aa289/LICENSE-APPLICATIONS.txt#L1
+    - https://github.com/ReiiSky/Delayed-Compensation-Asynchronous-Stochastic-Gradient-Descent-for-Multiverso/blob/13454c6f3673c6c201ca2e5c2431aa1188d8e6a9/License.md
+---
+
+MICROSOFT RESEARCH LICENSE TERMS
+
+IF YOU LIVE IN (OR ARE A BUSINESS WITH A PRINCIPAL PLACE OF BUSINESS IN) THE UNITED
+STATES, PLEASE READ THE “BINDING ARBITRATION AND CLASS ACTION WAIVER” SECTION
+BELOW. IT AFFECTS HOW DISPUTES ARE RESOLVED.
+
+These license terms are an agreement between you and Microsoft Corporation (or one of its affiliates). They
+apply to the source code, object code, and/or data collectively “The Materials” that accompany this license. IF
+YOU COMPLY WITH THESE LICENSE TERMS, YOU HAVE THE RIGHTS BELOW. BY USING THE MATERIALS,
+YOU ACCEPT THESE TERMS.
+
+1) INSTALLATION AND USE RIGHTS TO THE MATERIALS.
+Subject to the terms of this agreement, you have the below rights, if applicable, to use The Materials solely for
+non-commercial, non-revenue generating, research purposes:
+
+a) Source Code. If source code is included, you may use and modify the source code, but you may not
+distribute the source code.
+
+b) Object Code. If object code is included, you may use the object code, but you may not distribute the
+object code.
+
+c) Data. If Data is included, you may use and modify the data, but you may not distribute the data.
+
+2) SCOPE OF LICENSE. The Materials are licensed, not sold. Microsoft reserves all other rights. Unless
+applicable law gives you more rights despite this limitation, you will not (and have no right to):
+
+a) work around any technical limitations in The Materials that only allow you to use it in certain ways;
+
+b) reverse engineer, decompile or disassemble The Materials;
+
+c) remove, minimize, block, or modify any notices of Microsoft or its suppliers in The Materials;
+
+d) use The Materials in any way that is against the law or to create or propagate malware; or
+
+e) share, publish, distribute or lend The Materials, provide The Materials as a stand-alone hosted solution
+for others to use, or transfer The Materials or this agreement to any third party.
+
+3) LICENSE TO MICROSOFT. Notwithstanding the limitations in Section 1 (a), (b), and (c), you may
+distribute your modifications back to Microsoft, and if you do provide Microsoft with modifications of The
+Materials, you hereby grant Microsoft, without any restrictions or limitations, a non-exclusive, perpetual,
+irrevocable, royalty-free, assignable and sub-licensable license, to reproduce, publicly perform or display,
+install, use, modify, post, distribute, make and have made, sell and transfer such modifications and
+derivatives for any purpose.
+
+4) PUBLICATION. You may publish (or present papers or articles) on your results from using The Materials
+provided that no material or substantial portion of The Materials is included in any such publication or
+presentation.
+
+5) FEEDBACK. Any feedback about The Materials provided by you to us is voluntarily given, and Microsoft
+shall be free to use the feedback as it sees fit without obligation or restriction of any kind, even if the
+feedback is designated by you as confidential. Such feedback shall be considered a contribution and
+licensed to Microsoft under the terms of Section 3 above.
+
+6) PERSONAL DATA. Personal data is any information relating to an identified or identifiable natural person.
+Microsoft will undertake to ensure that the Materials contain no personal data. If, despite Microsoft’s
+efforts in this regard, you identify personal data in the Materials, you agree not to use such personal data
+for any purpose, to delete all copies of such personal data in your possession promptly, and to inform
+Microsoft promptly of the foregoing so that it can remove such personal data from future transmissions of
+the Materials.
+
+7) EXPORT RESTRICTIONS. You must comply with all domestic and international export laws and
+regulations that apply to The Materials, which include restrictions on destinations, end users, and end use.
+For further information on export restrictions, visit (aka.ms/exporting).
+
+8) SUPPORT SERVICES. Microsoft is not obligated under this agreement to provide any support services for
+The Materials. Any support provided is “as is”, “with all faults”, and without warranty of any kind.
+
+9) BINDING ARBITRATION AND CLASS ACTION WAIVER. This Section applies if you live in (or, if
+a business, your principal place of business is in) the United States. If you and Microsoft have a
+dispute, you and Microsoft agree to try for 60 days to resolve it informally. If you and Microsoft can’t, you
+and Microsoft agree to binding individual arbitration before the American Arbitration Association
+under the Federal Arbitration Act (“FAA”), and not to sue in court in front of a judge or jury. Instead,
+a neutral arbitrator will decide. Class action lawsuits, class-wide arbitrations, private attorney-
+general actions, and any other proceeding where someone acts in a representative capacity are not
+allowed; nor is combining individual proceedings without the consent of all parties. The complete
+Arbitration Agreement contains more terms and is at aka.ms/arb-agreement-1. You and Microsoft agree to
+these terms.
+
+10) ENTIRE AGREEMENT. This agreement, and any other terms Microsoft may provide for supplements,
+updates, or third-party applications, is the entire agreement for The Materials.
+
+11) APPLICABLE LAW AND PLACE TO RESOLVE DISPUTES. If you acquired The Materials in the United
+States or Canada, the laws of the state or province where you live (or, if a business, where your principal
+place of business is located) govern the interpretation of this agreement, claims for its breach, and all
+other claims (including consumer protection, unfair competition, and tort claims), regardless of conflict of
+laws principles, except that the FAA governs everything related to arbitration. If you acquired The
+Materials in any other country, its laws apply, except that the FAA governs everything related to
+arbitration. If U.S. federal jurisdiction exists, you and Microsoft consent to exclusive jurisdiction and venue
+in the federal court in King County, Washington for all disputes heard in court (excluding arbitration). If
+not, you and Microsoft consent to exclusive jurisdiction and venue in the Superior Court of King County,
+Washington for all disputes heard in court (excluding arbitration).
+
+12) CONSUMER RIGHTS; REGIONAL VARIATIONS. This agreement describes certain legal rights. You
+may have other rights, including consumer rights, under the laws of your state, province, or country.
+Separate and apart from your relationship with Microsoft, you may also have rights with respect to the
+party from which you acquired The Materials. This agreement does not change those other rights if the
+laws of your state, province, or country do not permit it to do so. For example, if you acquired The
+Materials in one of the below regions, or mandatory country law applies, then the following provisions
+apply to you:
+
+a) Australia. You have statutory guarantees under the Australian Consumer Law and nothing in this
+agreement is intended to affect those rights.
+
+b) Canada. If you acquired this software in Canada, you may stop receiving updates by turning off the
+automatic update feature, disconnecting your device from the Internet (if and when you re-connect to
+the Internet, however, The Materials will resume checking for and installing updates), or uninstalling
+The Materials. The product documentation, if any, may also specify how to turn off updates for your
+specific device or software.
+
+c) Germany and Austria.
+i. Warranty. The properly licensed software will perform substantially as described in any
+Microsoft materials that accompany The Materials. However, Microsoft gives no contractual guarantee
+in relation to the licensed software.
+ii. Limitation of Liability. In case of intentional conduct, gross negligence, claims based on
+the Product Liability Act, as well as, in case of death or personal or physical injury, Microsoft is liable
+according to the statutory law.
+Subject to the foregoing clause (ii), Microsoft will only be liable for slight negligence if Microsoft is in
+breach of such material contractual obligations, the fulfillment of which facilitate the due performance
+of this agreement, the breach of which would endanger the purpose of this agreement and the
+compliance with which a party may constantly trust in (so-called "cardinal obligations"). In other cases
+of slight negligence, Microsoft will not be liable for slight negligence.
+
+13) DISCLAIMER OF WARRANTY. THE MATERIALS IS LICENSED “AS IS.” YOU BEAR THE RISK OF
+USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES, OR CONDITIONS.
+TO THE EXTENT PERMITTED UNDER APPLICABLE LAWS, MICROSOFT EXCLUDES ALL IMPLIED
+WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+NON-INFRINGEMENT.
+
+14) LIMITATION ON AND EXCLUSION OF DAMAGES. IF YOU HAVE ANY BASIS FOR RECOVERING
+DAMAGES DESPITE THE PRECEDING DISCLAIMER OF WARRANTY, YOU CAN RECOVER FROM
+MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00. YOU CANNOT
+RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL,
+INDIRECT OR INCIDENTAL DAMAGES.
+This limitation applies to (a) anything related to The Materials, services, content (including
+code) on third party Internet sites, or third party applications; and (b) claims for breach of
+contract, warranty, guarantee, or condition; strict liability, negligence, or other tort; or any
+other claim; in each case to the extent permitted by applicable law.
+It also applies even if Microsoft knew or should have known about the possibility of the
+damages. The above limitation or exclusion may not apply to you because your state,
+province, or country may not allow the exclusion or limitation of incidental, consequential, or
+other damages.
