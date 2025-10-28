@@ -15,7 +15,7 @@ jobs:
       parameters:
           job_name: core_tests
           image_name: ubuntu-24.04
-          python_versions: ['3.13']
+          python_versions: ['3.14']
           test_suites:
               misc_and_scancode: |
                # cli tests are launched below on all OSes
@@ -123,7 +123,7 @@ jobs:
           job_name: ubuntu24_cpython
           image_name: ubuntu-24.04
           python_architecture: x64
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
 
@@ -132,7 +132,7 @@ jobs:
           job_name: ubuntu22_cpython
           image_name: ubuntu-22.04
           python_architecture: x64
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
 
@@ -140,7 +140,7 @@ jobs:
       parameters:
           job_name: macos14_cpython
           image_name: macOS-14
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
@@ -149,7 +149,7 @@ jobs:
       parameters:
           job_name: macos13_cpython
           image_name: macOS-13
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
 
@@ -167,7 +167,7 @@ jobs:
           job_name: win2022_cpython
           image_name: windows-2022
           python_architecture: x64
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           test_suites:
               all: venv\Scripts\pytest -n 2 -vvs tests\scancode\test_cli.py --reruns 2
 
@@ -180,7 +180,7 @@ jobs:
       parameters:
           job_name: ubuntu22_test_all_supported_click_versions
           image_name: ubuntu-22.04
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           python_architecture: x64
           test_suites:
               click_versions: |
@@ -200,7 +200,7 @@ jobs:
       parameters:
           job_name: ubuntu22_cpython_latest_from_pip
           image_name: ubuntu-22.04
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -208,7 +208,7 @@ jobs:
       parameters:
           job_name: ubuntu24_cpython_latest_from_pip
           image_name: ubuntu-24.04
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -216,7 +216,7 @@ jobs:
       parameters:
           job_name: macos14_cpython_latest_from_pip
           image_name: macos-14
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -224,7 +224,7 @@ jobs:
       parameters:
           job_name: macos13_cpython_latest_from_pip
           image_name: macos-13
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
@@ -232,7 +232,7 @@ jobs:
       parameters:
           job_name: win2019_cpython_latest_from_pip
           image_name: windows-2025
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           test_suites:
               all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 
@@ -240,7 +240,7 @@ jobs:
       parameters:
           job_name: win2022_cpython_latest_from_pip
           image_name: windows-2022
-          python_versions: ['3.10', '3.11', '3.12', '3.13']
+          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           test_suites:
               all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 

@@ -44,7 +44,7 @@ For advanced usage and experienced users, you can also use any of these mode:
 Before Installing
 -----------------
 
-- ScanCode requires a Python version between 3.10 to 3.13 and is
+- ScanCode requires a Python version between 3.10 to 3.14 and is
   tested on Linux, macOS, and Windows. It should work fine on FreeBSD.
 
 .. _system_requirements:
