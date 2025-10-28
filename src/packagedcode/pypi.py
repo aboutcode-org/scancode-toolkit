@@ -2168,8 +2168,8 @@ def get_setup_py_args_legacy(location, include_not_parsable=False):
                         ]
                         values.append(val)
 
-                    elif isinstance(val, (ast.Str, ast.Constant,)):
-                        values.append(val.s)
+                    elif isinstance(val, ast.Constant):
+                        values.append(val.value)
 
                     else:
                         if include_not_parsable:
@@ -2194,8 +2194,8 @@ def get_setup_py_args_legacy(location, include_not_parsable=False):
                 mapping = dict(zip(keys, values))
                 setup_args[arg_name] = mapping
 
-            elif isinstance(arg_value, (ast.Str, ast.Constant,)):
-                setup_args[arg_name] = arg_value.s
+            elif isinstance(arg_value, ast.Constant):
+                setup_args[arg_name] = arg_value.value
             else:
                 if include_not_parsable:
                     if isinstance(arg_value, ast.Attribute):
