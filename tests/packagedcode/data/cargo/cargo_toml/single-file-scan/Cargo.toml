@@ -15,24 +15,3 @@ rust-version = "1.85.0"
 [dev-dependencies]
 criterion = { version = "0.5.1", features = ["cargo_bench_support", "html_reports"] }
 count_instructions = "0.2.0"
-
-[features]
-default = ["std"]
-
-# Necessary to detect at runtime whether DIT is available on aarch64.
-std = []
-
-# Enables tests which depend on the count_instructions crate.
-count_instructions_test = []
-
-[[bench]]
-name = "bench"
-harness = false
-
-[[bench]]
-name = "bench_generic"
-harness = false
-
-[[bench]]
-name = "bench_classic"
-harness = false
