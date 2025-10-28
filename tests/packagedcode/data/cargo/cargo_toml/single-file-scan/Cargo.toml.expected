@@ -1,36 +1,4 @@
 {
-  "headers": [
-    {
-      "tool_name": "scancode-toolkit",
-      "tool_version": "32.4.1",
-      "options": {
-        "input": [
-          "/tests/packagedcode/data/cargo/cargo_toml/single-file-scan/Cargo.toml"
-        ],
-        "--json-pp": "/tmp/cargo-full-scan.json",
-        "--package": true
-      },
-      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-      "start_timestamp": "2025-10-28T175155.400609",
-      "end_timestamp": "2025-10-28T175201.660855",
-      "output_format_version": "4.1.0",
-      "duration": 6.26029896736145,
-      "message": null,
-      "errors": [],
-      "warnings": [],
-      "extra_data": {
-        "system_environment": {
-          "operating_system": "linux",
-          "cpu_architecture": "64",
-          "platform": "Linux-6.10.14-linuxkit-x86_64-with-glibc2.36",
-          "platform_version": "#1 SMP Tue Oct 14 07:32:13 UTC 2025",
-          "python_version": "3.12.12 (main, Oct 21 2025, 02:11:48) [GCC 12.2.0]"
-        },
-        "spdx_license_list_version": "3.27",
-        "files_count": 1
-      }
-    }
-  ],
   "packages": [],
   "dependencies": [],
   "files": [
