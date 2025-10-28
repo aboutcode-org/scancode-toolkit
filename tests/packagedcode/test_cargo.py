@@ -85,9 +85,12 @@ class TestCargo(PackageTester):
 
     def test_parse_cargo_toml_single_file_no_crash(self):
         test_file = self.get_test_loc('cargo/cargo_toml/single-file-scan/Cargo.toml')
-        expected_loc = self.get_test_loc('cargo/cargo_toml/single-file-scan/Cargo.toml.expected')
-        packages_data = cargo.CargoTomlHandler.parse(test_file)
-        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+        expected_file = self.get_test_loc('cargo/cargo_toml/single-file-scan/Cargo.toml.expected')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
 
     def test_parse_cargo_toml_tauri_workspace_in_version(self):
         test_file = self.get_test_loc('cargo/cargo_toml/tauri-examples/Cargo.toml')
