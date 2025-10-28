@@ -29,7 +29,6 @@ import importlib_metadata
 import packvers as packaging
 import pip_requirements_parser
 import pkginfo2
-import toml
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
@@ -45,6 +44,15 @@ from packagedcode.utils import parse_maintainer_name_email
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
 from packagedcode.utils import get_base_purl
+
+# tomli was added to the stdlib as tomllib in Python 3.11.
+# It's the same code.
+# Still, prefer tomli if it's installed, as on newer Python versions, it is
+# compiled with mypyc and is more performant.
+try:
+    import tomli as tomllib
+except ImportError:
+    import tomllib
 
 try:
     from zipfile import Path as ZipPath
@@ -463,7 +471,8 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        package_data = toml.load(location, _dict=dict)
+        with open(location, "rb") as fp:
+            package_data = tomllib.load(fp)
         project_data = package_data.get("project")
         if not project_data:
             return
@@ -647,7 +656,8 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        toml_data = toml.load(location, _dict=dict)
+        with open(location, "rb") as fp:
+            toml_data = tomllib.load(fp)
 
         tool_data = toml_data.get('tool')
         if not tool_data:
@@ -725,7 +735,8 @@ class PoetryLockHandler(BasePoetryPythonLayout):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        toml_data = toml.load(location, _dict=dict)
+        with open(location, "rb") as fp:
+            toml_data = tomllib.load(fp)
 
         packages = toml_data.get('package')
         if not packages:

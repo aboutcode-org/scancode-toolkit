@@ -12,10 +12,18 @@ import os
 import re
 import sys
 
-import toml
 from packageurl import PackageURL
 
 from packagedcode import models
+
+# tomli was added to the stdlib as tomllib in Python 3.11.
+# It's the same code.
+# Still, prefer tomli if it's installed, as on newer Python versions, it is
+# compiled with mypyc and is more performant.
+try:
+    import tomli as tomllib
+except ImportError:
+    import tomllib
 
 """
 Handle Rust cargo crates
@@ -170,7 +178,8 @@ class CargoTomlHandler(CargoBaseHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        package_data_toml = toml.load(location, _dict=dict)
+        with open(location, "rb") as fp:
+            package_data_toml = tomllib.load(fp)
         workspace = package_data_toml.get('workspace', {})
         core_package_data = package_data_toml.get('package', {})
         extra_data = {}
@@ -283,7 +292,8 @@ class CargoLockHandler(CargoBaseHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        cargo_lock = toml.load(location, _dict=dict)
+        with open(location, "rb") as fp:
+            cargo_lock = tomllib.load(fp)
         dependencies = []
         package = cargo_lock.get('package', [])
         for dep in package:
