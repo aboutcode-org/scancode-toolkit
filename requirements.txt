@@ -5,7 +5,7 @@ binaryornot==0.4.4
 beartype==0.22.4
 boolean.py==5.0
 certifi==2025.6.15
-cffi==1.17.1
+cffi==2.0.0
 chardet==5.2.0
 charset-normalizer==3.4.2
 click==8.3.0
@@ -36,8 +36,8 @@ javaproperties==0.8.2
 Jinja2==3.1.6
 jsonstreams==0.6.0
 license-expression==30.4.4
-lxml==5.4.0
-MarkupSafe==3.0.2
+lxml==6.0.2
+MarkupSafe==3.0.3
 more-itertools==10.7.0
 normality==2.6.1
 packageurl-python==0.17.1
@@ -59,7 +59,7 @@ Pygments==2.13.0
 pymaven-patch==0.3.2
 pyparsing==3.2.3
 pytz==2022.1
-PyYAML==6.0.2
+PyYAML==6.0.3
 rdflib==7.1.4
 requests==2.32.4
 saneyaml==0.6.1
