@@ -17,6 +17,7 @@ from collections import deque
 from time import time
 
 import attr
+from nostril_detector.nonsense_detector import generate_nonsense_detector
 
 from commoncode.text import toascii
 from commoncode.text import unixlinesep
@@ -197,8 +198,9 @@ def detect_copyrights_from_lines(
         if TRACE or TRACE_DEEP:
             logger_debug(f'\n========================================================================')
             logger_debug(f'detect_copyrights_from_lines: processing candidate_lines group:')
+            nonsense = generate_nonsense_detector(min_length=1)
             for can in candidate_lines:
-                logger_debug(f'  {can}')
+                logger_debug(f'  {can[1]} (is_nonsense({nonsense(can[1])}))')
 
         detections = detector.detect(
             numbered_lines=candidate_lines,
