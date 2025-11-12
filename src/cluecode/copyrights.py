@@ -61,6 +61,10 @@ if TRACE or TRACE_TOK:
 if TRACE_DEEP:
     logger_debug = print
 
+
+nonsense = generate_nonsense_detector(min_length=1)
+
+
 """
 Detect and collect copyright statements.
 
@@ -198,9 +202,9 @@ def detect_copyrights_from_lines(
         if TRACE or TRACE_DEEP:
             logger_debug(f'\n========================================================================')
             logger_debug(f'detect_copyrights_from_lines: processing candidate_lines group:')
-            nonsense = generate_nonsense_detector(min_length=1)
+
             for can in candidate_lines:
-                logger_debug(f'  {can[1]} (is_nonsense({nonsense(can[1])}))')
+                logger_debug(f'  {can}')
 
         detections = detector.detect(
             numbered_lines=candidate_lines,
@@ -4281,6 +4285,12 @@ def is_candidate(prepared_line):
     if is_only_digit_and_punct(prepared_line):
         if TRACE:
             logger_debug(f'is_candidate: is_only_digit_and_punct:\n{prepared_line!r}')
+
+        return False
+
+    if nonsense(prepared_line):
+        if TRACE:
+            logger_debug(f'is_candidate: nonsense:\n{prepared_line!r}')
 
         return False
 
