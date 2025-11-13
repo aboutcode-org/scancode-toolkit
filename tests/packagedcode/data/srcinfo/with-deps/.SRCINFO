@@ -1,0 +1,18 @@
+pkgbase = rust-app
+	pkgdesc = Rust application with dependencies
+	pkgver = 2.0.0
+	pkgrel = 1
+	url = https://example.com
+	arch = x86_64
+	arch = aarch64
+	license = Apache
+	depends = gcc-libs
+	depends = glibc
+	makedepends = rust
+	makedepends = cargo
+	optdepends = python: for scripts
+	optdepends = bash: for shell completion
+	source = rust-app-2.0.0.tar.gz
+	md5sums = abc123
+
+pkgname = rust-app
