@@ -5,7 +5,7 @@ name: Create ScanCode release archives, then test and publish to GH and PyPI
  # Summary of the steps:
  # - Build wheel and sdist for the "main" scancode, then build these for the "mini" flavor
  #  - test each wheel and sdist on every possible OS x Python version combinations
- # - Build release app archives, one for each of linux, windows, macos on Python 3.9 to 3.13
+ # - Build release app archives, one for each of linux, windows, macos on Python 3.10 to 3.13
  #  - test each on its target OS and Python version
  # - Create gh-release and upload app archives to release
  # - Upload all wheels and sdist to PyPI
@@ -34,7 +34,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+       pyver: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
       - uses: actions/checkout@v4
@@ -100,7 +100,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+       pyver: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
       - uses: actions/checkout@v4
@@ -135,7 +135,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+       pyver: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
       - uses: actions/checkout@v4
@@ -170,7 +170,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+       pyver: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
       - uses: actions/checkout@v4
@@ -240,7 +240,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-24.04, ubuntu-24.04, macos-13, macos-14]
-        pyver: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        pyver: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
       - uses: actions/checkout@v4
@@ -286,7 +286,7 @@ jobs:
       fail-fast: true
       matrix:
        os: [windows-2025, windows-2022]
-       pyver: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+       pyver: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
       - uses: actions/checkout@v4
@@ -331,7 +331,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-24.04, ubuntu-24.04]
-        pyver: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        pyver: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
       - uses: actions/checkout@v4
@@ -376,7 +376,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [macos-13, macos-14]
-        pyver: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        pyver: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
       - uses: actions/checkout@v4
@@ -421,7 +421,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [windows-2025, windows-2022]
-        pyver: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        pyver: ["3.10", "3.11", "3.12", "3.13"]
 
     steps:
       - uses: actions/checkout@v4
@@ -469,12 +469,6 @@ jobs:
           name: source_app
           path: dist
 
-      - name: Download a single artifact macos_app for python 3.9
-        uses: actions/download-artifact@v4
-        with:
-          name: macos_app_py_3.9
-          path: dist
-
       - name: Download a single artifact macos_app for python 3.10
         uses: actions/download-artifact@v4
         with:
@@ -499,12 +493,6 @@ jobs:
           name: macos_app_py_3.13
           path: dist
 
-      - name: Download a single artifact linux_app for python 3.9
-        uses: actions/download-artifact@v4
-        with:
-          name: linux_app_py_3.9
-          path: dist
-
       - name: Download a single artifact linux_app for python 3.10
         uses: actions/download-artifact@v4
         with:
@@ -527,12 +515,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: linux_app_py_3.13
-          path: dist
-
-      - name: Download a single artifact windows_app for python 3.9
-        uses: actions/download-artifact@v4
-        with:
-          name: windows_app_py_3.9
           path: dist
 
       - name: Download a single artifact windows_app for python 3.10
@@ -585,7 +567,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        dist_names: ["wheels-3.9", "wheels-3.10", "wheels-3.11", "wheels-3.12", "wheels-3.13", sdists]
+        dist_names: ["wheels-3.10", "wheels-3.11", "wheels-3.12", "wheels-3.13", sdists]
 
     steps:
       - name: Set up Python

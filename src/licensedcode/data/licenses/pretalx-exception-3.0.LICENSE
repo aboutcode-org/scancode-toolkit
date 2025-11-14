@@ -1,0 +1,63 @@
+---
+key: pretalx-exception-3.0
+short_name: pretalx exception to AGPL-3.0
+name: pretalx exception to AGPL-3.0
+category: Copyleft
+owner: pretalx
+homepage_url: https://github.com/pretalx/pretalx/blob/main/LICENSES/LicenseRef-Pretalx-AGPL-3.0-Terms.txt
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-pretalx-exception-3.0
+text_urls:
+    - https://raw.githubusercontent.com/pretalx/pretalx/refs/heads/main/LICENSES/LicenseRef-Pretalx-AGPL-3.0-Terms.txt
+ignorable_urls:
+    - https://github.com/pretalx/pretalx
+    - https://pretalx.com/
+---
+
+Licensing of pretalx
+====================
+
+pretalx is licensed under the GNU Affero General Public License, version 3.0 as published by the Free Software
+Foundation, Inc. (AGPLv3), which is included next to this file as AGPL-3.0-only.txt
+
+As special exceptions the Additional Terms on the work licensed herein, pursuant to Section 7 of Affero General
+Public License are as follows:
+
+1. You are permitted to use pretalx or combined or modified versions of pretalx without respecting GNU AGPL section 13
+   (Remote Network Interaction) as long as you follow all of the additional terms in this document and do NOT use
+   pretalx for any of the following purposes:
+
+    a) Making the functionality of pretalx available to third parties as a service (SaaS),
+
+    b) Offering a service the value of which entirely or primarily derives from the value of pretalx or the
+       combined or modified version of pretalx,
+
+    c) Offering a service that accomplishes for users the primary purpose of pretalx or the combined or modified
+       version of pretalx,
+
+    d) Using pretalx to organize, promote, or sell products or services offered or executed by third parties.
+
+2. Pursuant to AGPLv3, Section 7 (b), you are not allowed to remove the attribution notice indicating the generated
+   website is built using pretalx at the bottom of all generated web pages. If you run a modified version of pretalx,
+   you are allowed to rephrase it to indicate a combined work in a form similar to "powered by <Company> based on
+   pretalx, source code available at <location>". The word pretalx must be a link to https://pretalx.com/.
+
+3. Pursuant to AGPLv3, Section 7 (c), if you distribute a modified version in source or binary form, or if you offer
+   usage of a modified version to third parties (SaaS), it is important to be clear about what kind of modifications
+   the distributed work contains. You may not give the impression that the work being distributed or the service
+   provided is an authorized or original distribution by pretalx.
+
+Additionally, parts of this repository are NOT covered by this license but instead by a more permissive one.
+Those files will list their license as an SPDX license expression either in the file header or in a .license file.
+The main use cases of these more permissively licensed files are:
+
+a) All third-party components located at src/pretalx/static/ are licensed by their respective copyright owners as noted
+   in the respective files.
+b) All other files in src/pretalx/static/ are licensed under the terms of the Apache License 2.0.
+c) All translation files located at src/pretalx/locale/ are licensed under the terms of the Apache License 2.0.
+d) All documentation files located at doc/ are licensed under the terms of the CC-BY-SA-4.0 license.
+
+Older versions of pretalx have been released under the Apache License 2.0. This version still contains contributions
+licensed by their respective copyright owners under the terms of Apache License 2.0 (full text in the Apache-2.0.txt file),
+as indicated by the SPDX license expression available for those files.
+A full history of the code and all contributions can be obtained at https://github.com/pretalx/pretalx
