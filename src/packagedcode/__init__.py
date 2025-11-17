@@ -246,15 +246,29 @@ if on_linux:
         win_reg.InstalledProgramFromDockerUtilityvmSoftwareHandler,
     ]
 
+
+# These handlers are special as they use filetype to
+# detect these binaries instead of datafile path patterns
+# as these are optionally installed, we can skip checking
+# for filetype if these are not available
+BINARY_HANDLERS_PRESENT = False
+BINARY_PACKAGE_DATAFILE_HANDLERS = []
+
 try:
     from go_inspector.binary import get_go_binary_handler
-    APPLICATION_PACKAGE_DATAFILE_HANDLERS.append(get_go_binary_handler())
+    handler = get_go_binary_handler()
+    APPLICATION_PACKAGE_DATAFILE_HANDLERS.append(handler)
+    BINARY_PACKAGE_DATAFILE_HANDLERS.append(handler)
+    BINARY_HANDLERS_PRESENT = True
 except ImportError:
     pass
 
 try:
     from rust_inspector.packages import get_rust_binary_handler
-    APPLICATION_PACKAGE_DATAFILE_HANDLERS.append(get_rust_binary_handler())
+    handler = get_rust_binary_handler()
+    APPLICATION_PACKAGE_DATAFILE_HANDLERS.append(handler)
+    BINARY_PACKAGE_DATAFILE_HANDLERS.append(handler)
+    BINARY_HANDLERS_PRESENT = True
 except ImportError:
     pass
 
