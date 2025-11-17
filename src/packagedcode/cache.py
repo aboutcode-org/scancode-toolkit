@@ -66,6 +66,8 @@ class PkgManifestPatternsCache:
         scancode_cache_dir=scancode_cache_dir,
         force=False,
         timeout=PACKAGE_INDEX_LOCK_TIMEOUT,
+        system_package_datafile_handlers=SYSTEM_PACKAGE_DATAFILE_HANDLERS,
+        application_package_datafile_handlers=APPLICATION_PACKAGE_DATAFILE_HANDLERS,
     ):
         """
         Load or build and save and return a PkgManifestPatternsCache object.
@@ -88,7 +90,7 @@ class PkgManifestPatternsCache:
             except Exception as e:
                 # work around some rare Windows quirks
                 import traceback
-                print('Inconsistent License cache: rebuilding index.')
+                print('Inconsistent Package cache: rebuilding index.')
                 print(str(e))
                 print(traceback.format_exc())
 
@@ -102,13 +104,13 @@ class PkgManifestPatternsCache:
             with lockfile.FileLock(lock_file).locked(timeout=timeout):
 
                 system_multiregex_patterns, system_handlers_by_regex = build_mappings_and_multiregex_patterns(
-                    datafile_handlers=SYSTEM_PACKAGE_DATAFILE_HANDLERS,
+                    datafile_handlers=system_package_datafile_handlers,
                 )
                 application_multiregex_patterns, application_handlers_by_regex = build_mappings_and_multiregex_patterns(
-                    datafile_handlers=APPLICATION_PACKAGE_DATAFILE_HANDLERS,
+                    datafile_handlers=application_package_datafile_handlers,
                 )
                 package_cache = PkgManifestPatternsCache(
-                    handler_by_regex=system_handlers_by_regex + application_handlers_by_regex,
+                    handler_by_regex=system_handlers_by_regex | application_handlers_by_regex,
                     system_multiregex_patterns=system_multiregex_patterns,
                     application_multiregex_patterns=application_multiregex_patterns,
                 )
@@ -123,7 +125,11 @@ class PkgManifestPatternsCache:
         """
         Dump this package cache on disk at ``cache_file``.
         """
-        package_cache = {}
+        package_cache = {
+            "handler_by_regex": self.handler_by_regex,
+            "system_multiregex_patterns": self.system_multiregex_patterns,
+            "application_multiregex_patterns": self.application_multiregex_patterns,
+        }
         with open(cache_file, 'w') as f:
             json.dump(package_cache, f)
 
@@ -136,19 +142,23 @@ def get_prematchers_from_glob_pattern(pattern):
     ]
 
 
-def build_mappings_and_multiregex_patterns(
-    datafile_handlers,
-):
+def build_mappings_and_multiregex_patterns(datafile_handlers):
     """
-    Return an index built from rules and licenses directories
+    Return a mapping of regex patterns to datafile handler IDs and
+    multiregex patterns consisting of regex patterns and prematchers.
     """
+    handler_by_regex = {}
+    multiregex_patterns = []
+
+    if not datafile_handlers:
+        return multiregex_patterns, handler_by_regex
+
     with_patterns = []
 
     for handler in datafile_handlers:
         if handler.path_patterns:
             with_patterns.append(handler)
 
-    handler_by_regex = {}
     prematchers_by_regex = {}
 
     for handler in with_patterns:
@@ -163,16 +173,17 @@ def build_mappings_and_multiregex_patterns(
             else:
                 handler_by_regex[regex_pattern]= [handler.datasource_id]
 
-    multiregex_patterns = []
     for regex in handler_by_regex.keys():
         regex_and_prematcher = (regex, prematchers_by_regex.get(regex, []))
         multiregex_patterns.append(regex_and_prematcher)
 
-    return handler_by_regex, multiregex_patterns
+    return multiregex_patterns, handler_by_regex
 
 
 def get_cache(
     force=False,
+    packagedcode_cache_dir=packagedcode_cache_dir,
+    scancode_cache_dir=scancode_cache_dir,
 ):
     """
     Return a PkgManifestPatternsCache either rebuilt, cached or loaded from disk.
@@ -197,4 +208,15 @@ def load_cache_file(cache_file):
     with open(cache_file) as f:
         cache = json.load(f)
 
-    return PkgManifestPatternsCache.from_mapping(cache)
+    # convert multiregex patterns from list to tuples while loading
+    cache_transformed = {"handler_by_regex": cache.get("handler_by_regex")}
+    cache_transformed["system_multiregex_patterns"] = [
+        tuple(multiregex_pattern)
+        for multiregex_pattern in cache.get("system_multiregex_patterns")
+    ]
+    cache_transformed["application_multiregex_patterns"] = [
+        tuple(multiregex_pattern)
+        for multiregex_pattern in cache.get("application_multiregex_patterns")
+    ]
+
+    return PkgManifestPatternsCache.from_mapping(cache_transformed)

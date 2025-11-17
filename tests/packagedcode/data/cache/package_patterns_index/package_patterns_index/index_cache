@@ -1,0 +1,1 @@
+{"handler_by_regex": {"(?s:.*\\.ABOUT)\\Z": ["about_file"]}, "system_multiregex_patterns": [], "application_multiregex_patterns": [["(?s:.*\\.ABOUT)\\Z", [".about"]]]}

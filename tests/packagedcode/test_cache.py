@@ -1,0 +1,49 @@
+#
+# Copyright (c) nexB Inc. and others. All rights reserved.
+# ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
+#
+
+import os.path
+
+from packagedcode import cache
+from packages_test_utils import PackageTester
+from scancode_config import REGEN_TEST_FIXTURES
+from scancode.cli_test_utils import run_scan_click
+from scancode.cli_test_utils import check_json_scan
+
+
+TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
+
+class TestMultiregexPatterns(PackageTester):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_build_mappings_and_multiregex_patterns_works(self):
+        from packagedcode.about import AboutFileHandler
+
+        multiregex_patterns, handler_by_regex = cache.build_mappings_and_multiregex_patterns(
+            datafile_handlers=[AboutFileHandler],
+        )
+        assert multiregex_patterns == [('(?s:.*\\.ABOUT)\\Z', ['.about'])]
+        assert handler_by_regex == {'(?s:.*\\.ABOUT)\\Z': ['about_file']}
+
+    def test_build_package_cache_works(self):
+        from packagedcode.about import AboutFileHandler
+
+        package_cache_dir = self.get_test_loc('cache/package_patterns_index')
+        package_cache = cache.PkgManifestPatternsCache.load_or_build(
+            packagedcode_cache_dir=package_cache_dir,
+            application_package_datafile_handlers=[AboutFileHandler],
+            system_package_datafile_handlers=[],
+            force=True,
+        )
+        
+        assert not package_cache.system_multiregex_patterns
+        assert len(package_cache.application_multiregex_patterns) == 1
+        assert '(?s:.*\\.ABOUT)\\Z' in package_cache.handler_by_regex
+
+
