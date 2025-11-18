@@ -106,7 +106,9 @@ def _parse(
         ])
 
     if not datafile_handlers:
-        if TRACE:
+        if BINARY_HANDLERS_PRESENT:
+            datafile_handlers.extend(BINARY_PACKAGE_DATAFILE_HANDLERS)
+        elif TRACE:
             logger_debug(f'_parse: no package datafile detected at {package_path}')
 
     for handler in datafile_handlers:
