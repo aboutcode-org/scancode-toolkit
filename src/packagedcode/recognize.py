@@ -10,8 +10,6 @@
 import os
 import sys
 
-import multiregex
-
 from commoncode import filetype
 from commoncode.fileutils import as_posixpath
 
@@ -87,13 +85,12 @@ def _parse(
 
     assert application or system or package_only
     if package_only or (application and system):
-        multiregex_patterns = package_patterns.all_multiregex_patterns
+        package_matcher = package_patterns.all_package_matcher
     elif application:
-        multiregex_patterns = package_patterns.application_multiregex_patterns
+        package_matcher = package_patterns.application_package_matcher
     elif system:
-        multiregex_patterns = package_patterns.system_multiregex_patterns
+        package_matcher = package_patterns.system_package_matcher
 
-    package_matcher = multiregex.RegexMatcher(multiregex_patterns)
     matched_patterns = package_matcher.match(package_path)
 
     datafile_handlers = []
@@ -103,19 +100,14 @@ def _parse(
         if TRACE:
             logger_debug(f'_parse:.handler_ids: {handler_ids}')
 
-        datafile_handlers = [
+        datafile_handlers.extend([
             HANDLER_BY_DATASOURCE_ID.get(handler_id)
             for handler_id in handler_ids
-        ]
+        ])
 
     if not datafile_handlers:
-        if BINARY_HANDLERS_PRESENT:
-            datafile_handlers = BINARY_PACKAGE_DATAFILE_HANDLERS
-        else:
-            if TRACE:
-                logger_debug(f'_parse: no package datafile detected at {package_path}')
-
-            return
+        if TRACE:
+            logger_debug(f'_parse: no package datafile detected at {package_path}')
 
     for handler in datafile_handlers:
         if TRACE:

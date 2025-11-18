@@ -8,12 +8,13 @@
 #
 
 import os
-import json
-import attr
 import fnmatch
+import pickle
+import multiregex
+
+import attr
 
 from commoncode.fileutils import create_dir
-
 from packagedcode import APPLICATION_PACKAGE_DATAFILE_HANDLERS
 from packagedcode import SYSTEM_PACKAGE_DATAFILE_HANDLERS
 
@@ -28,6 +29,9 @@ patterns is safe to use across multiple processes using lock files.
 
 # global in-memory cache of the PkgManifestPatternsCache
 _PACKAGE_CACHE = None
+
+# This is the Pickle protocol we use, which was added in Python 3.4.
+PICKLE_PROTOCOL = 4
 
 PACKAGE_INDEX_LOCK_TIMEOUT = 60 * 6
 PACKAGE_INDEX_DIR = 'package_patterns_index'
@@ -45,23 +49,21 @@ class PkgManifestPatternsCache:
     """
 
     handler_by_regex = attr.ib(default=attr.Factory(dict))
-    system_multiregex_patterns = attr.ib(default=attr.Factory(list))
-    application_multiregex_patterns = attr.ib(default=attr.Factory(list))
+    system_package_matcher = attr.ib(default=None)
+    application_package_matcher = attr.ib(default=None)
+    all_package_matcher = attr.ib(default=None)
 
     @staticmethod
-    def all_multiregex_patterns(self):
-        return self.application_multiregex_patterns + [
+    def all_multiregex_patterns(application_multiregex_patterns, system_multiregex_patterns):
+        return application_multiregex_patterns + [
             multiregex_pattern
-            for multiregex_pattern in self.system_multiregex_patterns
-            if multiregex_pattern not in self.application_multiregex_patterns
+            for multiregex_pattern in system_multiregex_patterns
+            if multiregex_pattern not in application_multiregex_patterns
         ]
 
     @classmethod
-    def from_mapping(cls, cache_mapping):
-        return cls(**cache_mapping)
-
-    @staticmethod
     def load_or_build(
+        cls,
         packagedcode_cache_dir=packagedcode_cache_dir,
         scancode_cache_dir=scancode_cache_dir,
         force=False,
@@ -94,7 +96,6 @@ class PkgManifestPatternsCache:
                 print(str(e))
                 print(traceback.format_exc())
 
-
         from scancode import lockfile
         lock_file = os.path.join(scancode_cache_dir, PACKAGE_LOCKFILE_NAME)
 
@@ -109,29 +110,31 @@ class PkgManifestPatternsCache:
                 application_multiregex_patterns, application_handlers_by_regex = build_mappings_and_multiregex_patterns(
                     datafile_handlers=application_package_datafile_handlers,
                 )
-                package_cache = PkgManifestPatternsCache(
+                all_multiregex_matcher = PkgManifestPatternsCache.all_multiregex_patterns(
+                    application_multiregex_patterns, system_multiregex_patterns,
+                )
+                system_package_matcher = multiregex.RegexMatcher(system_multiregex_patterns)
+                application_package_matcher = multiregex.RegexMatcher(application_multiregex_patterns)
+                all_package_matcher = multiregex.RegexMatcher(all_multiregex_matcher)
+                package_cache = cls(
                     handler_by_regex=system_handlers_by_regex | application_handlers_by_regex,
-                    system_multiregex_patterns=system_multiregex_patterns,
-                    application_multiregex_patterns=application_multiregex_patterns,
+                    system_package_matcher=system_package_matcher,
+                    application_package_matcher=application_package_matcher,
+                    all_package_matcher=all_package_matcher,
                 )
                 package_cache.dump(cache_file)
                 return package_cache
 
         except lockfile.LockTimeout:
             # TODO: handle unable to lock in a nicer way
-            raise
+            raise 
 
     def dump(self, cache_file):
         """
-        Dump this package cache on disk at ``cache_file``.
+        Dump this license cache on disk at ``cache_file``.
         """
-        package_cache = {
-            "handler_by_regex": self.handler_by_regex,
-            "system_multiregex_patterns": self.system_multiregex_patterns,
-            "application_multiregex_patterns": self.application_multiregex_patterns,
-        }
-        with open(cache_file, 'w') as f:
-            json.dump(package_cache, f)
+        with open(cache_file, 'wb') as fn:
+            pickle.dump(self, fn, protocol=PICKLE_PROTOCOL)
 
 
 def get_prematchers_from_glob_pattern(pattern):
@@ -203,20 +206,16 @@ def get_cache(
 
 def load_cache_file(cache_file):
     """
-    Return a PkgManifestPatternsCache loaded from JSON ``cache_file``.
+    Return a PkgManifestPatternsCache loaded from ``cache_file``.
     """
-    with open(cache_file) as f:
-        cache = json.load(f)
-
-    # convert multiregex patterns from list to tuples while loading
-    cache_transformed = {"handler_by_regex": cache.get("handler_by_regex")}
-    cache_transformed["system_multiregex_patterns"] = [
-        tuple(multiregex_pattern)
-        for multiregex_pattern in cache.get("system_multiregex_patterns")
-    ]
-    cache_transformed["application_multiregex_patterns"] = [
-        tuple(multiregex_pattern)
-        for multiregex_pattern in cache.get("application_multiregex_patterns")
-    ]
-
-    return PkgManifestPatternsCache.from_mapping(cache_transformed)
+    with open(cache_file, 'rb') as lfc:
+        try:
+            return pickle.load(lfc)
+        except Exception as e:
+            msg = (
+                'ERROR: Failed to load package cache (the file may be corrupted ?).\n'
+                f'Please delete "{cache_file}" and retry.\n'
+                'If the problem persists, copy this error message '
+                'and submit a bug report at https://github.com/nexB/scancode-toolkit/issues/'
+            )
+            raise Exception(msg) from e

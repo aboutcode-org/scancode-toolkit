@@ -10,6 +10,8 @@
 import os.path
 
 from packagedcode import cache
+from commoncode.fileutils import as_posixpath
+
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
 from scancode.cli_test_utils import run_scan_click
@@ -33,17 +35,27 @@ class TestMultiregexPatterns(PackageTester):
 
     def test_build_package_cache_works(self):
         from packagedcode.about import AboutFileHandler
+        from packagedcode.bower import BowerJsonHandler
 
-        package_cache_dir = self.get_test_loc('cache/package_patterns_index')
+        package_cache_dir = self.get_test_loc('cache/')
         package_cache = cache.PkgManifestPatternsCache.load_or_build(
             packagedcode_cache_dir=package_cache_dir,
             application_package_datafile_handlers=[AboutFileHandler],
-            system_package_datafile_handlers=[],
+            system_package_datafile_handlers=[BowerJsonHandler],
             force=True,
         )
+        test_path = "scancode-toolkit.ABOUT"
+
+        assert not package_cache.system_package_matcher.match(test_path)
+        assert package_cache.application_package_matcher.match(test_path)
         
-        assert not package_cache.system_multiregex_patterns
-        assert len(package_cache.application_multiregex_patterns) == 1
-        assert '(?s:.*\\.ABOUT)\\Z' in package_cache.handler_by_regex
+        regex, _match = package_cache.all_package_matcher.match(test_path).pop()
+        assert package_cache.handler_by_regex.get(regex.pattern).pop() == AboutFileHandler.datasource_id
 
+    def check_empty_file_scan_works(self):
 
+        test_file = self.get_test_loc('cache/.gitignore')
+        package_path = as_posixpath(test_file)
+        package_matcher = cache.get_cache()
+
+        assert not package_matcher.match(package_path)
