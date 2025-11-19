@@ -33,6 +33,11 @@ documenting a program's options. For example:
 --system-package             Scan ``<input>`` for installed system package
                              databases.
 
+-b, --binary-package         Scan <input> for package and dependency related
+                             data in binaries. Note that looking for packages
+                             in binaries makes package scan slower.
+                             Currently supported binaries: Go, Rust.
+
 --package-only               Scan ``<input>`` for system and application
                              only for package metadata, without license/
                              copyright detection and package assembly.

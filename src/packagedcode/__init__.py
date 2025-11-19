@@ -251,24 +251,19 @@ if on_linux:
 # detect these binaries instead of datafile path patterns
 # as these are optionally installed, we can skip checking
 # for filetype if these are not available
-BINARY_HANDLERS_PRESENT = False
 BINARY_PACKAGE_DATAFILE_HANDLERS = []
 
 try:
     from go_inspector.binary import get_go_binary_handler
     handler = get_go_binary_handler()
-    APPLICATION_PACKAGE_DATAFILE_HANDLERS.append(handler)
     BINARY_PACKAGE_DATAFILE_HANDLERS.append(handler)
-    BINARY_HANDLERS_PRESENT = True
 except ImportError:
     pass
 
 try:
     from rust_inspector.packages import get_rust_binary_handler
     handler = get_rust_binary_handler()
-    APPLICATION_PACKAGE_DATAFILE_HANDLERS.append(handler)
     BINARY_PACKAGE_DATAFILE_HANDLERS.append(handler)
-    BINARY_HANDLERS_PRESENT = True
 except ImportError:
     pass
 
@@ -276,7 +271,7 @@ ALL_DATAFILE_HANDLERS = (
     APPLICATION_PACKAGE_DATAFILE_HANDLERS + [
         p for p in SYSTEM_PACKAGE_DATAFILE_HANDLERS
         if p not in APPLICATION_PACKAGE_DATAFILE_HANDLERS
-    ]
+    ] + BINARY_PACKAGE_DATAFILE_HANDLERS
 )
 
 # registry of all handler classes keyed by datasource_id

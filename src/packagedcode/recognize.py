@@ -14,7 +14,6 @@ from commoncode import filetype
 from commoncode.fileutils import as_posixpath
 
 from packagedcode import HANDLER_BY_DATASOURCE_ID
-from packagedcode import BINARY_HANDLERS_PRESENT
 from packagedcode import BINARY_PACKAGE_DATAFILE_HANDLERS
 from packagedcode import models
 from packagedcode.cache import get_cache
@@ -47,6 +46,7 @@ def recognize_package_data(
     location,
     application=True,
     system=False,
+    binary=False,
     package_only=False,
 ):
     """
@@ -61,9 +61,10 @@ def recognize_package_data(
 
     return list(_parse(
         location=location,
-        package_only=package_only,
         application=application,
         system=system,
+        binary=binary,
+        package_only=package_only,
     ))
 
 
@@ -71,6 +72,7 @@ def _parse(
     location,
     application=True,
     system=False,
+    binary=False,
     package_only=False,
 ):
     """
@@ -83,7 +85,8 @@ def _parse(
     package_path = as_posixpath(location)
     package_patterns = get_cache()
 
-    assert application or system or package_only
+    has_patterns = application or system or package_only
+    assert has_patterns or binary
     if package_only or (application and system):
         package_matcher = package_patterns.all_package_matcher
     elif application:
@@ -91,22 +94,30 @@ def _parse(
     elif system:
         package_matcher = package_patterns.system_package_matcher
 
-    matched_patterns = package_matcher.match(package_path)
+    matched_patterns = []
+    if has_patterns:
+        matched_patterns = package_matcher.match(package_path)
 
-    datafile_handlers = []
+    all_handler_ids = []
     for matched_pattern in matched_patterns:
         regex, _match = matched_pattern
         handler_ids = package_patterns.handler_by_regex.get(regex.pattern)
         if TRACE:
             logger_debug(f'_parse:.handler_ids: {handler_ids}')
 
-        datafile_handlers.extend([
-            HANDLER_BY_DATASOURCE_ID.get(handler_id)
+        all_handler_ids.extend([
+            handler_id
             for handler_id in handler_ids
+            if handler_id not in all_handler_ids
         ])
 
+    datafile_handlers = [
+        HANDLER_BY_DATASOURCE_ID.get(handler_id)
+        for handler_id in all_handler_ids
+    ]
+
     if not datafile_handlers:
-        if BINARY_HANDLERS_PRESENT:
+        if binary:
             datafile_handlers.extend(BINARY_PACKAGE_DATAFILE_HANDLERS)
         elif TRACE:
             logger_debug(f'_parse: no package datafile detected at {package_path}')

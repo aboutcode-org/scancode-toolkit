@@ -172,6 +172,20 @@ class PackageScanner(ScanPlugin):
         ),
         PluggableCommandLineOption(
             (
+                '-b',
+                '--binary-package',
+            ),
+            is_flag=True,
+            default=False,
+            help=(
+                'Scan <input> for package and dependency related data in binaries. '
+                'Currently supported binaries: Go, Rust.'
+            ),
+            help_group=SCAN_GROUP,
+            sort_order=22,
+        ),
+        PluggableCommandLineOption(
+            (
                 '--package-only',
             ),
             is_flag=True,
@@ -182,7 +196,7 @@ class PackageScanner(ScanPlugin):
                 'license/copyright detection and top-level package creation.'
             ),
             help_group=SCAN_GROUP,
-            sort_order=22,
+            sort_order=23,
         ),
         PluggableCommandLineOption(
             ('--list-packages',),
@@ -195,10 +209,17 @@ class PackageScanner(ScanPlugin):
         ),
     ]
 
-    def is_enabled(self, package, system_package, package_only, **kwargs):
-        return package or system_package or package_only
+    def is_enabled(self, package, system_package, binary_package, package_only, **kwargs):
+        return package or system_package or binary_package or package_only
 
-    def get_scanner(self, package=True, system_package=False, package_only=False, **kwargs):
+    def get_scanner(
+        self,
+        package=True,
+        system_package=False,
+        binary_package=False,
+        package_only=False,
+        **kwargs
+    ):
         """
         Return a scanner callable to scan a file for package data.
         """
@@ -208,6 +229,7 @@ class PackageScanner(ScanPlugin):
             get_package_data,
             application=package,
             system=system_package,
+            binary=binary_package,
             package_only=package_only,
         )
 
@@ -464,7 +486,7 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
                 resource.scan_errors.append(msg)
                 resource.save(codebase)
 
-                if TRACE:
+                if TRACE_ASSEMBLY:
                     raise Exception(msg) from e
 
     return packages, dependencies
