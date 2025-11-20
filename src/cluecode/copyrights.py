@@ -17,10 +17,10 @@ from collections import deque
 from time import time
 
 import attr
-from nostril_detector.nonsense_detector import generate_nonsense_detector
 
 from commoncode.text import toascii
 from commoncode.text import unixlinesep
+from textcode.gibberish import Gibberish
 from pygmars import lex
 from pygmars import parse
 from pygmars import Token
@@ -60,9 +60,6 @@ if TRACE or TRACE_TOK:
 
 if TRACE_DEEP:
     logger_debug = print
-
-
-nonsense = generate_nonsense_detector(min_length=1)
 
 
 """
@@ -4271,6 +4268,8 @@ def strip_balanced_edge_parens(s):
 
 is_only_digit_and_punct = re.compile('^[^A-Za-z]+$').match
 
+gibberish_detector = Gibberish()
+
 
 def is_candidate(prepared_line):
     """
@@ -4288,10 +4287,9 @@ def is_candidate(prepared_line):
 
         return False
 
-    if nonsense(prepared_line):
+    if gibberish_detector.detect_gibberish(prepared_line):
         if TRACE:
-            logger_debug(f'is_candidate: nonsense:\n{prepared_line!r}')
-
+            logger_debug(f'is_candidate: gibberish_detector.detect_gibberish:\n{prepared_line!r}')
         return False
 
     if copyrights_hint.years(prepared_line):
