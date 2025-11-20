@@ -11,10 +11,13 @@
 
 import math
 import pickle
-import os
+from pathlib import Path
 
-data_dir =  os.path.dirname(os.path.abspath(__file__)) + '/data/gibberish/'
-model_path = data_dir + 'gib_model.pki'
+data_dir = Path(__file__).parent / 'data' / 'gibberish'
+model_path = data_dir / 'gib_model.pki'
+big_file_path = data_dir / 'big.txt'
+good_file_path = data_dir / 'good.txt'
+bad_file_path = data_dir / 'bad.txt'
 
 accepted_chars = 'abcdefghijklmnopqrstuvwxyz0123456789- '
 pos = dict([(char, idx) for idx, char in enumerate(accepted_chars)])
@@ -22,13 +25,10 @@ pos = dict([(char, idx) for idx, char in enumerate(accepted_chars)])
 
 class Gibberish(object):
     def __init__(self):
-        self.train_if_necessary()
-
-    def train_if_necessary(self):
-        if not os.path.isfile(model_path):
-            self.train()
-        else:
+        if model_path.exists():
             self.load_persisted_model()
+        else:
+            self.train()
 
     def persist_model(self):
         with open(model_path, 'wb') as f:
@@ -62,8 +62,8 @@ class Gibberish(object):
         # The exponentiation translates from log probs to probs.
         return math.exp(log_prob / (transition_ct or 1))
 
-    def train(self, bigfile=data_dir + 'big.txt', goodfile=data_dir + 'good.txt',
-              badfile=data_dir + 'bad.txt'):
+    def train(self, bigfile=big_file_path, goodfile=good_file_path,
+              badfile=bad_file_path):
         """ Write a simple model as a pickle file """
         k = len(accepted_chars)
         # Assume we have seen 10 of each character pair.  This acts as a kind of
@@ -103,9 +103,7 @@ class Gibberish(object):
         self.persist_model()
 
     def detect_gibberish(self, text):
-
         text = ''.join(self.normalize(text))
-
         return self.avg_transition_prob(text, self.mat) < self.thresh
 
     def percent_gibberish(self, text):
