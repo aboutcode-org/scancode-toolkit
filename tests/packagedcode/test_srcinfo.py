@@ -32,7 +32,6 @@ class TestSrcinfo(PackageTester):
         assert len(packages) == 1
         package = packages[0]
         
-        # Should have runtime, build, and optional dependencies
         runtime_deps = [d for d in package.dependencies if d.is_runtime and not d.is_optional]
         build_deps = [d for d in package.dependencies if not d.is_runtime]
         opt_deps = [d for d in package.dependencies if d.is_optional]
@@ -48,24 +47,19 @@ class TestSrcinfo(PackageTester):
         assert len(packages) == 1
         package = packages[0]
         
-        # Check for architecture-specific dependencies
         arch_specific = [d for d in package.dependencies if 'x86_64' in d.scope or 'aarch64' in d.scope]
         assert len(arch_specific) > 0
 
     def test_parse_srcinfo_split_package(self):
-        """Test parsing split packages (multiple pkgname sections)"""
         test_file = self.get_test_loc('srcinfo/split-package/.SRCINFO')
         packages = list(srcinfo.SrcinfoHandler.parse(test_file))
         
-        # Should yield multiple packages
         assert len(packages) > 1
         
-        # All should share same pkgbase but different pkgname
         names = [p.name for p in packages]
-        assert len(set(names)) == len(names)  # All unique
+        assert len(set(names)) == len(names) 
 
     def test_parse_srcinfo_with_checksums(self):
-        """Test that checksums are captured in extra_data"""
         test_file = self.get_test_loc('srcinfo/with-checksums/.SRCINFO')
         packages = list(srcinfo.SrcinfoHandler.parse(test_file))
         

@@ -2,7 +2,6 @@ pkgbase = rust-multiarch
 	pkgdesc = Multi-architecture Rust package
 	pkgver = 1.5.0
 	pkgrel = 2
-	url = https://example.com
 	arch = x86_64
 	arch = aarch64
 	license = GPL
