@@ -134,6 +134,9 @@ Other Important Documentation Pages:
 
 See also https://aboutcode.org for related companion projects and tools.
 
+To cite this repository, visit the main page and click on the 'Cite this
+repository' button for APA or BibTeX citation formats.
+
 
 Installation
 ============
