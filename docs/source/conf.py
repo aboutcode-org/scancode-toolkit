@@ -18,7 +18,9 @@
 # -- Project information -----------------------------------------------------
 
 project = "ScanCode-Toolkit"
-copyright = "nexB Inc. and others."
+copyright = "nexB Inc. and others." + \
+            "Except where otherwise noted, this documentation is " + \
+            "licensed under a cc-by-4.0"
 author = "AboutCode.org authors and contributors"
 
 # -- General configuration ---------------------------------------------------

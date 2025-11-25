@@ -1,7 +1,7 @@
 .. _add_new_license_for_det:
 
-How To Add a New License for Detection
-======================================
+Add a New License for Detection
+===============================
 
 How to add a new license for detection?
 ---------------------------------------

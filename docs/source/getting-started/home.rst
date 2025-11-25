@@ -135,4 +135,12 @@ audit function as they like on their own.
 
 Thank you for giving ScanCode a try!
 
+
+License
+-------
+ScanCode is licensed under Apache-2.0 and others. Datasets contributed is
+subject to CC-BY-4.0. See `License
+<https://github.com/aboutcode-org/scancode-toolkit?tab=readme-ov-file#license>`_
+for details.
+
 .. include::  /rst_snippets/other_imp_doc.rst

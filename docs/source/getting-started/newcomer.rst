@@ -115,19 +115,19 @@ Use ScanCode Better
 All Tutorials/How-Tos
 ^^^^^^^^^^^^^^^^^^^^^
 
-The Tutorials are:
+The How-To's are:
 
 #. :ref:`how_to_run_a_scan`
 #. :ref:`how_to_visualize_scan_results`
-#. :ref:`how_to_set_what_scan_detects`
 #. :ref:`how_to_extract_archives`
 #. :ref:`how_to_specify_output_format`
-#. :ref:`how_to_add_post_scan_plugin`
-
-The How-To's are:
-
+#. :ref:`how_to_set_what_scan_detects`
 #. :ref:`add_new_license_for_det`
 #. :ref:`add_new_license_det_rule`
+#. :ref:`install_new_license_plugin`
+#. :ref:`generate_attribution`
+#. :ref:`how_to_add_post_scan_plugin`
+
 
 .. _newcomer_whats_new:
 

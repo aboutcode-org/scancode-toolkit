@@ -1,7 +1,7 @@
 .. _generate_attribution:
 
-How To Generate Attribution from a ScanCode Scan
-================================================
+Generate Attribution from a ScanCode Scan
+=========================================
 
 How To generate attribution from a ScanCode scan?
 -------------------------------------------------

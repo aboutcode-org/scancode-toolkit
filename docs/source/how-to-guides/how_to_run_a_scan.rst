@@ -1,5 +1,5 @@
-How to Run a Scan
-=================
+Run a Scan
+==========
 
 In this simple tutorial example, we perform a basic scan on the ``samples`` directory distributed
 by default with ScanCode.
@@ -17,7 +17,7 @@ Looking into Files
 As mentioned previously, we are going to perform the scan on the ``samples`` directory distributed
 by default with ScanCode-Toolkit. Here's the directory structure and respective files:
 
-.. image::  /tutorials/data/files_sample.png
+.. image::  /how-to-guides/data/files_sample.png
 
 We notice here that the sample files contain a package ``zlib.tar.gz``. So we have to extract the
 archive before running the scan, to also scan the files inside this package.

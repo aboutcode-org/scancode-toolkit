@@ -1,7 +1,7 @@
 .. _how_to_extract_archives:
 
-How To Extract Archives
-=======================
+Extract Archives
+================
 
 ScanCode-Toolkit provides archive extraction. This command can be used before running a scan over
 a codebase in order to ensure all archives are extracted. Archives found inside an extracted
