@@ -1360,15 +1360,16 @@ class DatafileHandler:
     @classmethod
     def assemble_from_many_datafiles(
         cls,
-        datafile_name_patterns,
-        directory,
+        datafile_path_patterns,
+        resource,
         codebase,
         package_adder=add_to_package,
     ):
         """
         Assemble Package and Dependency from package data of the datafiles found
-        in multiple ``datafile_name_patterns`` name patterns (case- sensitive)
-        found in the ``directory`` Resource.
+        in potentially multiple ``datafile_name_patterns`` name patterns
+        (case- sensitive) found in the ``resource``. A ``resource`` can be a single
+        file, or a directory in which case we look for manifests in the directory.
 
         Create a Package from the first package data item. Update this package
         with other items. Assign to this Package the file tree from the parent
@@ -1383,22 +1384,20 @@ class DatafileHandler:
         multiple PackageData for unrelated Packages.
         """
         if TRACE:
-            logger_debug(f'assemble_from_many_datafiles: datafile_name_patterns: {datafile_name_patterns!r}')
+            logger_debug(f'assemble_from_many_datafiles: datafile_path_patterns: {datafile_path_patterns!r}')
 
-        if not codebase.has_single_resource:
-            siblings = list(directory.children(codebase))
-        else:
-            if directory:
-                siblings = [directory]
-            else:
-                siblings = []
+        siblings = []
+        if resource and resource.is_file:
+            siblings = [resource]
+        elif resource and resource.is_dir:
+            siblings = list(resource.children(codebase))
 
         pkgdata_resources = []
 
         # we iterate on datafile_name_patterns because their order matters
-        for datafile_name_pattern in datafile_name_patterns:
+        for path_pattern in datafile_path_patterns:
             for sibling in siblings:
-                if fnmatchcase(sibling.name, datafile_name_pattern):
+                if fnmatchcase(sibling.path, path_pattern):
                     for package_data in sibling.package_data:
                         package_data = PackageData.from_dict(package_data)
                         pkgdata_resources.append((package_data, sibling,))

@@ -151,18 +151,16 @@ class BasePodHandler(models.DatafileHandler):
             has_single_podspec = siblings_counts == 1
             has_multiple_podspec = siblings_counts > 1
 
-            datafile_name_patterns = (
-                'Podfile.lock',
-                'Podfile',
+            datafile_path_patterns = (
+                PodfileLockHandler.path_patterns +
+                PodfileHandler.path_patterns
             )
-
             if has_single_podspec:
                 # we can treat all podfile/spec as being for one package
-                datafile_name_patterns = (sibling_podspecs[0].name,) + datafile_name_patterns
-
-                yield from models.DatafileHandler.assemble_from_many_datafiles(
-                    datafile_name_patterns=datafile_name_patterns,
-                    directory=parent,
+                podspec_path_patterns = (f"*{sibling_podspecs[0].name}",)
+                yield from cls.assemble_from_many_datafiles(
+                    datafile_path_patterns=podspec_path_patterns + datafile_path_patterns,
+                    resource=parent,
                     codebase=codebase,
                     package_adder=package_adder,
                 )
@@ -172,11 +170,10 @@ class BasePodHandler(models.DatafileHandler):
                 # as we cannot determine easily which podfile is for which
                 # podspec
                 podspec = sibling_podspecs.pop()
-                datafile_name_patterns = (podspec.name,) + datafile_name_patterns
-
-                yield from models.DatafileHandler.assemble_from_many_datafiles(
-                    datafile_name_patterns=datafile_name_patterns,
-                    directory=parent,
+                podspec_path_patterns = (f"*{podspec.name}",)
+                yield from cls.assemble_from_many_datafiles(
+                    datafile_path_patterns=podspec_path_patterns + datafile_path_patterns,
+                    resource=parent,
                     codebase=codebase,
                     package_adder=package_adder,
                 )
@@ -200,9 +197,9 @@ class BasePodHandler(models.DatafileHandler):
 
             else:
                 # has_no_podspec:
-                yield from models.DatafileHandler.assemble_from_many_datafiles(
-                    datafile_name_patterns=datafile_name_patterns,
-                    directory=parent,
+                yield from cls.assemble_from_many_datafiles(
+                    datafile_path_patterns=datafile_path_patterns,
+                    resource=parent,
                     codebase=codebase,
                     package_adder=package_adder,
                 )

@@ -66,19 +66,14 @@ class CargoBaseHandler(models.DatafileHandler):
             for attribute in attributes_to_copy:
                 package_data.extra_data[attribute] = 'workspace'
                 workspace_package_data[attribute] = getattr(package_data, attribute)
+        
+        datafile_path_patterns = CargoTomlHandler.path_patterns + CargoLockHandler.path_patterns
 
         workspace_root = resource.parent(codebase)
-        if not workspace_root:
-            # If there's no parent (e.g., scanning a single file), use the directory part of the resource path
-            workspace_root_path = os.path.dirname(resource.path)
-        else:
-            workspace_root_path = workspace_root.path
-            
-        if workspace_package_data and workspace_members:
-
+        if workspace_root and workspace_package_data and workspace_members:
             # TODO: support glob patterns found in cargo workspaces
             for workspace_member_path in workspace_members:
-                workspace_directory_path = os.path.join(workspace_root_path, workspace_member_path)
+                workspace_directory_path = os.path.join(workspace_root.path, workspace_member_path)
                 workspace_directory = codebase.get_resource(path=workspace_directory_path)
                 if not workspace_directory:
                     continue
@@ -103,20 +98,18 @@ class CargoBaseHandler(models.DatafileHandler):
                         resource.save(codebase)
 
                 yield from cls.assemble_from_many_datafiles(
-                    datafile_name_patterns=('Cargo.toml', 'cargo.toml', 'Cargo.lock', 'cargo.lock'),
-                    directory=workspace_directory,
+                    datafile_path_patterns=datafile_path_patterns,
+                    resource=workspace_directory,
                     codebase=codebase,
                     package_adder=package_adder,
                 )
         else:
-            parent_resource = resource.parent(codebase)
-            if parent_resource:
-                yield from cls.assemble_from_many_datafiles(
-                    datafile_name_patterns=('Cargo.toml', 'cargo.toml', 'Cargo.lock', 'cargo.lock'),
-                    directory=parent_resource,
-                    codebase=codebase,
-                    package_adder=package_adder,
-                )
+            yield from cls.assemble_from_many_datafiles(
+                datafile_path_patterns=datafile_path_patterns,
+                resource=workspace_root,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
 
     @classmethod
     def update_resource_package_data(cls, workspace, workspace_package_data, resource_package_data, mapping=None):
