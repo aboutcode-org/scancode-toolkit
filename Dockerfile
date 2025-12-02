@@ -38,9 +38,11 @@ WORKDIR /scancode-toolkit
 COPY . /scancode-toolkit
 
 # Initial configuration using ./configure, scancode-reindex-licenses to build
-# the base license index
+# the base license index and scancode-cache-package-patterns to build the 
+# package patterns cache
 RUN ./configure \
- && ./venv/bin/scancode-reindex-licenses
+ && ./venv/bin/scancode-reindex-licenses \
+ && ./venv/bin/scancode-cache-package-patterns
 
 # Add scancode to path
 ENV PATH=/scancode-toolkit:$PATH

@@ -13,7 +13,9 @@ import pickle
 import multiregex
 
 import attr
+import click
 
+from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.fileutils import create_dir
 from packagedcode import APPLICATION_PACKAGE_DATAFILE_HANDLERS
 from packagedcode import SYSTEM_PACKAGE_DATAFILE_HANDLERS
@@ -219,3 +221,16 @@ def load_cache_file(cache_file):
                 'and submit a bug report at https://github.com/nexB/scancode-toolkit/issues/'
             )
             raise Exception(msg) from e
+
+
+@click.command(name='scancode-cache-package-patterns')
+@click.help_option('-h', '--help')
+def cache_package_patterns(*args, **kwargs):
+    """Create scancode package manifest patterns cache and exit"""
+    click.echo('Rebuilding the package cache patterns...')
+    get_cache(force=True)
+    click.echo('Done.')
+
+
+if __name__ == '__main__':
+    cache_package_patterns()
