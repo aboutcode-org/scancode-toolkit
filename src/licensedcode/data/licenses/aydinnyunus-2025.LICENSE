@@ -1,0 +1,27 @@
+---
+key: aydinnyunus-2025
+short_name: Yunus Aydin License 2025
+name: Yunus Aydin License 2025
+category: Non-Commercial
+owner: Yunus Aydin
+homepage_url: https://github.com/aydinnyunus/ai-captcha-bypass/blob/3aa5ebb3a8ac31e20685f4a8ba3ab30ed5e1e403/LICENSE
+spdx_license_key: LicenseRef-scancode-aydinnyunus-2025
+---
+
+Permission is hereby granted to any individual or organization to use, copy,
+modify, and distribute this software and its documentation, provided that:
+
+1. The software is used solely for academic research, educational purposes,
+   or lawful security testing with explicit authorization from the system owner.
+
+2. Any use for commercial purposes, malicious activity, or actions in violation
+   of applicable laws and regulations is strictly prohibited.
+
+3. The authors and contributors shall not be held liable for any misuse,
+   damage, or legal consequences arising from the use of this software.
+
+By using this software, you agree to comply with this license.
+If you do not agree, you are not permitted to use the software.
+
+This license does not grant any trademark rights, and it does not constitute
+an Open Source license as defined by the Open Source Initiative (OSI).
