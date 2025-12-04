@@ -591,6 +591,14 @@ class TestRule(FileBasedTesting):
         key_phrase_spans = list(rule.build_required_phrase_spans())
         assert key_phrase_spans == [Span(4), Span(7, 9)]
 
+    def test_extra_phrases_yields_spans(self):
+        rule_text = (
+            'Neither the name of [[3]] nor the names of its'
+        )
+        rule = models.Rule(license_expression='bsd-new', text=rule_text)
+        extra_phrase_spans = list(rule.extra_phrases())
+        assert extra_phrase_spans == [(Span(4),3)]        
+
     def test_key_phrases_raises_exception_when_markup_is_not_closed(self):
         rule_text = (
             'This released software is {{released}} by under {{the MIT license. '

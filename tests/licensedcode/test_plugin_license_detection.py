@@ -117,6 +117,26 @@ def test_license_match_extra_words_3_seq():
     result_file = test_env.get_temp_file('json')
     args = [
         '--license',
+        '--copyright',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/extra-words/scan-extra-words-3-seq-with-copyrights-license.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_match_extra_words_3_seq_with_copyrights():
+    test_dir = test_env.get_test_loc('plugin_license/extra-words/scan-extra-words-3-seq-license-with-copyright/')
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--copyright',
         '--license-text',
         '--license-text-diagnostics',
         '--license-diagnostics',

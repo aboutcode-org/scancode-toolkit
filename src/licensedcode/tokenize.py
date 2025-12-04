@@ -81,10 +81,80 @@ word_splitter = re.compile(query_pattern, re.UNICODE).findall
 required_phrase_pattern = '(?:' + query_pattern + '|\\{\\{|\\}\\})'
 required_phrase_splitter = re.compile(required_phrase_pattern, re.UNICODE).findall
 
+
+extra_phrase_pattern = '(?:' + query_pattern + r'|\[\[|\]\])'
+extra_phrase_splitter = re.compile(extra_phrase_pattern, re.UNICODE).findall
+
+
+# pattern to match and remove extra phrases like [[1]], [[4]]..etc from the text
+extra_phrase_removal_pattern = re.compile(r'\[\[\d+\]\]')
+
 REQUIRED_PHRASE_OPEN = '{{'
 REQUIRED_PHRASE_CLOSE = '}}'
 
+EXTRA_PHRASE_OPEN ='[['
+EXTRA_PHRASE_CLOSE =']]'
+
 # FIXME: this should be folded in a single pass tokenization with the index_tokenizer
+
+
+def extra_phrase_tokenizer(text, stopwords=STOPWORDS, preserve_case=False):
+    """
+    Yield tokens from a rule ``text`` including extra phrases [[n]] markers.
+    This n denotes maximum number of extra-words i.e valide at that position.
+    This is same as ``required_phrase_tokenizer``.
+    """
+    if not text:
+        return
+    if not preserve_case:
+        text = text.lower()
+
+    for token in extra_phrase_splitter(text):
+        if token and token not in stopwords:
+            yield token
+
+
+def get_extra_phrase_spans(text):
+    """
+    Return a list of tuples `(Span, int)`, one for each [[n]] extra phrase found in ``text``.
+    Here, `n` should always be a digit token inside the extra phrase brackets.
+
+    Example:
+    >>> text = 'Neither the name [[3]] of nor the names of its'
+    >>> #          0    1    2     3   4  5    6   7    8   9
+    >>> x = get_extra_phrase_spans(text)
+    >>> assert x == [(Span([3]), 3)], x
+    """
+    ipos = 0
+    in_extra_phrase = False
+    current_phrase_value = []
+    extra_phrase_spans = []
+
+    for token in extra_phrase_tokenizer(text):
+        if token == EXTRA_PHRASE_OPEN:
+            in_extra_phrase = True
+            current_phrase_value = []
+            continue
+
+        elif token == EXTRA_PHRASE_CLOSE:
+            if in_extra_phrase:
+                # token must be digit and token must be present in double square bracket ``[[token]]``
+                # and between extra phrases there must only one token exist
+                if len(current_phrase_value) == 1 and current_phrase_value[0].isdigit():
+                    extra_phrase_spans.append((Span([ipos - 1]), int(current_phrase_value[0])))
+
+            in_extra_phrase = False
+            current_phrase_value = []
+            continue
+
+        if in_extra_phrase:
+            # consider one token after double open square bracket ``[[``
+            if len(current_phrase_value) == 0:
+                current_phrase_value.append(token)
+
+        ipos += 1
+
+    return extra_phrase_spans   
 
 
 def required_phrase_tokenizer(text, stopwords=STOPWORDS, preserve_case=False):
@@ -282,6 +352,8 @@ def index_tokenizer_with_stopwords(text, stopwords=STOPWORDS):
     """
     if not text:
         return [], {}
+    
+    text = extra_phrase_removal_pattern.sub('', text)
 
     tokens = []
     tokens_append = tokens.append

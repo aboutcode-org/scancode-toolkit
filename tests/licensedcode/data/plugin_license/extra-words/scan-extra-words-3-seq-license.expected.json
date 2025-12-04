@@ -1,29 +1,29 @@
 {
   "license_detections": [
     {
-      "identifier": "bsd_new-f757f201-d182-a694-093b-6c34d20e9f8e",
+      "identifier": "bsd_new-4b08a4bf-cc63-bee9-d78c-bec80b3f58f4",
       "license_expression": "bsd-new",
       "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 1,
       "detection_log": [
-        "extra-words"
+        "extra-words-permitted-in-rule"
       ],
       "reference_matches": [
         {
           "license_expression": "bsd-new",
           "license_expression_spdx": "BSD-3-Clause",
-          "from_file": "scan-extra-words-3-seq-license/LICENSE",
-          "start_line": 1,
-          "end_line": 31,
+          "from_file": "scan-extra-words-3-seq-license-with-copyright/LICENSE",
+          "start_line": 7,
+          "end_line": 32,
           "matcher": "3-seq",
-          "score": 92.67,
-          "matched_length": 215,
+          "score": 100,
+          "matched_length": 212,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "bsd-new_578.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_578.RULE",
-          "matched_text": "Software License Agreement (BSD License)\n\nCopyright (c) 2009-2015, Kevin Decker <kpdecker@gmail.com>\n\nAll rights reserved.\n\nRedistribution and use of this software in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above\n  copyright notice, this list of conditions and the\n  following disclaimer.\n\n* Redistributions in binary form must reproduce the above\n  copyright notice, this list of conditions and the\n  following disclaimer in the documentation and/or other\n  materials provided with the distribution.\n\n* Neither the name of Kevin Decker nor the names of its\n  contributors may be used to endorse or promote products\n  derived from this software without specific prior\n  written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR\nIMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND\nFITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\nCONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER\nIN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\nOF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
-          "matched_text_diagnostics": "Software License Agreement (BSD License)\n\n[Copyright] ([c]) [2009]-[2015], [Kevin] [Decker] <[kpdecker]@[gmail].[com]>\n\n[All] [rights] [reserved].\n\nRedistribution and use [of] [this] [software] in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above\n  copyright notice, this list of conditions and the\n  following disclaimer.\n\n* Redistributions in binary form must reproduce the above\n  copyright notice, this list of conditions and the\n  following disclaimer in the documentation and/or other\n  materials provided with the distribution.\n\n* Neither the name of [Kevin] [Decker] nor the names of its\n  contributors may be used to endorse or promote products\n  derived from this software without specific prior\n  written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR\nIMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND\nFITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\nCONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER\nIN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\nOF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+          "rule_identifier": "bsd-new_newlib3.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_newlib3.RULE",
+          "matched_text": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions are\r\nmet:\r\n\r\n    * Redistributions of source code must retain the above copyright\r\n        notice, this list of conditions and the following disclaimer.\r\n    * Redistributions in binary form must reproduce the above\r\n        copyright notice, this list of conditions and the following\r\n        disclaimer in the documentation and/or other materials provided\r\n        with the distribution.\r\n    * Neither the name of the Hiroshima University nor the names of\r\n        its contributors may be used to endorse or promote products\r\n        derived from this software without specific prior written\r\n        permission.\r\n\r\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\r\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\r\nLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\r\nA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\r\nOWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\r\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\r\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\r\nTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\r\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\r\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+          "matched_text_diagnostics": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions are\r\nmet:\r\n\r\n    * Redistributions of source code must retain the above copyright\r\n        notice, this list of conditions and the following disclaimer.\r\n    * Redistributions in binary form must reproduce the above\r\n        copyright notice, this list of conditions and the following\r\n        disclaimer in the documentation and/or other materials provided\r\n        with the distribution.\r\n    * Neither the name of the [Hiroshima] University nor the names of\r\n        its contributors may be used to endorse or promote products\r\n        derived from this software without specific prior written\r\n        permission.\r\n\r\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\r\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\r\nLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\r\nA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\r\nOWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\r\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\r\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\r\nTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\r\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\r\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
         }
       ]
     }
@@ -42,28 +42,53 @@
             {
               "license_expression": "bsd-new",
               "license_expression_spdx": "BSD-3-Clause",
-              "from_file": "scan-extra-words-3-seq-license/LICENSE",
-              "start_line": 1,
-              "end_line": 31,
+              "from_file": "scan-extra-words-3-seq-license-with-copyright/LICENSE",
+              "start_line": 7,
+              "end_line": 32,
               "matcher": "3-seq",
-              "score": 92.67,
-              "matched_length": 215,
+              "score": 100,
+              "matched_length": 212,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "bsd-new_578.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_578.RULE",
-              "matched_text": "Software License Agreement (BSD License)\n\nCopyright (c) 2009-2015, Kevin Decker <kpdecker@gmail.com>\n\nAll rights reserved.\n\nRedistribution and use of this software in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above\n  copyright notice, this list of conditions and the\n  following disclaimer.\n\n* Redistributions in binary form must reproduce the above\n  copyright notice, this list of conditions and the\n  following disclaimer in the documentation and/or other\n  materials provided with the distribution.\n\n* Neither the name of Kevin Decker nor the names of its\n  contributors may be used to endorse or promote products\n  derived from this software without specific prior\n  written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR\nIMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND\nFITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\nCONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER\nIN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\nOF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
-              "matched_text_diagnostics": "Software License Agreement (BSD License)\n\n[Copyright] ([c]) [2009]-[2015], [Kevin] [Decker] <[kpdecker]@[gmail].[com]>\n\n[All] [rights] [reserved].\n\nRedistribution and use [of] [this] [software] in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above\n  copyright notice, this list of conditions and the\n  following disclaimer.\n\n* Redistributions in binary form must reproduce the above\n  copyright notice, this list of conditions and the\n  following disclaimer in the documentation and/or other\n  materials provided with the distribution.\n\n* Neither the name of [Kevin] [Decker] nor the names of its\n  contributors may be used to endorse or promote products\n  derived from this software without specific prior\n  written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR\nIMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND\nFITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR\nCONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER\nIN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\nOF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+              "rule_identifier": "bsd-new_newlib3.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_newlib3.RULE",
+              "matched_text": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions are\r\nmet:\r\n\r\n    * Redistributions of source code must retain the above copyright\r\n        notice, this list of conditions and the following disclaimer.\r\n    * Redistributions in binary form must reproduce the above\r\n        copyright notice, this list of conditions and the following\r\n        disclaimer in the documentation and/or other materials provided\r\n        with the distribution.\r\n    * Neither the name of the Hiroshima University nor the names of\r\n        its contributors may be used to endorse or promote products\r\n        derived from this software without specific prior written\r\n        permission.\r\n\r\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\r\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\r\nLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\r\nA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\r\nOWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\r\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\r\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\r\nTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\r\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\r\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+              "matched_text_diagnostics": "Redistribution and use in source and binary forms, with or without\r\nmodification, are permitted provided that the following conditions are\r\nmet:\r\n\r\n    * Redistributions of source code must retain the above copyright\r\n        notice, this list of conditions and the following disclaimer.\r\n    * Redistributions in binary form must reproduce the above\r\n        copyright notice, this list of conditions and the following\r\n        disclaimer in the documentation and/or other materials provided\r\n        with the distribution.\r\n    * Neither the name of the [Hiroshima] University nor the names of\r\n        its contributors may be used to endorse or promote products\r\n        derived from this software without specific prior written\r\n        permission.\r\n\r\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\r\n\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\r\nLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\r\nA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\r\nOWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\r\nSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\r\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\r\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\r\nTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\r\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\r\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
             }
           ],
           "detection_log": [
-            "extra-words"
+            "extra-words-permitted-in-rule"
           ],
-          "identifier": "bsd_new-f757f201-d182-a694-093b-6c34d20e9f8e"
+          "identifier": "bsd_new-4b08a4bf-cc63-bee9-d78c-bec80b3f58f4"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 92.67,
+      "percentage_of_license_text": 87.24,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2007, 2008, 2009 Mutsuo Saito, Makoto Matsumoto and Hiroshima University",
+          "start_line": 1,
+          "end_line": 2
+        },
+        {
+          "copyright": "Copyright (c) 2011, 2002 Mutsuo Saito, Makoto Matsumoto, Hiroshima University and The University of Tokyo",
+          "start_line": 3,
+          "end_line": 4
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Mutsuo Saito, Makoto Matsumoto and Hiroshima University",
+          "start_line": 1,
+          "end_line": 2
+        },
+        {
+          "holder": "Mutsuo Saito, Makoto Matsumoto, Hiroshima University and The University of Tokyo",
+          "start_line": 3,
+          "end_line": 4
+        }
+      ],
+      "authors": [],
       "scan_errors": []
     }
   ]

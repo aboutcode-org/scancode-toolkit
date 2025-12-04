@@ -30,6 +30,8 @@ from licensedcode.cache import get_index
 from licensedcode.cache import get_licensing
 from licensedcode.match import LicenseMatch
 from licensedcode.match import set_matched_lines
+from licensedcode.match import is_extra_words_position_valid
+from licensedcode.match import is_extra_words_at_valid_positions
 from licensedcode.models import compute_relevance
 from licensedcode.models import Rule
 from licensedcode.models import UnDetectedRule
@@ -110,6 +112,7 @@ class DetectionCategory(Enum):
     PACKAGE_ADD_FROM_SIBLING_FILE = 'from-package-sibling-file'
     PACKAGE_ADD_FROM_FILE = 'from-package-file'
     EXTRA_WORDS = 'extra-words'
+    EXTRA_WORDS_PERMITTED = 'extra-words-permitted-in-rule'
     UNKNOWN_MATCH = 'unknown-match'
     LICENSE_CLUES = 'license-clues'
     LOW_QUALITY_MATCH_FRAGMENTS = 'low-quality-matches'
@@ -129,6 +132,7 @@ class DetectionRule(Enum):
     """
     UNKNOWN_MATCH = 'unknown-match'
     EXTRA_WORDS = 'extra-words'
+    EXTRA_WORDS_PERMITTED = 'extra-words-permitted-in-rule'
     LICENSE_CLUES = 'license-clues'
     LOW_QUALITY_MATCH_FRAGMENTS = 'low-quality-matches'
     IMPERFECT_COVERAGE = 'imperfect-match-coverage'
@@ -405,8 +409,12 @@ class LicenseDetection:
         by the length of a match to the overall detection length.
         """
         length = self.length
-        weighted_scores = (m.score() * (m.len() / length) for m in self.matches)
-        return min([round(sum(weighted_scores), 2), 100])
+        for m in self.matches:
+            # Check whether extra words in the matched text appear in allowed positions,
+            # and do not exceed the maximum allowed word count at those positions.
+            score = 100 if is_extra_words_position_valid(m) else m.score()
+            weighted_scores += score * (m.len() / length)
+        return min([round(weighted_scores, 2), 100])
 
     def append(
         self,
@@ -1072,6 +1080,7 @@ def is_correct_detection_non_unknown(license_matches):
         is_correct_detection(license_matches)
         and not has_unknown_matches(license_matches)
         and not has_extra_words(license_matches)
+        and not is_extra_words_at_valid_positions(license_matches)
     )  
 
 
@@ -1570,6 +1579,12 @@ def get_detected_license_expression(
         detection_log.append(DetectionRule.LOW_QUALITY_MATCH_FRAGMENTS.value)
         return detection_log, combined_expression
     
+    elif analysis == DetectionCategory.EXTRA_WORDS_PERMITTED.value:
+        if TRACE_ANALYSIS:
+            logger_debug(f'analysis {DetectionCategory.EXTRA_WORDS_PERMITTED.value}')
+        matches_for_expression = license_matches
+        detection_log.append(DetectionRule.EXTRA_WORDS_PERMITTED.value)
+    
     elif analysis == DetectionCategory.EXTRA_WORDS.value:
         if TRACE_ANALYSIS:
             logger_debug(f'analysis {DetectionCategory.EXTRA_WORDS.value}')
@@ -1810,7 +1825,11 @@ def analyze_detection(license_matches, package_license=False):
 
     # Case where at least one of the match have extra words
     elif has_extra_words(license_matches=license_matches):
-        return DetectionCategory.EXTRA_WORDS.value
+        # Case where `extra-words` are in the right place
+        if is_extra_words_at_valid_positions(license_matches=license_matches):
+            return DetectionCategory.EXTRA_WORDS_PERMITTED.value
+        else:
+            return DetectionCategory.EXTRA_WORDS.value
 
     # Cases where Match Coverage is a perfect 100 for all matches
     else:

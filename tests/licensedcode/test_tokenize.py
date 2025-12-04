@@ -19,13 +19,16 @@ from commoncode.testcase import FileBasedTesting
 
 from licensedcode.spans import Span
 from licensedcode.tokenize import get_existing_required_phrase_spans
+from licensedcode.tokenize import get_extra_phrase_spans
 from licensedcode.tokenize import index_tokenizer
+from licensedcode.tokenize import index_tokenizer_with_stopwords
 from licensedcode.tokenize import InvalidRuleRequiredPhrase
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import ngrams
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
 from licensedcode.tokenize import required_phrase_tokenizer
+from licensedcode.tokenize import extra_phrase_tokenizer
 from licensedcode.tokenize import select_ngrams
 from licensedcode.tokenize import tokens_and_non_tokens
 from licensedcode.tokenize import word_splitter
@@ -583,6 +586,104 @@ class TestRequirePhraseTokenizer(FileBasedTesting):
             "reproduced below;"
         )
         assert get_existing_required_phrase_spans(text=text) == [Span(18, 19)]
+
+
+class TestExtraPhraseTokenizer(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_extra_phrase_tokenizer_handles_empty_string(self):
+        text = ''
+        result = list(extra_phrase_tokenizer(text))
+        assert result == []
+
+    def test_extra_phrase_tokenizer_handles_blank_lines(self):
+        text = u' \n\n\t  '
+        result = list(extra_phrase_tokenizer(text))
+        assert result == []
+
+    def test_extra_phrase_tokenizer_handles_only_brackets(self):
+        text = '[[3]]'
+        assert list(extra_phrase_tokenizer(text)) == ['[[', '3', ']]']
+
+    def test_extra_phrase_tokenizer_parses_text_with_extra_phrase_marker(self):
+        text = 'Neither the name of [[3]] nor the names of its'
+        assert list(extra_phrase_tokenizer(text)) == [
+            'neither', 'the', 'name', 'of', '[[', '3', ']]', 'nor', 'the', 'names', 'of', 'its'
+        ]
+
+    def test_get_extra_phrase_spans_simple(self):
+        text = 'This is [[2]] an example.'
+        spans = get_extra_phrase_spans(text)
+        assert spans == [(Span([2]), 2)]
+
+    def test_get_extra_phrase_spans_multiple(self):
+        text = 'Some [[4]] text [[6]] with multiple markers.'
+        spans = get_extra_phrase_spans(text)
+        assert spans == [(Span([1]), 4), (Span([3]), 6)]
+
+    def test_get_extra_phrase_spans_returns_nothing_if_none_found(self):
+        text = 'Just some normal text.'
+        assert get_extra_phrase_spans(text) == []
+
+    def test_get_extra_phrase_spans_ignores_non_numeric_values(self):
+        text = 'Just some [[normal]] text.'
+        assert get_extra_phrase_spans(text) == []  
+
+    def test_extra_phrase_tokenizer_returns_same_word_tokens_as_index_tokenizer(self):
+        text = 'This [[1]] is a test.'
+        ep_tokens = [t for t in extra_phrase_tokenizer(text) if t not in ('[[', ']]')]
+        idx_tokens = list(index_tokenizer(text))
+        assert ep_tokens == idx_tokens
+
+    def test_get_extra_phrase_spans_ignores_unclosed_opening_bracket(self):
+        text = 'Neither the name of [[3 nor the names of its'
+        assert get_extra_phrase_spans(text) == []
+
+    def test_get_extra_phrase_spans_ignores_unopened_closing_bracket(self):
+        text = 'Neither the name of 3]] nor the names of its'
+        assert get_extra_phrase_spans(text) == []  
+
+
+class TestIndexTokenizerWithStopwords(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_index_tokenizer_with_stopwords_empty_input(self):
+        toks, stops = index_tokenizer_with_stopwords('')
+        assert toks == []
+        assert stops == {}
+
+    def test_index_tokenizer_with_stopwords_removes_extra_phrase(self):
+        text = 'Neither the name of [[3]] nor the names of its'
+        toks, stops = index_tokenizer_with_stopwords(text)
+        assert toks == ['neither', 'the', 'name', 'of', 'nor', 'the', 'names', 'of', 'its']
+        assert stops == {}
+
+    def test_index_tokenizer_with_stopwords_removes_curly_phrase(self):
+        text = '{{Hi}}some {{}}Text with{{junk}}spAces!'
+        toks, stops = index_tokenizer_with_stopwords(text)
+        assert toks == ['hi', 'some', 'text', 'with', 'junk', 'spaces']
+        assert stops == {}
+
+    def test_index_tokenizer_with_custom_stopwords(self):
+        stops_set = set(['is', 'a'])
+        text = 'This is a test'
+        toks, stops = index_tokenizer_with_stopwords(text, stopwords=stops_set)
+        assert toks == ['this', 'test']
+        assert stops == {0: 2}
+
+    def test_index_tokenizer_with_leading_stopwords(self):
+        stops_set = set(['is', 'a', 'the'])
+        text = 'The is a test with result'
+        toks, stops = index_tokenizer_with_stopwords(text, stopwords=stops_set)
+        assert toks == ['test', 'with', 'result']
+        assert stops == {-1: 3}
+
+    def test_index_tokenizer_with_embedded_stopwords_after_position(self):
+        stops_set = set(['markup', 'lt', 'gt', 'quot'])
+        text = 'some &quot&lt markup &gt&quot'
+        toks, stops = index_tokenizer_with_stopwords(text, stopwords=stops_set)
+        assert toks == ['some']
+        assert stops == {0: 5}
 
 
 class TestNgrams(FileBasedTesting):
