@@ -84,6 +84,20 @@ Comparing Progress Message Options
     This inputs the scan results from ``sample.json``, runs the post-scan plugin ``--classify`` and
     outputs the results for this scan to ``sample_2.json``.
 
+    You can also convert the input ``.json`` file to other output format
+    without using any scan option.
+
+    For instance,::
+
+        scancode --from-json sample.json --yaml sample.yml
+
+    The above command takes ``sample.json`` as input and generates file in ``.yml`` formats.
+
+    .. note::
+
+        This only works for options that require only the input JSON file;
+        options that rely on other files or source code will not work.
+
 ----
 
 .. _max_in_memory_option:

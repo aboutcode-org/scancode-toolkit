@@ -25,3 +25,12 @@ All "Core" Scan Options
                          including and below the starting point. INTEGER
                          must be positive or zero for no limit.
                          [Default: 0]
+
+
+.. note::
+
+    For local machines running additional applications like browsers, IDEs,
+    or chat tools, it’s recommended to allocate (number of CPUs) minus 2,
+    or fewer, based on current CPU usage for optimal stability.
+
+
