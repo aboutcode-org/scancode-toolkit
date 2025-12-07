@@ -151,7 +151,7 @@ under assets options.
 Installation on Linux and Mac
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Download the archive for your operating systen and extract
+Download the archive for your operating system and extract
 the archive from command line::
 
     tar -xvf scancode-toolkit-30.0.1_py38-linux.tar.gz
@@ -357,7 +357,7 @@ Run the following once you have `Git <https://git-scm.com/>`_ installed::
 Configure the build
 ^^^^^^^^^^^^^^^^^^^
 
-ScanCode use a configure scripts to create an isolated virtual environment,
+ScanCode uses a configure scripts to create an isolated virtual environment,
 install required packaged dependencies.
 
 On Linux/Mac:
@@ -380,9 +380,9 @@ Now you are ready to use the freshly configured scancode-toolkit.
 
 .. NOTE::
 
-    For use in development, run instead ``configure --dev``. If your face
+    For use in development, run instead ``configure --dev``. If you face
     issues while configuring a previous version, ``configure --clean`` to
-    clean and reset your enviroment. You will need to run ``configure`` again.
+    clean and reset your environment. You will need to run ``configure`` again.
 
 
 ----
