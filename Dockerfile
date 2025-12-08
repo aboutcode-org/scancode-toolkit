@@ -34,13 +34,20 @@ RUN apt-get update \
 # Create directory for scancode sources
 WORKDIR /scancode-toolkit
 
-# Copy sources into docker container
-COPY . /scancode-toolkit
+# Copy only necessary files for configuration first (better layer caching)
+COPY configure configure.bat setup.py setup.cfg setup-mini.cfg pyproject.toml MANIFEST.in ./
+COPY requirements*.txt ./
+COPY src/ ./src/
+COPY etc/ ./etc/
 
 # Initial configuration using ./configure, scancode-reindex-licenses to build
 # the base license index
 RUN ./configure \
  && ./venv/bin/scancode-reindex-licenses
+
+# Copy remaining application files
+COPY scancode scancode.bat extractcode extractcode.bat ./
+COPY *.rst *.LICENSE *.ABOUT NOTICE ./
 
 # Add scancode to path
 ENV PATH=/scancode-toolkit:$PATH
