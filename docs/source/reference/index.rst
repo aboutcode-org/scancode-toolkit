@@ -11,5 +11,3 @@ Technical reference material.
    scancode-cli/index.rst
    scancode-plugins/index.rst
    scancode-supported-packages
-   extractcode-cli
-   scancode-reindex-licenses-cli

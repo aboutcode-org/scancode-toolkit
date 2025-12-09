@@ -11,6 +11,7 @@ Archives within an extracted archive are extracted **recursively** by default,
 with the extraction occurring in a directory named "-extract" alongside the original archive.
 
 **Quick Reference**
+-------------------
 
 --shallow   Do not extract recursively nested archives (e.g. Not
             archives in archives).

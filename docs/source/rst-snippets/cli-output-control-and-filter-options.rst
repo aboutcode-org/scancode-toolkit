@@ -1,5 +1,5 @@
-"output control and filter" options
------------------------------------
+**Controlling output and filters**
+----------------------------------
 
 --strip-root           Strip the root directory segment of all paths.
 

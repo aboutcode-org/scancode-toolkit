@@ -18,6 +18,8 @@ Comparing progress message options
 
     **Default progress message**
 
+    By default a rolling progress bar and scanned file count is shown.
+
     .. code-block:: none
 
         Scanning files for: infos, licenses, copyrights, packages, emails, urls with 1 process(es)...

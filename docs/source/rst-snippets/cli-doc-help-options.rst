@@ -1,5 +1,5 @@
-Documentation/help options
---------------------------
+**Documentation/help options**
+------------------------------
 
 -h, --help               Show the :ref:`cli-help-option` and exit.
 

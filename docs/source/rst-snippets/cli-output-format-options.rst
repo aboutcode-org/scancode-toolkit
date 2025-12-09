@@ -1,5 +1,5 @@
-"output" options
-----------------
+**Output formats**
+------------------
 
 --json FILE             Write scan output as compact JSON to FILE.
 

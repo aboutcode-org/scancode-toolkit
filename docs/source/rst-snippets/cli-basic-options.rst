@@ -1,5 +1,5 @@
-"basic" options
----------------
+**Basic options**
+-----------------
 
 Option lists are two-column lists of command-line options and descriptions,
 documenting a program's options. For example:
@@ -33,9 +33,11 @@ documenting a program's options. For example:
 --system-package             Scan ``<input>`` for installed system package
                              databases.
 
---package-only               Scan ``<input>`` for system and application
-                             only for package metadata, without license/
-                             copyright detection and package assembly.
+--package-only               Faster package scan, scanning ``<input>`` for
+                             system and application packages, only for package
+                             metadata. This option is skipping
+                             - license and copyright detection for package metadata
+                             - package assembly
 
 -e, --email                  Scan ``<input>`` for emails.
 
@@ -68,19 +70,26 @@ documenting a program's options. For example:
 --generated                  Classify automatically generated code files with a flag.
 
 --max-email INT              Report only up to INT emails found in a
-                             file. Use 0 for no limit.  [Default: 50]
+                             file. Use 0 for no limit.
+
+                             Default: ``50``
 
                              Sub-option of: ``--email``
 
 --max-url INT                Report only up to INT urls found in a
-                             file. Use 0 for no limit.  [Default: 50]
+                             file. Use 0 for no limit.
+
+                             Default: ``50``
 
                              Sub-option of: ``--url``
 
 --license-score INTEGER
 
           Do not return license matches with scores lower than this score.
-          A number between 0 and 100.  [Default: 0]
+          A number between 0 and 100.
+
+          Default: ``0`` (i.e. we return all license matches by default).
+
           Here, a bigger number means a better match, i.e. Setting a higher license score
           translates to a higher threshold (with equal or smaller number of matches).
 
@@ -101,7 +110,8 @@ documenting a program's options. For example:
           Set the template URL used for the license reference URLs.
 
           In a template URL, curly braces ({}) are replaced by the license key.
-          [Default: default: https://scancode-licensedb.aboutcode.org/{}]
+
+          Default: ``https://scancode-licensedb.aboutcode.org/{}``
 
           Sub-option of: ``--license``
 

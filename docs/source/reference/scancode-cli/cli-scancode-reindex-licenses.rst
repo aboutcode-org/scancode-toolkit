@@ -10,7 +10,7 @@ The ``scancode-reindex-licenses`` command rebuilds the license index.
 Usage: ``scancode-reindex-licenses [OPTIONS]``
 
 Quick Reference
-^^^^^^^^^^^^^^^
+---------------
 
   --all-languages             [EXPERIMENTAL] Rebuild the license index
                               including texts all languages (and not only

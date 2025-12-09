@@ -1,5 +1,5 @@
-"post-scan" options
--------------------
+**Post-scan options**
+---------------------
 
 --mark-source              Set the "is_source" flag to true for directories that
                            contain over 90% of source files as direct children
@@ -34,9 +34,29 @@
 --license-references FILE  Returns reference data for all licenses and license
                            rules present in detections.
 
+--classify                 Classify files with flags telling if the
+                           file is a legal, or readme or test file,
+                           etc.
+
+                           Sub-options:
+
+                           - ``--license-clarity-score``
+                           - ``--tallies-key-files``
+                           - ``--summry``
+
 --summary                  Summarize scans by providing declared origin
                            information and other detected info at the
                            codebase attribute level.
+
+                           Sub-option of:
+
+                           - ``--classify``
+
+--todo                     Identify license and package detections which needs
+                           review as there are potential issues with the detections.
+                           Lists all the unique ambigious detections with references
+                           to the file path and line numbers, detection details and
+                           review comments to help explain the detection issue.
 
 --tallies                  Summarize license, copyright and other scans
                            at the codebase level with occurrence counts.
