@@ -22,7 +22,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_29.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -51,7 +51,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_42.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_42.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_42.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
@@ -91,7 +91,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_29.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -120,7 +120,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_42.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_42.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_42.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
@@ -160,7 +160,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_29.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -189,7 +189,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_4.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_4.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -219,7 +219,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: isc_9.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/isc_9.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
            * purpose with or without fee is hereby granted, provided that the above
@@ -248,7 +248,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: fsf-unlimited.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
         matched_text: |
           This file is free software; the Free Software Foundation
           dnl gives unlimited permission to copy and/or distribute it,
@@ -260,7 +260,7 @@ license_detections:
       - license_expression: gpl-3.0-plus
         license_expression_spdx: GPL-3.0-or-later
         from_file:
-        start_line: '193'
+        start_line: 193
         end_line: 204
         matcher: 2-aho
         score: '100.0'
@@ -268,7 +268,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_29.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -297,7 +297,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_29.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -326,7 +326,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_29.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -355,7 +355,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_29.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -384,7 +384,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gfdl-1.2-plus.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.2-plus.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gfdl-1.2-plus.RULE
         matched_text: |
           Permission is granted to copy, distribute and/or modify this document
           under the terms of the GNU Free Documentation License, Version 1.2 or
@@ -407,7 +407,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_2.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by

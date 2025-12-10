@@ -148,7 +148,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
               "matched_text": "gpl-2.0-only"
             }
           ],
@@ -243,7 +243,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
               "matched_text": "gpl-2.0-only"
             }
           ],
@@ -1029,7 +1029,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
               "matched_text": "gpl-2.0-only"
             }
           ],
@@ -1207,7 +1207,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
               "matched_text": "gpl-2.0-only"
             }
           ],
@@ -1290,7 +1290,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
               "matched_text": "gpl-2.0-only"
             }
           ],
@@ -2345,7 +2345,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
                   "matched_text": "gpl-2.0-only"
                 }
               ],
@@ -2488,7 +2488,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
                   "matched_text": "gpl-2.0-only"
                 }
               ],
@@ -3754,7 +3754,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
                   "matched_text": "gpl-2.0-only"
                 }
               ],
@@ -3941,7 +3941,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
                   "matched_text": "gpl-2.0-only"
                 }
               ],
@@ -4062,7 +4062,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
                   "matched_text": "gpl-2.0-only"
                 }
               ],

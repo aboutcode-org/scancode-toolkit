@@ -64,7 +64,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "apache-2.0_323.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_323.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_323.RULE",
             "matched_text": "Apache Software License"
           }
         ],
@@ -86,7 +86,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 95,
             "rule_identifier": "pypi_apache_no-version.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
             "matched_text": "- 'License :: OSI Approved :: Apache Software License'"
           }
         ],

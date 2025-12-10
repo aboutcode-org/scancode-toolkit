@@ -173,7 +173,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_992.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_992.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_992.RULE",
               "matched_text": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 2, June 1991",
               "matched_text_diagnostics": "GNU GENERAL PUBLIC LICENSE\n                       Version 2, June 1991"
             }
@@ -197,7 +197,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.1_36.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
               "matched_text": "                  GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1, February 1999",
               "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1,"
             }
@@ -225,7 +225,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_14.RULE",
               "matched_text": "mit license",
               "matched_text_diagnostics": "mit license"
             }
@@ -249,7 +249,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_26.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_26.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_26.RULE",
               "matched_text": "bsd license",
               "matched_text_diagnostics": "bsd license"
             }
@@ -397,7 +397,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "public-domain_305.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_305.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_305.RULE",
               "matched_text": "this LICENSE file) are in the public domain.",
               "matched_text_diagnostics": "are in the public domain."
             },
@@ -413,7 +413,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "bsd-new_916.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_916.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_916.RULE",
               "matched_text": "contain material derived from BSD and use the BSD 3-clause license.",
               "matched_text_diagnostics": "use the BSD 3-clause license."
             }
@@ -560,7 +560,7 @@
               "match_coverage": 60.98,
               "rule_relevance": 100,
               "rule_identifier": "openssl-ssleay_50.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_50.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/openssl-ssleay_50.RULE",
               "matched_text": "The OpenSSL toolkit stays under a double license, i.e. both the conditions of\nthe OpenSSL License and the original SSLeay license apply to the toolkit.",
               "matched_text_diagnostics": "The OpenSSL toolkit stays under a double license, i.e. both the conditions of\nthe OpenSSL License and the original SSLeay license apply to the toolkit."
             }
@@ -709,7 +709,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_14.RULE",
               "matched_text": "mit license",
               "matched_text_diagnostics": "mit license"
             }
@@ -1008,7 +1008,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0_992.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_992.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_992.RULE",
                   "matched_text": "                    GNU GENERAL PUBLIC LICENSE\n                       Version 2, June 1991",
                   "matched_text_diagnostics": "GNU GENERAL PUBLIC LICENSE\n                       Version 2, June 1991"
                 }
@@ -1087,7 +1087,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.1_36.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
                   "matched_text": "                  GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1, February 1999",
                   "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1,"
                 }
@@ -1166,7 +1166,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mit_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_14.RULE",
                   "matched_text": "mit license",
                   "matched_text_diagnostics": "mit license"
                 }
@@ -1190,7 +1190,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_26.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_26.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_26.RULE",
                   "matched_text": "bsd license",
                   "matched_text_diagnostics": "bsd license"
                 }
@@ -1276,7 +1276,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mit_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_14.RULE",
                   "matched_text": "mit license",
                   "matched_text_diagnostics": "mit license"
                 }
@@ -1362,7 +1362,7 @@
                   "match_coverage": 60.98,
                   "rule_relevance": 100,
                   "rule_identifier": "openssl-ssleay_50.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_50.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/openssl-ssleay_50.RULE",
                   "matched_text": "The OpenSSL toolkit stays under a double license, i.e. both the conditions of\nthe OpenSSL License and the original SSLeay license apply to the toolkit.",
                   "matched_text_diagnostics": "The OpenSSL toolkit stays under a double license, i.e. both the conditions of\nthe OpenSSL License and the original SSLeay license apply to the toolkit."
                 }
@@ -1450,7 +1450,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "public-domain_305.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_305.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_305.RULE",
                   "matched_text": "this LICENSE file) are in the public domain.",
                   "matched_text_diagnostics": "are in the public domain."
                 },
@@ -1466,7 +1466,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "bsd-new_916.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_916.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_916.RULE",
                   "matched_text": "contain material derived from BSD and use the BSD 3-clause license.",
                   "matched_text_diagnostics": "use the BSD 3-clause license."
                 }

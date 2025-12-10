@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_306.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_306.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_306.RULE
         matched_text: "The keys in the keyrings don't fall under any copyright.  Everything\n\
           else in the package is covered by the GNU GPL.\n\nDebian support files Copyright (C)\
           \ 2006 Michael Vogt <mvo@debian.org> \nbased on the debian-keyring package maintained\

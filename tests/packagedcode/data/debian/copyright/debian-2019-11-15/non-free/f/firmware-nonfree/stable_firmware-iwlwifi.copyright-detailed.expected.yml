@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: intel.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/intel.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are

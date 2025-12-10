@@ -51,7 +51,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_48.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
           ],
@@ -130,7 +130,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_48.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
           ],
@@ -209,7 +209,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_48.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
           ],
@@ -288,7 +288,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_48.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
           ],
@@ -367,7 +367,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_48.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
           ],
@@ -446,7 +446,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_48.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
           ],
@@ -1012,7 +1012,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_48.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE"
         }
       ]
     },
@@ -1034,7 +1034,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_68.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_68.RULE"
         }
       ]
     },
@@ -1056,7 +1056,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_70.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_70.RULE"
         }
       ]
     }
@@ -1129,7 +1129,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_48.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
               ],
@@ -1176,7 +1176,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
           "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
@@ -1241,7 +1241,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_48.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
               ],
@@ -1288,7 +1288,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
           "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
@@ -1353,7 +1353,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_48.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
               ],
@@ -1400,7 +1400,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
           "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
@@ -1465,7 +1465,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_48.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
               ],
@@ -1512,7 +1512,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
           "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
@@ -1577,7 +1577,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_48.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
               ],
@@ -1624,7 +1624,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
           "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
@@ -1689,7 +1689,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_48.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
               ],
@@ -1736,7 +1736,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
           "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
@@ -1793,7 +1793,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_70.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_70.RULE"
                 }
               ],
               "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20"
@@ -1874,7 +1874,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_70.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_70.RULE"
                 }
               ],
               "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20"
@@ -2420,7 +2420,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_70.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_70.RULE"
             }
           ],
           "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20"

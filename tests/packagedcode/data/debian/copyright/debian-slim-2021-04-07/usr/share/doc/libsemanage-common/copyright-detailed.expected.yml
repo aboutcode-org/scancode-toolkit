@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_385.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_385.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_385.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
               modify it under the terms of the GNU Lesser General Public
@@ -51,7 +51,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_1123.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1123.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1123.RULE
         matched_text: |
           distributed under the terms of the GNU
           General Public License, version 2.

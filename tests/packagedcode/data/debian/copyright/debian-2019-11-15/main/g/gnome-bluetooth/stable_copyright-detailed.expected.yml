@@ -28,7 +28,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_22.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
         license_expression_spdx: GPL-2.0-or-later
@@ -41,7 +41,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_839.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_839.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_839.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -73,7 +73,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_108.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - license_expression: lgpl-2.1-plus
         license_expression_spdx: LGPL-2.1-or-later
@@ -86,7 +86,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_416.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_416.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_416.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or
           modify it under the terms of the GNU Lesser General Public

@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit-old-style-no-advert_5.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_5.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit-old-style-no-advert_5.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software
           and its documentation for any purpose and without fee is

@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mongodb-sspl-1.0_9.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mongodb-sspl-1.0_9.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mongodb-sspl-1.0_9.RULE
         matched_text: |
           License:
 

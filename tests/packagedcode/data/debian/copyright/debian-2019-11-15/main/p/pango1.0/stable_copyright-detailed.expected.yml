@@ -44,7 +44,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-permissive_324.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_324.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/other-permissive_324.RULE
         matched_text: |
           Permission to use, copy, modify, distribute, and sell this example
           for any purpose is hereby granted without fee.
@@ -64,7 +64,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: x11_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/x11_2.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of this software and associated documentation files (the "Software")
@@ -108,7 +108,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.0-plus_61.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
         matched_text: 'License: lgpl-2+'
       - license_expression: lgpl-2.0-plus
         license_expression_spdx: LGPL-2.0-or-later
@@ -121,7 +121,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.0-plus_529.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_529.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.0-plus_529.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the terms of the GNU Lesser General Public
@@ -150,7 +150,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: tcl_14.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_14.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/tcl_14.RULE
         matched_text: |
           This software is copyrighted by the Regents of the University of
           California, Sun Microsystems, Inc., and other parties. The following terms
@@ -206,7 +206,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: unicode_57.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_57.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unicode_57.RULE
         matched_text: |
           Unicode Data Files include all data files under the directories
           http://www.unicode.org/Public/, http://www.unicode.org/reports/,

@@ -40,7 +40,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain-disclaimer_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain-disclaimer_7.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain-disclaimer_7.RULE
         matched_text: |
           You can use this free for any purpose. It's in the public domain. It has no
           warranty.
@@ -59,7 +59,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
           of this software and associated documentation files (the "Software"), to
@@ -93,7 +93,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_561.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - license_expression: gpl-2.0
         license_expression_spdx: GPL-2.0-only
@@ -106,7 +106,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_1292.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1292.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1292.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -139,7 +139,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_with_linux-syscall-exception-gpl_9.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_with_linux-syscall-exception-gpl_9.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_with_linux-syscall-exception-gpl_9.RULE
         matched_text: |
           NOTE! This copyright does *not* cover user programs that use kernel services
           by normal system calls - this is merely considered normal use of the kernel,
@@ -185,7 +185,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_22.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
         license_expression_spdx: GPL-2.0-or-later
@@ -198,7 +198,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_737.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_737.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_737.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -231,7 +231,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_108.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - license_expression: lgpl-2.1-plus
         license_expression_spdx: LGPL-2.1-or-later
@@ -244,7 +244,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_344.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_344.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_344.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU Lesser General Public License as published by
@@ -277,7 +277,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: cc0-1.0_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_12.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cc0-1.0_12.RULE
         matched_text: 'License: cc0-1.0'
       - license_expression: cc0-1.0
         license_expression_spdx: CC0-1.0
@@ -290,7 +290,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: cc0-1.0_153.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_153.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cc0-1.0_153.RULE
         matched_text: |
           To the extent possible under law, the author(s) have dedicated all copyright
           and related and neighboring rights to this software to the public domain

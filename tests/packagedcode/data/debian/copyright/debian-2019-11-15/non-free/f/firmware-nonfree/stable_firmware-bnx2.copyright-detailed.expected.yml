@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_599.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_599.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/proprietary-license_599.RULE
         matched_text: |
           This file contains firmware data derived from proprietary unpublished
           source code, Copyright (c) 2004 - 2010 Broadcom Corporation.

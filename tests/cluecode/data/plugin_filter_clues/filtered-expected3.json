@@ -18,7 +18,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "pcre.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/pcre.LICENSE"
         }
       ]
     }
@@ -63,7 +63,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "pcre.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/pcre.LICENSE"
             }
           ],
           "identifier": "pcre-c61d8210-7748-d787-5e3e-fd64c6cd6b6a"

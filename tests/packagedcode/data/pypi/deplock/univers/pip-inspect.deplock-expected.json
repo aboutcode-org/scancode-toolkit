@@ -720,7 +720,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mit_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_14.RULE",
                   "matched_text": "MIT License"
                 }
               ],
@@ -801,7 +801,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
               ],
@@ -878,7 +878,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
               ],

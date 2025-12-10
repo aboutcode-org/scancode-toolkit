@@ -21,7 +21,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy of
           this software and associated documentation files (the ""Software""), to deal in
@@ -55,7 +55,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_22.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
         license_expression_spdx: GPL-2.0-or-later
@@ -68,7 +68,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_846.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_846.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_846.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by

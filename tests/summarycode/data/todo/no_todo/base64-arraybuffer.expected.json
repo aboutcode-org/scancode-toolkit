@@ -101,7 +101,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE",
               "matched_text": "https://github.com/niklasvh/base64-arraybuffer/blob/master/LICENSE-MIT"
             }
           ],
@@ -230,7 +230,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_12.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_12.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_12.RULE"
         }
       ]
     },
@@ -252,7 +252,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_30.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
         }
       ]
     },
@@ -296,7 +296,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
         }
       ]
     },
@@ -318,7 +318,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_272.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_272.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_272.RULE"
         },
         {
           "license_expression": "mit",
@@ -332,7 +332,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_30.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
         }
       ]
     }
@@ -474,7 +474,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
           "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a"
@@ -552,7 +552,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_12.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_12.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_12.RULE"
             }
           ],
           "identifier": "mit-e634e936-0701-7555-bfaa-1fce0c174838"
@@ -674,7 +674,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_12.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_12.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_12.RULE"
             }
           ],
           "identifier": "mit-e634e936-0701-7555-bfaa-1fce0c174838"
@@ -803,7 +803,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mit_30.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE",
                   "matched_text": "https://github.com/niklasvh/base64-arraybuffer/blob/master/LICENSE-MIT"
                 }
               ],
@@ -910,7 +910,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_272.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_272.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_272.RULE"
             },
             {
               "license_expression": "mit",
@@ -924,7 +924,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
             }
           ],
           "identifier": "mit-f9ae5fa5-0848-4d18-62fc-d668971434b3"

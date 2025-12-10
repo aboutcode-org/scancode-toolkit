@@ -49,7 +49,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 50,
           "rule_identifier": "spdx_license_id_unlicense_for_unlicense.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_unlicense_for_unlicense.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_unlicense_for_unlicense.RULE",
           "matched_text": "theidel@uni-bremen.de | UNLICENSE"
         }
       ],

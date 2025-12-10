@@ -43,7 +43,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 80,
               "rule_identifier": "unknown_license_other_12.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown_license_other_12.RULE",
               "matched_text": "license Other"
             }
           ],
@@ -306,7 +306,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 80,
                   "rule_identifier": "unknown_license_other_12.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown_license_other_12.RULE",
                   "matched_text": "license Other"
                 }
               ],

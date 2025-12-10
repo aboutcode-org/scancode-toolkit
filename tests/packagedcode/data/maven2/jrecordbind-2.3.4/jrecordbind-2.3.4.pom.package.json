@@ -49,7 +49,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 60,
           "rule_identifier": "lgpl_bare_single_word.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "name: LGPL"
         },
         {
@@ -64,7 +64,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "lgpl_7.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_7.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl_7.RULE",
           "matched_text": "url: http://www.gnu.org/copyleft/lesser.html"
         }
       ],

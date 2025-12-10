@@ -28,7 +28,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_92.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - license_expression: gpl-3.0-plus
         license_expression_spdx: GPL-3.0-or-later
@@ -41,7 +41,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_482.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_482.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_482.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -73,7 +73,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gfdl-1.3-plus_24.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus_24.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gfdl-1.3-plus_24.RULE
         matched_text: |
           Permission is granted to copy, distribute and/or modify this document
           under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -98,7 +98,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 85
         rule_identifier: latex2e_8.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_8.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/latex2e_8.RULE
         matched_text: |
           Permission is granted to make and distribute verbatim copies of
           this manual provided the copyright notice and this permission notice

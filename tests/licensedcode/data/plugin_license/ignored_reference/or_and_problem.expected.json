@@ -19,7 +19,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "lgpl-2.1_36.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
           "matched_text": "                  GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1, February 1999",
           "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1,"
         }
@@ -44,7 +44,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "lgpl-2.1_or_mpl-1.1_4.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_or_mpl-1.1_4.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_or_mpl-1.1_4.RULE",
           "matched_text": " * This library is free software; you can redistribute it and/or\n * modify it either under the terms of the GNU Lesser General Public\n * License version 2.1 as published by the Free Software Foundation\n * (the \"LGPL\") or, at your option, under the terms of the Mozilla\n * Public License Version 1.1 (the \"MPL\"). If you do not alter this\n * notice, a recipient may use your version of this file under either\n * the MPL or the LGPL.\n *\n * You should have received a copy of the LGPL along with this library\n * in the file COPYING-LGPL-2.1; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Suite 500, Boston, MA 02110-1335, USA\n * You should have received a copy of the MPL along with this library\n * in the file COPYING-MPL-1.1\n *\n * The contents of this file are subject to the Mozilla Public License\n * Version 1.1 (the \"License\"); you may not use this file except in\n * compliance with the License. You may obtain a copy of the License at\n * http://www.mozilla.org/MPL/\n *\n * This software is distributed on an \"AS IS\" basis, WITHOUT WARRANTY\n * OF ANY KIND, either express or implied. See the LGPL or the MPL for\n * the specific language governing rights and limitations.\n *\n * The Original Code is the cairo graphics library.\n *\n * The Initial Developer of the Original Code is Keith Packard",
           "matched_text_diagnostics": "This library is free software; you can redistribute it and/or\n * modify it either under the terms of the GNU Lesser General Public\n * License version 2.1 as published by the Free Software Foundation\n * (the \"LGPL\") or, at your option, under the terms of the Mozilla\n * Public License Version 1.1 (the \"MPL\"). If you do not alter this\n * notice, a recipient may use your version of this file under either\n * the MPL or the LGPL.\n *\n * You should have received a copy of the LGPL along with this library\n * in the file COPYING-LGPL-2.1; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Suite 500, Boston, MA 02110-1335, USA\n * You should have received a copy of the MPL along with this library\n * in the file COPYING-MPL-1.1\n *\n * The contents of this file are subject to the Mozilla Public License\n * Version 1.1 (the \"License\"); you may not use this file except in\n * compliance with the License. You may obtain a copy of the License at\n * http://www.mozilla.org/MPL/\n *\n * This software is distributed on an \"AS IS\" basis, WITHOUT WARRANTY\n * OF ANY KIND, either express or implied. See the LGPL or the MPL for\n * the specific language governing rights and limitations.\n *\n * The Original Code is the cairo graphics library.\n *\n * The Initial Developer of the Original Code is"
         }
@@ -69,7 +69,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mpl-1.1_16.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_16.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mpl-1.1_16.RULE",
           "matched_text": "                          MOZILLA PUBLIC LICENSE\n                                Version 1.1",
           "matched_text_diagnostics": "MOZILLA PUBLIC LICENSE\n                                Version 1.1"
         }
@@ -99,7 +99,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.1_36.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
               "matched_text": "                  GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1, February 1999",
               "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1,"
             }
@@ -134,7 +134,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mpl-1.1_16.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_16.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mpl-1.1_16.RULE",
               "matched_text": "                          MOZILLA PUBLIC LICENSE\n                                Version 1.1",
               "matched_text_diagnostics": "MOZILLA PUBLIC LICENSE\n                                Version 1.1"
             }
@@ -179,7 +179,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.1_or_mpl-1.1_4.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_or_mpl-1.1_4.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_or_mpl-1.1_4.RULE",
               "matched_text": " * This library is free software; you can redistribute it and/or\n * modify it either under the terms of the GNU Lesser General Public\n * License version 2.1 as published by the Free Software Foundation\n * (the \"LGPL\") or, at your option, under the terms of the Mozilla\n * Public License Version 1.1 (the \"MPL\"). If you do not alter this\n * notice, a recipient may use your version of this file under either\n * the MPL or the LGPL.\n *\n * You should have received a copy of the LGPL along with this library\n * in the file COPYING-LGPL-2.1; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Suite 500, Boston, MA 02110-1335, USA\n * You should have received a copy of the MPL along with this library\n * in the file COPYING-MPL-1.1\n *\n * The contents of this file are subject to the Mozilla Public License\n * Version 1.1 (the \"License\"); you may not use this file except in\n * compliance with the License. You may obtain a copy of the License at\n * http://www.mozilla.org/MPL/\n *\n * This software is distributed on an \"AS IS\" basis, WITHOUT WARRANTY\n * OF ANY KIND, either express or implied. See the LGPL or the MPL for\n * the specific language governing rights and limitations.\n *\n * The Original Code is the cairo graphics library.\n *\n * The Initial Developer of the Original Code is Keith Packard",
               "matched_text_diagnostics": "This library is free software; you can redistribute it and/or\n * modify it either under the terms of the GNU Lesser General Public\n * License version 2.1 as published by the Free Software Foundation\n * (the \"LGPL\") or, at your option, under the terms of the Mozilla\n * Public License Version 1.1 (the \"MPL\"). If you do not alter this\n * notice, a recipient may use your version of this file under either\n * the MPL or the LGPL.\n *\n * You should have received a copy of the LGPL along with this library\n * in the file COPYING-LGPL-2.1; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Suite 500, Boston, MA 02110-1335, USA\n * You should have received a copy of the MPL along with this library\n * in the file COPYING-MPL-1.1\n *\n * The contents of this file are subject to the Mozilla Public License\n * Version 1.1 (the \"License\"); you may not use this file except in\n * compliance with the License. You may obtain a copy of the License at\n * http://www.mozilla.org/MPL/\n *\n * This software is distributed on an \"AS IS\" basis, WITHOUT WARRANTY\n * OF ANY KIND, either express or implied. See the LGPL or the MPL for\n * the specific language governing rights and limitations.\n *\n * The Original Code is the cairo graphics library.\n *\n * The Initial Developer of the Original Code is"
             }

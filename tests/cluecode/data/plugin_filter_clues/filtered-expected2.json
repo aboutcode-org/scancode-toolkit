@@ -18,7 +18,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "pygres-2.2_2.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pygres-2.2_2.RULE"
         }
       ]
     }
@@ -63,7 +63,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "pygres-2.2_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pygres-2.2_2.RULE"
             }
           ],
           "identifier": "pygres_2_2-04f085e8-3db1-f9e2-8dde-7ba8a7ba619a"

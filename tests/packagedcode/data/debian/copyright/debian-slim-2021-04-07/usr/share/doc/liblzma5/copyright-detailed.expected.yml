@@ -78,7 +78,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_285.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_285.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_285.RULE
         matched_text: is in the public domain.
       - license_expression: public-domain
         license_expression_spdx: LicenseRef-scancode-public-domain
@@ -91,7 +91,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_431.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_431.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_431.RULE
         matched_text: |
           command line tools are in the public
               domain
@@ -106,7 +106,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_393.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_393.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_393.RULE
         matched_text: |
           The getopt_long code is under
               GNU LGPLv2.1+.
@@ -121,7 +121,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_991.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_991.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_991.RULE
         matched_text: |
           These scripts and their documentation are
               under GNU GPLv2+.
@@ -136,7 +136,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_428.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_428.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_428.RULE
         matched_text: |
           documentation files in other directories
               are in the public domain.
@@ -151,7 +151,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_429.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_429.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_429.RULE
         matched_text: Translated messages are in the public domain.
       - license_expression: public-domain AND gpl-2.0-plus AND gpl-3.0-plus
         license_expression_spdx: LicenseRef-scancode-public-domain AND GPL-2.0-or-later AND
@@ -165,7 +165,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_and_gpl-2.0-plus_and_gpl-3.0-plus_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_and_gpl-2.0-plus_and_gpl-3.0-plus_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_and_gpl-2.0-plus_and_gpl-3.0-plus_1.RULE
         matched_text: |
           The build system contains public domain files, and files that
               are under GNU GPLv2+ or GNU GPLv3+.
@@ -180,7 +180,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_305.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_305.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_305.RULE
         matched_text: are in the public domain.
       - license_expression: public-domain
         license_expression_spdx: LicenseRef-scancode-public-domain
@@ -193,7 +193,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 70
         rule_identifier: public-domain_bare_words.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: public domain
       - license_expression: other-permissive AND other-copyleft
         license_expression_spdx: LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft
@@ -206,7 +206,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-permissive_and_other-copyleft_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_and_other-copyleft_4.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/other-permissive_and_other-copyleft_4.RULE
         matched_text: |
           files
               that are under various free software licenses.
@@ -221,7 +221,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain-disclaimer_72.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain-disclaimer_72.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain-disclaimer_72.RULE
         matched_text: |
           You can do whatever you want with the files that have been put into
           the public domain. If you find public domain legally problematic,
@@ -249,7 +249,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1_and_gpl-2.0_and_gpl-3.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_and_gpl-2.0_and_gpl-3.0_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_and_gpl-2.0_and_gpl-3.0_3.RULE
         matched_text: |
           The following license texts are included in the following files:
             - COPYING.LGPLv2.1: GNU Lesser General Public License version 2.1
@@ -266,7 +266,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_427.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_427.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_427.RULE
         matched_text: binary wouldn't actually be in the public domain in its entirety
       - license_expression: public-domain
         license_expression_spdx: LicenseRef-scancode-public-domain
@@ -279,7 +279,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_430.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_430.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_430.RULE
         matched_text: Most of the source has been put into the public domain,
     identifier: public_domain_and_lgpl_2_1_plus_and_gpl_2_0_plus_and__public_domain_and_gpl_2_0_plus_and_gpl_3_0_plus__and__other_permissive_and_other_copyleft__and_public_domain_disclaimer_and__lgpl_2_1_and_gpl_2_0_and_gpl_3_0-4691a091-f632-d529-3371-6ce2e75116fe
   - license_expression: public-domain
@@ -296,7 +296,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_353.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_353.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_353.RULE
         matched_text: |
           This file has been put in the public domain.
           You can do whatever you want with this file.
@@ -315,7 +315,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 55
         rule_identifier: public-domain_356.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_356.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_356.RULE
         matched_text: See the note on AUTHORS, README, and so on above.
     identifier: public_domain-2edfee4d-b020-5521-fa21-9f147003edee
   - license_expression: public-domain
@@ -332,7 +332,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_353.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_353.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_353.RULE
         matched_text: |
           This file has been put in the public domain.
           You can do whatever you want with this file.
@@ -351,7 +351,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_219.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_219.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_219.RULE
         matched_text: Not copyrighted -- provided to the public domain.
     identifier: public_domain-343d857e-4460-3363-2dc0-930ea3e9e84b
   - license_expression: public-domain
@@ -368,7 +368,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_355.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_355.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_355.RULE
         matched_text: No copyright to license.
     identifier: public_domain-7b6ed7b8-456a-38b3-d0e8-9234afee9fbe
   - license_expression: public-domain
@@ -385,7 +385,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_355.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_355.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_355.RULE
         matched_text: No copyright to license.
     identifier: public_domain-7b6ed7b8-456a-38b3-d0e8-9234afee9fbe
   - license_expression: public-domain
@@ -394,15 +394,15 @@ other_license_detections:
       - license_expression: public-domain
         license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
-        start_line: '191'
-        end_line: '192'
+        start_line: 191
+        end_line: 192
         matcher: 1-hash
         score: '100.0'
         matched_length: 18
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_47.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_47.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_47.RULE
         matched_text: |
           This file has been put into the public domain.
           You can do whatever you want with this file.
@@ -421,7 +421,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_66.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_66.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_66.RULE
         matched_text: This file is put in the public domain.
     identifier: public_domain-988843f6-19e0-bdd4-e2c1-d0a899c8f5f7
   - license_expression: public-domain
@@ -438,7 +438,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_50.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_50.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_50.RULE
         matched_text: This file is in the public domain
     identifier: public_domain-4b02eb33-5304-7130-8eb0-364fc26686a6
   - license_expression: public-domain AND fsf-unlimited AND autoconf-exception-2.0 AND gpl-2.0
@@ -456,7 +456,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_47.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_47.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_47.RULE
         matched_text: |
           This file has been put into the public domain.
            # You can do whatever you want with this file.
@@ -471,7 +471,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: fsf-unlimited.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
         matched_text: |
           This file is free software; the Free Software Foundation
            dnl gives unlimited permission to copy and/or distribute it,
@@ -487,7 +487,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_with_autoconf-exception-2.0_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_autoconf-exception-2.0_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_with_autoconf-exception-2.0_2.RULE
         matched_text: |
           As a special exception, the Free Software Foundation gives unlimited
            # permission to copy, distribute and modify the configure scripts that
@@ -507,7 +507,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_1120.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1120.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1120.RULE
         matched_text: |
           On Debian systems, the complete text of the GNU General Public
           License version 2 can be found in ‘/usr/share/common-licenses/GPL-2’.
@@ -526,7 +526,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_108.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - license_expression: lgpl-2.0 AND lgpl-2.1
         license_expression_spdx: LGPL-2.0-only AND LGPL-2.1-only
@@ -539,7 +539,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.0_and_lgpl-2.1_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_and_lgpl-2.1_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.0_and_lgpl-2.1_1.RULE
         matched_text: |
           The gettext-runtime package is under the LGPL, see files intl/COPYING.LIB-2.0
           and intl/COPYING.LIB-2.1.
@@ -559,11 +559,11 @@ other_license_detections:
         end_line: 290
         matcher: 1-hash
         score: '90.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 90
         rule_identifier: other-copyleft_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_4.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/other-copyleft_4.RULE
         matched_text: |
           Everyone is permitted to copy and distribute verbatim copies
           of this license document, but changing it is not allowed.
@@ -582,7 +582,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_360.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_360.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_360.RULE
         matched_text: |
           The Debian packaging files are in the public domain.
           You may freely use, modify, distribute, and relicense them.
@@ -601,7 +601,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_108.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - license_expression: lgpl-2.1-plus
         license_expression_spdx: LGPL-2.1-or-later
@@ -614,7 +614,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_344.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_344.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_344.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU Lesser General Public License as published by
@@ -647,7 +647,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_561.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - license_expression: gpl-2.0
         license_expression_spdx: GPL-2.0-only
@@ -660,7 +660,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_1302.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1302.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1302.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and its
           documentation under the terms of the GNU General Public License is
@@ -690,7 +690,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_22.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
         license_expression_spdx: GPL-2.0-or-later
@@ -703,7 +703,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_737.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_737.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_737.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -736,7 +736,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_with_autoconf-macro-exception_6.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_autoconf-macro-exception_6.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_with_autoconf-macro-exception_6.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify it
           under the terms of the GNU General Public License as published by the
@@ -781,7 +781,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: fsf-unlimited.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
         matched_text: |
           This file is free software; the Free Software Foundation
           gives unlimited permission to copy and/or distribute it,
@@ -801,7 +801,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: fsf-ap_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_4.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/fsf-ap_4.RULE
         matched_text: |
           Copying and distribution of this file, with or without modification,
           are permitted in any medium without royalty provided the copyright
@@ -822,7 +822,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_430.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_430.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_430.RULE
         matched_text: Most of the source has been put into the public domain,
     identifier: public_domain-be741e60-3c47-76c0-ca1d-9ba13449e98a
   - license_expression: public-domain
@@ -839,7 +839,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_473.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_473.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_473.RULE
         matched_text: docs are in the public domain.
       - license_expression: public-domain
         license_expression_spdx: LicenseRef-scancode-public-domain
@@ -852,7 +852,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_473.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_473.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_473.RULE
         matched_text: |
           docs are in the public
            domain

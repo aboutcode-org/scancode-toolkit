@@ -37,7 +37,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: fsf-unlimited-no-warranty.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/fsf-unlimited-no-warranty.RULE
         matched_text: |
           This file is free software; as a special exception the author gives
             unlimited permission to copy and/or distribute it, with or without
@@ -62,7 +62,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: isc_20.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_20.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/isc_20.RULE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for any
           purpose with or without fee is hereby granted, provided that the above
@@ -90,7 +90,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: isc_9.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/isc_9.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
           purpose with or without fee is hereby granted, provided that the above
@@ -115,7 +115,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: ibm-dhcp.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
         matched_text: |
           International Business Machines, Inc. (hereinafter called IBM) grants
           permission under its copyrights to use, copy, modify, and distribute this
@@ -152,7 +152,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: free-unknown-package_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_4.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/free-unknown-package_4.RULE
         matched_text: This file is distributed under the same license as the
     identifier: free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335
   - license_expression: bsd-new
@@ -169,7 +169,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_19.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_19.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -209,7 +209,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 80
         rule_identifier: mit_17.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_17.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_17.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person
           * obtaining a copy of this software and associated documentation files
@@ -236,7 +236,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_1043.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1043.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_1043.RULE
         matched_text: |
           This file is distributed under the same license as the
           debian files of the p11-kit package.

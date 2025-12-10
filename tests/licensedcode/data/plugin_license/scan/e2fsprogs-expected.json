@@ -18,7 +18,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
         }
       ]
     },
@@ -40,7 +40,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 99,
           "rule_identifier": "lgpl_33.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_33.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl_33.RULE"
         }
       ]
     }
@@ -68,7 +68,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "lgpl_33.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_33.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl_33.RULE"
             }
           ],
           "identifier": "lgpl_2_0_plus-ad844342-08bd-13b3-957e-f7440d82d6ed"
@@ -100,7 +100,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
             }
           ],
           "identifier": "gpl_2_0_and_patent_disclaimer-3bb2602f-86f5-b9da-9bf5-b52e6920c8d1"

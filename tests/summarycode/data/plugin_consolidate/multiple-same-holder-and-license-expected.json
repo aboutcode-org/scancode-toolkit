@@ -20,7 +20,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-2.0_1074.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
         },
         {
           "license_expression": "gpl-2.0",
@@ -34,7 +34,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-2.0_1074.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
         }
       ]
     }
@@ -138,7 +138,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_1074.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
             },
             {
               "license_expression": "gpl-2.0",
@@ -152,7 +152,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_1074.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
             }
           ],
           "identifier": "gpl_2_0-20789449-d01b-5c54-146e-d0c746e6368a"
@@ -234,7 +234,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_1074.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
             },
             {
               "license_expression": "gpl-2.0",
@@ -248,7 +248,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_1074.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1074.RULE"
             }
           ],
           "identifier": "gpl_2_0-20789449-d01b-5c54-146e-d0c746e6368a"

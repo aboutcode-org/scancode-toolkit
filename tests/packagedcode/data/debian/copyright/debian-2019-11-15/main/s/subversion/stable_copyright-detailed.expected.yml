@@ -45,7 +45,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: markus-kuhn-license.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/markus-kuhn-license.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/markus-kuhn-license.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute this software
           for any purpose and without fee is hereby granted.  The author
@@ -65,7 +65,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-permissive_323.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_323.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/other-permissive_323.RULE
         matched_text: |
           Permission is granted to everyone to use and distribute this work,
           without limitation, modified or unmodified, in any way, for any purpose.
@@ -84,7 +84,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_22.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0
         license_expression_spdx: GPL-2.0-only
@@ -97,7 +97,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_1325.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1325.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1325.RULE
         matched_text: |
           On Debian systems, the complete text of the GPL version 2 license can be
           found in `/usr/share/common-licenses/GPL-2'.
@@ -116,7 +116,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_92.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - license_expression: gpl-3.0
         license_expression_spdx: GPL-3.0-only
@@ -129,7 +129,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0_480.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_480.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0_480.RULE
         matched_text: |
           On Debian systems, the complete text of the GPL version 3 license can be
           found in `/usr/share/common-licenses/GPL-3'.
@@ -148,7 +148,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: apache-2.0_65.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - license_expression: apache-2.0
         license_expression_spdx: Apache-2.0
@@ -161,7 +161,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: apache-2.0_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_2.RULE
         matched_text: |
           Licensed to the Apache Software Foundation (ASF) under one
           or more contributor license agreements.  See the NOTICE file
@@ -194,7 +194,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_970.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_970.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_970.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -236,7 +236,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-simplified.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/bsd-simplified.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without modification,
           are permitted provided that the following conditions are met:
@@ -273,7 +273,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of this software and associated documentation files (the "Software"),
@@ -307,7 +307,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: unicode_56.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_56.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unicode_56.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of the Unicode data files and any associated documentation (the "Data
@@ -356,7 +356,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: afl-3.0.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/afl-3.0.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/afl-3.0.LICENSE
         matched_text: |
           This Academic Free License (the "License") applies to any original
           work of authorship (the "Original Work") whose owner (the "Licensor")
