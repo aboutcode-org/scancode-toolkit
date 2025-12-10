@@ -14,6 +14,7 @@ import sys
 
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
+from scancode_config import __version__ as scancode_version
 from scancode import ScancodeError
 from typecode.contenttype import get_type
 
@@ -142,7 +143,7 @@ def get_urls(location, threshold=50, **kwargs):
 SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 SCANCODE_LICENSEDB_URL = 'https://scancode-licensedb.aboutcode.org/{}'
-SCANCODE_DATA_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data'
+SCANCODE_DATA_BASE_URL = f'https://github.com/nexB/scancode-toolkit/tree/v{scancode_version}/src/licensedcode/data'
 SCANCODE_LICENSE_URL = f'{SCANCODE_DATA_BASE_URL}/licenses/{{}}.LICENSE'
 SCANCODE_RULE_URL = f'{SCANCODE_DATA_BASE_URL}/rules/{{}}'
 
