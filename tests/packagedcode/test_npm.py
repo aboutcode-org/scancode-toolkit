@@ -251,7 +251,7 @@ class TestNpm(PackageTester):
         expected_loc = self.get_test_loc(
             'npm/private/react-devtools-fusebox.package-expected.json')
         packages = npm.NpmPackageJsonHandler.parse(test_file)
-        self.check_packages_data(packages, expected_loc, regen=True)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_is_datafile_package_lock_json_v1(self):
         test_file = self.get_test_loc('npm/package-lock-v1/package-lock.json')
