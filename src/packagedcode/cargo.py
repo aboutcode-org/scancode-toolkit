@@ -69,11 +69,11 @@ class CargoBaseHandler(models.DatafileHandler):
         
         datafile_path_patterns = CargoTomlHandler.path_patterns + CargoLockHandler.path_patterns
 
-        workspace_root = resource.parent(codebase)
-        if workspace_root and workspace_package_data and workspace_members:
+        root_resource = resource.parent(codebase)
+        if root_resource and workspace_package_data and workspace_members:
             # TODO: support glob patterns found in cargo workspaces
             for workspace_member_path in workspace_members:
-                workspace_directory_path = os.path.join(workspace_root.path, workspace_member_path)
+                workspace_directory_path = os.path.join(root_resource.path, workspace_member_path)
                 workspace_directory = codebase.get_resource(path=workspace_directory_path)
                 if not workspace_directory:
                     continue
@@ -104,9 +104,12 @@ class CargoBaseHandler(models.DatafileHandler):
                     package_adder=package_adder,
                 )
         else:
+            if not root_resource:
+                root_resource = resource
+
             yield from cls.assemble_from_many_datafiles(
                 datafile_path_patterns=datafile_path_patterns,
-                resource=workspace_root,
+                resource=root_resource,
                 codebase=codebase,
                 package_adder=package_adder,
             )

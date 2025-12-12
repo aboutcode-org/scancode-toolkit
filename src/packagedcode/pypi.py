@@ -166,6 +166,10 @@ class BaseExtractedPythonLayout(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+            return
+
         # a source distribution can have many manifests
         datafile_name_patterns = (
             PipfileHandler.path_patterns + PipfileLockHandler.path_patterns
@@ -555,7 +559,7 @@ class BasePoetryPythonLayout(BaseExtractedPythonLayout):
         if codebase.has_single_resource:
             yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
             return
-
+ 
         assert len(package_resource.package_data) == 1, f'Invalid pyproject.toml for {package_resource.path}'
         pkg_data = package_resource.package_data[0]
         pkg_data = models.PackageData.from_dict(pkg_data)

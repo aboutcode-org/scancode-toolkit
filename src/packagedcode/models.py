@@ -1397,7 +1397,7 @@ class DatafileHandler:
         # we iterate on datafile_name_patterns because their order matters
         for path_pattern in datafile_path_patterns:
             for sibling in siblings:
-                if fnmatchcase(sibling.path, path_pattern):
+                if fnmatchcase(sibling.location, path_pattern):
                     for package_data in sibling.package_data:
                         package_data = PackageData.from_dict(package_data)
                         pkgdata_resources.append((package_data, sibling,))

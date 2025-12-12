@@ -64,6 +64,8 @@ def assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
     )
 
     gemroot = get_ancestor(levels_up=2, resource=resource, codebase=codebase)
+    if not gemroot:
+        gemroot == resource
 
     yield from cls.assemble_from_many_datafiles(
         datafile_path_patterns=datafile_path_patterns,
@@ -109,10 +111,12 @@ class BaseGemProjectHandler(models.DatafileHandler):
             GemfileHandler.path_patterns +
             GemfileLockHandler.path_patterns
         )
-
+        root_resource = resource.parent(codebase)
+        if not root_resource:
+            root_resource = resource
         yield from cls.assemble_from_many_datafiles(
             datafile_path_patterns=datafile_path_patterns,
-            resource=resource.parent(codebase),
+            resource=root_resource,
             codebase=codebase,
             package_adder=package_adder,
         )

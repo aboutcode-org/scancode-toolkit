@@ -150,9 +150,12 @@ class BaseChefMetadataHandler(models.DatafileHandler):
             ChefMetadataRbHandler.path_patterns +
             ChefMetadataJsonHandler.path_patterns
         )
+        root_resource = resource.parent(codebase)
+        if not root_resource:
+            root_resource = resource
         yield from cls.assemble_from_many_datafiles(
             datafile_path_patterns=datafile_path_patterns,
-            resource=resource.parent(codebase),
+            resource=root_resource,
             codebase=codebase,
             package_adder=package_adder,
         )

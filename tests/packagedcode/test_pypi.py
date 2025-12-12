@@ -363,6 +363,13 @@ class TestPyprojectTomlFileHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/lc0-pyproject.toml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_package_scan_pyproject_toml_end_to_end_full(self):
+        test_dir = self.get_test_loc('pypi/pyproject-toml/standard/attrs/pyproject.toml')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/pyproject-toml/standard/packages-attrs-pyproject.toml-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
 
 class TestPoetryHandler(PackageTester):
 
@@ -403,6 +410,13 @@ class TestPoetryHandler(PackageTester):
         package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
         expected_loc = self.get_test_loc('pypi/poetry/univers-pyproject.toml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_package_scan_poetry_pyproject_toml_end_to_end_full(self):
+        test_dir = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy/pyproject.toml')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/pyproject-toml/poetry/packages-gerapy-pyproject.toml-expected.json')
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
 
 class TestPipInspectDeplockHandler(PackageTester):
