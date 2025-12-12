@@ -618,6 +618,10 @@ class PackageData(IdentifiablePackageData):
               'See SPDX specification "Package Download Location" '
               'at https://spdx.org/spdx-specification-21-web-version#h.49x2ik5 ')
 
+    documentation_url = String(
+        label='documentation URL',
+        help='URL to the documentation for this package.')
+
     copyright = String(
         label='Copyright',
         help='Copyright statements for this package. Typically one per line.')
