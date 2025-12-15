@@ -242,8 +242,9 @@ License
   BSD, GPL 2/3, etc.) for third-party components and test suite code and data.
 
 
-See the NOTICE file and the .ABOUT files that document the origin and license of
-the third-party code used in ScanCode for more details.
+See the NOTICE file ([NOTICE](https://github.com/nexB/scancode-toolkit/blob/develop/NOTICE))
+and the .ABOUT files ([.ABOUT](https://github.com/nexB/scancode-toolkit/tree/develop/src/aboutcode/data))
+that document the origin and license of the third-party code used in ScanCode for more details.
 
 
 
