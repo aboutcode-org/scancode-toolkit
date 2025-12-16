@@ -47,6 +47,141 @@ A LicenseDetection combines one or more matches together using various rules and
 heuristics.
 """
 
+
+def combine_expressions_with_exceptions(expressions, licensing=None):
+    """
+    Combine a list of license ``expressions`` into a single expression string,
+    using WITH for license exceptions and AND for regular licenses.
+
+    According to SPDX specification, exceptions must be combined with their
+    base license using the WITH operator, not AND. For example:
+    - "gpl-3.0 WITH gcc-exception-3.1" is valid SPDX
+    - "gpl-3.0 AND gcc-exception-3.1" is NOT valid SPDX
+
+    This function detects when an expression contains only an exception license
+    and combines it with the preceding license using WITH instead of AND.
+    """
+    if not expressions:
+        return None
+
+    if not licensing:
+        licensing = get_licensing()
+
+    # Filter out None/empty expressions
+    expressions = [e for e in expressions if e]
+    if not expressions:
+        return None
+
+    if len(expressions) == 1:
+        return str(licensing.parse(expressions[0]))
+
+    # Get the license database to check for exceptions
+    licenses_db = get_cache().db
+
+    def is_exception_only(expr):
+        """
+        Return True if the expression contains ONLY a single exception license key.
+        We only handle simple single-key exceptions for WITH combining.
+        """
+        try:
+            license_keys = licensing.license_keys(expr, unique=True)
+            if len(license_keys) != 1:
+                return False
+            key = license_keys[0]
+            lic = licenses_db.get(key)
+            return lic and lic.is_exception
+        except:
+            return False
+
+    def is_simple_license(expr):
+        """
+        Return True if expression is a simple single license (not an exception).
+        """
+        try:
+            license_keys = licensing.license_keys(expr, unique=True)
+            if len(license_keys) != 1:
+                return False
+            key = license_keys[0]
+            lic = licenses_db.get(key)
+            return lic and not lic.is_exception
+        except:
+            return False
+
+    def get_single_key(expr):
+        """Return the single license key from a simple expression."""
+        try:
+            keys = licensing.license_keys(expr, unique=True)
+            return keys[0] if len(keys) == 1 else None
+        except:
+            return None
+
+    # Build the combined expression
+    # Strategy: iterate through expressions, combining exceptions with WITH
+    result_parts = []
+    pending_base_license = None
+
+    for expr in expressions:
+        if is_exception_only(expr):
+            exception_key = get_single_key(expr)
+            if pending_base_license and is_simple_license(pending_base_license):
+                # Combine the pending base license with this exception using WITH
+                base_key = get_single_key(pending_base_license)
+                # Use proper WITH syntax: "license WITH exception" (no parentheses for simple keys)
+                combined = f"{base_key} WITH {exception_key}"
+                result_parts.append(combined)
+                pending_base_license = None
+            elif result_parts:
+                # Check if the last result part is a simple license we can attach to
+                last_part = result_parts[-1]
+                if is_simple_license(last_part):
+                    result_parts.pop()
+                    base_key = get_single_key(last_part)
+                    combined = f"{base_key} WITH {exception_key}"
+                    result_parts.append(combined)
+                else:
+                    # Can't properly attach, fall back to AND
+                    if pending_base_license:
+                        result_parts.append(pending_base_license)
+                        pending_base_license = None
+                    result_parts.append(expr)
+            else:
+                # Standalone exception at start (unusual) - just add it
+                # This might produce invalid SPDX but we can't do better
+                if pending_base_license:
+                    result_parts.append(pending_base_license)
+                    pending_base_license = None
+                result_parts.append(expr)
+        else:
+            # Not a simple exception
+            if pending_base_license:
+                # Add the pending base license to results (it wasn't followed by exception)
+                result_parts.append(pending_base_license)
+            # This becomes the new pending base license (in case next is exception)
+            pending_base_license = expr
+
+    # Don't forget any pending base license
+    if pending_base_license:
+        result_parts.append(pending_base_license)
+
+    if not result_parts:
+        return None
+
+    # Combine all parts with AND
+    if len(result_parts) == 1:
+        return str(licensing.parse(result_parts[0]))
+
+    combined = combine_expressions(
+        expressions=result_parts,
+        relation='AND',
+        unique=True,
+        licensing=licensing,
+    )
+
+    # combine_expressions returns a string or None
+    if combined is None:
+        return None
+    return str(combined)
+
 TRACE = os.environ.get('SCANCODE_DEBUG_LICENSE_DETECTION', False)
 TRACE_REFERENCE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE_REFERENCE', False)
 
@@ -1591,7 +1726,9 @@ def get_detected_license_expression(
     if TRACE:
         logger_debug(f'matches_for_expression: {matches_for_expression}', f'detection_log: {detection_log}')
 
-    combined_expression = combine_expressions(
+    # Use combine_expressions_with_exceptions to properly handle license exceptions
+    # with the WITH operator instead of AND (required for valid SPDX expressions)
+    combined_expression = combine_expressions_with_exceptions(
         expressions=[match.rule.license_expression for match in matches_for_expression],
         licensing=get_licensing(),
     )
@@ -1599,7 +1736,7 @@ def get_detected_license_expression(
     if TRACE or TRACE_ANALYSIS:
         logger_debug(f'combined_expression {combined_expression}')
 
-    return detection_log, str(combined_expression)
+    return detection_log, str(combined_expression) if combined_expression else None
 
 
 def get_unknown_license_detection(query_string):
