@@ -143,7 +143,7 @@ def get_urls(location, threshold=50, **kwargs):
 SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
 SCANCODE_LICENSEDB_URL = 'https://scancode-licensedb.aboutcode.org/{}'
-SCANCODE_DATA_BASE_URL = f'https://github.com/nexB/scancode-toolkit/tree/v{scancode_version}/src/licensedcode/data'
+SCANCODE_DATA_BASE_URL = f'https://github.com/aboutcode-org/scancode-toolkit/tree/v{scancode_version}/src/licensedcode/data'
 SCANCODE_LICENSE_URL = f'{SCANCODE_DATA_BASE_URL}/licenses/{{}}.LICENSE'
 SCANCODE_RULE_URL = f'{SCANCODE_DATA_BASE_URL}/rules/{{}}'
 
