@@ -2,6 +2,10 @@
 
 ScanCode Toolkit is a set of code scanning tools that detect the origin (copyrights), license and vulnerabilities of code, packages and dependencies in a codebase.
 
+## Why
+
+ScanCode Toolkit is the leading tool in scanning depth and accuracy, used by hundreds of software teams. You can use ScanCode Toolkit as a command line tool or as a library.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine. 
@@ -65,7 +69,7 @@ compabitility with multiple versions of Windows, Linux and macOS.
 |  |azure|   | |docs-rtd|   |  |docs-github-actions|  |  |release-github-actions|  |
 +------------+--------------+-------------------------+----------------------------+
 
-## Why use ScanCode?
+## Benefits of ScanCode?
 
 - As a **standalone command-line tool**, ScanCode is **easy to install**, run,
   and embed in your CI/CD processing pipeline.
