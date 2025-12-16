@@ -117,20 +117,8 @@ compabitility with multiple versions of Windows, Linux and macOS.
 - ScanCode has an extensive and growing documentation.
 
 - ScanCode can process packages, build manifest and lockfile formats to collect
-  Package URLs and extract metadata: Alpine packages, BUCK files, ABOUT files,
-  Android apps, Autotools, Bazel, JavaScript Bower, Java Axis, MS Cab,
-  Rust Cargo, Cocoapods, Chef Chrome apps, PHP Composer and composer.lock,
-  Conda, CPAN, Debian, Apple dmg, Java EAR, WAR, JAR, FreeBSD packages,
-  Rubygems gemspec, Gemfile and Gemfile.lock, Go modules, Haxe packages,
-  InstallShield installers, iOS apps, ISO images, Apache IVY, JBoss Sar,
-  R CRAN, Apache Maven, Meteor, Mozilla extensions, MSI installers,
-  JavaScript npm packages, package-lock.json, yarn.lock, NSIS Installers,
-  NuGet, OPam, Cocoapods, Python PyPI setup.py, setup.cfg, and
-  several related lockfile formats, semi structured README
-  files such as README.android, README.chromium, README.facebook, README.google,
-  README.thirdparty, RPMs, Shell Archives, Squashfs images, Java WAR, Windows
-  executables and the Windows registry
-  and a few more. See `all available package parsers <https://scancode-toolkit.readthedocs.io/en/stable/reference/available_package_parsers.html>`_
+  Package URLs and extract metadata. See all available package parsers
+  <https://scancode-toolkit.readthedocs.io/en/stable/reference/available_package_parsers.html>`_
   for the exhaustive list.
 
 See our `roadmap <https://scancode-toolkit.readthedocs.io/en/latest/contribute/roadmap.html>`_
