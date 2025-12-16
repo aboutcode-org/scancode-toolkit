@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: cavium-linux-firmware.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/cavium-linux-firmware.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/cavium-linux-firmware.LICENSE
         matched_text: |
           Software License Agreement
 

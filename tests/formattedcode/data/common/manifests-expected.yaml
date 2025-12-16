@@ -103,7 +103,7 @@ packages:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: cddl-1.0_98.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_98.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_98.RULE
             matched_text: |
               name: Common Development and Distribution License (CDDL) v1.0
               url: http://www.sun.com/cddl/cddl.html
@@ -176,7 +176,7 @@ packages:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
             matched_text: Apache-2.0
         identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
       - license_expression: apache-2.0
@@ -193,7 +193,7 @@ packages:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
             matched_text: Apache 2.0
         identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
     other_license_expression:
@@ -340,7 +340,7 @@ packages:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: lgpl-3.0_29.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_29.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_29.RULE
             matched_text: LGPLv3
         identifier: lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5
       - license_expression: lgpl-3.0
@@ -357,7 +357,7 @@ packages:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: pypi_gnu_lesser_general_public_license_v3.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
             matched_text: '- ''License :: OSI Approved :: GNU Lesser General Public License
               v3 (LGPLv3)'''
         identifier: lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321
@@ -738,7 +738,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
         matched_text: Apache-2.0
   - identifier: apache_2_0-0d7a2023-aae9-2989-7f00-27b713b809bb
     license_expression: apache-2.0
@@ -756,7 +756,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: apache-2.0_required_phrase_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_required_phrase_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_required_phrase_7.RULE
         matched_text: |
           "licenses": [
             {
@@ -777,7 +777,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: apache-2.0_65.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: '    "license": "Apache-2.0",'
   - identifier: cddl_1_0-0507fc0c-7fd5-3ecd-8c7b-5ea542059d4f
     license_expression: cddl-1.0
@@ -795,7 +795,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: cddl-1.0_95.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_95.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_95.RULE
         matched_text: |
           <licenses>
             <license>
@@ -817,7 +817,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: cddl-1.0_98.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_98.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_98.RULE
         matched_text: |
           name: Common Development and Distribution License (CDDL) v1.0
           url: http://www.sun.com/cddl/cddl.html
@@ -837,7 +837,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: pypi_gnu_lesser_general_public_license_v3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
         matched_text: |
           'License :: OSI Approved :: GNU Lesser General Public '
           'License v3 (LGPLv3)',
@@ -857,7 +857,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-3.0_276.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_276.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_276.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify it under
           the terms of the GNU Lesser General Public License version 3.0 as published
@@ -887,7 +887,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-3.0_152.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_152.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_152.RULE
         matched_text: '    license="LGPLv3",'
   - identifier: lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5
     license_expression: lgpl-3.0
@@ -905,7 +905,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-3.0_29.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_29.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_29.RULE
         matched_text: LGPLv3
   - identifier: mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee
     license_expression: mit
@@ -923,7 +923,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit_30.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE
         matched_text: '    "license": "MIT",'
   - identifier: mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf
     license_expression: mit
@@ -1115,7 +1115,7 @@ license_references:
       \ is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,\
       \ either express or implied.\n   See the License for the specific language governing permissions\
       \ and\n   limitations under the License."
-    scancode_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/apache-2.0.LICENSE
+    scancode_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/apache-2.0.LICENSE
     licensedb_url: https://scancode-licensedb.aboutcode.org/apache-2.0
     spdx_url: https://spdx.org/licenses/Apache-2.0
   - key: cddl-1.0
@@ -1347,7 +1347,7 @@ license_references:
       \ to this License shall be subject to the jurisdiction of the Federal Courts of the Northern\
       \ District of California and the state courts of the State of California, with venue lying\
       \ in Santa Clara County, California."
-    scancode_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/cddl-1.0.LICENSE
+    scancode_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/cddl-1.0.LICENSE
     licensedb_url: https://scancode-licensedb.aboutcode.org/cddl-1.0
     spdx_url: https://spdx.org/licenses/CDDL-1.0
   - key: lgpl-3.0
@@ -1482,7 +1482,7 @@ license_references:
       whether future versions of the GNU Lesser General Public License shall\napply, that proxy's\
       \ public statement of acceptance of any version is\npermanent authorization for you to\
       \ choose that version for the\nLibrary."
-    scancode_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/lgpl-3.0.LICENSE
+    scancode_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/lgpl-3.0.LICENSE
     licensedb_url: https://scancode-licensedb.aboutcode.org/lgpl-3.0
     spdx_url: https://spdx.org/licenses/LGPL-3.0-only
   - key: mit
@@ -1539,14 +1539,14 @@ license_references:
       CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
       TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
       SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    scancode_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE
+    scancode_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE
     licensedb_url: https://scancode-licensedb.aboutcode.org/mit
     spdx_url: https://spdx.org/licenses/MIT
 license_rule_references:
   - license_expression: apache-2.0
     identifier: apache-2.0_65.RULE
     language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE
+    rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE
     is_license_text: no
     is_license_notice: no
     is_license_reference: no
@@ -1573,7 +1573,7 @@ license_rule_references:
   - license_expression: apache-2.0
     identifier: apache-2.0_required_phrase_7.RULE
     language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_required_phrase_7.RULE
+    rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_required_phrase_7.RULE
     is_license_text: no
     is_license_notice: no
     is_license_reference: no
@@ -1603,7 +1603,7 @@ license_rule_references:
   - license_expression: cddl-1.0
     identifier: cddl-1.0_95.RULE
     language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_95.RULE
+    rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_95.RULE
     is_license_text: no
     is_license_notice: no
     is_license_reference: no
@@ -1635,7 +1635,7 @@ license_rule_references:
   - license_expression: cddl-1.0
     identifier: cddl-1.0_98.RULE
     language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_98.RULE
+    rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_98.RULE
     is_license_text: no
     is_license_notice: no
     is_license_reference: no
@@ -1665,7 +1665,7 @@ license_rule_references:
   - license_expression: lgpl-3.0
     identifier: lgpl-3.0_152.RULE
     language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_152.RULE
+    rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_152.RULE
     is_license_text: no
     is_license_notice: no
     is_license_reference: no
@@ -1692,7 +1692,7 @@ license_rule_references:
   - license_expression: lgpl-3.0
     identifier: lgpl-3.0_276.RULE
     language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_276.RULE
+    rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_276.RULE
     is_license_text: no
     is_license_notice: yes
     is_license_reference: no
@@ -1731,7 +1731,7 @@ license_rule_references:
   - license_expression: lgpl-3.0
     identifier: lgpl-3.0_29.RULE
     language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_29.RULE
+    rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_29.RULE
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
@@ -1758,7 +1758,7 @@ license_rule_references:
   - license_expression: mit
     identifier: mit_30.RULE
     language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE
+    rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE
     is_license_text: no
     is_license_notice: no
     is_license_reference: no
@@ -1785,7 +1785,7 @@ license_rule_references:
   - license_expression: lgpl-3.0
     identifier: pypi_gnu_lesser_general_public_license_v3.RULE
     language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
+    rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
     is_license_text: no
     is_license_notice: no
     is_license_reference: no
@@ -1839,7 +1839,7 @@ license_rule_references:
   - license_expression: apache-2.0
     identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
     language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+    rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
     is_license_text: no
     is_license_notice: no
     is_license_reference: yes
@@ -2016,7 +2016,7 @@ files:
                 match_coverage: '100.0'
                 rule_relevance: 100
                 rule_identifier: cddl-1.0_98.RULE
-                rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_98.RULE
+                rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_98.RULE
                 matched_text: |
                   name: Common Development and Distribution License (CDDL) v1.0
                   url: http://www.sun.com/cddl/cddl.html
@@ -2060,7 +2060,7 @@ files:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: cddl-1.0_95.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_95.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cddl-1.0_95.RULE
             matched_text: |
               <licenses>
                 <license>
@@ -2197,7 +2197,7 @@ files:
                 match_coverage: '100.0'
                 rule_relevance: 100
                 rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
-                rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+                rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
                 matched_text: Apache-2.0
             identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
           - license_expression: apache-2.0
@@ -2214,7 +2214,7 @@ files:
                 match_coverage: '100.0'
                 rule_relevance: 100
                 rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
-                rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+                rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
                 matched_text: Apache 2.0
             identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
         other_license_expression:
@@ -2347,7 +2347,7 @@ files:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: apache-2.0_65.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE
             matched_text: '    "license": "Apache-2.0",'
         identifier: apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0
       - license_expression: apache-2.0
@@ -2364,7 +2364,7 @@ files:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: apache-2.0_required_phrase_7.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_required_phrase_7.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_required_phrase_7.RULE
             matched_text: |
               "licenses": [
                 {
@@ -2595,7 +2595,7 @@ files:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: mit_30.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE
             matched_text: '    "license": "MIT",'
         identifier: mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee
     license_clues: []
@@ -2745,7 +2745,7 @@ files:
                 match_coverage: '100.0'
                 rule_relevance: 100
                 rule_identifier: lgpl-3.0_29.RULE
-                rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_29.RULE
+                rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_29.RULE
                 matched_text: LGPLv3
             identifier: lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5
           - license_expression: lgpl-3.0
@@ -2762,7 +2762,7 @@ files:
                 match_coverage: '100.0'
                 rule_relevance: 100
                 rule_identifier: pypi_gnu_lesser_general_public_license_v3.RULE
-                rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
+                rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
                 matched_text: '- ''License :: OSI Approved :: GNU Lesser General Public License
                   v3 (LGPLv3)'''
             identifier: lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321
@@ -2903,7 +2903,7 @@ files:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: lgpl-3.0_276.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_276.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_276.RULE
             matched_text: |
               This library is free software; you can redistribute it and/or modify it under
               the terms of the GNU Lesser General Public License version 3.0 as published
@@ -2932,7 +2932,7 @@ files:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: lgpl-3.0_152.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_152.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0_152.RULE
             matched_text: '    license="LGPLv3",'
         identifier: lgpl_3_0-2db87bcf-56b4-9d7d-7075-2effae31c631
       - license_expression: lgpl-3.0
@@ -2949,7 +2949,7 @@ files:
             match_coverage: '100.0'
             rule_relevance: 100
             rule_identifier: pypi_gnu_lesser_general_public_license_v3.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
+            rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
             matched_text: |
               'License :: OSI Approved :: GNU Lesser General Public '
               'License v3 (LGPLv3)',

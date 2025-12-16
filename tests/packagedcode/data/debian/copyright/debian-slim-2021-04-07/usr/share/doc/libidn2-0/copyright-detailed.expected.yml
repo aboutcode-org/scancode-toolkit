@@ -33,7 +33,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_92.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - license_expression: gpl-3.0-plus
         license_expression_spdx: GPL-3.0-or-later
@@ -46,7 +46,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_288.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_288.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_288.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -78,7 +78,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_22.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
         license_expression_spdx: GPL-2.0-or-later
@@ -91,7 +91,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_740.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_740.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_740.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -123,7 +123,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-3.0-plus_166.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0-plus_166.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0-plus_166.RULE
         matched_text: 'License: lgpl-3+'
       - license_expression: lgpl-3.0-plus
         license_expression_spdx: LGPL-3.0-or-later
@@ -136,7 +136,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-3.0-plus_242.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0-plus_242.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-3.0-plus_242.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
           it under the terms of the GNU Lesser General Public License as published
@@ -168,7 +168,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: unicode_14.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unicode_14.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unicode_14.RULE
         matched_text: For terms of use, see http://www.unicode.org/terms_of_use.html
       - license_expression: unicode
         license_expression_spdx: LicenseRef-scancode-unicode
@@ -181,7 +181,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: unicode_17.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unicode_17.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unicode_17.RULE
         matched_text: |
           Distributed
           under the Terms of Use in http://www.unicode.org/copyright.html.

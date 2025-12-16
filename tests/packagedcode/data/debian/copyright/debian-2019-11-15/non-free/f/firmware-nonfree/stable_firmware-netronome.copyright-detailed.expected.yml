@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: netronome-firmware.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/netronome-firmware.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/netronome-firmware.LICENSE
         matched_text: |
           Agilio(r) Firmware License Agreement (the "AGREEMENT")
 

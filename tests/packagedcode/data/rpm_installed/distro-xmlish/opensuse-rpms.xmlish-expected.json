@@ -44,7 +44,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 50,
             "rule_identifier": "boost-1.0_48.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/boost-1.0_48.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/boost-1.0_48.RULE",
             "matched_text": "BSL-1.0"
           }
         ],
@@ -132,7 +132,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "lgpl-2.1_85.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_85.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_85.RULE",
             "matched_text": "LGPL-2.1"
           }
         ],

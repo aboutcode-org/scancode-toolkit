@@ -21,7 +21,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-3.0_614.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0_614.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0_614.RULE",
           "matched_text": "# This file is distributed under the same license as the samba package.",
           "matched_text_diagnostics": "This file is distributed under the same license as the samba package."
         }
@@ -46,7 +46,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-3.0-plus_29.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
           "matched_text": "This program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, see <http://www.gnu.org/licenses/>.",
           "matched_text_diagnostics": "This program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, see <http://www.gnu.org/licenses/>."
         }
@@ -71,7 +71,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-3.0-plus_609.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_609.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_609.RULE",
           "matched_text": "Samba is Free Software licensed under the GNU General Public License and",
           "matched_text_diagnostics": "Samba is Free Software licensed under the GNU General Public License"
         }
@@ -98,7 +98,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-1.0-plus_579.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_579.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_579.RULE",
           "matched_text": "This software is freely distributable under the GNU public license, a\ncopy of which you should have received with this software (in a file\ncalled COPYING).",
           "matched_text_diagnostics": "This software is freely distributable under the GNU public license, a\ncopy of which you should have received with this software (in a file\ncalled COPYING)."
         },
@@ -114,7 +114,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-3.0-plus_29.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
           "matched_text": "This program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, see <http://www.gnu.org/licenses/>.",
           "matched_text_diagnostics": "This program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, see <http://www.gnu.org/licenses/>."
         }
@@ -139,7 +139,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "samba-dc-1.0.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/samba-dc-1.0.LICENSE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/samba-dc-1.0.LICENSE",
           "matched_text": "Samba Developer's Declaration, Version 1.0\n\nBy making a contribution to this project, I certify that:\n\n(a) The contribution was created in whole or in part by me and I\n    have the right to submit it under the appropriate\n    version of the GNU General Public License; or\n\n(b) The contribution is based upon previous work that, to the best\n    of my knowledge, is covered under an appropriate open source\n    license and I have the right under that license to submit that\n    work with modifications, whether created in whole or in part\n    by me, under the GNU General Public License, in the\n    appropriate version; or\n\n(c) The contribution was provided directly to me by some other\n    person who certified (a) or (b) and I have not modified\n    it.\n\n(d) I understand and agree that this project and the\n    contribution are public and that a record of the\n    contribution (including all metadata and personal\n    information I submit with it, including my sign-off) is\n    maintained indefinitely and may be redistributed\n    consistent with the Samba Team's policies and the\n    requirements of the GNU GPL where they are relevant.\n\n(e) I am granting this work to this project under the terms of both\n    the GNU General Public License and the GNU Lesser General Public\n    License as published by the Free Software Foundation; either version\n    3 of these Licenses, or (at the option of the project) any later\n    version.\n\n    http://www.gnu.org/licenses/gpl-3.0.html\n    http://www.gnu.org/licenses/lgpl-3.0.html",
           "matched_text_diagnostics": "Samba Developer's Declaration, Version 1.0\n\nBy making a contribution to this project, I certify that:\n\n(a) The contribution was created in whole or in part by me and I\n    have the right to submit it under the appropriate\n    version of the GNU General Public License; or\n\n(b) The contribution is based upon previous work that, to the best\n    of my knowledge, is covered under an appropriate open source\n    license and I have the right under that license to submit that\n    work with modifications, whether created in whole or in part\n    by me, under the GNU General Public License, in the\n    appropriate version; or\n\n(c) The contribution was provided directly to me by some other\n    person who certified (a) or (b) and I have not modified\n    it.\n\n(d) I understand and agree that this project and the\n    contribution are public and that a record of the\n    contribution (including all metadata and personal\n    information I submit with it, including my sign-off) is\n    maintained indefinitely and may be redistributed\n    consistent with the Samba Team's policies and the\n    requirements of the GNU GPL where they are relevant.\n\n(e) I am granting this work to this project under the terms of both\n    the GNU General Public License and the GNU Lesser General Public\n    License as published by the Free Software Foundation; either version\n    3 of these Licenses, or (at the option of the project) any later\n    version.\n\n    http://www.gnu.org/licenses/gpl-3.0.html\n    http://www.gnu.org/licenses/lgpl-3.0.html"
         }
@@ -164,7 +164,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "samba-dc-1.0_and_dco-1.1_and_cc-by-sa-4.0_1.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/samba-dc-1.0_and_dco-1.1_and_cc-by-sa-4.0_1.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/samba-dc-1.0_and_dco-1.1_and_cc-by-sa-4.0_1.RULE",
           "matched_text": "The \"Samba Developer's Declaration, Version 1.0\" is:\n  (C) 2011 Software Freedom Conservancy, Inc.\n  (C) 2005 Open Source Development Labs, Inc.\n\nlicensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode and based on\n\"Developer's Certificate of Origin 1.1\" as found at\nhttp://web.archive.org/web/20070306195036/http://osdlab.org/newsroom/press_releases/2004/2004_05_24_dco.html",
           "matched_text_diagnostics": "The \"Samba Developer's Declaration, Version 1.0\" is:\n  (C) 2011 Software Freedom Conservancy, Inc.\n  (C) 2005 Open Source Development Labs, Inc.\n\nlicensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode and based on\n\"Developer's Certificate of Origin 1.1\" as found at\nhttp://web.archive.org/web/20070306195036/http://osdlab.org/newsroom/press_releases/2004/2004_05_24_dco.html"
         }
@@ -196,7 +196,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_29.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
               "matched_text": "This program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, see <http://www.gnu.org/licenses/>.",
               "matched_text_diagnostics": "This program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, see <http://www.gnu.org/licenses/>."
             }
@@ -233,7 +233,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "samba-dc-1.0.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/samba-dc-1.0.LICENSE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/samba-dc-1.0.LICENSE",
               "matched_text": "Samba Developer's Declaration, Version 1.0\n\nBy making a contribution to this project, I certify that:\n\n(a) The contribution was created in whole or in part by me and I\n    have the right to submit it under the appropriate\n    version of the GNU General Public License; or\n\n(b) The contribution is based upon previous work that, to the best\n    of my knowledge, is covered under an appropriate open source\n    license and I have the right under that license to submit that\n    work with modifications, whether created in whole or in part\n    by me, under the GNU General Public License, in the\n    appropriate version; or\n\n(c) The contribution was provided directly to me by some other\n    person who certified (a) or (b) and I have not modified\n    it.\n\n(d) I understand and agree that this project and the\n    contribution are public and that a record of the\n    contribution (including all metadata and personal\n    information I submit with it, including my sign-off) is\n    maintained indefinitely and may be redistributed\n    consistent with the Samba Team's policies and the\n    requirements of the GNU GPL where they are relevant.\n\n(e) I am granting this work to this project under the terms of both\n    the GNU General Public License and the GNU Lesser General Public\n    License as published by the Free Software Foundation; either version\n    3 of these Licenses, or (at the option of the project) any later\n    version.\n\n    http://www.gnu.org/licenses/gpl-3.0.html\n    http://www.gnu.org/licenses/lgpl-3.0.html",
               "matched_text_diagnostics": "Samba Developer's Declaration, Version 1.0\n\nBy making a contribution to this project, I certify that:\n\n(a) The contribution was created in whole or in part by me and I\n    have the right to submit it under the appropriate\n    version of the GNU General Public License; or\n\n(b) The contribution is based upon previous work that, to the best\n    of my knowledge, is covered under an appropriate open source\n    license and I have the right under that license to submit that\n    work with modifications, whether created in whole or in part\n    by me, under the GNU General Public License, in the\n    appropriate version; or\n\n(c) The contribution was provided directly to me by some other\n    person who certified (a) or (b) and I have not modified\n    it.\n\n(d) I understand and agree that this project and the\n    contribution are public and that a record of the\n    contribution (including all metadata and personal\n    information I submit with it, including my sign-off) is\n    maintained indefinitely and may be redistributed\n    consistent with the Samba Team's policies and the\n    requirements of the GNU GPL where they are relevant.\n\n(e) I am granting this work to this project under the terms of both\n    the GNU General Public License and the GNU Lesser General Public\n    License as published by the Free Software Foundation; either version\n    3 of these Licenses, or (at the option of the project) any later\n    version.\n\n    http://www.gnu.org/licenses/gpl-3.0.html\n    http://www.gnu.org/licenses/lgpl-3.0.html"
             }
@@ -257,7 +257,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "samba-dc-1.0_and_dco-1.1_and_cc-by-sa-4.0_1.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/samba-dc-1.0_and_dco-1.1_and_cc-by-sa-4.0_1.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/samba-dc-1.0_and_dco-1.1_and_cc-by-sa-4.0_1.RULE",
               "matched_text": "The \"Samba Developer's Declaration, Version 1.0\" is:\n  (C) 2011 Software Freedom Conservancy, Inc.\n  (C) 2005 Open Source Development Labs, Inc.\n\nlicensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode and based on\n\"Developer's Certificate of Origin 1.1\" as found at\nhttp://web.archive.org/web/20070306195036/http://osdlab.org/newsroom/press_releases/2004/2004_05_24_dco.html",
               "matched_text_diagnostics": "The \"Samba Developer's Declaration, Version 1.0\" is:\n  (C) 2011 Software Freedom Conservancy, Inc.\n  (C) 2005 Open Source Development Labs, Inc.\n\nlicensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode and based on\n\"Developer's Certificate of Origin 1.1\" as found at\nhttp://web.archive.org/web/20070306195036/http://osdlab.org/newsroom/press_releases/2004/2004_05_24_dco.html"
             }
@@ -294,7 +294,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_609.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_609.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_609.RULE",
               "matched_text": "Samba is Free Software licensed under the GNU General Public License and",
               "matched_text_diagnostics": "Samba is Free Software licensed under the GNU General Public License"
             }
@@ -318,7 +318,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-1.0-plus_579.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_579.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_579.RULE",
               "matched_text": "This software is freely distributable under the GNU public license, a\ncopy of which you should have received with this software (in a file\ncalled COPYING).",
               "matched_text_diagnostics": "This software is freely distributable under the GNU public license, a\ncopy of which you should have received with this software (in a file\ncalled COPYING)."
             },
@@ -334,7 +334,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_29.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
               "matched_text": "This program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, see <http://www.gnu.org/licenses/>.",
               "matched_text_diagnostics": "This program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program; if not, see <http://www.gnu.org/licenses/>."
             }
@@ -409,7 +409,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0_614.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0_614.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0_614.RULE",
               "matched_text": "# This file is distributed under the same license as the samba package.",
               "matched_text_diagnostics": "This file is distributed under the same license as the samba package."
             }
@@ -446,7 +446,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_29.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
               "matched_text": "#   This program is free software; you can redistribute it and/or modify\n#   it under the terms of the GNU General Public License as published by\n#   the Free Software Foundation; either version 3 of the License, or\n#   (at your option) any later version.\n#\n#   This program is distributed in the hope that it will be useful,\n#   but WITHOUT ANY WARRANTY; without even the implied warranty of\n#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#   GNU General Public License for more details.\n#\n#   You should have received a copy of the GNU General Public License\n#   along with this program; if not, see <http://www.gnu.org/licenses/>.",
               "matched_text_diagnostics": "This program is free software; you can redistribute it and/or modify\n#   it under the terms of the GNU General Public License as published by\n#   the Free Software Foundation; either version 3 of the License, or\n#   (at your option) any later version.\n#\n#   This program is distributed in the hope that it will be useful,\n#   but WITHOUT ANY WARRANTY; without even the implied warranty of\n#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#   GNU General Public License for more details.\n#\n#   You should have received a copy of the GNU General Public License\n#   along with this program; if not, see <http://www.gnu.org/licenses/>."
             }

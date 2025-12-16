@@ -27,7 +27,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-simplified_70.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-simplified_70.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-simplified_70.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -67,7 +67,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: cups_6.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cups_6.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cups_6.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -141,7 +141,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: cups_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cups_4.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cups_4.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the terms of the GNU Library General Public License as published
@@ -215,7 +215,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: zlib_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/zlib_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/zlib_7.RULE
         matched_text: zlib License
       - license_expression: zlib
         license_expression_spdx: Zlib
@@ -228,7 +228,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: zlib.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/zlib.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/zlib.LICENSE
         matched_text: |
           This software is provided 'as-is', without any express or implied
           warranty. In no event will the authors be held liable for any damages

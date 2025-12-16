@@ -51,7 +51,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 16,
               "rule_identifier": "unknown-license-reference_383.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_383.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_383.RULE",
               "matched_text": "license COPYING.txt"
             },
             {
@@ -66,7 +66,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.1-plus_485.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
               "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE",
               "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE"
             },
@@ -82,7 +82,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl_160.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
               "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE",
               "matched_text_diagnostics": "LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE"
             }
@@ -175,7 +175,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 16,
           "rule_identifier": "unknown-license-reference_383.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_383.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_383.RULE",
           "matched_text": "license COPYING.txt"
         },
         {
@@ -190,7 +190,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "lgpl-2.1-plus_485.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
           "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE",
           "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE"
         },
@@ -206,7 +206,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl_160.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
           "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE",
           "matched_text_diagnostics": "LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE"
         }
@@ -233,7 +233,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 33,
           "rule_identifier": "unknown-license-reference_382.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_382.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_382.RULE",
           "matched_text": "    <license type=\"file\">COPYING.txt</license>",
           "matched_text_diagnostics": "license type=\"file\">COPYING.txt</license>"
         },
@@ -249,7 +249,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "lgpl-2.1-plus_485.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
           "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE",
           "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE"
         },
@@ -265,7 +265,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl_160.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
           "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE",
           "matched_text_diagnostics": "LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE"
         }
@@ -290,7 +290,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "lgpl-2.1-plus_485.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
           "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE",
           "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE"
         },
@@ -306,7 +306,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl_160.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
           "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE",
           "matched_text_diagnostics": "LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE"
         }
@@ -338,7 +338,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.1-plus_485.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
               "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE",
               "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE"
             },
@@ -354,7 +354,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl_160.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
               "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE",
               "matched_text_diagnostics": "LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE"
             }
@@ -422,7 +422,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 16,
                   "rule_identifier": "unknown-license-reference_383.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_383.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_383.RULE",
                   "matched_text": "license COPYING.txt"
                 },
                 {
@@ -437,7 +437,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.1-plus_485.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
                   "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE",
                   "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE"
                 },
@@ -453,7 +453,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl_160.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
                   "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE",
                   "matched_text_diagnostics": "LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE"
                 }
@@ -533,7 +533,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 33,
               "rule_identifier": "unknown-license-reference_382.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_382.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_382.RULE",
               "matched_text": "    <license type=\"file\">COPYING.txt</license>",
               "matched_text_diagnostics": "license type=\"file\">COPYING.txt</license>"
             },
@@ -549,7 +549,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.1-plus_485.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_485.RULE",
               "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE",
               "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE"
             },
@@ -565,7 +565,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl_160.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_160.RULE",
               "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE",
               "matched_text_diagnostics": "LICENSE\n                      \nGNU GENERAL PUBLIC LICENSE"
             }

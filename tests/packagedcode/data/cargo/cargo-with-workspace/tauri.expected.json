@@ -54,7 +54,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_or_mit_36.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
               "matched_text": "Apache-2.0 OR MIT"
             }
           ],
@@ -139,7 +139,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_or_mit_36.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
               "matched_text": "Apache-2.0 OR MIT"
             }
           ],
@@ -224,7 +224,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_or_mit_36.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
               "matched_text": "Apache-2.0 OR MIT"
             }
           ],
@@ -306,7 +306,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_or_mit_36.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
               "matched_text": "Apache-2.0 OR MIT"
             }
           ],
@@ -387,7 +387,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_or_mit_36.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
               "matched_text": "Apache-2.0 OR MIT"
             }
           ],
@@ -2779,7 +2779,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_or_mit_36.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
                   "matched_text": "Apache-2.0 OR MIT"
                 }
               ],
@@ -3153,7 +3153,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_or_mit_36.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
                   "matched_text": "Apache-2.0 OR MIT"
                 }
               ],
@@ -3358,7 +3358,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_or_mit_36.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
                   "matched_text": "Apache-2.0 OR MIT"
                 }
               ],

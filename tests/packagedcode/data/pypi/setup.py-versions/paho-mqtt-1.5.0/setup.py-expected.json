@@ -67,7 +67,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "epl-1.0_18.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/epl-1.0_18.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/epl-1.0_18.RULE",
             "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0"
           },
           {
@@ -82,7 +82,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "bsd-new_802.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_802.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_802.RULE",
             "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0"
           }
         ],
@@ -104,7 +104,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "pypi_osi_approved.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_osi_approved.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_osi_approved.RULE",
             "matched_text": "- 'License :: OSI Approved'"
           }
         ],

@@ -86,7 +86,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "pypi_mit_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
               "matched_text": "- 'License :: OSI Approved :: MIT License'"
             }
           ],
@@ -139,7 +139,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "pypi_mit_license.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
         }
       ]
     },
@@ -161,7 +161,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
         },
         {
           "license_expression": "mit",
@@ -175,7 +175,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
         }
       ]
     },
@@ -219,7 +219,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_30.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
         }
       ]
     },
@@ -241,7 +241,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_30.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
         },
         {
           "license_expression": "mit",
@@ -255,7 +255,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "pypi_mit_license.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
         }
       ]
     },
@@ -277,7 +277,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
         }
       ]
     }
@@ -323,7 +323,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
           "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a"
@@ -451,7 +451,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "pypi_mit_license.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
                   "matched_text": "- 'License :: OSI Approved :: MIT License'"
                 }
               ],
@@ -502,7 +502,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
             }
           ],
           "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
@@ -523,7 +523,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "pypi_mit_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
             }
           ],
           "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
@@ -544,7 +544,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
             },
             {
               "license_expression": "mit",
@@ -558,7 +558,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
           "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
@@ -924,7 +924,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "pypi_mit_license.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
                   "matched_text": "- 'License :: OSI Approved :: MIT License'"
                 }
               ],
@@ -974,7 +974,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "pypi_mit_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
             }
           ],
           "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
@@ -1031,7 +1031,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
                 },
                 {
                   "license_expression": "mit",
@@ -1045,7 +1045,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mit.LICENSE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
                 }
               ],
               "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
@@ -1094,7 +1094,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
             },
             {
               "license_expression": "mit",
@@ -1108,7 +1108,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
           "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
@@ -1211,7 +1211,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "pypi_mit_license.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
                   "matched_text": "- 'License :: OSI Approved :: MIT License'"
                 }
               ],
@@ -1262,7 +1262,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
             },
             {
               "license_expression": "mit",
@@ -1276,7 +1276,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "pypi_mit_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
             }
           ],
           "identifier": "mit-6e6256c5-00ca-dcb6-8033-2fc4b6ff86be"
@@ -1412,7 +1412,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "pypi_mit_license.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
                   "matched_text": "- 'License :: OSI Approved :: MIT License'"
                 }
               ],
@@ -1617,7 +1617,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE"
             }
           ],
           "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
@@ -1638,7 +1638,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "pypi_mit_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE"
             }
           ],
           "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
@@ -1659,7 +1659,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
             },
             {
               "license_expression": "mit",
@@ -1673,7 +1673,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
           "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",

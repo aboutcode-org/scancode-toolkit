@@ -61,7 +61,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "pypi_mit_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
               "matched_text": "- 'License :: OSI Approved :: MIT License'"
             }
           ],
@@ -178,7 +178,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "pypi_mit_license.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_mit_license.RULE",
                   "matched_text": "- 'License :: OSI Approved :: MIT License'"
                 }
               ],

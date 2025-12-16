@@ -21,7 +21,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "unknown-license-reference_91.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_91.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_91.RULE",
           "matched_text": "This is free software. See COPYING for details.",
           "matched_text_diagnostics": "This is free software. See COPYING for details."
         },
@@ -37,7 +37,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_65.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE",
           "matched_text": "license: apache 2.0",
           "matched_text_diagnostics": "license: apache 2.0"
         }
@@ -62,7 +62,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_65.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE",
           "matched_text": "license: apache 2.0",
           "matched_text_diagnostics": "license: apache 2.0"
         }
@@ -92,7 +92,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_65.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE",
               "matched_text": "license: apache 2.0",
               "matched_text_diagnostics": "license: apache 2.0"
             }
@@ -127,7 +127,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "unknown-license-reference_91.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_91.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_91.RULE",
               "matched_text": "This is free software. See COPYING for details.",
               "matched_text_diagnostics": "This is free software. See COPYING for details."
             },
@@ -143,7 +143,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_65.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_65.RULE",
               "matched_text": "license: apache 2.0",
               "matched_text_diagnostics": "license: apache 2.0"
             }

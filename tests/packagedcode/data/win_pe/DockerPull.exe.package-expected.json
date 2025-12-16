@@ -49,7 +49,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_14.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_14.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_14.RULE",
           "matched_text": "MIT License | GitHub: https://github.com/topcss/docker-pull-tar"
         }
       ],

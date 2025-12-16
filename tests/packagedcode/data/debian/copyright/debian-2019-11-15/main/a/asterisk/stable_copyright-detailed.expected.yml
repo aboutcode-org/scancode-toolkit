@@ -94,7 +94,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: autoconf-simple-exception-2.0.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/autoconf-simple-exception-2.0.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/autoconf-simple-exception-2.0.LICENSE
         matched_text: |
           As a special exception to the GNU General Public License, if you
           distribute this file as part of a program that contains a configuration
@@ -115,7 +115,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_492.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_492.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_492.RULE
         matched_text: |
           This file is in the public domain, so clarified as of 1996-06-05 by
           Arthur David Olson.
@@ -134,7 +134,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain-disclaimer_73.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain-disclaimer_73.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain-disclaimer_73.RULE
         matched_text: |
           This code is released into public domain without any warranty of any
           kind.
@@ -153,7 +153,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-permissive_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/other-permissive_2.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/other-permissive_2.RULE
         matched_text: This code is released by the author with no restrictions on usage.
     identifier: other_permissive-f3b400be-ace2-fed7-d629-910346d268ab
   - license_expression: other-permissive
@@ -170,7 +170,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-permissive_357.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/other-permissive_357.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/other-permissive_357.RULE
         matched_text: |
           is distributed with no restrictions on usage or
           redistribution.
@@ -189,7 +189,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bison-exception-2.2_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bison-exception-2.2_2.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bison-exception-2.2_2.RULE
         matched_text: |
           As a special exception, you may create a larger work that contains part
           or all of the Bison parser skeleton and distribute that work under
@@ -215,7 +215,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_303.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_303.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_303.RULE
         matched_text: |
           This code was written by Colin Plumb in 1993, no copyright is claimed.
           This code is in the public domain; do with it what you wish.
@@ -234,7 +234,7 @@ other_license_detections:
         match_coverage: '96.07'
         rule_relevance: 100
         rule_identifier: gpl-2.0_1121.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1121.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1121.RULE
         matched_text: |
           is distributed under the GNU General Public License version 2
           and is also available under alternative licenses negotiated directly
@@ -297,7 +297,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 80
         rule_identifier: mit_17.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_17.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_17.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of this software and associated documentation files (the
@@ -324,7 +324,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit-0_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit-0_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit-0_7.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of this software and associated documentation files (the
@@ -356,7 +356,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit-old-style-no-advert_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit-old-style-no-advert_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit-old-style-no-advert_3.RULE
         matched_text: |
           Permission to use, copy, modify, distribute, and sell this software and
           its documentation for any purpose is hereby granted without fee,
@@ -382,7 +382,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_98.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_98.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_98.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are
@@ -422,7 +422,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_1015.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_1015.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_1015.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are
@@ -462,7 +462,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_49.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_49.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_49.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are
@@ -504,7 +504,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-original-uc_30.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-original-uc_30.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-original-uc_30.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are
@@ -549,7 +549,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-original_32.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-original_32.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-original_32.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are
@@ -595,7 +595,7 @@ other_license_detections:
         match_coverage: '68.51'
         rule_relevance: 100
         rule_identifier: brian-clapper.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/brian-clapper.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/brian-clapper.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms are permitted
           provided that:
@@ -633,7 +633,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: tu-berlin.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/tu-berlin.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/tu-berlin.LICENSE
         matched_text: |
           Any use of this software is permitted provided that this notice is not
           removed and that neither the authors nor the Technische Universitaet
@@ -660,7 +660,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 99
         rule_identifier: isc_truncated.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/isc_truncated.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/isc_truncated.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
           purpose with or without fee is hereby granted, provided that the above
@@ -680,7 +680,7 @@ other_license_detections:
         match_coverage: '90.77'
         rule_relevance: 100
         rule_identifier: wol.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/wol.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/wol.LICENSE
         matched_text: |
           The Wide Open License (WOL)
 
@@ -704,7 +704,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: fsf-free.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/fsf-free.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/fsf-free.LICENSE
         matched_text: |
           This configure script is free software; the Free Software Foundation
           gives unlimited permission to copy, distribute and modify it.
@@ -723,7 +723,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_620.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_620.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_620.RULE
         matched_text: GPL-2
     identifier: gpl_2_0-73650a7c-ed7f-7e77-df4a-654c89d9a1a6
   - license_expression: gpl-2.0
@@ -740,7 +740,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_1333.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1333.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1333.RULE
         matched_text: |
           This program is free software, distributed under the terms of the GNU
            General Public License Version 2. See the LICENSE file at the top of
@@ -760,7 +760,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_165.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_165.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_165.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
            under the terms of the GNU General Public License as published by the
@@ -781,7 +781,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 80
         rule_identifier: gpl-2.0_1153.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1153.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1153.RULE
         matched_text: Version of license not mentioned.  Assumed to be version 2.
     identifier: gpl_2_0-eb0b9bcf-0157-49dd-cb2e-d511ffc33cb0
   - license_expression: gpl-1.0-plus
@@ -798,7 +798,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_terse_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_terse_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_terse_3.RULE
         matched_text: |
           is free software, distributed under the terms of the GNU
            General Public License
@@ -817,7 +817,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 80
         rule_identifier: gpl-2.0_1153.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1153.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1153.RULE
         matched_text: Version of license not mentioned.  Assumed to be version 2.
     identifier: gpl_2_0-eb0b9bcf-0157-49dd-cb2e-d511ffc33cb0
   - license_expression: gpl-1.0-plus
@@ -834,7 +834,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_469.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_469.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_469.RULE
         matched_text: Distributed under the terms of the GNU General Public License
     identifier: gpl_1_0_plus-df8dc57b-9ffe-5d74-afd6-5514ed17578c
   - license_expression: unknown
@@ -851,7 +851,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: unknown_9.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown_9.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown_9.RULE
         matched_text: 'License: none'
     identifier: unknown-f774baab-edec-ae58-59f7-6560caa7b354
   - license_expression: free-unknown
@@ -868,7 +868,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: free-unknown_109.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/free-unknown_109.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/free-unknown_109.RULE
         matched_text: |
           This software is furnished under an open source license and may be used
            and copied only in accordance with the terms of this license. The text
@@ -889,7 +889,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: unknown_9.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown_9.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown_9.RULE
         matched_text: 'License: none'
     identifier: unknown-f774baab-edec-ae58-59f7-6560caa7b354
   - license_expression: public-domain
@@ -906,7 +906,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_362.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_362.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_362.RULE
         matched_text: |
           File lacks copyright and licensing, but contains the comment
           "Conversion routines derived from code by guido@sienanet.it" which
@@ -942,7 +942,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_848.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_848.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_848.RULE
         matched_text: |
           Have you intended for that package to be released under a Free
            > Software license (basically: one that allows distribution and
@@ -967,7 +967,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_64.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_64.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_64.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
            under the terms of the GNU General Public License as published by the
@@ -988,7 +988,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_1333.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1333.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1333.RULE
         matched_text: |
           This program is free software, distributed under the terms of the GNU
            General Public License Version 2. See the LICENSE file at the top of
@@ -1008,7 +1008,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_7.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify it
            under the terms of the GNU General Public License as published by the
@@ -1029,7 +1029,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 80
         rule_identifier: gpl-2.0_1153.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1153.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1153.RULE
         matched_text: Version of license not mentioned.  Assumed to be version 2.
     identifier: gpl_2_0-eb0b9bcf-0157-49dd-cb2e-d511ffc33cb0
   - license_expression: gpl-1.0-plus
@@ -1046,7 +1046,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_470.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_470.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_470.RULE
         matched_text: you may use this source under GPL terms!
     identifier: gpl_1_0_plus-02a5caf2-d20c-3df8-10d3-6013622398d3
   - license_expression: gpl-2.0
@@ -1063,7 +1063,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_1333.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1333.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1333.RULE
         matched_text: |
           This program is free software, distributed under the terms of the GNU
            General Public License Version 2. See the LICENSE file at the top of
@@ -1083,7 +1083,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 90
         rule_identifier: lgpl-2.1_384.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_384.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_384.RULE
         matched_text: Version of LGPL license not mentioned.  Assumed to be version 2.1.
     identifier: lgpl_2_1-9d65d7eb-28e6-86d4-7cd1-3511a4874ff0
   - license_expression: gpl-2.0 OR lgpl-2.0-plus
@@ -1100,7 +1100,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_or_lgpl-2.0-plus_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_or_lgpl-2.0-plus_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_or_lgpl-2.0-plus_1.RULE
         matched_text: |
           This program is free software, distributed under the terms of the GNU
            General Public License Version 2. See the LICENSE file at the top of
@@ -1122,7 +1122,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 80
         rule_identifier: gpl-2.0_1153.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1153.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1153.RULE
         matched_text: Version of license not mentioned.  Assumed to be version 2.
     identifier: gpl_2_0-eb0b9bcf-0157-49dd-cb2e-d511ffc33cb0
   - license_expression: lgpl-2.0-plus
@@ -1139,7 +1139,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.0-plus_86.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.0-plus_86.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.0-plus_86.RULE
         matched_text: |
           This program is free software, distributed under the terms of
            the GNU Lesser (Library) General Public License
@@ -1158,7 +1158,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit_1064.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_1064.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_1064.RULE
         matched_text: |
           Prototype is freely distributable under the terms of an MIT-style
            license.
@@ -1177,7 +1177,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 80
         rule_identifier: gpl-2.0_1153.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1153.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1153.RULE
         matched_text: Version of license not mentioned.  Assumed to be version 2.
     identifier: gpl_2_0-eb0b9bcf-0157-49dd-cb2e-d511ffc33cb0
   - license_expression: gpl-1.0-plus
@@ -1194,7 +1194,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_469.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_469.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_469.RULE
         matched_text: Distributed under the terms of the GNU General Public License
     identifier: gpl_1_0_plus-df8dc57b-9ffe-5d74-afd6-5514ed17578c
 copyright: |

@@ -43,7 +43,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "bsd-new_166.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_166.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_166.RULE"
             }
           ],
           "identifier": "bsd_new-050b3051-820b-200e-26c9-1a3c8e9761d2"
@@ -137,7 +137,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "bsd-new_166.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_166.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_166.RULE"
         }
       ]
     }
@@ -167,7 +167,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "bsd-new_166.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_166.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_166.RULE"
             }
           ],
           "identifier": "bsd_new-050b3051-820b-200e-26c9-1a3c8e9761d2"
@@ -224,7 +224,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "bsd-new_166.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_166.RULE"
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_166.RULE"
                 }
               ],
               "identifier": "bsd_new-050b3051-820b-200e-26c9-1a3c8e9761d2"

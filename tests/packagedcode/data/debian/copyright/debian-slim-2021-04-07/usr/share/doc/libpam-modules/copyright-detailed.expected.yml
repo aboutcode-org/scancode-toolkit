@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_or_lgpl-2.0-plus_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_or_lgpl-2.0-plus_4.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_or_lgpl-2.0-plus_4.RULE
         matched_text: |
           Unless otherwise *explicitly* stated the following text describes the
           licensed conditions under which the contents of this Linux-PAM release
@@ -70,7 +70,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_10.RULE
         matched_text: |
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL'.

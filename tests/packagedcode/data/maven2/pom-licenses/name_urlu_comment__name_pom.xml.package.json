@@ -41,7 +41,7 @@
           "match_coverage": 66.67,
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_884.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_884.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_884.RULE",
           "matched_text": "name: The Apache Software License, Version 2.0\nurl: https://foo.com/licenses/bar\ncomments: Apache Software License, Version 2.0"
         },
         {
@@ -56,7 +56,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_220.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_220.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_220.RULE",
           "matched_text": "comments: Apache Software License, Version 2.0"
         }
       ],
@@ -78,7 +78,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "package-manifest-unknown-209282cf34535ab6753673d3fb19628763414787",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/package-manifest-unknown-209282cf34535ab6753673d3fb19628763414787",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/package-manifest-unknown-209282cf34535ab6753673d3fb19628763414787",
           "matched_text": "license name: The Apache Software License, Version 2.0\nurl: https://foo.com/licenses/bar\ncomments: Apache Software License, Version 2.0"
         }
       ],
@@ -100,7 +100,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_1106.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_1106.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_1106.RULE",
           "matched_text": "name: MIT License"
         }
       ],

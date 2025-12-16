@@ -29,7 +29,7 @@ license_detections:
         match_coverage: '96.74'
         rule_relevance: 100
         rule_identifier: stmicroelectronics-linux-firmware.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -83,7 +83,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: clear-bsd_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/clear-bsd_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/clear-bsd_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted (subject to the limitations in the
@@ -125,7 +125,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: isc.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/isc.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for any
           purpose with or without fee is hereby granted, provided that the above
@@ -149,7 +149,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-no-mod.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/bsd-no-mod.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/bsd-no-mod.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms are permitted
           provided that the following conditions are met:
@@ -192,7 +192,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
         matched_text: |
           eCos is free software; you can redistribute it and/or modify it under
           the terms of the GNU General Public License as published by the Free
@@ -218,7 +218,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining
           a copy of this software and associated documentation files (the
@@ -253,7 +253,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: qca-linux-firmware.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/qca-linux-firmware.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/qca-linux-firmware.LICENSE
         matched_text: |
           Redistribution. Reproduction and redistribution in binary form, without
           modification, for use solely in conjunction with a Qualcomm Atheros, Inc.
