@@ -68,21 +68,6 @@ Discover also:
 - Other companion SCA projects for code origin, license and security analysis
   here: https://aboutcode.org
 
-Archive extraction
-==================
-
-By default ScanCode does not extract files from tarballs, zip files, and
-other archives as part of the scan. The archives that exist in a codebase
-must be extracted before running a scan: `extractcode` is a bundled utility
-behaving as a mostly-universal archive extractor. For example, this command will
-recursively extract the mytar.tar.bz2 tarball in the mytar.tar.bz2-extract
-directory::
-
-    ./extractcode mytar.tar.bz2
-
-See `all extractcode options <https://scancode-toolkit.readthedocs.io/en/latest/reference/cli-extractcode.html>`_
-and `how to extract archives <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_extract_archives.html>`_ for details.
-
 Build and tests status
 ======================
 
