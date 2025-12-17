@@ -119,42 +119,23 @@ Benefits of ScanCode
 Support
 =======
 
-If you have a problem, a suggestion or found a bug, please enter a ticket at:
-https://github.com/aboutcode-org/scancode-toolkit/issues
+If you have a specific problem, suggestion or bug, please submit a 
+`GitHub issue <https://github.com/aboutcode-org/scancode-toolkit/issues>`_.
 
-For discussions and chats, we have:
+For quick questions or socializing, join the AboutCode community discussions on `Slack <https://join.slack.com/t/aboutcode-org/shared_invite/zt-3li3bfs78-mmtKG0Qhv~G2dSlNCZW2pA>`_.
 
-* an official Gitter channel for `web-based chats
-  <https://matrix.to/#/#aboutcode-org_discuss:gitter.im>`_.
-  Gitter is now accessible through `Element <https://element.io/download>`_
-  or an `IRC bridge <https://matrix-org.github.io/matrix-appservice-irc/latest/usage.html>`_.
-  There are other AboutCode project-specific channels available there too.
-
-* The discussion channel for `scancode <https://matrix.to/#/#aboutcode-org_scancode:gitter.im>`_
-  specifically aimed at users and developers using scancode-toolkit.
-
-Source code and downloads
-=========================
-
-* https://github.com/aboutcode-org/scancode-toolkit/releases
-* https://github.com/aboutcode-org/scancode-toolkit.git
-* https://pypi.org/project/scancode-toolkit/
-* https://github.com/aboutcode-org/scancode-thirdparty-src.git
-* https://github.com/aboutcode-org/scancode-plugins.git
-* https://github.com/aboutcode-org/thirdparty-packages.git
+Interested in commercial suppport? Contact the `AboutCode team <mailto:hello@aboutcode.org>`_.
 
 License
 =======
 
-* Apache-2.0 is the overall license
-* CC-BY-4.0 applies to reference datasets.
-* Multiple other secondary permissive or copyleft licenses (LGPL, MIT,
+* `Apache-2.0 <apache-2.0.LICENSE>`_ is the overall license.
+* `CC-BY-4.0 <cc-by-4.0.LICENSE>`_ applies to reference datasets.
+* There are multiple secondary permissive or copyleft licenses (LGPL, MIT,
   BSD, GPL 2/3, etc.) for third-party components and test suite code and data.
 
-See the NOTICE file and the .ABOUT files that document the origin and license of
+See the `NOTICE file <NOTICE>`_ and the `.ABOUT files <https://github.com/search?q=repo%3Aaboutcode-org%2Fscancode-toolkit+path%3A*.ABOUT&type=code>`_ that document the origin and license of
 the third-party code used in ScanCode for more details.
-
-
 
 .. |azure| image:: https://dev.azure.com/nexB/scancode-toolkit/_apis/build/status/nexB.scancode-toolkit?branchName=develop
     :target: https://dev.azure.com/nexB/scancode-toolkit/_build/latest?definitionId=1&branchName=develop
