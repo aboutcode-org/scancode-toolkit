@@ -59,15 +59,6 @@ Guidelines for contributing to code development.
 
 https://scancode-toolkit.readthedocs.io/en/stable/contribute/index.html
 
-Discover also:
-==============
-
-- The ScanCode.io server project here: https://scancodeio.readthedocs.io
-- The ScanCode Workbench project for visualization of scancode results data:
-  https://github.com/nexB/scancode-workbench
-- Other companion SCA projects for code origin, license and security analysis
-  here: https://aboutcode.org
-
 Build and tests status
 ======================
 
@@ -83,9 +74,7 @@ compabitility with multiple versions of Windows, Linux and macOS.
 Benefits of ScanCode
 ====================
 
-- As a **standalone command-line tool**, ScanCode is **easy to install**, run,
-  and embed in your CI/CD processing pipeline.
-  It runs on **Windows, macOS, and Linux**.
+- ScanCode is heavily **tested** with an automated test suite of over **30,000 tests**.
 
 - ScanCode is **used by several projects and organizations** such as
   the `Eclipse Foundation <https://www.eclipse.org>`_,
@@ -96,6 +85,14 @@ Benefits of ScanCode
   `ClearlyDefined.io <https://clearlydefined.io/>`_,
   `RedHat Fabric8 analytics <https://github.com/fabric8-analytics>`_,
   and many more.
+
+- You can also organize and run ScanCode server-side with the
+  companion `ScanCode.io web app <https://github.com/aboutcode-org/scancode.io>`_
+  to organize and store multiple scan projects including scripted scanning pipelines.
+
+- As a **standalone command-line tool**, ScanCode is **easy to install**, run,
+  and embed in your CI/CD processing pipeline.
+  It runs on **Windows, macOS, and Linux**.
 
 - ScanCode detects licenses, copyrights, package manifests, direct dependencies,
   and more both in **source code** and **binary** files and is considered as the
@@ -114,29 +111,10 @@ Benefits of ScanCode
 - You can save your scan results as **JSON, YAML, HTML, CycloneDX or SPDX** or
   even create your own format with Jinja templates.
 
-- You can also organize and run ScanCode server-side with the
-  companion `ScanCode.io web app <https://github.com/nexB/scancode.io>`_
-  to organize and store multiple scan projects including scripted scanning pipelines.
-
-- ScanCode output data can be easily visualized and analysed using the
-  `ScanCode Workbench <https://github.com/nexB/scancode-workbench>`_ desktop app.
-
-- ScanCode is **actively maintained**, has a **growing users and contributors
-  community**.
-
-- ScanCode is heavily **tested** with an automated test suite of over **30,000 tests**.
-
-- ScanCode has an extensive and growing documentation.
-
 - ScanCode can process packages, build manifest and lockfile formats to collect
   Package URLs and extract metadata. See all available package parsers
   <https://scancode-toolkit.readthedocs.io/en/stable/reference/available_package_parsers.html>`_
   for the exhaustive list.
-
-See our `roadmap <https://scancode-toolkit.readthedocs.io/en/latest/contribute/roadmap.html>`_
-for upcoming features.
-
-See also https://github.com/aboutcode-org/aboutcode?tab=readme-ov-file#aboutcode for related companion projects and tools.
 
 Support
 =======
