@@ -124,7 +124,7 @@ Benefits of ScanCode
 - ScanCode is **actively maintained**, has a **growing users and contributors
   community**.
 
-- ScanCode is heavily **tested** with an automated test suite of over **20,000 tests**.
+- ScanCode is heavily **tested** with an automated test suite of over **30,000 tests**.
 
 - ScanCode has an extensive and growing documentation.
 
