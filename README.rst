@@ -191,8 +191,7 @@ License
 See the NOTICE file and the .ABOUT files that document the origin and license of
 the third-party code used in ScanCode for more details.
 
-Status of Tests
-===============
+
 
 .. |azure| image:: https://dev.azure.com/nexB/scancode-toolkit/_apis/build/status/nexB.scancode-toolkit?branchName=develop
     :target: https://dev.azure.com/nexB/scancode-toolkit/_build/latest?definitionId=1&branchName=develop
@@ -209,6 +208,7 @@ Status of Tests
 .. |release-github-actions| image:: https://github.com/nexB/scancode-toolkit/actions/workflows/scancode-release.yml/badge.svg?event=push
     :target: https://github.com/nexB/scancode-toolkit/actions/workflows/scancode-release.yml
     :alt: Release tests
+
 
 Acknowledgements, Funding, Support and Sponsoring
 =================================================
