@@ -2,7 +2,7 @@
 ScanCode Toolkit
 ================
 
-ScanCode Toolkit is a set of code scanning tools that detect the origin (copyrights), license and vulnerabilities of code, packages and dependencies in a codebase.
+ScanCode Toolkit is a set of code scanning tools that detect the origin (copyrights), license and vulnerabilities of code, packages and dependencies in a codebase. ScanCode Toolkit is an `AboutCode project <https://aboutcode.org>`_.
 
 Why Use ScanCode Toolkit?
 =========================
