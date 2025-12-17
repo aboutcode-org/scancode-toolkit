@@ -57,7 +57,7 @@ Contributing
 
 Guidelines for contributing to code development.
 
-https://scancode-toolkit.readthedocs.io/en/stable/contribute/index.html#
+https://scancode-toolkit.readthedocs.io/en/stable/contribute/index.html
 
 Discover also:
 ==============
