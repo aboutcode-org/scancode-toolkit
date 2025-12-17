@@ -1,12 +1,16 @@
-# ScanCode Toolkit
+================
+ScanCode Toolkit
+================
 
 ScanCode Toolkit is a set of code scanning tools that detect the origin (copyrights), license and vulnerabilities of code, packages and dependencies in a codebase.
 
-## Why
+Why Use ScanCode Toolkit?
+=========================
 
 ScanCode Toolkit is the leading tool in scanning depth and accuracy, used by hundreds of software teams. You can use ScanCode Toolkit as a command line tool or as a library.
 
-## Getting Started
+Getting Started
+===============
 
 These instructions will get you a copy of the project up and running on your local machine. 
 
@@ -16,25 +20,29 @@ These instructions will guide you to start scanning code.
 
 https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/synopsis.html#synopsis-quickstart
 
-### Prerequisites
+Prerequisites
+=============
 
 What things you need to install the software and how to install them.
 
 https://scancode-toolkit.readthedocs.io/en/stable/getting-started/install.html#before-installing 
 
-### Exploring ScanCode Features
+Exploring ScanCode Features
+===========================
 
 Discover the ScanCode command line options that meet your requirements.
 
 https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/index.html 
 
-## Guided Tours
+Guided Tours
+============
 
 These tutorials will provide hands-on guidance to ScanCode features.
 
 https://scancode-toolkit.readthedocs.io/en/stable/tutorials/index.html
 
-### Advanced Topics
+Advanced Topics
+===============
 
 Expand the ScanCode Licenses and Detection Rules with your own data.
 
@@ -44,13 +52,15 @@ Generate Attribution from a ScanCode scan.
 
 https://scancode-toolkit.readthedocs.io/en/stable/how-to-guides/generate_attribution.html
 
-## Contributing
+Contributing
+============
 
 Guidelines for contributing to code development.
 
 https://scancode-toolkit.readthedocs.io/en/stable/contribute/index.html#
 
-## Discover also:
+Discover also:
+==============
 
 - The ScanCode.io server project here: https://scancodeio.readthedocs.io
 - The ScanCode Workbench project for visualization of scancode results data:
@@ -58,7 +68,23 @@ https://scancode-toolkit.readthedocs.io/en/stable/contribute/index.html#
 - Other companion SCA projects for code origin, license and security analysis
   here: https://aboutcode.org
 
-## Build and tests status
+Archive extraction
+==================
+
+By default ScanCode does not extract files from tarballs, zip files, and
+other archives as part of the scan. The archives that exist in a codebase
+must be extracted before running a scan: `extractcode` is a bundled utility
+behaving as a mostly-universal archive extractor. For example, this command will
+recursively extract the mytar.tar.bz2 tarball in the mytar.tar.bz2-extract
+directory::
+
+    ./extractcode mytar.tar.bz2
+
+See `all extractcode options <https://scancode-toolkit.readthedocs.io/en/latest/reference/cli-extractcode.html>`_
+and `how to extract archives <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_extract_archives.html>`_ for details.
+
+Build and tests status
+======================
 
 We run 30,000+ tests on each commit on multiple CIs to ensure a good platform
 compabitility with multiple versions of Windows, Linux and macOS.
@@ -69,7 +95,8 @@ compabitility with multiple versions of Windows, Linux and macOS.
 |  |azure|   | |docs-rtd|   |  |docs-github-actions|  |  |release-github-actions|  |
 +------------+--------------+-------------------------+----------------------------+
 
-## Benefits of ScanCode?
+Benefits of ScanCode
+====================
 
 - As a **standalone command-line tool**, ScanCode is **easy to install**, run,
   and embed in your CI/CD processing pipeline.
@@ -126,7 +153,8 @@ for upcoming features.
 
 See also https://github.com/aboutcode-org/aboutcode?tab=readme-ov-file#aboutcode for related companion projects and tools.
 
-## Support
+Support
+=======
 
 If you have a problem, a suggestion or found a bug, please enter a ticket at:
 https://github.com/aboutcode-org/scancode-toolkit/issues
@@ -142,7 +170,8 @@ For discussions and chats, we have:
 * The discussion channel for `scancode <https://matrix.to/#/#aboutcode-org_scancode:gitter.im>`_
   specifically aimed at users and developers using scancode-toolkit.
 
-## Source code and downloads
+Source code and downloads
+=========================
 
 * https://github.com/aboutcode-org/scancode-toolkit/releases
 * https://github.com/aboutcode-org/scancode-toolkit.git
@@ -151,7 +180,8 @@ For discussions and chats, we have:
 * https://github.com/aboutcode-org/scancode-plugins.git
 * https://github.com/aboutcode-org/thirdparty-packages.git
 
-## License
+License
+=======
 
 * Apache-2.0 is the overall license
 * CC-BY-4.0 applies to reference datasets.
@@ -161,7 +191,8 @@ For discussions and chats, we have:
 See the NOTICE file and the .ABOUT files that document the origin and license of
 the third-party code used in ScanCode for more details.
 
-## Status of Tests
+Status of Tests
+===============
 
 .. |azure| image:: https://dev.azure.com/nexB/scancode-toolkit/_apis/build/status/nexB.scancode-toolkit?branchName=develop
     :target: https://dev.azure.com/nexB/scancode-toolkit/_build/latest?definitionId=1&branchName=develop
@@ -179,7 +210,8 @@ the third-party code used in ScanCode for more details.
     :target: https://github.com/nexB/scancode-toolkit/actions/workflows/scancode-release.yml
     :alt: Release tests
 
-## Acknowledgements, Funding, Support and Sponsoring
+Acknowledgements, Funding, Support and Sponsoring
+=================================================
 
 This project is funded, supported and sponsored by:
 
@@ -309,3 +341,4 @@ Communications Networks, Content and Technology under grant agreement No 1010695
     :height: 40
     :alt: NGI Discovery logo
 
+**End of ScanCode Toolkit README**
