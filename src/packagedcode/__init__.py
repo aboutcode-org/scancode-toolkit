@@ -40,6 +40,7 @@ from packagedcode import rubygems
 from packagedcode import swift
 from packagedcode import win_pe
 from packagedcode import windows
+from packagedcode import pylock
 
 if on_linux:
     from packagedcode import msi
@@ -180,6 +181,9 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     pypi.PythonSdistPkgInfoFile,
     pypi.PythonSetupPyHandler,
     pypi.SetupCfgHandler,
+
+    # Handler for pylock.toml
+    pylock.PylockTomlHandler,
 
     readme.ReadmeHandler,
 
