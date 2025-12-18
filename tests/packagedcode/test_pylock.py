@@ -9,17 +9,17 @@
 
 import os
 
-from packagedcode import pylock
 from packages_test_utils import PackageTester
+
+from packagedcode import pylock
+
 
 class TestPylockTomlHandler(PackageTester):
     # set path to data directory
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    test_data_dir = os.path.join(os.path.dirname(__file__), "data")
 
     def test_pylock_parse(self):
-        test_file = self.get_test_loc('pylock/pylock.toml')
+        test_file = self.get_test_loc("pylock/pylock.toml")
         package = pylock.PylockTomlHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pylock/pylock_toml-expected.json')
+        expected_loc = self.get_test_loc("pylock/pylock_toml-expected.json")
         self.check_packages_data(package, expected_loc, regen=False)
-
-
