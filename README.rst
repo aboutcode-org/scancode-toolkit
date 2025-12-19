@@ -12,52 +12,17 @@ ScanCode Toolkit is the leading tool in scanning depth and accuracy, used by hun
 Getting Started
 ===============
 
-These instructions will get you a copy of the project up and running on your local machine. 
+Instructions to get you up and running on your local machine are at `Getting Started <https://scancode-toolkit.readthedocs.io/en/stable/getting-started/index.html>`_
 
-https://scancode-toolkit.readthedocs.io/en/stable/getting-started/install.html 
+The ScanCode Toolkit documentation also provides:
 
-These instructions will guide you to start scanning code.
-
-https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/synopsis.html#synopsis-quickstart
-
-Prerequisites
-=============
-
-What things you need to install the software and how to install them.
-
-https://scancode-toolkit.readthedocs.io/en/stable/getting-started/install.html#before-installing 
-
-Exploring ScanCode Features
-===========================
-
-Discover the ScanCode command line options that meet your requirements.
-
-https://scancode-toolkit.readthedocs.io/en/stable/cli-reference/index.html 
-
-Guided Tours
-============
-
-These tutorials will provide hands-on guidance to ScanCode features.
-
-https://scancode-toolkit.readthedocs.io/en/stable/tutorials/index.html
-
-Advanced Topics
-===============
-
-Expand the ScanCode Licenses and Detection Rules with your own data.
-
-https://scancode-toolkit.readthedocs.io/en/stable/how-to-guides/index.html
-
-Generate Attribution from a ScanCode scan.
-
-https://scancode-toolkit.readthedocs.io/en/stable/how-to-guides/generate_attribution.html
-
-Contributing
-============
-
-Guidelines for contributing to code development.
-
-https://scancode-toolkit.readthedocs.io/en/stable/contribute/index.html
+- prerequisites for installing the software.
+- instructions guiding you to start scanning code.
+- a comprehensive guide to the command line options.
+- tutorials that provide hands-on guidance to ScanCode features.
+- how to expand ScanCode Licenses and Detection Rules with your own data.
+- how to generate Attribution from a ScanCode scan.
+- guidelines for contributing to code development.
 
 Build and tests status
 ======================
