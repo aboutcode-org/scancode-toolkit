@@ -2,7 +2,7 @@
 key: charmpp-converse-2017
 short_name: Charm++/Converse License 2017
 name: Charm++/Converse License 2017
-category: Proprietary Free
+category: Non-Commercial
 owner: NCSA - University of Illinois
 homepage_url: https://github.com/charmplusplus/charm4py/blob/fb67656fc0f39773c567fcc4181fbf76429fe5ab/LICENSE
 spdx_license_key: LicenseRef-scancode-charmpp-converse-2017

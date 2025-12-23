@@ -2,7 +2,7 @@
 key: rsa-md2
 short_name: RSA-MD2 License
 name: RSA Data Security MD2
-category: Free Restricted
+category: Non-Commercial
 owner: RSA (the Security Division of EMC)
 spdx_license_key: LicenseRef-scancode-rsa-md2
 ---

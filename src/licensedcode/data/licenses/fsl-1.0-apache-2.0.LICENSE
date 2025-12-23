@@ -2,7 +2,7 @@
 key: fsl-1.0-apache-2.0
 short_name: FSL-1.0-Apache-2.0
 name: Functional Source License, Version 1.0, Apache 2.0 Change License
-category: Source-available
+category: Non-Commercial
 owner: Sentry
 homepage_url: https://github.com/getsentry/fsl.software/blob/main/FSL-1.0-Apache-2.0.template.md
 spdx_license_key: LicenseRef-scancode-fsl-1.0-apache-2.0

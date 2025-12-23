@@ -2,7 +2,7 @@
 key: ms-research-license-terms
 short_name: MS Research License Terms
 name: Microsoft Research License Terms
-category: Proprietary Free
+category: Non-Commercial
 owner: Microsoft
 homepage_url: https://download.microsoft.com/download/B/8/8/B88DDDC1-F316-412A-94B3-025788436054/LICENSE.pdf
 spdx_license_key: LicenseRef-scancode-ms-research-license-terms

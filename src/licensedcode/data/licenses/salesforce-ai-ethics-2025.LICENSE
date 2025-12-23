@@ -2,7 +2,7 @@
 key: salesforce-ai-ethics-2025
 short_name: Salesforce AI Ethics Disclaimer 2025
 name: Salesforce AI Ethics Disclaimer 2025
-category: Proprietary Free
+category: Non-Commercial
 owner: Salesforce.com
 homepage_url: https://github.com/salesforce/CodeGen/blob/533a6cc52b4dbd46286cfb12f492390f379ed8a1/AI_ETHICS.md
 spdx_license_key: LicenseRef-scancode-salesforce-ai-ethics-2025

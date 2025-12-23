@@ -2,7 +2,7 @@
 key: odb-ncuel
 short_name: ODB NCUEL
 name: ODB Non-Commercial Use and Evaluation License (NCUEL)
-category: Copyleft
+category: Non-Commercial
 owner: Code Synthesis
 homepage_url: https://www.codesynthesis.com/licenses/ncuel.txt
 spdx_license_key: LicenseRef-scancode-odb-ncuel

@@ -2,7 +2,7 @@
 key: mdl-2021
 short_name: MDL 2021
 name: Montreal Data License (MDL) 2021
-category: Proprietary Free
+category: Non-Commercial
 owner: LaboBioInfoUQÀM
 homepage_url: https://github.com/bioinfoUQAM/Canadian-cropland-dataset-github/blob/ec09b091b69423a87febc56309c1e86d3b61e8cb/DATA_LICENSE
 spdx_license_key: LicenseRef-scancode-mdl-2021

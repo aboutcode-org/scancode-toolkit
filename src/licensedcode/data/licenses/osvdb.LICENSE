@@ -2,7 +2,7 @@
 key: osvdb
 short_name: OSVDB License
 name: Open Sourced Vulnerability Database (OSVDB) License
-category: Proprietary Free
+category: Non-Commercial
 owner: OSVDB
 spdx_license_key: LicenseRef-scancode-osvdb
 text_urls:

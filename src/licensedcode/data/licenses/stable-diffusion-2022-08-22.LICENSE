@@ -1,11 +1,12 @@
 ---
 key: stable-diffusion-2022-08-22
-short_name: Stable Diffusion License 2022-08-22
-name: Stable Diffusion License 2022-08-22
+short_name: CreativeML Open RAIL-M 2022-08-22
+name: CreativeML Open RAIL-M 2022-08-22
 category: Proprietary Free
 owner: CompVis
 homepage_url: https://github.com/CompVis/stable-diffusion/blob/main/LICENSE
 spdx_license_key: LicenseRef-scancode-stable-diffusion-2022-08-22
+faq_url: https://huggingface.co/blog/open_rail
 ignorable_copyrights:
     - Copyright (c) 2022 Robin Rombach and Patrick Esser and contributors
 ignorable_holders:
