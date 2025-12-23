@@ -329,7 +329,9 @@ def test_find_referenced_resource():
     codebase = VirtualCodebase(scan_loc)
     resource = codebase.get_resource(path='scan-ref/license-notice.txt')
     result = find_referenced_resource(referenced_filename='LICENSE', resource=resource, codebase=codebase)
-    assert result.path == 'scan-ref/LICENSE'
+    assert isinstance(result, list)
+    assert len(result) == 1
+    assert result[0].path == 'scan-ref/LICENSE'
 
 
 def test_find_referenced_resource_does_not_find_based_file_name_suffix():
@@ -346,7 +348,9 @@ def test_find_referenced_resource_does_not_find_based_file_name_suffix():
     codebase = VirtualCodebase(scan_loc)
     resource = codebase.get_resource(path='scan-ref-dupe-name-suffix/license-notice.txt')
     result = find_referenced_resource(referenced_filename='LICENSE', resource=resource, codebase=codebase)
-    assert result.path == 'scan-ref-dupe-name-suffix/LICENSE'
+    assert isinstance(result, list)
+    assert len(result) == 1
+    assert result[0].path == 'scan-ref-dupe-name-suffix/LICENSE'
 
 
 def test_match_reference_license():

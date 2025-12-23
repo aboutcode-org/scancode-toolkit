@@ -15,6 +15,7 @@ import typing
 import uuid
 from enum import Enum
 from hashlib import sha1
+from fnmatch import fnmatch
 
 import attr
 from collections import defaultdict
@@ -1900,22 +1901,23 @@ def has_resolved_referenced_file(license_matches):
 
 def find_referenced_resource_from_package(referenced_filename, resource, codebase, **kwargs):
     """
-    Return a Resource matching the ``referenced_filename`` path or filename
+    Return a list of Resources matching the ``referenced_filename`` path or filename
     given a ``resource`` in ``codebase``.
 
     To find the `referenced_filename` the sibling files are searched beside all the
     package manifest paths, for all the packages which the resource is a part of,
     to resolve references to files in package ecosystem specific locations.
 
-    Return None if the ``referenced_filename`` cannot be found in the same
+    Return an empty list if the ``referenced_filename`` cannot be found in the same
     directory as the base ``resource``, or at the codebase ``root``.
 
     ``referenced_filename`` is the path or filename referenced in a
     LicenseMatch detected at ``resource``,
     """
+    matches = []
     codebase_packages = codebase.attributes.packages
     if not (resource and codebase_packages):
-        return
+        return matches
 
     datafile_paths_by_package_uid = {}
     for package in codebase_packages:
@@ -1945,43 +1947,72 @@ def find_referenced_resource_from_package(referenced_filename, resource, codebas
             referenced_path = posixpath.join(parent_path, referenced_filename)
             referenced_resource = codebase.get_resource(path=referenced_path)
             if referenced_resource:
-                return referenced_resource
+                matches.append(referenced_resource)
+    
+    return matches
 
 
 def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
     """
-    Return a Resource matching the ``referenced_filename`` path or filename
-    given a ``resource`` in ``codebase``.
+    Return a list of Resources matching the ``referenced_filename`` path, pattern
+    or filename given a ``resource`` in ``codebase``.
 
     To find the `referenced_filename` the sibling files of the `resource`
     and files at the `codebase` root are searched.
 
-    Return None if the ``referenced_filename`` cannot be found in the same
-    directory as the base ``resource``, or at the codebase ``root``.
+    Return an empty list if the ``referenced_filename`` cannot be found in the
+    same directory as the base ``resource``, or at the codebase ``root``.
 
-    ``referenced_filename`` is the path or filename referenced in a
+    ``referenced_filename`` is the path, pattern or filename referenced in a
     LicenseMatch detected at ``resource``,
     """
+    matches = []
     if not resource:
-        return
+        return matches
 
     parent_path = resource.parent_path()
     if not parent_path:
-        return
+        return matches
 
     # this can be a path or a plain name
     referenced_filename = clean_path(referenced_filename)
-    path = posixpath.join(parent_path, referenced_filename)
-    resource = codebase.get_resource(path=path)
-    if resource:
-        return resource
+    
+    # Candidate paths to look for: relative to parent, and relative to root
+    candidate_paths = [
+        posixpath.join(parent_path, referenced_filename),
+        posixpath.join(codebase.root.path, referenced_filename),
+    ]
 
-    # Also look at codebase root for referenced file
-    root_path = codebase.root.path
-    path = posixpath.join(root_path, referenced_filename)
-    resource = codebase.get_resource(path=path)
-    if resource:
-        return resource
+    # We want unique matches
+    seen_paths = set()
+
+    for pattern in candidate_paths:
+        is_glob = any(c in pattern for c in '*?[]')
+        
+        if is_glob:
+            # If glob, we walk the codebase to find matches
+            # Optimization: If we could limit walk to a subtree it would be better
+            # For now we walk all as a safe default
+            for res in codebase.walk(topdown=True):
+                if fnmatch(res.path, pattern):
+                    if res.path not in seen_paths:
+                        matches.append(res)
+                        seen_paths.add(res.path)
+        else:
+            # Exact match check
+            res = codebase.get_resource(path=pattern)
+            if res:
+                if res.is_dir:
+                    for child in res.children(codebase):
+                        if child.path not in seen_paths:
+                            matches.append(child)
+                            seen_paths.add(child.path)
+                else:
+                     if res.path not in seen_paths:
+                        matches.append(res)
+                        seen_paths.add(res.path)
+
+    return matches
 
 
 def update_expressions_from_license_detections(resource, codebase):
@@ -2041,25 +2072,30 @@ def update_detection_from_referenced_files(
     referenced_detections = []
     referenced_resources = []
     for referenced_filename in referenced_filenames:
-        referenced_resource = find_referenced_resource_func(
+        found_resources = find_referenced_resource_func(
             referenced_filename=referenced_filename,
             resource=resource,
             codebase=codebase,
-        )
+        ) or []
+        
+        # Ensure we work with a list even if the func returns a single item (legacy support)
+        if hasattr(found_resources, 'path'):
+             found_resources = [found_resources]
 
-        if referenced_resource and referenced_resource.license_detections:
-            referenced_detections.extend(
-                referenced_resource.license_detections
-            )
-            referenced_resources.append(referenced_resource)
-
-            # For LicenseMatches with different resources as origin, add the
-            # resource path to these matches as origin info
-            for detection in referenced_resource.license_detections:
-                populate_matches_with_path(
-                    matches=detection["matches"],
-                    path=referenced_resource.path
+        for referenced_resource in found_resources:
+            if referenced_resource and referenced_resource.license_detections:
+                referenced_detections.extend(
+                    referenced_resource.license_detections
                 )
+                referenced_resources.append(referenced_resource)
+
+                # For LicenseMatches with different resources as origin, add the
+                # resource path to these matches as origin info
+                for detection in referenced_resource.license_detections:
+                    populate_matches_with_path(
+                        matches=detection["matches"],
+                        path=referenced_resource.path
+                    )
 
     if not referenced_detections:
         return False
@@ -2080,7 +2116,7 @@ def update_detection_from_referenced_files(
         if TRACE_REFERENCE and referenced_resources:
             paths = [
                 resource.path
-                for resource in referenced_resource
+                for resource in referenced_resources
             ]
             logger_debug(
                 f'use_referenced_license_expression: False for '
@@ -2092,7 +2128,7 @@ def update_detection_from_referenced_files(
     if TRACE_REFERENCE and referenced_resources:
         paths = [
             resource.path
-            for resource in referenced_resource
+            for resource in referenced_resources
         ]
         logger_debug(
             f'use_referenced_license_expression: True for '
