@@ -2,7 +2,7 @@
 key: s-lab-1.0
 short_name: S-Lab License 1.0
 name: S-Lab License 1.0
-category: Proprietary Free
+category: Non-Commercial
 owner: S-Lab
 homepage_url: https://huggingface.co/OAOA/DifFace/blob/main/LICENSE
 spdx_license_key: LicenseRef-scancode-s-lab-1.0

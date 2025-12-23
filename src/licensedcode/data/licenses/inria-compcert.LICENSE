@@ -2,7 +2,7 @@
 key: inria-compcert
 short_name: INRIA NCLA CompCert
 name: INRIA Non-Commercial License Agreement for the CompCert verified compiler
-category: Proprietary Free
+category: Non-Commercial
 owner: INRIA
 homepage_url: https://compcert.org/doc/LICENSE.txt
 spdx_license_key: LicenseRef-scancode-inria-compcert

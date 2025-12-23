@@ -2,7 +2,7 @@
 key: solace-software-eula-2020
 short_name: Solace-Software-EULA-2020
 name: Solace-Software-EULA-2020
-category: Proprietary Free
+category: Non-Commercial
 owner: solace
 homepage_url: https://solace.com/license-software/
 spdx_license_key: LicenseRef-scancode-solace-software-eula-2020
