@@ -125,7 +125,7 @@ class BaseNpmHandler(models.DatafileHandler):
         workspace_root = package_resource.parent(codebase)
         workspace_root_path = None
         if workspace_root:
-            workspace_root_path = package_resource.parent(codebase).path
+            workspace_root_path = workspace_root.path
         workspaces = pkg_data.extra_data.get('workspaces') or []
 
         # Also look for pnpm workspaces
@@ -532,7 +532,9 @@ class NpmPackageJsonHandler(BaseNpmHandler):
 
         namespace, name = split_scoped_package_name(name)
 
-        is_private = json_data.get('private') or False
+        is_private = False
+        if json_data.get('private'):
+            is_private = True
         if is_private:
             urls = {}
         else:
