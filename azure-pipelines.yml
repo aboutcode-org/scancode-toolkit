@@ -145,14 +145,6 @@ jobs:
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
 
-    - template: etc/ci/azure-posix.yml
-      parameters:
-          job_name: macos13_cpython
-          image_name: macOS-13
-          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
-          test_suites:
-              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
-
     - template: etc/ci/azure-win.yml
       parameters:
           job_name: win2025_cpython
@@ -216,14 +208,6 @@ jobs:
       parameters:
           job_name: macos14_cpython_latest_from_pip
           image_name: macos-14
-          python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
-          test_suites:
-              all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
-          job_name: macos13_cpython_latest_from_pip
-          image_name: macos-13
           python_versions: ['3.10', '3.11', '3.12', '3.13', '3.14']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
