@@ -109,6 +109,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     maven.MavenPomPropertiesHandler,
     maven.JavaJarManifestHandler,
     maven.JavaOSGiManifestHandler,
+    maven.GradleModuleMetaDataHandler,
 
     misc.AndroidAppArchiveHandler,
     misc.AndroidLibraryHandler,
