@@ -1537,11 +1537,7 @@ class GradleModuleMetadataHandler(MavenBasePackageHandler):
     """
     Handler for Gradle Module Metadata files (.module).
     
-    Gradle Module Metadata is a JSON format that provides richer metadata than
-    traditional Maven POMs, including multiple variants, comprehensive checksums,
-    and Gradle-specific attributes.
-    
-    Specification: https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-module-metadata-specification.md
+    Specification: https://github.com/gradle/gradle/blob/master/platforms/documentation/docs/src/docs/design/gradle-module-metadata-latest-specification.md   
     Example: https://repo1.maven.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.module
     """
     
