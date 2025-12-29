@@ -159,7 +159,7 @@ class TestCargo(PackageTester):
         test_file = self.get_test_loc('cargo/binary/cargo_dependencies')
         expected_file = self.get_test_loc('cargo/binary/cargo-binary.expected.json')
         result_file = self.get_temp_file('results.json')
-        run_scan_click(['--binary-package', test_file, '--json', result_file])
+        run_scan_click(['--package-in-compiled', test_file, '--json', result_file])
         check_json_scan(
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )

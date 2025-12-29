@@ -15,7 +15,8 @@ import multiregex
 import attr
 import click
 
-from commoncode.cliutils import PluggableCommandLineOption
+from collections import defaultdict
+
 from commoncode.fileutils import create_dir
 from packagedcode import APPLICATION_PACKAGE_DATAFILE_HANDLERS
 from packagedcode import SYSTEM_PACKAGE_DATAFILE_HANDLERS
@@ -35,11 +36,10 @@ _PACKAGE_CACHE = None
 # This is the Pickle protocol we use, which was added in Python 3.4.
 PICKLE_PROTOCOL = 4
 
-PACKAGE_INDEX_LOCK_TIMEOUT = 60 * 6
+PACKAGE_INDEX_LOCK_TIMEOUT = 60
 PACKAGE_INDEX_DIR = 'package_patterns_index'
 PACKAGE_INDEX_FILENAME = 'index_cache'
 PACKAGE_LOCKFILE_NAME = 'scancode_package_index_lockfile'
-PACKAGE_CHECKSUM_FILE = 'scancode_package_index_tree_checksums'
 
 
 @attr.s
@@ -106,20 +106,25 @@ class PkgManifestPatternsCache:
             # acquire lock and wait until timeout to get a lock or die
             with lockfile.FileLock(lock_file).locked(timeout=timeout):
 
-                system_multiregex_patterns, system_handlers_by_regex = build_mappings_and_multiregex_patterns(
+                system_multiregexes = build_mappings_and_multiregex_patterns(
                     datafile_handlers=system_package_datafile_handlers,
                 )
-                application_multiregex_patterns, application_handlers_by_regex = build_mappings_and_multiregex_patterns(
+                application_multiregexes = build_mappings_and_multiregex_patterns(
                     datafile_handlers=application_package_datafile_handlers,
                 )
                 all_multiregex_matcher = PkgManifestPatternsCache.all_multiregex_patterns(
-                    application_multiregex_patterns, system_multiregex_patterns,
+                    application_multiregex_patterns=application_multiregexes.patterns,
+                    system_multiregex_patterns=system_multiregexes.patterns,
                 )
-                system_package_matcher = multiregex.RegexMatcher(system_multiregex_patterns)
-                application_package_matcher = multiregex.RegexMatcher(application_multiregex_patterns)
+                system_package_matcher = multiregex.RegexMatcher(system_multiregexes.patterns)
+                application_package_matcher = multiregex.RegexMatcher(application_multiregexes.patterns)
                 all_package_matcher = multiregex.RegexMatcher(all_multiregex_matcher)
+                handler_by_regex = (
+                    system_multiregexes.handler_by_regex |
+                    application_multiregexes.handler_by_regex
+                )
                 package_cache = cls(
-                    handler_by_regex=system_handlers_by_regex | application_handlers_by_regex,
+                    handler_by_regex=handler_by_regex,
                     system_package_matcher=system_package_matcher,
                     application_package_matcher=application_package_matcher,
                     all_package_matcher=all_package_matcher,
@@ -140,11 +145,40 @@ class PkgManifestPatternsCache:
 
 
 def get_prematchers_from_glob_pattern(pattern):
+    """
+    Get a list of prematchers required to initialize the
+    multiregex matchers for a package manifest pattern.
+
+    Prematchers are words that must be present for a pattern to
+    be matched, and this acts as a pre-matching filter for fast
+    matching.
+    >>> get_prematchers_from_glob_pattern('*pyproject.toml')
+    ['pyproject.toml']
+    """
     return [
         prematcher.lower().lstrip("/")
         for prematcher in pattern.split("*")
         if prematcher
     ]
+
+@attr.s
+class AcceleratedPattern():
+    regex :str = attr.ib(default=None) # regular expression string
+    prematchers :list[str] = attr.ib(default=[]) # list of prematcher strinsg for this regex
+    handler_datasource_ids :list[str] = attr.ib(default=[]) # handler
+
+
+@attr.s
+class MultiRegexPatternsandMappings:
+    multiregex_patterns :list[AcceleratedPattern] = attr.ib(default=[])
+    handler_by_regex :dict = attr.ib(default={})
+
+    @property
+    def patterns(self):
+        return [
+            (pattern.regex, pattern.prematchers)
+            for pattern in self.multiregex_patterns 
+        ]
 
 
 def build_mappings_and_multiregex_patterns(datafile_handlers):
@@ -152,7 +186,7 @@ def build_mappings_and_multiregex_patterns(datafile_handlers):
     Return a mapping of regex patterns to datafile handler IDs and
     multiregex patterns consisting of regex patterns and prematchers.
     """
-    handler_by_regex = {}
+    handler_by_regex = defaultdict(list)
     multiregex_patterns = []
 
     if not datafile_handlers:
@@ -178,11 +212,18 @@ def build_mappings_and_multiregex_patterns(datafile_handlers):
             else:
                 handler_by_regex[regex_pattern]= [handler.datasource_id]
 
-    for regex in handler_by_regex.keys():
-        regex_and_prematcher = (regex, prematchers_by_regex.get(regex, []))
+    for regex, handler_ids in handler_by_regex.items():
+        regex_and_prematcher = AcceleratedPattern(
+            regex=regex,
+            prematchers=prematchers_by_regex.get(regex, []),
+            handler_datasource_ids=handler_ids,
+        )
         multiregex_patterns.append(regex_and_prematcher)
 
-    return multiregex_patterns, handler_by_regex
+    return MultiRegexPatternsandMappings(
+        handler_by_regex=handler_by_regex,
+        multiregex_patterns=multiregex_patterns,
+    )
 
 
 def get_cache(
@@ -223,7 +264,7 @@ def load_cache_file(cache_file):
             raise Exception(msg) from e
 
 
-@click.command(name='scancode-cache-package-patterns')
+@click.command(name='scancode-reindex-package-patterns')
 @click.help_option('-h', '--help')
 def cache_package_patterns(*args, **kwargs):
     """Create scancode package manifest patterns cache and exit"""

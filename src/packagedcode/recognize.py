@@ -14,7 +14,7 @@ from commoncode import filetype
 from commoncode.fileutils import as_posixpath
 
 from packagedcode import HANDLER_BY_DATASOURCE_ID
-from packagedcode import BINARY_PACKAGE_DATAFILE_HANDLERS
+from packagedcode import PACKAGE_IN_COMPILED_DATAFILE_HANDLERS
 from packagedcode import models
 from packagedcode.cache import get_cache
 
@@ -46,7 +46,7 @@ def recognize_package_data(
     location,
     application=True,
     system=False,
-    binary=False,
+    compiled=False,
     package_only=False,
 ):
     """
@@ -63,7 +63,7 @@ def recognize_package_data(
         location=location,
         application=application,
         system=system,
-        binary=binary,
+        compiled=compiled,
         package_only=package_only,
     ))
 
@@ -72,7 +72,7 @@ def _parse(
     location,
     application=True,
     system=False,
-    binary=False,
+    compiled=False,
     package_only=False,
 ):
     """
@@ -86,7 +86,7 @@ def _parse(
     package_patterns = get_cache()
 
     has_patterns = application or system or package_only
-    assert has_patterns or binary
+    assert has_patterns or compiled
     if package_only or (application and system):
         package_matcher = package_patterns.all_package_matcher
     elif application:
@@ -117,8 +117,8 @@ def _parse(
     ]
 
     if not datafile_handlers:
-        if binary:
-            datafile_handlers.extend(BINARY_PACKAGE_DATAFILE_HANDLERS)
+        if compiled:
+            datafile_handlers.extend(PACKAGE_IN_COMPILED_DATAFILE_HANDLERS)
         elif TRACE:
             logger_debug(f'_parse: no package datafile detected at {package_path}')
 

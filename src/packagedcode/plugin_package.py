@@ -172,14 +172,13 @@ class PackageScanner(ScanPlugin):
         ),
         PluggableCommandLineOption(
             (
-                '-b',
-                '--binary-package',
+                '--package-in-compiled',
             ),
             is_flag=True,
             default=False,
             help=(
-                'Scan <input> for package and dependency related data in binaries. '
-                'Currently supported binaries: Go, Rust.'
+                'Scan <input> for package and dependency related data in compiled binaries. '
+                'Currently supported compiled binaries: Go, Rust.'
             ),
             help_group=SCAN_GROUP,
             sort_order=22,
@@ -209,14 +208,14 @@ class PackageScanner(ScanPlugin):
         ),
     ]
 
-    def is_enabled(self, package, system_package, binary_package, package_only, **kwargs):
-        return package or system_package or binary_package or package_only
+    def is_enabled(self, package, system_package, package_in_compiled, package_only, **kwargs):
+        return package or system_package or package_in_compiled or package_only
 
     def get_scanner(
         self,
         package=True,
         system_package=False,
-        binary_package=False,
+        package_in_compiled=False,
         package_only=False,
         **kwargs
     ):
@@ -229,7 +228,7 @@ class PackageScanner(ScanPlugin):
             get_package_data,
             application=package,
             system=system_package,
-            binary=binary_package,
+            binary=package_in_compiled,
             package_only=package_only,
         )
 

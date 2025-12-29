@@ -260,7 +260,7 @@ def _get_package_data(
     location,
     application=True,
     system=False,
-    binary=False,
+    compiled=False,
     package_only=False, 
     **kwargs
 ):
@@ -270,14 +270,14 @@ def _get_package_data(
     Note that all exceptions are caught if there are any errors while parsing a
     package manifest.
     """
-    assert application or system or binary or package_only
+    assert application or system or compiled or package_only
     from packagedcode.recognize import recognize_package_data
     try:
         return recognize_package_data(
             location=location,
             application=application,
             system=system,
-            binary=binary,
+            compiled=compiled,
             package_only=package_only,
         ) or []
 
@@ -312,7 +312,7 @@ def get_package_data(
     location,
     application=True,
     system=False,
-    binary=False,
+    compiled=False,
     package_only=False,
     **kwargs
 ):
@@ -328,7 +328,7 @@ def get_package_data(
         location=location,
         application=application,
         system=system,
-        binary=binary,
+        compiled=compiled,
         package_only=package_only,
         **kwargs,
     ) or []

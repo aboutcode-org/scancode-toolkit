@@ -12,8 +12,9 @@ Options:
     -p, --package         Scan <input> for application package and dependency
                           manifests, lockfiles and related data.
     --system-package      Scan <input> for installed system package databases.
-    -b, --binary-package  Scan <input> for package and dependency related data in
-                          binaries. Currently supported binaries: Go, Rust.
+    --package-in-compiled  Scan <input> for package and dependency related data in
+                          compiled binaries. Currently supported compiled
+                          binaries: Go, Rust.
     --package-only        Scan for system and application package data and skip
                           license/copyright detection and top-level package
                           creation.

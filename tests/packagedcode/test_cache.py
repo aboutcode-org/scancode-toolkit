@@ -7,15 +7,13 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import os.path
+import fnmatch
+import os
 
 from packagedcode import cache
 from commoncode.fileutils import as_posixpath
 
 from packages_test_utils import PackageTester
-from scancode_config import REGEN_TEST_FIXTURES
-from scancode.cli_test_utils import run_scan_click
-from scancode.cli_test_utils import check_json_scan
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -27,11 +25,11 @@ class TestMultiregexPatterns(PackageTester):
     def test_build_mappings_and_multiregex_patterns_works(self):
         from packagedcode.about import AboutFileHandler
 
-        multiregex_patterns, handler_by_regex = cache.build_mappings_and_multiregex_patterns(
+        multiregexes = cache.build_mappings_and_multiregex_patterns(
             datafile_handlers=[AboutFileHandler],
         )
-        assert multiregex_patterns == [('(?s:.*\\.ABOUT)\\Z', ['.about'])]
-        assert handler_by_regex == {'(?s:.*\\.ABOUT)\\Z': ['about_file']}
+        assert multiregexes.patterns == [('(?s:.*\\.ABOUT)\\Z', ['.about'])]
+        assert multiregexes.handler_by_regex == {'(?s:.*\\.ABOUT)\\Z': ['about_file']}
 
     def test_build_package_cache_works(self):
         from packagedcode.about import AboutFileHandler
@@ -52,10 +50,17 @@ class TestMultiregexPatterns(PackageTester):
         regex, _match = package_cache.all_package_matcher.match(test_path).pop()
         assert package_cache.handler_by_regex.get(regex.pattern).pop() == AboutFileHandler.datasource_id
 
-    def check_empty_file_scan_works(self):
+    def test_empty_file_scan_works(self):
 
         test_file = self.get_test_loc('cache/.gitignore')
         package_path = as_posixpath(test_file)
         package_matcher = cache.get_cache()
 
-        assert not package_matcher.match(package_path)
+        assert not package_matcher.all_package_matcher.match(package_path)
+
+    def test_get_prematchers_from_glob_pattern(self):
+
+        from packagedcode.pypi import PyprojectTomlHandler
+
+        prematchers = cache.get_prematchers_from_glob_pattern(PyprojectTomlHandler.path_patterns[0])
+        assert "pyproject.toml" in prematchers
