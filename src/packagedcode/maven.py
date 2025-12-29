@@ -1550,7 +1550,7 @@ class GradleModuleMetadataHandler(MavenBasePackageHandler):
     default_package_type = 'maven'
     default_primary_language = 'Java'
     description = 'Gradle Module Metadata'
-    documentation_url = 'https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-module-metadata-specification.md'
+    documentation_url = 'https://github.com/gradle/gradle/blob/master/platforms/documentation/docs/src/docs/design/gradle-module-metadata-latest-specification.md'
 
     @classmethod
     def parse(cls, location, package_only=False, base_url='https://repo1.maven.org/maven2'):
