@@ -10,6 +10,8 @@ Next release
   https://github.com/aboutcode-org/scancode-toolkit/pull/4474
   https://github.com/aboutcode-org/scancode-toolkit/issues/4101
 
+- Replace unmaintained ``toml`` library with ``tomllib`` / ``tomli``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4532
 
 v32.4.1 - 2025-07-23
 --------------------

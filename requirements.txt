@@ -70,7 +70,7 @@ six==1.17.0
 soupsieve==2.7
 spdx-tools==0.8.2
 text-unidecode==1.3
-toml==0.10.2
+tomli==2.3.0
 typecode==30.0.2
 typecode-libmagic==5.39.210531
 typing-extensions==4.14.0
