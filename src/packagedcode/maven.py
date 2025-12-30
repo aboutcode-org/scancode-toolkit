@@ -1592,7 +1592,7 @@ class GradleModuleMetadataHandler(MavenBasePackageHandler):
         }
  
         # Remove empty values
-        extra_data = {k: v for k, v in extra_data.items() if v is not None}
+        extra_data = {k: v for k, v in extra_data.items() if v}
  
         urls = cls._build_urls(namespace, name, version, base_url)
         description = cls._build_description(name, version, gradle_status)
