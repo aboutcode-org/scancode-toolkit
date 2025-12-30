@@ -167,7 +167,7 @@ def build_package_data(package_data, package_only=False):
 
 class PhpComposerLockHandler(BasePhpComposerHandler):
     datasource_id = 'php_composer_lock'
-    path_patterns = ('*composer.lock',)
+    path_patterns = ('*composer.lock', '*symfony.lock')
     default_package_type = 'composer'
     default_primary_language = 'PHP'
     description = 'PHP composer lockfile'

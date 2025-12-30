@@ -86,3 +86,14 @@ class TestPHPcomposer(PackageTester):
         expected_loc = self.get_test_loc('phpcomposer/composer.lock-expected.json')
         packages = phpcomposer.PhpComposerLockHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_is_manifest_php_symfony_lock(self):
+        test_file = self.get_test_loc('phpcomposer/symfony.lock')
+        assert phpcomposer.PhpComposerLockHandler.is_datafile(test_file)
+
+
+    def test_parse_symfony_lock(self):
+        test_file = self.get_test_loc('phpcomposer/symfony.lock')
+        expected_loc = self.get_test_loc('phpcomposer/symfony.lock-expected.json')
+        packages = phpcomposer.PhpComposerLockHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
