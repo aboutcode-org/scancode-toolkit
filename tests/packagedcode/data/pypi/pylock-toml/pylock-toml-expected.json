@@ -1,0 +1,284 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "lock_version": "1.0",
+      "created_by": "mousebender",
+      "requires_python": ">=3.12",
+      "environments": [
+        "sys_platform == 'win32'",
+        "sys_platform == 'linux'"
+      ]
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/attrs@25.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": false,
+        "resolved_package": {
+          "type": "pypi",
+          "namespace": null,
+          "name": "attrs",
+          "version": "25.1.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://files.pythonhosted.org/packages/fc/30/d4986a882011f9df997a55e6becd864812ccfcd821d64aac8570ee39f719/attrs-25.1.0-py3-none-any.whl",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": "c75a69e28a550a7e93789579c22aa26b0f5b83b75dc4e08fe092980051e1090a",
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
+          "extra_data": {
+            "requires_python": ">=3.8",
+            "index": "https://pypi.org/simple/",
+            "file_references": [
+              {
+                "wheel": {
+                  "name": "attrs-25.1.0-py3-none-any.whl",
+                  "url": "https://files.pythonhosted.org/packages/fc/30/d4986a882011f9df997a55e6becd864812ccfcd821d64aac8570ee39f719/attrs-25.1.0-py3-none-any.whl",
+                  "size": 63152,
+                  "hashes": {
+                    "sha256": "c75a69e28a550a7e93789579c22aa26b0f5b83b75dc4e08fe092980051e1090a"
+                  }
+                }
+              }
+            ]
+          },
+          "dependencies": [],
+          "repository_homepage_url": "https://pypi.org/project/attrs",
+          "repository_download_url": "https://pypi.org/packages/source/a/attrs/attrs-25.1.0.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/attrs/25.1.0/json",
+          "datasource_id": "pypi_pylock_toml",
+          "purl": "pkg:pypi/attrs@25.1.0"
+        },
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/cattrs@24.1.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": false,
+        "resolved_package": {
+          "type": "pypi",
+          "namespace": null,
+          "name": "cattrs",
+          "version": "24.1.2",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://files.pythonhosted.org/packages/c8/d5/867e75361fc45f6de75fe277dd085627a9db5ebb511a87f27dc1396b5351/cattrs-24.1.2-py3-none-any.whl",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": "67c7495b760168d931a10233f979b28dc04daf853b30752246f4f8471c6d68d0",
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
+          "extra_data": {
+            "requires_python": ">=3.8",
+            "index": "https://pypi.org/simple/",
+            "file_references": [
+              {
+                "wheel": {
+                  "name": "cattrs-24.1.2-py3-none-any.whl",
+                  "url": "https://files.pythonhosted.org/packages/c8/d5/867e75361fc45f6de75fe277dd085627a9db5ebb511a87f27dc1396b5351/cattrs-24.1.2-py3-none-any.whl",
+                  "size": 66446,
+                  "hashes": {
+                    "sha256": "67c7495b760168d931a10233f979b28dc04daf853b30752246f4f8471c6d68d0"
+                  }
+                }
+              }
+            ]
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/attrs",
+              "extracted_requirement": null,
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://pypi.org/project/cattrs",
+          "repository_download_url": "https://pypi.org/packages/source/c/cattrs/cattrs-24.1.2.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/cattrs/24.1.2/json",
+          "datasource_id": "pypi_pylock_toml",
+          "purl": "pkg:pypi/cattrs@24.1.2"
+        },
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/numpy@2.2.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": false,
+        "resolved_package": {
+          "type": "pypi",
+          "namespace": null,
+          "name": "numpy",
+          "version": "2.2.3",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://files.pythonhosted.org/packages/42/6e/55580a538116d16ae7c9aa17d4edd56e83f42126cb1dfe7a684da7925d2c/numpy-2.2.3-cp312-cp312-win_amd64.whl",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": "83807d445817326b4bcdaaaf8e8e9f1753da04341eceec705c001ff342002e5d",
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
+          "extra_data": {
+            "requires_python": ">=3.10",
+            "index": "https://pypi.org/simple/",
+            "file_references": [
+              {
+                "wheel": {
+                  "name": "numpy-2.2.3-cp312-cp312-win_amd64.whl",
+                  "url": "https://files.pythonhosted.org/packages/42/6e/55580a538116d16ae7c9aa17d4edd56e83f42126cb1dfe7a684da7925d2c/numpy-2.2.3-cp312-cp312-win_amd64.whl",
+                  "size": 12626357,
+                  "hashes": {
+                    "sha256": "83807d445817326b4bcdaaaf8e8e9f1753da04341eceec705c001ff342002e5d"
+                  }
+                }
+              },
+              {
+                "wheel": {
+                  "name": "numpy-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                  "url": "https://files.pythonhosted.org/packages/39/04/78d2e7402fb479d893953fb78fa7045f7deb635ec095b6b4f0260223091a/numpy-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                  "size": 16116679,
+                  "hashes": {
+                    "sha256": "3b787adbf04b0db1967798dba8da1af07e387908ed1553a0d6e74c084d1ceafe"
+                  }
+                }
+              }
+            ]
+          },
+          "dependencies": [],
+          "repository_homepage_url": "https://pypi.org/project/numpy",
+          "repository_download_url": "https://pypi.org/packages/source/n/numpy/numpy-2.2.3.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/numpy/2.2.3/json",
+          "datasource_id": "pypi_pylock_toml",
+          "purl": "pkg:pypi/numpy@2.2.3"
+        },
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "pypi_pylock_toml",
+    "purl": null
+  }
+]
