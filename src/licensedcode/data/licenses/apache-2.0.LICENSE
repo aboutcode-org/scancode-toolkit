@@ -2,6 +2,11 @@
 key: apache-2.0
 short_name: Apache 2.0
 name: Apache License 2.0
+aliases:
+  - Apache 2
+  - Apache License Version 2.0
+  - Apache License, Version 2.0
+  - Apache-2
 category: Permissive
 owner: Apache Software Foundation
 homepage_url: http://www.apache.org/licenses/
