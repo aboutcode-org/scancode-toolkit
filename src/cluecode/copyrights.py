@@ -41,6 +41,10 @@ TRACE_TOK = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT_TOKEN', False)
 
 VALIDATE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT_VALIDATE', False)
 
+# Pattern to match Unicode surrogate characters (U+D800-U+DFFF) that can cause
+# false positive "(c)" copyright detections when decoded improperly
+SURROGATE_PATTERN = re.compile(r'[\uD800-\uDFFF]')
+
 
 # Tracing flags
 def logger_debug(*args):
@@ -81,6 +85,24 @@ The process consists in:
    holder or authors) with start and end line from the parse tree with some
    extra post-detection cleanups.
 """
+
+
+def sanitize_line_for_detection(text):
+    """
+    Sanitize a line of text to prevent false positive copyright detections.
+    
+    Remove Unicode surrogate characters (U+D800-U+DFFF) which can be
+    misinterpreted as "(c)" copyright symbols when improperly decoded,
+    causing noise in copyright detection results.
+    
+    For example, surrogate characters in files like unicode_full-bmp.txt
+    were incorrectly detected as: "copyright: (c) $?i (c) Y"
+    
+    See: https://github.com/aboutcode-org/scancode-toolkit/issues/4664
+    """
+    if not text:
+        return text
+    return SURROGATE_PATTERN.sub('', text)
 
 
 def detect_copyrights(
@@ -173,6 +195,12 @@ def detect_copyrights_from_lines(
     """
     if not numbered_lines:
         return
+
+    # Sanitize lines to remove surrogate characters that cause false positives
+    numbered_lines = [
+        (line_num, sanitize_line_for_detection(text))
+        for line_num, text in numbered_lines
+    ]
 
     include_copyright_years = include_copyrights and include_copyright_years
     include_copyright_allrights = include_copyrights and include_copyright_allrights
@@ -1251,7 +1279,7 @@ PATTERNS = [
     (r'^Comment[A-Z]', 'JUNK'),
     (r'^fall$', 'JUNK'),
     (r'^[Aa]nother$', 'JUNK'),
-    (r'^[Aa]acute', 'JUNK'),
+    (r'^[Aa]cute', 'JUNK'),
     (r'^[Aa]circumflex', 'JUNK'),
     (r'^[Kk]eywords?', 'JUNK'),
     (r'^comparing$', 'JUNK'),
@@ -1481,7 +1509,6 @@ PATTERNS = [
     (r'^Port$', 'NN'),
     (r'^GnuPG$', 'NN'),
     (r'^Government.', 'NNP'),
-    (r'^OProfile$', 'NNP'),
     (r'^Government$', 'COMP'),
     # there is a Ms. Grant
     (r'^Grant$', 'NNP'),
@@ -2276,12 +2303,6 @@ PATTERNS = [
     # URLS such as <(http://fedorahosted.org/lohit)> or ()
     (r'[<\(]https?:.*[>\)]', 'URL'),
     # URLS such as ibm.com without a scheme
-    (r'\s?[a-z0-9A-Z\-\.\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|se|nl|au|biz|sy|dev)\s?[\.,]?$', 'URL2'),
-    # TODO: add more extensions: there are so many TLDs these days!
-    # URL wrapped in () or <>
-    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz|sy|dev)\s?[\.\)>]+$', 'URL'),
-    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz|sy|dev)[\.\)>]?$', 'URL'),
-    # derived from regex in cluecode.finder
     (r'<?a?.(href)?.('
      r'(?:http|ftp|sftp)s?://[^\s<>\[\]"]+'
      r'|(?:www|ftp)\.[^\s<>\[\]"]+'
@@ -2902,7 +2923,7 @@ GRAMMAR = """
 
     # Gracenote, Inc., copyright © 2000-2008 Gracenote.
     # Gracenote Software, copyright © 2000-2008 Gracenote.
-    # COPYRIGHT: {<COMPANY> <COPY>{1,2} <NAME-YEAR>}        #157999.12
+    COPYRIGHT: {<COMPANY> <COPY>{1,2} <NAME-YEAR>}        #157999.12
 
     # Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
     COPYRIGHT: {<COPY>+ <NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}        #157999
@@ -3083,6 +3104,7 @@ GRAMMAR = """
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <COMPANY>?}        #2300
 
+    # Copyright (c) 2014, 2015, the respective contributors All rights reserved
     # Copyright (c) 2014, 2015, the respective contributors All rights reserved.
     COPYRIGHT: {<COPYRIGHT|COPYRIGHT2>  <NN|NNP|CONTRIBUTORS>+  <ALLRIGHTRESERVED>} #2862
 
