@@ -132,6 +132,29 @@ To set up ScanCode for local development:
    libraries (from the `thirdparty/ directory`), setup the paths, etc.
    See https://virtualenv.pypa.io/en/latest/ for more details.
 
+   .. warning::
+
+   **Apple Silicon (M1/M2/M3/M4) users**
+
+   Due to missing ARM64 wheels for some native dependencies, the contributor
+   setup may fail when using ARM-native Python.
+
+   Use an x86_64 Python installation under Rosetta and configure ScanCode to
+   use it explicitly:
+
+   .. code-block:: bash
+
+      # Install x86_64 Python via Rosetta
+      arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      arch -x86_64 /usr/local/bin/brew install python@3.12
+
+      # Tell configure to use it
+      echo "/usr/local/bin/python3.12" > PYTHON_EXECUTABLE
+      ./configure --dev
+
+   See issue #3205 for more context on Apple Silicon compatibility.
+
+
    Run this command to configure ScanCode::
 
         ./configure --dev
