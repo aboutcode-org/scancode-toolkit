@@ -4,6 +4,9 @@ download_url: https://raw.githubusercontent.com/yapus/gibberish/01637fe1fda82752
 homepage_url: https://github.com/yapus/gibberish/
 authors: |
  Rob Renaud
+ Petr Janata
+ Max Greenwald
+ vsobolmaven
  Iakov Pustilnik
 owner: Iakov Pustilnik
 license_expression: mit
@@ -14,5 +17,10 @@ notes: gibberish.py is a reorganization of the code at
  gibberish.py was originally a Python script written by Rob Renaud as a solution
  to a stack overflow question (https://stackoverflow.com/a/6298193). The original
  repo at https://github.com/rrenaud/Gibberish-Detector has been cloned many times
- and  has been expanded upon by multiple authors. This instance of gibberish.py
- was maintained by Iakov Pustilnik.
+ and has been expanded upon by multiple authors. This instance of gibberish.py
+ was maintained by Iakov Pustilnik, where it was cloned from
+ https://github.com/yapus/gibberish, which was cloned from
+ https://github.com/vsobolmaven/gibberish, which was cloned from
+ https://github.com/mgreenw/gibberish, which was cloned from
+ https://github.com/pjanata/Gibberish-Detector, and ultimately all of these repos
+ are from https://github.com/rrenaud/Gibberish-Detector

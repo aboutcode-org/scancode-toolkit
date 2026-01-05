@@ -20,13 +20,13 @@ import attr
 
 from commoncode.text import toascii
 from commoncode.text import unixlinesep
-from textcode.gibberish import Gibberish
 from pygmars import lex
 from pygmars import parse
 from pygmars import Token
 from pygmars.tree import Tree
 
 from cluecode import copyrights_hint
+from textcode.gibberish import Gibberish
 from textcode.markup import strip_known_markup_from_text
 
 # Tracing flags
