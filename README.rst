@@ -77,7 +77,7 @@ Benefits of ScanCode
   even create your own format with Jinja templates.
 
 - ScanCode can process packages, build manifest and lockfile formats to collect
-  Package URLs and extract metadata. See all available package parsers
+  Package URLs and extract metadata. See all available `package parsers
   <https://scancode-toolkit.readthedocs.io/en/stable/reference/available_package_parsers.html>`_
   for the exhaustive list.
 
