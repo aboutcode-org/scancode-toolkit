@@ -78,7 +78,7 @@ Benefits of ScanCode
 
 - ScanCode can process packages, build manifest and lockfile formats to collect
   Package URLs and extract metadata. See all available `package parsers
-  <https://scancode-toolkit.readthedocs.io/en/stable/reference/available_package_parsers.html>`_
+  <https://scancode-toolkit.readthedocs.io/en/stable/reference/index.html>`_
   for the exhaustive list.
 
 Support
