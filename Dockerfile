@@ -37,10 +37,12 @@ WORKDIR /scancode-toolkit
 # Copy sources into docker container
 COPY . /scancode-toolkit
 
-# Initial configuration using ./configure, scancode-reindex-licenses to build
-# the base license index
+# Initial configuration using ./configure, train-gibberish-model to build the
+# pickle containing the probabilities , scancode-reindex-licenses to build the base
+# license index
 RUN ./configure \
  && ./venv/bin/scancode-reindex-licenses
+ && ./venv/bin/train-gibberish-model
 
 # Add scancode to path
 ENV PATH=/scancode-toolkit:$PATH
