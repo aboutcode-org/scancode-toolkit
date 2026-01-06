@@ -4,12 +4,14 @@ is_license_notice: yes
 relevance:  100
 notes: Dual license offering choice between GPLv2 and AGPLv3 as used in eloqkv
 ignorable_copyrights:
-    - Copyright (C) 2025-present EloqData Inc.
-    - Copyright (C) 1989, 1991 Free Software Foundation, Inc.
-    - Copyright (c) 2007 Free Software Foundation, Inc.
+    - Copyright (c) 2025-present EloqData Inc.
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc. https://fsf.org
+    - Copyright (c) 2007 Free Software Foundation, Inc. https://fsf.org
+    - copyrighted by the Free Software Foundation
 ignorable_holders:
     - EloqData Inc.
     - Free Software Foundation, Inc.
+    - the Free Software Foundation
 ignorable_urls:
     - https://fsf.org/
 minimum_coverage: 80
