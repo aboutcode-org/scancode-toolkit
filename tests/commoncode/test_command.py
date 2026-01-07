@@ -15,14 +15,12 @@ from commoncode import command
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
-from commoncode.system import py36
 from commoncode.testcase import FileBasedTesting
 
 
 class TestCommand(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), "data")
 
-    @skipIf(py36, "This fails on Python 3.6 https://bugs.python.org/issue26919")
     def test_execute_can_handle_non_ascii_output(self):
         # Popen returns a *binary* string with non-ascii chars: skips these
         python = sys.executable
