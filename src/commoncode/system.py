@@ -144,11 +144,11 @@ py2 = _sys_v0 == 2
 py3 = _sys_v0 == 3
 
 _sys_v1 = sys.version_info[1]
-py36 = py3 and _sys_v1 == 6
-py37 = py3 and _sys_v1 == 7
-py38 = py3 and _sys_v1 == 8
-py39 = py3 and _sys_v1 == 9
 py310 = py3 and _sys_v1 == 10
+py311 = py3 and _sys_v1 == 11
+py312 = py3 and _sys_v1 == 12
+py313 = py3 and _sys_v1 == 13
+py314 = py3 and _sys_v1 == 14
 
 # Do not let Windows error pop up messages with default SetErrorMode
 # See http://msdn.microsoft.com/en-us/library/ms680621(VS100).aspx
