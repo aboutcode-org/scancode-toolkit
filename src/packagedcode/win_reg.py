@@ -12,6 +12,7 @@ import os
 import sys
 from pathlib import Path
 from pathlib import PureWindowsPath
+from dataclasses import asdict
 
 import attr
 
@@ -68,7 +69,7 @@ def get_registry_tree(registry_location, registry_path):
     if not name_key_entry:
         return []
     return [
-        attr.asdict(entry) for entry in registry_hive.recurse_subkeys(name_key_entry, as_json=True)
+        asdict(entry) for entry in registry_hive.recurse_subkeys(name_key_entry, as_json=True)
     ]
 
 

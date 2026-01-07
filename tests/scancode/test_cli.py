@@ -19,8 +19,7 @@ from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_macos_14_or_higher
 from commoncode.system import on_windows
-from commoncode.system import py36
-from commoncode.system import py37
+from commoncode.system import py314
 
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import load_json_result
@@ -901,8 +900,6 @@ def test_check_error_count():
     assert str(error_files) == str(error_count)
 
 
-on_mac_new_py = on_mac and not (py36 or py37)
-
 
 def test_scan_keep_temp_files_is_false_by_default():
     test_file = test_env.get_test_loc('tempfiles/samples')
@@ -919,9 +916,9 @@ def test_scan_keep_temp_files_is_false_by_default():
     # the SCANCODE_TEMP dir is not deleted, but it should be empty
     assert os.path.exists(temp_directory)
     # this does not make sense but that's what is seen in practice
-    if on_mac_new_py:
+    if on_mac:
         expected = 4
-    elif on_windows:
+    elif on_windows or (on_linux and py314):
         expected = 2
     else:
         expected = 1
@@ -945,10 +942,10 @@ def test_scan_keep_temp_files_keeps_files():
     # the SCANCODE_TEMP dir is not deleted, but it should not be empty
     assert os.path.exists(temp_directory)
     # this does not make sense but that's what is seen in practice
-    expected = 8 if (on_windows or on_mac_new_py) else 7
-    if on_mac_new_py:
+    expected = 8 if (on_windows or on_mac) else 7
+    if on_mac:
         expected = 10
-    elif on_windows:
+    elif on_windows or (on_linux and py314):
         expected = 8
     else:
         expected = 7

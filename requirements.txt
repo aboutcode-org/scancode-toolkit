@@ -10,7 +10,7 @@ chardet==5.2.0
 charset-normalizer==3.4.2
 click==8.3.0
 colorama==0.4.6
-commoncode==32.4.0
+commoncode==32.4.1
 construct==2.10.70
 container-inspector==33.0.0
 cryptography==45.0.4
