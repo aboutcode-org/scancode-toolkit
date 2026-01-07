@@ -10,6 +10,8 @@
 from packagedcode import go_mod
 from packagedcode import models
 
+import os
+
 """
 Handle Go packages including go.mod and go.sum files.
 """
@@ -32,6 +34,38 @@ class BaseGoModuleHandler(models.DatafileHandler):
         """
         Always use go.mod first then go.sum
         """
+        base_dir = resource.parent(codebase)
+        local_path_replacement = package_data.extra_data.get('local_path_replacement')
+        for lpr in local_path_replacement:
+            local_path = lpr.local_path
+            full_path = os.path.join(base_dir.path, local_path)
+            local_resource = codebase.get_resource(full_path)
+            if not local_resource or not local_resource.is_dir:
+                continue
+            local_gomod = None
+            for child in local_resource.children(codebase):
+                if child.name == 'go.mod':
+                    local_gomod = child
+                    break
+            
+            if not local_gomod:
+                continue
+            
+            if not local_gomod.package_data:
+                continue
+            
+            local_pkg_data = models.PackageData.from_dict(local_gomod.package_data[0]) 
+            package_data.dependencies.append(
+                models.DependentPackage(
+                    purl=local_pkg_data.purl(include_version=True),
+                    extracted_requirement=local_pkg_data.version,
+                    scope='require',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_pinned=False,
+                )
+            )
+  
         yield from cls.assemble_from_many_datafiles(
             datafile_name_patterns=('go.mod', 'go.sum',),
             directory=resource.parent(codebase),
@@ -78,6 +112,10 @@ class GoModHandler(BaseGoModuleHandler):
                     is_pinned=False,
                 )
             )
+        
+        extra_data = {
+            'local_path_replacement': gomods.local_path_replacement or []
+        }
 
         name = gomods.name
         namespace = gomods.namespace
@@ -98,6 +136,7 @@ class GoModHandler(BaseGoModuleHandler):
             homepage_url=homepage_url,
             repository_homepage_url=repository_homepage_url,
             dependencies=dependencies,
+            extra_data=extra_data,
             primary_language=cls.default_primary_language,
         )
         yield models.PackageData.from_data(package_data, package_only)

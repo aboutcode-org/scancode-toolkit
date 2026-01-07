@@ -21,6 +21,7 @@ class GoModule(object):
     module = attr.ib(default=None)
     require = attr.ib(default=None)
     exclude = attr.ib(default=None)
+    local_path_replacement = attr.ib(default=None)
 
     def purl(self, include_version=True):
         version = None
@@ -50,6 +51,13 @@ parse_dep_link = re.compile(
     r'(?P<version>(.*))'
 ).match
 
+parse_replace = re.compile(
+    r"(?P<ns_name>\S+)"
+    r"(?:\s+(?P<version>\S+))?"
+    r"\s*=>\s*"
+    r"(?P<replacement_ns_name>\S+)"
+    r"(?:\s+(?P<replacement_version>\S+))?"
+).match
 
 def preprocess(line):
     """
@@ -120,6 +128,7 @@ def parse_gomod(location):
     gomods = GoModule()
     require = []
     exclude = []
+    local_path_replacement = []
 
     for i, line in enumerate(lines):
         line = preprocess(line)
@@ -157,6 +166,69 @@ def parse_gomod(location):
                         )
                     )
             continue
+ 
+        if 'replace' in line and '(' in line:
+            for rep in lines[i + 1:]:
+                rep = preprocess(rep)
+                if ')' in rep:
+                    break
+                parsed_replace = parse_replace(rep)
+                ns_name = parsed_replace.group('ns_name')
+                replacement_ns_name = parsed_replace.group('replacement_ns_name')
+                namespace, _, name = ns_name.rpartition('/')
+                replacement_namespace, _, replacement_name = replacement_ns_name.rpartition('/')
+                
+                exclude.append(
+                    GoModule(
+                        namespace=namespace,
+                        name=name,
+                        version=parsed_replace.group('version')
+                    )
+                )
+                
+                if is_local_file(replacement_ns_name):
+                    local_path_replacement.append({
+                        'replaces': ns_name,
+                        'local_path': replacement_ns_name
+                    })
+                else:
+                    require.append(
+                        GoModule(
+                            namespace=replacement_namespace,
+                            name=replacement_name,
+                            version=parsed_replace.group('replacement_version')
+                        )
+                    )
+
+        if "replace" and "=>" in line:
+            line = line.lstrip("replace").strip()
+            parsed_replace = parse_replace(line)
+            ns_name = parsed_replace.group("ns_name")
+            replacement_ns_name = parsed_replace.group("replacement_ns_name")
+            namespace, _, name = ns_name.rpartition("/")
+            replacement_namespace, _, replacement_name = replacement_ns_name.rpartition("/")
+
+            exclude.append(
+                GoModule(
+                    namespace=namespace,
+                    name=name,
+                    version=parsed_rep_link.group("version"),
+                )
+            )
+
+            if is_local_file(replacement_ns_name):
+                local_path_replacement.append({
+                    'replaces': ns_name,
+                    'local_path': replacement_ns_name
+                })
+            else:
+                require.append(
+                    GoModule(
+                        namespace=replacement_namespace,
+                        name=replacement_name,
+                        version=parsed_replace.group('replacement_version')
+                    )
+                )
 
         parsed_module_name = parse_module(line)
         if parsed_module_name:
@@ -188,6 +260,7 @@ def parse_gomod(location):
 
     gomods.require = require
     gomods.exclude = exclude
+    gomods.local_path_replacement = local_path_replacement
 
     return gomods
 
@@ -202,6 +275,8 @@ get_dependency = re.compile(
     r'h1:(?P<checksum>[^\s]*)'
 ).match
 
+def is_local_file(file_name):
+    return file_name.startswith("./") or file_name.startswith("../")
 
 def parse_gosum(location):
     """
