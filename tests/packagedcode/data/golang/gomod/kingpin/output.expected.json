@@ -35,7 +35,9 @@
     "file_references": [],
     "is_private": false,
     "is_virtual": false,
-    "extra_data": {},
+    "extra_data": {
+      "local_replacements": []
+    },
     "dependencies": [
       {
         "purl": "pkg:golang/github.com/alecthomas/template@v0.0.0-20160405071501-a0175ee3bccc",

@@ -35,7 +35,9 @@
     "file_references": [],
     "is_private": false,
     "is_virtual": false,
-    "extra_data": {},
+    "extra_data": {
+      "local_replacements": []
+    },
     "dependencies": [
       {
         "purl": "pkg:golang/gopkg.in/yaml.v2@v2.2.1",

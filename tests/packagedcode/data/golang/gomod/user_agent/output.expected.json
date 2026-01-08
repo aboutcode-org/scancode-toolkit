@@ -35,7 +35,9 @@
     "file_references": [],
     "is_private": false,
     "is_virtual": false,
-    "extra_data": {},
+    "extra_data": {
+      "local_replacements": []
+    },
     "dependencies": [],
     "repository_homepage_url": "https://pkg.go.dev/github.com/mssola/user_agent",
     "repository_download_url": null,

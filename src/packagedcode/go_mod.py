@@ -229,7 +229,7 @@ def parse_gomod(location):
                 handle_repalce_directive(rep, require, exclude, local_replacements)
             continue
 
-        if "replace" and "=>" in line:
+        if "replace" in line and "=>" in line:
             line = line.lstrip("replace").strip()
             handle_repalce_directive(line, require, exclude, local_replacements)
             continue
