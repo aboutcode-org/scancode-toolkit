@@ -1,6 +1,12 @@
 Release notes
 =============
 
+Version 32.4.2 - (2025-01-08)
+-----------------------------
+
+- Support setting the tar archive filter in python3.14
+  https://github.com/aboutcode-org/commoncode/issues/88
+
 Version 32.4.1 - (2025-01-07)
 -----------------------------
 
