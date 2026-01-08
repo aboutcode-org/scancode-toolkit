@@ -18,6 +18,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 # https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
+       build-essential \
        bzip2 \
        xz-utils \
        zlib1g \
@@ -28,6 +29,8 @@ RUN apt-get update \
        libgcrypt20 \
        libpopt0 \
        libzstd1 \
+       libicu-dev \
+       pkg-config \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
