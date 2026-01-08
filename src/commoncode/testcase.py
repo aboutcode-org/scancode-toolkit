@@ -194,7 +194,7 @@ class FileDrivenTesting(object):
             for tf in tilde_files:
                 os.remove(tf)
 
-    def __extract(self, test_path, extract_func=None, verbatim=False):
+    def __extract(self, test_path, extract_func=None, verbatim=False, filter=None):
         """
         Given an archive file identified by test_path relative
         to a test files directory, return a new temp directory where the
@@ -206,7 +206,7 @@ class FileDrivenTesting(object):
         target_path = path.basename(test_path)
         target_dir = self.get_temp_dir(target_path)
         original_archive = self.get_test_loc(test_path)
-        extract_func(original_archive, target_dir, verbatim=verbatim)
+        extract_func(original_archive, target_dir, verbatim=verbatim, filter=filter)
         return target_dir
 
     def extract_test_zip(self, test_path, *args, **kwargs):
@@ -215,8 +215,8 @@ class FileDrivenTesting(object):
     def extract_test_zip_raw(self, test_path, *args, **kwargs):
         return self.__extract(test_path, extract_zip_raw)
 
-    def extract_test_tar(self, test_path, verbatim=False):
-        return self.__extract(test_path, extract_tar, verbatim)
+    def extract_test_tar(self, test_path, verbatim=False, filter=None):
+        return self.__extract(test_path, extract_tar, verbatim, filter)
 
     def extract_test_tar_raw(self, test_path, *args, **kwargs):
         return self.__extract(test_path, extract_tar_raw)
