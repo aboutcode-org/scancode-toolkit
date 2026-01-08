@@ -14,6 +14,7 @@ from functools import partial
 from os import path
 
 from commoncode.system import on_windows
+from commoncode.system import py314
 
 """
 Mimimal tar and zip file handling, primarily for testing.
@@ -39,7 +40,7 @@ extract_tar_raw = partial(_extract_tar_raw, to_bytes=True)
 extract_tar_uni = partial(_extract_tar_raw, to_bytes=False)
 
 
-def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
+def extract_tar(location, target_dir, verbatim=False, filter=None, *args, **kwargs):
     """
     Extract a tar archive at location in the target_dir directory.
     If `verbatim` is True preserve the permissions.
@@ -58,7 +59,10 @@ def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
                     if not verbatim:
                         tarinfo.mode = 0o755
                     to_extract.append(tarinfo)
-            tar.extractall(target_dir, members=to_extract)
+            if py314 and filter:
+                tar.extractall(target_dir, members=to_extract, filter=filter)
+            else:
+                tar.extractall(target_dir, members=to_extract)
         finally:
             if tar:
                 tar.close()
