@@ -58,8 +58,8 @@ class TestGolang(PackageTester):
         test_file = self.get_test_loc('golang/gomod/gopls/go.mod')
         expected_loc = self.get_test_loc('golang/gomod/gopls/output.expected.json')
         package = golang.GoModHandler.parse(test_file)
-
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_gomod_uap_go(self):
         test_file = self.get_test_loc('golang/gomod/uap-go/go.mod')
         expected_loc = self.get_test_loc('golang/gomod/uap-go/output.expected.json')
