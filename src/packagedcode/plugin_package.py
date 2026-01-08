@@ -228,7 +228,7 @@ class PackageScanner(ScanPlugin):
             get_package_data,
             application=package,
             system=system_package,
-            binary=package_in_compiled,
+            compiled=package_in_compiled,
             package_only=package_only,
         )
 
