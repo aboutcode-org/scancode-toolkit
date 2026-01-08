@@ -34,7 +34,9 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
         assert filetype.get_size(test_dir) == 12400
 
     def test_get_type(self):
-        test_dir = self.extract_test_tar("filetype/types.tar", verbatim=True)
+        test_dir = self.extract_test_tar(
+            "filetype/types.tar", verbatim=True, filter="fully_trusted"
+        )
         results = []
         for root, dirs, files in os.walk(test_dir):
             for d in dirs:
@@ -61,6 +63,7 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
         if on_posix:
             expected += [
                 ("2-SYMTYPE", "l"),
+                ("6-FIFOTYPE", "s"),
             ]
 
         try:
