@@ -145,7 +145,7 @@ class GoModHandler(BaseGoModuleHandler):
             )
 
         extra_data = {
-            'local_replacements': gomods.local_replacements or []
+            'local_replacements': gomods.local_replacements
         }
 
         name = gomods.name
@@ -167,7 +167,7 @@ class GoModHandler(BaseGoModuleHandler):
             homepage_url=homepage_url,
             repository_homepage_url=repository_homepage_url,
             dependencies=dependencies,
-            extra_data=extra_data,
+            extra_data=extra_data if gomods.local_replacements else {},
             primary_language=cls.default_primary_language,
         )
         yield models.PackageData.from_data(package_data, package_only)
