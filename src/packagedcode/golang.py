@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import posixpath
 from packagedcode import go_mod
 from packagedcode import models
 
@@ -34,38 +35,6 @@ class BaseGoModuleHandler(models.DatafileHandler):
         """
         Always use go.mod first then go.sum
         """
-        base_dir = resource.parent(codebase)
-        local_path_replacement = package_data.extra_data.get('local_path_replacement')
-        for lpr in local_path_replacement:
-            local_path = lpr.local_path
-            full_path = os.path.join(base_dir.path, local_path)
-            local_resource = codebase.get_resource(full_path)
-            if not local_resource or not local_resource.is_dir:
-                continue
-            local_gomod = None
-            for child in local_resource.children(codebase):
-                if child.name == 'go.mod':
-                    local_gomod = child
-                    break
-            
-            if not local_gomod:
-                continue
-            
-            if not local_gomod.package_data:
-                continue
-            
-            local_pkg_data = models.PackageData.from_dict(local_gomod.package_data[0]) 
-            package_data.dependencies.append(
-                models.DependentPackage(
-                    purl=local_pkg_data.purl(include_version=True),
-                    extracted_requirement=local_pkg_data.version,
-                    scope='require',
-                    is_runtime=True,
-                    is_optional=False,
-                    is_pinned=False,
-                )
-            )
-  
         yield from cls.assemble_from_many_datafiles(
             datafile_name_patterns=('go.mod', 'go.sum',),
             directory=resource.parent(codebase),
@@ -73,6 +42,68 @@ class BaseGoModuleHandler(models.DatafileHandler):
             package_adder=package_adder,
         )
 
+        if not codebase.has_single_resource:
+            cls.resolve_local_replacements(
+                package_data=package_data,
+                resource=resource,
+                codebase=codebase,
+            )
+
+    @classmethod
+    def resolve_local_replacements(cls, package_data, resource, codebase):
+        local_replacements = package_data.extra_data.get('local_replacements', [])
+        if not local_replacements:
+            return
+        base_dir = resource.parent(codebase)
+        base_path = base_dir.path
+
+        for replacement in local_replacements:
+            local_path = replacement.get('local_path')
+            if not local_path:
+                continue
+
+            full_path = posixpath.normpath(
+                posixpath.join(base_path, local_path)
+            )
+
+            local_resource = codebase.get_resource(full_path)
+            if not local_resource:
+                continue
+
+            local_gomod = None
+            for child in local_resource.children(codebase):
+                if child.name == 'go.mod':
+                    local_gomod = child
+                    break
+            if not local_gomod or not local_gomod.package_data:
+                continue
+
+            try:
+                local_pkg_dict = local_gomod.package_data[0]
+                local_pkg_data = models.PackageData.from_dict(local_pkg_dict)
+            except (IndexError, KeyError, TypeError):
+                continue
+
+            if not local_pkg_data.purl:
+                continue
+
+            resolved_dependency = models.DependentPackage(
+                purl=local_pkg_data.purl,
+                extracted_requirement=local_pkg_data.version or '',
+                scope='require',
+                is_runtime=True,
+                is_optional=False,
+                is_resolved=True,
+                extra_data={
+                    'replaces': replacement.get('replaces'),
+                    'resolved_from_local': True,
+                    'local_path': local_path,
+                    'local_resolved_path': full_path,
+                }
+            )
+
+            if not any(dep.purl == resolved_dependency.purl for dep in package_data.dependencies):
+                package_data.dependencies.append(resolved_dependency)
 
 class GoModHandler(BaseGoModuleHandler):
     datasource_id = 'go_mod'
@@ -112,9 +143,9 @@ class GoModHandler(BaseGoModuleHandler):
                     is_pinned=False,
                 )
             )
-        
+
         extra_data = {
-            'local_path_replacement': gomods.local_path_replacement or []
+            'local_replacements': gomods.local_replacements or []
         }
 
         name = gomods.name
