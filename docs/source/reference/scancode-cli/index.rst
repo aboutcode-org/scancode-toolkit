@@ -88,3 +88,4 @@ For more details into the post-scan CLI options, see :ref:`cli-post-scan-options
    cli-extractcode
    cli-scancode-reindex-licenses
    cli-scancode-license-data
+   cli-scancode-train-gibberish-model

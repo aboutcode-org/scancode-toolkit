@@ -161,7 +161,7 @@ if %ERRORLEVEL% neq 0 (
     %CFG_QUIET% ^
     %PIP_EXTRA_ARGS% ^
     %CFG_REQUIREMENTS%
-
+"%CFG_BIN_DIR%\scancode-train-gibberish-model"
 
 @rem ################################
 :create_bin_junction
