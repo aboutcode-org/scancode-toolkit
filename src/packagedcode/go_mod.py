@@ -84,7 +84,7 @@ def parse_replace_directive(line):
     is_local = replacement_ns_name.startswith("./") or replacement_ns_name.startswith("../")
 
     if is_local:
-        replacement_namespace = None,
+        replacement_namespace = None
         replacement_name = replacement_ns_name
     else:
         replacement_namespace, _, replacement_name = replacement_ns_name.rpartition("/")
@@ -99,7 +99,7 @@ def parse_replace_directive(line):
 
     return original_module, replacement_module
 
-def handle_repalce_directive(line, require, exclude, local_replacements):
+def handle_replace_directive(line, require, exclude, local_replacements):
     original, replacement = parse_replace_directive(line)
     exclude.append(
         GoModule(
@@ -226,12 +226,12 @@ def parse_gomod(location):
                 rep = preprocess(rep)
                 if ')' in rep:
                     break
-                handle_repalce_directive(rep, require, exclude, local_replacements)
+                handle_replace_directive(rep, require, exclude, local_replacements)
             continue
 
-        if "replace" in line and "=>" in line:
+        if 'replace' in line and '=>' in line:
             line = line.lstrip("replace").strip()
-            handle_repalce_directive(line, require, exclude, local_replacements)
+            handle_replace_directive(line, require, exclude, local_replacements)
             continue
 
         parsed_module_name = parse_module(line)

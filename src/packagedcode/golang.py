@@ -13,6 +13,8 @@ from packagedcode import models
 
 import os
 
+from packagedcode.npm import TRACE
+
 """
 Handle Go packages including go.mod and go.sum files.
 """
@@ -51,6 +53,10 @@ class BaseGoModuleHandler(models.DatafileHandler):
 
     @classmethod
     def resolve_local_replacements(cls, package_data, resource, codebase):
+        """
+        Resolve local paths present in replace directives
+        """
+
         local_replacements = package_data.extra_data.get('local_replacements', [])
         if not local_replacements:
             return
@@ -68,6 +74,8 @@ class BaseGoModuleHandler(models.DatafileHandler):
 
             local_resource = codebase.get_resource(full_path)
             if not local_resource:
+                if TRACE:
+                    print(full_path)
                 continue
 
             local_gomod = None
@@ -102,8 +110,7 @@ class BaseGoModuleHandler(models.DatafileHandler):
                 }
             )
 
-            if not any(dep.purl == resolved_dependency.purl for dep in package_data.dependencies):
-                package_data.dependencies.append(resolved_dependency)
+            package_data.dependencies.append(resolved_dependency)
 
 class GoModHandler(BaseGoModuleHandler):
     datasource_id = 'go_mod'
