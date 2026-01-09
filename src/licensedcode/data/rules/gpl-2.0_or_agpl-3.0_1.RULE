@@ -1,6 +1,6 @@
 ---
 license_expression: gpl-2.0 OR agpl-3.0
-is_license_text: yes
+is_license_notice: yes
 relevance:  100
 notes: Dual license offering choice between GPLv2 and AGPLv3 as used in eloqkv
 minimum_coverage: 80
