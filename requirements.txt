@@ -71,7 +71,7 @@ soupsieve==2.7
 spdx-tools==0.8.2
 text-unidecode==1.3
 tomli==2.3.0
-typecode==30.0.2
+typecode==30.1.0
 typecode-libmagic==5.39.210531
 typing-extensions==4.14.0
 uritools==5.0.0
