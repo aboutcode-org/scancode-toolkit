@@ -220,7 +220,7 @@ def parse_gomod(location):
                         )
                     )
             continue
- 
+
         if 'replace' in line and '(' in line:
             for rep in lines[i + 1:]:
                 rep = preprocess(rep)

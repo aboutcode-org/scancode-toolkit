@@ -11,10 +11,6 @@ import posixpath
 from packagedcode import go_mod
 from packagedcode import models
 
-import os
-
-from packagedcode.npm import TRACE
-
 """
 Handle Go packages including go.mod and go.sum files.
 """
@@ -37,19 +33,22 @@ class BaseGoModuleHandler(models.DatafileHandler):
         """
         Always use go.mod first then go.sum
         """
-        yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=('go.mod', 'go.sum',),
-            directory=resource.parent(codebase),
-            codebase=codebase,
-            package_adder=package_adder,
-        )
 
         if not codebase.has_single_resource:
             cls.resolve_local_replacements(
-                package_data=package_data,
+                package_data=resource.package_data,
                 resource=resource,
                 codebase=codebase,
             )
+
+        resource.package_data[0] = package_data.to_dict()
+
+        yield from cls.assemble_from_many_datafiles(
+               datafile_name_patterns=('go.mod', 'go.sum',),
+               directory=resource.parent(codebase),
+               codebase=codebase,
+               package_adder=package_adder,
+           )
 
     @classmethod
     def resolve_local_replacements(cls, package_data, resource, codebase):
@@ -74,8 +73,6 @@ class BaseGoModuleHandler(models.DatafileHandler):
 
             local_resource = codebase.get_resource(full_path)
             if not local_resource:
-                if TRACE:
-                    print(full_path)
                 continue
 
             local_gomod = None
@@ -85,6 +82,7 @@ class BaseGoModuleHandler(models.DatafileHandler):
                     break
             if not local_gomod or not local_gomod.package_data:
                 continue
+
 
             try:
                 local_pkg_dict = local_gomod.package_data[0]
@@ -97,11 +95,11 @@ class BaseGoModuleHandler(models.DatafileHandler):
 
             resolved_dependency = models.DependentPackage(
                 purl=local_pkg_data.purl,
-                extracted_requirement=local_pkg_data.version or '',
+                extracted_requirement=local_pkg_data.version or None,
+                resolved_package=local_pkg_data,
                 scope='require',
                 is_runtime=True,
                 is_optional=False,
-                is_resolved=True,
                 extra_data={
                     'replaces': replacement.get('replaces'),
                     'resolved_from_local': True,
@@ -109,8 +107,9 @@ class BaseGoModuleHandler(models.DatafileHandler):
                     'local_resolved_path': full_path,
                 }
             )
-
-            package_data.dependencies.append(resolved_dependency)
+ 
+            if not any(dep.purl == resolved_dependency.purl for dep in package_data.dependencies):
+                package_data.dependencies.append(resolved_dependency)
 
 class GoModHandler(BaseGoModuleHandler):
     datasource_id = 'go_mod'
@@ -123,7 +122,7 @@ class GoModHandler(BaseGoModuleHandler):
     @classmethod
     def parse(cls, location, package_only=False):
         gomods = go_mod.parse_gomod(location)
-
+ 
         dependencies = []
         require = gomods.require or []
         for gomod in require:
