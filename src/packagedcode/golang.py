@@ -36,7 +36,7 @@ class BaseGoModuleHandler(models.DatafileHandler):
 
         if not codebase.has_single_resource:
             cls.resolve_local_replacements(
-                package_data=resource.package_data,
+                package_data=package_data,
                 resource=resource,
                 codebase=codebase,
             )
@@ -82,7 +82,6 @@ class BaseGoModuleHandler(models.DatafileHandler):
                     break
             if not local_gomod or not local_gomod.package_data:
                 continue
-
 
             try:
                 local_pkg_dict = local_gomod.package_data[0]
