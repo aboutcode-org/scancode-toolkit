@@ -66,11 +66,11 @@ class BaseGoModuleHandler(models.DatafileHandler):
         resource.package_data[0] = package_data.to_dict()
 
         yield from cls.assemble_from_many_datafiles(
-               datafile_name_patterns=('go.mod', 'go.sum',),
-               directory=resource.parent(codebase),
-               codebase=codebase,
-               package_adder=package_adder,
-           )
+            datafile_name_patterns=('go.mod', 'go.sum',),
+            directory=resource.parent(codebase),
+            codebase=codebase,
+            package_adder=package_adder,
+        )
 
     @classmethod
     def resolve_local_replacements(cls, package_data, resource, codebase):
@@ -154,7 +154,7 @@ class GoModHandler(BaseGoModuleHandler):
     @classmethod
     def parse(cls, location, package_only=False):
         gomods = go_mod.parse_gomod(location)
- 
+
         dependencies = []
         require = gomods.require or []
         for gomod in require:
