@@ -6,6 +6,7 @@ category: Copyleft
 owner: Tanuki Software
 homepage_url: http://wrapper.tanukisoftware.com/doc/english/licenseCommunity.html
 spdx_license_key: LicenseRef-scancode-tanuki-community-sla-1.3
+minimum_coverage: 98
 text_urls:
     - http://wrapper.tanukisoftware.com/doc/english/licenseCommunity.html
 ignorable_copyrights:
@@ -22,7 +23,7 @@ ignorable_urls:
     - http://wrapper.tanukisoftware.org/
 ---
 
-Tanuki Software, Ltd. 
+Tanuki Software, Ltd.
 Community Software License Agreement
 Version 1.3
 
