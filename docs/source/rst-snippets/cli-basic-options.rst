@@ -33,6 +33,12 @@ documenting a program's options. For example:
 --system-package             Scan ``<input>`` for installed system package
                              databases.
 
+--package-in-compiled        Scan compiled executable binaries such as ELF,
+                             WinpE and Mach-O files, looking for structured
+                             package and dependency metadata. Note that looking for
+                             packages in binaries makes package scan slower.
+                             Currently supported compiled binaries: Go, Rust.
+
 --package-only               Faster package scan, scanning ``<input>`` for
                              system and application packages, only for package
                              metadata. This option is skipping
