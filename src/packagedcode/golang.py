@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import os
 import posixpath
 from packagedcode import go_mod
 from packagedcode import models
@@ -24,6 +25,27 @@ Handle Go packages including go.mod and go.sum files.
 
 # TODO: use the LICENSE file convention!
 # TODO: support "vendor" and "workspace" layouts
+
+# Tracing flags
+TRACE = False or os.environ.get("SCANCODE_DEBUG_PACKAGE", False)
+
+
+# Tracing flags
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(" ".join(isinstance(a, str) and a or repr(a) for a in args))
+
 
 
 class BaseGoModuleHandler(models.DatafileHandler):
@@ -57,14 +79,17 @@ class BaseGoModuleHandler(models.DatafileHandler):
         """
 
         local_replacements = package_data.extra_data.get('local_replacements', [])
-        if not local_replacements:
+        if not local_replacements: 
+            logger_debug(f"resolve_local_replacements: No local replacements found")
             return
+
         base_dir = resource.parent(codebase)
         base_path = base_dir.path
 
-        for replacement in local_replacements:
-            local_path = replacement.get('local_path')
+        for idx, replacement in enumerate(local_replacements):
+            local_path = replacement. get('local_path')
             if not local_path:
+                logger_debug(f"resolve_local_replacements:  Skipping replacement {idx + 1} - no local_path found")
                 continue
 
             full_path = posixpath.normpath(
@@ -73,23 +98,28 @@ class BaseGoModuleHandler(models.DatafileHandler):
 
             local_resource = codebase.get_resource(full_path)
             if not local_resource:
+                logger_debug(f"resolve_local_replacements:  Resource not found at {full_path}")
                 continue
 
             local_gomod = None
-            for child in local_resource.children(codebase):
+            for child in local_resource. children(codebase):
                 if child.name == 'go.mod':
                     local_gomod = child
                     break
-            if not local_gomod or not local_gomod.package_data:
+
+            if not local_gomod or not local_gomod. package_data:
+                logger_debug(f"resolve_local_replacements: No go.mod or package_data found in {full_path}")
                 continue
 
             try:
                 local_pkg_dict = local_gomod.package_data[0]
                 local_pkg_data = models.PackageData.from_dict(local_pkg_dict)
-            except (IndexError, KeyError, TypeError):
+            except (IndexError, KeyError, TypeError) as e:
+                logger_debug(f"resolve_local_replacements: Failed to parse package data:  {e}")
                 continue
 
-            if not local_pkg_data.purl:
+            if not local_pkg_data. purl:
+                logger_debug(f"resolve_local_replacements: No purl found in local package data")
                 continue
 
             resolved_dependency = models.DependentPackage(
@@ -100,15 +130,18 @@ class BaseGoModuleHandler(models.DatafileHandler):
                 is_runtime=True,
                 is_optional=False,
                 extra_data={
-                    'replaces': replacement.get('replaces'),
-                    'resolved_from_local': True,
+                    'replaces':  replacement.get('replaces'),
+                    'resolved_from_local':  True,
                     'local_path': local_path,
                     'local_resolved_path': full_path,
                 }
             )
- 
+
             if not any(dep.purl == resolved_dependency.purl for dep in package_data.dependencies):
                 package_data.dependencies.append(resolved_dependency)
+                logger_debug(f"resolve_local_replacements: Added dependency: {resolved_dependency.purl}")
+            else:
+                logger_debug(f"resolve_local_replacements: Dependency already exists, skipping: {resolved_dependency. purl}")
 
 class GoModHandler(BaseGoModuleHandler):
     datasource_id = 'go_mod'
