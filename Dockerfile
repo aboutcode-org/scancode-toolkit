@@ -38,8 +38,9 @@ WORKDIR /scancode-toolkit
 COPY . /scancode-toolkit
 
 # Initial configuration using ./configure, scancode-reindex-licenses to build
-# the base license index and scancode-reindex-package-patterns to build the
-# package patterns cache
+# the base license index, scancode-reindex-package-patterns to build the package
+# patterns cache, and scancode-train-gibberish-model to train the Markov chain
+# model used for gibberish detection.
 RUN ./configure \
  && ./venv/bin/scancode-reindex-licenses \
  && ./venv/bin/scancode-reindex-package-patterns \
