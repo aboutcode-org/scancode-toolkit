@@ -9,6 +9,7 @@
 # https://raw.githubusercontent.com/rrenaud/Gibberish-Detector/aa1d4e4555362b3dada97ebe6ecc23a84fc470fe/gib_detect_train.py
 #
 
+import io
 import math
 import pickle
 from pathlib import Path
@@ -31,11 +32,11 @@ class Gibberish(object):
             self.train()
 
     def persist_model(self):
-        with open(model_path, 'wb') as f:
+        with io.open(model_path, mode='wb') as f:
             pickle.dump(vars(self), f)
 
     def load_persisted_model(self):
-        with open(model_path, 'rb') as f:
+        with io.open(model_path, mode='rb') as f:
             persisted_model = pickle.load(f)
             for key, value in persisted_model.items():
                 setattr(self, key, value)
@@ -74,7 +75,7 @@ class Gibberish(object):
 
         # Count transitions from big text file, taken
         # from http://norvig.com/spell-correct.html
-        for line in open(bigfile):
+        for line in io.open(bigfile, encoding='utf-8'):
             for a, b in self.ngram(2, line):
                 counts[pos[a]][pos[b]] += 1
 
@@ -90,8 +91,8 @@ class Gibberish(object):
 
         # Find the probability of generating a few arbitrarily choosen good and
         # bad phrases.
-        good_probs = [self.avg_transition_prob(l, counts) for l in open(goodfile)]
-        bad_probs = [self.avg_transition_prob(l, counts) for l in open(badfile)]
+        good_probs = [self.avg_transition_prob(l, counts) for l in io.open(goodfile, encoding='utf-8')]
+        bad_probs = [self.avg_transition_prob(l, counts) for l in io.open(badfile, encoding='utf-8')]
 
         # Assert that we actually are capable of detecting the junk.
         assert min(good_probs) > max(bad_probs)
