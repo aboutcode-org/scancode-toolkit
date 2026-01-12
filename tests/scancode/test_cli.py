@@ -900,7 +900,6 @@ def test_check_error_count():
     assert str(error_files) == str(error_count)
 
 
-
 def test_scan_keep_temp_files_is_false_by_default():
     test_file = test_env.get_test_loc('tempfiles/samples')
     result_file = test_env.get_temp_file('json')

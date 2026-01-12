@@ -39,6 +39,7 @@ license-expression==30.4.4
 lxml==6.0.2
 MarkupSafe==3.0.3
 more-itertools==10.7.0
+multiregex==2.0.3
 normality==2.6.1
 packageurl-python==0.17.1
 packaging==25.0
