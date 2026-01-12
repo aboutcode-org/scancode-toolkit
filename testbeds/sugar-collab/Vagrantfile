@@ -1,0 +1,37 @@
+# Vagrantfile for Sugar collaboration testbed (3 VMs on a private network)
+# BOX can be overridden via environment variable BOX.
+# Examples: generic/fedora40, bento/ubuntu-22.04
+
+Vagrant.configure("2") do |config|
+  BOX = ENV.fetch("BOX", "generic/fedora40")
+
+  [
+    {name: "vm-a", ip: "192.168.56.11"},
+    {name: "vm-b", ip: "192.168.56.12"},
+    {name: "vm-c", ip: "192.168.56.13"}
+  ].each do |vm|
+    config.vm.define vm[:name] do |node|
+      node.vm.box = BOX
+      node.vm.hostname = vm[:name]
+      node.vm.network "private_network", ip: vm[:ip]
+      node.vm.provider "virtualbox" do |vb|
+        vb.cpus = 2
+        vb.memory = 2048
+      end
+      node.vm.provision "shell", inline: <<-SHELL
+        set -e
+        if [ -f /etc/fedora-release ]; then
+          sudo dnf -y update
+          sudo dnf -y install avahi avahi-tools openssh-clients openssh
+          sudo systemctl enable --now avahi-daemon || true
+        elif [ -f /etc/lsb-release ] || [ -f /etc/debian_version ]; then
+          sudo apt-get update -y
+          sudo apt-get install -y avahi-daemon avahi-utils openssh-client openssh-server
+          sudo systemctl enable --now avahi-daemon || true
+          sudo systemctl enable --now ssh || true
+        fi
+        echo "Provisioned #{vm[:name]} at #{vm[:ip]}"
+      SHELL
+    end
+  end
+end

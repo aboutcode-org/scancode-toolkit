@@ -594,3 +594,23 @@ def find_pattern(location, pattern, unique=False):
         matches = unique_filter(matches)
     for _key, match , _line, line_number in matches:
         yield match, line_number
+
+
+# Pattern to match surrogate code points and their UTF-8 misinterpretations
+SURROGATE_PATTERN = re.compile(r'[\uD800-\uDFFF]')
+# Pattern for common false positive sequences from surrogate misinterpretation
+FALSE_POSITIVE_PATTERN = re.compile(r'í©[^\s]*')
+
+
+def sanitize_text_for_detection(text):
+    """
+    Remove surrogate characters and common false positive patterns
+    that cause spurious copyright detections.
+    """
+    if not text:
+        return text
+    # Remove actual surrogate code points
+    text = SURROGATE_PATTERN.sub('', text)
+    # Remove sequences that result from surrogate misinterpretation
+    text = FALSE_POSITIVE_PATTERN.sub(' ', text)
+    return text

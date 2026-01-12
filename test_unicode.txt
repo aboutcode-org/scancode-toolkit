@@ -1,0 +1,5 @@
+This is a test file with Unicode characters.
+Some symbols: © (c) (C)
+Korean: 한글
+Emoji: 😀
+End of test.
