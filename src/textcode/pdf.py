@@ -28,20 +28,20 @@ def get_text_lines(location, max_pages=5):
     extracted_text = BytesIO()
     laparams = LAParams()
     with open(location, 'rb') as pdf_file:
-        with contextlib.closing(PDFParser(pdf_file)) as parser:
-            document = PDFDocument(parser)
-            if not document.is_extractable:
-                raise PDFTextExtractionNotAllowed(
-                    'Encrypted PDF document: text extraction is not allowed')
+        parser = PDFParser(pdf_file)
+        document = PDFDocument(parser)
+        if not document.is_extractable:
+            raise PDFTextExtractionNotAllowed(
+                'Encrypted PDF document: text extraction is not allowed')
 
-            manager = PDFResourceManager()
-            with contextlib.closing(
-                TextConverter(manager, extracted_text, laparams=laparams)) as extractor:
-                interpreter = PDFPageInterpreter(manager, extractor)
-                pages = PDFPage.create_pages(document)
-                for page_num, page in enumerate(pages, 1):
-                    interpreter.process_page(page)
-                    if max_pages and page_num == max_pages:
-                        break
+        manager = PDFResourceManager()
+        with contextlib.closing(
+            TextConverter(manager, extracted_text, laparams=laparams)) as extractor:
+            interpreter = PDFPageInterpreter(manager, extractor)
+            pages = PDFPage.create_pages(document)
+            for page_num, page in enumerate(pages, 1):
+                interpreter.process_page(page)
+                if max_pages and page_num == max_pages:
+                    break
                 extracted_text.seek(0)
                 return extracted_text.readlines()
