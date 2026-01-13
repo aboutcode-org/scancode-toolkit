@@ -13,6 +13,9 @@ Next release
 - Replace unmaintained ``toml`` library with ``tomllib`` / ``tomli``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/4532
 
+- Support directories in ``referenced_filenames`` for rules.
+  https://github.com/nexB/scancode-toolkit/issues/4276
+
 v32.4.1 - 2025-07-23
 --------------------
 
