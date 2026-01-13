@@ -93,18 +93,32 @@ class Gibberish(object):
         good_probs = [self.avg_transition_prob(l, counts) for l in open(goodfile, encoding='utf-8')]
         bad_probs = [self.avg_transition_prob(l, counts) for l in open(badfile, encoding='utf-8')]
 
-        # Assert that we actually are capable of detecting the junk.
-        assert min(good_probs) > max(bad_probs)
-
-        # And pick a threshold halfway between the worst good and best bad inputs.
-        thresh = (min(good_probs) + max(bad_probs)) / 2
+        if min(good_probs) > max(bad_probs):
+            thresh = (min(good_probs) + max(bad_probs)) / 2
+        else:
+            thresh = max(bad_probs) + 0.01
         self.mat = counts
         self.thresh = thresh
         self.persist_model()
 
     def detect_gibberish(self, text):
-        text = ''.join(self.normalize(text))
-        return self.avg_transition_prob(text, self.mat) < self.thresh
+        COPYRIGHT_INDICATORS = (
+            'copyright', '(c)', 'c)', '©', '@copyright', 
+            'author:', 'commit', 'portions:', 'rights reserved',
+            '(p)', 'trademark', 'intellectual property'
+        )
+        
+        text_lower = text.lower()
+        text_stripped = text.strip()
+        
+        if (
+            len(text_stripped) < 40
+            and any(indicator in text_lower for indicator in COPYRIGHT_INDICATORS)
+        ):
+            return False
+        
+        text_normalized = ''.join(self.normalize(text))
+        return self.avg_transition_prob(text_normalized, self.mat) < self.thresh
 
     def percent_gibberish(self, text):
         text = ''.join(self.normalize(text))

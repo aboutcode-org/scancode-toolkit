@@ -98,3 +98,9 @@ Copyright (c) All the Raige Dog Salon. All Rights Reserved.
 Copyright 2008 TJ
 Scilab (c)INRIA-ENPC
 Copyright (c) 2006, FUJITA Yuji
+c) INRIA-ENPC.
+@Copyright
+Copyright Waterloo Microsystems Inc. 1985
+commit 3debe362faa62e5b381b880e3ba23aee07c85f6e Author:
+Alexander Kanavin <alex.kanavin@gmail.com>
+
