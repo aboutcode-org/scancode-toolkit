@@ -12,7 +12,8 @@ set of valid text, where it counts each transition between letters and computes
 a probability based off of that. These probabilities and thresholds are stored
 in a model that is saved to a Python pickle.
 
-The training corpus for the gibberish detector can be found in src/textcode/data/gibberish/
+The training corpus for the gibberish detector can be found in
+``src/textcode/data/gibberish/``.
 
 ``big.txt`` contains the main source of valid words that the gibberish detector
 model is trained on.
