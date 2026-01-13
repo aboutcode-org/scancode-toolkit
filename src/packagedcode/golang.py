@@ -125,7 +125,7 @@ class BaseGoModuleHandler(models.DatafileHandler):
             resolved_dependency = models.DependentPackage(
                 purl=local_pkg_data.purl,
                 extracted_requirement=local_pkg_data.version or None,
-                resolved_package=local_pkg_data,
+                resolved_package=local_pkg_data.to_dict(),
                 scope='require',
                 is_runtime=True,
                 is_optional=False,
