@@ -1,9 +1,12 @@
 aboutcode-toolkit==11.1.1
+alabaster==0.7.16
+beartype==0.22.9
 black==22.6.0
 bleach==5.0.1
 build==1.2.2.post1
 commonmark==0.9.1
 docutils==0.19
+doc8==2.0.0
 et-xmlfile==1.1.0
 execnet==1.9.0
 iniconfig==1.1.1
@@ -19,15 +22,19 @@ platformdirs==2.5.2
 py==1.11.0
 pytest==8.4.2
 pytest-forked==1.4.0
+pytest-rerunfailures==16.1
 pytest-xdist==2.5.0
 readme-renderer==35.0
+requests==2.32.5
 requests-toolbelt==0.9.1
+restructuredtext_lint==2.0.2
 rfc3986==2.0.0
 rich==12.5.1
-secretstorage==3.3.2
+SecretStorage==3.3.2
+setuptools==80.9.0
 tomli==2.3.0
 tqdm==4.64.0
 twine==6.1.0
-typing_extensions==4.14.0
+typing_extensions==4.15.0
 vendorize==0.3.0
 
