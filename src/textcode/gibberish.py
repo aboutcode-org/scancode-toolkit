@@ -103,8 +103,25 @@ class Gibberish(object):
         self.persist_model()
 
     def detect_gibberish(self, text):
-        text = ''.join(self.normalize(text))
-        return self.avg_transition_prob(text, self.mat) < self.thresh
+        MIN_TEXT_LENGTH = 15
+        
+        COPYRIGHT_INDICATORS = (
+            'copyright', '(c)', '©', '@copyright', 
+            'author:', 'commit'
+        )
+        
+        text_normalized = ''.join(self.normalize(text))
+        text_lower = text.lower()
+        
+        has_copyright_indicator = any(indicator in text_lower for indicator in COPYRIGHT_INDICATORS)
+        
+        if has_copyright_indicator:
+            return False
+        
+        if len(text_normalized.strip()) < MIN_TEXT_LENGTH:
+            return False
+        
+        return self.avg_transition_prob(text_normalized, self.mat) < self.thresh
 
     def percent_gibberish(self, text):
         text = ''.join(self.normalize(text))
