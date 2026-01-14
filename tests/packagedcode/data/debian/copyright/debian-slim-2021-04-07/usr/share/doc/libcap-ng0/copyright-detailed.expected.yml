@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_388.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_388.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_388.RULE
         matched_text: "License:\n\n    This library is free software; you can redistribute it\
           \ and/or\n    modify it under the terms of the GNU Lesser General Public\n    License\
           \ as published by the Free Software Foundation; either\n    version 2.1 of the License,\
@@ -40,7 +40,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_209.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_209.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_209.RULE
         matched_text: |
           licensed under the GNU General Public License version 2 or above
           See `/usr/share/common-licenses/GPL-2'.
@@ -59,7 +59,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0_468.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_468.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_468.RULE
         matched_text: "and is licensed under the GPL version 3, \nsee `/usr/share/common-licenses/GPL-3'."
     identifier: gpl_3_0-3238e4b2-36b1-43fa-44cf-18d881c6b1bf
 other_license_detections: []

@@ -37,7 +37,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "jetty.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
         }
       ]
     }
@@ -131,7 +131,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "jetty.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
             }
           ],
           "identifier": "jetty-a0130d29-e7f1-bc37-111a-fccd6b1c6b58"

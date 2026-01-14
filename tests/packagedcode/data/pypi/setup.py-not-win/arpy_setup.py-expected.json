@@ -50,7 +50,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "bsd-simplified_150.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_150.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_150.RULE",
             "matched_text": "Simplified BSD"
           }
         ],

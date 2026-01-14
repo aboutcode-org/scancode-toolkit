@@ -35,7 +35,7 @@ setup(
     long_description=long_description,
     author='ScanCode',
     author_email='info@scancode.io',
-    url='https://github.com/nexB/scancode-toolkit',
+    url='https://github.com/aboutcode-org/scancode-toolkit',
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],

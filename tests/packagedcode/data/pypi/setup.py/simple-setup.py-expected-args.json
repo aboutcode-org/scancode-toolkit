@@ -5,7 +5,7 @@
   "description": "ScanCode is a tool to scan code for license, copyright and other interesting facts.",
   "author": "ScanCode",
   "author_email": "info@scancode.io",
-  "url": "https://github.com/nexB/scancode-toolkit",
+  "url": "https://github.com/aboutcode-org/scancode-toolkit",
   "package_dir": {
     "": "src"
   },

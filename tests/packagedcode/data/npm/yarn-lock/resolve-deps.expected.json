@@ -43,7 +43,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "package-manifest-unknown-cb9ea49fe36cb2e1ba6d87c68e1195a492f762cf",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-cb9ea49fe36cb2e1ba6d87c68e1195a492f762cf",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-cb9ea49fe36cb2e1ba6d87c68e1195a492f762cf",
               "matched_text": "license - UNLICENSED"
             }
           ],
@@ -620,7 +620,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "package-manifest-unknown-cb9ea49fe36cb2e1ba6d87c68e1195a492f762cf",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-cb9ea49fe36cb2e1ba6d87c68e1195a492f762cf",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-cb9ea49fe36cb2e1ba6d87c68e1195a492f762cf",
                   "matched_text": "license - UNLICENSED"
                 }
               ],

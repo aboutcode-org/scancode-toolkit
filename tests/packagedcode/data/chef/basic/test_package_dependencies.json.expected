@@ -41,7 +41,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 70,
           "rule_identifier": "public-domain_bare_words.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
           "matched_text": "public-domain"
         }
       ],

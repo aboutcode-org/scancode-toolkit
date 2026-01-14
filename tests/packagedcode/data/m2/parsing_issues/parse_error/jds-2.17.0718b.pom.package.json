@@ -49,7 +49,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "bsd-new_358.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_358.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_358.RULE",
           "matched_text": "name: The 3-Clause BSD License\nurl: https://opensource.org/licenses/BSD-3-Clause"
         }
       ],
