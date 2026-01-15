@@ -137,7 +137,7 @@ class CustomTemplateOutput(OutputPlugin):
         license_references = []
         if hasattr(codebase.attributes, 'license_references'):
             license_references = codebase.attributes.license_references
-        summary = None 
+        summary = None
         if hasattr(codebase.attributes, 'summary'):
             summary = codebase.attributes.summary
         template_loc = custom_template
@@ -206,7 +206,7 @@ def generate_output(results, license_references, summary, version, template):
     converted = {}
     converted_infos = {}
     converted_packages = {}
-    licenses = {} 
+    licenses = {}
 
     LICENSES = 'license_detections'
     COPYRIGHTS = 'copyrights'
