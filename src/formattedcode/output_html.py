@@ -43,7 +43,7 @@ which is NOT a plugin
 TEMPLATES_DIR = join(dirname(__file__), 'templates')
 
 
-TRACE = True
+TRACE = False
 
 
 def logger_debug(*args):
@@ -211,7 +211,6 @@ def generate_output(results, license_references, summary, version, template):
     LICENSES = 'license_detections'
     COPYRIGHTS = 'copyrights'
     PACKAGES = 'package_data'
-    logger_debug(f"summary: {summary}")
 
     # Create a flattened data dict keyed by path
     for scanned_file in results:
@@ -244,7 +243,6 @@ def generate_output(results, license_references, summary, version, template):
                     match_data['matched_text'] = match['matched_text']
 
                 if 'matched_text_diagnostics' in match:
-                    logger_debug(match['matched_text_diagnostics'])
                     match_data['matched_text_diagnostics'] = match['matched_text_diagnostics']
 
                 results.append(match_data)
