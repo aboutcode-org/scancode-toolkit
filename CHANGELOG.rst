@@ -4,6 +4,38 @@ Changelog
 Next release
 --------------
 
+v3.5.0 - 2026-01-15
+-------------------
+
+- Improve package scan performance by:
+
+  - Skipping binary package detection steps by default,
+    and introducing a new CLI option ``--package-in-compiled``
+    to detect packages in compiled binaries like rust/go binaries
+    Note: previously these were detected in ``--package`` CLI
+    option directly but this is no longer the case, you've to
+    use the new ``--package-in-compiled`` to detect packages
+    from go/rust and other binaries
+
+  - Creating cached regex patterns and multiregex pre-matchers,
+    for a fast package path detection filtering step
+
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4606
+
+- Detect gibberish in copyrights to improve detection
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4610
+
+- Use a cython implementation of sequence matcher to improve
+  license detection performance
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4500
+
+- Add python3.14 support in scancode
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4595
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4541
+
+- Always print license references table in html output
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4474
+
 - Enable License References table for HTML Output without requiring
   `--license-references` by implementing a fallback license reference
   collection based on the behavior of v32.0.0.
@@ -12,6 +44,35 @@ Next release
 
 - Replace unmaintained ``toml`` library with ``tomllib`` / ``tomli``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/4532
+
+- Pin fingerprints and normality to avoid pyicu
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4493
+
+- Fix click compatibility issues and failures
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4572
+
+- Remove deprecated ast module attributes
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4539
+
+- Fix cargo scanning failures
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4581
+
+- Reorg and improve docs user experience
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4629
+
+- Handle is_private strings in npm properly
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4635
+
+- Restructure README docs
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4667
+
+- Add new licenses, license rules and misc license detection
+  improvements
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4562
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4674
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4666
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4622
+
 
 v32.4.1 - 2025-07-23
 --------------------
