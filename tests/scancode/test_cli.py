@@ -240,7 +240,7 @@ def test_scan_with_timeout_errors():
     # we use a short timeout and a --test-slow-mode --email scan to simulate an error
     args = ['-e', '--test-slow-mode', '--timeout', '0.01', '--verbose',
             test_file, '--json', result_file]
-    result = run_scan_click(args, expected_rc=1)
+    result = run_scan_click(args, expected_rc=1, processes=None)
     assert 'ERROR: Processing interrupted: timeout' in result.output
     assert 'patchelf.pdf' in result.output
     result_json = json.loads(open(result_file).read())
@@ -891,7 +891,7 @@ def test_check_error_count():
     # we use a short timeout and a --test-slow-mode --email scan to simulate an error
     args = ['-e', '--test-slow-mode', '--timeout', '0.1',
             test_dir, '--json', result_file]
-    result = run_scan_click(args, expected_rc=1)
+    result = run_scan_click(args, expected_rc=1, processes=None)
     output = result.output
     output = output.replace('\n', ' ').replace('   ', ' ')
     output = output.split(' ')

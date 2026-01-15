@@ -30,7 +30,7 @@ html5lib==1.1
 id==1.5.0
 idna==3.11
 imagesize==1.4.1
-importlib_metadata==8.7.1
+importlib_metadata==6.2.1
 inflection==0.5.1
 intbitset==4.1.0
 jaraco.functools==4.4.0
@@ -63,7 +63,7 @@ py==1.11.0
 pyahocorasick==2.3.0
 pycparser==2.23
 pygmars==1.0.0
-Pygments==2.19.2
+Pygments==2.13.0
 pymaven-patch==0.3.2
 pyparsing==3.3.1
 pytz==2022.1
