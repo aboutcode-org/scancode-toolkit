@@ -14,9 +14,6 @@ from pathlib import Path
 from pathlib import PureWindowsPath
 from dataclasses import asdict
 
-from dataclasses import asdict
-
-import attr
 
 try:
     from regipy.exceptions import NoRegistrySubkeysException
