@@ -22,8 +22,12 @@ v3.5.0 - 2026-01-15
 
   https://github.com/aboutcode-org/scancode-toolkit/pull/4606
 
-- Detect gibberish in copyrights to improve detection
+- Add gibberish detection to copyright scanning. This is done using a
+  2-character Markov chain. A new CLI command,
+  ``scancode-train-gibberish-model``, has been added to regenerate the model
+  used by the detector.
   https://github.com/aboutcode-org/scancode-toolkit/pull/4610
+  https://github.com/aboutcode-org/scancode-toolkit/issues/2402
 
 - Use a cython implementation of sequence matcher to improve
   license detection performance
@@ -72,7 +76,6 @@ v3.5.0 - 2026-01-15
   https://github.com/aboutcode-org/scancode-toolkit/pull/4674
   https://github.com/aboutcode-org/scancode-toolkit/pull/4666
   https://github.com/aboutcode-org/scancode-toolkit/pull/4622
-
 
 v32.4.1 - 2025-07-23
 --------------------

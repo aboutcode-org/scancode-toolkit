@@ -319,6 +319,6 @@ find_python
 create_virtualenv "$VIRTUALENV_DIR"
 install_packages "$CFG_REQUIREMENTS"
 . "$CFG_BIN_DIR/activate"
-
+"$CFG_BIN_DIR/scancode-train-gibberish-model"
 
 set +e
