@@ -134,12 +134,12 @@ if not __version__:
 # See https://scancode-toolkit.readthedocs.io/en/latest/misc/versioning.html for
 # more information on versioning
 if not __version__:
-    __version__ = '32.4.1'
+    __version__ = '32.5.0'
 
 #######################
 # used to warn user when the version is out of date
 # this is (year, month, day)
-__release_date__ = datetime.datetime(2025, 7, 23)
+__release_date__ = datetime.datetime(2026, 1, 15)
 
 # See https://scancode-toolkit.readthedocs.io/en/latest/misc/versioning.html
 # for more information on the data format version
