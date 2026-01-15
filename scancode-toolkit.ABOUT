@@ -3,7 +3,7 @@ name: scancode-toolkit
 license_expression: apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft
 copyright: Copyright (c) nexB Inc. and others.
 homepage_url: https://www.aboutcode.org/
-vcs_url: git+https://github.com/nexB/scancode-toolkit
-bug_tracking_url: https://github.com/nexB/scancode-toolkit/issues
+vcs_url: git+https://github.com/aboutcode-org/scancode-toolkit
+bug_tracking_url: https://github.com/aboutcode-org/scancode-toolkit/issues
 notice_file: NOTICE
 package_url: pkg:pypi/scancode-toolkit
