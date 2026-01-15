@@ -3,7 +3,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -413,9 +413,9 @@ def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
 
     # the paths for each OS ends up encoded differently.
     # See for details:
-    # https://github.com/nexB/scancode-toolkit/issues/390
-    # https://github.com/nexB/scancode-toolkit/issues/688
-    # https://github.com/nexB/scancode-toolkit/issues/1635
+    # https://github.com/aboutcode-org/scancode-toolkit/issues/390
+    # https://github.com/aboutcode-org/scancode-toolkit/issues/688
+    # https://github.com/aboutcode-org/scancode-toolkit/issues/1635
 
     if on_macos_14_or_higher:
         expected = 'unicodepath/unicodepath.expected-mac14.json' + verbosity
@@ -535,14 +535,14 @@ def test_scan_can_handle_weird_file_names():
     assert "KeyError: 'sha1'" not in result.output
 
     # Some info vary on each OS
-    # See https://github.com/nexB/scancode-toolkit/issues/438 for details
+    # See https://github.com/aboutcode-org/scancode-toolkit/issues/438 for details
     expected = 'weird_file_name/expected-posix.json'
     check_json_scan(test_env.get_test_loc(expected), result_file, regen=REGEN_TEST_FIXTURES)
 
 
 @pytest.mark.skipif(on_macos_14_or_higher or on_windows,
     reason='Cannot handle yet byte paths on macOS 10.14+. '
-    'See https://github.com/nexB/scancode-toolkit/issues/1635')
+    'See https://github.com/aboutcode-org/scancode-toolkit/issues/1635')
 def test_scan_can_handle_non_utf8_file_names_on_posix():
     test_dir = test_env.extract_test_tar_raw('non_utf8/non_unicode.tgz')
     result_file = test_env.get_temp_file('json')
@@ -552,8 +552,8 @@ def test_scan_can_handle_non_utf8_file_names_on_posix():
 
     # the paths for each OS end up encoded differently.
     # See for details:
-    # https://github.com/nexB/scancode-toolkit/issues/390
-    # https://github.com/nexB/scancode-toolkit/issues/688
+    # https://github.com/aboutcode-org/scancode-toolkit/issues/390
+    # https://github.com/aboutcode-org/scancode-toolkit/issues/688
 
     if on_linux:
         expected = 'non_utf8/expected-linux.json'

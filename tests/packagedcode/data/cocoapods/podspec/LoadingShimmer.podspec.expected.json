@@ -50,7 +50,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "mit_in_manifest.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_in_manifest.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_in_manifest.RULE",
             "matched_text": ":type = MIT, :file = LICENSE"
           }
         ],

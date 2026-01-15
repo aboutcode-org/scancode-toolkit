@@ -319,7 +319,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 70,
               "rule_identifier": "public-domain_bare_words.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "Public Domain"
             }
           ],
@@ -431,7 +431,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 70,
               "rule_identifier": "public-domain_bare_words.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "Public Domain"
             }
           ],
@@ -504,7 +504,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 70,
               "rule_identifier": "public-domain_bare_words.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "Public Domain"
             }
           ],
@@ -17230,7 +17230,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             },
             {
@@ -17245,7 +17245,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             },
             {
@@ -17260,7 +17260,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             }
           ],
@@ -17333,7 +17333,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             },
             {
@@ -17348,7 +17348,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             },
             {
@@ -17363,7 +17363,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             }
           ],
@@ -17853,7 +17853,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+"
             }
           ],
@@ -18874,7 +18874,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "matched_text": "license BSD"
             }
           ],
@@ -18995,7 +18995,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "zlib_24.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_24.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_24.RULE",
               "matched_text": "license zlib and Boost"
             }
           ],
@@ -19107,7 +19107,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mpl-2.0_93.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
               "matched_text": "MPLv2.0"
             }
           ],
@@ -19180,7 +19180,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -19481,7 +19481,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "matched_text": "license BSD"
             }
           ],
@@ -19566,7 +19566,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
               "matched_text": "GPLv2"
             }
           ],
@@ -19705,7 +19705,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "matched_text": "license BSD"
             }
           ],
@@ -20181,7 +20181,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "LGPLv3+ or GPLv2+"
             },
             {
@@ -20196,7 +20196,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "LGPLv3+ or GPLv2+"
             }
           ],
@@ -20308,7 +20308,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
               "matched_text": "GPLv2"
             }
           ],
@@ -21176,7 +21176,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLV2+ or LGPLv3+"
             },
             {
@@ -21191,7 +21191,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "GPLV2+ or LGPLv3+"
             }
           ],
@@ -21312,7 +21312,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv2+ or LGPLv3+"
             },
             {
@@ -21327,7 +21327,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "GPLv2+ or LGPLv3+"
             }
           ],
@@ -21475,7 +21475,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -21569,7 +21569,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+"
             }
           ],
@@ -22077,7 +22077,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -22180,7 +22180,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -22422,7 +22422,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+ and GPLv3+"
             },
             {
@@ -22437,7 +22437,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "LGPLv2+ and GPLv3+"
             }
           ],
@@ -22585,7 +22585,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -22679,7 +22679,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv2+ and BSD"
             }
           ],
@@ -22894,7 +22894,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "matched_text": "license BSD"
             }
           ],
@@ -23182,7 +23182,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv2+, LGPLv2+, MIT"
             },
             {
@@ -23197,7 +23197,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "GPLv2+, LGPLv2+, MIT"
             }
           ],
@@ -23282,7 +23282,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -23367,7 +23367,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -23875,7 +23875,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "BSD or GPLv2+"
             }
           ],
@@ -24446,7 +24446,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "LGPLv3+ and GPLv3+ and GFDL"
             },
             {
@@ -24461,7 +24461,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "LGPLv3+ and GPLv3+ and GFDL"
             }
           ],
@@ -24609,7 +24609,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+ and LGPLv2+"
             },
             {
@@ -24624,7 +24624,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "GPLv3+ and LGPLv2+"
             }
           ],
@@ -24889,7 +24889,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "(LGPLv3+ or GPLv2+) and GPLv3+"
             },
             {
@@ -24904,7 +24904,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "(LGPLv3+ or GPLv2+) and GPLv3+"
             },
             {
@@ -24919,7 +24919,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "(LGPLv3+ or GPLv2+) and GPLv3+"
             }
           ],
@@ -25067,7 +25067,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mpl-2.0_93.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
               "matched_text": "MPLv2.0"
             }
           ],
@@ -25197,7 +25197,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mpl-2.0_93.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
               "matched_text": "MPLv2.0"
             }
           ],
@@ -25336,7 +25336,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mpl-2.0_93.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
               "matched_text": "MPLv2.0"
             }
           ],
@@ -25637,7 +25637,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "LGPLv3+"
             }
           ],
@@ -25722,7 +25722,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "MIT or LGPLv2+ or BSD"
             }
           ],
@@ -25843,7 +25843,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "BSD and GPLv2+"
             }
           ],
@@ -28799,7 +28799,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv2+"
             }
           ],
@@ -28920,7 +28920,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv2+ and LGPLv2+"
             },
             {
@@ -28935,7 +28935,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "GPLv2+ and LGPLv2+"
             }
           ],
@@ -29029,7 +29029,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv2+"
             }
           ],
@@ -29379,7 +29379,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "package-manifest-unknown-1468f5c04ce66bed92859f134fea3273baa9ba43",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-1468f5c04ce66bed92859f134fea3273baa9ba43",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-1468f5c04ce66bed92859f134fea3273baa9ba43",
               "matched_text": "license OpenLDAP"
             }
           ],
@@ -29630,7 +29630,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv2+"
             }
           ],
@@ -29715,7 +29715,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv2+"
             }
           ],
@@ -30574,7 +30574,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "LGPLv3+ or GPLv2+ or (LGPLv3+ and GPLv2+)"
             },
             {
@@ -30589,7 +30589,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "LGPLv3+ or GPLv2+ or (LGPLv3+ and GPLv2+)"
             },
             {
@@ -30604,7 +30604,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "LGPLv3+ or GPLv2+ or (LGPLv3+ and GPLv2+)"
             },
             {
@@ -30619,7 +30619,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "LGPLv3+ or GPLv2+ or (LGPLv3+ and GPLv2+)"
             }
           ],
@@ -30704,7 +30704,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -30861,7 +30861,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -30973,7 +30973,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "LGPLv3+"
             }
           ],
@@ -31137,7 +31137,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "package-manifest-unknown-b9931200c2f732e2ea95da8f66af5f41a403ecf7",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-b9931200c2f732e2ea95da8f66af5f41a403ecf7",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-b9931200c2f732e2ea95da8f66af5f41a403ecf7",
               "matched_text": "license pubkey"
             }
           ],
@@ -31210,7 +31210,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
             },
             {
@@ -31225,7 +31225,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
             },
             {
@@ -31240,7 +31240,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
             },
             {
@@ -31255,7 +31255,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
             }
           ],
@@ -31524,7 +31524,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 70,
               "rule_identifier": "public-domain_bare_words.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "Public Domain"
             }
           ],
@@ -185374,7 +185374,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mpl-2.0_93.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
               "matched_text": "MPLv2.0"
             }
           ],
@@ -185541,7 +185541,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             },
             {
@@ -185556,7 +185556,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             },
             {
@@ -185571,7 +185571,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             }
           ],
@@ -185948,7 +185948,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -186021,7 +186021,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 70,
               "rule_identifier": "public-domain_bare_words.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "Public Domain"
             }
           ],
@@ -186106,7 +186106,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+"
             }
           ],
@@ -186227,7 +186227,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mpl-2.0_93.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
               "matched_text": "MPLv2.0"
             }
           ],
@@ -186300,7 +186300,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 70,
               "rule_identifier": "public-domain_bare_words.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "Public Domain"
             }
           ],
@@ -186394,7 +186394,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0_35.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_35.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_35.RULE",
               "matched_text": "BSD and LGPLv2 and Sleepycat"
             }
           ],
@@ -186497,7 +186497,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             },
             {
@@ -186512,7 +186512,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             },
             {
@@ -186527,7 +186527,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
             }
           ],
@@ -186724,7 +186724,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "matched_text": "license BSD"
             }
           ],
@@ -186827,7 +186827,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "matched_text": "license BSD"
             }
           ],
@@ -186993,7 +186993,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+"
             }
           ],
@@ -187573,7 +187573,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "(GPLv2+ or LGPLv3+) and GPLv3+"
             },
             {
@@ -187588,7 +187588,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "(GPLv2+ or LGPLv3+) and GPLv3+"
             },
             {
@@ -187603,7 +187603,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "(GPLv2+ or LGPLv3+) and GPLv3+"
             }
           ],
@@ -187742,7 +187742,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -187827,7 +187827,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+"
             }
           ],
@@ -187912,7 +187912,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -188163,7 +188163,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -189265,7 +189265,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -189386,7 +189386,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+"
             }
           ],
@@ -189543,7 +189543,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -189664,7 +189664,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 70,
               "rule_identifier": "public-domain_bare_words.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "Public Domain"
             }
           ],
@@ -189767,7 +189767,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+ and LGPLv2+"
             },
             {
@@ -189782,7 +189782,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "GPLv3+ and LGPLv2+"
             }
           ],
@@ -189912,7 +189912,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 70,
               "rule_identifier": "public-domain_bare_words.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "Public Domain"
             }
           ],
@@ -190060,7 +190060,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "matched_text": "license BSD"
             }
           ],
@@ -190181,7 +190181,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+ and MIT"
             }
           ],
@@ -190275,7 +190275,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -191035,7 +191035,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+ and GFDL"
             }
           ],
@@ -191282,7 +191282,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "BSD and GPLv2+"
             }
           ],
@@ -194062,7 +194062,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "LGPLv3+ or GPLv2+"
             },
             {
@@ -194077,7 +194077,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "LGPLv3+ or GPLv2+"
             }
           ],
@@ -194225,7 +194225,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0_35.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_35.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_35.RULE",
               "matched_text": "BSD and LGPLv2 and Sleepycat"
             }
           ],
@@ -194436,7 +194436,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mpl-2.0_93.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
               "matched_text": "MPLv2.0"
             }
           ],
@@ -194509,7 +194509,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "package-manifest-unknown-13009f1da345988b791cd1c802dc90f361c90176",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-13009f1da345988b791cd1c802dc90f361c90176",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-13009f1da345988b791cd1c802dc90f361c90176",
               "matched_text": "license MPLv1.1"
             }
           ],
@@ -194582,7 +194582,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mpl-2.0_93.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
               "matched_text": "MPLv2.0"
             }
           ],
@@ -194676,7 +194676,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -194761,7 +194761,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-3.0-plus_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
               "matched_text": "LGPLv3+"
             }
           ],
@@ -194846,7 +194846,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -194931,7 +194931,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -195034,7 +195034,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "matched_text": "license BSD"
             }
           ],
@@ -195294,7 +195294,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+ and GPLv2+ and LGPLv2+ and BSD"
             },
             {
@@ -195309,7 +195309,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv3+ and GPLv2+ and LGPLv2+ and BSD"
             },
             {
@@ -195324,7 +195324,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "GPLv3+ and GPLv2+ and LGPLv2+ and BSD"
             }
           ],
@@ -195751,7 +195751,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "matched_text": "license BSD with advertising"
             }
           ],
@@ -196303,7 +196303,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv2+ and LGPLv2+ with exceptions"
             },
             {
@@ -196318,7 +196318,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "GPLv2+ and LGPLv2+ with exceptions"
             }
           ],
@@ -196439,7 +196439,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
               "matched_text": "license BSD"
             }
           ],
@@ -196533,7 +196533,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+"
             }
           ],
@@ -197545,7 +197545,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "LGPLv2+"
             }
           ],
@@ -197639,7 +197639,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-3.0-plus_28.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
               "matched_text": "GPLv3+"
             }
           ],
@@ -197733,7 +197733,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
               "matched_text": "GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain"
             },
             {
@@ -197748,7 +197748,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
               "matched_text": "GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain"
             },
             {
@@ -197763,7 +197763,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "lgpl-2.0-plus_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
               "matched_text": "GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain"
             }
           ],
@@ -197785,7 +197785,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 70,
               "rule_identifier": "public-domain_bare_words.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain"
             }
           ],
@@ -223313,7 +223313,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 70,
                   "rule_identifier": "public-domain_bare_words.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "Public Domain"
                 }
               ],
@@ -223671,7 +223671,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 70,
                   "rule_identifier": "public-domain_bare_words.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "Public Domain"
                 }
               ],
@@ -223740,7 +223740,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 70,
                   "rule_identifier": "public-domain_bare_words.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "Public Domain"
                 }
               ],
@@ -240478,7 +240478,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 },
                 {
@@ -240493,7 +240493,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 },
                 {
@@ -240508,7 +240508,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 }
               ],
@@ -240577,7 +240577,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 },
                 {
@@ -240592,7 +240592,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 },
                 {
@@ -240607,7 +240607,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 }
               ],
@@ -243557,7 +243557,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+"
                 }
               ],
@@ -244770,7 +244770,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
               ],
@@ -244930,7 +244930,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "zlib_24.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_24.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_24.RULE",
                   "matched_text": "license zlib and Boost"
                 }
               ],
@@ -245063,7 +245063,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mpl-2.0_93.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
                   "matched_text": "MPLv2.0"
                 }
               ],
@@ -245178,7 +245178,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -245518,7 +245518,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
               ],
@@ -245624,7 +245624,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
                   "matched_text": "GPLv2"
                 }
               ],
@@ -245829,7 +245829,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
               ],
@@ -246365,7 +246365,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "LGPLv3+ or GPLv2+"
                 },
                 {
@@ -246380,7 +246380,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "LGPLv3+ or GPLv2+"
                 }
               ],
@@ -246540,7 +246540,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
                   "matched_text": "GPLv2"
                 }
               ],
@@ -247537,7 +247537,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLV2+ or LGPLv3+"
                 },
                 {
@@ -247552,7 +247552,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "GPLV2+ or LGPLv3+"
                 }
               ],
@@ -247703,7 +247703,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv2+ or LGPLv3+"
                 },
                 {
@@ -247718,7 +247718,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "GPLv2+ or LGPLv3+"
                 }
               ],
@@ -247896,7 +247896,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -247984,7 +247984,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+"
                 }
               ],
@@ -248513,7 +248513,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -248619,7 +248619,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -248930,7 +248930,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+ and GPLv3+"
                 },
                 {
@@ -248945,7 +248945,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "LGPLv2+ and GPLv3+"
                 }
               ],
@@ -249123,7 +249123,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -249229,7 +249229,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv2+ and BSD"
                 }
               ],
@@ -249477,7 +249477,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
               ],
@@ -249957,7 +249957,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv2+, LGPLv2+, MIT"
                 },
                 {
@@ -249972,7 +249972,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "GPLv2+, LGPLv2+, MIT"
                 }
               ],
@@ -250240,7 +250240,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -250355,7 +250355,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -250947,7 +250947,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "BSD or GPLv2+"
                 }
               ],
@@ -251584,7 +251584,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "LGPLv3+ and GPLv3+ and GFDL"
                 },
                 {
@@ -251599,7 +251599,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "LGPLv3+ and GPLv3+ and GFDL"
                 }
               ],
@@ -251777,7 +251777,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+ and LGPLv2+"
                 },
                 {
@@ -251792,7 +251792,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "GPLv3+ and LGPLv2+"
                 }
               ],
@@ -252096,7 +252096,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "(LGPLv3+ or GPLv2+) and GPLv3+"
                 },
                 {
@@ -252111,7 +252111,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "(LGPLv3+ or GPLv2+) and GPLv3+"
                 },
                 {
@@ -252126,7 +252126,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "(LGPLv3+ or GPLv2+) and GPLv3+"
                 }
               ],
@@ -252322,7 +252322,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mpl-2.0_93.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
                   "matched_text": "MPLv2.0"
                 }
               ],
@@ -252500,7 +252500,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mpl-2.0_93.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
                   "matched_text": "MPLv2.0"
                 }
               ],
@@ -252750,7 +252750,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mpl-2.0_93.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
                   "matched_text": "MPLv2.0"
                 }
               ],
@@ -253117,7 +253117,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "LGPLv3+"
                 }
               ],
@@ -253232,7 +253232,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "MIT or LGPLv2+ or BSD"
                 }
               ],
@@ -253401,7 +253401,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "BSD and GPLv2+"
                 }
               ],
@@ -256603,7 +256603,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv2+"
                 }
               ],
@@ -256745,7 +256745,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv2+ and LGPLv2+"
                 },
                 {
@@ -256760,7 +256760,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "GPLv2+ and LGPLv2+"
                 }
               ],
@@ -256875,7 +256875,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv2+"
                 }
               ],
@@ -257456,7 +257456,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "package-manifest-unknown-1468f5c04ce66bed92859f134fea3273baa9ba43",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-1468f5c04ce66bed92859f134fea3273baa9ba43",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-1468f5c04ce66bed92859f134fea3273baa9ba43",
                   "matched_text": "license OpenLDAP"
                 }
               ],
@@ -257821,7 +257821,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv2+"
                 }
               ],
@@ -257900,7 +257900,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv2+"
                 }
               ],
@@ -260220,7 +260220,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "LGPLv3+ or GPLv2+ or (LGPLv3+ and GPLv2+)"
                 },
                 {
@@ -260235,7 +260235,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "LGPLv3+ or GPLv2+ or (LGPLv3+ and GPLv2+)"
                 },
                 {
@@ -260250,7 +260250,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "LGPLv3+ or GPLv2+ or (LGPLv3+ and GPLv2+)"
                 },
                 {
@@ -260265,7 +260265,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "LGPLv3+ or GPLv2+ or (LGPLv3+ and GPLv2+)"
                 }
               ],
@@ -260380,7 +260380,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -260567,7 +260567,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -260709,7 +260709,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "LGPLv3+"
                 }
               ],
@@ -260984,7 +260984,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "package-manifest-unknown-b9931200c2f732e2ea95da8f66af5f41a403ecf7",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-b9931200c2f732e2ea95da8f66af5f41a403ecf7",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-b9931200c2f732e2ea95da8f66af5f41a403ecf7",
                   "matched_text": "license pubkey"
                 }
               ],
@@ -261053,7 +261053,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
                 },
                 {
@@ -261068,7 +261068,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
                 },
                 {
@@ -261083,7 +261083,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
                 },
                 {
@@ -261098,7 +261098,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "GPLv3+ and GPLv3+ with exceptions and GPLv2+ with exceptions and LGPLv2+ and BSD"
                 }
               ],
@@ -261490,7 +261490,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 70,
                   "rule_identifier": "public-domain_bare_words.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "Public Domain"
                 }
               ],
@@ -416828,7 +416828,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mpl-2.0_93.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
                   "matched_text": "MPLv2.0"
                 }
               ],
@@ -418480,7 +418480,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 },
                 {
@@ -418495,7 +418495,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 },
                 {
@@ -418510,7 +418510,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 }
               ],
@@ -419199,7 +419199,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -419296,7 +419296,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 70,
                   "rule_identifier": "public-domain_bare_words.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "Public Domain"
                 }
               ],
@@ -419420,7 +419420,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+"
                 }
               ],
@@ -419580,7 +419580,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mpl-2.0_93.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
                   "matched_text": "MPLv2.0"
                 }
               ],
@@ -419677,7 +419677,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 70,
                   "rule_identifier": "public-domain_bare_words.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "Public Domain"
                 }
               ],
@@ -419774,7 +419774,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0_35.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_35.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_35.RULE",
                   "matched_text": "BSD and LGPLv2 and Sleepycat"
                 }
               ],
@@ -419907,7 +419907,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 },
                 {
@@ -419922,7 +419922,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 },
                 {
@@ -419937,7 +419937,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "LGPLv2+ and LGPLv2+ with exceptions and GPLv2+"
                 }
               ],
@@ -420149,7 +420149,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
               ],
@@ -420273,7 +420273,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
               ],
@@ -420523,7 +420523,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+"
                 }
               ],
@@ -421151,7 +421151,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "(GPLv2+ or LGPLv3+) and GPLv3+"
                 },
                 {
@@ -421166,7 +421166,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "(GPLv2+ or LGPLv3+) and GPLv3+"
                 },
                 {
@@ -421181,7 +421181,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "(GPLv2+ or LGPLv3+) and GPLv3+"
                 }
               ],
@@ -421377,7 +421377,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -421474,7 +421474,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+"
                 }
               ],
@@ -422516,7 +422516,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -423133,7 +423133,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -424427,7 +424427,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -424587,7 +424587,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+"
                 }
               ],
@@ -424774,7 +424774,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -424916,7 +424916,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 70,
                   "rule_identifier": "public-domain_bare_words.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "Public Domain"
                 }
               ],
@@ -425022,7 +425022,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+ and LGPLv2+"
                 },
                 {
@@ -425037,7 +425037,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "GPLv3+ and LGPLv2+"
                 }
               ],
@@ -425197,7 +425197,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 70,
                   "rule_identifier": "public-domain_bare_words.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "Public Domain"
                 }
               ],
@@ -425654,7 +425654,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
               ],
@@ -425796,7 +425796,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+ and MIT"
                 }
               ],
@@ -425947,7 +425947,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -426764,7 +426764,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+ and GFDL"
                 }
               ],
@@ -427167,7 +427167,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "BSD and GPLv2+"
                 }
               ],
@@ -430772,7 +430772,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "LGPLv3+ or GPLv2+"
                 },
                 {
@@ -430787,7 +430787,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "LGPLv3+ or GPLv2+"
                 }
               ],
@@ -431019,7 +431019,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0_35.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_35.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_35.RULE",
                   "matched_text": "BSD and LGPLv2 and Sleepycat"
                 }
               ],
@@ -431359,7 +431359,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mpl-2.0_93.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
                   "matched_text": "MPLv2.0"
                 }
               ],
@@ -431528,7 +431528,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "package-manifest-unknown-13009f1da345988b791cd1c802dc90f361c90176",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-13009f1da345988b791cd1c802dc90f361c90176",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-13009f1da345988b791cd1c802dc90f361c90176",
                   "matched_text": "license MPLv1.1"
                 }
               ],
@@ -431625,7 +431625,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mpl-2.0_93.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_93.RULE",
                   "matched_text": "MPLv2.0"
                 }
               ],
@@ -431731,7 +431731,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -431846,7 +431846,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-3.0-plus_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_14.RULE",
                   "matched_text": "LGPLv3+"
                 }
               ],
@@ -431961,7 +431961,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -432112,7 +432112,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -432254,7 +432254,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
               ],
@@ -432556,7 +432556,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+ and GPLv2+ and LGPLv2+ and BSD"
                 },
                 {
@@ -432571,7 +432571,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv3+ and GPLv2+ and LGPLv2+ and BSD"
                 },
                 {
@@ -432586,7 +432586,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "GPLv3+ and GPLv2+ and LGPLv2+ and BSD"
                 }
               ],
@@ -433439,7 +433439,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD with advertising"
                 }
               ],
@@ -434108,7 +434108,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv2+ and LGPLv2+ with exceptions"
                 },
                 {
@@ -434123,7 +434123,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "GPLv2+ and LGPLv2+ with exceptions"
                 }
               ],
@@ -434238,7 +434238,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
                   "matched_text": "license BSD"
                 }
               ],
@@ -434362,7 +434362,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+"
                 }
               ],
@@ -435602,7 +435602,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "LGPLv2+"
                 }
               ],
@@ -435717,7 +435717,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-3.0-plus_28.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
                   "matched_text": "GPLv3+"
                 }
               ],
@@ -435832,7 +435832,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
                   "matched_text": "GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain"
                 },
                 {
@@ -435847,7 +435847,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
                   "matched_text": "GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain"
                 },
                 {
@@ -435862,7 +435862,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "lgpl-2.0-plus_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
                   "matched_text": "GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain"
                 }
               ],
@@ -435884,7 +435884,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 70,
                   "rule_identifier": "public-domain_bare_words.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "GPLv2 and GPLv2+ and LGPLv2+ and BSD with advertising and Public Domain"
                 }
               ],

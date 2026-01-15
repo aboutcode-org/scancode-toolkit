@@ -188,7 +188,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_30.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
           "matched_text": "  \"license\": \"MIT\",",
           "matched_text_diagnostics": "license\": \"MIT\","
         }
@@ -239,7 +239,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 80,
           "rule_identifier": "unknown-license-reference_335.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_335.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_335.RULE",
           "matched_text": "  * Fix license.\n\n2.1.1 / 2015-09-20",
           "matched_text_diagnostics": "license.\n\n2.1."
         }
@@ -375,7 +375,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 80,
               "rule_identifier": "unknown-license-reference_335.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_335.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_335.RULE",
               "matched_text": "  * Fix license.\n\n2.1.1 / 2015-09-20",
               "matched_text_diagnostics": "license.\n\n2.1."
             }
@@ -567,7 +567,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
               "matched_text": "  \"license\": \"MIT\",",
               "matched_text_diagnostics": "license\": \"MIT\","
             }

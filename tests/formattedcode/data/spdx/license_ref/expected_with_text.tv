@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. No content created from
 ScanCode should be considered or used as legal advice. Consult an Attorney
 for any legal advice.
 ScanCode is a free software code scanning tool from nexB Inc. and others.
-Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+Visit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.
 SPDX License List: 3.27</text>
 ## Creation Information
 ## Package Information
@@ -44,7 +44,7 @@ LicenseID: LicenseRef-scancode-scancode-acknowledgment
 ExtractedText: <text>Software license
 ================
 Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-http://nexb.com and https://github.com/nexB/scancode-toolkit/
+http://nexb.com and https://github.com/aboutcode-org/scancode-toolkit/
 The ScanCode software is licensed under the Apache License version 2.0.
 Data generated with ScanCode require an acknowledgment.
 ScanCode is a trademark of nexB Inc.
@@ -61,7 +61,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. No content created from
 ScanCode should be considered or used as legal advice. Consult an Attorney
 for any legal advice.
 ScanCode is a free software code scanning tool from nexB Inc. and others.
-Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+Visit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.
 Third-party software licenses
 =============================
 ScanCode embeds third-party free and open source software packages under various
@@ -70,7 +70,7 @@ are delivered as pre-built binaries. The origin and license of these packages is
 documented by .ABOUT files.
 The corresponding source code for pre-compiled third-party software is available
 for immediate download from the same release page where you obtained ScanCode at:
-https://github.com/nexB/scancode-toolkit/
+https://github.com/aboutcode-org/scancode-toolkit/
 or https://github.com/nexB/scancode-thirdparty-src/
 You may also contact us to request the source code by email at info@nexb.com or
 by postal mail at:
@@ -84,13 +84,13 @@ ScanCode includes datasets (e.g. for license detection) that are dedicated
 to the Public Domain using the Creative Commons CC0 1.0 Universal (CC0 1.0)
 Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0/</text>
 LicenseName: ScanCode acknowledgment
-LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE
+LicenseComment: <text>See details at https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE
 </text>
 LicenseID: LicenseRef-scancode-other-permissive
 ExtractedText: <text>Software license
 ================
 Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-http://nexb.com and https://github.com/nexB/scancode-toolkit/
+http://nexb.com and https://github.com/aboutcode-org/scancode-toolkit/
 The ScanCode software is licensed under the Apache License version 2.0.
 Data generated with ScanCode require an acknowledgment.
 ScanCode is a trademark of nexB Inc.
@@ -107,7 +107,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. No content created from
 ScanCode should be considered or used as legal advice. Consult an Attorney
 for any legal advice.
 ScanCode is a free software code scanning tool from nexB Inc. and others.
-Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+Visit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.
 Third-party software licenses
 =============================
 ScanCode embeds third-party free and open source software packages under various
@@ -116,7 +116,7 @@ are delivered as pre-built binaries. The origin and license of these packages is
 documented by .ABOUT files.
 The corresponding source code for pre-compiled third-party software is available
 for immediate download from the same release page where you obtained ScanCode at:
-https://github.com/nexB/scancode-toolkit/
+https://github.com/aboutcode-org/scancode-toolkit/
 or https://github.com/nexB/scancode-thirdparty-src/
 You may also contact us to request the source code by email at info@nexb.com or
 by postal mail at:
@@ -130,13 +130,13 @@ ScanCode includes datasets (e.g. for license detection) that are dedicated
 to the Public Domain using the Creative Commons CC0 1.0 Universal (CC0 1.0)
 Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0/</text>
 LicenseName: Other Permissive Licenses
-LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
+LicenseComment: <text>See details at https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.LICENSE
 </text>
 LicenseID: LicenseRef-scancode-other-copyleft
 ExtractedText: <text>Software license
 ================
 Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-http://nexb.com and https://github.com/nexB/scancode-toolkit/
+http://nexb.com and https://github.com/aboutcode-org/scancode-toolkit/
 The ScanCode software is licensed under the Apache License version 2.0.
 Data generated with ScanCode require an acknowledgment.
 ScanCode is a trademark of nexB Inc.
@@ -153,7 +153,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. No content created from
 ScanCode should be considered or used as legal advice. Consult an Attorney
 for any legal advice.
 ScanCode is a free software code scanning tool from nexB Inc. and others.
-Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+Visit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.
 Third-party software licenses
 =============================
 ScanCode embeds third-party free and open source software packages under various
@@ -162,7 +162,7 @@ are delivered as pre-built binaries. The origin and license of these packages is
 documented by .ABOUT files.
 The corresponding source code for pre-compiled third-party software is available
 for immediate download from the same release page where you obtained ScanCode at:
-https://github.com/nexB/scancode-toolkit/
+https://github.com/aboutcode-org/scancode-toolkit/
 or https://github.com/nexB/scancode-thirdparty-src/
 You may also contact us to request the source code by email at info@nexb.com or
 by postal mail at:
@@ -176,5 +176,5 @@ ScanCode includes datasets (e.g. for license detection) that are dedicated
 to the Public Domain using the Creative Commons CC0 1.0 Universal (CC0 1.0)
 Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0/</text>
 LicenseName: Other Copyleft Licenses
-LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
+LicenseComment: <text>See details at https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
 </text>

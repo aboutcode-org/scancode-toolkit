@@ -2,7 +2,7 @@ Software license
 ================
 
 Copyright (c) 2017 nexB Inc. and others. All rights reserved.
-http://nexb.com and https://github.com/nexB/scancode-toolkit/
+http://nexb.com and https://github.com/aboutcode-org/scancode-toolkit/
 The ScanCode software is licensed under the Apache License version 2.0.
 Data generated with ScanCode require an acknowledgment.
 ScanCode is a trademark of nexB Inc.
@@ -22,7 +22,7 @@ derivative work, you must accompany this data with the following acknowledgment:
   ScanCode should be considered or used as legal advice. Consult an Attorney
   for any legal advice.
   ScanCode is a free software code scanning tool from nexB Inc. and others.
-  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+  Visit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.
 
 
 Third-party software licenses
@@ -35,7 +35,7 @@ documented by .ABOUT files.
 
 The corresponding source code for pre-compiled third-party software is available
 for immediate download from the same release page where you obtained ScanCode at:
-https://github.com/nexB/scancode-toolkit/
+https://github.com/aboutcode-org/scancode-toolkit/
 or https://github.com/nexB/scancode-thirdparty-src/
 
 You may also contact us to request the source code by email at info@nexb.com or

@@ -5,15 +5,15 @@ Contributing
 Contributions are welcome and appreciated!
 Every little bit helps, and a credit will always be given.
 
-.. _issues : https://github.com/nexB/scancode-toolkit/issues
+.. _issues : https://github.com/aboutcode-org/scancode-toolkit/issues
 __ issues_
 
 If you are new to ScanCode and want to find easy tickets to work on,
-check `easy issues <https://github.com/nexB/scancode-toolkit/labels/easy>`_
+check `easy issues <https://github.com/aboutcode-org/scancode-toolkit/labels/easy>`_
 
 When contributing to ScanCode (such as code, bugs, documentation, etc.) you
 agree to the Developer `Certificate of Origin <http://developercertificate.org/>`_
-and the ScanCode license (see the `NOTICE <https://github.com/nexB/scancode-toolkit/blob/develop/NOTICE>`_ file).
+and the ScanCode license (see the `NOTICE <https://github.com/aboutcode-org/scancode-toolkit/blob/develop/NOTICE>`_ file).
 The same approach is used by Linux Kernel developers and several other projects.
 
 For commits, it is best to simply add a line like this to your commit message,
@@ -92,7 +92,7 @@ Development
 
 To set up ScanCode for local development:
 
-1. Fork the scancode-toolkit on GitHub, click `fork <https://github.com/nexb/scancode-toolkit/fork>`_ button
+1. Fork the scancode-toolkit on GitHub, click `fork <https://github.com/aboutcode-org/scancode-toolkit/fork>`_ button
 
 2. Clone your fork locally:
 
@@ -192,7 +192,7 @@ To set up ScanCode for local development:
        cd <resulting libbz2.so directory>
        sudo ln -s <your version of libbz2.so> libbz2.so.1.0
 
-   See `this issue <https://github.com/nexB/scancode-toolkit/issues/443>`_ for more information.
+   See `this issue <https://github.com/aboutcode-org/scancode-toolkit/issues/443>`_ for more information.
 
 10. Check the status of your local repository before committing, regarding files changed::
 

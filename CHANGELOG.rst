@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Fix outdated ScanCode license data base URL in api.py and templates.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4642
+
 - Enable License References table for HTML Output without requiring
   `--license-references` by implementing a fallback license reference
   collection based on the behavior of v32.0.0.

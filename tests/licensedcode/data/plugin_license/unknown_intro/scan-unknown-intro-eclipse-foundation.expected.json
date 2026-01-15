@@ -19,7 +19,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "epl-2.0_56.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_56.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_56.RULE",
           "matched_text": " * This program and the accompanying materials are made\n * available under the terms of the Eclipse Public License 2.0\n * which is available at https://www.eclipse.org/legal/epl-2.0/",
           "matched_text_diagnostics": "This program and the accompanying materials are made\n * available under the terms of the Eclipse Public License 2.0\n * which is available at https://www.eclipse.org/legal/epl-2.0/"
         },
@@ -65,7 +65,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "epl-2.0_56.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_56.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_56.RULE",
               "matched_text": " * This program and the accompanying materials are made\n * available under the terms of the Eclipse Public License 2.0\n * which is available at https://www.eclipse.org/legal/epl-2.0/",
               "matched_text_diagnostics": "This program and the accompanying materials are made\n * available under the terms of the Eclipse Public License 2.0\n * which is available at https://www.eclipse.org/legal/epl-2.0/"
             },

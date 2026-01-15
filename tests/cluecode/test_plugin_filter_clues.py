@@ -3,7 +3,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -68,7 +68,7 @@ def test_scan_plugin_filter_clues_for_license():
     check_json_scan(expected, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
 
-# Regression on data structure tracked in https://github.com/nexB/scancode-toolkit/issues/3797
+# Regression on data structure tracked in https://github.com/aboutcode-org/scancode-toolkit/issues/3797
 def test_scan_plugin_filter_copyrights_for_license():
     # this test fies is a copy of pcre.LICENSE that contains
     # several emails, authors, urls

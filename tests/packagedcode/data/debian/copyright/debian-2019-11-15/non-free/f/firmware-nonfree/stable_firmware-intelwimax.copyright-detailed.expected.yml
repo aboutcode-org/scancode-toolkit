@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 95
         rule_identifier: intel_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
         matched_text: "Redistribution.  \n\nRedistribution and use in binary form, without modification,\
           \ are\npermitted provided that the following conditions are met:\n\n * Redistributions\
           \ must reproduce the above copyright notice and the\n   following disclaimer in the\

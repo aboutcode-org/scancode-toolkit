@@ -43,7 +43,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 70,
               "rule_identifier": "public-domain_bare_words.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "name: Public Domain"
             }
           ],
@@ -129,7 +129,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_bare_single_word.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
               "matched_text": "GPLv2"
             }
           ],
@@ -1233,7 +1233,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 70,
                   "rule_identifier": "public-domain_bare_words.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "name: Public Domain"
                 }
               ],
@@ -1339,7 +1339,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0_bare_single_word.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
                   "matched_text": "GPLv2"
                 }
               ],

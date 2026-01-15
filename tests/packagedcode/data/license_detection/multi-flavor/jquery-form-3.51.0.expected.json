@@ -69,7 +69,7 @@
               "match_coverage": 94.81,
               "rule_relevance": 100,
               "rule_identifier": "mit_or_gpl-2.0_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_68.RULE",
               "matched_text": "are dual licensed under the MIT and GPL licenses:\n\n* [MIT](http://malsup.github.com/mit-license.txt)\n* [GPL](http://malsup.github.com/gpl-license-v2.txt)\n\nYou may use either license.  The MIT License is recommended for most projects because it is simple and easy to understand and it places almost no restrictions on what you can do with the plugin.\n\nIf the GPL suits your project better you are also free to use the plugin under that license.\n\nYou don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using. You are free to use the jQuery Form Plugin in commercial projects as long as the copyright header is left intact.",
               "matched_text_diagnostics": "are dual licensed under the MIT and GPL licenses:\n\n* [MIT](http://malsup.github.com/mit-license.txt)\n* [GPL](http://malsup.github.com/gpl-license-v2.txt)\n\nYou may use either license.  The MIT License is recommended for most projects because it is simple and easy to understand and it places almost no restrictions on what you can do with the plugin.\n\nIf the GPL suits your project better you are also free to use the plugin under that license.\n\nYou don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using. You are free to use the jQuery Form Plugin in commercial projects as long as the copyright header is left intact."
             }
@@ -181,7 +181,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_52.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
               "matched_text": "GPL-2.0"
             }
           ],
@@ -286,7 +286,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_14.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
               "matched_text": "http://malsup.github.com/mit-license.txt"
             }
           ],
@@ -308,7 +308,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 50,
               "rule_identifier": "gpl_bare_word_only.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
               "matched_text": "GPL"
             }
           ],
@@ -330,7 +330,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl_200.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_200.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_200.RULE",
               "matched_text": "http://malsup.github.com/gpl-license-v2.txt"
             }
           ],
@@ -501,7 +501,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_or_gpl-2.0-plus_1.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0-plus_1.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0-plus_1.RULE",
           "matched_text": "  \"license\": [\n    \"MIT\",\n    \"GPL-2.0\"",
           "matched_text_diagnostics": "license\": [\n    \"MIT\",\n    \"GPL-"
         },
@@ -517,7 +517,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-2.0_52.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
           "matched_text": "    \"GPL-2.0\"",
           "matched_text_diagnostics": "GPL-2.0\""
         }
@@ -542,7 +542,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 50,
           "rule_identifier": "gpl_bare_word_only.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
           "matched_text": "GPL"
         }
       ]
@@ -566,7 +566,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl_200.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_200.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_200.RULE",
           "matched_text": "http://malsup.github.com/gpl-license-v2.txt"
         }
       ]
@@ -590,7 +590,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-2.0_52.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
           "matched_text": "GPL-2.0"
         }
       ]
@@ -638,7 +638,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_14.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
           "matched_text": "http://malsup.github.com/mit-license.txt"
         }
       ]
@@ -664,7 +664,7 @@
           "match_coverage": 94.81,
           "rule_relevance": 100,
           "rule_identifier": "mit_or_gpl-2.0_68.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_68.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_68.RULE",
           "matched_text": "are dual licensed under the MIT and GPL licenses:\n\n* [MIT](http://malsup.github.com/mit-license.txt)\n* [GPL](http://malsup.github.com/gpl-license-v2.txt)\n\nYou may use either license.  The MIT License is recommended for most projects because it is simple and easy to understand and it places almost no restrictions on what you can do with the plugin.\n\nIf the GPL suits your project better you are also free to use the plugin under that license.\n\nYou don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using. You are free to use the jQuery Form Plugin in commercial projects as long as the copyright header is left intact.",
           "matched_text_diagnostics": "are dual licensed under the MIT and GPL licenses:\n\n* [MIT](http://malsup.github.com/mit-license.txt)\n* [GPL](http://malsup.github.com/gpl-license-v2.txt)\n\nYou may use either license.  The MIT License is recommended for most projects because it is simple and easy to understand and it places almost no restrictions on what you can do with the plugin.\n\nIf the GPL suits your project better you are also free to use the plugin under that license.\n\nYou don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using. You are free to use the jQuery Form Plugin in commercial projects as long as the copyright header is left intact."
         }
@@ -689,7 +689,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_or_gpl-2.0_69.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_69.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_69.RULE",
           "matched_text": "      \"type\": \"MIT\",\n      \"url\": \"http://malsup.github.com/mit-license.txt\"\n    },\n    {\n      \"type\": \"GPL\",\n      \"url\": \"http://malsup.github.com/gpl-license-v2.txt\"",
           "matched_text_diagnostics": "type\": \"MIT\",\n      \"url\": \"http://malsup.github.com/mit-license.txt\"\n    },\n    {\n      \"type\": \"GPL\",\n      \"url\": \"http://malsup.github.com/gpl-license-v2.txt\""
         }
@@ -729,7 +729,7 @@
               "match_coverage": 94.81,
               "rule_relevance": 100,
               "rule_identifier": "mit_or_gpl-2.0_68.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_68.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_68.RULE",
               "matched_text": "are dual licensed under the MIT and GPL licenses:\n\n* [MIT](http://malsup.github.com/mit-license.txt)\n* [GPL](http://malsup.github.com/gpl-license-v2.txt)\n\nYou may use either license.  The MIT License is recommended for most projects because it is simple and easy to understand and it places almost no restrictions on what you can do with the plugin.\n\nIf the GPL suits your project better you are also free to use the plugin under that license.\n\nYou don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using. You are free to use the jQuery Form Plugin in commercial projects as long as the copyright header is left intact.",
               "matched_text_diagnostics": "are dual licensed under the MIT and GPL licenses:\n\n* [MIT](http://malsup.github.com/mit-license.txt)\n* [GPL](http://malsup.github.com/gpl-license-v2.txt)\n\nYou may use either license.  The MIT License is recommended for most projects because it is simple and easy to understand and it places almost no restrictions on what you can do with the plugin.\n\nIf the GPL suits your project better you are also free to use the plugin under that license.\n\nYou don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using. You are free to use the jQuery Form Plugin in commercial projects as long as the copyright header is left intact."
             }
@@ -797,7 +797,7 @@
                   "match_coverage": 94.81,
                   "rule_relevance": 100,
                   "rule_identifier": "mit_or_gpl-2.0_68.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_68.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_68.RULE",
                   "matched_text": "are dual licensed under the MIT and GPL licenses:\n\n* [MIT](http://malsup.github.com/mit-license.txt)\n* [GPL](http://malsup.github.com/gpl-license-v2.txt)\n\nYou may use either license.  The MIT License is recommended for most projects because it is simple and easy to understand and it places almost no restrictions on what you can do with the plugin.\n\nIf the GPL suits your project better you are also free to use the plugin under that license.\n\nYou don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using. You are free to use the jQuery Form Plugin in commercial projects as long as the copyright header is left intact.",
                   "matched_text_diagnostics": "are dual licensed under the MIT and GPL licenses:\n\n* [MIT](http://malsup.github.com/mit-license.txt)\n* [GPL](http://malsup.github.com/gpl-license-v2.txt)\n\nYou may use either license.  The MIT License is recommended for most projects because it is simple and easy to understand and it places almost no restrictions on what you can do with the plugin.\n\nIf the GPL suits your project better you are also free to use the plugin under that license.\n\nYou don't have to do anything special to choose one license or the other and you don't have to notify anyone which license you are using. You are free to use the jQuery Form Plugin in commercial projects as long as the copyright header is left intact."
                 }
@@ -939,7 +939,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl-2.0_52.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
                   "matched_text": "GPL-2.0"
                 }
               ],
@@ -999,7 +999,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_or_gpl-2.0-plus_1.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0-plus_1.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0-plus_1.RULE",
               "matched_text": "  \"license\": [\n    \"MIT\",\n    \"GPL-2.0\"",
               "matched_text_diagnostics": "license\": [\n    \"MIT\",\n    \"GPL-"
             },
@@ -1015,7 +1015,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-2.0_52.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
               "matched_text": "    \"GPL-2.0\"",
               "matched_text_diagnostics": "GPL-2.0\""
             }
@@ -1115,7 +1115,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "mit_14.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
                   "matched_text": "http://malsup.github.com/mit-license.txt"
                 }
               ],
@@ -1137,7 +1137,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 50,
                   "rule_identifier": "gpl_bare_word_only.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
                   "matched_text": "GPL"
                 }
               ],
@@ -1159,7 +1159,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "gpl_200.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_200.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_200.RULE",
                   "matched_text": "http://malsup.github.com/gpl-license-v2.txt"
                 }
               ],
@@ -1273,7 +1273,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_or_gpl-2.0_69.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_69.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-2.0_69.RULE",
               "matched_text": "      \"type\": \"MIT\",\n      \"url\": \"http://malsup.github.com/mit-license.txt\"\n    },\n    {\n      \"type\": \"GPL\",\n      \"url\": \"http://malsup.github.com/gpl-license-v2.txt\"",
               "matched_text_diagnostics": "type\": \"MIT\",\n      \"url\": \"http://malsup.github.com/mit-license.txt\"\n    },\n    {\n      \"type\": \"GPL\",\n      \"url\": \"http://malsup.github.com/gpl-license-v2.txt\""
             }

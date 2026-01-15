@@ -56,7 +56,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "gpl-3.0_32.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_32.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_32.RULE",
             "matched_text": "GPLv3"
           }
         ],
@@ -100,7 +100,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "gpl-2.0_bare_single_word.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
             "matched_text": "GPLv2"
           }
         ],

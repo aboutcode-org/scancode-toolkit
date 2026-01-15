@@ -9,7 +9,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. No content created from
 ScanCode should be considered or used as legal advice. Consult an Attorney
 for any legal advice.
 ScanCode is a free software code scanning tool from nexB Inc. and others.
-Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+Visit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.
 SPDX License List: 3.27</text>
 ## Creation Information
 ## Package Information
@@ -75,5 +75,5 @@ ExtractedText: <text> * SOFTWARE LICENSE
 * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 * DAMAGE.</text>
 LicenseName: Agere BSD
-LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/agere-bsd.LICENSE
+LicenseComment: <text>See details at https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/agere-bsd.LICENSE
 </text>

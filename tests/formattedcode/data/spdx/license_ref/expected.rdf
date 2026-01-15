@@ -93,8 +93,8 @@
             "@rdf:about": "#LicenseRef-scancode-other-copyleft",
             "spdx:licenseId": "LicenseRef-scancode-other-copyleft",
             "spdx:name": "Other Copyleft Licenses",
-            "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE",
-            "spdx:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE"
+            "rdfs:comment": "See details at https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE",
+            "spdx:extractedText": "See details at https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE"
           }
         },
         {
@@ -102,8 +102,8 @@
             "@rdf:about": "#LicenseRef-scancode-other-permissive",
             "spdx:licenseId": "LicenseRef-scancode-other-permissive",
             "spdx:name": "Other Permissive Licenses",
-            "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.LICENSE",
-            "spdx:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.LICENSE"
+            "rdfs:comment": "See details at https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.LICENSE",
+            "spdx:extractedText": "See details at https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.LICENSE"
           }
         },
         {
@@ -111,12 +111,12 @@
             "@rdf:about": "#LicenseRef-scancode-scancode-acknowledgment",
             "spdx:licenseId": "LicenseRef-scancode-scancode-acknowledgment",
             "spdx:name": "ScanCode acknowledgment",
-            "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE",
-            "spdx:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE"
+            "rdfs:comment": "See details at https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE",
+            "spdx:extractedText": "See details at https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.LICENSE"
           }
         }
       ],
-      "rdfs:comment": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.\nSPDX License List: 3.27",
+      "rdfs:comment": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.\nSPDX License List: 3.27",
       "spdx:name": "SPDX Document created by ScanCode Toolkit",
       "spdx:specVersion": "SPDX-2.2"
     },

@@ -2,7 +2,7 @@ Metadata-Version: 2.1
 Name: scancode-toolkit
 Version: 31.0.0b1
 Summary: ScanCode is a tool to scan code for license, copyright, package and their documented dependencies and other interesting facts.
-Home-page: https://github.com/nexB/scancode-toolkit
+Home-page: https://github.com/aboutcode-org/scancode-toolkit
 Author: nexB. Inc. and others
 Author-email: info@aboutcode.org
 License: Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft
@@ -43,7 +43,7 @@ ScanCode discovers and normalizes this data for you.
 Read more about ScanCode here: `scancode-toolkit.readthedocs.io 
 <https://scancode-toolkit.readthedocs.io/>`_.
 
-Check out the code at https://github.com/nexB/scancode-toolkit
+Check out the code at https://github.com/aboutcode-org/scancode-toolkit
 
 
 Why use ScanCode?
@@ -223,7 +223,7 @@ Support
 =======
 
 If you have a problem, a suggestion or found a bug, please enter a ticket at:
-https://github.com/nexB/scancode-toolkit/issues
+https://github.com/aboutcode-org/scancode-toolkit/issues
 
 For discussions and chats, we have:
 
@@ -241,8 +241,8 @@ For discussions and chats, we have:
 Source code and downloads
 =========================
 
-* https://github.com/nexB/scancode-toolkit/releases
-* https://github.com/nexB/scancode-toolkit.git
+* https://github.com/aboutcode-org/scancode-toolkit/releases
+* https://github.com/aboutcode-org/scancode-toolkit.git
 * https://pypi.org/project/scancode-toolkit/
 * https://github.com/nexB/scancode-thirdparty-src.git
 
@@ -261,11 +261,11 @@ the third-party code used in ScanCode for more details.
 
 
 .. |appveyor| image:: https://ci.appveyor.com/api/projects/status/4webymu0l2ip8utr?svg=true
-    :target: https://travis-ci.org/nexB/scancode-toolkit
+    :target: https://travis-ci.org/aboutcode-org/scancode-toolkit
     :alt: Appveyor tests status (Windows)
 
-.. |azure| image:: https://dev.azure.com/nexB/scancode-toolkit/_apis/build/status/nexB.scancode-toolkit?branchName=develop
-    :target: https://dev.azure.com/nexB/scancode-toolkit/_build/latest?definitionId=1&branchName=develop
+.. |azure| image:: https://dev.azure.com/aboutcode-org/scancode-toolkit/_apis/build/status/nexB.scancode-toolkit?branchName=develop
+    :target: https://dev.azure.com/aboutcode-org/scancode-toolkit/_build/latest?definitionId=1&branchName=develop
     :alt: Azure tests status (Linux, macOS, Windows)
 
 .. |docs-rtd| image:: https://readthedocs.org/projects/scancode-toolkit/badge/?version=latest

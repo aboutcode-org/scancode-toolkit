@@ -23,7 +23,7 @@
             "match_coverage": 4.71,
             "rule_relevance": 100,
             "rule_identifier": "borceux.LICENSE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
             "rule_notes": null,
             "referenced_filenames": [],
             "matched_text": "This src:package consists of various tarballs.\n\nThis README is a dummy file for creating the base tarball of the name",
@@ -62,7 +62,7 @@
           "match_coverage": 4.71,
           "rule_relevance": 100,
           "rule_identifier": "borceux.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
           "matched_text": "This src:package consists of various tarballs.\n\nThis README is a dummy file for creating the base tarball of the name",
           "matched_text_diagnostics": "package consists of [various] [tarballs].\n\n[This] README"
         }

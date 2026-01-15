@@ -41,7 +41,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "cddl-1.0_98.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_98.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_98.RULE",
           "matched_text": "name: Common Development and Distribution License (CDDL) v1.0\nurl: http://www.sun.com/cddl/cddl.html"
         }
       ],

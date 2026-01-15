@@ -51,7 +51,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "bsd-new_1305.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE",
               "matched_text": "BSD-3-Clause license_files: LICENSE.rst"
             },
             {
@@ -66,7 +66,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
             }
           ],
           "identifier": "bsd_new-c0e1e2ee-7e69-b9f1-a736-85b2eaa65db2",
@@ -151,7 +151,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 99,
           "rule_identifier": "bsd-new_89.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
         }
       ]
     },
@@ -176,7 +176,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "bsd-new_1302.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1302.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1302.RULE"
         },
         {
           "license_expression": "bsd-new",
@@ -190,7 +190,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 99,
           "rule_identifier": "bsd-new_89.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
         }
       ]
     },
@@ -215,7 +215,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "bsd-new_1305.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE"
         },
         {
           "license_expression": "bsd-new",
@@ -229,7 +229,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 99,
           "rule_identifier": "bsd-new_89.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
         }
       ]
     },
@@ -252,7 +252,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 99,
           "rule_identifier": "pypi_bsd_license.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
         }
       ]
     }
@@ -284,7 +284,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
             }
           ],
           "detection_log": [],
@@ -364,7 +364,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "bsd-new_1305.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE",
                   "matched_text": "BSD-3-Clause license_files: LICENSE.rst"
                 },
                 {
@@ -379,7 +379,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
                 }
               ],
               "identifier": "bsd_new-c0e1e2ee-7e69-b9f1-a736-85b2eaa65db2",
@@ -428,7 +428,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "bsd-new_1302.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1302.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1302.RULE"
             },
             {
               "license_expression": "bsd-new",
@@ -442,7 +442,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
             }
           ],
           "detection_log": [
@@ -466,7 +466,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
             }
           ],
           "detection_log": [],
@@ -524,7 +524,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "bsd-new_89.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
                 }
               ],
               "detection_log": [],

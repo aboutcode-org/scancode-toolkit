@@ -3,7 +3,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -1066,7 +1066,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         assert results == expected
 
     def test_match_has_correct_line_positions_in_automake_perl_file(self):
-        # Reported as https://github.com/nexB/scancode-toolkit/issues/88
+        # Reported as https://github.com/aboutcode-org/scancode-toolkit/issues/88
         # Note that this test is very sensitive to changes in the licenses data
         # set on purpose. Adding new license and/or frequent tokens will likely
         # make it fail In this case, review the new not-frequent tokens that
@@ -1289,7 +1289,7 @@ class TestRegression(FileBasedTesting):
 
     def test_detection_return_correct_mit_not_apache_using_controlled_index(self):
         # we were incorrectly reporting an Apache using a sequence match
-        # this has been fixed for https://github.com/nexB/scancode-toolkit/issues/2635
+        # this has been fixed for https://github.com/aboutcode-org/scancode-toolkit/issues/2635
         # the key fix is to privilege the longest rule when two rules are tied
         # as candidates in set matching
         from licensedcode import models
@@ -1311,7 +1311,7 @@ class TestRegression(FileBasedTesting):
 
     def test_detection_return_correct_mit_not_apache_using_full_index(self):
         # we were incorrectly reporting an Apache using a sequence match
-        # this has been fixed in https://github.com/nexB/scancode-toolkit/issues/2635
+        # this has been fixed in https://github.com/aboutcode-org/scancode-toolkit/issues/2635
 
         idx = cache.get_index()
         expected = ['mit']
