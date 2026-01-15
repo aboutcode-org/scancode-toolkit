@@ -235,7 +235,7 @@ create_virtualenv() {
         fi
 
         $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
-            --wheel embed --pip embed --setuptools embed \
+            --pip embed --setuptools embed \
             --seeder pip \
             --never-download \
             --no-periodic-update \

@@ -35,8 +35,8 @@ Run the ``docker build`` source code checkout directory.
   For instance, ::
 
     C:\scancode-toolkit>git describe --tags
-    v32.4.1
-    C:\scancode-toolkit>docker build --tag scancode-toolkit --tag scancode-toolkit:v32.4.1 .
+    v32.5.0
+    C:\scancode-toolkit>docker build --tag scancode-toolkit --tag scancode-toolkit:v32.5.0 .
 
 Verify installation
 -------------------

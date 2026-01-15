@@ -12,6 +12,7 @@ import os
 
 from packagedcode import cache
 from commoncode.fileutils import as_posixpath
+from commoncode.system import py314
 
 from packages_test_utils import PackageTester
 
@@ -28,8 +29,12 @@ class TestMultiregexPatterns(PackageTester):
         multiregexes = cache.build_mappings_and_multiregex_patterns(
             datafile_handlers=[AboutFileHandler],
         )
-        assert multiregexes.patterns == [('(?s:.*\\.ABOUT)\\Z', ['.about'])]
-        assert multiregexes.handler_by_regex == {'(?s:.*\\.ABOUT)\\Z': ['about_file']}
+        if py314:
+            about_regex_pattern = '(?s:.*\\.ABOUT)\\z'
+        else:
+            about_regex_pattern = '(?s:.*\\.ABOUT)\\Z'
+        assert multiregexes.patterns == [(about_regex_pattern, ['.about'])]
+        assert multiregexes.handler_by_regex == {about_regex_pattern: ['about_file']}
 
     def test_build_package_cache_works(self):
         from packagedcode.about import AboutFileHandler
