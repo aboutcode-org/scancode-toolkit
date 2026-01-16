@@ -44,7 +44,15 @@ class Gibberish(object):
         """ Return only the subset of chars from accepted_chars.
         This helps keep the  model relatively small by ignoring punctuation,
         infrequenty symbols, etc. """
-        return [c.lower() for c in line if c.lower() in accepted_chars]
+        
+        # Preserve copyright context by replacing symbols with normalized forms
+        text = line.lower()
+        text = text.replace('©', ' copyright ')
+        text = text.replace('(c)', ' copyright ')
+        text = text.replace(' c)', ' copyright ')
+        text = text.replace('@', ' ')
+        
+        return [c for c in text if c in accepted_chars]
 
     def ngram(self, n, l):
         """ Return all n grams from l after normalizing """
@@ -102,26 +110,9 @@ class Gibberish(object):
         self.persist_model()
 
     def detect_gibberish(self, text):
-        COPYRIGHT_INDICATORS = (
-            'copyright', '(c)', 'c)', '©', '@copyright', 
-            'author:', 'commit', 'portions:', 'rights reserved',
-            '(p)', 'trademark', 'intellectual property'
-        )
-        
-        text_lower = text.lower()
-        text_stripped = text.strip()
-        
-        if (
-            len(text_stripped) < 40
-            and any(indicator in text_lower for indicator in COPYRIGHT_INDICATORS)
-        ):
-            return False
-        
         text_normalized = ''.join(self.normalize(text))
-        
-        if len(text_normalized) <= 4:
+        if len(text_normalized) <= 3:
             return False
-        
         return self.avg_transition_prob(text_normalized, self.mat) < self.thresh
 
     def percent_gibberish(self, text):
