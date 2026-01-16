@@ -1,0 +1,12 @@
+[project]
+name = "demo-project"
+version = "1.2.3"
+license = { text = "MIT" }
+dependencies = [
+  "requests>=2.0",
+  "numpy==1.26.0"
+]
+
+[project.urls]
+Homepage = "https://example.org"
+Repository = "https://github.com/example/demo-project"

@@ -363,6 +363,12 @@ class TestPyprojectTomlFileHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/lc0-pyproject.toml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_pyproject_toml_with_license_urls_dependencies(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/demo-project/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/demo-project-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
 
 class TestPoetryHandler(PackageTester):
 

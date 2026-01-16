@@ -1,0 +1,92 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "demo-project",
+    "version": "1.2.3",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "https://example.org",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": "https://github.com/example/demo-project",
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_url": null,
+            "matched_text": "MIT"
+          }
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "license: MIT\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/requests",
+        "extracted_requirement": ">=2.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/numpy@1.26.0",
+        "extracted_requirement": "==1.26.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/demo-project",
+    "repository_download_url": "https://pypi.org/packages/source/d/demo-project/demo-project-1.2.3.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/demo-project/1.2.3/json",
+    "datasource_id": "pypi_pyproject_toml",
+    "purl": "pkg:pypi/demo-project@1.2.3"
+  }
+]
