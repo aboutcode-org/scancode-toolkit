@@ -586,7 +586,18 @@ class RPM:
 
     @property
     def package(self):
-        return '-'.join([self.name, self.version])
+        """
+        Return the RPM package identifier: name-version.
+        Example: bash-4.4.20
+        """
+        return f"{self.name}-{self.version}"
+
+    @property
+    def full_version(self):
+        """Return version + release, similar to package property"""
+        if self.release:
+            return f"{self.version}-{self.release}"
+        return self.version
 
     @property
     def files_digest_algo(self):
