@@ -587,10 +587,14 @@ class RPM:
     @property
     def package(self):
         """
-        Return the RPM package identifier: name-version.
-        Example: bash-4.4.20
+        Return the full RPM package identifier: name-version-release if release exists.
+        Example: bash-4.4.20-4.el8_6
         """
-        return f"{self.name}-{self.version}"
+        parts = [self.name, self.version]
+        if self.release:
+           parts.append(self.release)
+        return '-'.join(parts)
+
 
     @property
     def full_version(self):
