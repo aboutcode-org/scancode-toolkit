@@ -295,7 +295,7 @@ def write_spdx(
                         text = match.get('matched_text')
                         # FIXME: replace this with the licensedb URL
                         comment = (
-                            f'See details at https://github.com/aboutcode-org/scancode-toolkit'
+                            f'See details at https://github.com/nexB/scancode-toolkit'
                             f'/blob/develop/src/licensedcode/data/licenses/{license_key}.LICENSE\n'
                         )
                         extracted_license = ExtractedLicensingInfo(

@@ -3,7 +3,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/aboutcode-org/scancode-toolkit for support or download.
+# See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 from collections import namedtuple
@@ -52,7 +52,7 @@ OR CONDITIONS OF ANY KIND, either express or implied. No content created from
 ScanCode should be considered or used as legal advice. Consult an Attorney
 for any legal advice.
 ScanCode is a free software code scanning tool from nexB Inc. and others.
-Visit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.'''
+Visit https://github.com/nexB/scancode-toolkit/ for support and download.'''
 
 
 def print_about(ctx, param, value):
@@ -63,7 +63,7 @@ def print_about(ctx, param, value):
         return
     info_text = '''
 ScanCode scans code and other files for origin and license.
-Visit https://www.aboutcode.org/ and https://github.com/aboutcode-org/scancode-toolkit/
+Visit https://www.aboutcode.org/ and https://github.com/nexB/scancode-toolkit/
 for support and download.
 
 '''
