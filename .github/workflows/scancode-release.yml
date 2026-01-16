@@ -588,7 +588,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        dist_names: ["wheels-3.10", "wheels-3.11", "wheels-3.12", "wheels-3.13", "wheels-3.13", "sdists"]
+        dist_names: ["wheels-3.10", "wheels-3.11", "wheels-3.12", "wheels-3.13", "wheels-3.14", "sdists"]
 
     steps:
       - name: Set up Python
