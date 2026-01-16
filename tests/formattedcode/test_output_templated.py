@@ -144,6 +144,7 @@ def test_scan_html_output_does_not_truncate_copyright_html():
           <td>1</td>
           <td>copyright</td>
             <td>Copyright \(c\) 2000 ACME, Inc\.</td>
+            <td></td>
         </tr>
     '''
 
