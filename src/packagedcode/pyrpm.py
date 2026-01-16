@@ -609,12 +609,12 @@ class RPM:
 
     @property
     def filename(self):
-        name = '-'.join([self.package, self.release])
+        name = self.package
         arch = self.arch
         if self.is_binary:
-            ext = 'rpm'
+           ext = 'rpm'
         else:
-            ext = 'src.rpm'
+             ext = 'src.rpm'
         return '.'.join([name, arch, ext])
 
     def get_tags(self):

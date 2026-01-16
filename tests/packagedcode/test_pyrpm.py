@@ -60,7 +60,8 @@ class RPMTest(FileBasedTesting):
         assert rpm[pyrpm.RPMTAG_COPYRIGHT] == 'BSD'
         assert rpm[pyrpm.RPMTAG_DESCRIPTION] == description
         assert rpm.is_binary is True
-        assert rpm.package == 'Eterm-0.9.3'
+        assert rpm.package == 'Eterm-0.9.3-5mdv2007.0'
+        assert rpm.full_version == '0.9.3-5mdv2007.0'
         assert rpm.filename == 'Eterm-0.9.3-5mdv2007.0.i586.rpm'
 
         expected = {
