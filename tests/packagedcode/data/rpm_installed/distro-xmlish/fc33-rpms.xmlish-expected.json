@@ -3,7 +3,7 @@
     "type": "rpm",
     "namespace": null,
     "name": "libgcc",
-    "version": "10.1.1",
+    "version": "10.1.1-1.fc33",
     "qualifiers": {
       "arch": "x86_64"
     },
@@ -211,13 +211,13 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/libgcc@10.1.1?arch=x86_64"
+    "purl": "pkg:rpm/libgcc@10.1.1-1.fc33?arch=x86_64"
   },
   {
     "type": "rpm",
     "namespace": null,
     "name": "fedora-release-identity-container",
-    "version": "33",
+    "version": "33-0.8",
     "qualifiers": {
       "arch": "noarch"
     },
@@ -299,6 +299,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/fedora-release-identity-container@33?arch=noarch"
+    "purl": "pkg:rpm/fedora-release-identity-container@33-0.8?arch=noarch"
   }
 ]

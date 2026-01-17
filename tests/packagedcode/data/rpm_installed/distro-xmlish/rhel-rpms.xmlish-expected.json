@@ -3,7 +3,7 @@
     "type": "rpm",
     "namespace": null,
     "name": "setup",
-    "version": "2.12.2",
+    "version": "2.12.2-1.el8",
     "qualifiers": {
       "arch": "noarch"
     },
@@ -400,13 +400,13 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/setup@2.12.2?arch=noarch"
+    "purl": "pkg:rpm/setup@2.12.2-1.el8?arch=noarch"
   },
   {
     "type": "rpm",
     "namespace": null,
     "name": "basesystem",
-    "version": "11",
+    "version": "11-5.el8",
     "qualifiers": {
       "arch": "noarch"
     },
@@ -469,13 +469,13 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/basesystem@11?arch=noarch"
+    "purl": "pkg:rpm/basesystem@11-5.el8?arch=noarch"
   },
   {
     "type": "rpm",
     "namespace": null,
     "name": "ncurses-base",
-    "version": "6.1",
+    "version": "6.1-7.20180224.el8",
     "qualifiers": {
       "arch": "noarch"
     },
@@ -2033,6 +2033,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/ncurses-base@6.1?arch=noarch"
+    "purl": "pkg:rpm/ncurses-base@6.1-7.20180224.el8?arch=noarch"
   }
 ]

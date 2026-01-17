@@ -3,7 +3,7 @@
     "type": "rpm",
     "namespace": null,
     "name": "python3-setuptools-wheel",
-    "version": "39.2.0",
+    "version": "39.2.0-5.el8",
     "qualifiers": {
       "arch": "noarch"
     },
@@ -103,13 +103,13 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/python3-setuptools-wheel@39.2.0?arch=noarch"
+    "purl": "pkg:rpm/python3-setuptools-wheel@39.2.0-5.el8?arch=noarch"
   },
   {
     "type": "rpm",
     "namespace": null,
     "name": "centos-gpg-keys",
-    "version": "8.1",
+    "version": "8.1-1.1911.0.8.el8",
     "qualifiers": {
       "arch": "noarch"
     },
@@ -200,13 +200,13 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/centos-gpg-keys@8.1?arch=noarch"
+    "purl": "pkg:rpm/centos-gpg-keys@8.1-1.1911.0.8.el8?arch=noarch"
   },
   {
     "type": "rpm",
     "namespace": null,
     "name": "langpacks-en",
-    "version": "1.0",
+    "version": "1.0-12.el8",
     "qualifiers": {
       "arch": "noarch"
     },
@@ -279,6 +279,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/langpacks-en@1.0?arch=noarch"
+    "purl": "pkg:rpm/langpacks-en@1.0-12.el8?arch=noarch"
   }
 ]

@@ -3,7 +3,7 @@
     "type": "rpm",
     "namespace": null,
     "name": "chkconfig",
-    "version": "1.11",
+    "version": "1.11-5",
     "qualifiers": {
       "arch": "x86_64"
     },
@@ -931,13 +931,13 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/chkconfig@1.11?arch=x86_64"
+    "purl": "pkg:rpm/chkconfig@1.11-5?arch=x86_64"
   },
   {
     "type": "rpm",
     "namespace": null,
     "name": "lib64ncursesw6",
-    "version": "6.2",
+    "version": "6.2-1",
     "qualifiers": {
       "arch": "x86_64"
     },
@@ -1028,6 +1028,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/lib64ncursesw6@6.2?arch=x86_64"
+    "purl": "pkg:rpm/lib64ncursesw6@6.2-1?arch=x86_64"
   }
 ]

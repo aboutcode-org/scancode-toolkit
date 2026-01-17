@@ -968,7 +968,7 @@
         {
           "type": "rpm",
           "namespace": "mariner",
-          "name": "glibc",
+          "name": "C:\\Users\\jayan\\Desktop\\scan toolkit\\scancode-toolkit\\tests\\packagedcode\\data\\rpm_installed\\mariner\\scan\\usr\\share\\licenses\\glibc\\COPYING",
           "version": null,
           "qualifiers": {},
           "subpath": null,
@@ -1032,7 +1032,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "rpm_package_licenses",
-          "purl": "pkg:rpm/mariner/glibc"
+          "purl": "pkg:rpm/mariner/C:%5CUsers%5Cjayan%5CDesktop%5Cscan%20toolkit%5Cscancode-toolkit%5Ctests%5Cpackagedcode%5Cdata%5Crpm_installed%5Cmariner%5Cscan%5Cusr%5Cshare%5Clicenses%5Cglibc%5CCOPYING"
         }
       ],
       "for_packages": [
@@ -1047,7 +1047,7 @@
         {
           "type": "rpm",
           "namespace": "mariner",
-          "name": "glibc",
+          "name": "C:\\Users\\jayan\\Desktop\\scan toolkit\\scancode-toolkit\\tests\\packagedcode\\data\\rpm_installed\\mariner\\scan\\usr\\share\\licenses\\glibc\\COPYING.LIB",
           "version": null,
           "qualifiers": {},
           "subpath": null,
@@ -1111,7 +1111,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "rpm_package_licenses",
-          "purl": "pkg:rpm/mariner/glibc"
+          "purl": "pkg:rpm/mariner/C:%5CUsers%5Cjayan%5CDesktop%5Cscan%20toolkit%5Cscancode-toolkit%5Ctests%5Cpackagedcode%5Cdata%5Crpm_installed%5Cmariner%5Cscan%5Cusr%5Cshare%5Clicenses%5Cglibc%5CCOPYING.LIB"
         }
       ],
       "for_packages": [
@@ -1126,7 +1126,7 @@
         {
           "type": "rpm",
           "namespace": "mariner",
-          "name": "glibc",
+          "name": "C:\\Users\\jayan\\Desktop\\scan toolkit\\scancode-toolkit\\tests\\packagedcode\\data\\rpm_installed\\mariner\\scan\\usr\\share\\licenses\\glibc\\LICENSES",
           "version": null,
           "qualifiers": {},
           "subpath": null,
@@ -1214,7 +1214,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "rpm_package_licenses",
-          "purl": "pkg:rpm/mariner/glibc"
+          "purl": "pkg:rpm/mariner/C:%5CUsers%5Cjayan%5CDesktop%5Cscan%20toolkit%5Cscancode-toolkit%5Ctests%5Cpackagedcode%5Cdata%5Crpm_installed%5Cmariner%5Cscan%5Cusr%5Cshare%5Clicenses%5Cglibc%5CLICENSES"
         }
       ],
       "for_packages": [
@@ -1236,7 +1236,7 @@
         {
           "type": "rpm",
           "namespace": "mariner",
-          "name": "iana-etc",
+          "name": "C:\\Users\\jayan\\Desktop\\scan toolkit\\scancode-toolkit\\tests\\packagedcode\\data\\rpm_installed\\mariner\\scan\\usr\\share\\licenses\\iana-etc\\LICENSE",
           "version": null,
           "qualifiers": {},
           "subpath": null,
@@ -1300,7 +1300,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "rpm_package_licenses",
-          "purl": "pkg:rpm/mariner/iana-etc"
+          "purl": "pkg:rpm/mariner/C:%5CUsers%5Cjayan%5CDesktop%5Cscan%20toolkit%5Cscancode-toolkit%5Ctests%5Cpackagedcode%5Cdata%5Crpm_installed%5Cmariner%5Cscan%5Cusr%5Cshare%5Clicenses%5Ciana-etc%5CLICENSE"
         }
       ],
       "for_packages": [
@@ -1322,7 +1322,7 @@
         {
           "type": "rpm",
           "namespace": "mariner",
-          "name": "openssl",
+          "name": "C:\\Users\\jayan\\Desktop\\scan toolkit\\scancode-toolkit\\tests\\packagedcode\\data\\rpm_installed\\mariner\\scan\\usr\\share\\licenses\\openssl\\LICENSE",
           "version": null,
           "qualifiers": {},
           "subpath": null,
@@ -1388,7 +1388,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "rpm_package_licenses",
-          "purl": "pkg:rpm/mariner/openssl"
+          "purl": "pkg:rpm/mariner/C:%5CUsers%5Cjayan%5CDesktop%5Cscan%20toolkit%5Cscancode-toolkit%5Ctests%5Cpackagedcode%5Cdata%5Crpm_installed%5Cmariner%5Cscan%5Cusr%5Cshare%5Clicenses%5Copenssl%5CLICENSE"
         }
       ],
       "for_packages": [
@@ -1410,7 +1410,7 @@
         {
           "type": "rpm",
           "namespace": "mariner",
-          "name": "tzdata",
+          "name": "C:\\Users\\jayan\\Desktop\\scan toolkit\\scancode-toolkit\\tests\\packagedcode\\data\\rpm_installed\\mariner\\scan\\usr\\share\\licenses\\tzdata\\LICENSE",
           "version": null,
           "qualifiers": {},
           "subpath": null,
@@ -1490,7 +1490,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "rpm_package_licenses",
-          "purl": "pkg:rpm/mariner/tzdata"
+          "purl": "pkg:rpm/mariner/C:%5CUsers%5Cjayan%5CDesktop%5Cscan%20toolkit%5Cscancode-toolkit%5Ctests%5Cpackagedcode%5Cdata%5Crpm_installed%5Cmariner%5Cscan%5Cusr%5Cshare%5Clicenses%5Ctzdata%5CLICENSE"
         }
       ],
       "for_packages": [

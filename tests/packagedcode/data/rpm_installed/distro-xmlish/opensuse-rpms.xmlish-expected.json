@@ -3,7 +3,7 @@
     "type": "rpm",
     "namespace": null,
     "name": "boost-license1_71_0",
-    "version": "1.71.0",
+    "version": "1.71.0-9.3",
     "qualifiers": {
       "arch": "noarch"
     },
@@ -85,13 +85,13 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/boost-license1_71_0@1.71.0?arch=noarch"
+    "purl": "pkg:rpm/boost-license1_71_0@1.71.0-9.3?arch=noarch"
   },
   {
     "type": "rpm",
     "namespace": null,
     "name": "cracklib-dict-small",
-    "version": "2.9.6",
+    "version": "2.9.6-2.15",
     "qualifiers": {
       "arch": "x86_64"
     },
@@ -182,6 +182,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/cracklib-dict-small@2.9.6?arch=x86_64"
+    "purl": "pkg:rpm/cracklib-dict-small@2.9.6-2.15?arch=x86_64"
   }
 ]

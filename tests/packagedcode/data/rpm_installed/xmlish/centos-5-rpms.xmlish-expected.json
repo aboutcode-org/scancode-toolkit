@@ -3,7 +3,7 @@
     "type": "rpm",
     "namespace": null,
     "name": "setup",
-    "version": "2.5.58",
+    "version": "2.5.58-9.el5",
     "qualifiers": {
       "arch": "noarch"
     },
@@ -319,13 +319,13 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/setup@2.5.58?arch=noarch"
+    "purl": "pkg:rpm/setup@2.5.58-9.el5?arch=noarch"
   },
   {
     "type": "rpm",
     "namespace": null,
     "name": "basesystem",
-    "version": "8.0",
+    "version": "8.0-5.1.1.el5.centos",
     "qualifiers": {
       "arch": "noarch"
     },
@@ -388,6 +388,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "rpm_installed_database_sqlite",
-    "purl": "pkg:rpm/basesystem@8.0?arch=noarch"
+    "purl": "pkg:rpm/basesystem@8.0-5.1.1.el5.centos?arch=noarch"
   }
 ]
