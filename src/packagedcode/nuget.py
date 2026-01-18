@@ -156,11 +156,21 @@ class NugetNuspecHandler(models.DatafileHandler):
         urls = get_urls(name, version)
 
         extracted_license_statement = None
-        # See https://docs.microsoft.com/en-us/nuget/reference/nuspec#license
-        # This is a SPDX license expression
+        
         if 'license' in nuspec:
-            extracted_license_statement = nuspec.get('license')
-        # Deprecated and not a license expression, just a URL
+            license_value = nuspec.get('license')
+            
+            if isinstance(license_value, dict):
+                license_type = license_value.get('@type', 'expression')
+                license_text = license_value.get('#text', '')
+                
+                if license_type == 'file':
+                    extracted_license_statement = f"See file at {license_text}"
+                else:
+                    extracted_license_statement = license_text
+            else:
+                extracted_license_statement = license_value
+                
         elif 'licenseUrl' in nuspec:
             extracted_license_statement = nuspec.get('licenseUrl')
 

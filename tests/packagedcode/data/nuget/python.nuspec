@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>python</id>
+    <version>3.13.7</version>
+    <title>Python</title>
+    <authors>Python Software Foundation</authors>
+    <owners>python</owners>
+    <license type="file">tools\LICENSE.txt</license>
+    <projectUrl>https://www.python.org/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Python is a programming language that lets you work quickly and integrate systems more effectively.</description>
+    <summary>Python programming language</summary>
+    <copyright>Copyright (c) Python Software Foundation</copyright>
+    <tags>python programming</tags>
+  </metadata>
+</package>

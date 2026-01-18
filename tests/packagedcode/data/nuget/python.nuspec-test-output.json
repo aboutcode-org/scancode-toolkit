@@ -1,0 +1,84 @@
+﻿[
+  {
+    "type": "nuget",
+    "namespace": null,
+    "name": "python",
+    "version": "3.13.7",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "Python programming language\nPython is a programming language that lets you work quickly and integrate systems more effectively.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "author",
+        "name": "Python Software Foundation",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "owner",
+        "name": "python",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://www.python.org/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": "Copyright (c) Python Software Foundation",
+    "holder": "Python Software Foundation",
+    "declared_license_expression": "unknown",
+    "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+    "license_detections": [
+      {
+        "license_expression": "unknown",
+        "license_expression_spdx": "LicenseRef-scancode-unknown",
+        "matches": [
+          {
+            "license_expression": "unknown",
+            "license_expression_spdx": "LicenseRef-scancode-unknown",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "5-undetected",
+            "score": 100.0,
+            "matched_length": 7,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "package-manifest-unknown-e91aadf36fd5e8ab91355cccd925409b03844ade",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-e91aadf36fd5e8ab91355cccd925409b03844ade",
+            "matched_text": "license See file at tools\\LICENSE.txt"
+          }
+        ],
+        "identifier": "unknown-5b6b489f-c7ed-f7c7-c8c3-42de924ad570"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "See file at tools\\LICENSE.txt",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://www.nuget.org/packages/python/3.13.7",
+    "repository_download_url": "https://www.nuget.org/api/v2/package/python/3.13.7",
+    "api_data_url": "https://api.nuget.org/v3/registration3/python/3.13.7.json",
+    "datasource_id": "nuget_nupsec",
+    "purl": "pkg:nuget/python@3.13.7"
+  }
+]
