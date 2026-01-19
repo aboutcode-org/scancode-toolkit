@@ -1,0 +1,9 @@
+key: inboxzero
+short_name: InboxZero License
+name: InboxZero License
+category: Proprietary
+owner: InboxZero
+homepage_url: https://github.com/warnoff/inboxzero
+spdx_license_key: LicenseRef-scancode-inboxzero
+text_urls:
+    - https://github.com/warnoff/inboxzero/blob/main/LICENSE
