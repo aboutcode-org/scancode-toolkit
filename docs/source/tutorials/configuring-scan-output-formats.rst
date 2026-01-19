@@ -5,7 +5,17 @@ Configuring scan output formats
 
 A basic overview of formatting ScanCode output is presented here.
 
-More information on :ref:`cli-output-format-options`.
+.. note::
+
+   This page provides a high-level overview of configuring ScanCode scan
+   output formats.
+
+   For the complete and up-to-date list of all available scan output
+   options, please refer to the "All Scan Output Options" reference
+   documentation:
+
+   :ref:`cli-output-format-options`
+
 
 JSON
 ----
