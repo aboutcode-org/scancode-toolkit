@@ -1,0 +1,9 @@
+key: tgppl-1.0
+short_name: TGPPL-1.0
+name: Transparent Good Public License 1.0
+category: Copyleft
+owner: Unspecified
+homepage_url: https://spdx.org/licenses/TGPPL-1.0.html
+spdx_license_key: TGPPL-1.0
+text_urls:
+    - https://spdx.org/licenses/TGPPL-1.0.html
