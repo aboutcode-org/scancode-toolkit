@@ -101,7 +101,10 @@ class Gibberish(object):
         good_probs = [self.avg_transition_prob(l, counts) for l in open(goodfile, encoding='utf-8')]
         bad_probs = [self.avg_transition_prob(l, counts) for l in open(badfile, encoding='utf-8')]
 
+        # Assert that we actually are capable of detecting the junk.
         if min(good_probs) > max(bad_probs):
+            # And pick a threshold halfway between the worst good and 
+            # best bad inputs.
             thresh = (min(good_probs) + max(bad_probs)) / 2
         else:
             thresh = max(bad_probs) + 0.01
