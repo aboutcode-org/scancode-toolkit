@@ -142,3 +142,31 @@ class TestRpmInstalled(PackageTester):
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_rpm_version_includes_release_field_issue_4684():
+    """
+    Regression test for #4684: RPM versions should include release field.
+    
+    Before: version="1.71.0"
+    After: version="1.71.0-9.3" (includes release)
+    
+    This test validates that the version field includes the release.
+    Full test data updates will be done in a follow-up PR.
+    """
+    from packagedcode import rpm_installed
+    
+    test_tags = [
+        ('Name', 'string', 'test-package'),
+        ('Version', 'string', '1.2.3'),
+        ('Release', 'string', '4.el8'),
+    ]
+    
+    result = rpm_installed.build_package(
+        rpm_tags=test_tags,
+        datasource_id='test',
+        package_type='rpm'
+    )
+    
+    assert result.version == '1.2.3-4.el8', f"Expected '1.2.3-4.el8', got '{result.version}'"
+
