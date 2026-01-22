@@ -11,11 +11,34 @@
 
 import os
 import shutil
+import glob
 import subprocess
 import sys
 
 on_windows = "win32" in str(sys.platform).lower()
 
+
+def find_app_archives(directory: str):
+    """
+    Find all application archives in the given directory.
+    Supported formats:
+      - .tar.gz
+      - .zip
+    """
+    if not os.path.isdir(directory):
+        print(f"Directory does not exist: {directory}")
+
+    patterns = ("*.tar.gz", "*.zip")
+
+    archives = []
+    for pattern in patterns:
+        archives.extend(glob.glob(os.path.join(directory, pattern)))
+
+    if not archives:
+        print(f"No app archives found in {directory}")
+        sys.exit(1)
+
+    return archives
 
 def run_app_smoke_tests(app_archive):
     """
@@ -112,8 +135,31 @@ def run_command(args):
         print(cpe.output)
         sys.exit(128)
 
+def main():
+    args = sys.argv[1:]
+
+    if not args:
+        print("ERROR: No arguments provided")
+        print("Usage:")
+        print("  python scancode_release_tests.py <archive_path>")
+        print("  python scancode_release_tests.py --directory <dir_path>")
+        sys.exit(1)
+
+    if args[0] == "--directory":
+        if len(args) < 2:
+            print("--directory flag requires a directory path")
+            sys.exit(1)
+        directory = args[1]
+        if not os.path.isdir(directory):
+            print(f"Directory does not exist: {directory}")
+            sys.exit(1)
+
+        archives = find_app_archives(directory)
+        for archive in archives:
+            run_app_smoke_tests(archive)
+    else:
+        archive = args[0]
+        run_app_smoke_tests(archive)
 
 if __name__ == "__main__":
-    args = sys.argv[1:]
-    archive = args[0]
-    run_app_smoke_tests(archive)
+    main()
