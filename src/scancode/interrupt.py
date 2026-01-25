@@ -167,7 +167,10 @@ elif on_windows:
         from http://tomerfiliba.com/recipes/Thread2/
         license: public domain.
         """
-        assert isinstance(tid, int), 'Invalid  thread id: must an integer'
+        if not isinstance(tid, int):
+            raise TypeError(
+                f"Invalid thread id: must be an integer, got {type(tid).__name__}"
+            )
 
         tid = c_long(tid)
         exception = py_object(Exception)
