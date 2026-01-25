@@ -86,9 +86,20 @@ if not on_windows:
             raise TimeoutError
 
         try:
-            create_signal(SIGALRM, handler)
-            setitimer(ITIMER_REAL, timeout)
-            return NO_ERROR, func(*(args or ()), **(kwargs or {}))
+    create_signal(SIGALRM, handler)
+    setitimer(ITIMER_REAL, timeout)
+except (ValueError, TypeError):
+    # Signals only work in the main thread.
+    # If we cannot install them, continue without interrupt support.
+    return NO_ERROR, func(*(args or ()), **(kwargs or {}))
+
+    try:
+        return NO_ERROR, func(*(args or ()), **(kwargs or {}))
+    except TimeoutError:
+        return TIMEOUT_MSG % locals(), NO_VALUE
+    except Exception:
+        return ERROR_MSG + traceback_format_exc(), NO_VALUE
+
 
         except TimeoutError:
             return TIMEOUT_MSG % locals(), NO_VALUE
