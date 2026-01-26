@@ -18,6 +18,10 @@ import re
 import sys
 import tempfile
 import zipfile
+
+# NOTE: adjust the location to the actual code in packagedcode/python.py
+def is_pylock_toml(location):
+    return location.endswith("pylock.toml")
 from configparser import ConfigParser
 from fnmatch import fnmatchcase
 from pathlib import Path
@@ -45,14 +49,66 @@ from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
 from packagedcode.utils import get_base_purl
 
+
+class PyLockPackage(models.PackageData):
+    datasource_id = 'pylock_toml'
+    type = 'python'
+    primary_language = 'Python'
+
+
 # tomli was added to the stdlib as tomllib in Python 3.11.
 # It's the same code.
 # Still, prefer tomli if it's installed, as on newer Python versions, it is
-# compiled with mypyc and is more performant.
-try:
-    import tomli as tomllib
-except ImportError:
-    import tomllib
+    # compiled with mypyc and is more performant.
+    try:
+        import tomli as tomllib  # Python 3.11+
+    except ImportError:
+        import tomllib
+
+# NOTE: adjust the location to the actual code in packagedcode/python.py
+def parse_pylock(location):
+    with open(location, "rb") as f:
+        data = tomllib.load(f)
+    return data
+
+def extract_pylock_packages(pylock_data):
+    packages = []
+
+    for pkg in pylock_data.get("package", []):
+        packages.append({
+            "name": pkg.get("name"),
+            "version": pkg.get("version"),
+            "dependencies": [
+                dep.get("name") for dep in pkg.get("dependencies", [])
+            ],
+            "hashes": pkg.get("hashes", []),
+            "source": pkg.get("source", {}),
+        })
+
+    return packages
+
+
+from packagedcode.models import PyLockPackage
+
+def parse_pylock_toml(location, package_only=False):
+    data = parse_pylock(location)
+    packages = extract_pylock_packages(data)
+
+    results = []
+    for pkg in packages:
+        results.append(
+            PyLockPackage(
+                name=pkg["name"],
+                version=pkg["version"],
+                dependencies=pkg["dependencies"],
+                extra_data={
+                    "hashes": pkg["hashes"],
+                    "source": pkg["source"],
+                }
+            )
+        )
+    return results
+
 
 try:
     from zipfile import Path as ZipPath
@@ -1214,6 +1270,8 @@ class BaseDependencyFileHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
+        if is_pylock_toml(location):
+            return parse_pylock_toml(location)
         file_name = fileutils.file_name(location)
 
         dependency_type = get_dparse2_supported_file_name(file_name)
