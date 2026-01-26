@@ -145,15 +145,7 @@ class TestRpmInstalled(PackageTester):
 
 
 def test_rpm_version_includes_release_field_issue_4684():
-    """
-    Regression test for #4684: RPM versions should include release field.
     
-    Before: version="1.71.0"
-    After: version="1.71.0-9.3" (includes release)
-    
-    This test validates that the version field includes the release.
-    Full test data updates will be done in a follow-up PR.
-    """
     from packagedcode import rpm_installed
     
     test_tags = [
