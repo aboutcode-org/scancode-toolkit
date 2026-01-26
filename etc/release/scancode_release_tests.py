@@ -25,9 +25,6 @@ def find_app_archives(directory: str):
       - .tar.gz
       - .zip
     """
-    if not os.path.isdir(directory):
-        print(f"Directory does not exist: {directory}")
-
     patterns = ("*.tar.gz", "*.zip")
 
     archives = []
