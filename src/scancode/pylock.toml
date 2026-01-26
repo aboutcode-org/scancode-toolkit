@@ -1,0 +1,5 @@
+[package.requests]
+version = "2.31.0"
+
+[package.numpy]
+version = "1.26.0"

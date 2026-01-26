@@ -34,12 +34,15 @@ from packagedcode import opam
 from packagedcode import phpcomposer
 from packagedcode import pubspec
 from packagedcode import pypi
+from packagedcode import pypi
 from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import swift
 from packagedcode import win_pe
 from packagedcode import windows
+from packagedcode.pylock import parse_pylock
+
 
 if on_linux:
     from packagedcode import msi
@@ -212,6 +215,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     # These are handlers for deplock generated files
     pypi.PipInspectDeplockHandler,
+    pypi.PylockTomlHandler,
 ]
 
 if on_linux:

@@ -1,0 +1,37 @@
+[
+  {
+    "datasource_id": "pypi_pylock_toml",
+    "type": "pypi",
+    "primary_language": "Python",
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/requests@2.31.0",
+        "extracted_requirement": "requests==2.31.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_direct": true,
+        "is_pinned": true
+      },
+      {
+        "purl": "pkg:pypi/numpy@1.26.0",
+        "extracted_requirement": "numpy==1.26.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_direct": true,
+        "is_pinned": true
+      }
+    ],
+    "extra_data": {
+      "package": {
+        "requests": {
+          "version": "2.31.0"
+        },
+        "numpy": {
+          "version": "1.26.0"
+        }
+      }
+    }
+  }
+]

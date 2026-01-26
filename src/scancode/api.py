@@ -16,6 +16,7 @@ from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
 from scancode import ScancodeError
 from typecode.contenttype import get_type
+from scancode.pylock import parse_pylock
 
 TRACE = os.environ.get('SCANCODE_DEBUG_API', False)
 
@@ -333,7 +334,23 @@ def get_package_data(
         **kwargs,
     ) or []
 
+    # get pylock data from the `pylock.toml` file
+    pylock_data = get_pylock_data(location)
+
+    if pylock_data:
+        package_datas.append(pylock_data)
+
     return dict(package_data=[pd.to_dict() for pd in package_datas])
+
+
+def get_pylock_data(location):
+    """
+    Return a mapping of pylock data from the `pylock.toml` file at `location`.
+    """
+    pylock_location = os.path.join(location, "pylock.toml")
+    if os.path.exists(pylock_location):
+        return parse_pylock(pylock_location)
+    return {}
 
 
 def get_file_info(location, **kwargs):
