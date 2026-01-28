@@ -529,6 +529,13 @@ def is_poetry_pyproject_toml(location):
         return False
 
 
+def is_uv_pyproject_toml(location):
+    with open(location, 'r') as file:
+        if "tool.uv" in file.read():
+           return True
+        return False
+
+
 class BasePoetryPythonLayout(BaseExtractedPythonLayout):
     """
     Base class for poetry python projects.
@@ -821,6 +828,279 @@ class PoetryLockHandler(BasePoetryPythonLayout):
         extra_data = {}
         extra_data['python_version'] = metadata.get("python-versions")
         extra_data['lock_version'] = metadata.get("lock-version")
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            extra_data=extra_data,
+            dependencies=dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+def parse_dependency_requirement(requirement, scope='dependencies', is_runtime=True):
+    """
+    Parse a dependency requirement string and return a DependentPackage or None.
+    This now delegates to get_requires_dependencies for consistency and to avoid code duplication.
+    """
+    if not requirement:
+        return None
+    # get_requires_dependencies expects a list of requirements
+    deps = get_requires_dependencies(
+        requires=[requirement],
+        default_scope=scope,
+        is_runtime=is_runtime,
+    )
+    # Return the first DependentPackage if any, else None
+    return deps[0] if deps else None
+
+
+class BaseUvPythonLayout(BaseExtractedPythonLayout):
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder):
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
+            return
+
+        package_resource = None
+        if resource.name == 'pyproject.toml':
+            package_resource = resource
+        elif resource.name == 'uv.lock':
+            if resource.has_parent():
+                siblings = resource.siblings(codebase)
+                package_resource = [r for r in siblings if r.name == 'pyproject.toml']
+                if package_resource:
+                    package_resource = package_resource[0]
+        
+        if not package_resource:
+            yield from yield_dependencies_from_package_resource(resource)
+            return
+        
+        assert len(package_resource.package_data) == 1, f'Invalid pyproject.toml for {package_resource.path}'
+        pkg_data = package_resource.package_data[0]
+        pkg_data = models.PackageData.from_dict(pkg_data)
+
+        if pkg_data.purl:
+            package = models.Package.from_package_data(
+                package_data=pkg_data,
+                datafile_path=package_resource.path,
+            )
+            package_uid = package.package_uid
+            package.populate_license_fields()
+            yield package
+
+            root = package_resource.parent(codebase)
+            if root:
+                for pypi_res in cls.walk_pypi(resource=root, codebase=codebase):
+                    if package_uid and package_uid not in pypi_res.for_packages:
+                        package_adder(package_uid, pypi_res, codebase)
+                    yield pypi_res
+
+            yield package_resource
+
+        else:
+            # we have no package, so deps are not for a specific package uid
+            package_uid = None
+
+        # in all cases yield possible dependencies
+        yield from yield_dependencies_from_package_data(pkg_data, package_resource.path, package_uid)
+
+        # we yield this as we do not want this further processed
+        yield package_resource
+
+        for lock_file in package_resource.siblings(codebase):
+            if lock_file.name == 'uv.lock':
+                yield from yield_dependencies_from_package_resource(lock_file, package_uid)
+
+                if package_uid and package_uid not in lock_file.for_packages:
+                    package_adder(package_uid, lock_file, codebase)
+                yield lock_file
+
+
+class UvPyprojectTomlHandler(BaseUvPythonLayout):
+    datasource_id = 'pypi_uv_pyproject_toml'
+    path_patterns = ('*pyproject.toml',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python UV pyproject.toml'
+    documentation_url = 'https://docs.astral.sh/uv/'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        """
+        Return True if the file at location is likely a UV pyproject.toml file.
+        """
+        if super().is_datafile(location, filetypes=filetypes) is False:
+            return False
+        return is_uv_pyproject_toml(location)
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        """
+        Parse a UV pyproject.toml file and yield a PackageData.
+        """
+        with open(location, "rb") as fp:
+            pyproject_data = tomllib.load(fp)
+
+        project = pyproject_data.get('project', {})
+        tool_uv = pyproject_data.get('tool', {}).get('uv', {})
+
+        name = project.get('name')
+        version = project.get('version')
+        description = project.get('description')
+        
+        # Standard dependencies
+        dependencies = []
+        for dep_requirement in project.get('dependencies', []):
+            dependency = parse_dependency_requirement(
+                requirement=dep_requirement,
+                scope='dependencies',
+                is_runtime=True,
+            )
+            if dependency:
+                dependencies.append(dependency.to_dict())
+
+        # UV dev dependencies
+        dev_dependencies = tool_uv.get('dev-dependencies', [])
+        for dep_requirement in dev_dependencies:
+            dependency = parse_dependency_requirement(
+                requirement=dep_requirement,
+                scope='dev-dependencies',
+                is_runtime=False,
+            )
+            if dependency:
+                dependencies.append(dependency.to_dict())
+
+        # Extra dependencies (optional dependency groups)
+        optional_dependencies = project.get('optional-dependencies', {})
+        for group_name, group_deps in optional_dependencies.items():
+            for dep_requirement in group_deps:
+                dependency = parse_dependency_requirement(
+                    requirement=dep_requirement,
+                    scope=group_name,
+                    is_runtime=False,
+                )
+                if dependency:
+                    dependencies.append(dependency.to_dict())
+
+        extra_data = {}
+        if tool_uv:
+            extra_data['uv_config'] = tool_uv
+
+        requires_python = project.get('requires-python')
+        if requires_python:
+            extra_data['python_version'] = requires_python
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            name=name,
+            version=version,
+            description=description,
+            extra_data=extra_data if extra_data else None,
+            dependencies=dependencies,
+        )
+
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+class UvLockHandler(BaseUvPythonLayout):
+    datasource_id = 'pypi_uv_lock'
+    path_patterns = ('*uv.lock',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python UV lockfile'
+    documentation_url = 'https://docs.astral.sh/uv/'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location, "rb") as fp:
+            toml_data = tomllib.load(fp)
+
+        packages = toml_data.get('package')
+        if not packages:
+            return
+
+        lock_version = toml_data.get('version')
+        requires_python = toml_data.get('requires-python')
+
+        dependencies = []
+        for package in packages:
+            dependencies_for_resolved = []
+
+            # Handle dependencies - UV uses a different format than Poetry
+            deps = package.get("dependencies") or []
+            for dep in deps:
+                if isinstance(dep, dict):
+                    # UV format: {name: "package-name", marker: "condition"}
+                    dep_name = dep.get('name')
+                    marker = dep.get('marker')
+                    purl = PackageURL(
+                        type=cls.default_package_type,
+                        name=dep_name,
+                    )
+                    dependency = models.DependentPackage(
+                        purl=purl.to_string(),
+                        extracted_requirement=marker,
+                        scope="dependencies",
+                        is_runtime=True,
+                        is_optional=False,
+                        is_direct=True,
+                        is_pinned=False,
+                    )
+                    dependencies_for_resolved.append(dependency.to_dict())
+                elif isinstance(dep, str):
+                    # Simple string dependency
+                    dependency = parse_dependency_requirement(
+                        requirement=dep,
+                        scope='dependencies',
+                        is_runtime=True,
+                    )
+                    if dependency:
+                        dependencies_for_resolved.append(dependency.to_dict())
+
+            name = package.get('name')
+            version = package.get('version')
+            description = package.get('description')
+            homepage_url = package.get('homepage_url')
+            keywords = package.get('keywords')
+            parties = package.get('parties')
+            urls = get_pypi_urls(name, version)
+
+            package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language='Python',
+                name=name,
+                version=version,
+                description=description,
+                homepage_url=homepage_url,
+                keywords=keywords,
+                parties=parties,
+                is_virtual=True,
+                dependencies=dependencies_for_resolved,
+                **urls,
+            )
+            resolved_package = models.PackageData.from_data(package_data, package_only)
+
+            dependency = models.DependentPackage(
+                purl=resolved_package.purl,
+                extracted_requirement=None,
+                scope=None,
+                is_runtime=True,
+                is_optional=False,
+                is_direct=False,
+                is_pinned=True,
+                resolved_package=resolved_package.to_dict()
+            )
+            dependencies.append(dependency.to_dict())
+
+        extra_data = {}
+        extra_data['python_version'] = requires_python
+        extra_data['lock_version'] = lock_version
 
         package_data = dict(
             datasource_id=cls.datasource_id,

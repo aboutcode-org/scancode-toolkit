@@ -1,0 +1,17 @@
+# Test data based on https://github.com/python-attrs/attrs (trimmed for test purposes)
+version = 1
+revision = 3
+requires-python = ">=3.9"
+
+[[package]]
+name = "attrs"
+version = "23.2.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "importlib-metadata", marker = "python_version < '3.8'" },
+    { name = "typing-extensions", marker = "python_version < '3.8'" }
+]
+sdist = { url = "https://files.pythonhosted.org/packages/source/a/attrs/attrs-23.2.0.tar.gz", hash = "sha256:...", size = 12345, upload-time = "2025-01-01T00:00:00Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/.../attrs-23.2.0-py3-none-any.whl", hash = "sha256:...", size = 12345, upload-time = "2025-01-01T00:00:00Z" }
+]

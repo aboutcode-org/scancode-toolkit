@@ -86,6 +86,13 @@ class TestPyPiEndtoEnd(PackageTester):
         run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_package_scan_uv_assemble_end_to_end(self):
+        test_dir = self.get_test_loc('pypi/uv/attrs/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/uv/attrs-package-assembly-expected.json', must_exist=not REGEN_TEST_FIXTURES)
+        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
 
 class TestPyPiDevelopEggInfoPkgInfo(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

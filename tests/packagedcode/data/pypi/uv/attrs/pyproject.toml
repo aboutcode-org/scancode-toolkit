@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: MIT
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "attrs"
+version = "0.0.0"  # Use dynamic if needed, or set your version
+description = "Classes Without Boilerplate"
+authors = [{ name = "Hynek Schlawack", email = "hs@ox.cx" }]
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+keywords = ["class", "attribute", "boilerplate"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://www.attrs.org/"
+Changelog = "https://www.attrs.org/en/stable/changelog.html"
+Source = "https://github.com/python-attrs/attrs"
+Funding = "https://github.com/sponsors/hynek"
+
+[project.optional-dependencies]
+dev = ["pytest", "hypothesis"]
+docs = ["sphinx"]
+
+[tool.uv]
+dev-dependencies = ["pytest", "hypothesis"]
