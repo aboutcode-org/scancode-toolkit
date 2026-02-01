@@ -1,0 +1,44 @@
+z{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "32.5.0",
+      "options": {
+        "input": [
+          "samples/README"
+        ],
+        "--copyright": true,
+        "--json-pp": "test.json"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2026-01-19T185856.684887",
+      "end_timestamp": "2026-01-19T185858.896690",
+      "output_format_version": "4.1.0",
+      "duration": 2.2118210792541504,
+      "message": null,
+      "errors": [],
+      "warnings": [],
+      "extra_data": {
+        "system_environment": {
+          "operating_system": "win",
+          "cpu_architecture": "64",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "platform_version": "10.0.26200",
+          "python_version": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]"
+        },
+        "spdx_license_list_version": "3.27",
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "README",
+      "type": "file",
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    }
+  ]
+}

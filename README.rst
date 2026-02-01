@@ -17,6 +17,14 @@ Getting Started
 
 Instructions to get you up and running on your local machine are at `Getting Started <https://scancode-toolkit.readthedocs.io/en/stable/getting-started/index.html>`_
 
+For Windows users::
+
+    configure.bat
+
+For Mac, Linux and other OS users::
+
+    ./configure
+
 The ScanCode Toolkit documentation also provides:
 
 - prerequisites for installing the software.
