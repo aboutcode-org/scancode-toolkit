@@ -90,6 +90,29 @@ def get_urls(name, version, **kwargs):
     )
 
 
+
+def get_license_details(nuspec):
+    license_info = nuspec.get('license')
+    if not license_info:
+        return None, []
+
+    license_type = None
+    license_text = None
+    if isinstance(license_info, dict):
+        license_type = (license_info.get('@type') or '').lower()
+        license_text = license_info.get('#text') or ''
+        if not license_text:
+            license_text = license_info.get('@value') or ''
+    else:
+        license_text = license_info
+
+    if license_type == 'file':
+        license_text = license_text or None
+        return license_text, [license_text] if license_text else []
+
+    return license_text or None, []
+
+
 class NugetNupkgHandler(models.NonAssemblableDatafileHandler):
     datasource_id = 'nuget_nupkg'
     path_patterns = ('*.nupkg',)
@@ -156,10 +179,13 @@ class NugetNuspecHandler(models.DatafileHandler):
         urls = get_urls(name, version)
 
         extracted_license_statement = None
+        license_file_references = []
+
+
         # See https://docs.microsoft.com/en-us/nuget/reference/nuspec#license
         # This is a SPDX license expression
         if 'license' in nuspec:
-            extracted_license_statement = nuspec.get('license')
+            extracted_license_statement, license_file_references = get_license_details(nuspec)
         # Deprecated and not a license expression, just a URL
         elif 'licenseUrl' in nuspec:
             extracted_license_statement = nuspec.get('licenseUrl')
@@ -174,6 +200,7 @@ class NugetNuspecHandler(models.DatafileHandler):
             parties=parties,
             dependencies=list(get_dependencies(nuspec)),
             extracted_license_statement=extracted_license_statement,
+            license_file_references=license_file_references,
             copyright=nuspec.get('copyright') or None,
             vcs_url=vcs_url,
             **urls,
