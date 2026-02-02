@@ -35,7 +35,7 @@ Taking Python as a main example a package can exist in multiple forms:
 extracting name, version, authorship, declared licensing and declared dependencies as
 found in the any of the package descriptor files (e.g. a `setup.py` file,
 `requirements` file(s) or any of the `*-dist-info` or `*-egg-info` dir files such as
-a `metadata.json`). Other package datafile formats have their own metatada that may be more or
+a `metadata.json`). Other package datafile formats have their own metadata that may be more or
 less comprehensive in the breadth and depth of information they offer (e.g.
 `.nuspec`, `package.json`, `bower.json`, Godeps, etc...). These metadata include the
 declared dependencies (and in some cases the fully resolved dependencies too such as

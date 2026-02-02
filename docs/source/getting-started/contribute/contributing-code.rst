@@ -8,7 +8,7 @@ TL;DR:
 - Contributions comes as bugs/questions/issues and as pull requests.
 - Source code and runtime data are in the /src/ directory.
 - Test code and test data are in the /tests/ directory.
-- Datasets (inluding licenses) and test data are in /data/ sub-directories.
+- Datasets (including licenses) and test data are in /data/ sub-directories.
 - We use DCO signoff in commit messages, like Linux does.
 - Porting ScanCode to other OS (FreeBSD is supported, etc.) is possible. Enter an issue for help.
 
@@ -62,7 +62,7 @@ Running tests
 -------------
 
 ScanCode comes with over 29,000 unit tests to ensure detection accuracy and
-stability across Linux, Windows and macOS OSes: we kinda love tests, do we?
+stability across Linux, Windows and macOS OSes: we kind of love tests, do we?
 
 We use pytest to run the tests: call the ``pytest`` script to run the whole
 test suite. This is installed with the ``pytest`` package which is installed
@@ -99,7 +99,7 @@ Another useful option after a test run with some failures is to re-run only the
 failed tests with the ``--lf`` option, for instance: ``pytest -vvs --lf`` would
 only run only test functions that failed in the previous run.
 
-Because we have a lot of tests (over 29,000), we organized theses in test suites
+Because we have a lot of tests (over 29,000), we organized these in test suites
 using pytest markers that are defined in the ``conftest.py`` pytest plugin.
 These are enabled by adding a ``--test-suite`` option to the pytest command.
 
@@ -109,8 +109,8 @@ These are enabled by adding a ``--test-suite`` option to the pytest command.
   extensive data-driven and data validations (for package, copyright and license
   detection)
 
-In some cases we need to regenerate test data when expected behavious/result data
-structures change, and we have an environement variable to regenerate test data.
+In some cases we need to regenerate test data when expected behaviour/result data
+structures change, and we have an environment variable to regenerate test data.
 `SCANCODE_REGEN_TEST_FIXTURES` is present in `scancode_config` and this can be
 set to regenerate test data for specific tests like this:
 
@@ -124,7 +124,7 @@ If test data is regenerated, it is important to review the diff for test files a
 carefully go through all of it to make sure there are no unintended changes there,
 and then commit all the regenerated test data.
 
-To help debug in scancode, we use logging. There are different environement variables
+To help debug in scancode, we use logging. There are different environment variables
 you need to set to turn on logging. In packagedcode::
 
 ``SCANCODE_DEBUG_PACKAGE=yes pytest -vvs tests/packagedcode/ --lf``

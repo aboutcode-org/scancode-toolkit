@@ -67,7 +67,7 @@ class LicenseScanner(ScanPlugin):
         ('license_detections', attr.ib(default=attr.Factory(list))),
         # license matches that are not proper detections and potentially
         # just clues to licenses or likely false positives, and are not
-        # inlcuded in computing the detected license expression for the resource
+        # included in computing the detected license expression for the resource
         ('license_clues', attr.ib(default=attr.Factory(list))),
         # Percentage of file words detected as license text or notice.
         ('percentage_of_license_text', attr.ib(default=0)),

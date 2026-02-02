@@ -155,7 +155,7 @@ def compute_codebase_tallies(codebase, keep_details, **kwargs):
 def license_tallies(resource, children, keep_details=False):
     """
     Populate a license_expressions list of mappings such as
-        {value: "expression", count: "count of occurences"}
+        {value: "expression", count: "count of occurrences"}
     sorted by decreasing count.
     """
     LIC_EXP = 'detected_license_expression'
@@ -210,7 +210,7 @@ def license_tallies(resource, children, keep_details=False):
 def tally_licenses(license_expressions):
     """
     Given a list of license expressions, return a mapping of {expression: count
-    of occurences}
+    of occurrences}
     """
     # TODO: we could normalize and/or sort each license_expression before
     # summarization and consider other equivalence or containment checks
@@ -220,7 +220,7 @@ def tally_licenses(license_expressions):
 def language_tallies(resource, children, keep_details=False):
     """
     Populate a programming_language tallies list of mappings such as
-        {value: "programming_language", count: "count of occurences"}
+        {value: "programming_language", count: "count of occurrences"}
     sorted by decreasing count.
     """
     PROG_LANG = 'programming_language'
@@ -252,9 +252,9 @@ def language_tallies(resource, children, keep_details=False):
 def tally_languages(languages):
     """
     Given a list of languages, return a mapping of {language: count
-    of occurences}
+    of occurrences}
     """
-    # TODO: consider aggregating related langauges (C/C++, etc)
+    # TODO: consider aggregating related languages (C/C++, etc)
     return Counter(languages)
 
 
@@ -271,7 +271,7 @@ TALLYABLE_ATTRS = set([
 def tally_values(values, attribute):
     """
     Given a list of `values` for a given `attribute`, return a mapping of
-    {value: count of occurences} using a tallier specific to the attribute.
+    {value: count of occurrences} using a tallier specific to the attribute.
     """
     if attribute not in TALLYABLE_ATTRS:
         return {}

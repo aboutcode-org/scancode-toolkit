@@ -159,7 +159,7 @@ class Text(object):
     key = attr.attrib()
     # original text for a copyright holder
     original = attr.attrib()
-    # count of occurences of a text
+    # count of occurrences of a text
     count = attr.attrib(default=1)
 
     def normalize(self):
@@ -335,7 +335,7 @@ def tally(summary_texts):
 def cluster(texts):
     """
     Given a `texts` iterable of Text objects, group these objects when they have the
-    same key. Yield a tuple of (Text object, count of its occurences).
+    same key. Yield a tuple of (Text object, count of its occurrences).
     """
     clusters = defaultdict(list)
     for text in texts:

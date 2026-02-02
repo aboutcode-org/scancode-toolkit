@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-<!-- Please fill out as much of the template as you can. Delete sections if unneccesary -->
+<!-- Please fill out as much of the template as you can. Delete sections if unnecessary -->
 <!-- 
 Make Sure you've checked out 
     Existing Issues, 

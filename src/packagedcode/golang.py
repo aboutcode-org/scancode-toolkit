@@ -108,7 +108,7 @@ class GoSumHandler(BaseGoModuleHandler):
     path_patterns = ('*/go.sum',)
     default_package_type = 'golang'
     default_primary_language = 'Go'
-    description = 'Go module cheksums file'
+    description = 'Go module checksums file'
     documentation_url = 'https://go.dev/ref/mod#go-sum-files'
 
     @classmethod

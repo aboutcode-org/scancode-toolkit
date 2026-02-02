@@ -334,7 +334,7 @@ class LicenseDetection:
     @property
     def identifier_with_expression(self):
         """
-        Return an identifer for a license detection with the license expression
+        Return an identifier for a license detection with the license expression
         and an UUID created from the detection contents.
         """
         id_safe_expression = python_safe_name(s=str(self.license_expression))
@@ -437,7 +437,7 @@ class LicenseDetection:
         )
 
         if not self.matches:
-            # first match is always an ovveride
+            # first match is always an override
             combine_license = False
             override_license = True
 
@@ -648,7 +648,7 @@ class LicenseMatchFromResult(LicenseMatch):
     def from_dict(cls, license_match_mapping):
         """
         Return a LicenseMatchFromResult object from a ``license_match_mapping``
-        LicenseMatch data mappping.
+        LicenseMatch data mapping.
         """
         rule = Rule.from_match_data(license_match_mapping)
         matched_text = license_match_mapping.get("matched_text") or None
@@ -673,7 +673,7 @@ class LicenseMatchFromResult(LicenseMatch):
     def from_dicts(cls, license_match_mappings):
         """
         Return a LicenseMatchFromResult object from a ``license_match_mapping`s`
-        list of LicenseMatch data mapppings.
+        list of LicenseMatch data mappings.
         """
         return [LicenseMatchFromResult.from_dict(lmm) for lmm in license_match_mappings]
 
@@ -1423,7 +1423,7 @@ def use_referenced_license_expression(referenced_license_expression, license_det
 
     Reference: https://github.com/nexB/scancode-toolkit/issues/3547
     """
-    # TODO: Also determing if referenced matches could be added but
+    # TODO: Also determining if referenced matches could be added but
     # resulting license expression should not be modified.
 
     if referenced_license_expression is None or not license_detection:
@@ -1696,7 +1696,7 @@ def get_license_keys_from_detections(license_detections, licensing=Licensing()):
 
 def can_ignore_ambiguous_detection(license_detection):
     """
-    Return True if the license_detection is not an ambigious detection
+    Return True if the license_detection is not an ambiguous detection
     which needs to be reviewed. A few cases are:
     1. All the locations of the license detection are community files
     """
@@ -1847,7 +1847,7 @@ def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
             group_of_license_matches = [license_match]
 
         # If the current match is a license clue, we send this as a
-        # seperate group
+        # separate group
         elif license_match.rule.is_license_clue:
             yield group_of_license_matches
             yield [license_match]

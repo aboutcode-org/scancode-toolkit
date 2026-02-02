@@ -238,7 +238,7 @@ def generate_output(results, license_references, version, template):
         if results:
             converted[path] = sorted(results, key=itemgetter('start'))
 
-        # TODO: this is klunky: we need to drop templates entirely or we
+        # TODO: this is clunky: we need to drop templates entirely or we
         # should rather just pass a the list of files from the scan
         # results and let the template handle this rather than
         # denormalizing the list here??

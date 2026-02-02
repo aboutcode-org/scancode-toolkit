@@ -105,8 +105,8 @@ class AmbiguousDetectionsToDoPlugin(PostScanPlugin):
             license_text_diagnostics = kwargs.get("license_text_diagnostics")
             if not license_diagnostics or not license_text or not license_text_diagnostics:
                 usage_suggestion_message = (
-                    "The --todo option, when paired with --license option should be used with the folowing "
-                    "additional CLI options for maximum benifit: [`--license-text`, `--license-text-diagnostics`,"
+                    "The --todo option, when paired with --license option should be used with the following "
+                    "additional CLI options for maximum benefit: [`--license-text`, `--license-text-diagnostics`,"
                     "--license-diagnostics`] as these show additional diagnostic information to help review the issues."
                 )
                 warnings.simplefilter('always', ToDoPluginUsageWarning)
@@ -118,7 +118,7 @@ class AmbiguousDetectionsToDoPlugin(PostScanPlugin):
 
         if not has_packages and not has_licenses:
             usage_suggestion_message = (
-                "The --todo option should be used with atleast one of the license [`--license`], "
+                "The --todo option should be used with at least one of the license [`--license`], "
                 "or package [`--package`] options."
             )
             warnings.simplefilter('always', ToDoPluginUsageWarning)
@@ -399,7 +399,7 @@ class ReviewComments(Enum):
     IMPERFECT_COVERAGE = (
         "The license detection likely is not conclusive as there was "
         "license matches with low score or coverage, and so this needs "
-        "review. scancode would likely benifit from a license rule addition "
+        "review. scancode would likely benefit from a license rule addition "
         "from this case, so please report this to scancode-toolkit github issues."
     )
     LOW_RELEVANCE = (

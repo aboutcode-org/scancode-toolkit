@@ -1611,7 +1611,7 @@ def get_description(metainfo, location=None):
 def clean_description(description):
     """
     Return a cleaned description text, removing extra leading whitespaces if
-    needed. Some metadata formats padd each description line with 8 spaces. Some
+    needed. Some metadata formats pad each description line with 8 spaces. Some
     do not. We check first and cleanup if needed.
     """
     # TODO: verify what is the impact of Description-Content-Type: if any
@@ -2380,7 +2380,7 @@ def get_urls(metainfo, name, version, poetry=False):
 
 def find_pattern(location, pattern):
     """
-    Search the file at `location` for a patern regex on a single line and return
+    Search the file at `location` for a pattern regex on a single line and return
     this or None if not found. Reads the supplied location as text without
     importing it.
 

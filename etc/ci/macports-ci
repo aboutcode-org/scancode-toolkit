@@ -190,7 +190,7 @@ do
 # this check confirms that ports were installed
 # notice that port -N selfupdate && break is not sufficient as a test
 # (sometime it returns a success even though ports have not been installed)
-# for some misterious reasons, running without "-d" does not work in some case
+# for some mysterious reasons, running without "-d" does not work in some case
   sudo port -d -N selfupdate 2>&1 | grep -v DEBUG | awk '{if($1!="x")print}'
   port info xdrfile > /dev/null && break || true
   sleep 5

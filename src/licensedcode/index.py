@@ -1048,7 +1048,7 @@ class LicenseIndex(object):
                 ):
                     qry.subtract(mtch.qspan)
 
-            # Check if we have some matchable left: do not match futher if we do
+            # Check if we have some matchable left: do not match further if we do
             # not need to collect qspans matched exactly e.g. with coverage 100%
             # this coverage check is because we have provision to match
             # fragments (unused for now).
@@ -1208,7 +1208,7 @@ class Matcher(NamedTuple):
     name: str
     # function to call, passing a query
     function: Callable
-    # whether to inlude low tokens when checking if there are matchable left
+    # whether to include low tokens when checking if there are matchable left
     include_low: bool
     # True if matching should continue after this matcher
     continue_matching: bool = True

@@ -154,7 +154,7 @@ class BaseChefMetadataHandler(models.DatafileHandler):
         )
 
 
-# TODO: implemet me: extract and parse and register
+# TODO: implement me: extract and parse and register
 class ChefCookbookHandler(BaseChefMetadataHandler):
     datasource_id = 'chef_cookbook_tarball'
     path_patterns = ('*.tgz',)

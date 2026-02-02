@@ -36,7 +36,7 @@ def _create_dir(location):
     """
     Create directory and all sub-directories recursively at `location`.
     Raise Exceptions if it fails to create the directory.
-    NOTE: this is essentailly a copy of commoncode.fileutils.create_dir()
+    NOTE: this is essentially a copy of commoncode.fileutils.create_dir()
     """
 
     if exists(location):
@@ -156,7 +156,7 @@ spdx_license_list_version = '3.27'
 # variables
 
 # - scancode_cache_dir: for long-lived caches which are installation-specific:
-# this is for cached data which are infrequently written to and mostly readed,
+# this is for cached data which are infrequently written to and mostly read,
 # such as the license index cache. The same location is used across runs of
 # a given version of ScanCode
 """
@@ -180,7 +180,7 @@ else:
 
 # we pre-build the index and bundle this with the the deployed release
 # therefore we use package data
-# .... but we accept this to be overriden with and env variable
+# .... but we accept this to be overridden with and env variable
 std_license_cache_dir = join(scancode_src_dir, 'licensedcode', 'data', 'cache')
 __env_license_cache_dir = os.getenv('SCANCODE_LICENSE_INDEX_CACHE')
 licensedcode_cache_dir = (__env_license_cache_dir or std_license_cache_dir)

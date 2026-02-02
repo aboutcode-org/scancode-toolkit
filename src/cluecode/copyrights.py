@@ -844,7 +844,7 @@ PATTERNS = [
     # Landroid/icu/impl/IDNA2003 : treat as JUNK
     (r'^[^\\/]+[\\/][^\\/]+[\\/].*$', 'JUNK'),
 
-    # Combo of many (3+) letters and punctuations groups without spaces is likely junk
+    # Combo of many (3+) letters and punctuation groups without spaces is likely junk
     # "AEO>>,o>>'!xeoI?o?O1/4thuA/"
     # (r'((\w+\W+){3,})+', 'JUNK'),
 
@@ -1130,7 +1130,7 @@ PATTERNS = [
     # this trigger otherwise "copyright ownership. The ASF" in Apache license headers
     (r'^[Oo]wnership\.?$', 'JUNK'),
 
-    # exceptions to composed proper namess, mostly debian copyright/control tag-related
+    # exceptions to composed proper names, mostly debian copyright/control tag-related
     # FIXME: may be lowercase instead?
     (r'^Title:?$', 'JUNK'),
     (r'^Debianized-By:?$', 'JUNK'),
@@ -2004,7 +2004,7 @@ PATTERNS = [
     # affiliates or "and its affiliate(s)."
     (r'^[Aa]ffiliate(s|\(s\))?\.?$', 'NNP'),
 
-    # OU as in Org unit, found in some certficates
+    # OU as in Org unit, found in some certificates
     (r'^OU$', 'OU'),
 
     # Various rare company names/suffix
@@ -2047,15 +2047,15 @@ PATTERNS = [
     (r'^\(?[Rr]ecoded$', 'AUTH2'),
     (r'^\(?[Mm]odified$', 'AUTH2'),
     (r'^\(?[Cc]reated$', 'AUTH2'),
-    # written is often mispelled
+    # written is often misspelled
     (r'^\(?[Ww]ritt?e[dn]$', 'AUTH2'),
-    # rewritten is often mispelled
+    # rewritten is often misspelled
     (r'^\(?[Rr]ewritt?e[dn]$', 'AUTH2'),
     (r'^\(?[Mm]aintained$', 'AUTH2'),
     (r'^\(?[Dd]eveloped$', 'AUTH2'),
     (r'^\(?[Au]thored$', 'AUTH2'),
 
-    # commiters is interesting, and so a tag of its own
+    # committers is interesting, and so a tag of its own
     (r'[Cc]ommitters\.?,?', 'COMMIT'),
 
     # same for maintainers, developers, admins.
@@ -2323,7 +2323,7 @@ PATTERNS = [
     # !$?
     (r'^\!\$\?$', 'JUNK'),
 
-    # things composed only of non-word letters (e.g. junk punctuations)
+    # things composed only of non-word letters (e.g. junk punctuation)
     # but keeping _ ? and () and - as parts of words
     (r'^[^\w\?\-\(\)]{3,10}$', 'JUNK'),
 
@@ -4018,7 +4018,7 @@ def remove_dupe_copyright_words(c):
 
 def remove_some_extra_words_and_punct(c):
     """
-    Remove misc junk including some punctuations
+    Remove misc junk including some punctuation
     """
     c = c.replace('<p>', ' ')
     c = c.replace('<a href', ' ')
@@ -4120,7 +4120,7 @@ def strip_leading_numbers(s):
 
 def strip_some_punct(s):
     """
-    Return a string stripped from some leading and trailing punctuations.
+    Return a string stripped from some leading and trailing punctuation.
     """
     if s:
         s = s.strip(''','"}{-_:;&@!''')
@@ -4131,7 +4131,7 @@ def strip_some_punct(s):
 
 def fix_trailing_space_dot(s):
     """
-    Return a string stripped from some leading and trailing punctuations.
+    Return a string stripped from some leading and trailing punctuation.
     """
     if s and s.endswith(' .'):
         s = s[:-2] + '.'

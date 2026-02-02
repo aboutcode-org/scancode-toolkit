@@ -54,6 +54,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Michael Rupprecht @michaelrup
 - Mike Rombout @mrombout
 - Mrinal Paliwal @mnpw
+- Mrityunjay Raj @mr-raj12
 - nexB Inc. @nexB
 - Nirmal Sarswat @vivonk
 - Nisha Kumar @nishakm

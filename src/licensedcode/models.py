@@ -1391,7 +1391,7 @@ class BasicRule:
             'short license references such as a license bare name or license '
             'or a URL provide a weaker clue and level of confidence when '
             'detected because they are shorter and may not always represent a '
-            'clear licensing statment or notice. Mutually exclusive from any other '
+            'clear licensing statement or notice. Mutually exclusive from any other '
             'is_license_* flag')
     )
 
@@ -1585,7 +1585,7 @@ class BasicRule:
             help='Flag set to True if this rule is deleted, '
             'and not to be used anymore in license detection. '
             'This happens usually when a rule is renamed/assigned '
-            'to a seperate license-expression, promoted to being a '
+            'to a separate license-expression, promoted to being a '
             'license text or just plain retired. This is used to '
             'preserve the link to the rule, and therefore make links '
             'to rules as permanent.')
@@ -2369,7 +2369,7 @@ class Rule(BasicRule):
     def compute_thresholds(self, small_rule=SMALL_RULE, tiny_rule=TINY_RULE):
         """
         Compute and set thresholds either considering the occurrence of all
-        tokens or the occurence of unique tokens.
+        tokens or the occurrence of unique tokens.
         """
         min_cov, self.min_matched_length, self.min_high_matched_length = (
             compute_thresholds_occurences(
@@ -2713,7 +2713,7 @@ def compute_thresholds_unique(
 
 class SynthethicRule(Rule):
     """
-    A specialized rule subclass for synthethic rules generated at runtime.
+    A specialized rule subclass for synthetic rules generated at runtime.
     They do not have backing files.
     """
 

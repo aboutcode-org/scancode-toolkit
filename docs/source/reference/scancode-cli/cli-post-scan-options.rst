@@ -816,7 +816,7 @@ To see all plugins available via command line help, use ``--plugins``.
 
         scancode -clipeu --json-pp strapi.json strapi-main/ --tallies --facet dev="*.js" --facet dev="*.ts" --tallies-by-facet
 
-    We have used the `github:strapi/strapi <https://github.com/strapi/strapi>`_ project to generate exmaple results for
+    We have used the `github:strapi/strapi <https://github.com/strapi/strapi>`_ project to generate example results for
     this CLI option.
 
     .. include::  /rst-snippets/note-snippets/cli-pre-scan-facet-core.rst

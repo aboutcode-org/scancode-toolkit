@@ -1,4 +1,4 @@
-<!-- Delete Template sections if unneccesary -->
+<!-- Delete Template sections if unnecessary -->
 <!-- Add issue number here (We encourage you to create the Issue First) -->
 <!-- You can also link the issue in Commit Messages -->
 

@@ -18,7 +18,7 @@ Collect data from Dart pub packages.
 See https://dart.dev/tools/pub/pubspec
 
 
-API has theses URLs:
+API has these URLs:
 is limited and only returns all versions of a package
 - feeds https://pub.dev/feed.atom
 - all packages, paginated: https://pub.dev/api/packages
@@ -109,7 +109,7 @@ def collect_locks(locks_data):
         sdks:
           dart: ">=2.12.0 <3.0.0"
     """
-    # FIXME: we treat all as nno optioanl for now
+    # FIXME: we treat all as non optional for now
     sdks = locks_data.get('sdks') or {}
     for name, version in sdks.items():
         dep = build_dep(

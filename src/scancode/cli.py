@@ -437,7 +437,7 @@ def scancode(
       its `setup` method is called if it is enabled.
 
     - `pre-scan`: each enabled pre-scan plugin `process_codebase(codebase)`
-      method is called to update/transforme the whole codebase.
+      method is called to update/transform the whole codebase.
 
     - `scan`: the codebase is walked and each enabled scan plugin
       `get_scanner()` scanner function is called once for each codebase
@@ -467,7 +467,7 @@ def scancode(
     - `timeout`: float: intterup the scan of a file if it does not finish within
       `timeout` seconds. This applied to each file and scan individually (e.g.
       if the license scan is interrupted they other scans may complete, each
-      withing the timeout)
+      within the timeout)
 
     - `quiet` and `verbose`: boolean flags: Do not display any message if
       `quiet` is True. Otherwise, display extra verbose messages if `quiet` is
@@ -768,7 +768,7 @@ def run_scan(
         plugins_to_setup.extend(all_enabled_plugins_by_qname.values())
 
         if TRACE_DEEP:
-            logger_debug('scancode: plugins_to_setup: includng enabled:', plugins_to_setup)
+            logger_debug('scancode: plugins_to_setup: including enabled:', plugins_to_setup)
 
         ########################################################################
         # Setup enabled and required plugins

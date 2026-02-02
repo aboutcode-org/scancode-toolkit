@@ -15,7 +15,7 @@ import utils_requirements
 """
 Utilities to manage requirements files.
 NOTE: this should use ONLY the standard library and not import anything else
-because this is used for boostrapping with no requirements installed.
+because this is used for bootstrapping with no requirements installed.
 """
 
 

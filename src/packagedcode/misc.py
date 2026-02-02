@@ -10,7 +10,7 @@
 from packagedcode import models
 
 """
-Various package data file formats to implment.
+Various package data file formats to implement.
 """
 
 # Package types
