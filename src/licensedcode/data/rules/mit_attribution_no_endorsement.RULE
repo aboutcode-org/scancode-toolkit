@@ -2,11 +2,6 @@
 license_expression: mit
 is_license_text: yes
 relevance: 100
-
-required_phrases:
-  - "{{ Permission is hereby granted, free of charge }}"
-  - "{{ The above copyright notice and this permission notice }}"
-  - "{{ THE SOFTWARE IS PROVIDED \"AS IS\" }}"
 ---
 
 Copyright 2025 Sinusoidal Systems AB
