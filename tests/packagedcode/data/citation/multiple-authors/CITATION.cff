@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+title: Multiple Authors Test
+authors:
+  - family-names: Smith
+    given-names: Jane
+    email: jane@example.org
+    orcid: "https://orcid.org/0000-0001-2345-6789"
+  - name: Bob Johnson
+  - family-names: Williams
+  - given-names: Alice
+  - invalid_entry_should_be_skipped
+  - family-names: Brown
+    given-names: Charlie
+    affiliation: "Example University"
