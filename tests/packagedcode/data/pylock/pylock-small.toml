@@ -1,0 +1,8 @@
+lock-version = "1.0"
+created-by = "uv"
+requires-python = ">=3.13"
+
+[[packages]]
+name = "attrs"
+version = "25.1.0"
+index = "https://pypi.org/simple"

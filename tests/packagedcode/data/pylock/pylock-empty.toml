@@ -1,0 +1,5 @@
+lock-version = "1.0"
+created-by = "test"
+requires-python = ">=3.8"
+
+# Empty packages array - no actual package entries

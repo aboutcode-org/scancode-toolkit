@@ -40,6 +40,7 @@ from packagedcode import rubygems
 from packagedcode import swift
 from packagedcode import win_pe
 from packagedcode import windows
+from packagedcode import pylock
 
 if on_linux:
     from packagedcode import msi
@@ -212,6 +213,9 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     # These are handlers for deplock generated files
     pypi.PipInspectDeplockHandler,
+    
+    # These are handlers for pylock generated files
+    pylock.PyLockHandler,
 ]
 
 if on_linux:
