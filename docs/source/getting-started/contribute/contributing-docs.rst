@@ -184,7 +184,7 @@ For more information, refer this tutorial named
 .. _contributing-docs-style-conventions:
 
 Style Conventions for the Documentation
---------------------------------------
+----------------------------------------
 
 1. Headings
 
