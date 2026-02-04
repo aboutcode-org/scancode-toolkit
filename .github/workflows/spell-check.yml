@@ -1,0 +1,121 @@
+name: Spell Check
+
+on:
+  pull_request:
+    paths:
+      - '**/*.py'
+      - '**/*.rst'
+      - '**/*.md'
+      - '.codespell-ignore-words.txt'
+      - 'setup.cfg'
+
+permissions:
+  contents: read
+
+jobs:
+  spell-check:
+    name: Spell Check (Docs & Comments)
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install codespell
+        run: pip install "codespell>=2.2.0"
+
+      - name: Get changed files
+        id: changed-files
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            CHANGED_FILES=$(git diff --name-only --diff-filter=ACMRT \
+              origin/${{ github.base_ref }}...HEAD 2>/dev/null \
+              | grep -E '\.(py|rst|md)$' || true)
+          else
+            CHANGED_FILES=$(git diff --name-only --diff-filter=ACMRT \
+              HEAD~1 HEAD 2>/dev/null \
+              | grep -E '\.(py|rst|md)$' || true)
+          fi
+
+          # Filter out directories that should be skipped
+          CHANGED_FILES=$(echo "$CHANGED_FILES" \
+            | grep -v -E '^(tests/|samples/|thirdparty/|src/licensedcode/data/rules/)' \
+            || true)
+
+          # Remove empty lines
+          CHANGED_FILES=$(echo "$CHANGED_FILES" | grep -v '^$' || true)
+
+          echo "$CHANGED_FILES" > changed_files.txt
+
+          if [ -s changed_files.txt ]; then
+            FILE_COUNT=$(wc -l < changed_files.txt | tr -d ' ')
+          else
+            FILE_COUNT=0
+          fi
+          echo "file_count=$FILE_COUNT" >> $GITHUB_OUTPUT
+
+          echo "Files to check ($FILE_COUNT):"
+          cat changed_files.txt || echo "(none)"
+
+      - name: Run codespell on changed files
+        if: steps.changed-files.outputs.file_count != '0'
+        continue-on-error: true
+        run: |
+          echo "## Spell Check Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          echo "### Files Checked (${{ steps.changed-files.outputs.file_count }})" >> $GITHUB_STEP_SUMMARY
+          echo "<details>" >> $GITHUB_STEP_SUMMARY
+          echo "<summary>Click to see file list</summary>" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat changed_files.txt >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo "</details>" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Run codespell on changed files
+          # codespell reads [codespell] config from setup.cfg automatically
+          SPELL_OUTPUT=$(xargs codespell < changed_files.txt 2>&1) || true
+
+          if [ -n "$SPELL_OUTPUT" ]; then
+            ISSUE_COUNT=$(echo "$SPELL_OUTPUT" | wc -l | tr -d ' ')
+
+            echo "### Spelling Issues Found ($ISSUE_COUNT)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "<details open>" >> $GITHUB_STEP_SUMMARY
+            echo "<summary>Spell check output</summary>" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "$SPELL_OUTPUT" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "</details>" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "---" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### How to Fix" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "1. **Fix the typo** — correct the spelling in your file" >> $GITHUB_STEP_SUMMARY
+            echo "2. **Add to dictionary** — if it's a valid technical term, add it to \`.codespell-ignore-words.txt\`" >> $GITHUB_STEP_SUMMARY
+            echo "3. **Inline ignore** — use \`codespell:ignore\` in a comment on the line" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "> **Note:** This check is currently **non-blocking** (warning only)." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### No Spelling Issues Found" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "All checked files passed spell checking." >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Skip message
+        if: steps.changed-files.outputs.file_count == '0'
+        run: |
+          echo "## Spell Check Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "No documentation or source files were changed in this PR." >> $GITHUB_STEP_SUMMARY
