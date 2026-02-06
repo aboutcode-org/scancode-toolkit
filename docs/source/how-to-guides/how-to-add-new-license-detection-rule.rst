@@ -82,5 +82,5 @@ and other options.
 
 .. note::
 
-    Add rules in a local developement installation and run `scancode-reindex-licenses`
+    Add rules in a local development installation and run `scancode-reindex-licenses`
     to make sure we reindex the rules and this validates the new licenses.

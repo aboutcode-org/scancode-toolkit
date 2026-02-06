@@ -409,7 +409,7 @@ Quick reference
 ``--email``
 -----------
 
-    The ``--email`` option detects and reports email adresses present in scanned files.
+    The ``--email`` option detects and reports email addresses present in scanned files.
 
     It adds the ``emails`` attribute to the file data with the following attributes:
     ``email`` with the actual email that was present in the file, ``start_line`` and
