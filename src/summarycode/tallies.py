@@ -220,34 +220,49 @@ def tally_licenses(license_expressions):
 def language_tallies(resource, children, keep_details=False):
     """
     Populate a programming_language tallies list of mappings such as
-        {value: "programming_language", count: "count of occurences"}
-    sorted by decreasing count.
+        {value: "programming_language", count: "sum of bytes"}
+    sorted by decreasing size. 
+    
+    If the file size is 0 or missing, we fallback to a count of 1 
+    to ensure the file is still represented in the tallies.
     """
     PROG_LANG = 'programming_language'
-    languages = []
-    prog_lang = getattr(resource, PROG_LANG , [])
-    if not prog_lang:
-        if resource.is_file:
-            # also count files with no detection
-            languages.append(None)
-    else:
-        languages.append(prog_lang)
+    scores = {}
 
-    # Collect direct children expression summaries
+    # 1. Get data for the current file
+    prog_lang = getattr(resource, PROG_LANG, [])
+    current_size = getattr(resource, 'size', 0) or 0
+    
+    # Hybrid Logic: Use size (bytes) if available, otherwise 1 (vote count)
+    weight = current_size if current_size > 0 else 1
+
+    if resource.is_file and prog_lang:
+        # Handle if prog_lang is a single string or a list
+        langs = prog_lang if isinstance(prog_lang, list) else [prog_lang]
+        
+        for lang in langs:
+            scores[lang] = scores.get(lang, 0) + weight
+
+    # 2. Aggregate from children (Bubble up the byte counts)
     for child in children:
         child_tallies = get_resource_tallies(child, key=PROG_LANG, as_attribute=keep_details) or []
         for child_tally in child_tallies:
-            child_sum_val = child_tally.get('value')
-            if child_sum_val:
-                values = [child_sum_val] * child_tally['count']
-                languages.extend(values)
+             val = child_tally.get('value')
+             child_count = child_tally.get('count', 0)
+             
+             if val:
+                 scores[val] = scores.get(val, 0) + child_count
 
-    # summarize proper
-    languages_counter = tally_languages(languages)
-    tallied = sorted_counter(languages_counter)
+    # 3. Format the results
+    tallied = []
+    for lang, score in scores.items():
+        tallied.append({'value': lang, 'count': score})
+    
+    # Sort by size (Biggest language first)
+    tallied.sort(key=lambda x: x['count'], reverse=True)
+    
     set_resource_tallies(resource, key=PROG_LANG, value=tallied, as_attribute=keep_details)
     return tallied
-
 
 def tally_languages(languages):
     """
