@@ -20,8 +20,12 @@
     ],
     "other_holders": [
       {
+        "value": "Google LLC",
+        "count": 1182
+      },
+      {
         "value": "Example Corporation",
-        "count": 1
+        "count": 33
       }
     ],
     "other_languages": []

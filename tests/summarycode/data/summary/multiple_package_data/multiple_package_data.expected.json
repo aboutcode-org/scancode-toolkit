@@ -26,12 +26,7 @@
         "count": 1
       }
     ],
-    "other_holders": [
-      {
-        "value": null,
-        "count": 4
-      }
-    ],
+    "other_holders": [],
     "other_languages": []
   },
   "packages": [

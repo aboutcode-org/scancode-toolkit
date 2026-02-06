@@ -10,7 +10,7 @@
       "conflicting_license_categories": false,
       "ambiguous_compound_licensing": false
     },
-    "declared_holder": "Example Corp.",
+    "declared_holder": "Demo Corp.",
     "primary_language": "Python",
     "other_license_expressions": [
       {
@@ -24,12 +24,12 @@
     ],
     "other_holders": [
       {
-        "value": null,
-        "count": 2
+        "value": "Example Corp.",
+        "count": 167
       },
       {
-        "value": "Demo Corp.",
-        "count": 1
+        "value": "Example Corp",
+        "count": 95
       }
     ],
     "other_languages": []

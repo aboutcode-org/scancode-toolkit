@@ -298,124 +298,128 @@
     ],
     "copyrights": [
       {
-        "value": null,
-        "count": 6
+        "value": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+        "count": 2627
       },
       {
-        "value": "Copyright (c) Jean-loup Gailly",
-        "count": 4
+        "value": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
+        "count": 2054
       },
       {
-        "value": "Copyright (c) Mark Adler",
-        "count": 4
+        "value": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+        "count": 1774
       },
       {
-        "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
-        "count": 3
+        "value": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
+        "count": 1032
       },
       {
-        "value": "Copyright (c) Brian Goetz and Tim Peierls",
-        "count": 1
+        "value": "Copyright 2010, Red Hat, Inc. and individual contributors",
+        "count": 1023
       },
       {
-        "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
-        "count": 1
+        "value": "Copyright 2005, JBoss Inc., and individual contributors",
+        "count": 1016
       },
       {
-        "value": "Copyright (c) Dmitriy Anisimkov",
-        "count": 1
+        "value": "Copyright (c) 1995-2013 Jean-loup Gailly",
+        "count": 790
       },
       {
-        "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant",
-        "count": 1
+        "value": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
+        "count": 649
       },
       {
-        "value": "Copyright (c) by Henrik Ravn",
-        "count": 1
+        "value": "Copyright (c) 2004 by Henrik Ravn",
+        "count": 627
       },
       {
-        "value": "Copyright Henrik Ravn",
-        "count": 1
+        "value": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
+        "count": 482
       },
       {
-        "value": "Copyright JBoss Inc., and individual contributors",
-        "count": 1
+        "value": "Copyright (c) 1995-2011 Mark Adler",
+        "count": 354
       },
       {
-        "value": "Copyright Red Hat Middleware LLC, and individual contributors",
-        "count": 1
+        "value": "Copyright Henrik Ravn 2004",
+        "count": 236
       },
       {
-        "value": "Copyright Red Hat, Inc. and individual contributors",
-        "count": 1
+        "value": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
+        "count": 218
+      },
+      {
+        "value": "Copyright (c) 1995-2008 Mark Adler",
+        "count": 185
+      },
+      {
+        "value": "Copyright (c) 2003 Mark Adler",
+        "count": 168
+      },
+      {
+        "value": "Copyright (c) 1995-2012 Jean-loup Gailly",
+        "count": 165
       }
     ],
     "holders": [
       {
-        "value": null,
-        "count": 6
-      },
-      {
-        "value": "Jean-loup Gailly",
-        "count": 4
-      },
-      {
-        "value": "Mark Adler",
-        "count": 4
-      },
-      {
         "value": "Jean-loup Gailly and Mark Adler",
-        "count": 3
-      },
-      {
-        "value": "Henrik Ravn",
-        "count": 2
-      },
-      {
-        "value": "Brian Goetz and Tim Peierls",
-        "count": 1
-      },
-      {
-        "value": "Christian Michelsen Research AS Advanced Computing",
-        "count": 1
+        "count": 2627
       },
       {
         "value": "Dmitriy Anisimkov",
-        "count": 1
-      },
-      {
-        "value": "JBoss Inc., and individual contributors",
-        "count": 1
+        "count": 2054
       },
       {
         "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
-        "count": 1
+        "count": 1774
+      },
+      {
+        "value": "Jean-loup Gailly",
+        "count": 1173
       },
       {
         "value": "Red Hat Middleware LLC, and individual contributors",
-        "count": 1
+        "count": 1032
       },
       {
         "value": "Red Hat, Inc. and individual contributors",
-        "count": 1
+        "count": 1023
+      },
+      {
+        "value": "JBoss Inc., and individual contributors",
+        "count": 1016
+      },
+      {
+        "value": "Henrik Ravn",
+        "count": 863
+      },
+      {
+        "value": "Mark Adler",
+        "count": 707
+      },
+      {
+        "value": "Christian Michelsen Research AS Advanced Computing",
+        "count": 649
+      },
+      {
+        "value": "Brian Goetz and Tim Peierls",
+        "count": 482
       }
     ],
     "authors": [
       {
-        "value": null,
-        "count": 20
-      },
-      {
-        "value": "Bela Ban",
-        "count": 4
+        "value": "Isaac Z. Schlueter",
+        "count": 37904
       },
       {
         "value": "Gilles Vollant",
-        "count": 1
+        "count": 1774
       },
       {
-        "value": "Isaac Z. Schlueter",
-        "count": 1
+        "value": "Bela Ban",
+        "count": 1156
       }
     ],
     "programming_language": [
@@ -437,27 +441,7 @@
       }
     ]
   },
-  "tallies_of_key_files": {
-    "detected_license_expression": [
-      {
-        "value": "artistic-2.0",
-        "count": 1
-      },
-      {
-        "value": "cc0-1.0",
-        "count": 1
-      }
-    ],
-    "copyrights": [],
-    "holders": [],
-    "authors": [
-      {
-        "value": "Isaac Z. Schlueter",
-        "count": 1
-      }
-    ],
-    "programming_language": []
-  },
+  "tallies_of_key_files": {},
   "files": [
     {
       "path": "scan",

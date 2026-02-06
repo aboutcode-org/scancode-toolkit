@@ -122,18 +122,10 @@ Options:
                              information and other detected origin info at the
                              codebase attribute level.
     --tallies                Compute tallies for license, copyright and other
-                             scans at the codebase level.
-    --tallies-by-facet       Compute tallies for license, copyright and other
-                             scans and group the results by facet.
-    --tallies-key-files      Compute tallies for license, copyright and other
-                             scans for key, top-level files. Key files are top-
-                             level codebase files such as COPYING, README and
-                             package manifests as reported by the --classify
-                             option "is_legal", "is_readme", "is_manifest" and
-                             "is_top_level" flags.
-    --tallies-with-details   Compute tallies of license, copyright and other scans
-                             at the codebase level, keeping intermediate details
-                             at the file and directory level.
+                             scans.
+    --tallies-by-facet       Compute tallies grouped by facet.
+    --tallies-key-files      Compute tallies for key files.
+    --tallies-with-details   Compute tallies keeping intermediate details.
     --todo                   Summarize scans by providing all ambiguous detections
                              which are todo items and needs manual review.
 

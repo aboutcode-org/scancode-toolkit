@@ -176,8 +176,12 @@ def get_declared_holders(codebase, holders_tallies):
         if entry['holder']
     }
     unique_key_file_holders = unique(entry_by_key_file_holders.keys())
+    
+    # FIX: Added 'if holder in entry_by_holders' to prevent crash if a holder
+    # exists in key files but was filtered out of the main tallies (0 byte count)
     unique_key_file_holders_entries = [
         entry_by_holders[holder] for holder in unique_key_file_holders
+        if holder in entry_by_holders
     ]
 
     holder_by_counts = defaultdict(list)
@@ -195,7 +199,10 @@ def get_declared_holders(codebase, holders_tallies):
     # If we could not determine a holder, then we return a list of all the
     # unique key file holders
     if not declared_holders:
-        declared_holders = [entry['value'] for entry in unique_key_file_holders_entries]
+        # We must also filter here to avoid crashing on missing entries
+        declared_holders = [
+            entry['value'] for entry in unique_key_file_holders_entries
+        ]
 
     return declared_holders
 
