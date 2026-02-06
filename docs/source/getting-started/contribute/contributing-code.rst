@@ -110,7 +110,7 @@ These are enabled by adding a ``--test-suite`` option to the pytest command.
   detection)
 
 In some cases we need to regenerate test data when expected behavious/result data
-structures change, and we have an environement variable to regenerate test data.
+structures change, and we have an environment variable to regenerate test data.
 `SCANCODE_REGEN_TEST_FIXTURES` is present in `scancode_config` and this can be
 set to regenerate test data for specific tests like this:
 
@@ -124,7 +124,7 @@ If test data is regenerated, it is important to review the diff for test files a
 carefully go through all of it to make sure there are no unintended changes there,
 and then commit all the regenerated test data.
 
-To help debug in scancode, we use logging. There are different environement variables
+To help debug in scancode, we use logging. There are different environment variables
 you need to set to turn on logging. In packagedcode::
 
 ``SCANCODE_DEBUG_PACKAGE=yes pytest -vvs tests/packagedcode/ --lf``

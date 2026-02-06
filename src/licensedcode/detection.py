@@ -1696,7 +1696,7 @@ def get_license_keys_from_detections(license_detections, licensing=Licensing()):
 
 def can_ignore_ambiguous_detection(license_detection):
     """
-    Return True if the license_detection is not an ambigious detection
+    Return True if the license_detection is not an ambiguous detection
     which needs to be reviewed. A few cases are:
     1. All the locations of the license detection are community files
     """

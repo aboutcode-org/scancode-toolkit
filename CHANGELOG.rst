@@ -127,7 +127,7 @@ from ``4.0.0`` to ``4.1.0``. The changes in Output Data Structure are:
     directories. This is returned optionally with the ``--info`` plugin.
 
   - A new resource level attribute ``is_community`` is added, which is
-    True from commonly used files used for community/project maintainence.
+    True from commonly used files used for community/project maintenance.
     This is returned optionally with the ``--classify`` plugin.
 
 These are the details for the most important changes introduced::
@@ -340,7 +340,7 @@ v32.2.1 - 2024-07-02
 - Add support for poetry packages, with poetry specific pyproject.toml
   support, poetry.lock and package assembly support. Also add support
   for parsing and storing resolved packages and dependency relationships
-  required to statically resolve poetry dependecy graphs.
+  required to statically resolve poetry dependency graphs.
   See https://github.com/nexB/scancode-toolkit/issues/2109
 
 - Add support for pyproject.toml files in python projects.
@@ -827,7 +827,7 @@ License detection:
   in all levels i.e. from codebase, package and resource level license detections and
   resource level license clues, irrespective of this CLI option being used, i.e. default
   with ``--licenses``.
-  See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/reference/license-detection-reference.html#comparision-before-after-license-references>`_
+  See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/reference/license-detection-reference.html#comparison-before-after-license-references>`_
 
 - We replaced the ``scancode --reindex-licenses`` command line option with a
   new separate command named ``scancode-reindex-licenses``.
@@ -1278,7 +1278,7 @@ Changes:
     - `has_license_text`
     - `declared_copyrights`
     - `conflicting_license_categories`
-    - `ambigious_compound_licensing`
+    - `ambiguous_compound_licensing`
 
 - The fields of the summary plugin have been replaced with the following fields.
   An overview of the new fields can be found in the "Summary Plugin Update"

@@ -437,7 +437,7 @@ Package type:  golang
   datasource_id:     go_sum
   documentation URL: https://go.dev/ref/mod#go-sum-files
   primary language:  Go
-  description:       Go module cheksums file
+  description:       Go module checksums file
   path_patterns:    '*/go.sum'
 --------------------------------------------
 Package type:  golang
