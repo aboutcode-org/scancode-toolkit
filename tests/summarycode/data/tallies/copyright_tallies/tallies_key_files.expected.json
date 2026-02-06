@@ -121,19 +121,19 @@
     "programming_language": [
       {
         "value": "C",
-        "count": 12
+        "count": 5156
       },
       {
         "value": "Java",
-        "count": 7
-      },
-      {
-        "value": "C#",
-        "count": 2
+        "count": 4227
       },
       {
         "value": "GAS",
-        "count": 1
+        "count": 1774
+      },
+      {
+        "value": "C#",
+        "count": 863
       }
     ]
   },

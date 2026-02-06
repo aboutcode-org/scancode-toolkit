@@ -7,17 +7,15 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-
 from os import path
-
 import pytest
-
 from commoncode.testcase import FileDrivenTesting
-
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import check_jsonlines_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
+
+
 
 
 pytestmark = pytest.mark.scanslow

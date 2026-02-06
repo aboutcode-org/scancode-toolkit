@@ -10,23 +10,24 @@
           "--info": true,
           "--json-lines": "<file>",
           "--license": true,
+          "--processes": "-1",
           "--tallies": true,
           "--tallies-key-files": true
         },
         "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-        "output_format_version": "4.0.0",
+        "output_format_version": "4.1.0",
         "message": null,
         "errors": [],
         "warnings": [],
         "extra_data": {
           "system_environment": {
-            "operating_system": "linux",
+            "operating_system": "win",
             "cpu_architecture": "64",
-            "platform": "Linux-5.15.0-140-generic-x86_64-with-glibc2.35",
-            "platform_version": "#150-Ubuntu SMP Sat Apr 12 06:00:09 UTC 2025",
-            "python_version": "3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]"
+            "platform": "Windows-11-10.0.26100-SP0",
+            "platform_version": "10.0.26100",
+            "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]"
           },
-          "spdx_license_list_version": "3.26",
+          "spdx_license_list_version": "3.27",
           "files_count": 26
         }
       }
@@ -457,19 +458,19 @@
       "programming_language": [
         {
           "value": "C",
-          "count": 12
+          "count": 5156
         },
         {
           "value": "Java",
-          "count": 7
-        },
-        {
-          "value": "C#",
-          "count": 2
+          "count": 4227
         },
         {
           "value": "GAS",
-          "count": 1
+          "count": 1774
+        },
+        {
+          "value": "C#",
+          "count": 863
         }
       ]
     }

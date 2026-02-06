@@ -3856,19 +3856,19 @@
     "programming_language": [
       {
         "value": "C",
-        "count": 12
+        "count": 5156
       },
       {
         "value": "Java",
-        "count": 7
-      },
-      {
-        "value": "C#",
-        "count": 2
+        "count": 4227
       },
       {
         "value": "GAS",
-        "count": 1
+        "count": 1774
+      },
+      {
+        "value": "C#",
+        "count": 863
       }
     ]
   },
@@ -4067,19 +4067,19 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 12
+            "count": 5156
           },
           {
             "value": "Java",
-            "count": 7
-          },
-          {
-            "value": "C#",
-            "count": 2
+            "count": 4227
           },
           {
             "value": "GAS",
-            "count": 1
+            "count": 1774
+          },
+          {
+            "value": "C#",
+            "count": 863
           }
         ]
       },
@@ -4192,7 +4192,7 @@
         "programming_language": [
           {
             "value": "Java",
-            "count": 7
+            "count": 4227
           }
         ]
       },
@@ -4305,7 +4305,7 @@
         "programming_language": [
           {
             "value": "Java",
-            "count": 7
+            "count": 4227
           }
         ]
       },
@@ -4408,7 +4408,7 @@
         "programming_language": [
           {
             "value": "Java",
-            "count": 1
+            "count": 1016
           }
         ]
       },
@@ -4517,7 +4517,7 @@
         "programming_language": [
           {
             "value": "Java",
-            "count": 1
+            "count": 482
           }
         ]
       },
@@ -4620,7 +4620,7 @@
         "programming_language": [
           {
             "value": "Java",
-            "count": 1
+            "count": 1023
           }
         ]
       },
@@ -4695,7 +4695,7 @@
         "programming_language": [
           {
             "value": "Java",
-            "count": 1
+            "count": 269
           }
         ]
       },
@@ -4770,7 +4770,7 @@
         "programming_language": [
           {
             "value": "Java",
-            "count": 1
+            "count": 153
           }
         ]
       },
@@ -4873,7 +4873,7 @@
         "programming_language": [
           {
             "value": "Java",
-            "count": 1
+            "count": 1032
           }
         ]
       },
@@ -4948,7 +4948,7 @@
         "programming_language": [
           {
             "value": "Java",
-            "count": 1
+            "count": 252
           }
         ]
       },
@@ -5014,12 +5014,7 @@
             "count": 1
           }
         ],
-        "programming_language": [
-          {
-            "value": null,
-            "count": 1
-          }
-        ]
+        "programming_language": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -5102,7 +5097,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 3
+            "count": 1896
           }
         ]
       },
@@ -5222,7 +5217,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 175
           }
         ]
       },
@@ -5325,7 +5320,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 1326
           }
         ]
       },
@@ -5445,7 +5440,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 395
           }
         ]
       },
@@ -5533,12 +5528,7 @@
             "count": 1
           }
         ],
-        "programming_language": [
-          {
-            "value": null,
-            "count": 1
-          }
-        ]
+        "programming_language": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -8729,12 +8719,7 @@
             "count": 1
           }
         ],
-        "programming_language": [
-          {
-            "value": null,
-            "count": 1
-          }
-        ]
+        "programming_language": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -8873,15 +8858,15 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 9
-          },
-          {
-            "value": "C#",
-            "count": 2
+            "count": 3260
           },
           {
             "value": "GAS",
-            "count": 1
+            "count": 1774
+          },
+          {
+            "value": "C#",
+            "count": 863
           }
         ]
       },
@@ -9045,12 +9030,7 @@
             "count": 1
           }
         ],
-        "programming_language": [
-          {
-            "value": null,
-            "count": 1
-          }
-        ]
+        "programming_language": []
       },
       "files_count": 0,
       "dirs_count": 0,
@@ -9168,7 +9148,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 179
           }
         ]
       },
@@ -9288,7 +9268,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 198
           }
         ]
       },
@@ -9408,7 +9388,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 165
           }
         ]
       },
@@ -9485,7 +9465,7 @@
         "programming_language": [
           {
             "value": "C#",
-            "count": 2
+            "count": 863
           }
         ]
       },
@@ -9566,7 +9546,7 @@
         "programming_language": [
           {
             "value": "C#",
-            "count": 1
+            "count": 627
           }
         ]
       },
@@ -9669,7 +9649,7 @@
         "programming_language": [
           {
             "value": "C#",
-            "count": 1
+            "count": 236
           }
         ]
       },
@@ -9738,7 +9718,7 @@
         "programming_language": [
           {
             "value": "GAS",
-            "count": 1
+            "count": 1774
           }
         ]
       },
@@ -9847,7 +9827,7 @@
         "programming_language": [
           {
             "value": "GAS",
-            "count": 1
+            "count": 1774
           }
         ]
       },
@@ -9916,7 +9896,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 2
+            "count": 353
           }
         ]
       },
@@ -10019,7 +9999,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 185
           }
         ]
       },
@@ -10122,7 +10102,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 168
           }
         ]
       },
@@ -10191,7 +10171,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 649
           }
         ]
       },
@@ -10294,7 +10274,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 649
           }
         ]
       },
@@ -10397,7 +10377,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 1103
           }
         ]
       },
@@ -10517,7 +10497,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 218
           }
         ]
       },
@@ -10637,7 +10617,7 @@
         "programming_language": [
           {
             "value": "C",
-            "count": 1
+            "count": 395
           }
         ]
       },
