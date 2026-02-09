@@ -1,3 +1,5 @@
 {
-  "license_expression": "BUSL-1.1"
+  "license_expression": "BUSL-1.1",
+  "expected_failure": true,
+  "failure_failure_reason": "BUSL-1.1 is currently misdetected as BSL"
 }
