@@ -833,6 +833,11 @@ PATTERNS = [
     # Repeated CamelCasedWords
     (r'^([A-Z][a-z]+){3,}$', 'JUNK'),
 
+    # Two-segment CamelCase code identifiers such as MeterProvider or
+    # TracerProvider or SpanProcessor that are not person or company names.
+    # These are common in code comments and trigger false author detections.
+    (r'^[A-Z][a-z]+(?:Provider|Processor|Exporter|Importer|Factory|Builder|Handler|Listener|Manager|Resolver|Adapter|Iterator|Observer|Visitor|Value|Logger|Counter|Tracker|Wrapper|Reader|Writer|Sender|Client|Server|Module|Record|Socket|Worker|Batcher|Sampler)s?$', 'JUNK'),
+
     ############################################################################
     # JUNK proper
     ############################################################################
