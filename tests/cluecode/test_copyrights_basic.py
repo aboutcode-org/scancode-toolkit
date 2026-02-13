@@ -28,6 +28,12 @@ def test_copyright_symbol_inside_url_is_ignored():
     # URLs containing (c) should NOT be copyright candidates
     assert not copyrights.is_candidate(prepped)
 
+def test_copyright_with_url_is_still_candidate():
+    text = "Copyright (c) 2000 Foo, http://example.com"
+
+    prepped = prepare_text_line(text)
+
+    assert copyrights.is_candidate(prepped)
 
 
 class TestTextPreparation(FileBasedTesting):
