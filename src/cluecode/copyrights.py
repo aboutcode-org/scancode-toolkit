@@ -4281,10 +4281,14 @@ def is_candidate(prepared_line):
     if not prepared_line:
         return False
 
+    # Ignore copyright symbols inside URLs
+    lowered = prepared_line.lower()
+    if '(c)' in lowered and ('http://' in lowered or 'https://' in lowered):
+        return False
+
     if is_only_digit_and_punct(prepared_line):
         if TRACE:
             logger_debug(f'is_candidate: is_only_digit_and_punct:\n{prepared_line!r}')
-
         return False
 
     if gibberish_detector.detect_gibberish(prepared_line):
@@ -4294,12 +4298,14 @@ def is_candidate(prepared_line):
 
     if copyrights_hint.years(prepared_line):
         return True
-    else:
-        pass
+
     prepared_line = prepared_line.lower()
     for marker in copyrights_hint.statement_markers:
         if marker in prepared_line:
             return True
+
+    return False
+
 
 
 def is_inside_statement(
