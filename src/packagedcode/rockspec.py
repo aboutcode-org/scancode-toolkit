@@ -5,6 +5,7 @@ import re
 import traceback
 from packageurl import PackageURL
 
+from luaparser import ast
 from packagedcode import models
 
 # Debug configuration - set via environment variables
@@ -44,7 +45,145 @@ class RockspecHandler(models.DatafileHandler):
         """
         Parse a rockspec file and return a PackageData object.
         """
-        pass
+        parser = RockspecParser(location)
+        parsed_data = parser.parse()
+
+        # mandatory fields in rockspec files
+        name = parsed_data.get('package')
+        version = parsed_data.get('version')
+        vcs_url = parsed_data.get('vcs_url')
+
+        # Extract optional fields
+        description = parsed_data.get('description')
+        homepage_url = parsed_data.get('homepage_url')
+        extracted_license_statement = parsed_data.get('license')
+
+        parsed_dependencies = parsed_data.get('dependencies') or []
+
+        if parsed_dependencies:
+            dependencies = cls._build_dependent_packages(parsed_dependencies)
+        else:
+            dependencies = []
+
+        extra_data = cls._build_extra_data(parsed_data)
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+            primary_language=cls.default_primary_language,
+            description=description,
+            homepage_url=homepage_url,
+            vcs_url=vcs_url,
+            extracted_license_statement=extracted_license_statement,
+            dependencies=dependencies,
+            extra_data=extra_data,
+        )
+
+        yield models.PackageData.from_data(package_data, package_only)
+
+    @classmethod
+    def _build_dependent_packages(cls, parsed_dependencies):
+        """
+        Convert parsed dependency dicts into DependentPackage objects.
+
+        Args:
+            parsed_dependencies: List of dicts with 'name' and 'version_spec' keys
+                                (already parsed by RockspecParser)
+
+        Returns:
+            List of DependentPackage objects
+        """
+        dependencies = []
+
+        for dep_dict in parsed_dependencies:
+            dep_obj = cls._create_dependent_package(dep_dict)
+            dependencies.append(dep_obj)
+
+        return dependencies
+
+    @classmethod
+    def _create_dependent_package(cls, dep_components):
+        """
+        Create a DependentPackage object from parsed dependency components.
+
+        Args:
+            dep_components: Dict with 'name', 'version_number', and 'version_spec'
+                           (already parsed by RockspecParser.parse_dependency)
+
+        Returns:
+            DependentPackage object
+        """
+        name = dep_components.get('name')
+        version_number = dep_components.get('version_number')
+        version_spec = dep_components.get('version_spec')
+
+        purl_str = cls._create_purl_string(name, version_number)
+        # Determine if pinned (exact version with == operator)
+        is_pinned = bool(version_spec and '==' in str(version_spec))
+
+        return models.DependentPackage(
+            purl=purl_str,
+            extracted_requirement=version_spec,
+            scope='dependencies',
+            is_runtime=True,
+            is_optional=False,
+            is_pinned=is_pinned,
+            is_direct=True,
+        )
+
+    @classmethod
+    def _build_extra_data(cls, parsed_data):
+        """
+        Build extra_data dict from optional rockspec metadata.
+
+        Args:
+            parsed_data: Dict with parsed rockspec fields
+
+        Returns:
+            Dict with extra metadata (extensible for future fields)
+        """
+        extra_data = {}
+
+        rockspec_format = parsed_data.get('rockspec_format')
+        if rockspec_format:
+            extra_data['rockspec_format'] = rockspec_format
+
+        platforms = parsed_data.get('supported_platforms')
+        if platforms:
+            extra_data['supported_platforms'] = platforms
+
+        # Future fields can be added here
+        # e.g., build_backend, build_requires, etc.
+
+        return extra_data
+
+    @classmethod
+    def _create_purl_string(cls, package_name, package_version):
+        """
+        Create a PURL string for a luarocks package.
+
+        Args:
+            package_name: Name of the package
+            package_version: Optional version string (without operators)
+
+        Returns:
+            PURL string (e.g., "pkg:luarocks/luasocket" or "pkg:luarocks/luasocket@3.1.3")
+
+        Raises:
+            ValueError if package_name is empty
+        """
+        if not package_name:
+            raise ValueError('Package name is required for PURL creation')
+
+        purl = PackageURL(
+            type=cls.default_package_type,
+            name=package_name,
+            version=package_version
+        )
+        return purl.to_string()
+
 
 
 class ParseError:
