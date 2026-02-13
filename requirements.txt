@@ -42,6 +42,7 @@ jsonstreams==0.6.0
 keyring==23.7.0
 license-expression==30.4.4
 lxml==6.1.0
+luaparser==4.0.0
 MarkupSafe==3.0.3
 more-itertools==10.8.0
 multiregex==2.0.3
