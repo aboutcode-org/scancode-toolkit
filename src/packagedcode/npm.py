@@ -715,7 +715,11 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 else:
                     name = dep
             ns, _ , name = name.rpartition('/')
-            version = dep_data.get('version')
+            version_string = dep_data.get('version')
+            version_info = parse_npm_version(version_string)
+            version = get_version(version_info)
+
+            extra_data = {}
 
             dep_purl = PackageURL(
                 type=cls.default_package_type,
@@ -1878,6 +1882,46 @@ def deps_mapper(deps, package, field_name, is_direct=True):
 
     return package
 
+def parse_npm_version(version_string):
+    version_string = version_string.strip()
+
+    if version_string.startswith("git+"):
+        type = 'git'
+
+    elif version_string.startswith("https:", "http"):
+        type = 'remote-tarball'
+
+    elif version_string.startswith("file:"):
+        type = 'local'
+
+    elif re.match(r"^\d+\.\d+\.\d+", version_string):
+        type = "semver"
+
+    else:
+        type = 'unknown'
+
+    return {'type': type, 'url': version_string}
+
+def get_version(version_info):
+    type = version_info['type']
+    version_string = version_info['url']
+
+    version = None
+
+    if type == 'semver':
+        version = version_string
+
+    elif type == 'remote-tarball':
+        version_match = re.search(r'[-_](\d+\.\d+\.\d+[^/]*)', version_string)
+        if version_match:
+            version = version_match.group(1)
+            version = re.sub(r'\.tgz$', '', version)
+
+    elif type == 'git':
+        if '#' in version_string:
+            _, _, version = version_string.rpartition('#')
+
+    return version
 
 person_parser = re.compile(
     r'^(?P<name>[^\(<]+)'
