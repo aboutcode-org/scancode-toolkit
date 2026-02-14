@@ -47,6 +47,10 @@ class TestStrings(FileBasedTesting):
         assert list(strings.clean_string('abababa'))
         assert not list(strings.clean_string('  tt\nf   '))
         assert list(strings.clean_string('  tt\nfb   '))
+        # Edge cases: empty and whitespace-only inputs
+        assert not list(strings.clean_string(''))
+        assert not list(strings.clean_string('   '))
+        assert not list(strings.clean_string('\t\n  '))
 
     def test_strings_in_file(self):
         expected = [
