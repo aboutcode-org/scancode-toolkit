@@ -491,7 +491,7 @@ parsers in scancode-toolkit during documentation builds.
      - ``go_mod``
      - Go
      - https://go.dev/ref/mod
-   * - Go module cheksums file
+   * - Go module checksums file
      - ``*/go.sum``
      - ``golang``
      - ``linux``, ``win``, ``mac``
@@ -859,7 +859,7 @@ parsers in scancode-toolkit during documentation builds.
        ``*/README.chromium``
        ``*/README.facebook``
        ``*/README.google``
-       ``*/README.thirdparty``
+       ``*/README.Third party``
      - ``readme``
      - ``linux``, ``win``, ``mac``
      - ``readme``
