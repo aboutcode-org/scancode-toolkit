@@ -4285,23 +4285,24 @@ def is_candidate(prepared_line):
         return False
 
     if gibberish_detector.detect_gibberish(prepared_line):
-        if TRACE:
-            logger_debug(
-                f'is_candidate: gibberish_detector.detect_gibberish:\n{prepared_line!r}'
-            )
         return False
 
-    lowered = prepared_line.lower()   # ✅ DEFINE ONCE, ALWAYS
+    lowered = prepared_line.lower()
 
-    # Ignore lines where (c) appears only in URL-like text
-    if '(c)' in lowered and 'http' in lowered:
-        if not copyrights_hint.years(prepared_line):
-            for marker in copyrights_hint.statement_markers:
-                if marker != '(c)' and marker in lowered:
-                    break
-            else:
-                return False
+    # ----------------------------------------------------------
+    # Ignore (c) ONLY when it appears inside a URL path
+    # ----------------------------------------------------------
+    if '(c)' in lowered:
+        # remove spaces to reconstruct possible broken URL
+        compact = lowered.replace(' ', '')
 
+        # match http://.../(c)/...
+        if re.search(r'https?://[^ ]*\(c\)[^ ]*', compact):
+            return False
+
+    # ----------------------------------------------------------
+    # Original logic continues
+    # ----------------------------------------------------------
     if copyrights_hint.years(prepared_line):
         return True
 
@@ -4310,6 +4311,8 @@ def is_candidate(prepared_line):
             return True
 
     return False
+
+
 
 def is_end_of_statement(chars_only_line):
     """
