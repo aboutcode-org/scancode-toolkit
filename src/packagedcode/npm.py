@@ -690,6 +690,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
             is_dev = dep_data.get('dev', False)
             is_optional = dep_data.get('optional', False)
             is_devoptional = dep_data.get('devOptional', False)
+            is_bundled = dep_data.get('bundled', False)
             if is_dev or is_devoptional:
                 is_runtime = False
                 is_optional = True
@@ -717,9 +718,13 @@ class BaseNpmLockHandler(BaseNpmHandler):
             ns, _ , name = name.rpartition('/')
             version_string = dep_data.get('version')
             version_info = parse_npm_version(version_string)
-            version = get_version(version_info)
 
-            extra_data = {}
+            extra_data = {
+                'version_type': version_info['type'],
+                'url': version_info['url']
+            }
+
+            version = get_version(version_info)
 
             dep_purl = PackageURL(
                 type=cls.default_package_type,
@@ -736,6 +741,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 is_optional=is_optional,
                 is_pinned=True,
                 is_direct=False,
+                extra_data=extra_data if extra_data else None,
             )
 
             # URLs and checksums
