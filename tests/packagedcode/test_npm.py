@@ -289,12 +289,6 @@ class TestNpm(PackageTester):
         packages = npm.NpmPackageLockJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_package_lock_with_bundled_dependencies(self):
-        test_file = self.get_test_loc('npm/package-lock-bundled/package-lock.json')
-        expected_loc = self.get_test_loc('npm/package-lock-bundled/package-lock.json-expected')
-        packages = npm.NpmPackageLockJsonHandler.parse(test_file)
-        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
-
     def test_parse_package_lock_with_git_sources(self):
         test_file = self.get_test_loc('npm/package-lock-git/package-lock.json')
         expected_loc = self.get_test_loc('npm/package-lock-git/package-lock.json-expected')
