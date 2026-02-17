@@ -720,9 +720,11 @@ class BaseNpmLockHandler(BaseNpmHandler):
             version_info = parse_npm_version(version_string)
 
             extra_data = {
-                'version_type': version_info['type'],
-                'url': version_info['url']
+                'is_bundled': is_bundled
             }
+            if version_info['type'] != "semver":
+                extra_data['version_type'] = version_info['type'],
+                extra_data['url'] = version_info['url']
 
             version = get_version(version_info)
 
@@ -741,7 +743,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 is_optional=is_optional,
                 is_pinned=True,
                 is_direct=False,
-                extra_data=extra_data if extra_data else None,
+                extra_data=extra_data
             )
 
             # URLs and checksums
@@ -1894,7 +1896,7 @@ def parse_npm_version(version_string):
     if version_string.startswith("git+"):
         type = 'git'
 
-    elif version_string.startswith("https:", "http"):
+    elif version_string.startswith("https:") or version_string.startswith("http:"):
         type = 'remote-tarball'
 
     elif version_string.startswith("file:"):
