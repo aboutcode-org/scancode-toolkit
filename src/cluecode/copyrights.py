@@ -8,6 +8,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import html
 import os
 import re
 import string
@@ -423,6 +424,7 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
         if TRACE_TOK:
             logger_debug('  get_tokens: before preped line: ' + repr(line))
 
+        line = html.unescape(line)
         last_line = line
 
         if TRACE_TOK:
@@ -2216,7 +2218,7 @@ PATTERNS = [
     (r'^electronics?$', 'NNP'),
 
     # proper nouns with digits
-    (r'^([A-Z][a-z0-9]+){1,2}[\.,]?$', 'NNP'),
+    (r'^([A-Z][a-zà-ÿ0-9]+){1,2}[\.,]?$', 'NNP'),
 
     # saxon genitive, ie. Philippe's
     (r"^[A-Z][a-z]+'s$", 'NNP'),
@@ -2256,7 +2258,7 @@ PATTERNS = [
     # proper noun: first CAP, as in JohnGlen including optional trailing por comma.
     # Was before this problematic regex: r'^([A-Z][a-zA-Z0-9]+){,2}\.?,?$':
     # this was capturing AbCdEf or a bare comma.
-    (r'^([A-Z][a-z0-9]+){1,2}\.?,?$', 'NNP'),
+    (r'^([A-Z][a-zà-ÿ0-9]+){1,2}\.?,?$', 'NNP'),
 
     ############################################################################
     # URLS and emails
