@@ -1465,6 +1465,56 @@ def use_referenced_license_expression(referenced_license_expression, license_det
     return True
 
 
+
+def combine_expressions_with_exception_handling(matches, licensing):
+    """
+    Combine license expressions from matches, using WITH for license+exception pairs
+    and AND for other combinations.
+    
+    Returns a combined LicenseExpression or None.
+    """
+    if not matches:
+        return None
+    
+    from licensedcode.cache import get_licenses_db
+    
+    license_db = get_licenses_db()
+    expressions = [match.rule.license_expression for match in matches]
+    
+    all_keys = set()
+    for expr in expressions:
+        keys = licensing.license_keys(expr)
+        all_keys.update(keys)
+    
+    exceptions = set()
+    regular_licenses = set()
+    
+    for key in all_keys:
+        license_obj = license_db.get(key)
+        if license_obj and license_obj.is_exception:
+            exceptions.add(key)
+        else:
+            regular_licenses.add(key)
+    
+    if len(regular_licenses) == 1 and len(exceptions) >= 1:
+        base_license = list(regular_licenses)[0]
+        exception_expr = combine_expressions(
+            expressions=list(exceptions),
+            relation='AND',
+            unique=True,
+            licensing=licensing
+        )
+        combined = licensing.parse(f"{base_license} WITH {exception_expr}")
+        return combined
+    
+    return combine_expressions(
+        expressions=expressions,
+        relation='AND',
+        unique=True,
+        licensing=licensing
+    )
+
+
 def get_detected_license_expression(
     analysis,
     license_matches=None,
@@ -1591,10 +1641,7 @@ def get_detected_license_expression(
     if TRACE:
         logger_debug(f'matches_for_expression: {matches_for_expression}', f'detection_log: {detection_log}')
 
-    combined_expression = combine_expressions(
-        expressions=[match.rule.license_expression for match in matches_for_expression],
-        licensing=get_licensing(),
-    )
+    combined_expression = combine_expressions_with_exception_handling(matches_for_expression, get_licensing())
 
     if TRACE or TRACE_ANALYSIS:
         logger_debug(f'combined_expression {combined_expression}')
