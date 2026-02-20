@@ -42,9 +42,7 @@ class RockspecHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        """
-        Parse a rockspec file and return a PackageData object.
-        """
+        """Parse rockspec file and yield PackageData object."""
         parser = RockspecParser(location)
         parsed_data = parser.parse()
 
@@ -85,16 +83,7 @@ class RockspecHandler(models.DatafileHandler):
 
     @classmethod
     def _build_dependent_packages(cls, parsed_dependencies):
-        """
-        Convert parsed dependency dicts into DependentPackage objects.
-
-        Args:
-            parsed_dependencies: List of dicts with 'name' and 'version_spec' keys
-                                (already parsed by RockspecParser)
-
-        Returns:
-            List of DependentPackage objects
-        """
+        """Convert parsed dependency dicts to DependentPackage objects."""
         dependencies = []
 
         for dep_dict in parsed_dependencies:
@@ -105,16 +94,7 @@ class RockspecHandler(models.DatafileHandler):
 
     @classmethod
     def _create_dependent_package(cls, dep_components):
-        """
-        Create a DependentPackage object from parsed dependency components.
-
-        Args:
-            dep_components: Dict with 'name', 'version_number', and 'version_spec'
-                           (already parsed by RockspecParser.parse_dependency)
-
-        Returns:
-            DependentPackage object
-        """
+        """Create DependentPackage from parsed dependency components dict."""
         name = dep_components.get('name')
         version_number = dep_components.get('version_number')
         version_spec = dep_components.get('version_spec')
@@ -135,15 +115,7 @@ class RockspecHandler(models.DatafileHandler):
 
     @classmethod
     def _build_extra_data(cls, parsed_data):
-        """
-        Build extra_data dict from optional rockspec metadata.
-
-        Args:
-            parsed_data: Dict with parsed rockspec fields
-
-        Returns:
-            Dict with extra metadata (extensible for future fields)
-        """
+        """Extract optional rockspec metadata into extra_data dict."""
         extra_data = {}
 
         rockspec_format = parsed_data.get('rockspec_format')
@@ -161,19 +133,7 @@ class RockspecHandler(models.DatafileHandler):
 
     @classmethod
     def _create_purl_string(cls, package_name, package_version):
-        """
-        Create a PURL string for a luarocks package.
-
-        Args:
-            package_name: Name of the package
-            package_version: Optional version string (without operators)
-
-        Returns:
-            PURL string (e.g., "pkg:luarocks/luasocket" or "pkg:luarocks/luasocket@3.1.3")
-
-        Raises:
-            ValueError if package_name is empty
-        """
+        """Return PURL string for luarocks package. Raises ValueError if package_name is empty."""
         if not package_name:
             raise ValueError('Package name is required for PURL creation')
 
@@ -214,7 +174,7 @@ class RockspecParser:
         self.errors = []
 
     def parse(self):
-        """Main parsing orchestration. Reads file, parses AST, extracts all fields."""
+        """Read file, parse AST, extract all rockspec fields and return data dict."""
         try:
             code = self._read_file()
             self.ast_tree = self._parse_lua(code)
@@ -237,7 +197,7 @@ class RockspecParser:
             return {}
 
     def _read_file(self):
-        """Read rockspec file and return content."""
+        """Read and return rockspec file content as string."""
         try:
             with open(self.rockspec_path, 'r') as f:
                 return f.read()
@@ -247,14 +207,14 @@ class RockspecParser:
             raise IOError(f"Error reading file: {e}")
 
     def _parse_lua(self, code):
-        """Parse Lua code to AST."""
+        """Parse Lua code string into AST tree."""
         try:
             return ast.parse(code)
         except Exception as e:
             raise RuntimeError(f"Lua parse error: {e}")
 
     def _find_assignment(self, var_name):
-        """Find assignment node for a variable, return (target_node, value_node)."""
+        """Return (target_node, value_node) tuple for variable assignment or None."""
         if not self.ast_tree:
             return None
 
@@ -283,7 +243,7 @@ class RockspecParser:
 
 
     def _extract_string_value(self, node):
-        """Extract string value from String node."""
+        """Extract and return string value from String AST node."""
         if not node or type(node).__name__ != 'String':
             return None
 
@@ -293,7 +253,7 @@ class RockspecParser:
         return str(s_val) if s_val else None
 
     def _extract_table_values(self, table_node):
-        """Extract key-value pairs from Table node."""
+        """Extract and return dict of key-value pairs from Table AST node."""
         result = {}
 
         if not table_node or type(table_node).__name__ != 'Table':
@@ -338,7 +298,7 @@ class RockspecParser:
         return result
 
     def _extract_key(self, key_node):
-        """Extract key from field key node."""
+        """Extract and return key from field key node."""
         if not key_node:
             return None
 
@@ -355,7 +315,7 @@ class RockspecParser:
         return None
 
     def _extract_value(self, node):
-        """Extract value from any AST node."""
+        """Extract and return value from any AST node type."""
         if node is None:
             return None
 
@@ -388,7 +348,7 @@ class RockspecParser:
         return None
 
     def _get_variable_value(self, var_name):
-        """Look up a variable and return its value."""
+        """Look up variable by name and return its extracted value."""
         assignment = self._find_assignment(var_name)
         if not assignment:
             return None
@@ -397,10 +357,7 @@ class RockspecParser:
         return self._extract_value(value)
 
     def _extract_concat(self, concat_node):
-        """
-        Extract value from Concat node (string concatenation).
-        Recursively processes: left .. right
-        """
+        """Extract and return concatenated string from Concat AST node."""
         if not concat_node or type(concat_node).__name__ != 'Concat':
             return None
 
@@ -425,7 +382,7 @@ class RockspecParser:
             return None
 
     def _extract_package(self):
-        """Extract package name (mandatory)."""
+        """Extract and return mandatory package name field."""
         assignment = self._find_assignment('package')
         if not assignment:
             self.errors.append(ParseError(ParseError.ERROR_MANDATORY_FIELD_MISSING, 'package', 'Missing mandatory field: package'))
@@ -436,7 +393,7 @@ class RockspecParser:
         return str(result) if result else None
 
     def _extract_version(self):
-        """Extract version (mandatory)."""
+        """Extract and return mandatory version field."""
         assignment = self._find_assignment('version')
         if not assignment:
             self.errors.append(ParseError(ParseError.ERROR_MANDATORY_FIELD_MISSING, 'version', 'Missing mandatory field: version'))
@@ -447,7 +404,7 @@ class RockspecParser:
         return str(result) if result else None
 
     def _extract_rockspec_format(self):
-        """Extract rockspec_format (optional)."""
+        """Extract and return optional rockspec_format field."""
         assignment = self._find_assignment('rockspec_format')
         if not assignment:
             return None
@@ -457,7 +414,7 @@ class RockspecParser:
         return str(result) if result else None
 
     def _extract_supported_platforms(self):
-        """Extract supported_platforms as list (optional table)."""
+        """Extract and return supported_platforms as sorted string list. (optional table)"""
         assignment = self._find_assignment('supported_platforms')
         if not assignment:
             return []
@@ -469,7 +426,7 @@ class RockspecParser:
         return self._sort_by_numeric_index(platform_dict)
 
     def _extract_source_url(self):
-        """Extract VCS URL from source table (url is mandatory)."""
+        """Extract and return mandatory source.url field."""
         assignment = self._find_assignment('source')
         if not assignment:
             self.errors.append(ParseError(ParseError.ERROR_MANDATORY_FIELD_MISSING, 'source', 'Missing mandatory field: source'))
@@ -486,7 +443,7 @@ class RockspecParser:
         return str(source_url)
 
     def _extract_description(self):
-        """Extract description summary from description table (optional)."""
+        """Extract and return optional description.summary field."""
         assignment = self._find_assignment('description')
         if not assignment:
             return None
@@ -498,7 +455,7 @@ class RockspecParser:
         return str(summary) if summary else None
 
     def _extract_license(self):
-        """Extract license from description table (optional)."""
+        """Extract and return optional license field from description table."""
         assignment = self._find_assignment('description')
         if not assignment:
             return None
@@ -510,7 +467,7 @@ class RockspecParser:
         return str(license_val) if license_val else None
 
     def _extract_homepage(self):
-        """Extract homepage URL from description table (optional)."""
+        """Extract and return optional homepage URL from description table."""
         assignment = self._find_assignment('description')
         if not assignment:
             return None
@@ -522,7 +479,7 @@ class RockspecParser:
         return str(homepage) if homepage else None
 
     def _extract_dependencies(self):
-        """Extract dependencies as list of parsed dicts (optional table)."""
+        """Extract dependencies and return list of parsed dependency dicts."""
         assignment = self._find_assignment('dependencies')
         if not assignment:
             return []
@@ -542,7 +499,7 @@ class RockspecParser:
         ]
 
     def _sort_by_numeric_index(self, table_dict):
-        """Sort a table dict by numeric keys and return values as strings."""
+        """Return values from table dict sorted by numeric keys as string list."""
         try:
             # Sort by numeric key index
             sorted_items = sorted(
@@ -555,7 +512,7 @@ class RockspecParser:
             return [str(v) for v in table_dict.values()]
 
     def _numeric_key_value(self, key):
-        """Convert key to numeric value for sorting. Non-numeric keys sort to end."""
+        """Return numeric sort key for dict key; non-numeric keys sort last."""
         if isinstance(key, int):
             return key
         if isinstance(key, str) and key.isdigit():
@@ -563,22 +520,7 @@ class RockspecParser:
         return float('inf')  # Non-numeric keys sort to the end
 
     def parse_dependency(self, dep_string):
-        """
-        Parse a Lua dependency string into name and version spec.
-
-        Lua RockSpecs format: "package_name [operator version]"
-        Examples:
-            "inspect == 3.1.3"
-            "luasec == 1.3.1"
-            "binaryheap >= 0.4"
-            "somedep" (no version)
-
-        Returns dict with keys:
-            - name: Package name
-            - version_number: Clean version number (e.g. "3.1.3") or None
-            - version_spec: Full version specification with operator (e.g. "== 3.1.3") or None
-            - raw: Original input string
-        """
+        """Parse dependency string and return dict with name, version_number, and version_spec. Returns None if parsing fails."""
         if not dep_string:
             return None
 
@@ -610,7 +552,6 @@ class RockspecParser:
             'name': name,
             'version_number': version_number,
             'version_spec': version_spec,
-            'raw': dep_string
         }
 
 
