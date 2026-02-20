@@ -597,6 +597,102 @@ class BasePoetryPythonLayout(BaseExtractedPythonLayout):
                 yield lock_file
 
 
+class PylockTomlHandler(models.DatafileHandler):
+    datasource_id = 'pypi_pylock_toml'
+    path_patterns = ('*pylock.toml',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python pylock.toml'
+    documentation_url = 'https://peps.python.org/pep-0751/'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        yield cls.build_package(location, package_only=package_only)
+
+    @classmethod
+    def build_package(cls, location, package_only=False):
+        import tomllib
+        from packageurl import PackageURL
+        
+        with open(location, 'rb') as fp:
+            try:
+                lock_data = tomllib.load(fp)
+            except Exception as e:
+                logger_debug(f'PylockTomlHandler.parse: Error parsing TOML: {e}')
+                return None
+        
+        packages = lock_data.get('packages', [])
+        dependencies = []
+        
+        for pkg in packages:
+            name = pkg.get('name')
+            version = pkg.get('version')
+            
+            deps = pkg.get('dependencies', [])
+            dependencies_for_resolved = []
+            for dep in deps:
+                dep_name = dep.get('name')
+                if not dep_name:
+                    continue
+                dep_purl = PackageURL(
+                    type=cls.default_package_type,
+                    name=dep_name,
+                )
+                dependent_pkg = models.DependentPackage(
+                    purl=dep_purl.to_string(),
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_direct=True,
+                    is_pinned=False,
+                )
+                dependencies_for_resolved.append(dependent_pkg.to_dict())
+            
+            pkg_purl = PackageURL(
+                type=cls.default_package_type,
+                name=name,
+                version=version,
+            )
+            
+            package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language='Python',
+                name=name,
+                version=version,
+                is_virtual=True,
+                dependencies=dependencies_for_resolved,
+            )
+            resolved_package = models.PackageData.from_data(package_data, package_only)
+            
+            dependency = models.DependentPackage(
+                purl=resolved_package.purl,
+                extracted_requirement=None, # In theory, pylock doesn't directly specify version specs in dependencies, they map directly to resolved names
+                scope='dependencies',
+                is_runtime=True,
+                is_optional=False,
+                is_direct=False,
+                is_pinned=True, # It is a locked package
+                resolved_package=resolved_package.to_dict(),
+            )
+            dependencies.append(dependency.to_dict())
+
+        extra_data = {}
+        if lock_data.get('lock-version'):
+            extra_data['lock_version'] = lock_data.get('lock-version')
+        if lock_data.get('requires-python'):
+            extra_data['requires_python'] = lock_data.get('requires-python')
+            
+        env_package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            name='pylock-environment',
+            dependencies=dependencies,
+            extra_data=extra_data,
+        )
+        return models.PackageData.from_data(env_package_data, package_only)
+
 class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
     datasource_id = 'pypi_poetry_pyproject_toml'
     path_patterns = ('*pyproject.toml',)
