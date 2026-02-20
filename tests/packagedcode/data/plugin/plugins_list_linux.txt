@@ -116,7 +116,7 @@ Package type:  cargo
   documentation URL: https://github.com/rust-secure-code/cargo-auditable/blob/master/PARSING.md
   primary language:  Rust
   description:       Rust binary
-  path_patterns:    
+  path_patterns:
 --------------------------------------------
 Package type:  chef
   datasource_id:     chef_cookbook_metadata_json
@@ -473,7 +473,7 @@ Package type:  golang
   documentation URL: https://github.com/nexB/go-inspector/
   primary language:  Go
   description:       Go binary
-  path_patterns:    
+  path_patterns:
 --------------------------------------------
 Package type:  haxe
   datasource_id:     haxelib_json
@@ -690,7 +690,7 @@ Package type:  osgi
   documentation URL: https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html
   primary language:  Java
   description:       Java OSGi MANIFEST.MF
-  path_patterns:    
+  path_patterns:
 --------------------------------------------
 Package type:  pubspec
   datasource_id:     pubspec_lock
@@ -827,9 +827,9 @@ Package type:  pypi
 --------------------------------------------
 Package type:  readme
   datasource_id:     readme
-  documentation URL: 
+  documentation URL:
   primary language:  None
-  description:       
+  description:
   path_patterns:    '*/README.android', '*/README.chromium', '*/README.facebook', '*/README.google', '*/README.thirdparty'
 --------------------------------------------
 Package type:  rpm
@@ -893,7 +893,7 @@ Package type:  squashfs
   documentation URL: https://en.wikipedia.org/wiki/SquashFS
   primary language:  None
   description:       Squashfs disk image
-  path_patterns:    
+  path_patterns:
 --------------------------------------------
 Package type:  swift
   datasource_id:     swift_package_manifest_json
