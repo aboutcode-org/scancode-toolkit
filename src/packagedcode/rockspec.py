@@ -126,8 +126,10 @@ class RockspecHandler(models.DatafileHandler):
         if platforms:
             extra_data['supported_platforms'] = platforms
 
-        # Future fields can be added here
-        # e.g., build_backend, build_requires, etc.
+        # TODO: Extract build table fields and add to extra_data
+        # - build.type: the build system type (e.g., "builtin", "cmake", "make")
+        # - build.copy_directories: directories to include in installation
+        # - build.platforms: platform-specific build configurations
 
         return extra_data
 
