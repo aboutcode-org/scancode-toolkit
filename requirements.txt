@@ -1,3 +1,4 @@
+antlr4-python3-runtime == 4.13.2
 attrs==25.4.0
 babel==2.17.0
 banal==1.0.6
@@ -45,6 +46,7 @@ lxml==6.1.0
 luaparser==4.0.0
 MarkupSafe==3.0.3
 more-itertools==10.8.0
+multimethod==2.0.2
 multiregex==2.0.3
 normality==2.6.1
 openpyxl==3.0.10
