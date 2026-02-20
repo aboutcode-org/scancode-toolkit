@@ -50,7 +50,7 @@
       "sha256": "234d690ec9a5ac134e01847f34581b0ea83dfd1f3d4c79bee046297baa5f5925",
       "sha1_git": "23dbd722d5dab05fbc0c49b61130ac421338c77a",
       "mime_type": "text/plain",
-      "file_type": "UTF-8 Unicode text, with no line terminators",
+      "file_type": "Unicode text, UTF-8 text, with no line terminators",
       "programming_language": "C",
       "is_binary": false,
       "is_text": true,
