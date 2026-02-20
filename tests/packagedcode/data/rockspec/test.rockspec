@@ -26,35 +26,5 @@ dependencies = {
 
 build = {
     type = "builtin",
-    modules = {
-        cjson = {
-            sources = { "lua_cjson.c", "strbuf.c", "fpconv.c" },
-            defines = {
--- LuaRocks does not support platform specific configuration for Solaris.
--- Uncomment the line below on Solaris platforms if required.
---                "USE_INTERNAL_ISINF"
-            }
-        },
-        ["cjson.safe"] = {
-            sources = { "lua_cjson.c", "strbuf.c", "fpconv.c" }
-        }
-    },
-    install = {
-        lua = {
-            ["cjson.util"] = "lua/cjson/util.lua"
-        },
-        bin = {
-            json2lua = "lua/json2lua.lua",
-            lua2json = "lua/lua2json.lua"
-        }
-    },
-    -- Override default build options (per platform)
-    platforms = {
-        win32 = { modules = { cjson = { defines = {
-            "DISABLE_INVALID_NUMBERS", "USE_INTERNAL_ISINF"
-        } } } }
-    },
     copy_directories = { "tests" }
 }
-
--- vi:ai et sw=4 ts=4:
