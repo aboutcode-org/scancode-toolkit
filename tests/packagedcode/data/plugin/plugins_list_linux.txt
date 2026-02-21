@@ -964,4 +964,3 @@ Package type:  winexe
   primary language:  None
   description:       Windows Portable Executable metadata
   path_patterns:    '*.exe', '*.dll', '*.mui', '*.mun', '*.com', '*.winmd', '*.sys', '*.tlb', '*.exe_*', '*.dll_*', '*.mui_*', '*.mun_*', '*.com_*', '*.winmd_*', '*.sys_*', '*.tlb_*', '*.ocx'
-
