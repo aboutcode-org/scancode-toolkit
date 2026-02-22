@@ -15,5 +15,10 @@
     }
   ],
   "vcs_url": null,
-  "code_view_url": null
+  "code_view_url": null,
+  "extra_data": {
+    "import_package": null,
+    "export_package": "com.github.luben.zstd;version=\"1.3.2.2\"",
+    "require_capability": "osgi.ee;filter:=\"(&(osgi.ee=JavaSE)(version=1.8))\""
+  }
 }
