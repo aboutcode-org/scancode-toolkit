@@ -39,6 +39,8 @@ In the returned tuple of (`error`, `value`) we can have these two cases:
    traceback and `value` is None.
 """
 
+import threading
+
 
 class TimeoutError(Exception):  # NOQA
     pass
@@ -80,7 +82,11 @@ if not on_windows:
     def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
         """
         POSIX, signals-based interruptible runner.
+        Falls back to non-interruptible execution if not in main thread.
         """
+        # Signals only work in the main thread
+        if threading.current_thread() is not threading.main_thread():
+            return NO_ERROR, func(*(args or ()), **(kwargs or {}))
 
         def handler(signum, frame):
             raise TimeoutError
