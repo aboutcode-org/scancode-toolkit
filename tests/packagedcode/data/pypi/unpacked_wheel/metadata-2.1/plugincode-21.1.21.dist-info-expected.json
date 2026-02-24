@@ -286,7 +286,14 @@
     ],
     "is_private": false,
     "is_virtual": false,
-    "extra_data": {},
+    "extra_data": {
+      "wheel_tags": [
+        "py3-none-any"
+      ],
+      "wheel_version": "1.0",
+      "wheel_generator": "bdist_wheel (0.36.2)",
+      "root_is_purelib": true
+    },
     "dependencies": [
       {
         "purl": "pkg:pypi/click",

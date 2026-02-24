@@ -4,6 +4,11 @@ Changelog
 Next release
 --------------
 
+- Collect WHEEL files for installed python wheels to extract
+  wheel tags needed to reconstruct the original wheel filename
+  for building more detailed PURLs.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4214
+
 v3.5.0 - 2026-01-15
 -------------------
 

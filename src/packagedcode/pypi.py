@@ -956,6 +956,72 @@ class PipInspectDeplockHandler(models.DatafileHandler):
 
 META_DIR_SUFFIXES = '.dist-info', '.egg-info', 'EGG-INFO',
 
+def parse_wheel_tags(dist_info_path):
+    """
+    Parse the WHEEL file in a .dist-info directory and return a list
+    of tag strings (e.g., ['cp310-cp310-manylinux_2_17_x86_64']).
+
+    A WHEEL file looks like:
+        Wheel-Version: 1.0
+        Generator: bdist_wheel (0.37.1)
+        Root-Is-Purelib: false
+        Tag: cp310-cp310-manylinux_2_17_x86_64
+
+    There can be multiple Tag: lines.
+    """
+    tags = []
+    wheel_version = None
+    generator = None
+    root_is_purelib = None
+
+    if isinstance(dist_info_path, ZipPath):
+        wheel_path = dist_info_path / 'WHEEL'
+        if not wheel_path.exists():
+            return {}
+        content = wheel_path.read_text(encoding='utf-8')
+    else:
+        wheel_path = Path(dist_info_path) / 'WHEEL'
+        if not wheel_path.exists():
+            return {}
+        content = wheel_path.read_text(encoding='utf-8')
+
+    for line in content.strip().splitlines():
+        line = line.strip()
+        if not line or ':' not in line:
+            continue
+
+        key, _, value = line.partition(':')
+        key = key.strip()
+        value = value.strip()
+
+        if key == 'Tag':
+            tags.append(value)
+        elif key == 'Wheel-Version':
+            wheel_version = value
+        elif key == 'Generator':
+            generator = value
+        elif key == 'Root-Is-Purelib':
+            root_is_purelib = value.lower() == 'true'
+
+    return {
+        'wheel_version': wheel_version,
+        'generator': generator,
+        'root_is_purelib': root_is_purelib,
+        'tags': tags,
+    }
+    
+def reconstruct_wheel_filename(name, version, tag):
+    """
+    Reconstruct a wheel filename from a package name, version, and tag string.
+
+    For example:
+    >>> reconstruct_wheel_filename('numpy', '1.23.0', 'cp310-cp310-manylinux_2_17_x86_64')
+    'numpy-1.23.0-cp310-cp310-manylinux_2_17_x86_64.whl'
+    >>> reconstruct_wheel_filename('my-package', '2.0', 'py3-none-any')
+    'my_package-2.0-py3-none-any.whl'
+    """
+    safe_name = name.replace('-', '_')
+    return f"{safe_name}-{version}-{tag}.whl"
 
 def parse_metadata(location, datasource_id, package_type, package_only=False):
     """
@@ -993,7 +1059,28 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
     # nicely?
     dependencies = get_dist_dependencies(dist)
     file_references = list(get_file_references(dist))
+    
+        # ============= NEW CODE START =============
+    wheel_data = {}
+    if parent.name.endswith('.dist-info') and not isinstance(path, ZipPath):
+        wheel_data = parse_wheel_tags(path)
+        
+    wheel_filename = None
+    if wheel_data and wheel_data.get('tags') and name and version:
+        # Use the first tag to reconstruct the filename
+        first_tag = wheel_data['tags'][0]
+        wheel_filename = reconstruct_wheel_filename(name, version, first_tag)
 
+        # Store all wheel metadata in extra_data
+        if wheel_data.get('tags'):
+            extra_data['wheel_tags'] = wheel_data['tags']
+        if wheel_data.get('wheel_version'):
+            extra_data['wheel_version'] = wheel_data['wheel_version']
+        if wheel_data.get('generator'):
+            extra_data['wheel_generator'] = wheel_data['generator']
+        if wheel_data.get('root_is_purelib') is not None:
+            extra_data['root_is_purelib'] = wheel_data['root_is_purelib']
+            
     package_data = dict(
         datasource_id=datasource_id,
         type=package_type,
@@ -1010,7 +1097,6 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
         **urls,
     )
     return models.PackageData.from_data(package_data, package_only)
-
 
 def urlsafe_b64decode(data):
     """

@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: numpy
+Version: 1.23.0
+Summary: NumPy scientific computing
+Home-page: https://www.numpy.org
+Author: Travis E. Oliphant et al.
+License: BSD-3-Clause

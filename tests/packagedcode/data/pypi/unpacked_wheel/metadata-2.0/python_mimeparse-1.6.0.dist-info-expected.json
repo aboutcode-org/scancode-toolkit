@@ -140,7 +140,14 @@
     "is_private": false,
     "is_virtual": false,
     "extra_data": {
-      "Download-URL": "https://github.com/dbtsai/python-mimeparse/tarball/1.6.0"
+      "Download-URL": "https://github.com/dbtsai/python-mimeparse/tarball/1.6.0",
+      "wheel_tags": [
+        "py2-none-any",
+        "py3-none-any"
+      ],
+      "wheel_version": "1.0",
+      "wheel_generator": "bdist_wheel (0.24.0)",
+      "root_is_purelib": true
     },
     "dependencies": [],
     "repository_homepage_url": "https://pypi.org/project/python-mimeparse",

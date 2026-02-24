@@ -279,7 +279,13 @@
     "is_private": false,
     "is_virtual": false,
     "extra_data": {
-      "Documentation": "https://github.com/SK-415/HarukaBot#readme"
+      "Documentation": "https://github.com/SK-415/HarukaBot#readme",
+      "wheel_tags": [
+        "py3-none-any"
+      ],
+      "wheel_version": "1.0",
+      "wheel_generator": "poetry 1.0.2",
+      "root_is_purelib": true
     },
     "dependencies": [
       {
