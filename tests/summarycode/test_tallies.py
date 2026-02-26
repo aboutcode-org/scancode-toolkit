@@ -7,17 +7,15 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-
 from os import path
-
 import pytest
-
 from commoncode.testcase import FileDrivenTesting
-
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import check_jsonlines_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
+
+
 
 
 pytestmark = pytest.mark.scanslow
@@ -31,7 +29,8 @@ class TestTallies(FileDrivenTesting):
         test_dir = self.get_test_loc('tallies/copyright_tallies/scan')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('tallies/copyright_tallies/tallies.expected.json')
-        run_scan_click(['-c', '--tallies', '--json-pp', result_file, test_dir])
+        # Example of what to change in the test file:
+        run_scan_click(['-c', '--tallies', '--info', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
     def test_copyright_summary_with_details(self):

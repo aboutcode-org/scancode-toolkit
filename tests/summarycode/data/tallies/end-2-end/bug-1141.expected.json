@@ -64,53 +64,29 @@
     ],
     "copyrights": [
       {
-        "value": null,
-        "count": 2
+        "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
+        "count": 983
       },
       {
-        "value": "Copyright (c) Members of the Gmerlin project",
-        "count": 1
-      },
-      {
-        "value": "Copyright (c) Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
-        "count": 1
+        "value": "Copyright (c) 2001 - 2011 Members of the Gmerlin project",
+        "count": 189
       }
     ],
     "holders": [
       {
-        "value": null,
-        "count": 2
-      },
-      {
         "value": "Members of the Gmerlin project",
-        "count": 2
+        "count": 1172
       }
     ],
-    "authors": [
-      {
-        "value": null,
-        "count": 4
-      }
-    ],
+    "authors": [],
     "programming_language": [
       {
         "value": "C",
-        "count": 2
+        "count": 1172
       }
     ]
   },
-  "tallies_of_key_files": {
-    "detected_license_expression": [
-      {
-        "value": "gpl-3.0-plus",
-        "count": 1
-      }
-    ],
-    "copyrights": [],
-    "holders": [],
-    "authors": [],
-    "programming_language": []
-  },
+  "tallies_of_key_files": {},
   "files": [
     {
       "path": "bug-1141.tar.gz",

@@ -16,16 +16,11 @@
         "count": 1
       },
       {
-        "value": "Sun Microsystems",
+        "value": "Sun Microsystems Inc.",
         "count": 1
       }
     ],
-    "authors": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ]
+    "authors": []
   },
   "files": [
     {

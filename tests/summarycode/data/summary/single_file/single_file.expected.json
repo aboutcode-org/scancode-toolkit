@@ -10,10 +10,15 @@
       "conflicting_license_categories": false,
       "ambiguous_compound_licensing": false
     },
-    "declared_holder": "Mort Bay Consulting Pty. Ltd. (Australia) and others, Sun Microsystems",
+    "declared_holder": "Mort Bay Consulting Pty. Ltd. (Australia) and others",
     "primary_language": null,
     "other_license_expressions": [],
-    "other_holders": [],
+    "other_holders": [
+      {
+        "value": "Sun Microsystems Inc.",
+        "count": 6248
+      }
+    ],
     "other_languages": []
   },
   "packages": [],

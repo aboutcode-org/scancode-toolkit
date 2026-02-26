@@ -36,12 +36,12 @@
     ],
     "other_holders": [
       {
-        "value": null,
-        "count": 2
+        "value": "Example Corp",
+        "count": 119
       },
       {
         "value": "Other Corp.",
-        "count": 1
+        "count": 119
       }
     ],
     "other_languages": []

@@ -86,8 +86,15 @@ if not on_windows:
             raise TimeoutError
 
         try:
-            create_signal(SIGALRM, handler)
-            setitimer(ITIMER_REAL, timeout)
+            # We try to setup the signal. If we are not in the main thread
+            # this will raise a ValueError. In this case we just run the
+            # function without timeout.
+            try:
+                create_signal(SIGALRM, handler)
+                setitimer(ITIMER_REAL, timeout)
+            except ValueError:
+                pass
+
             return NO_ERROR, func(*(args or ()), **(kwargs or {}))
 
         except TimeoutError:
@@ -97,7 +104,10 @@ if not on_windows:
             return ERROR_MSG + traceback_format_exc(), NO_VALUE
 
         finally:
-            setitimer(ITIMER_REAL, 0)
+            try:
+                setitimer(ITIMER_REAL, 0)
+            except ValueError:
+                pass
 
 elif on_windows:
     """
