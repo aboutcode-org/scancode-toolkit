@@ -1,0 +1,11 @@
+{
+    "name": "my-override-example",
+    "version": "1.0.0",
+    "overrides": {
+      "@npm/foo": "1.0.0",
+      "@npm/bar@2.0.0": {
+        "@npm/foo": "2.5.0"
+      }
+    }
+  }
+  

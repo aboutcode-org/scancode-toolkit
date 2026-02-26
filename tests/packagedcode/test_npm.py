@@ -550,6 +550,24 @@ class TestNpm(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_parse_npm_package_json_with_overrides(self):
+        # 1) Point to your test package.json that has an "overrides" field
+        test_file = self.get_test_loc('npm/overrides_test/package.json')
+    
+        # 2) Parse it using the NpmPackageJsonHandler
+        packages = npm.NpmPackageJsonHandler.parse(test_file)
+        packages = list(packages)  # Convert generator to list
+    
+        # 3) Sanity check: We should get exactly 1 package
+        assert len(packages) == 1
+        package = packages[0]
+    
+        # 4) Verify that "overrides" got captured in extra_data
+        assert 'overrides' in package.extra_data
+        assert package.extra_data['overrides'].get('@npm/foo') == '1.0.0'
+        # If you have nested overrides, check those too:
+        # e.g. assert package.extra_data['overrides']['@npm/bar@2.0.0']['@npm/foo'] == '2.5.0'
+
 
 test_data = [
     (['MIT'], 'mit'),

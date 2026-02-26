@@ -580,6 +580,10 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             if value:
                 extra_data[extra_data_field] = value
 
+        overrides = json_data.get('overrides')
+        if overrides:
+            extra_data['overrides'] = overrides    
+
         package.extra_data = extra_data
 
         for source, func in field_mappers:

@@ -64,8 +64,27 @@
       ],
       "engines": {
         "node": "20 || >=22"
-      }
-    },
+      },
+      "overrides": {
+        "braces@3": "^3.0.3",
+        "axios@1.0.0 - 1.5.1": "^1.7.2",
+        "netlify-cli": {
+          "braces": "^3.0.3",
+          "micromatch": "^4.0.7",
+          "chokidar": {
+            "braces": "^3.0.3"
+          },
+          "http-proxy-middleware": {
+            "micromatch": {
+              ".": "^4.0.7",
+              "braces": "^3.0.3"
+            }
+          }
+        },
+        "micromatch@4.0.5": "^4.0.7",
+        "tar@6.1.11": "6.2"
+      }      
+          },
     "dependencies": [
       {
         "purl": "pkg:npm/strip-ansi",
