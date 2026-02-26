@@ -21,7 +21,7 @@ Here are the major types of plugins:
 
 2. Scan plugins (`scancode_scan` in entry points)
 
-   The are the scancode plugins which does the file scanning for useful
+   These are the scancode plugins which does the file scanning for useful
    information like license, copyrights, packages and others. These are
    run on multiprocessing for speed as they are done on a per-file basis,
    but there can also be post-processing steps on these which are run afterwards
@@ -30,7 +30,7 @@ Here are the major types of plugins:
 
 3. Post-scan plugins (`scancode_post_scan` in entry points)
 
-   These are mainly data processing, summerizing and reporting plugins which
+   These are mainly data processing, summarizing and reporting plugins which
    depend on all the results for the scan plugins. These add new codebase level
    or file-level attributes, and even removes/modifies data as required
    for consolidation or summarization. The base plugin class to be extended is ``PostScanPlugin``
