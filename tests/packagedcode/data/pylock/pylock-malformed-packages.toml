@@ -1,0 +1,15 @@
+lock-version = "1.0"
+created-by = "uv"
+requires-python = ">=3.13"
+
+[[packages]]
+name = "aiohttp"
+# missing version
+
+[[packages]]
+version = "1.0.0"
+# missing name
+
+[[packages]]
+name = "attrs"
+version = "25.1.0"

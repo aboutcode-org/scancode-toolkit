@@ -721,6 +721,13 @@ Package type:  pypi
   path_patterns:    '*Pipfile.lock'
 --------------------------------------------
 Package type:  pypi
+  datasource_id:     pylock
+  documentation URL: https://peps.python.org/pep-0751/
+  primary language:  Python
+  description:       Python pylock.toml lockfile (PEP 751)
+  path_patterns:    '*/pylock.toml'
+--------------------------------------------
+Package type:  pypi
   datasource_id:     pypi_editable_egg_pkginfo
   documentation URL: https://peps.python.org/pep-0376/
   primary language:  Python

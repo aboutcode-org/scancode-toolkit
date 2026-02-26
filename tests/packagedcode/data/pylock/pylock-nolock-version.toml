@@ -1,0 +1,6 @@
+created-by = "uv"
+requires-python = ">=3.13"
+
+[[packages]]
+name = "aiohttp"
+version = "3.11.14"
