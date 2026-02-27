@@ -19,7 +19,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "unknown-license-reference_417.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_417.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_417.RULE",
           "matched_text": "  \"license\": \"SEE LICENSE IN LICENSE.txt\",",
           "matched_text_diagnostics": "license\": \"SEE LICENSE IN LICENSE.txt\","
         }
@@ -49,7 +49,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "unknown-license-reference_417.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_417.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown-license-reference_417.RULE",
               "matched_text": "  \"license\": \"SEE LICENSE IN LICENSE.txt\",",
               "matched_text_diagnostics": "license\": \"SEE LICENSE IN LICENSE.txt\","
             }

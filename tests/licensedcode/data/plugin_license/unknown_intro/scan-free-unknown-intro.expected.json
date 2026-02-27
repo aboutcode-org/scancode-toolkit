@@ -21,7 +21,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 50,
           "rule_identifier": "free-unknown_88.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_88.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/free-unknown_88.RULE",
           "matched_text": "This plugin was created in [Realytics](https://www.realytics.io/) in 2017. Thank you for supporting Open Source.\n\n## License",
           "matched_text_diagnostics": "Open Source.\n\n## License"
         },
@@ -37,7 +37,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_31.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_31.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_31.RULE",
           "matched_text": "## License\n\nMIT License",
           "matched_text_diagnostics": "License\n\nMIT License"
         }
@@ -67,7 +67,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 50,
               "rule_identifier": "free-unknown_88.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_88.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/free-unknown_88.RULE",
               "matched_text": "This plugin was created in [Realytics](https://www.realytics.io/) in 2017. Thank you for supporting Open Source.\n\n## License",
               "matched_text_diagnostics": "Open Source.\n\n## License"
             },
@@ -83,7 +83,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "mit_31.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_31.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_31.RULE",
               "matched_text": "## License\n\nMIT License",
               "matched_text_diagnostics": "License\n\nMIT License"
             }

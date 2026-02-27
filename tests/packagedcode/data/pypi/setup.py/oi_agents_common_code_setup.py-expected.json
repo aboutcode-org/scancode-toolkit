@@ -62,7 +62,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "gpl-3.0_32.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_32.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0_32.RULE",
             "matched_text": "GPLv3"
           }
         ],
@@ -84,7 +84,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "pypi_osi_approved.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_osi_approved.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_osi_approved.RULE",
             "matched_text": "- 'License :: OSI Approved :: GPLv3 License'"
           },
           {
@@ -99,7 +99,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "gpl-3.0_90.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_90.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0_90.RULE",
             "matched_text": "- 'License :: OSI Approved :: GPLv3 License'"
           }
         ],

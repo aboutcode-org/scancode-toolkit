@@ -20,7 +20,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit_x11-r75_58.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_x11-r75_58.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_x11-r75_58.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of this software and associated documentation files (the "Software"),
@@ -55,7 +55,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: amd-linux-firmware.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-linux-firmware.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/amd-linux-firmware.LICENSE
         matched_text: |
           REDISTRIBUTION: Permission is hereby granted, free of any license fees,
           to any person obtaining a copy of this microcode (the "Software"), to

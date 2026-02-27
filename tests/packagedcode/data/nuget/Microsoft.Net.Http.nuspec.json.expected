@@ -57,7 +57,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "ms-net-library-2018-11_3.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ms-net-library-2018-11_3.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/ms-net-library-2018-11_3.RULE",
             "matched_text": "http://go.microsoft.com/fwlink/?LinkId=329770"
           }
         ],

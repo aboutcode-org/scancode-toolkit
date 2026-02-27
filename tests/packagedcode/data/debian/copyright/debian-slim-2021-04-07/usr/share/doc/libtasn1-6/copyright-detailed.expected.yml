@@ -20,7 +20,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_and_gpl-3.0-plus_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_and_gpl-3.0-plus_2.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_and_gpl-3.0-plus_2.RULE
         matched_text: |
           The library itself is licensed as LGPLv2.1+, the build system, test-suite and
           command-line tools (package libtasn1-bin) are GPLv3+.
@@ -39,7 +39,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1-plus_312.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_312.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1-plus_312.RULE
         matched_text: |
           The LIBTASN1 library is free software; you can redistribute it
            * and/or modify it under the terms of the GNU Lesser General Public
@@ -72,11 +72,11 @@ license_detections:
         end_line: 79
         matcher: 3-seq
         score: '98.46'
-        matched_length: '192'
+        matched_length: 192
         match_coverage: '98.46'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_and_gfdl-1.3-plus_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_and_gfdl-1.3-plus_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_and_gfdl-1.3-plus_1.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
            * it under the terms of the GNU General Public License as published by
@@ -119,7 +119,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gfdl-1.3_8.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3_8.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gfdl-1.3_8.RULE
         matched_text: |
           The documentation is distributed under the terms of the GNU Free
           Documentation License (FDL 1.3):

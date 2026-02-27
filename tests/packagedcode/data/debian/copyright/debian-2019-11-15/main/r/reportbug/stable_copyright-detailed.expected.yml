@@ -19,7 +19,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: reportbug_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/reportbug_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/reportbug_1.RULE
         matched_text: |
           License: other
               # This program is freely distributable per the following license:
@@ -52,7 +52,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl_77.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_77.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl_77.RULE
         matched_text: |
           License: GPL-any
               # You may freely redistribute, use and modify this software under the terms
@@ -75,7 +75,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: reportbug_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/reportbug_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/reportbug_1.RULE
         matched_text: |
           License: other
               # This program is freely distributable per the following license:
@@ -104,7 +104,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_561.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: GPL-2'
     identifier: reportbug_and_gpl_2_0-553a18d0-b340-e581-c21f-23bb6857b30a
 other_license_detections: []

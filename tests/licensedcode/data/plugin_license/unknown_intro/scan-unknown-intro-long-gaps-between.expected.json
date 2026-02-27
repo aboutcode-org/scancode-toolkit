@@ -21,7 +21,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "license-intro_4.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/license-intro_4.RULE",
           "matched_text": "be/src/gutil/valgrind.h: licensed under the following terms:",
           "matched_text_diagnostics": "licensed under the following terms:"
         },
@@ -37,7 +37,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "bzip2-libbzip-2010.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
           "matched_text": "   Redistribution and use in source and binary forms, with or without\n   modification, are permitted provided that the following conditions\n   are met:\n\n   1. Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n\n   2. The origin of this software must not be misrepresented; you must\n      not claim that you wrote the original software.  If you use this\n      software in a product, an acknowledgment in the product\n      documentation would be appreciated but is not required.\n\n   3. Altered source versions must be plainly marked as such, and must\n      not be misrepresented as being the original software.\n\n   4. The name of the author may not be used to endorse or promote\n      products derived from this software without specific prior written\n      permission.\n\n   THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\n   OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\n   DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\n   GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\n   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
           "matched_text_diagnostics": "Redistribution and use in source and binary forms, with or without\n   modification, are permitted provided that the following conditions\n   are met:\n\n   1. Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n\n   2. The origin of this software must not be misrepresented; you must\n      not claim that you wrote the original software.  If you use this\n      software in a product, an acknowledgment in the product\n      documentation would be appreciated but is not required.\n\n   3. Altered source versions must be plainly marked as such, and must\n      not be misrepresented as being the original software.\n\n   4. The name of the author may not be used to endorse or promote\n      products derived from this software without specific prior written\n      permission.\n\n   THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\n   OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\n   DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\n   GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\n   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
         }
@@ -64,7 +64,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "license-intro_4.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/license-intro_4.RULE",
           "matched_text": "be/src/gutil/utf/*: licensed under the following terms:",
           "matched_text_diagnostics": "licensed under the following terms:"
         },
@@ -80,7 +80,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "x11-lucent_1.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent_1.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/x11-lucent_1.RULE",
           "matched_text": "  Permission to use, copy, modify, and distribute this software for any purpose without\n  fee is hereby granted, provided that this entire notice is included in all copies of any\n  software which is or includes a copy or modification of this software and in all copies\n  of the supporting documentation for such software.  THIS SOFTWARE IS BEING PROVIDED \"AS\n  IS\", WITHOUT ANY EXPRESS OR IMPLIED WARRANTY.  IN PARTICULAR, NEITHER THE AUTHORS NOR\n  LUCENT TECHNOLOGIES MAKE ANY REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE\n  MERCHANTABILITY OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.",
           "matched_text_diagnostics": "Permission to use, copy, modify, and distribute this software for any purpose without\n  fee is hereby granted, provided that this entire notice is included in all copies of any\n  software which is or includes a copy or modification of this software and in all copies\n  of the supporting documentation for such software.  THIS SOFTWARE IS BEING PROVIDED \"AS\n  IS\", WITHOUT ANY EXPRESS OR IMPLIED WARRANTY.  IN PARTICULAR, NEITHER THE AUTHORS NOR\n  LUCENT TECHNOLOGIES MAKE ANY REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE\n  MERCHANTABILITY OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE."
         }
@@ -110,7 +110,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "license-intro_4.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/license-intro_4.RULE",
               "matched_text": "be/src/gutil/utf/*: licensed under the following terms:",
               "matched_text_diagnostics": "licensed under the following terms:"
             },
@@ -126,7 +126,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "x11-lucent_1.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent_1.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/x11-lucent_1.RULE",
               "matched_text": "  Permission to use, copy, modify, and distribute this software for any purpose without\n  fee is hereby granted, provided that this entire notice is included in all copies of any\n  software which is or includes a copy or modification of this software and in all copies\n  of the supporting documentation for such software.  THIS SOFTWARE IS BEING PROVIDED \"AS\n  IS\", WITHOUT ANY EXPRESS OR IMPLIED WARRANTY.  IN PARTICULAR, NEITHER THE AUTHORS NOR\n  LUCENT TECHNOLOGIES MAKE ANY REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE\n  MERCHANTABILITY OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.",
               "matched_text_diagnostics": "Permission to use, copy, modify, and distribute this software for any purpose without\n  fee is hereby granted, provided that this entire notice is included in all copies of any\n  software which is or includes a copy or modification of this software and in all copies\n  of the supporting documentation for such software.  THIS SOFTWARE IS BEING PROVIDED \"AS\n  IS\", WITHOUT ANY EXPRESS OR IMPLIED WARRANTY.  IN PARTICULAR, NEITHER THE AUTHORS NOR\n  LUCENT TECHNOLOGIES MAKE ANY REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE\n  MERCHANTABILITY OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE."
             }
@@ -152,7 +152,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "license-intro_4.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/license-intro_4.RULE",
               "matched_text": "be/src/gutil/valgrind.h: licensed under the following terms:",
               "matched_text_diagnostics": "licensed under the following terms:"
             },
@@ -168,7 +168,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "bzip2-libbzip-2010.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
               "matched_text": "   Redistribution and use in source and binary forms, with or without\n   modification, are permitted provided that the following conditions\n   are met:\n\n   1. Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n\n   2. The origin of this software must not be misrepresented; you must\n      not claim that you wrote the original software.  If you use this\n      software in a product, an acknowledgment in the product\n      documentation would be appreciated but is not required.\n\n   3. Altered source versions must be plainly marked as such, and must\n      not be misrepresented as being the original software.\n\n   4. The name of the author may not be used to endorse or promote\n      products derived from this software without specific prior written\n      permission.\n\n   THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\n   OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\n   DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\n   GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\n   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
               "matched_text_diagnostics": "Redistribution and use in source and binary forms, with or without\n   modification, are permitted provided that the following conditions\n   are met:\n\n   1. Redistributions of source code must retain the above copyright\n      notice, this list of conditions and the following disclaimer.\n\n   2. The origin of this software must not be misrepresented; you must\n      not claim that you wrote the original software.  If you use this\n      software in a product, an acknowledgment in the product\n      documentation would be appreciated but is not required.\n\n   3. Altered source versions must be plainly marked as such, and must\n      not be misrepresented as being the original software.\n\n   4. The name of the author may not be used to endorse or promote\n      products derived from this software without specific prior written\n      permission.\n\n   THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS\n   OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\n   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY\n   DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE\n   GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,\n   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\n   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
             }

@@ -77,7 +77,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 50,
             "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
             "matched_text": "WTFPL"
           }
         ],
@@ -99,7 +99,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "wtfpl-2.0_33.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_33.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/wtfpl-2.0_33.RULE",
             "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL"
           }
         ],
@@ -143,7 +143,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "mit_30.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_30.RULE",
             "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT"
           }
         ],

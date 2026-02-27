@@ -63,7 +63,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "matched_text": "- 'License :: OSI Approved :: BSD License'"
             }
           ],
@@ -115,7 +115,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 99,
           "rule_identifier": "pypi_bsd_license.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_bsd_license.RULE",
           "matched_text": "Classifier: License :: OSI Approved :: BSD License",
           "matched_text_diagnostics": "License :: OSI Approved :: BSD License"
         }
@@ -142,7 +142,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "free-unknown-package_1.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_1.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/free-unknown-package_1.RULE",
           "matched_text": "# This file is distributed under the same license as the package.",
           "matched_text_diagnostics": "This file is distributed under the same license as the package."
         },
@@ -158,7 +158,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 99,
           "rule_identifier": "pypi_bsd_license.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_bsd_license.RULE",
           "matched_text": "- 'License :: OSI Approved :: BSD License'"
         }
       ]
@@ -232,7 +232,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
                   "rule_identifier": "pypi_bsd_license.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_bsd_license.RULE",
                   "matched_text": "- 'License :: OSI Approved :: BSD License'"
                 }
               ],
@@ -281,7 +281,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "matched_text": "Classifier: License :: OSI Approved :: BSD License",
               "matched_text_diagnostics": "License :: OSI Approved :: BSD License"
             }
@@ -303,7 +303,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 60,
           "rule_identifier": "unknown_kernel4.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_kernel4.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unknown_kernel4.RULE",
           "matched_text": "License: UNKNOWN",
           "matched_text_diagnostics": "License: UNKNOWN"
         }
@@ -337,7 +337,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "free-unknown-package_1.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_1.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/free-unknown-package_1.RULE",
               "matched_text": "# This file is distributed under the same license as the package.",
               "matched_text_diagnostics": "This file is distributed under the same license as the package."
             },
@@ -353,7 +353,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 99,
               "rule_identifier": "pypi_bsd_license.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/pypi_bsd_license.RULE",
               "matched_text": "- 'License :: OSI Approved :: BSD License'"
             }
           ],

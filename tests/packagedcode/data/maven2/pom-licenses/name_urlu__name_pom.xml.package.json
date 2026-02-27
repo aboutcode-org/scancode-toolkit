@@ -41,7 +41,7 @@
           "match_coverage": 61.11,
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_884.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_884.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/apache-2.0_884.RULE",
           "matched_text": "name: The Apache Software License, Version 2.0\nurl: https://foo.com/licenses/bar"
         }
       ],
@@ -63,7 +63,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "package-manifest-unknown-3d3a78a49ea1a2aed42d20c5031b353f719aeacf",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-3d3a78a49ea1a2aed42d20c5031b353f719aeacf",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/package-manifest-unknown-3d3a78a49ea1a2aed42d20c5031b353f719aeacf",
           "matched_text": "license name: The Apache Software License, Version 2.0\nurl: https://foo.com/licenses/bar"
         }
       ],
@@ -85,7 +85,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "mit_1106.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1106.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_1106.RULE",
           "matched_text": "name: MIT License"
         }
       ],

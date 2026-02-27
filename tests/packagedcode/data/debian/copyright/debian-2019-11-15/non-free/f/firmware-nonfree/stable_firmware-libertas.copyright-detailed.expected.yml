@@ -20,7 +20,7 @@ license_detections:
         match_coverage: '96.37'
         rule_relevance: 100
         rule_identifier: proprietary-license_319.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_319.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/proprietary-license_319.RULE
         matched_text: |
           Redistribution. Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -75,7 +75,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: marvell-firmware.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/marvell-firmware.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/marvell-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are

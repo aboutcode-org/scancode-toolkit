@@ -752,7 +752,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1_38.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
       - license_expression: lgpl-2.1
         license_expression_spdx: LGPL-2.1-only
@@ -765,7 +765,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.1_249.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_249.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/lgpl-2.1_249.RULE
         matched_text: |
           On Debian GNU/Linux systems, the complete text of the LGPL 2.1
           license can be found in `/usr/share/common-licenses/LGPL-2.1'.
@@ -784,7 +784,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_395.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_395.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_395.RULE
         matched_text: 'License: gpl-1+'
       - license_expression: gpl-1.0
         license_expression_spdx: GPL-1.0-only
@@ -797,7 +797,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0_38.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_38.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0_38.RULE
         matched_text: |
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-1'.
@@ -816,7 +816,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_22.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0
         license_expression_spdx: GPL-2.0-only
@@ -829,7 +829,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0_1040.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1040.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_1040.RULE
         matched_text: |
           On Debian GNU/Linux systems, the complete text of version 2 of
           the GNU General Public License can be found in
@@ -849,7 +849,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 99
         rule_identifier: artistic-perl-1.0_26.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_26.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_26.RULE
         matched_text: 'License: artistic'
       - license_expression: artistic-perl-1.0
         license_expression_spdx: Artistic-1.0-Perl
@@ -862,7 +862,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_27.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_27.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_27.RULE
         matched_text: |
           On Debian GNU/Linux systems, the complete text of the
           Artistic Licence can be found in `/usr/share/common-licenses/Artistic'.
@@ -881,7 +881,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-2.0_36.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_36.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-2.0_36.RULE
         matched_text: |
           Copyright (c) 2000-2006, The Perl Foundation.
 
@@ -1080,7 +1080,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bzip2-libbzip-2010.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
            modification, are permitted provided that the following conditions
@@ -1127,7 +1127,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: zlib.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/zlib.LICENSE
         matched_text: |
           This software is provided 'as-is', without any express or implied
            warranty.  In no event will the authors be held liable for any damages
@@ -1159,7 +1159,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
           of this software and associated documentation files (the "Software"), to deal
@@ -1193,7 +1193,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_42.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_42.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_42.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -1233,7 +1233,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-original_80.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_80.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-original_80.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -1277,7 +1277,7 @@ other_license_detections:
         match_coverage: '99.57'
         rule_relevance: 100
         rule_identifier: unicode-dfs-2015_9.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode-dfs-2015_9.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unicode-dfs-2015_9.RULE
         matched_text: |
           UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
 
@@ -1349,7 +1349,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_313.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_313.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_313.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -1389,7 +1389,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_19.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_19.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -1429,7 +1429,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: regexp.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/regexp.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/regexp.LICENSE
         matched_text: |
           Permission is granted to anyone to use this software for any
            purpose on any computer system, and to redistribute it freely,
@@ -1459,7 +1459,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: ttwl.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ttwl.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/ttwl.LICENSE
         matched_text: |
           This module may be modified, used, copied, and redistributed at your own risk.
 
@@ -1481,7 +1481,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-copyleft_20.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_20.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/other-copyleft_20.RULE
         matched_text: |
           This program is free and open software. You may use, modify,
           distribute, and sell this program (and any modified variants) in any
@@ -1501,7 +1501,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 90
         rule_identifier: other-copyleft_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_4.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/other-copyleft_4.RULE
         matched_text: |
           Everyone is permitted to copy and distribute verbatim copies
           of this license document, but changing it is not allowed.
@@ -1520,7 +1520,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_45.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_45.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_45.RULE
         matched_text: placed in the public domain.
       - license_expression: public-domain
         license_expression_spdx: LicenseRef-scancode-public-domain
@@ -1533,7 +1533,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_285.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_285.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_285.RULE
         matched_text: is in the public domain,
       - license_expression: public-domain
         license_expression_spdx: LicenseRef-scancode-public-domain
@@ -1546,7 +1546,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 70
         rule_identifier: public-domain_bare_words.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: public-domain
       - license_expression: public-domain
         license_expression_spdx: LicenseRef-scancode-public-domain
@@ -1559,7 +1559,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 70
         rule_identifier: public-domain_bare_words.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: public  domain
     identifier: public_domain-d6560563-b3c0-65ee-7cca-7225d652d54d
   - license_expression: gpl-3.0-plus WITH bison-exception-2.2
@@ -1576,7 +1576,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_with_bison-exception-3.0_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_bison-exception-3.0_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_with_bison-exception-3.0_1.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -1618,7 +1618,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: paul-hsieh-derivative_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/paul-hsieh-derivative_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/paul-hsieh-derivative_1.RULE
         matched_text: |
           The derivative content includes raw computer source code, ideas,
           opinions, and excerpts whose original source is covered under another
@@ -1651,7 +1651,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 99
         rule_identifier: bsd-x11_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-x11_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-x11_10.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -1694,7 +1694,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: cc0-1.0_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cc0-1.0_12.RULE
         matched_text: 'License: cc0-1.0'
       - license_expression: cc0-1.0
         license_expression_spdx: CC0-1.0
@@ -1707,7 +1707,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: cc0-1.0_155.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_155.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cc0-1.0_155.RULE
         matched_text: |
           Statatement of Purpose
 
@@ -1844,7 +1844,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: fsf-ap.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/fsf-ap.LICENSE
         matched_text: |
           Copying and distribution of this file, with or without modification, are
           permitted in any medium without royalty provided the copyright notice and
@@ -1865,7 +1865,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-dist-1.0.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/artistic-dist-1.0.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/artistic-dist-1.0.LICENSE
         matched_text: |
           The "Artistic License"
 
@@ -2007,7 +2007,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_17.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_17.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_17.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
              it under the terms of either:
@@ -2032,7 +2032,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
@@ -2049,7 +2049,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
@@ -2066,7 +2066,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
@@ -2083,7 +2083,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
@@ -2100,7 +2100,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -2117,7 +2117,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public
            License or the Artistic License, as specified in the README file.
@@ -2136,7 +2136,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         matched_text: |
           This program is free software; you may redistribute it
           and/or modify it under the same terms as Perl itself.
@@ -2155,7 +2155,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: unicode_14.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_14.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unicode_14.RULE
         matched_text: For terms of use, see http://www.unicode.org/terms_of_use.html
     identifier: unicode-694376d5-aeeb-e4bc-a4e1-095d162d3862
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -2172,7 +2172,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_26.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_26.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_26.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself, either Perl version 5.10.0 or,
@@ -2192,7 +2192,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software. You can redistribute it
           and/or modify it under the same terms as Perl itself.
@@ -2211,7 +2211,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -2230,7 +2230,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_34.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_34.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_34.RULE
         matched_text: All files are licensed under the same terms as Perl itself.
     identifier: artistic_perl_1_0_or_gpl_1_0_plus-4e05fce9-1807-80b2-856e-0fa39a440170
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -2247,7 +2247,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_32.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_32.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_32.RULE
         matched_text: The PerlUi class is licensed under the same terms as Perl itself.
     identifier: artistic_perl_1_0_or_gpl_1_0_plus-522746e5-bffc-fa4c-ea81-334067779aac
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -2264,7 +2264,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_31.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_31.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_31.RULE
         matched_text: The Symbian port is licensed under the same terms as Perl itself.
     identifier: artistic_perl_1_0_or_gpl_1_0_plus-7e59d507-72c7-19bf-6165-d58bcc316f9a
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -2281,7 +2281,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_28.RULE
         matched_text: |
           It is assumed that the test code is licensed under the same terms
           as Perl.
@@ -2300,7 +2300,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
@@ -2319,7 +2319,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         matched_text: |
           This program is free software; you may redistribute it
           and/or modify it under the same terms as Perl itself.
@@ -2338,7 +2338,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
@@ -2357,7 +2357,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under the same
           terms as the Perl 5 programming language system itself.
@@ -2376,7 +2376,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
@@ -2395,7 +2395,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
@@ -2414,7 +2414,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_12.RULE
         matched_text: This file is a part of Perl itself, licensed as above.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-fd15e46d-ac77-acdb-3f93-0d54ee03a1b7
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -2431,7 +2431,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
         matched_text: |
           This library is free software; you may redistribute and/or modify
           it under the same terms as Perl itself.
@@ -2450,7 +2450,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
         matched_text: This package has the same copyright and license as the perl core.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-00c5b5e7-0cc5-6dc8-2914-7a86e3fe305f
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
@@ -2467,7 +2467,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
         matched_text: |
           This module is free software, you may distribute it under the
           same terms as Perl itself.
@@ -2486,7 +2486,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_43.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_43.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_43.RULE
         matched_text: |
           This is free software.  You may modify and/or redistribute this
           code under the same terms as Perl 5.10 itself, or, at your option,
@@ -2506,7 +2506,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_44.RULE
         matched_text: |
           This module is free software.  You may distribute it under the
           same terms as Perl itself.
@@ -2525,7 +2525,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_13.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_13.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_13.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of either:
@@ -2550,7 +2550,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
@@ -2569,7 +2569,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
@@ -2588,7 +2588,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -2607,7 +2607,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -2626,7 +2626,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_42.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_42.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_42.RULE
         matched_text: You may redistribute this under the same terms as Perl itself.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-d15d44f1-6970-d898-4fa2-eb72ec024222
   - license_expression: gpl-1.0-plus OR artistic-1.0
@@ -2643,7 +2643,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
@@ -2662,7 +2662,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
@@ -2681,7 +2681,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
@@ -2700,7 +2700,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
@@ -2719,7 +2719,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -2738,7 +2738,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -2757,7 +2757,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -2776,7 +2776,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -2795,7 +2795,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -2814,7 +2814,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -2833,7 +2833,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -2852,7 +2852,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-2.0_38.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_38.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-2.0_38.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the terms of the the Artistic License (2.0).
@@ -2871,7 +2871,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -2890,7 +2890,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
@@ -2909,7 +2909,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_41.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_41.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_41.RULE
         matched_text: |
           There are no copyright or license notices in this distribution. It
           is assumed that the copyright and license of Perl itself applies here
@@ -2936,7 +2936,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -2955,7 +2955,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_15.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_15.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_15.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -2974,7 +2974,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
         matched_text: |
           This library is free software; you may redistribute and/or modify it
           under the same terms as Perl itself.
@@ -2993,7 +2993,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -3012,7 +3012,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
@@ -3031,7 +3031,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -3050,7 +3050,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-2.0-plus_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-2.0-plus_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-2.0-plus_3.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the terms of the Perl Artistic License or the
@@ -3072,7 +3072,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
@@ -3091,7 +3091,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
@@ -3110,7 +3110,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute
           it and/or modify it under the same terms as Perl itself.
@@ -3129,7 +3129,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -3148,7 +3148,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -3167,7 +3167,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -3186,7 +3186,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_15.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_15.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_15.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public License
           or the Artistic License, as specified in the LICENCE file.
@@ -3205,7 +3205,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -3224,7 +3224,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3243,7 +3243,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3262,7 +3262,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
         matched_text: |
           This module is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -3281,7 +3281,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit_or_gpl-1.0-plus_or_artistic-perl-1.0_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_gpl-1.0-plus_or_artistic-perl-1.0_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_or_gpl-1.0-plus_or_artistic-perl-1.0_1.RULE
         matched_text: |
           This software is released under the MIT license cited below.  Additionally,
           when this software is distributed with Perl Kit, Version 5, you may also
@@ -3301,7 +3301,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 99
         rule_identifier: mit_or_artistic-perl-1.0_or_gpl-1.0-plus_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_artistic-perl-1.0_or_gpl-1.0-plus_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_or_artistic-perl-1.0_or_gpl-1.0-plus_1.RULE
         matched_text: |
           It is assumed that these translations are licensed under the same terms as
           the rest of the Locale-Maketext-Simple distribution.
@@ -3320,7 +3320,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -3339,7 +3339,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_8.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_8.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_8.RULE
         matched_text: |
           This library is free software; you may redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -3361,7 +3361,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -3380,7 +3380,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -3395,7 +3395,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: metamail.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/metamail.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/metamail.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute this material
            for any purpose and without fee is hereby granted, provided
@@ -3422,7 +3422,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -3441,7 +3441,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
         matched_text: |
           This module is free software. It may be used, redistributed
           and/or modified under the same terms as Perl itself.
@@ -3460,7 +3460,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_10.RULE
         matched_text: This module is released under the same terms as Perl itself.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-6ac722a3-703c-e413-9b17-5dd475d88fa5
   - license_expression: gpl-1.0-plus OR artistic-1.0
@@ -3477,7 +3477,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
@@ -3496,7 +3496,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -3515,7 +3515,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
@@ -3534,7 +3534,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
         matched_text: |
           is free software;
           you can redistribute it and/or modify it under the same terms
@@ -3554,7 +3554,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -3573,7 +3573,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         matched_text: |
           This program is free software; you may redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3592,7 +3592,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         matched_text: |
           This program is free software; you may redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3611,7 +3611,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         matched_text: |
           This program is free software; you may redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3630,7 +3630,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
         matched_text: |
           is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3649,7 +3649,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3668,7 +3668,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
         matched_text: |
           is free software;
           you can redistribute it and/or modify it under the same terms
@@ -3688,7 +3688,7 @@ other_license_detections:
         match_coverage: '59.09'
         rule_relevance: 95
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_39.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_39.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_39.RULE
         matched_text: |
           license notice, but it is assumed that it
           is licensed under the same terms as
@@ -3707,7 +3707,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3726,7 +3726,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3746,7 +3746,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_12.RULE
         matched_text: |
           The license notice in the document is:
 
@@ -3764,7 +3764,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_286.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_286.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_286.RULE
         matched_text: |
           Irrespective of its distribution, all code examples here are in the public
            domain.  You are permitted and encouraged to use this code and any
@@ -3782,7 +3782,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-2.0_and_public-domain-disclaimer_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_and_public-domain-disclaimer_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-2.0_and_public-domain-disclaimer_1.RULE
         matched_text: |
           This document is available under the same terms as Perl itself. Code
            examples in all the perlfaq documents are in the public domain. Use
@@ -3802,7 +3802,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_5.RULE
         matched_text: |
           is free software;
           you can redistribute it and/or modify it under the same terms
@@ -3822,7 +3822,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3841,7 +3841,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3860,7 +3860,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         matched_text: |
           This program is free software; you may redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -3879,7 +3879,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_40.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_40.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_40.RULE
         matched_text: |
           This software is free software and can be modified and distributed under
           the same terms as Perl itself.
@@ -3898,7 +3898,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
         matched_text: |
           This module is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -3917,7 +3917,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3936,7 +3936,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -3955,7 +3955,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -3974,7 +3974,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -3993,7 +3993,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
@@ -4012,7 +4012,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
@@ -4031,7 +4031,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
         matched_text: |
           This documentation is free; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -4046,7 +4046,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_287.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_287.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_287.RULE
         matched_text: |
           Irrespective of its distribution, all code examples in these files
           are hereby placed into the public domain.  You are permitted and
@@ -4068,7 +4068,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
@@ -4087,7 +4087,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it
           and/or modify it under the same terms as Perl itself.
@@ -4106,7 +4106,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: cc0-1.0_154.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_154.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/cc0-1.0_154.RULE
         matched_text: |
           The file links to http://creativecommons.org/publicdomain/zero/1.0/
           and the full license text as retrieved from there can be found at the
@@ -4126,7 +4126,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
         matched_text: |
           This module is free software. It may be used, redistributed and/or
           modified under the same terms as Perl itself.
@@ -4145,7 +4145,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 99
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_38.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_38.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_38.RULE
         matched_text: |
           There are no copyright notices this distribution.
 
@@ -4166,7 +4166,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-2.0-plus_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-2.0-plus_2.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-2.0-plus_2.RULE
         matched_text: |
           This library is free software; you may redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -4190,7 +4190,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_37.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_37.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_37.RULE
         matched_text: |
           This program is free software; you may redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -4212,7 +4212,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
@@ -4231,7 +4231,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_35.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_35.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_35.RULE
         matched_text: |
           This module is free software, you may distribute it under the same
           terms as Perl.
@@ -4250,7 +4250,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 99
         rule_identifier: bsd-new_1065.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1065.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_1065.RULE
         matched_text: is licensed under the BSD-like license
       - license_expression: gpl-1.0-plus OR artistic-perl-1.0
         license_expression_spdx: GPL-1.0-or-later OR Artistic-1.0-Perl
@@ -4263,7 +4263,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 70
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_34.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_34.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_34.RULE
         matched_text: |
           It is assumed that the other parts are licensed under the same
           terms as the rest of the distribution.
@@ -4282,7 +4282,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
         matched_text: |
           This module is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -4301,7 +4301,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: unicode_14.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_14.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/unicode_14.RULE
         matched_text: For terms of use, see http://www.unicode.org/terms_of_use.html
     identifier: unicode-694376d5-aeeb-e4bc-a4e1-095d162d3862
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -4318,7 +4318,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
         matched_text: |
           This module is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -4337,7 +4337,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_32.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_32.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_32.RULE
         matched_text: |
           This module is free software; you may redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -4359,7 +4359,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
         matched_text: |
           This module is free software. It may be used, redistributed
           and/or modified under the same terms as Perl itself.
@@ -4378,7 +4378,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 99
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_52.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_52.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_52.RULE
         matched_text: |
           There is no copyright or license information in these distributions.
           It is assumed that they are licensed under the same terms as Perl itself.
@@ -4397,7 +4397,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_47.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_47.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_47.RULE
         matched_text: |
           This module is free software; you can redistribute and/or modify
           it under the same terms as Perl itself.
@@ -4416,7 +4416,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
         matched_text: |
           This module is free software. It may be used, redistributed
           and/or modified under the same terms as Perl itself.
@@ -4435,7 +4435,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -4454,7 +4454,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -4474,7 +4474,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -4489,7 +4489,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_31.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_31.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_31.RULE
         matched_text: |
           Perl 5
           Porters, which was released under the same license terms.
@@ -4508,7 +4508,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_3.RULE
         matched_text: |
           This module is free software. It may be used, redistributed
           and/or modified under the same terms as Perl itself.
@@ -4527,7 +4527,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_3.RULE
         matched_text: |
           This is free software; you can redistribute it and/or modify it under
           the same terms as the Perl 5 programming language system itself.
@@ -4546,7 +4546,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -4565,7 +4565,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_48.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_48.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_48.RULE
         matched_text: |
           You can redistribute and/or modify this document under the same terms
           as Perl itself.
@@ -4584,7 +4584,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -4603,7 +4603,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -4618,7 +4618,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_46.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_46.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_46.RULE
         matched_text: |
           This module is distributed under the same terms as Perl itself.
           Feel free to use, modify and redistribute it as long as you retain
@@ -4638,7 +4638,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_11.RULE
         matched_text: This package has the same copyright and license as the perl core.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-00c5b5e7-0cc5-6dc8-2914-7a86e3fe305f
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -4655,7 +4655,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -4674,7 +4674,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
@@ -4691,7 +4691,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         matched_text: |
           This program is free software; you may redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -4710,7 +4710,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_29.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_29.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_29.RULE
         matched_text: This program is distributed under the same terms as perl itself.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-2bcbbce8-54f0-bccc-2196-d6690e456d84
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -4727,7 +4727,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_24.RULE
         matched_text: |
           This module is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -4746,7 +4746,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_4.RULE
         matched_text: |
           This program is free software; you may redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -4765,7 +4765,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -4784,7 +4784,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_and_bsd-new_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_and_bsd-new_2.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_and_bsd-new_2.RULE
         matched_text: |
           The main license applies to most of the code:
 
@@ -4808,7 +4808,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -4827,7 +4827,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_45.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_45.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_45.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl
@@ -4846,7 +4846,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
         matched_text: |
           You may redistribute only under the same terms as Perl 5, as specified
           in the README file that comes with the distribution.
@@ -4865,7 +4865,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
         matched_text: |
           You may redistribute only under the same terms as Perl 5, as specified
           in the README file that comes with the distribution.
@@ -4884,7 +4884,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_30.RULE
         matched_text: |
           You may redistribute only under the same terms as Perl 5, as specified
           in the README file that comes with the distribution.
@@ -4903,7 +4903,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_53.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_53.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_53.RULE
         matched_text: released under the same license as Perl.
     identifier: artistic_perl_1_0_or_gpl_1_0_plus-27b808ee-1246-e9bc-bc46-2f8c35871c4f
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -4920,7 +4920,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_53.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_53.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_53.RULE
         matched_text: released under the same license as Perl.
     identifier: artistic_perl_1_0_or_gpl_1_0_plus-27b808ee-1246-e9bc-bc46-2f8c35871c4f
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -4937,7 +4937,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
@@ -4956,7 +4956,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_44.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_44.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_44.RULE
         matched_text: |
           This package is free software and is provided "as is" without express
           or implied warranty.  It may be used, redistributed and/or modified
@@ -4976,7 +4976,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -4995,7 +4995,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -5014,7 +5014,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
@@ -5033,7 +5033,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 95
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_42.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_42.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_42.RULE
         matched_text: |
           There is no license information included. It is assumed that this
           distribution is licensed under the same terms as Perl itself.
@@ -5052,7 +5052,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
@@ -5071,7 +5071,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_49.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_49.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_49.RULE
         matched_text: |
           This program is free software; you can redistribute and/or modify it
           under the same terms as Perl itself.
@@ -5090,7 +5090,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -5109,7 +5109,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 95
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_41.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_41.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_41.RULE
         matched_text: |
           There is no license information included that clearly applies to the
           whole of this distribution. It is assumed that it is licensed under
@@ -5129,7 +5129,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 95
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_40.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_40.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_40.RULE
         matched_text: It is assumed that this file is licensed under the same terms as Perl
           itself.
     identifier: artistic_perl_1_0_or_gpl_1_0_plus-c6a20c55-7328-0e53-7889-7c78c5415d0b
@@ -5147,7 +5147,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
@@ -5166,7 +5166,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_25.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_25.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_25.RULE
         matched_text: |
           The license in the file is specified as
 
@@ -5186,7 +5186,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -5205,7 +5205,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 90
         rule_identifier: artistic-1.0_11.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_11.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-1.0_11.RULE
         matched_text: the artistic license.
     identifier: artistic_1_0-2ff80857-def0-0ed3-86d0-f745062039f9
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -5222,7 +5222,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 95
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_39.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_39.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_39.RULE
         matched_text: |
           There is no license information in this distribution.
           It is assumed that it is licensed under the same terms as Perl itself.
@@ -5241,7 +5241,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 95
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_38.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_38.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_38.RULE
         matched_text: |
           As above, it is assumed that this file is licensed under the same terms
           as Perl itself.
@@ -5256,7 +5256,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
            modify it under the same terms as Perl itself.
@@ -5275,7 +5275,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_23.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_23.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_23.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself, either Perl version 5.8.7 or,
@@ -5295,7 +5295,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -5314,7 +5314,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
@@ -5333,7 +5333,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 99
         rule_identifier: artistic-perl-1.0_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_7.RULE
         matched_text: This program is distributed under the Artistic License.
     identifier: artistic_perl_1_0-2d6db20c-52be-912f-b056-8d081e123f91
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -5350,7 +5350,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 95
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_37.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_37.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_37.RULE
         matched_text: |
           There is no copyright or license information in this distribution.
           It is assumed that it is licensed under the same terms as Perl itself.
@@ -5369,7 +5369,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_7.RULE
         matched_text: |
           You may distribute under the terms of either the GNU General Public
           License or the Artistic License, as specified in the README file.
@@ -5388,7 +5388,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_10.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -5407,7 +5407,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the same terms as Perl itself.
@@ -5426,7 +5426,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
@@ -5443,7 +5443,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_28.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_28.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_28.RULE
         matched_text: |
           You can use and redistribute this document under the same terms as Perl
           itself.
@@ -5462,7 +5462,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
         matched_text: |
           This documentation is free; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -5477,7 +5477,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_286.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_286.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_286.RULE
         matched_text: |
           Irrespective of its distribution, all code examples here are in the public
           domain. You are permitted and encouraged to use this code and any
@@ -5499,7 +5499,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-2.0_and_public-domain-disclaimer_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_and_public-domain-disclaimer_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-2.0_and_public-domain-disclaimer_1.RULE
         matched_text: |
           This document is available under the same terms as Perl itself. Code
           examples in all the perlfaq documents are in the public domain. Use
@@ -5519,7 +5519,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
@@ -5536,7 +5536,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
@@ -5553,7 +5553,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: (gpl-1.0-plus OR artistic-perl-1.0) AND public-domain
@@ -5570,7 +5570,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
         matched_text: |
           This documentation is free; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -5585,7 +5585,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_287.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_287.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_287.RULE
         matched_text: |
           Irrespective of its distribution, all code examples in these files are
           hereby placed into the public domain.  You are permitted and
@@ -5607,7 +5607,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it under
           the same terms as Perl itself.
@@ -5626,7 +5626,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
         matched_text: |
           This documentation is free; you can redistribute it and/or modify it
           under the same terms as Perl itself.
@@ -5641,7 +5641,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: public-domain_287.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_287.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/public-domain_287.RULE
         matched_text: |
           Irrespective of its distribution, all code examples in these files are
           hereby placed into the public domain.  You are permitted and
@@ -5663,7 +5663,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
@@ -5680,7 +5680,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: gpl-1.0-plus OR artistic-perl-1.0
@@ -5697,7 +5697,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_27.RULE
         matched_text: This document may be distributed under the same terms as Perl itself.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-59bdc9da-ad6a-3a9f-ac53-9fc77d62ac40
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -5714,7 +5714,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_12.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
           modify it under the same terms as Perl itself.
@@ -5733,7 +5733,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_artistic-dist-1.0_or_gpl-1.0-plus_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_artistic-dist-1.0_or_gpl-1.0-plus_2.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_artistic-dist-1.0_or_gpl-1.0-plus_2.RULE
         matched_text: |
           You may distribute the files contained in this distribution
           under the terms of either
@@ -5766,7 +5766,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-dist-1.0_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-dist-1.0_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-dist-1.0_3.RULE
         matched_text: |
           This subdirectory contains unmodified 'dist' code that is
           licensed under the modified Artistic license detailed below
@@ -5786,7 +5786,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-dist-1.0_or_gpl-1.0-plus_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-dist-1.0_or_gpl-1.0-plus_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-dist-1.0_or_gpl-1.0-plus_1.RULE
         matched_text: |
           dist is distributed under a modified version of the Perl Artistic License.
            Clause 7 of this modified license as contained in dist-3.0-pl60 provides:
@@ -5828,7 +5828,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_17.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_17.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-perl-1.0_17.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
              it under the terms of either:
@@ -5849,7 +5849,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit_577.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_577.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/mit_577.RULE
         matched_text: under the Expat license.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0__and_mit-96b88a5a-57e2-5b8b-99de-0b9196e7d3fc
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
@@ -5866,7 +5866,7 @@ other_license_detections:
         match_coverage: '100.0'
         rule_relevance: 95
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_36.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_36.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_36.RULE
         matched_text: |
           may be redistributed
           and/or modified under the same terms as Perl itself. It is assumed that

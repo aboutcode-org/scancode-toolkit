@@ -14,11 +14,11 @@ license_detections:
         end_line: 76
         matcher: 3-seq
         score: '98.98'
-        matched_length: '195'
+        matched_length: 195
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_and_gfdl-1.3-plus_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_and_gfdl-1.3-plus_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-3.0-plus_and_gfdl-1.3-plus_1.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by

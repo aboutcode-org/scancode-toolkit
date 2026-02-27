@@ -20,7 +20,7 @@ license_detections:
         match_coverage: '99.02'
         rule_relevance: 100
         rule_identifier: gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
         matched_text: "This package, the EXT2 filesystem utilities, are made available under\n\
           the GNU General Public License version 2, with the exception of the\nlib/ext2fs and\
           \ lib/e2p libraries, which are made available under the\nGNU Library General Public\
@@ -45,7 +45,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: ntp-0.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ntp-0.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/licenses/ntp-0.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and
              its documentation for any purpose is hereby granted, provided that
@@ -66,7 +66,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_117.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_117.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/bsd-new_117.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions

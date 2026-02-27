@@ -18,7 +18,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: info-zip-2009-01_12.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/info-zip-2009-01_12.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/v32.4.1/src/licensedcode/data/rules/info-zip-2009-01_12.RULE
         matched_text: |
           This is version 2009-Jan-02 of the Info-ZIP license.
           The definitive version of this document should be available at
