@@ -13,7 +13,6 @@ from packagedcode import alpine
 from packagedcode import bower
 from packagedcode import build
 from packagedcode import build_gradle
-from packagedcode import gradle_module
 from packagedcode import cargo
 from packagedcode import chef
 from packagedcode import debian
@@ -26,6 +25,7 @@ from packagedcode import cran
 from packagedcode import freebsd
 from packagedcode import godeps
 from packagedcode import golang
+from packagedcode import gradle_module
 from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import misc
@@ -56,13 +56,12 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     bower.BowerJsonHandler,
 
-    build_gradle.BuildGradleHandler,
-    gradle_module.GradleModuleHandler,
-
     build.AutotoolsConfigureHandler,
     build.BazelBuildHandler,
     build.BuckMetadataBzlHandler,
     build.BuckPackageHandler,
+
+    build_gradle.BuildGradleHandler,
 
     cargo.CargoLockHandler,
     cargo.CargoTomlHandler,
@@ -104,6 +103,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     godeps.GodepsHandler,
     golang.GoModHandler,
     golang.GoSumHandler,
+
+    gradle_module.GradleModuleHandler,
 
     haxe.HaxelibJsonHandler,
 
