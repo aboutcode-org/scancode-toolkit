@@ -13,6 +13,7 @@ from packagedcode import alpine
 from packagedcode import bower
 from packagedcode import build
 from packagedcode import build_gradle
+from packagedcode import gradle_module
 from packagedcode import cargo
 from packagedcode import chef
 from packagedcode import debian
@@ -56,6 +57,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     bower.BowerJsonHandler,
 
     build_gradle.BuildGradleHandler,
+    gradle_module.GradleModuleHandler,
 
     build.AutotoolsConfigureHandler,
     build.BazelBuildHandler,
