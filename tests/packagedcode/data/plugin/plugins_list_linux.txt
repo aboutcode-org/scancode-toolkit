@@ -553,6 +553,13 @@ Package type:  maven
   path_patterns:    '*/build.gradle', '*/build.gradle.kts'
 --------------------------------------------
 Package type:  maven
+  datasource_id:     gradle_module
+  documentation URL: https://github.com/gradle/gradle/blob/master/subprojects/docs/src/docs/design/gradle-module-metadata-latest-specification.md
+  primary language:  Java
+  description:       Gradle module metadata
+  path_patterns:    '*.module'
+--------------------------------------------
+Package type:  maven
   datasource_id:     maven_pom
   documentation URL: https://maven.apache.org/pom.html
   primary language:  Java
