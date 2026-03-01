@@ -1390,7 +1390,7 @@ def terminate_pool(pool):
 
 def terminate_pool_with_backoff(pool, number_of_trials=3):
     # try a few times to terminate,
-    for trial in range(number_of_trials, 1):
+    for trial in range(number_of_trials):
         try:
             pool.terminate()
             break
