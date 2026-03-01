@@ -192,6 +192,8 @@ def validate_input_path(ctx, param, value):
         if from_json and not is_file(location=inp, follow_symlinks=True):
             # extra JSON validation
             raise click.BadParameter(f"JSON input: {inp!r} is not a file")
+        
+        if from_json and is_file(location=inp, follow_symlinks=True):
             if not inp.lower().endswith(".json"):
                 raise click.BadParameter(f"JSON input: {inp!r} is not a JSON file with a .json extension")
             with open(inp) as js:
