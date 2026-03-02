@@ -192,13 +192,16 @@ def validate_input_path(ctx, param, value):
         if from_json and not is_file(location=inp, follow_symlinks=True):
             # extra JSON validation
             raise click.BadParameter(f"JSON input: {inp!r} is not a file")
-        if from_json and is_file(location=inp, follow_symlinks=True):
+        elif from_json:
             if not inp.lower().endswith(".json"):
                 raise click.BadParameter(f"JSON input: {inp!r} is not a JSON file with a .json extension")
-            with open(inp) as js:
-                start = js.read(100).strip()
+            try:
+                with open(inp, encoding='utf-8') as js:
+                    start = js.read(100).strip()
+            except UnicodeDecodeError:
+                raise click.BadParameter(f"JSON input: {inp!r} is not a readable UTF-8 file")
             if not start.startswith("{"):
-                raise click.BadParameter(f"JSON input: {inp!r} is not a well formed JSON file")
+                raise click.BadParameter(f"JSON input: {inp!r} is not well formed JSON file")
 
     return value
 
