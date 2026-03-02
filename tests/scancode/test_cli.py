@@ -1036,3 +1036,41 @@ def test_scan_does_validate_input_and_fails_on_faulty_json_input(test_file, expe
 def test_scan_does_validate_input_and_does_not_fail_on_valid_json_input():
     test_file = test_env.get_test_loc('various-inputs/true-scan-json.json')
     run_scan_click(['--from-json', test_file, '--json-pp', '-'], retry=False)
+    
+
+def test_terminate_pool_with_backoff_retries_on_windows_error():
+    """
+    Regression test: ensure terminate_pool_with_backoff actually executes
+    its retry loop. The old range(number_of_trials, 1) was always empty
+    so pool.terminate() was never called.
+    """
+    from unittest.mock import MagicMock, patch
+    from scancode.cli import terminate_pool_with_backoff
+
+    pool = MagicMock()
+    call_count = [0]
+
+    def flaky_terminate():
+        call_count[0] += 1
+        if call_count[0] < 2:
+            raise WindowsError("fake windows error")
+
+    pool.terminate.side_effect = flaky_terminate
+
+    terminate_pool_with_backoff(pool, number_of_trials=3)
+
+    assert pool.terminate.call_count == 2
+
+
+def test_terminate_pool_with_backoff_succeeds_on_first_try():
+    """
+    Ensure terminate_pool_with_backoff breaks out of loop immediately
+    on success without unnecessary retries.
+    """
+    from unittest.mock import MagicMock
+    from scancode.cli import terminate_pool_with_backoff
+
+    pool = MagicMock()
+    terminate_pool_with_backoff(pool, number_of_trials=3)
+
+    assert pool.terminate.call_count == 1
