@@ -1044,8 +1044,15 @@ def test_terminate_pool_with_backoff_retries_on_windows_error():
     its retry loop. The old range(number_of_trials, 1) was always empty
     so pool.terminate() was never called.
     """
-    from unittest.mock import MagicMock, patch
+    import builtins
+    from unittest.mock import MagicMock
+    import scancode.cli as _cli_mod
     from scancode.cli import terminate_pool_with_backoff
+
+    _WindowsError = _cli_mod.__dict__.get(
+        'WindowsError',
+        getattr(builtins, 'WindowsError', Exception),
+    )
 
     pool = MagicMock()
     call_count = [0]
@@ -1053,7 +1060,7 @@ def test_terminate_pool_with_backoff_retries_on_windows_error():
     def flaky_terminate():
         call_count[0] += 1
         if call_count[0] < 2:
-            raise WindowsError("fake windows error")
+            raise _WindowsError("fake windows error")
 
     pool.terminate.side_effect = flaky_terminate
 
