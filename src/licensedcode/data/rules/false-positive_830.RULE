@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen in go-go1.24.11/src/hash/crc32/crc32_ppc64le.s. This is about the license of an other open source component (antonblanchard/crc32-vpmsum).
+---
+
+ The vectorized implementation found below is a derived work from code written by Anton Blanchard <anton@au.ibm.com> found at https://github.com/antonblanchard/crc32-vpmsum. The original is dual licensed under GPL and Apache 2.

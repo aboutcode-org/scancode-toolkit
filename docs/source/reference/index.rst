@@ -1,11 +1,13 @@
-.. _how_it_works:
+.. _reference:
 
-**Reference Docs**
-==================
+**Reference**
+=============
+
+Technical reference material.
 
 .. toctree::
    :maxdepth: 2
 
-   overview
-   license-detection-reference
-   available_package_parsers
+   scancode-cli/index.rst
+   scancode-plugins/index.rst
+   scancode-supported-packages

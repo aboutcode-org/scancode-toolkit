@@ -116,7 +116,7 @@ if not exist "%CFG_BIN_DIR%\python.exe" (
 
     if exist "%CFG_ROOT_DIR%\etc\thirdparty\virtualenv.pyz" (
         %PYTHON_EXECUTABLE% "%CFG_ROOT_DIR%\etc\thirdparty\virtualenv.pyz" ^
-            --wheel embed --pip embed --setuptools embed ^
+            --pip embed --setuptools embed ^
             --seeder pip ^
             --never-download ^
             --no-periodic-update ^
@@ -132,7 +132,7 @@ if not exist "%CFG_BIN_DIR%\python.exe" (
             )
         )
         %PYTHON_EXECUTABLE% "%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\virtualenv.pyz" ^
-            --wheel embed --pip embed --setuptools embed ^
+            --pip embed --setuptools embed ^
             --seeder pip ^
             --never-download ^
             --no-periodic-update ^
@@ -161,7 +161,7 @@ if %ERRORLEVEL% neq 0 (
     %CFG_QUIET% ^
     %PIP_EXTRA_ARGS% ^
     %CFG_REQUIREMENTS%
-
+"%CFG_BIN_DIR%\scancode-train-gibberish-model"
 
 @rem ################################
 :create_bin_junction
