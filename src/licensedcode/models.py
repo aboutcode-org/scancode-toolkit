@@ -1353,7 +1353,9 @@ class BasicRule:
         default=True,
         repr=False,
         metadata=dict(
-            help='Flag set to True if this is a builtin standard rule.')
+            help='Flag set to True if this is a builtin standard rule and'
+            'not a synthetic rule created for a specific matched text.'
+        )
     )
 
     # The is_license_xxx flags below are an indication of what this rule

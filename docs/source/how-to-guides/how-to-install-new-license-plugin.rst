@@ -70,7 +70,7 @@ Finally, the same directory containing the class definition must also contain th
 licenses and/or rules. Licenses must be contained in a directory called ``licenses`` and rules
 must be contained in a directory called ``rules``.
 
-See :ref:`how-to-add-new-license` and :ref:`how-to-add-new-license-detection-rule` to understand
+See :ref:`how-to-add-new-license` and :ref:`how-to-add-modify-license-detection-rule` to understand
 the structure of license and rule files, respectively.
 
 After creating this plugin, you can upload it to PyPI so that others can use it, or you can
