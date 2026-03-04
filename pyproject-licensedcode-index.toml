@@ -1,0 +1,62 @@
+[build-system]
+requires = [ "flot>=0.7.0" ]
+build-backend = "flot.buildapi"
+
+[project]
+name = "licensedcode-index"
+version = "32.1.0"
+description = "A packaging of the ScanCode licensedb license and license rules pre-built index. Can only be used with ScanCode-Toolkit."
+long_description_content_type = "text/x-rst"
+readme = "src/licensedcode/data/README.rst"
+license = { text = "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft" }
+authors = [
+    { name = "nexB. Inc. and others", email = "info@aboutcode.org" },
+]
+keywords = [
+    "open source",
+    "license",
+    "licensing",
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/nexB/scancode-toolkit"
+
+[tool.flot]
+wheel_path_prefixes_to_strip = [ "src" ]
+
+includes = [
+    "src/licensedcode/data/cache/**/*",
+    "src/licensedcode/data/cc-by-4.0.LICENSE",
+    "src/licensedcode/data/scancode-data.ABOUT",
+    "src/licensedcode/README.rst",
+    "src/licensedcode/data/README.rst",
+]
+
+metadata_files = [
+    "*.LICENSE",
+    "NOTICE",
+    "AUTHORS.rst",
+    "CHANGELOG.rst",
+    "CODE_OF_CONDUCT.rst",
+]
+
+editable_paths = [ "src" ]
+
+sdist_extra_includes = [
+    ".gitattributes",
+    ".gitignore",
+    "*.LICENSE",
+    "NOTICE",
+    "*.ABOUT",
+    "pyproject-licensedcode-index.toml",
+    "*.yml",
+    "*.rst",
+]

@@ -59,15 +59,15 @@ rm -rf $thirdparty_src_dir
 mkdir -p $release_dir/etc
 cp -r etc/thirdparty $release_dir/etc
 
-# Build the wheel
+# Build the app archive
 ./configure --dev
-venv/bin/scancode-reindex-licenses
+
 venv/bin/scancode-reindex-package-patterns
 venv/bin/scancode-train-gibberish-model
-venv/bin/python setup.py --quiet bdist_wheel --python-tag cp$python_version
 
 cp -r \
   dist/scancode_*.whl \
+  dist/licensedcode_index_*.whl \
   scancode.bat extractcode.bat configure.bat \
   *.rst \
   samples \

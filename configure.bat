@@ -157,10 +157,16 @@ if %ERRORLEVEL% neq 0 (
 
 "%CFG_BIN_DIR%\pip" install ^
     --upgrade ^
-    --no-build-isolation ^
+    %CFG_QUIET% ^
+    %PIP_EXTRA_ARGS% ^
+    %FLOT_REQUIREMENTS%
+
+"%CFG_BIN_DIR%\pip" install ^
+    --upgrade ^
     %CFG_QUIET% ^
     %PIP_EXTRA_ARGS% ^
     %CFG_REQUIREMENTS%
+
 "%CFG_BIN_DIR%\scancode-train-gibberish-model"
 
 @rem ################################
