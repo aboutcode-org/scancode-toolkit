@@ -1,0 +1,18 @@
+---
+key: rsync-linking-exception
+short_name: rsync Linking Exception
+name: rsync Linking Exception
+owner: rsync project
+category: Copyleft Limited
+is_exception: yes
+spdx_license_key: rsync-linking-exception
+other_urls:
+    - https://github.com/RsyncProject/rsync/blob/master/COPYING
+---
+
+In addition, as a special exception, the copyright holders give
+permission to dynamically link rsync with the OpenSSL and xxhash
+libraries when those libraries are being distributed in compliance
+with their license terms, and to distribute a dynamically linked
+combination of rsync and these libraries.  This is also considered
+to be covered under the GPL's System Libraries exception.

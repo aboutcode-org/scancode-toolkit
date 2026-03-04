@@ -4,24 +4,13 @@ short_name: Vixie Cron License
 name: Vixie Cron License
 category: Permissive
 owner: Unspecified
-spdx_license_key: LicenseRef-scancode-vixie-cron
+spdx_license_key: Vixie-Cron
+other_spdx_license_keys:
+    - LicenseRef-scancode-vixie-cron
+other_urls:
+    - https://github.com/vixie/cron/tree/545b3f5246824a9cda5905eeb7cf019c95e66995
 ignorable_emails:
     - paul@vix.com
 ---
 
-Distribute freely, except: don't remove my name from the source or documentation
-(don't take credit for my work), mark your changes (don't get me blamed for your
-possible bugs), don't alter or remove this notice. May be sold if buildable
-source is provided to buyer. No warrantee of any kind, express or implied, is
-included with this software; use at your own risk, responsibility for damages
-(if any) to anyone resulting from the use of this software rests entirely with
-the user.
-
-Send bug reports, bug fixes, enhancements, requests, flames, etc., and I'll try
-to keep a version up to date. I can be reached as follows: 
-
-Paul Vixie
-<paul@vix.com>
-uunet!decwrl!vixie!paul
-
-Vixie Cron V3.0 December 27, 1993
+Distribute freely, except: don't remove my name from the source or documentation (don't take credit for my work), mark your changes (don't get me blamed for your possible bugs), don't alter or remove this notice. May be sold if buildable source is provided to buyer. No warrantee of any kind, express or implied, is included with this software; use at your own risk, responsibility for damages (if any) to anyone resulting from the use of this software rests entirely with the user.

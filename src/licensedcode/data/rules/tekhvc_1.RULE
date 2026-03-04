@@ -1,18 +1,21 @@
 ---
-key: tekhvc
-short_name: TekHVC License
-name: TekHVC License
-category: Permissive
-owner: Tektronix
-spdx_license_key: TekHVC
-other_spdx_license_keys:
-    - LicenseRef-scancode-tekhvc
-other_urls:
-    - https://www.x.org/releases/individual/lib/libX11-1.7.2.tar.bz2
-    - https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/COPYING?ref_type=heads#L138-171
+license_expression: tekhvc
+is_license_text: yes
+notes: This is the license text as added in SPDX License List 3.28
+ignorable_copyrights:
+    - (c) Copyright 1990 1991 Tektronix, Inc.
+ignorable_holders:
+    - Tektronix, Inc.
 ---
 
-Permission is hereby granted to use, copy,
+Code and supporting documentation (c) Copyright 1990 1991 Tektronix, Inc.
+	All Rights Reserved
+
+This file is a component of an X Window System-specific implementation
+of Xcms based on the TekColor Color Management System.  TekColor is a
+trademark of Tektronix, Inc.  The term "TekHVC" designates a particular
+color space that is the subject of U.S. Patent No. 4,985,853 (equivalent
+foreign patents pending).  Permission is hereby granted to use, copy,
 modify, sell, and otherwise distribute this software and its
 documentation for any purpose and without fee, provided that:
 

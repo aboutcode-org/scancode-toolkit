@@ -1,0 +1,20 @@
+---
+key: hyphen-bulgarian
+short_name: hyphen-bulgarian License
+name: hyphen-bulgarian License
+category: Permissive
+owner: Unspecified
+spdx_license_key: hyphen-bulgarian
+other_urls:
+    - https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/hyphen-bulgarian.tar.xz
+    - https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/blob/959538769bfad6a73bdf34275d46520ec0f9cbb5/COPYING#L176-185
+---
+
+This software may be used, modified, copied, distributed, and sold,
+both in source and binary form provided that the above copyright
+notice and these terms are retained. The name of the author may not
+be used to endorse or promote products derived from this software
+without prior permission.  THIS SOFTWARE IS PROVIDES "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES ARE DISCLAIMED.  IN NO EVENT
+SHALL THE AUTHOR BE LIABLE FOR ANY DAMAGES ARISING IN ANY WAY OUT
+OF THE USE OF THIS SOFTWARE.

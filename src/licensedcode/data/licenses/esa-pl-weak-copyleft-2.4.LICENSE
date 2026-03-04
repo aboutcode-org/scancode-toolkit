@@ -1,0 +1,204 @@
+---
+key: esa-pl-weak-copyleft-2.4
+short_name: ESA-PL – v2.4 – Weak Copyleft (Type 2)
+name: European Space Agency Public License – v2.4 – Weak Copyleft (Type 2)
+owner: European Space Agency
+category: Permissive
+spdx_license_key: ESA-PL-weak-copyleft-2.4
+other_urls:
+    - https://essr.esa.int/license/european-space-agency-public-license-v2-4-weak-copyleft-type-2
+---
+
+European Space Agency Public License (ESA-PL) Weak Copyleft (Type 2) – v2.4
+
+ 
+
+1 Definitions
+
+ 
+
+1.1 “Contributor” means (a) the individual or legal entity that originally creates or later modifies the Software and (b) each subsequent individual or legal entity that creates or contributes to the creation of Modifications.
+
+1.2 “Contributor Version” means the version of the Software on which the Contributor based its Modifications.
+
+1.3 “Distribution” and “Distribute” means any act of selling, giving, lending, renting, distributing, communicating, transmitting, or otherwise making available, physically or electronically or by any other means, copies of the Software or Modifications.
+
+1.4 “ESA” means the European Space Agency.
+
+1.5 “License” means this document.
+
+1.6 “Licensor” means the individual or legal entity that Distributes the Software under the License to You.
+
+1.7 “Modification” means any work or software created that is based upon or derived from the Software (or portions thereof) or a modification of the Software (or portions thereof). For the avoidance of doubt, linking a library to the Software results in a Modification.
+
+1.8 “Object Code” means any non-Source Code form of the Software and/or Modifications.
+
+1.9 “Patent Claims” (of a Contributor) means any patent claim(s), owned at the time of the Distribution or subsequently acquired, including without limitation, method, process and apparatus claims, in any patent licensable by a Contributor which would be infringed by making use of the rights granted under Sec. 2.1, including but not limited to make, have made, use, sell, offer for sale or import of the Contributor Version and/or such Contributor’s Modifications (if any), either alone or in combination with the Contributor Version. “Licensable” means having the right to grant, whether at the time of the Distribution or subsequently acquired, the rights conveyed herein. 
+
+1.10 “Software” means the software Distributed under this License by the Licensor, in Source Code and/or Object Code form.
+
+1.11 “Source Code” means the preferred, usually human readable form of the Software and/or Modifications in which modifications are made and the associated documentation included in or with such code.
+
+1.12 “You” means an individual or legal entity exercising rights under this License (the licensee).
+
+ 
+
+2 Grant of Rights
+
+ 
+
+2.1 Copyright
+
+The Licensor, and each Contributor in respect of such Contributor’s Modifications, hereby grants You a world-wide, royalty-free, non-exclusive license under Copyright, subject to the terms and conditions of this License, to:
+
+use the Software;
+reproduce the Software by any or all means and in any or all form;
+Modify the Software and create works based on the Software;
+communicate to the public, including making available, display or perform the Software or copies thereof to the public;
+Distribute, sublicense, lend and rent the Software.
+The license grant is perpetual and irrevocable, unless terminated pursuant to Sec. 8.
+
+ 
+
+2.2 Patents
+
+Each Contributor in respect of such Contributor’s Modifications, hereby grants You a world-wide, royalty-free, non-exclusive, sub-licensable license under Patent Claims to the extent necessary to make use of the rights granted under Sec. 2.1, including but not limited to make, have made, use, sell, offer for sale, import, export and Distribute such Contributor’s Modifications and the combination of such Contributor’s Modifications with the Contributor Version (collectively called the “Patent Licensed Version” of the Software).
+
+No patent license is granted for claims that are infringed:
+
+only as a consequence of further modification of the Patent Licensed Version; or
+by the combination of the Patent Licensed Version with other software or other devices or hardware, unless such combination was an intended use case of the Patent Licensed Version (e.g. a general purpose library is intended to be used with other software, a satellite navigation software is intended to be used with appropriate hardware); or
+by a Modification under Patent Claims in the absence of the Contributor’s Modifications or by a combination of the Contributor’s Modifications with software other than the Patent Licensed Version or Modifications thereof.
+ 
+
+2.3 Trademark
+
+This License does not grant permission to use trade names, trademarks, services marks, logos or names of the Licensor, except as required for reasonable and customary use in describing the origin of the Software and as reasonable necessary to comply with the obligations of this License (e.g. by reproducing the content of the notices). For the avoidance of doubt, upon Distribution of Modifications You must not use the Licensor’s or ESA’s trademarks, names or logos in any way that states or implies, or can be interpreted as stating or implying, that the final product is endorsed or created by the Licensor or ESA.
+
+ 
+
+3 Distribution
+
+ 
+
+3.1 Copyleft Clause
+
+All Distribution of the Software and/or Modifications, as Source Code or Object Code, must be, as a whole, either under (a) the terms of this License or the ESA-PL Strong Copyleft license v2.4 or (b) any later version of these Licenses unless the Software is expressly Distributed only under a specific version of the License by a Contributor or (c) the terms of a compatible license as listed in Appendix A to this License. Any obligation in this License to Distribute under the terms of this License, in particular as set out in Sec. 3.2, shall be construed as referring to “this License or a compatible license”.
+
+3.2 Copyleft exceptions
+
+3.2.1 Compilations. In the event of the Distribution of a compilation of Software and/or Modifications with other separate and independent works (for example in or on a volume of a storage or distribution medium), which are not by their nature extensions or other modifications of the Software and/or the Modifications, and which are not combined with it such as to form a single larger program, Distribution of the compilation does not cause this License to apply to the other parts of the compilation.
+
+3.2.2 System Libraries. System Libraries used by a Modification need not be Distributed under the terms of this License and need not be included as part of the Source Code pursuant to Sec. 3.3. “System Library” means anything that is normally distributed (in either source or binary form) with the major components (kernel, window system etc.) of the operating system(s) on which the Software or Modification runs, or a compiler used to produce the Object Code, or an object code interpreter used to run it.
+
+3.2.3 External Modules. You may create a Modification by combining Software with an external module enabling supplementary functions or services and Distribute the external module under different license terms, provided that the external module and the Software run in separate address spaces, with one calling the other, or each other interfacing, when they are run.
+
+3.2.4 Combinations. You may create a Modification (the “Combination”) by combining or linking the Software or Modifications thereof (the “Covered Code”) with additional code or software (the “External Code”) not governed by the terms of this License and Distribute the Combination
+
+in Object Code form under any license terms, and/or
+in Source Code form with the External Code’s Source Code under any license terms and the Covered Code’s Source Code under this License,
+provided that:
+the Covered Code will be governed by this License and the different license terms effectively do not restrict the rights granted by this License; and
+the External Code and its license terms are clearly identified and notice is given of the use of Covered Code and the applicability of this License; and
+the External Code’s Source Code is clearly separated from the Covered Code’s Source Code (usually contained in different files); and
+You communicate the Covered Code’s Source Code in accordance with Sec. 3.3. 
+ 
+
+3.3 Communication of the Source Code
+
+If You Distribute the Software and/or Modifications as Object Code, You must:
+
+provide in addition a copy of the Source Code of the Software and/or Modifications to each recipient; or
+make the Source Code of the Software and/or Modifications freely accessible by reasonable means for anyone who possesses the Object Code or received the Software and/or Modifications from You, and inform recipients how to obtain a copy of the Source Code. Such information needs to be included at a minimum in the “NOTICE” file pursuant to Sec. 4.4 You are obliged to make the Source Code accessible in accordance with this Section for as long as You continue to Distribute the Software and/or Modifications and at a minimum for a three year period following Your last Distribution of the Software and/or Modifications.
+ 
+
+3.4 Dual Licensing
+
+This License gives no permission to license the Software or Modifications in any other way, but it does not invalidate such permission if You have separately received it.
+
+ 
+
+4 Notices
+
+The following obligations apply in the event of any Distribution of the Software and/or Modifications as Source Code and/or Object Code:
+
+4.1 You must include a copy of this License and all of the notices set out in this Sec. 4.
+
+4.2 You may not remove or alter any copyright, patent, trademark and attribution notices nor any of the notices set out in this Sec. 4, except as necessary for your compliance with this License or otherwise permitted by this License, except for those notices that do not pertain to the Modifications You Distribute.
+
+4.3 Each Contributor must cause its Modification carrying prominent notices stating that the Software has been modified and the date of modification and identify itself as the originator of its Modifications in a manner that reasonably allows identification and contact with the Contributor. The aforementioned notices must at a minimum be in a text file included with the Distribution titled “CHANGELOG”.
+
+4.4 The Software may include a "NOTICE" text file containing general notices. Any Contributor can create such a NOTICE file or add notices to it, alongside or as an addendum to the original text, provided that such notices cannot be construed as modifying the License. 
+
+4.5 Each Contributor must identify all of its Patent Claims by providing at a minimum the patent number and identification and contact information in a text file included with the Distribution titled "LEGAL".
+
+ 
+
+5 Warranty and Liability 
+
+5.1 Each Contributor warrants and represents that it has sufficient rights to grant the rights to its Modifications conveyed by this License.
+
+5.2 Except as expressly set forth in this License, the Software is provided to You on an “as is” basis and without warranties of any kind, including without limitation merchantability, fitness for a particular purpose, absence of defects or errors, accuracy or non-infringement of intellectual property rights. Mandatory statutory warranty claims, e.g. in the event of wilful deception or fraudulent misrepresentation, shall remain unaffected.
+
+5.3 Except as expressly set forth in this License, neither Licensor nor any Contributor shall be liable, including, without limitation, for direct, indirect, incidental, or consequential damages (including without limitation loss of profit), however caused and on any theory of liability, arising in any way out of the use or Distribution of the Software or the exercise of any rights under this License, even if You have been advised of the possibility of such damages. Mandatory statutory liability claims, e.g. in the event of wilful misconduct, wilful deception or fraudulent misrepresentation, shall remain unaffected.
+
+ 
+
+6 Additional Agreements
+
+While Distributing the Software or Modifications, You may choose to conclude additional agreements, for free or for charge, regarding for example support, warranty, indemnity, liability or liability obligations and/or rights, provided such additional agreements are consistent with this License and do not effectively restrict the recipient’s rights under this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor or Licensor, and only if You agree to indemnify, defend, and hold each Contributor or Licensor harmless for any liability incurred by, or claims asserted against, such Contributor or Licensor by reason of your accepting any such warranty or additional liability.
+
+ 
+
+7 Infringements
+
+7.1 You acknowledge that continuing to use the Software knowing that such use infringes third party rights (e.g. after receiving a third party notification of infringement) would expose you to the risk of being considered as intentionally infringing third party rights. In such event You should acquire the respective rights or modify the Software so that the Modification is non-infringing.
+
+ 
+
+8 Termination
+
+8.1 This License and the rights granted hereunder will terminate automatically upon any breach by You with the terms of this License if you fail to cure such breach within 30 days of becoming aware of the breach.
+
+8.2 If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Software constitutes direct or contributory patent infringement, then any patent and copyright licenses granted to You under this License for the Software shall terminate as of the date such litigation is filed.
+
+8.3 Any licenses validly granted by You under the License prior to termination shall continue and survive termination.
+
+ 
+
+9 Applicable Law, Arbitration and Compliance
+
+9.1 This License is governed by the laws of the ESA Member State where the Licensor resides or has his registered office. “Member States” are the members of the European Space Agency pursuant to Art. 1 of the ESA Convention[1]. This licence shall be governed by German law if a dispute arises with the ESA as a Licensor or if the Licensor has no residence or registered office inside a Member State.
+
+9.2 Any dispute arising out of this License shall be finally settled in accordance with the Rules of Arbitration of the International Chamber of Commerce by one or more arbitrators designated in conformity with those rules. Arbitration proceedings shall take place in Cologne, Germany. The award shall be final and binding on the parties, no appeal shall lie against it. The enforcement of the award shall be governed by the rules of procedure in force in the state/country in which it is to be executed.
+
+9.3 For the avoidance of doubt, You are solely responsible for compliance with current applicable requirements of national laws. The Software can be subject to export control laws. If You export the Software it is your responsibility to comply with all export control laws. This may include different requirements, as e.g. registering the Software with the local authorities.
+
+9.4 If it is impossible for You to comply with any of the terms of this License due to statute, judicial order or regulation You must:
+
+comply with the terms of this License to the maximum extent possible; and
+describe the limitations and the Object Code and/or Source Code they affect. Such description must be included in the LEGAL notice described in Section 4. Except to the extent prohibited by statute or regulation, such description must be sufficiently detailed for an average recipient to be able to understand it.
+ 
+
+10 Miscellaneous
+
+10.1 Only ESA has the right to modify or publish new versions of this License. ESA may assign this right to other individuals or legal entities. Each version will be given a distinguishing version number.
+
+10.2 This License represents the complete agreement concerning subject matter hereof.
+
+10.3 If any provision of this License is held invalid or unenforceable, the remaining provisions of this License shall not be affected. The invalid or unenforceable provision shall be construed and/or reformed to the extent necessary to make it enforceable and valid.
+
+ 
+
+Appendix A – List of compatible licenses
+
+ 
+
+Compatible licenses are:
+
+GNU General Public License (GPL)  version 2 and any subsequent version
+CeCILL version 2 and any subsequent version
+ 
+
+ 
+[1] As of January 2020 the Member States are Austria, Belgium, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Luxembourg, The Netherlands, Norway, Poland, Portugal, Romania, Spain, Sweden, Switzerland and the United Kingdom.

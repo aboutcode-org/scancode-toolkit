@@ -1,6 +1,10 @@
 ---
 license_expression: bsd-new
 is_license_text: yes
+is_deprecated: yes
+notes: |
+    Added in SPDX license list 3.28
+    Replaced by license: bsd-3-clause-tso
 ---
 
 Redistribution and use in source and binary forms, with or without
