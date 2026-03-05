@@ -33,21 +33,6 @@
           "license_expression": "bsd-new",
           "license_expression_spdx": "BSD-3-Clause",
           "from_file": null,
-          "start_line": 1,
-          "end_line": 1,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "bsd-new_363.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_363.RULE",
-          "matched_text": "name: hsqldb"
-        },
-        {
-          "license_expression": "bsd-new",
-          "license_expression_spdx": "BSD-3-Clause",
-          "from_file": null,
           "start_line": 2,
           "end_line": 2,
           "matcher": "2-aho",
@@ -60,7 +45,7 @@
           "matched_text": "url: http://hsqldb.org/web/hsqlLicense.html"
         }
       ],
-      "identifier": "bsd_new-4b5f8fe0-ffc8-f64d-7809-e39f0b5fe0eb"
+      "identifier": "bsd_new-f1ebd3aa-2540-19a3-338e-6a998e354d0e"
     }
   ],
   "other_license_expression": null,
