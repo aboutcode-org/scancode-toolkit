@@ -22,7 +22,7 @@ Handle Go packages including go.mod and go.sum files.
 # CHECK: https://forum.golangbridge.org/t/url-to-download-package/19811
 
 # TODO: use the LICENSE file convention!
-# TODO: support "vendor" and "workspace" layouts
+# TODO: support "vendor" layout
 
 
 class BaseGoModuleHandler(models.DatafileHandler):
@@ -108,7 +108,7 @@ class GoSumHandler(BaseGoModuleHandler):
     path_patterns = ('*/go.sum',)
     default_package_type = 'golang'
     default_primary_language = 'Go'
-    description = 'Go module cheksums file'
+    description = 'Go module checksums file'
     documentation_url = 'https://go.dev/ref/mod#go-sum-files'
 
     @classmethod

@@ -94,6 +94,7 @@ class NugetNupkgHandler(models.NonAssemblableDatafileHandler):
     datasource_id = 'nuget_nupkg'
     path_patterns = ('*.nupkg',)
     default_package_type = 'nuget'
+    default_primary_language = 'C#'
     filetypes = ('zip archive', 'microsoft ooxml',)
     description = 'NuGet nupkg package archive'
     documentation_url = 'https://en.wikipedia.org/wiki/Open_Packaging_Conventions'
@@ -103,6 +104,7 @@ class NugetNuspecHandler(models.DatafileHandler):
     datasource_id = 'nuget_nupsec'
     path_patterns = ('*.nuspec',)
     default_package_type = 'nuget'
+    default_primary_language = 'C#'
     description = 'NuGet nuspec package manifest'
     documentation_url = 'https://docs.microsoft.com/en-us/nuget/reference/nuspec'
 
@@ -185,6 +187,7 @@ class NugetPackagesLockHandler(models.DatafileHandler):
     datasource_id = 'nuget_packages_lock'
     path_patterns = ('*packages.lock.json',)
     default_package_type = 'nuget'
+    default_primary_language = 'C#'
     description = 'NuGet packages.lock.json file'
     documentation_url = 'https://learn.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-restore'
 
