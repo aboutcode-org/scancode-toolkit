@@ -712,3 +712,15 @@ build_tests(test_dir='m2', clazz=TestMavenDataDrivenPomComprehensive,
             prefix='test_maven2_parse', check_pom=True, regen=REGEN_TEST_FIXTURES)
 build_tests(test_dir='m2', clazz=TestMavenDataDrivenPomComprehensive,
             prefix='test_maven2_package', check_pom=False, regen=REGEN_TEST_FIXTURES)
+
+
+class TestJBossLicenseNormalization(BaseMavenCase):
+    """
+    Verify that legacy JBoss Maven repository license names are normalized
+    to their canonical ScanCode equivalents.
+    See https://github.com/nexB/scancode-toolkit/issues/4787
+    """
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_jboss_license_names_are_normalized(self):
+        self.check_parse_to_package('maven_misc/jboss-licenses-pom.xml')
