@@ -15,7 +15,7 @@
   "licenses": [
     {
       "license": {
-        "name": "hsqldb",
+        "name": "HSQLDB License",
         "url": "http://hsqldb.org/web/hsqlLicense.html",
         "comments": null,
         "distribution": "repo"
