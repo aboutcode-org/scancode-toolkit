@@ -4,29 +4,29 @@ is_license_text: yes
 relevance: 100
 minimum_coverage: 98
 ---
-Copyright {{2025 Sinusoidal Systems AB}}
+{{Copyright 2025 Sinusoidal Systems AB
 
-{{Permission is hereby granted, free of charge}}, to any person obtaining a copy of
+Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
 the Software without restriction, including without limitation the rights to
 use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
 of the Software, and to permit persons to whom the Software is furnished to do
 so, subject to the following conditions:
 
-1. {{The above copyright notice and this permission notice}} shall be included in
+1. The above copyright notice and this permission notice shall be included in
    all copies or substantial portions of the Software.
 
 2. Redistributions of the Software in source or binary form must include an
    attribution notice stating that the Software was originally developed by
-   {{Sinusoidal Systems AB}}, and may not in any way suggest that {{Sinusoidal Systems AB}}
+   Sinusoidal Systems AB, and may not in any way suggest that Sinusoidal Systems AB
    endorses or is affiliated with the redistribution or derivative work without
    prior written permission.
 
-3. Neither the name, trademarks, nor service marks of {{Sinusoidal Systems AB}} may be
+3. Neither the name, trademarks, nor service marks of Sinusoidal Systems AB may be
    used to endorse or promote products derived from this Software without specific
    prior written permission.
 
-{{THE SOFTWARE IS PROVIDED "AS IS"}}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS"}}, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
