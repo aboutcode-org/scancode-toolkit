@@ -4,8 +4,7 @@ is_license_text: yes
 relevance: 100
 minimum_coverage: 98
 ---
-
-Copyright 2025 Sinusoidal Systems AB
+Copyright {{2025 Sinusoidal Systems AB}}
 
 {{Permission is hereby granted, free of charge}}, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -19,11 +18,11 @@ so, subject to the following conditions:
 
 2. Redistributions of the Software in source or binary form must include an
    attribution notice stating that the Software was originally developed by
-   Sinusoidal Systems AB, and may not in any way suggest that Sinusoidal Systems AB
+   {{Sinusoidal Systems AB}}, and may not in any way suggest that {{Sinusoidal Systems AB}}
    endorses or is affiliated with the redistribution or derivative work without
    prior written permission.
 
-3. Neither the name, trademarks, nor service marks of Sinusoidal Systems AB may be
+3. Neither the name, trademarks, nor service marks of {{Sinusoidal Systems AB}} may be
    used to endorse or promote products derived from this Software without specific
    prior written permission.
 
