@@ -30,8 +30,8 @@ The ScanCode Toolkit documentation also provides:
 Build and tests status
 ======================
 
-We run 30,000+ tests on each commit on multiple CIs to ensure a good platform
-compabitility with multiple versions of Windows, Linux and macOS.
+We run 30,000+ tests on each commit on multiple CIs to ensure good platform 
+compatibility with multiple versions of Windows, Linux, and macOS.
 
 +------------+--------------+-------------------------+----------------------------+
 | **Azure**  | **RTD Build**| **GitHub actions Docs** | **GitHub actions Release** |
