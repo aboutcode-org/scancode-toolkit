@@ -1,0 +1,23 @@
+{
+    "runtimeTarget": {
+        "name": ".NETCoreApp,Version=v6.0"
+    },
+    "targets": {
+        ".NETCoreApp,Version=v6.0": {
+            "MyApp/1.0.0": {
+                "dependencies": {
+                    "Newtonsoft.Json": "13.0.1"
+                }
+            },
+            "Newtonsoft.Json/13.0.1": {}
+        }
+    },
+    "libraries": {
+        "MyApp/1.0.0": {
+            "type": "project"
+        },
+        "Newtonsoft.Json/13.0.1": {
+            "type": "package"
+        }
+    }
+}
