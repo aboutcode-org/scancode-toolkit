@@ -666,3 +666,79 @@ def get_variables(location):
                 parts = line.split('=')
                 result[parts[0].strip()] = parts[-1].strip().strip('"')
     return result
+
+
+class CondaEnvironmentYmlHandler(BaseDependencyFileHandler):
+    datasource_id = 'conda_environment_yml'
+    path_patterns = ('*environment.yml', '*environment.yaml')
+    default_package_type = 'conda'
+    description = 'Conda environment.yml'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        import re
+        with open(location) as fi:
+            conda_data = saneyaml.load(fi.read())
+
+        if not conda_data or not isinstance(conda_data, dict):
+            conda_data = {}
+
+        name = conda_data.get('name')
+        extra_data = {}
+        channels = conda_data.get('channels')
+        if channels:
+            extra_data['channels'] = channels
+
+        dependencies = []
+        deps_data = conda_data.get('dependencies') or []
+        for dep in deps_data:
+            if isinstance(dep, str):
+                match = re.split(r'(>=|<=|==|=|>|<)', dep, maxsplit=1)
+                dep_name = match[0].strip()
+                version = None
+
+                if len(match) > 1:
+                    version = match[2].strip()
+
+                purl = PackageURL(type='conda', name=dep_name)
+
+                dependencies.append(
+                    models.DependentPackage(
+                        purl=purl.to_string(),
+                        extracted_requirement=version,
+                        scope='runtime',
+                        is_runtime=True,
+                        is_optional=False,
+                    )
+                )
+            elif isinstance(dep, dict) and 'pip' in dep:
+                pip_deps = dep.get('pip') or []
+                for pip_dep in pip_deps:
+                    match = re.split(r'(>=|<=|==|=|>|<|~=)', pip_dep, maxsplit=1)
+                    pip_name = match[0].strip()
+                    version = None
+                    if len(match) > 1:
+                        version = match[2].strip()
+
+                    purl = PackageURL(type='pypi', name=pip_name)
+
+                    dependencies.append(
+                        models.DependentPackage(
+                            purl=purl.to_string(),
+                            extracted_requirement=version,
+                            scope='runtime',
+                            is_runtime=True,
+                            is_optional=False,
+                        )
+                    )
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            dependencies=dependencies,
+        )
+        if extra_data:
+            package_data['extra_data'] = extra_data
+
+        yield models.PackageData.from_data(package_data, package_only)
