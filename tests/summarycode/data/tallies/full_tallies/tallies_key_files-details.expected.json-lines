@@ -10,11 +10,12 @@
           "--info": true,
           "--json-lines": "<file>",
           "--license": true,
+          "--processes": "-1",
           "--tallies": true,
           "--tallies-key-files": true
         },
         "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-        "output_format_version": "4.0.0",
+        "output_format_version": "4.1.0",
         "message": null,
         "errors": [],
         "warnings": [],
@@ -22,11 +23,11 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-5.15.0-140-generic-x86_64-with-glibc2.35",
-            "platform_version": "#150-Ubuntu SMP Sat Apr 12 06:00:09 UTC 2025",
-            "python_version": "3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]"
+            "platform": "Linux-5.15.0-171-generic-x86_64-with-glibc2.35",
+            "platform_version": "#181-Ubuntu SMP Fri Feb 6 22:44:50 UTC 2026",
+            "python_version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]"
           },
-          "spdx_license_list_version": "3.26",
+          "spdx_license_list_version": "3.27",
           "files_count": 26
         }
       }
@@ -169,12 +170,12 @@
       {
         "identifier": "mit_old_style-578ee504-a9b5-6c26-1bb4-fd7b80a664f0",
         "license_expression": "mit-old-style",
-        "license_expression_spdx": "LicenseRef-scancode-mit-old-style",
+        "license_expression_spdx": "Advanced-Cryptics-Dictionary",
         "detection_count": 1,
         "reference_matches": [
           {
             "license_expression": "mit-old-style",
-            "license_expression_spdx": "LicenseRef-scancode-mit-old-style",
+            "license_expression_spdx": "Advanced-Cryptics-Dictionary",
             "from_file": "scan/zlib/iostream2/zstream.h",
             "start_line": 9,
             "end_line": 15,
@@ -2854,15 +2855,15 @@
         "is_key_file": false,
         "is_community": false,
         "detected_license_expression": "mit-old-style",
-        "detected_license_expression_spdx": "LicenseRef-scancode-mit-old-style",
+        "detected_license_expression_spdx": "Advanced-Cryptics-Dictionary",
         "license_detections": [
           {
             "license_expression": "mit-old-style",
-            "license_expression_spdx": "LicenseRef-scancode-mit-old-style",
+            "license_expression_spdx": "Advanced-Cryptics-Dictionary",
             "matches": [
               {
                 "license_expression": "mit-old-style",
-                "license_expression_spdx": "LicenseRef-scancode-mit-old-style",
+                "license_expression_spdx": "Advanced-Cryptics-Dictionary",
                 "from_file": "scan/zlib/iostream2/zstream.h",
                 "start_line": 9,
                 "end_line": 15,

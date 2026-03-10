@@ -2,14 +2,18 @@
 key: bsd-3-clause-tso
 short_name: BSD 3-Clause Tso variant
 name: BSD 3-Clause Tso variant
-owner: Theodore Ts'o
 category: Permissive
+owner: Theodore Ts'o
 notes: |
     Added in SPDX license list 3.28
     This was previously the license rule: bsd-new_117.RULE
 spdx_license_key: BSD-3-Clause-Tso
 other_urls:
     - https://www.x.org/archive/current/doc/xorg-docs/License.html#Theodore_Tso
+ignorable_copyrights:
+    - Copyright Theodore Ts'o, 1994, 1995, 1996, 1997, 1998, 1999
+ignorable_holders:
+    - Theodore Ts'o
 ---
 
 Copyright Theodore Ts'o, 1994, 1995, 1996, 1997, 1998, 1999. All rights reserved.

@@ -3,7 +3,7 @@ key: hyphen-bulgarian
 short_name: hyphen-bulgarian License
 name: hyphen-bulgarian License
 category: Permissive
-owner: Unspecified
+owner: Anton Zinoviev
 spdx_license_key: hyphen-bulgarian
 other_urls:
     - https://ctan.math.illinois.edu/systems/texlive/tlnet/archive/hyphen-bulgarian.tar.xz

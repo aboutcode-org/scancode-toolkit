@@ -1,11 +1,7 @@
 ---
-license_expression: other-permissive
+license_expression: hpnd-smc
 is_license_text: yes
-is_deprecated: yes
-relevance: 100
-notes: highly similar to mit-old-style-no-advert
-replaced_by:
-    - hpnd-smc
+notes: This was other-permissive_221.RULE previously
 ---
 
 Permission to use, copy, modify, and distribute this Python software and

@@ -2,11 +2,15 @@
 key: x11-no-permit-persons
 short_name: X11 no permit persons clause
 name: X11 no permit persons clause
-owner: Digital Equipment Corporation
 category: Permissive
+owner: DEC - Digital Equipment Corporation
 spdx_license_key: X11-no-permit-persons
 other_urls:
     - https://gitlab.freedesktop.org/xorg/lib/libxinerama/-/blob/cc22c2f60c3862482562955116d5455263b443dc/COPYING#L44-66
+ignorable_copyrights:
+    - Copyright (c) 1991, 1997 Digital Equipment Corporation, Maynard, Massachusetts
+ignorable_holders:
+    - Digital Equipment Corporation, Maynard, Massachusetts
 ---
 
 Copyright (c) 1991, 1997 Digital Equipment Corporation, Maynard, Massachusetts.

@@ -1,9 +1,9 @@
 ---
 key: nist-pd-tnt
-short_name: NIST    Public Domain Notice TNT variant
-name: NIST    Public Domain Notice TNT variant
+short_name: NIST Public Domain Notice TNT variant
+name: NIST Public Domain Notice TNT variant
 category: Public Domain
-owner: National Institute of Standards and Technology (NIST)
+owner: NIST
 notes: This is similar to nist-pd.LICENSE
 spdx_license_key: NIST-PD-TNT
 other_urls:

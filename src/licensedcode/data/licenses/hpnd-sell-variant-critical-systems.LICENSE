@@ -8,6 +8,8 @@ notes: this is similar to x11-keith-packard with authors added
 spdx_license_key: HPND-sell-variant-critical-systems
 other_urls:
     - https://gitlab.freedesktop.org/xorg/driver/xf86-video-voodoo/-/blob/68a5b6d98ae34749cca889f4373b4043d00bfe6a/src/voodoo_dga.c#L12-33
+ignorable_emails:
+    - alan@redhat.com
 ---
 
 Alan Cox <alan@redhat.com>

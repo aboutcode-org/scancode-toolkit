@@ -7,6 +7,8 @@ owner: The OSSP Project
 spdx_license_key: OSSP
 other_urls:
     - https://git.sr.ht/~nabijaczleweli/ossp-var
+ignorable_urls:
+    - http://www.ossp.org/pkg/lib/var
 ---
 
 This file is part of OSSP var, a variable expansion

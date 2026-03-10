@@ -73,7 +73,7 @@ license_expressions:
   - bsd-new
   - sunpro
   - sun-rpc
-  - bsd-new
+  - bsd-3-clause-tso
   - unicode-mappings
   - netcdf
   - bsd-original-uc

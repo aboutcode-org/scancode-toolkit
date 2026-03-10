@@ -3,7 +3,7 @@ key: hpnd-smc
 short_name: HPND - SMC variant
 name: Historical Permission Notice and Disclaimer - SMC variant
 category: Permissive
-owner: python.org
+owner: Python Software Foundation (PSF)
 spdx_license_key: HPND-SMC
 other_urls:
     - https://docs.python.org/3/license.html#execution-tracing
