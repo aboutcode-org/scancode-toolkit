@@ -11,6 +11,20 @@ import os
 import logging
 import ast
 from collections import defaultdict
+import re
+
+
+def _extract_starlark_kwarg(block, key):
+    """
+    Extract a string value for a named keyword argument from a
+    Starlark (Bazel) function call body.
+
+    Example block: 'name = "foo", version = "1.0"'
+    _extract_starlark_kwarg(block, 'name') -> 'foo'
+    """
+    match = re.search(r"\b" + re.escape(key) + r'\s*=\s*["\']([^"\']+)["\']', block)
+    return match.group(1) if match else None
+
 
 from commoncode import fileutils
 from packageurl import PackageURL
@@ -28,7 +42,7 @@ Detect as Packages common build tools and environment such as Make, Autotools,
 Buck, Bazel, Pants, etc.
 """
 
-TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+TRACE = os.environ.get("SCANCODE_DEBUG_PACKAGE", False)
 
 
 def logger_debug(*args):
@@ -39,21 +53,23 @@ logger = logging.getLogger(__name__)
 
 if TRACE:
     import sys
+
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(
-            ' '.join(isinstance(a, str) and a or repr(a) for a in args)
-        )
+        return logger.debug(" ".join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 class AutotoolsConfigureHandler(models.NonAssemblableDatafileHandler):
-    datasource_id = 'autotools_configure'
-    path_patterns = ('*/configure', '*/configure.ac',)
-    default_package_type = 'autotools'
-    description = 'Autotools configure script'
-    documentation_url = 'https://www.gnu.org/software/automake/'
+    datasource_id = "autotools_configure"
+    path_patterns = (
+        "*/configure",
+        "*/configure.ac",
+    )
+    default_package_type = "autotools"
+    description = "Autotools configure script"
+    documentation_url = "https://www.gnu.org/software/automake/"
 
     @classmethod
     def parse(cls, location, package_only=False):
@@ -77,8 +93,7 @@ class AutotoolsConfigureHandler(models.NonAssemblableDatafileHandler):
         yield models.PackageData.from_data(package_data, package_only)
 
 
-
-def check_rule_name_ending(rule_name, starlark_rule_types=('binary', 'library')):
+def check_rule_name_ending(rule_name, starlark_rule_types=("binary", "library")):
     """
     Return True if `rule_name` ends with a rule type from `starlark_rule_types`
     Return False otherwise
@@ -110,29 +125,30 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
             )
 
             if TRACE:
-                logger_debug(f"BaseStarlarkManifestHandler.assemble: package_data: {package_data.to_dict()}")
+                logger_debug(
+                    f"BaseStarlarkManifestHandler.assemble: package_data: {package_data.to_dict()}"
+                )
 
-            package.license_detections, package.declared_license_expression = \
+            package.license_detections, package.declared_license_expression = (
                 get_license_detections_and_expression(
                     package=package_data,
                     resource=resource,
                     codebase=codebase,
                 )
+            )
             if package.declared_license_expression:
-                package.declared_license_expression_spdx = str(build_spdx_license_expression(
-                    license_expression=package.declared_license_expression,
-                    licensing=get_cache().licensing,
-                ))
+                package.declared_license_expression_spdx = str(
+                    build_spdx_license_expression(
+                        license_expression=package.declared_license_expression,
+                        licensing=get_cache().licensing,
+                    )
+                )
 
             cls.assign_package_to_resources(
-                package=package,
-                resource=resource,
-                codebase=codebase,
-                package_adder=package_adder
+                package=package, resource=resource, codebase=codebase, package_adder=package_adder
             )
 
             yield package
-
 
         # we yield this as we do not want this further processed
         yield resource
@@ -140,7 +156,7 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
     @classmethod
     def parse(cls, location, package_only=False):
         # Thanks to Starlark being a Python dialect, we can use `ast` to parse it
-        with open(location, 'rb') as f:
+        with open(location, "rb") as f:
             tree = ast.parse(f.read())
 
         build_rules = defaultdict(list)
@@ -170,8 +186,7 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
                         # We collect the elements of a list if the element is
                         # not a function call
                         args[arg_name] = [
-                            elt.value for elt in kw.value.elts
-                            if not isinstance(elt, ast.Call)
+                            elt.value for elt in kw.value.elts if not isinstance(elt, ast.Call)
                         ]
                 if args:
                     build_rules[rule_name].append(args)
@@ -179,13 +194,13 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
         if build_rules:
             for rule_name, rule_instances_args in build_rules.items():
                 for args in rule_instances_args:
-                    name = args.get('name')
+                    name = args.get("name")
 
                     # FIXME: we could still return partial package data
                     if not name:
                         continue
 
-                    license_files = args.get('licenses')
+                    license_files = args.get("licenses")
 
                     if TRACE:
                         logger_debug(f"build: parse: license_files: {license_files}")
@@ -209,12 +224,14 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
             package_data = dict(
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
-                name=fileutils.file_name(fileutils.parent_directory(location))
+                name=fileutils.file_name(fileutils.parent_directory(location)),
             )
             yield models.PackageData.from_data(package_data, package_only)
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase, package_adder, skip_name=None):
+    def assign_package_to_resources(
+        cls, package, resource, codebase, package_adder, skip_name=None
+    ):
         package_uid = package.package_uid
         if not package_uid:
             return
@@ -258,8 +275,7 @@ def get_license_detections_and_expression(package, resource, codebase):
 
     if TRACE:
         logger_debug(
-            f"build: get_license_detections_and_expression:"
-            f"declared_licenses: {declared_licenses}"
+            f"build: get_license_detections_and_expression:declared_licenses: {declared_licenses}"
         )
         logger_debug(
             f"build: get_license_detections_and_expression:"
@@ -273,31 +289,28 @@ def get_license_detections_and_expression(package, resource, codebase):
             detections = detect_licenses(location=child.location)
             if TRACE:
                 logger_debug(
-                    f"build: get_license_detections_and_expression:"
-                    f"detections: {detections}"
+                    f"build: get_license_detections_and_expression:detections: {detections}"
                 )
 
             if not detections:
-                license_detections.append(
-                    get_unknown_license_detection(declared_licenses)
-                )
+                license_detections.append(get_unknown_license_detection(declared_licenses))
             else:
                 license_detections.extend(detections)
 
-    return get_mapping_and_expression_from_detections(
-        license_detections=license_detections
-    )
+    return get_mapping_and_expression_from_detections(license_detections=license_detections)
 
 
 class BazelBuildHandler(BaseStarlarkManifestHandler):
-    datasource_id = 'bazel_build'
-    path_patterns = ('*/BUILD',)
-    default_package_type = 'bazel'
-    description = 'Bazel BUILD'
-    documentation_url = 'https://bazel.build/'
+    datasource_id = "bazel_build"
+    path_patterns = ("*/BUILD",)
+    default_package_type = "bazel"
+    description = "Bazel BUILD"
+    documentation_url = "https://bazel.build/"
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase, package_adder, skip_name='BUILD'):
+    def assign_package_to_resources(
+        cls, package, resource, codebase, package_adder, skip_name="BUILD"
+    ):
         return super().assign_package_to_resources(
             package=package,
             resource=resource,
@@ -308,14 +321,16 @@ class BazelBuildHandler(BaseStarlarkManifestHandler):
 
 
 class BuckPackageHandler(BaseStarlarkManifestHandler):
-    datasource_id = 'buck_file'
-    path_patterns = ('*/BUCK',)
-    default_package_type = 'buck'
-    description = 'Buck file'
-    documentation_url = 'https://buck.build/'
+    datasource_id = "buck_file"
+    path_patterns = ("*/BUCK",)
+    default_package_type = "buck"
+    description = "Buck file"
+    documentation_url = "https://buck.build/"
 
     @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase, package_adder, skip_name='BUCK'):
+    def assign_package_to_resources(
+        cls, package, resource, codebase, package_adder, skip_name="BUCK"
+    ):
         return super().assign_package_to_resources(
             package=package,
             resource=resource,
@@ -326,26 +341,26 @@ class BuckPackageHandler(BaseStarlarkManifestHandler):
 
 
 class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
-    datasource_id = 'buck_metadata'
-    path_patterns = ('*/METADATA.bzl',)
-    default_package_type = 'buck'
-    description = 'Buck metadata file'
-    documentation_url = 'https://buck.build/'
+    datasource_id = "buck_metadata"
+    path_patterns = ("*/METADATA.bzl",)
+    default_package_type = "buck"
+    description = "Buck metadata file"
+    documentation_url = "https://buck.build/"
 
     @classmethod
     def parse(cls, location, package_only=True):
 
-        with open(location, 'rb') as f:
+        with open(location, "rb") as f:
             tree = ast.parse(f.read())
 
         metadata_fields = {}
         for statement in tree.body:
-            if not (hasattr(statement, 'targets') and isinstance(statement, ast.Assign)):
+            if not (hasattr(statement, "targets") and isinstance(statement, ast.Assign)):
                 continue
 
             # We are looking for a dictionary assigned to the variable `METADATA`
             for target in statement.targets:
-                if not (target.id == 'METADATA' and isinstance(statement.value, ast.Dict)):
+                if not (target.id == "METADATA" and isinstance(statement.value, ast.Dict)):
                     continue
                 # Once we find the dictionary assignment, get and store its contents
                 statement_keys = statement.value.keys
@@ -365,61 +380,59 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                     metadata_fields[key_name] = value
 
         parties = []
-        maintainers = metadata_fields.get('maintainers', []) or []
+        maintainers = metadata_fields.get("maintainers", []) or []
         for maintainer in maintainers:
             parties.append(
                 models.Party(
                     type=models.party_org,
                     name=maintainer,
-                    role='maintainer',
+                    role="maintainer",
                 )
             )
 
         # TODO: Create function that determines package type from download URL,
         # then create a package of that package type from the metadata info
-        
-        if 'upstream_type' in metadata_fields:
-            package_type = metadata_fields['upstream_type']
-        elif 'package_type' in metadata_fields:
-            package_type = metadata_fields['package_type']
+
+        if "upstream_type" in metadata_fields:
+            package_type = metadata_fields["upstream_type"]
+        elif "package_type" in metadata_fields:
+            package_type = metadata_fields["package_type"]
         else:
             package_type = cls.default_package_type
 
-        if 'licenses' in metadata_fields:
-            extracted_license_statement = metadata_fields['licenses']
+        if "licenses" in metadata_fields:
+            extracted_license_statement = metadata_fields["licenses"]
         else:
-            extracted_license_statement = metadata_fields.get('license_expression')
+            extracted_license_statement = metadata_fields.get("license_expression")
 
-        if 'upstream_address' in metadata_fields:
-            homepage_url = metadata_fields['upstream_address']
+        if "upstream_address" in metadata_fields:
+            homepage_url = metadata_fields["upstream_address"]
         else:
-            homepage_url = metadata_fields.get('homepage_url')
-        
+            homepage_url = metadata_fields.get("homepage_url")
 
         extra_data = {}
-        if 'vcs_commit_hash' in metadata_fields:
-            extra_data['vcs_commit_hash'] = metadata_fields['vcs_commit_hash']
-        if 'upstream_hash' in metadata_fields:
-            extra_data['upstream_hash'] = metadata_fields['upstream_hash']
+        if "vcs_commit_hash" in metadata_fields:
+            extra_data["vcs_commit_hash"] = metadata_fields["vcs_commit_hash"]
+        if "upstream_hash" in metadata_fields:
+            extra_data["upstream_hash"] = metadata_fields["upstream_hash"]
 
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=package_type,
-            name=metadata_fields.get('name'),
-            version=metadata_fields.get('version'),
+            name=metadata_fields.get("name"),
+            version=metadata_fields.get("version"),
             extracted_license_statement=extracted_license_statement,
             parties=parties,
             homepage_url=homepage_url,
-            download_url=metadata_fields.get('download_url'),
-            vcs_url=metadata_fields.get('vcs_url'),
-            sha1=metadata_fields.get('download_archive_sha1'),
-            extra_data=extra_data
+            download_url=metadata_fields.get("download_url"),
+            vcs_url=metadata_fields.get("vcs_url"),
+            sha1=metadata_fields.get("download_archive_sha1"),
+            extra_data=extra_data,
         )
-        if 'package_url' in metadata_fields:
-            package_data.update(PackageURL.from_string(metadata_fields['package_url']).to_dict())
-        
-        yield models.PackageData.from_data(package_data, package_only=True)
+        if "package_url" in metadata_fields:
+            package_data.update(PackageURL.from_string(metadata_fields["package_url"]).to_dict())
 
+        yield models.PackageData.from_data(package_data, package_only=True)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
@@ -428,4 +441,72 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
             resource=resource,
             codebase=codebase,
             package_adder=package_adder,
+        )
+
+
+class BazelModuleHandler(models.DatafileHandler):
+    """
+    Handle Bazel MODULE.bazel module manifest files used by Bzlmod.
+    See: https://bazel.build/external/module
+    """
+
+    datasource_id = "bazel_module"
+    path_patterns = ("*/MODULE.bazel",)
+    default_package_type = "bazel"
+    description = "Bazel MODULE.bazel module manifest (Bzlmod)"
+    documentation_url = "https://bazel.build/external/module"
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location, encoding="utf-8", errors="replace") as f:
+            content = f.read()
+
+        # --- Extract module() declaration ---
+        name = None
+        version = None
+        module_match = re.search(
+            r"\bmodule\s*\(([^)]+)\)",
+            content,
+            re.DOTALL,
+        )
+        if module_match:
+            block = module_match.group(1)
+            name = _extract_starlark_kwarg(block, "name")
+            version = _extract_starlark_kwarg(block, "version")
+
+        # --- Extract bazel_dep() declarations ---
+        dependencies = []
+        for dep_match in re.finditer(
+            r"\bbazel_dep\s*\(([^)]+)\)",
+            content,
+            re.DOTALL,
+        ):
+            block = dep_match.group(1)
+            dep_name = _extract_starlark_kwarg(block, "name")
+            dep_version = _extract_starlark_kwarg(block, "version")
+            is_dev = bool(re.search(r"\bdev_dependency\s*=\s*True\b", block))
+
+            if not dep_name:
+                continue
+
+            purl = f"pkg:bazel/{dep_name}"
+            if dep_version:
+                purl = f"{purl}@{dep_version}"
+
+            dependencies.append(
+                models.DependentPackage(
+                    purl=purl,
+                    extracted_requirement=dep_version,
+                    scope="dev" if is_dev else "dependencies",
+                    is_runtime=not is_dev,
+                    is_optional=is_dev,
+                )
+            )
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+            dependencies=dependencies,
         )
