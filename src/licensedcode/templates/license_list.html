@@ -11,7 +11,7 @@
   <div class="container">
     <div class="loading loading-lg" style="margin-top:50px;"></div>
     <table class="display" style="visibility: hidden;">
-      <thead>
+      <thead class="table-head">
         <tr>
           <th>Key</th>
           <th>Short name</th>
@@ -99,8 +99,10 @@
 
       // https://datatables.net/reference/api/search()
       let searchbox = $("#searchbox");
-      searchbox.on("keyup", function() {
-        table.search(this.value).draw();
+      searchbox.on("keyup", function () {
+        table.columns([0, 1]) 
+          .search(this.value) 
+          .draw();
 
         // Inject the search value in the browser href
         if (history.replaceState) {
