@@ -15,12 +15,54 @@ from commoncode import text
 from commoncode.testcase import FileBasedTesting
 
 from packagedcode import rubygems
+from packagedcode import spec
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
+
+REGEN_TEST_FIXTURES = False
 
 # TODO: Add test with https://rubygems.org/gems/pbox2d/versions/1.0.3-java
 # this is a multiple personality package (Java  and Ruby)
 # see also https://rubygems.org/downloads/jaro_winkler-1.5.1-java.gem
+
+
+class TestGemspecVersionConstant(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_version_constant_returns_none_for_elasticsearch(self):
+        test_file = self.get_test_loc('rubygems/version-constant/elasticsearch-api.gemspec')
+        packages = list(rubygems.GemspecHandler.parse(test_file))
+        assert packages
+        pkg = packages[0]
+        assert pkg.name == 'elasticsearch-api'
+        assert pkg.version is None
+        assert 'Elasticsearch' not in str(pkg.version)
+        assert pkg.download_url is None
+
+    def test_version_constant_returns_none_for_simple_constant(self):
+        test_file = self.get_test_loc('rubygems/version-constant/simple-constant.gemspec')
+        packages = list(rubygems.GemspecHandler.parse(test_file))
+        assert packages
+        pkg = packages[0]
+        assert pkg.name == 'my-gem'
+        assert pkg.version is None
+
+    def test_real_version_is_preserved(self):
+        test_file = self.get_test_loc('rubygems/version-constant/simple-version.gemspec')
+        packages = list(rubygems.GemspecHandler.parse(test_file))
+        assert packages
+        pkg = packages[0]
+        assert pkg.name == 'my-gem'
+        assert pkg.version == '1.2.3'
+
+    def test_is_ruby_version_constant_function(self):
+        assert spec.is_ruby_version_constant('Elasticsearch::API::VERSION') is True
+        assert spec.is_ruby_version_constant('MyGem::VERSION') is True
+        assert spec.is_ruby_version_constant('Faraday::VERSION') is True
+        assert spec.is_ruby_version_constant('1.0.0') is False
+        assert spec.is_ruby_version_constant("'2.3.4'") is False
+        assert spec.is_ruby_version_constant(None) is False
+        assert spec.is_ruby_version_constant('') is False
 
 
 class TestGemSpec(PackageTester):
