@@ -1,0 +1,10 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "dependencies": {
+    "private-lib": "git+ssh://git@github.com:org/repo.git#v1.0.0",
+    "another-lib": "git+https://github.com/org/another-repo.git#semver:^2.0.0",
+    "plain-dep": "^1.2.3",
+    "npm-alias": "npm:lodash@^4.17.21"
+  }
+}

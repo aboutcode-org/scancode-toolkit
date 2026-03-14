@@ -1848,8 +1848,9 @@ def deps_mapper(deps, package, field_name, is_direct=True):
         if not name:
             continue
 
-        if ':' in requirement and '@' in requirement:
-            # dependencies with requirements like this are aliases and should be reported
+        if requirement.startswith('npm:'):
+            # npm alias syntax: "alias": "npm:package@version"
+            # See https://docs.npmjs.com/cli/v10/configuring-npm/package-json#dependencies
             aliased_package, _, requirement = requirement.rpartition('@')
             _, _, aliased_package_name = aliased_package.rpartition(':')
             ns, _ , name = aliased_package_name.rpartition('/')
