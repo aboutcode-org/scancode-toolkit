@@ -22,10 +22,6 @@ venv/bin/scancode-reindex-licenses
 venv/bin/scancode-reindex-package-patterns
 venv/bin/scancode-train-gibberish-model
 
-# build license data packages
-venv/bin/flot --pyproject pyproject-licensedcode-data.toml --wheel --sdist
-venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel --sdist
-
 # build code packages
 venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --wheel --sdist
 venv/bin/flot --pyproject pyproject-scancode-toolkit-mini.toml --wheel --sdist

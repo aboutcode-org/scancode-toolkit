@@ -9,7 +9,8 @@
 #
 
 ################################################################################
-# ScanCode release build script for PyPI sdists
+# ScanCode release build script for PyPI wheels.
+# Build a wheel for the current Python version
 ################################################################################
 
 set -e
@@ -17,16 +18,13 @@ set -e
 #set -x
 
 ./configure --dev
-venv/bin/python setup.py --quiet sdist
+venv/bin/scancode-reindex-licenses
+venv/bin/scancode-reindex-package-patterns
+venv/bin/scancode-train-gibberish-model
 
-rm -rf build .eggs src/scancode_toolkit*.egg-info src/scancode_toolkit_mini*.egg-info
-cp setup.cfg setup-main.cfg
-cp setup-mini.cfg setup.cfg
-
-venv/bin/python setup.py --quiet sdist
-
-cp setup-main.cfg setup.cfg
-rm setup-main.cfg
+# build license data packages
+venv/bin/flot --pyproject pyproject-licensedcode-data.toml --wheel --sdist
+venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel --sdist
 
 venv/bin/twine check dist/*
 

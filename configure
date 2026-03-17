@@ -142,10 +142,10 @@ CLI_ARGS=$1
 ################################
 
 BASE=".[packages]"
-BASE_DEV=".[packages,testing]"
+BASE_DEV=".[packages,dev]"
 if [[ $OSTYPE == 'darwin'* ]]; then
     BASE="."
-    BASE_DEV=".[testing]"
+    BASE_DEV=".[dev]"
 fi
 
 # Requirement arguments passed to pip and used by default or with --dev.
