@@ -4,7 +4,7 @@ build-backend = "flot.buildapi"
 
 [project]
 name = "licensedcode-index"
-version = "32.1.0"
+version = "32.5.0"
 description = "A packaging of the ScanCode licensedb license and license rules pre-built index. Can only be used with ScanCode-Toolkit."
 long_description_content_type = "text/x-rst"
 readme = "src/licensedcode/data/README.rst"

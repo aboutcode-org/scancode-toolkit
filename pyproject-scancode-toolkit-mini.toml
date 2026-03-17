@@ -4,11 +4,11 @@ build-backend = "flot.buildapi"
 
 [project]
 name = "scancode-toolkit-mini"
-version = "32.1.0"
+version = "32.5.0"
 description = "ScanCode is a tool to scan code for license, copyright, package and their documented dependencies and other interesting facts."
 readme = "README.rst"
 license = { text = "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft" }
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 authors = [
     { name = "nexB. Inc. and others", email = "info@aboutcode.org" },
 ]
@@ -23,6 +23,7 @@ keywords = [
     "author",
     "extract",
     "licensing",
+    "scan",
     "sca",
     "SBOM",
     "spdx",
@@ -126,7 +127,7 @@ packages = [
     "packagedcode_msitools >= 0.101.210706; platform_system == 'Linux'",
 ]
 
-testing = [
+dev = [
     "flot",
     "pytest >= 6, != 7.0.0",
     "pytest-xdist >= 2",
@@ -137,14 +138,12 @@ testing = [
     "isort",
     "vendorize >= 0.3.0",
     "pytest-rerunfailures",
+    "ruff",
     "bump-my-version",
-]
-
-docs = [
-    "Sphinx == 5.1.0",
+    "Sphinx >= 5.0.2",
     "sphinx_rtd_theme >= 0.5.1",
-    "doc8 >= 0.8.1",
     "sphinx-reredirects >= 0.1.2",
+    "doc8 >= 0.8.1",
     "sphinx-autobuild",
     "sphinx-rtd-dark-mode>=1.3.0",
     "sphinx-copybutton",
@@ -152,7 +151,7 @@ docs = [
 
 
 [tool.bumpversion]
-current_version = "32.1.0"
+current_version = "32.5.0"
 allow_dirty = true
 
 files = [
@@ -244,6 +243,10 @@ scancode = "scancode.cli:scancode"
 scancode-reindex-licenses = "licensedcode.reindex:reindex_licenses"
 scancode-license-data = "licensedcode.license_db:dump_scancode_license_data"
 regen-package-docs = "packagedcode.regen_package_docs:regen_package_docs"
+scancode-reindex-package-patterns = "packagedcode.cache:cache_package_patterns"
+add-required-phrases = "licensedcode.required_phrases:add_required_phrases"
+gen-new-required-phrases-rules = "licensedcode.required_phrases:gen_required_phrases_rules"
+scancode-train-gibberish-model = "textcode.train_gibberish_model:train_gibberish_model"
 
 
 # These are configurations for ScanCode plugins as entry points.
