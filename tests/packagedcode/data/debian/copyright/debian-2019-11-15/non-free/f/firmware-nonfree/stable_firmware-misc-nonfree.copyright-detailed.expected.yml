@@ -69,7 +69,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: 3com-microcode3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/3com-microcode3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/3com-microcode3.RULE
         matched_text: |
           Redistribution and use in source and binary forms of the 3c990img.h
           microcode software are permitted provided that the following conditions
@@ -114,7 +114,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-simplified-source.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that redistributions of source
@@ -135,7 +135,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: agere-bsd_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agere-bsd_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agere-bsd_1.RULE
         matched_text: |
           This software is provided subject to the following terms and conditions,
           which you should read carefully before using the software.  Using this
@@ -189,7 +189,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: x11-acer.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-acer.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-acer.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
           any purpose with or without fee is hereby granted, provided that the
@@ -219,7 +219,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: ctl-linux-firmware.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ctl-linux-firmware.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ctl-linux-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -280,7 +280,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-permissive_66.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
@@ -300,7 +300,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: linux-openib.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or
           without modification, are permitted provided that the following
@@ -338,7 +338,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_334.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_334.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_334.RULE
         matched_text: |
           Redistribution and use in binary form, without modification, are
           permitted provided that the following conditions are met:
@@ -379,7 +379,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-simplified-source.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that redistributions of source
@@ -400,7 +400,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_332.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_332.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_332.RULE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software, only
           for use with Xceive ICs, for any purpose with or without fee is hereby
@@ -429,7 +429,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: isc.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
           any purpose with or without fee is hereby granted, provided that the
@@ -459,7 +459,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: isc.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
           any purpose with or without fee is hereby granted, provided that the
@@ -489,7 +489,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_331.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_331.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_331.RULE
         matched_text: |
           TERRATEC grants permission to use and redistribute these firmware
           files for use with TERRATEC devices, but not as part of the Linux
@@ -514,7 +514,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_786.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_786.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_786.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are met:
@@ -555,7 +555,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: isc.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for any
           purpose with or without fee is hereby granted, provided that the above
@@ -584,7 +584,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_330.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_330.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_330.RULE
         matched_text: |
           Sensoray grants permission to use and redistribute these firmware
           files for use with Sensoray devices, but not as a part of the Linux
@@ -608,7 +608,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_328.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_328.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_328.RULE
         matched_text: |
           The firmware files included in the firmware/ directory may be freely
           redistributed only in conjunction with this document [LICENCE.go7007];
@@ -634,7 +634,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 95
         rule_identifier: intel_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
         matched_text: |
           Redistribution.
 
@@ -685,7 +685,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: nxp-firmware-patent.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nxp-firmware-patent.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nxp-firmware-patent.LICENSE
         matched_text: |
           Redistribution. Reproduction and redistribution in binary form, without
           modification, for use solely in conjunction with a NXP
@@ -746,7 +746,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-original_44.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_44.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_44.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -789,7 +789,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit_712.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_712.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_712.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           copy of this software and associated documentation files (the "Software"),
@@ -823,7 +823,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: moxa-linux-firmware.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/moxa-linux-firmware.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/moxa-linux-firmware.LICENSE
         matched_text: |
           The software accompanying this license statement (the “Software”)
           is the property of Moxa Inc. (the “Moxa”), and is protected by
@@ -856,7 +856,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: ralink-firmware.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -909,7 +909,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_324.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_324.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_324.RULE
         matched_text: All firmware components are redistributable in binary form.
     identifier: proprietary_license-fb7f18e9-048a-60a6-5671-b183fa33d6f6
   - license_expression: proprietary-license
@@ -926,7 +926,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_325.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_325.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_325.RULE
         matched_text: |
           IMPORTANT NOTICE -- READ CAREFULLY: This License For Customer Use of
           NVIDIA Software ("LICENSE") is the agreement which governs use of
@@ -1070,7 +1070,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_319.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_319.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_319.RULE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -1125,7 +1125,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_311.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_311.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_311.RULE
         matched_text: |
           Comtrol grants permission to use and redistribute these firmware
           files for use with Comtrol devices, but not as part of the Linux
@@ -1150,7 +1150,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: ralink-firmware.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are
@@ -1203,7 +1203,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-permissive_66.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
@@ -1223,7 +1223,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-permissive_66.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
           data in hexadecimal or equivalent format, provided this copyright
@@ -1243,7 +1243,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-new_and_proprietary-license_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_proprietary-license_1.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_proprietary-license_1.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following
@@ -1293,7 +1293,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_308.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_308.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_308.RULE
         matched_text: |
           Conexant grants permission to use and redistribute these firmware
           files for use with Conexant devices, but not as a part of the Linux
@@ -1317,7 +1317,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: intel.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
           modification, are permitted provided that the following conditions are

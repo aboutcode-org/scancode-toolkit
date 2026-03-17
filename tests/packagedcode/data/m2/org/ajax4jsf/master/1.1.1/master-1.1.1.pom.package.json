@@ -63,7 +63,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "lgpl-2.1_85.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_85.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_85.RULE",
           "matched_text": "name: LGPL 2.1"
         },
         {
@@ -78,7 +78,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "lgpl_3.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
           "matched_text": "url: http://www.gnu.org/licenses/lgpl.html"
         },
         {
@@ -93,7 +93,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "lgpl-2.1_36.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
           "matched_text": "comments: GNU LESSER GENERAL PUBLIC LICENSE Version 2.1"
         }
       ],

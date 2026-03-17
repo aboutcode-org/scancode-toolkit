@@ -20,7 +20,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-3.0-plus_or_gpl-2.0-plus_27.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_or_gpl-2.0-plus_27.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_or_gpl-2.0-plus_27.RULE
         matched_text: |
           The GNU MP Library is free software; you can redistribute it and/or modify
           it under the terms of either:
@@ -65,7 +65,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gfdl-1.1-plus_32.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.1-plus_32.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.1-plus_32.RULE
         matched_text: |
           The documentation is released under the GNU Free Documentation License
           (GFDL) and it has cover texts.  As such, it has been determined not to
@@ -82,7 +82,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.0-plus_or_gpl-1.0-plus_300.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_or_gpl-1.0-plus_300.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_or_gpl-1.0-plus_300.RULE
         matched_text: |
           is covered either by the LGPL, or
           under the GNU General Public License /usr/share/common-licenses/GPL.

@@ -19,7 +19,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_and_public-domain_810.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_and_public-domain_810.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_and_public-domain_810.RULE
         matched_text: |
           redistributed under the terms of the GNU GPL, Version 2 or later,
           found on Debian systems in the file /usr/share/common-licenses/GPL-2.
@@ -40,7 +40,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: smail-gpl.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.LICENSE
         matched_text: "SMAIL GENERAL PUBLIC LICENSE\n\t\t       (Clarified 11 Feb 1988)\n\n\
           \ Copyright (C)  1988 Landon Curt Noll & Ronald S. Karr\n Copyright (C)  1992 Ronald\
           \ S. Karr\n Copyleft (GNU) 1988 Landon Curt Noll & Ronald S. Karr\n\n Everyone is\

@@ -18,7 +18,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-1.0-plus_or_artistic-1.0_2.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_2.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_2.RULE"
         },
         {
           "license_expression": "gpl-1.0",
@@ -32,7 +32,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-1.0_10.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_10.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_10.RULE"
         },
         {
           "license_expression": "gpl-1.0",
@@ -46,7 +46,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-1.0_37.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_37.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_37.RULE"
         },
         {
           "license_expression": "gpl-1.0",
@@ -60,7 +60,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "gpl-1.0.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0.LICENSE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0.LICENSE"
         },
         {
           "license_expression": "artistic-1.0",
@@ -74,7 +74,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "artistic-1.0_9.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_9.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_9.RULE"
         },
         {
           "license_expression": "artistic-1.0",
@@ -88,7 +88,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "artistic-1.0_7.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_7.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_7.RULE"
         },
         {
           "license_expression": "artistic-1.0",
@@ -102,7 +102,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 90,
           "rule_identifier": "artistic-1.0_11.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_11.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_11.RULE"
         },
         {
           "license_expression": "artistic-1.0",
@@ -116,7 +116,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "artistic-1.0_4.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_4.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_4.RULE"
         },
         {
           "license_expression": "warranty-disclaimer",
@@ -130,7 +130,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "warranty-disclaimer_72.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_72.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_72.RULE"
         }
       ]
     }
@@ -175,7 +175,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-1.0-plus_or_artistic-1.0_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_2.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_2.RULE"
             },
             {
               "license_expression": "gpl-1.0",
@@ -189,7 +189,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-1.0_10.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_10.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_10.RULE"
             },
             {
               "license_expression": "gpl-1.0",
@@ -203,7 +203,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-1.0_37.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_37.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_37.RULE"
             },
             {
               "license_expression": "gpl-1.0",
@@ -217,7 +217,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "gpl-1.0.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0.LICENSE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0.LICENSE"
             },
             {
               "license_expression": "artistic-1.0",
@@ -231,7 +231,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "artistic-1.0_9.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_9.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_9.RULE"
             },
             {
               "license_expression": "artistic-1.0",
@@ -245,7 +245,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "artistic-1.0_7.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_7.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_7.RULE"
             },
             {
               "license_expression": "artistic-1.0",
@@ -259,7 +259,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 90,
               "rule_identifier": "artistic-1.0_11.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_11.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_11.RULE"
             },
             {
               "license_expression": "artistic-1.0",
@@ -273,7 +273,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "artistic-1.0_4.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_4.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_4.RULE"
             },
             {
               "license_expression": "warranty-disclaimer",
@@ -287,7 +287,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "warranty-disclaimer_72.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_72.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_72.RULE"
             }
           ],
           "identifier": "gpl_1_0_plus_or_artistic_1_0__and_gpl_1_0_and_artistic_1_0_and_warranty_disclaimer-a1de207d-6b62-18b8-f372-e9820f733de3"

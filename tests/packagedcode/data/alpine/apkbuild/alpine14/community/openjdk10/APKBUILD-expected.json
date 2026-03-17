@@ -41,7 +41,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "classpath-exception-2.0_6.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/classpath-exception-2.0_6.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/classpath-exception-2.0_6.RULE",
           "matched_text": "gpl-2.0-with-classpath-exception"
         }
       ],

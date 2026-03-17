@@ -41,7 +41,7 @@
           "match_coverage": 90.2,
           "rule_relevance": 100,
           "rule_identifier": "gpl-2.0_with_mysql-linking-exception-2018_3.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_with_mysql-linking-exception-2018_3.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_with_mysql-linking-exception-2018_3.RULE",
           "matched_text": "name: The GNU General Public License, Version 2\nurl: http://www.gnu.org/licenses/gpl.txt\ncomments: \"MySQL Connector/J contains exceptions to GPL requirements when linking with other\\\n  \\ components\\n      \\t\\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\\n\\\n  \\      \\t\\tin this distribution for more details.\""
         }
       ],
@@ -63,7 +63,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "package-manifest-unknown-8f3fc16a5aed4b24baf1bf93c65f564682fc92ed",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-8f3fc16a5aed4b24baf1bf93c65f564682fc92ed",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-8f3fc16a5aed4b24baf1bf93c65f564682fc92ed",
           "matched_text": "license name: The GNU General Public License, Version 2\nurl: http://www.gnu.org/licenses/gpl.txt\ncomments: \"MySQL Connector/J contains exceptions to GPL requirements when linking with other\\\n  \\ components\\n      \\t\\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\\n\\\n  \\      \\t\\tin this distribution for more details.\""
         }
       ],

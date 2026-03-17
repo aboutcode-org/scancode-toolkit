@@ -25,7 +25,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: openldap-2.8_21.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_21.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_21.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted only as authorized by the OpenLDAP
@@ -59,7 +59,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: openldap-2.8_16.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_16.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_16.RULE
         matched_text: |
           The OpenLDAP Public License
             Version 2.8, 17 August 2003
@@ -117,7 +117,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit_483.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_483.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_483.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
           # copy of this software and associated documentation files (the "Software"),
@@ -151,7 +151,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: fsf-unlimited-no-warranty_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty_2.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty_2.RULE
         matched_text: |
           This Makefile.in is free software; the Free Software Foundation
           # gives unlimited permission to copy and/or distribute it,
@@ -176,7 +176,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 95
         rule_identifier: hs-regexp_5.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
         matched_text: |
           Permission is granted to anyone to use this software for any purpose
            * on any computer system, and to alter it and redistribute it, subject
@@ -210,7 +210,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: ibm-dhcp.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
         matched_text: |
           International Business Machines, Inc. (hereinafter called IBM) grants
            * permission under its copyrights to use, copy, modify, and distribute this
@@ -247,7 +247,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: ietf_5.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ietf_5.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ietf_5.RULE
         matched_text: "Full Copyright Statement\n# \n#    Copyright (C) The Internet Society\
           \ (1999).  All Rights Reserved.\n# \n#    This document and translations of it may\
           \ be copied and furnished to\n#    others, and derivative works that comment on or\
@@ -282,7 +282,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: isc_9.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
            * purpose with or without fee is hereby granted, provided that the above
@@ -311,7 +311,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-permissive_203.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_203.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_203.RULE
         matched_text: "This software is not subject to any license of Silicon Graphics \n *\
           \ Inc. or Purdue University.\n *\n * Redistribution and use in source and binary forms\
           \ are permitted\n * without restriction or fee of any kind as long as this notice\n\
@@ -331,7 +331,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-permissive_200.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_200.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_200.RULE
         matched_text: "This software is not subject to any license of Carnegie Mellon University.\n\
           \ *\n * Redistribution and use in source and binary forms are permitted without \n\
           \ * restriction or fee of any kind as long as this notice is preserved.\n *\n * The\
@@ -352,7 +352,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: mit-old-style-no-advert_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_3.RULE
         matched_text: |
           Permission to use, copy, modify, distribute, and sell this software and its
           # documentation for any purpose is hereby granted without fee, provided that
@@ -378,7 +378,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: other-permissive_199.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_199.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_199.RULE
         matched_text: |
           Permission to copy and
           distribute verbatim copies of this document is granted.
@@ -397,7 +397,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 95
         rule_identifier: hs-regexp_5.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
         matched_text: |
           Permission is granted to anyone to use this software for any purpose
            * on any computer system, and to alter it and redistribute it, subject
@@ -430,7 +430,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: openldap-2.8_15.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_15.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_15.RULE
         matched_text: |
           Redistribution and use in source and binary forms are permitted only
            * as authorized by the OpenLDAP Public License.  A copy of this
@@ -451,7 +451,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsla_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsla_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsla_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms are permitted
            * provided that the above copyright notice and this paragraph are
@@ -475,7 +475,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-original-uc_25.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_25.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_25.RULE
         matched_text: |
           NOTE: The Regents have since retroactively removed the advertising
           clause from above.
@@ -494,7 +494,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-original-uc_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
            * modification, are permitted provided that the following conditions
@@ -534,7 +534,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-original-uc_24.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_24.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_24.RULE
         matched_text: |
           NOTE: The Regents have since retroactively removed the advertising
           clause from above.
@@ -555,7 +555,7 @@ license_detections:
         match_coverage: '100.0'
         rule_relevance: 99
         rule_identifier: bsd-original-uc-1986_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc-1986_3.RULE
+        rule_url: https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc-1986_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms are permitted
            * provided that this notice is preserved and that due credit is given

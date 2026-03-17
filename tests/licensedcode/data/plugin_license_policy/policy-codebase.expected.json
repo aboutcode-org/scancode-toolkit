@@ -18,7 +18,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "broadcom-commercial.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-commercial.LICENSE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-commercial.LICENSE"
         }
       ]
     },
@@ -40,7 +40,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "bsd-1988.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-1988.LICENSE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-1988.LICENSE"
         }
       ]
     },
@@ -62,7 +62,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "esri-devkit.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/esri-devkit.LICENSE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/esri-devkit.LICENSE"
         }
       ]
     },
@@ -84,7 +84,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "oracle-java-ee-sdk-2010.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/oracle-java-ee-sdk-2010.LICENSE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/oracle-java-ee-sdk-2010.LICENSE"
         }
       ]
     },
@@ -106,7 +106,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "rh-eula.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rh-eula.LICENSE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rh-eula.LICENSE"
         }
       ]
     }
@@ -213,7 +213,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "broadcom-commercial.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-commercial.LICENSE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/broadcom-commercial.LICENSE"
             }
           ],
           "identifier": "broadcom_commercial-c75957a5-a538-0f21-d34e-5cb732b83de0"
@@ -273,7 +273,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "bsd-1988.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-1988.LICENSE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-1988.LICENSE"
             }
           ],
           "identifier": "bsd_1988-6f82c6f9-3188-d25a-b614-a8da40a182eb"
@@ -333,7 +333,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "esri-devkit.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/esri-devkit.LICENSE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/esri-devkit.LICENSE"
             }
           ],
           "identifier": "esri_devkit-61ff055a-1f77-2a34-84c0-13880adcee3a"
@@ -393,7 +393,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "oracle-java-ee-sdk-2010.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/oracle-java-ee-sdk-2010.LICENSE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/oracle-java-ee-sdk-2010.LICENSE"
             }
           ],
           "identifier": "oracle_java_ee_sdk_2010-62721c1c-0579-102d-4299-b9ada4a65100"
@@ -453,7 +453,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "rh-eula.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rh-eula.LICENSE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rh-eula.LICENSE"
             }
           ],
           "identifier": "rh_eula-5e8f3250-f910-dacc-e3f1-b0ee8c925477"

@@ -58,7 +58,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "cc0-1.0_203.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_203.RULE",
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_203.RULE",
               "matched_text": "name: CC0 Universal\nurl: http://www.creativecommons.org/publicdomain/zero/1.0/"
             }
           ],
@@ -126,7 +126,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "cc0-1.0_197.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_197.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_197.RULE"
         }
       ]
     },
@@ -149,7 +149,7 @@
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "cc0-1.0_203.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_203.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_203.RULE"
         }
       ]
     }
@@ -405,7 +405,7 @@
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
                   "rule_identifier": "cc0-1.0_203.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_203.RULE",
+                  "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_203.RULE",
                   "matched_text": "name: CC0 Universal\nurl: http://www.creativecommons.org/publicdomain/zero/1.0/"
                 }
               ],
@@ -466,7 +466,7 @@
               "match_coverage": 100.0,
               "rule_relevance": 100,
               "rule_identifier": "cc0-1.0_197.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_197.RULE"
+              "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_197.RULE"
             }
           ],
           "detection_log": [],
