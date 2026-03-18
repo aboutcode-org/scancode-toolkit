@@ -64,6 +64,7 @@ cp -r etc/thirdparty $release_dir/etc
 
 venv/bin/scancode-reindex-package-patterns
 venv/bin/scancode-train-gibberish-model
+venv/bin/scancode-reindex-licenses
 venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --wheel
 venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel
 
