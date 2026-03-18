@@ -24,10 +24,11 @@ git describe --tags > $release_dir/SCANCODE_VERSION
 thirdparty_dir=$release_dir/thirdparty
 mkdir -p $thirdparty_dir
 
+./configure --dev
+venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --sdist
+
 # collect other built dist
 mv dist/*.tar.gz $release_dir
-
-./configure --dev
 
 venv/bin/python etc/scripts/fetch_thirdparty.py \
   --requirements requirements.txt \

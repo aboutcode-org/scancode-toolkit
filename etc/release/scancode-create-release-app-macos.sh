@@ -64,10 +64,12 @@ cp -r etc/thirdparty $release_dir/etc
 ./configure --dev
 venv/bin/scancode-reindex-package-patterns
 venv/bin/scancode-train-gibberish-model
+venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --wheel
+venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel
 
 cp -r \
   dist/scancode_*.whl \
-  dist/licensedcode_index_*.whl \
+  dist/licensedcode_index*.whl \
   scancode extractcode configure \
   *.rst \
   samples \
