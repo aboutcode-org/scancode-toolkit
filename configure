@@ -149,13 +149,9 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 fi
 
 # Requirement arguments passed to pip and used by default or with --dev.
-REQUIREMENTS="--editable . --constraint requirements.txt"
-DEV_REQUIREMENTS="--editable .[dev,packages] --constraint requirements.txt --constraint requirements-dev.txt"
-PROD_REQUIREMENTS="scancode_toolkit*.whl"
-
 REQUIREMENTS="--no-build-isolation --editable $BASE --constraint requirements.txt --constraint requirements-linux.txt"
 DEV_REQUIREMENTS="--no-build-isolation --editable $BASE_DEV --constraint requirements.txt --constraint requirements-linux.txt --constraint requirements-dev.txt"
-PROD_REQUIREMENTS="--no-build-isolation scancode_toolkit*.whl"
+PROD_REQUIREMENTS="--no-build-isolation scancode_toolkit*.whl licensedcode_index*.whl"
 FLOT_REQUIREMENTS="etc/thirdparty/flot*.whl"
 
 # where we create a virtualenv
