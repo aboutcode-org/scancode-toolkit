@@ -141,11 +141,15 @@ CLI_ARGS=$1
 # Defaults. Change these variables to customize this script
 ################################
 
+# extra  arguments passed to pip
+PIP_EXTRA_ARGS=" "
+
 BASE=".[packages]"
 BASE_DEV=".[packages,dev]"
 if [[ $OSTYPE == 'darwin'* ]]; then
     BASE="."
     BASE_DEV=".[dev]"
+    PIP_EXTRA_ARGS="--find-links=./etc/thirdparty/dummy_dist"
 fi
 
 # Requirement arguments passed to pip and used by default or with --dev.
@@ -160,8 +164,6 @@ VIRTUALENV_DIR=venv
 # Cleanable files and directories to delete with the --clean option
 CLEANABLE="build dist venv .cache .eggs *.egg-info docs/_build/ pip-selfcheck.json"
 
-# extra  arguments passed to pip
-PIP_EXTRA_ARGS=" "
 
 # the URL to download virtualenv.pyz if needed
 VIRTUALENV_PYZ_URL=https://bootstrap.pypa.io/virtualenv.pyz

@@ -80,6 +80,10 @@ cp -r \
   dist/licensedcode_index*.whl \
   $release_dir/thirdparty
 
+cp -r \
+  etc/thirdparty/dummy_dist/*.whl \
+  $release_dir/thirdparty
+
 tarball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.tar.gz
 mkdir -p release
 tar -cvzf release/$tarball $release_dir
