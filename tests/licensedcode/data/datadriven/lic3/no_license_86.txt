@@ -509,7 +509,7 @@ OOTTHHEERR DDEECCLLAARRAATTIIOONNSS
        its own state.   If you use this feature, you must provide
        a  client identifier for both the pseudo-interface and the
        actual interface, and the two identifiers must be  differ­
-       ent.    You must also provide a seperate client script for
+       ent.    You must also provide a separate client script for
        the pseudo-interface to do  what  you  want  with  the  IP
        address.   For example:
 

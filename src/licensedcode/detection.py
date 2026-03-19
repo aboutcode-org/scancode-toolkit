@@ -1847,7 +1847,7 @@ def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
             group_of_license_matches = [license_match]
 
         # If the current match is a license clue, we send this as a
-        # seperate group
+        # separate group
         elif license_match.rule.is_license_clue:
             yield group_of_license_matches
             yield [license_match]

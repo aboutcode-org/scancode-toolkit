@@ -173,7 +173,7 @@ struct option_tag {
 
 /* An agent option structure.   We need a special structure for the
    Relay Agent Information option because if more than one appears in
-   a message, we have to keep them seperate. */
+   a message, we have to keep them separate. */
 
 struct agent_options {
 	struct agent_options *next;
