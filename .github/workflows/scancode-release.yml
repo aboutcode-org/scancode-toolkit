@@ -270,10 +270,12 @@ jobs:
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }}
 
@@ -283,7 +285,7 @@ jobs:
           brew install p7zip libarchive libmagic
 
       - name: Download wheels artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: wheels_sdist
           path: dist
