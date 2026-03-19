@@ -70,12 +70,15 @@ venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel
 
 cp -r \
   dist/scancode_*.whl \
-  dist/licensedcode_index*.whl \
   scancode.bat extractcode.bat configure.bat \
   *.rst \
   samples \
   *NOTICE *LICENSE *ABOUT \
   $release_dir
+
+cp -r \
+  dist/licensedcode_index*.whl \
+  $release_dir/thirdparty
 
 zipball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.zip
 mkdir -p release

@@ -28,8 +28,8 @@
 @rem # Requirement arguments passed to pip and used by default or with --dev.
 set "REQUIREMENTS=--no-build-isolation --editable . --constraint requirements.txt"
 set "DEV_REQUIREMENTS=--no-build-isolation --editable .[dev] --constraint requirements.txt --constraint requirements-dev.txt"
-set "PROD_REQUIREMENTS=--no-build-isolation scancode_toolkit*.whl licensedcode_index*.whl"
-set "FLOT_REQUIREMENTS=etc/thirdparty/flot*.whl"
+set "PROD_REQUIREMENTS=--no-build-isolation scancode_toolkit*.whl"
+set "FLOT_REQUIREMENTS=etc/thirdparty/flot-0.7.3-py3-none-any.whl.ABOUT"
 
 @rem # where we create a virtualenv
 set "VIRTUALENV_DIR=venv"
