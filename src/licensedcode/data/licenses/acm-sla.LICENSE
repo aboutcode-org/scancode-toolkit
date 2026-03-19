@@ -2,7 +2,7 @@
 key: acm-sla
 short_name: ACM SLA
 name: ACM Software License Agreement
-category: Proprietary Free
+category: Non-Commercial
 owner: ACM
 homepage_url: https://www.acm.org/publications/policies/software-copyright-notice
 spdx_license_key: LicenseRef-scancode-acm-sla

@@ -5,8 +5,12 @@ name: UnRar License
 category: Source-available
 owner: RAR
 homepage_url: http://sharpnews.weebly.com/uploads/1/2/7/9/1279604/license.txt
-spdx_license_key: LicenseRef-scancode-unrar
+spdx_license_key: UnRAR
+other_spdx_license_keys:
+    - LicenseRef-scancode-unrar
 osi_url: http://www.rarlab.com/rar/unrarsrc-5.2.7.tar.gz
+other_urls:
+    - https://public.dhe.ibm.com/aix/freeSoftware/aixtoolbox/LICENSES/unRAR.txt
 ---
 
 ******    *****   ******   UnRAR - free utility for RAR archives
@@ -48,4 +52,5 @@ osi_url: http://www.rarlab.com/rar/unrarsrc-5.2.7.tar.gz
       utility.
 
       Thank you for your interest in RAR and UnRAR.
-     Alexander L. Roshal
+
+                                            Alexander L. Roshal

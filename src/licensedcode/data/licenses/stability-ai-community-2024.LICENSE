@@ -2,7 +2,7 @@
 key: stability-ai-community-2024
 short_name: Stability AI Community License Agreement 2024
 name: Stability AI Community License Agreement 2024
-category: Proprietary Free
+category: Non-Commercial
 owner: Stability AI
 homepage_url: https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt/blob/main/LICENSE.md
 spdx_license_key: LicenseRef-scancode-stability-ai-community-2024

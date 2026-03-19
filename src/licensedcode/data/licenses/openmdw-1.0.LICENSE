@@ -5,8 +5,13 @@ name: OpenMDW License Agreement, version 1.0
 category: Permissive
 owner: OpenMDW
 homepage_url: https://github.com/OpenMDW/OpenMDW/blob/main/1.0/LICENSE.openmdw
-spdx_license_key: LicenseRef-scancode-openmdw-1.0
+spdx_license_key: OpenMDW-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-openmdw-1.0
 faq_url: https://openmdw.ai/
+other_urls:
+    - https://raw.githubusercontent.com/OpenMDW/OpenMDW/refs/heads/main/1.0/LICENSE.openmdw
+    - https://openmdw.ai/license/
 ---
 
 OpenMDW License Agreement, version 1.0 (OpenMDW-1.0)

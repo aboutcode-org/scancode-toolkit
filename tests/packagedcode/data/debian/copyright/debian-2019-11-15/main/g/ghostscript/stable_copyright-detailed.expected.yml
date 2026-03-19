@@ -1866,7 +1866,7 @@ license_detections:
         license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 183
-        end_line: '190'
+        end_line: 190
         matcher: 1-hash
         score: '100.0'
         matched_length: 54

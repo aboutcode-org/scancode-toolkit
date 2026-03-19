@@ -2,7 +2,7 @@
 key: vanderbilt-sla-1.0
 short_name: Vanderbilt SLA v1.0
 name: Vanderbilt Contribution and Software License Agreement v1.0
-category: Proprietary Free
+category: Non-Commercial
 owner: Vanderbilt University
 homepage_url: https://github.com/MASILab/SLANTbrainSeg/blob/master/license.md
 spdx_license_key: LicenseRef-scancode-vanderbilt-sla-1.0

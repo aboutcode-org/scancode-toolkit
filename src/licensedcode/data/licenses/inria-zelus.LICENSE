@@ -2,7 +2,7 @@
 key: inria-zelus
 short_name: INRIA NCLA Zelus
 name: INRIA Non-Commercial License Agreement for the Zélus compiler
-category: Proprietary Free
+category: Non-Commercial
 owner: INRIA
 homepage_url: https://github.com/INRIA/zelus/blob/main/LICENSE
 spdx_license_key: LicenseRef-scancode-inria-zelus

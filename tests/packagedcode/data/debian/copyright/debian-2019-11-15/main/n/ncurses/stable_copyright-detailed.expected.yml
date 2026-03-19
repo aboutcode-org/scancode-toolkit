@@ -133,7 +133,7 @@ license_detections:
         end_line: 127
         matcher: 2-aho
         score: '100.0'
-        matched_length: '199'
+        matched_length: 199
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: x11-xconsortium_41.RULE

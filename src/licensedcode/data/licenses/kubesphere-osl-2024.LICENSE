@@ -2,7 +2,7 @@
 key: kubesphere-osl-2024
 short_name: KubeSphere Open Source License 2024
 name: KubeSphere Open Source License 2024
-category: Proprietary Free
+category: Non-Commercial
 owner: Kubesphere
 homepage_url: https://github.com/kubesphere/kubesphere/blob/master/LICENSE
 spdx_license_key: LicenseRef-scancode-kubesphere-osl-2024

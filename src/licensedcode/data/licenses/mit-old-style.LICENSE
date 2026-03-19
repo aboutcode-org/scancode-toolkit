@@ -5,9 +5,13 @@ name: MIT Old Style
 category: Permissive
 owner: MIT
 homepage_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style
-spdx_license_key: LicenseRef-scancode-mit-old-style
+spdx_license_key: Advanced-Cryptics-Dictionary
+other_spdx_license_keys:
+    - LicenseRef-scancode-mit-old-style
 text_urls:
     - http://fedoraproject.org/wiki/Licensing:MIT#Old_Style
+other_urls:
+    - https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2
 ---
 
 Permission to use, copy, modify, distribute, and sell this software and

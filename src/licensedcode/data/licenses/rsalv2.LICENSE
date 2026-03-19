@@ -2,7 +2,7 @@
 key: rsalv2
 short_name: RSALv2
 name: Redis Source Available License 2.0 (RSALv2) Agreement
-category: Source-available
+category: Non-Commercial
 owner: Redis
 homepage_url: https://redis.com/legal/rsalv2-agreement/
 spdx_license_key: LicenseRef-scancode-rsalv2

@@ -13,7 +13,7 @@ declared_license_expression_spdx: BSD-2-Clause AND LicenseRef-scancode-generic-e
   AND LicenseRef-scancode-brian-gladman-3-clause AND BSD-3-Clause AND MIT AND BSD-2-Clause AND
   MIT AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-michigan-disclaimer AND FSFULLRWD
   AND HPND-export2-US AND OLDAP-2.8 AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-2-Clause-first-lines
-  AND MIT-CMU AND CMU-Mach-nodoc AND LicenseRef-scancode-ietf-trust AND LicenseRef-scancode-mit-old-style
+  AND MIT-CMU AND CMU-Mach-nodoc AND LicenseRef-scancode-ietf-trust AND Advanced-Cryptics-Dictionary
   AND MIT AND BSD-2-Clause AND HPND-export-US-acknowledgement AND BSD-4-Clause-UC AND HPND-export2-US
   AND BSD-4-Clause AND MIT AND ISC AND ISC AND LicenseRef-scancode-other-permissive AND BSD-3-Clause
   AND LicenseRef-scancode-rsa-md4 AND RSA-MD AND LicenseRef-scancode-rsa-1990 AND HPND-export-US-modify
@@ -929,10 +929,10 @@ license_detections:
              PARTICULAR PURPOSE.
     identifier: ietf_trust-f268e8cf-010e-2ddb-9692-832496073cf3
   - license_expression: mit-old-style
-    license_expression_spdx: LicenseRef-scancode-mit-old-style
+    license_expression_spdx: Advanced-Cryptics-Dictionary
     matches:
       - license_expression: mit-old-style
-        license_expression_spdx: LicenseRef-scancode-mit-old-style
+        license_expression_spdx: Advanced-Cryptics-Dictionary
         from_file:
         start_line: 769
         end_line: 776
