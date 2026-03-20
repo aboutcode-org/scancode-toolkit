@@ -2,15 +2,15 @@
 ScanCode Toolkit
 ================
 
-ScanCode Toolkit is a set of code scanning tools that detect the origin (copyrights), license and vulnerabilities of code,
-packages and dependencies in a codebase. ScanCode Toolkit is an `AboutCode project <https://aboutcode.org>`_.
+ScanCode Toolkit is a set of code scanning tools that detect the origin (copyrights), license, and vulnerabilities of code,
+packages, and dependencies in a codebase. ScanCode Toolkit is an `AboutCode project <https://aboutcode.org>`_.
 
 Why Use ScanCode Toolkit?
 =========================
 
 ScanCode Toolkit is the leading tool in scanning depth and accuracy,
 used by hundreds of software teams. You can use ScanCode Toolkit
-as a command line tool or as a library.
+as a command-line tool or as a library.
 
 Getting Started
 ===============
@@ -21,17 +21,17 @@ The ScanCode Toolkit documentation also provides:
 
 - prerequisites for installing the software.
 - instructions guiding you to start scanning code.
-- a comprehensive guide to the command line options.
+- a comprehensive guide to the command-line options.
 - tutorials that provide hands-on guidance to ScanCode features.
-- how to expand ScanCode Licenses and Detection Rules with your own data.
-- how to generate Attribution from a ScanCode scan.
+- how to expand ScanCode licenses and detection rules with your own data.
+- how to generate attribution from a ScanCode scan.
 - guidelines for contributing to code development.
 
 Build and tests status
 ======================
 
-We run 30,000+ tests on each commit on multiple CIs to ensure a good platform
-compabitility with multiple versions of Windows, Linux and macOS.
+We run 30,000+ tests on each commit across multiple CIs to ensure good platform
+compatibility with multiple versions of Windows, Linux, and macOS.
 
 +------------+--------------+-------------------------+----------------------------+
 | **Azure**  | **RTD Build**| **GitHub actions Docs** | **GitHub actions Release** |
@@ -56,30 +56,30 @@ Benefits of ScanCode
 
 - You can also organize and run ScanCode server-side with the
   companion `ScanCode.io web app <https://github.com/aboutcode-org/scancode.io>`_
-  to organize and store multiple scan projects including scripted scanning pipelines.
+  to organize and store multiple scan projects, including scripted scanning pipelines.
 
 - As a **standalone command-line tool**, ScanCode is **easy to install**, run,
   and embed in your CI/CD processing pipeline.
   It runs on **Windows, macOS, and Linux**.
 
 - ScanCode detects licenses, copyrights, package manifests, direct dependencies,
-  and more both in **source code** and **binary** files and is considered as the
-  best-in-class and reference tool in this domain, re-used as the core tools for
-  software composition data collection by several open source tools.
+  and more in both **source code** and **binary** files, and is considered the
+  best-in-class reference tool in this domain, reused as the core tool for
+  software composition data collection by several open-source tools.
 
-- ScanCode provides the **most accurate license detection engine** and does a
-  full comparison (also known as diff or red line comparison) between a database
-  of license texts and your code instead of relying only on approximate regex
-  patterns or probabilistic search, edit distance or machine learning.
+- ScanCode provides the **most accurate license detection engine** and performs
+  a full comparison (also known as a diff or red-line comparison) between a database
+  of license texts and your code, instead of relying solely on approximate regex
+  patterns, probabilistic search, edit distance, or machine learning.
 
 - Written in Python, ScanCode is **easy to extend with plugins** to contribute
   new and improved scanners, data summarization, package manifest parsers, and
-  new outputs.
+  new output formats.
 
-- You can save your scan results as **JSON, YAML, HTML, CycloneDX or SPDX** or
+- You can save your scan results as **JSON, YAML, HTML, CycloneDX, or SPDX**, or
   even create your own format with Jinja templates.
 
-- ScanCode can process packages, build manifest and lockfile formats to collect
+- ScanCode can process packages, build manifests, and lockfile formats to collect
   Package URLs and extract metadata. See all available `package parsers
   <https://scancode-toolkit.readthedocs.io/en/stable/reference/index.html>`_
   for the exhaustive list.
@@ -87,12 +87,12 @@ Benefits of ScanCode
 Support
 =======
 
-If you have a specific problem, suggestion or bug, please submit a
+If you have a specific problem, suggestion, or bug report, please submit a
 `GitHub issue <https://github.com/aboutcode-org/scancode-toolkit/issues>`_.
 
-For quick questions or socializing, join the AboutCode community discussions on `Slack <https://join.slack.com/t/aboutcode-org/shared_invite/zt-3li3bfs78-mmtKG0Qhv~G2dSlNCZW2pA>`_.
+For quick questions or community discussion, join the AboutCode community on `Slack <https://join.slack.com/t/aboutcode-org/shared_invite/zt-3li3bfs78-mmtKG0Qhv~G2dSlNCZW2pA>`_.
 
-Interested in commercial suppport? Contact the `AboutCode team <mailto:hello@aboutcode.org>`_.
+Interested in commercial support? Contact the `AboutCode team <mailto:hello@aboutcode.org>`_.
 
 License
 =======
@@ -125,13 +125,13 @@ the third-party code used in ScanCode for more details.
 Acknowledgements, Funding, Support and Sponsoring
 =================================================
 
-This project is funded, supported and sponsored by:
+This project is funded, supported, and sponsored by:
 
 - Generous support and contributions from users like you!
 - the European Commission NGI programme
 - the NLnet Foundation
 - the Swiss State Secretariat for Education, Research and Innovation (SERI)
-- Google, including the Google Summer of Code and the Google Seasons of Doc programmes
+- Google, including the Google Summer of Code and the Google Seasons of Docs programmes
 - Mercedes-Benz Group
 - Microsoft and Microsoft Azure
 - AboutCode ASBL
