@@ -1,4 +1,4 @@
-Scan Options
+Scan Options 
 ============
 
 .. _scan_options_min_coverage:
