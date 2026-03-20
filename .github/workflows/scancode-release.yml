@@ -431,6 +431,11 @@ jobs:
         with:
           python-version: ${{ matrix.pyver }}
 
+      - name: Install system dependencies
+        run: |
+          brew update
+          brew install p7zip libarchive libmagic
+
       - name: Download a single artifact macos_app_py_${{ matrix.pyver }}
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
