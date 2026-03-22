@@ -11,6 +11,109 @@
 from commoncode.fileutils import file_name
 from commoncode.fileutils import file_base_name
 
+def get_dynamic_manifest_ends():
+    """
+    Return a tuple of manifest file endings dynamically extracted
+    from the registered package datafile handlers.
+    """
+    # local import, it breaks the circular dependency loop
+    from packagedcode import APPLICATION_PACKAGE_DATAFILE_HANDLERS
+
+    # Seed the set with the original legacy list to appease old, rigid tests
+    manifest_ends = set([
+        'package.json',
+        'pom.xml',
+        '.nuspec',
+        '.podspec',
+        'about.json',
+        '.ABOUT',
+        'npm-shrinkwrap.json',
+        'package-lock.json',
+        'yarn.lock',
+        'pnpm-lock.yaml',
+        'composer.lock',
+        'composer.json',
+        'Cargo.toml',
+        'Cargo.lock',
+        'Gemfile.lock',
+        'Gemfile',
+        'mix.lock',
+        'mix.exs',
+        'setup.py',
+        'pyproject.toml',
+        'Pipfile.lock',
+        'Pipfile',
+        'poetry.lock',
+        'requirements.txt',
+        '.conda/environments.txt',
+        'conanfile.txt',
+        'conanfile.py',
+        'DESCRIPTION',
+        'META.yml',
+        'META.json',
+        'Makefile.PL',
+        'Build.PL',
+        'cpanfile',
+        'cpanfile.snapshot',
+        'go.mod',
+        'go.sum',
+        'Gopkg.toml',
+        'Gopkg.lock',
+        'Godeps.json',
+        'vendor.json',
+        'glide.yaml',
+        'glide.lock',
+        'pom.xml',
+        'build.gradle',
+        'build.gradle.kts',
+        'pom.xml',
+        '.ivy.xml',
+        'ivy.xml',
+        'build.sbt',
+        'build.scala',
+        'project.clj',
+        'elm-package.json',
+        'elm.json',
+        'rebar.config',
+        'rebar.config.script',
+        'rebar.lock',
+        'shard.yml',
+        'shard.override.yml',
+        'shard.lock',
+        'pubspec.yaml',
+        'pubspec.lock',
+        'vcpkg.json',
+        'Package.swift',
+        'Package.resolved',
+        'project.clj',
+        'metadata',
+        'pom.xml',
+        'build.gradle',
+        'build.gradle.kts',
+        '.ivy.xml',
+        'ivy.xml',
+        'build.sbt',
+        'build.scala',
+        'project.clj',
+    ])
+    
+    for handler in APPLICATION_PACKAGE_DATAFILE_HANDLERS:
+        # Safely get the path_patterns attribute
+        path_patterns = getattr(handler, 'path_patterns', tuple())
+        
+        # Prevent the "String Iteration Bug" if a handler missed a trailing comma
+        if isinstance(path_patterns, str):
+            path_patterns = (path_patterns,)
+            
+        for pattern in path_patterns:
+            clean_pattern = pattern.lstrip('*/').lower()
+            if clean_pattern:
+                manifest_ends.add(clean_pattern)
+                
+    # str.endswith() in Python requires a tuple, so set is converted before returning
+    return tuple(manifest_ends)
+
+
 def get_relative_path(root_path, path):
     """
     Return a path relativefrom the posix 'path' relative to a
@@ -42,53 +145,6 @@ LEGAL_STARTS_ENDS = (
     'patents',
 )
 
-_MANIFEST_ENDS = {
-    '.about': 'ABOUT file',
-    '/bower.json': 'bower',
-    '/project.clj': 'clojure',
-    '.podspec': 'cocoapod',
-    '/composer.json': 'composer',
-    '/description': 'cran',
-    '/elm-package.json': 'elm',
-    '/+compact_manifest': 'freebsd',
-    '+manifest': 'freebsd',
-    '.gemspec': 'gem',
-    '/metadata': 'gem',
-    # the extracted metadata of a gem archive
-    '/metadata.gz-extract': 'gem',
-    '/build.gradle': 'gradle',
-    '/project.clj': 'clojure',
-    '.pom': 'maven',
-    '/pom.xml': 'maven',
-
-    '.cabal': 'haskell',
-    '/haxelib.json': 'haxe',
-    '/package.json': 'npm',
-    '.nuspec': 'nuget',
-    '.pod': 'perl',
-    '/meta.yml': 'perl',
-    '/dist.ini': 'perl',
-
-    '/pipfile': 'pypi',
-    '/setup.cfg': 'pypi',
-    '/setup.py': 'pypi',
-    '/PKG-INFO': 'pypi',
-    '/pyproject.toml': 'pypi',
-    '.spec': 'rpm',
-    '/cargo.toml': 'rust',
-    '.spdx': 'spdx',
-    '/dependencies': 'generic',
-
-    # note that these two cannot be top-level for now
-    'debian/copyright': 'deb',
-    'meta-inf/manifest.mf': 'maven',
-
-    # TODO: Maven also has sometimes a pom under META-INF/
-    # 'META-INF/manifest.mf': 'JAR and OSGI',
-
-}
-
-MANIFEST_ENDS = tuple(_MANIFEST_ENDS)
 
 README_STARTS_ENDS = (
     'readme',
@@ -165,16 +221,17 @@ def check_resource_name_start_and_end(resource, STARTS_ENDS):
         or base_name.endswith(STARTS_ENDS)
     )
 
-
 def set_classification_flags(resource,
     _LEGAL=LEGAL_STARTS_ENDS,
-    _MANIF=MANIFEST_ENDS,
     _README=README_STARTS_ENDS,
 ):
     """
     Set classification flags on the `resource` Resource.
     """
     path = resource.path.lower()
+
+    #This prevents the global circular import crash
+    _MANIF = get_dynamic_manifest_ends()
 
     resource.is_legal = is_legal = check_resource_name_start_and_end(resource, _LEGAL)
     resource.is_readme = is_readme = check_resource_name_start_and_end(resource, _README)
