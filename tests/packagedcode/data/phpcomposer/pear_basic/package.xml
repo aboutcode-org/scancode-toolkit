@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="2.0" xmlns="http://pear.php.net/dtd/package-2.0">
+  <name>Example_Package</name>
+  <channel>pear.php.net</channel>
+  <summary>Example PEAR package</summary>
+  <description>A small test package for ScanCode PEAR parsing.</description>
+  <lead>
+    <name>Jane Doe</name>
+    <user>janedoe</user>
+    <email>jane@example.com</email>
+    <active>yes</active>
+  </lead>
+  <license>MIT</license>
+  <version>
+    <release>1.2.3</release>
+    <api>1.2.0</api>
+  </version>
+</package>

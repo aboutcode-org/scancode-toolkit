@@ -86,3 +86,19 @@ class TestPHPcomposer(PackageTester):
         expected_loc = self.get_test_loc('phpcomposer/composer.lock-expected.json')
         packages = phpcomposer.PhpComposerLockHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_is_manifest_php_pear_package_xml(self):
+        test_file = self.get_test_loc('phpcomposer/pear_basic/package.xml')
+        assert phpcomposer.PhpPearPackageXmlHandler.is_datafile(test_file)
+
+    def test_parse_php_pear_package_xml_basic(self):
+        test_file = self.get_test_loc('phpcomposer/pear_basic/package.xml')
+        expected_loc = self.get_test_loc('phpcomposer/pear_basic/package.xml.expected')
+        packages = phpcomposer.PhpPearPackageXmlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_php_pear_package_xml_with_uri_and_multiple_parties(self):
+        test_file = self.get_test_loc('phpcomposer/pear_with_uri/package.xml')
+        expected_loc = self.get_test_loc('phpcomposer/pear_with_uri/package.xml.expected')
+        packages = phpcomposer.PhpPearPackageXmlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
