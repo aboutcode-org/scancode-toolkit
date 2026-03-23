@@ -6,6 +6,7 @@ category: Public Domain
 owner: Creative Commons
 homepage_url: https://creativecommons.org/publicdomain/mark/1.0/
 spdx_license_key: CC-PDM-1.0
+minimum_coverage: 100
 other_spdx_license_keys:
     - LicenseRef-scancode-cc-pdm-1.0
 faq_url: https://wiki.creativecommons.org/wiki/PDM_FAQ
