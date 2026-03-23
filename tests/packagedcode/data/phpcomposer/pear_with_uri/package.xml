@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="2.0" xmlns="http://pear.php.net/dtd/package-2.0">
+  <name>Net_URL2</name>
+  <channel>pear.example.org</channel>
+  <summary>URL parsing helpers</summary>
+  <description>Utilities for working with URLs in legacy PEAR packages.</description>
+  <uri>https://example.org/pear/Net_URL2</uri>
+  <lead>
+    <user>leaddev</user>
+    <email>lead@example.org</email>
+    <active>yes</active>
+  </lead>
+  <developer>
+    <name>John Smith</name>
+    <email>john.smith@example.org</email>
+    <active>yes</active>
+  </developer>
+  <license>MIT</license>
+  <version>
+    <release>2.0.0</release>
+    <api>2.0.0</api>
+  </version>
+</package>

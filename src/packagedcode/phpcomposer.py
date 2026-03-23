@@ -9,6 +9,7 @@
 
 import io
 import json
+import xml.etree.ElementTree as ET
 from functools import partial
 
 from packagedcode import models
@@ -29,6 +30,7 @@ class BasePhpComposerHandler(models.DatafileHandler):
         datafile_name_patterns = (
             'composer.json',
             'composer.lock',
+            'package.xml',
         )
 
         if resource.has_parent():
@@ -206,6 +208,121 @@ class PhpComposerLockHandler(BasePhpComposerHandler):
 
         for package in packages + packages_dev:
             yield package
+
+
+class PhpPearPackageXmlHandler(BasePhpComposerHandler):
+    datasource_id = 'php_pear_package_xml'
+    path_patterns = ('*package.xml',)
+    default_package_type = 'pear'
+    default_primary_language = 'PHP'
+    description = 'PEAR package.xml manifest'
+    documentation_url = 'https://pear.php.net/manual/en/guide.developers.package2.intro.php'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        package = build_pear_package_data(location=location, package_only=package_only)
+        if package:
+            yield package
+
+
+PEAR_V2_NS = {'p': 'http://pear.php.net/dtd/package-2.0'}
+PEAR_MAINTAINER_ROLES = (
+    'lead',
+    'developer',
+    'contributor',
+    'helper',
+)
+
+
+def build_pear_package_data(location, package_only=False):
+    """
+    Return a PackageData built from a PEAR package.xml file at ``location``.
+    """
+    root = ET.parse(location).getroot()
+
+    name = find_text(root, 'name')
+    channel = find_text(root, 'channel')
+    summary = find_text(root, 'summary')
+    description = find_text(root, 'description')
+    homepage_url = find_text(root, 'uri')
+    license_statement = find_text(root, 'license')
+    version = find_text(root, 'version/release') or find_text(root, 'release/version')
+
+    package_mapping = dict(
+        datasource_id=PhpPearPackageXmlHandler.datasource_id,
+        type=PhpPearPackageXmlHandler.default_package_type,
+        namespace=channel,
+        name=name,
+        version=version,
+        primary_language=PhpPearPackageXmlHandler.default_primary_language,
+        description=build_description(summary=summary, description=description),
+        homepage_url=homepage_url,
+        extracted_license_statement=license_statement,
+        repository_homepage_url=get_pear_repository_homepage_url(channel=channel, name=name),
+        parties=list(get_pear_parties(root)),
+    )
+    package = models.PackageData.from_data(package_mapping, package_only)
+
+    if not package_only:
+        package.populate_license_fields()
+
+    return package
+
+
+def get_pear_repository_homepage_url(channel, name):
+    if channel and name:
+        return f'https://{channel}/package/{name}'
+    if name:
+        return f'https://pear.php.net/package/{name}'
+
+
+def build_description(summary=None, description=None):
+    summary = summary and summary.strip() or None
+    description = description and description.strip() or None
+
+    if summary and description:
+        if summary == description:
+            return description
+        return f'{summary}\n{description}'
+
+    return description or summary
+
+
+def get_pear_parties(root):
+    for role in PEAR_MAINTAINER_ROLES:
+        for maintainer in findall_elements(root, role):
+            name = find_text(maintainer, 'name') or find_text(maintainer, 'user')
+            email = find_text(maintainer, 'email')
+            if name or email:
+                yield models.Party(
+                    type=models.party_person,
+                    name=name,
+                    email=email,
+                    role=role,
+                )
+
+
+def find_text(element, path):
+    found = find_element(element, path)
+    if found is not None and found.text:
+        text = found.text.strip()
+        return text or None
+
+
+def find_element(element, path):
+    namespaced_path = '/'.join(f'p:{part}' for part in path.split('/'))
+    found = element.find(namespaced_path, PEAR_V2_NS)
+    if found is not None:
+        return found
+    return element.find(path)
+
+
+def findall_elements(element, path):
+    namespaced_path = '/'.join(f'p:{part}' for part in path.split('/'))
+    found = element.findall(namespaced_path, PEAR_V2_NS)
+    if found:
+        return found
+    return element.findall(path)
 
 
 def licensing_mapper(licenses, package, is_private=False):
