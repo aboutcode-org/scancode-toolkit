@@ -1044,6 +1044,12 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         matches = idx.match(query_string=querys)
         assert matches == []
 
+    def test_match_does_not_detect_spurious_short_cc_pdm_rule(self):
+        idx = cache.get_index()
+        querys = u'Unless stated otherwise, the text is case-sensitive.'
+        matches = idx.match(query_string=querys)
+        assert not [m for m in matches if m.rule.license_expression == 'cc-pdm-1.0']
+
     def test_match_does_not_match_false_positive_regions_properly(self):
         # note: this test relies on the false positive rule:
         #  false-positive_busybox_1.RULE
