@@ -1,0 +1,47 @@
+publiccodeYmlVersion: "0.4"
+
+name: Medusa
+url: "https://example.com/italia/medusa.git"
+landingURL: "https://example.com/medusa"
+softwareVersion: "1.0.3"
+
+platforms:
+  - web
+  - linux
+
+categories:
+  - financial-reporting
+  - accounting
+
+developmentStatus: stable
+softwareType: "standalone/desktop"
+
+description:
+  en:
+    shortDescription: >
+      A short description of this software.
+    longDescription: >
+      A very long description of this software. It explains what it does,
+      who it is for, and why you might want to use it in a public
+      administration context.
+    features:
+      - Feature one
+      - Feature two
+
+legal:
+  license: AGPL-3.0-or-later
+  mainCopyrightOwner: City of Example
+  repoOwner: City of Example
+
+maintenance:
+  type: "contract"
+  contacts:
+    - name: Francesco Rossi
+      email: f.rossi@example.com
+      affiliation: City of Example
+
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - en
+    - it
