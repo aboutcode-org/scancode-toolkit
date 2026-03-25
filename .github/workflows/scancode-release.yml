@@ -215,7 +215,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-24.04, ubuntu-24.04]
+        os: [ubuntu-24.04, ubuntu-24.04, ubuntu-24.04-arm, ubuntu-24.04-arm]
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
@@ -250,6 +250,59 @@ jobs:
               venv/bin/scancode -clipeu --json-pp - some.file ; \
             done
 
+  smoke_test_install_and_run_pypi_wheels_on_macos:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
+    name: Test PyPI wheels on mac
+    needs:
+      - build_scancode_wheels_sdist_for_pypi
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [macos-14, macos-15, macos-14-intel, macos-15-intel]
+        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.pyver }}
+
+      - name: Install system dependencies
+        run: |
+          brew update
+          brew install p7zip libarchive libmagic
+
+      - name: Download wheels artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: wheels_sdist
+          path: dist
+
+      - name: install and test wheels
+        run: |
+          echo "license: gpl-2.0" > some.file
+          rm -rf venv;  \
+          python -m venv venv
+          venv/bin/python -m pip install --upgrade pip wheel setuptools
+          for f in `find dist -type f -name "licensedcode*.whl"`; \
+            do \
+              venv/bin/python -m pip install --force-reinstall "$f" ; \
+            done
+          for f in `find dist -type f -name "scancode_toolkit_mini-*.whl"`; \
+            do \
+              venv/bin/python -m pip install --find-links=./etc/thirdparty/dummy_dist --force-reinstall "$f[full]" ; \
+              venv/bin/scancode -clipeu --json-pp - some.file ; \
+            done
 
   smoke_test_install_and_run_pypi_wheels_on_windows:
     permissions:
