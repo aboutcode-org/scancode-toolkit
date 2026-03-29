@@ -2023,3 +2023,59 @@ def keywords_mapper(keywords, package):
 
     package.keywords = keywords
     return package
+class YarnPnpHandler(BaseNpmHandler):
+    """
+    Handle Yarn v2 Plug and Play .pnp.cjs files
+    See https://yarnpkg.com/features/pnp
+    """
+    datasource_id = 'yarn_pnp'
+    path_patterns = ('*/.pnp.cjs',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'Yarn Plug and Play manifest'
+    documentation_url = 'https://yarnpkg.com/features/pnp'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with io.open(location, encoding='utf-8') as f:
+            content = f.read()
+
+        # Extract the JSON data embedded in the .pnp.cjs file
+        match = re.search(r'const RAW_RUNTIME_STATE\s*=\s*(\{.*?\});', content, re.DOTALL)
+        if not match:
+            return
+
+        pnp_data = json.loads(match.group(1))
+        packages = pnp_data.get('packageRegistryData') or {}
+
+        dependencies = []
+        for name, versions in packages.items():
+            if not name:
+                continue
+            for version, _data in (versions or {}).items():
+                if not version:
+                    continue
+                ns, _, pkg_name = name.rpartition('/')
+                purl = PackageURL(
+                    type=cls.default_package_type,
+                    namespace=ns or None,
+                    name=pkg_name,
+                    version=version,
+                ).to_string()
+                dep = models.DependentPackage(
+                    purl=purl,
+                    extracted_requirement=version,
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_pinned=True,
+                )
+                dependencies.append(dep.to_dict())
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
