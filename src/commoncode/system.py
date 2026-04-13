@@ -30,6 +30,10 @@ def os_arch():
         os = "mac"
     elif "freebsd" in sys_platform:
         os = "freebsd"
+    elif "sunos" in sys_platform:
+        os = "sunos"
+    elif "haiku" in sys_platform:
+        os = "haiku"
     else:
         raise Exception("Unsupported OS/platform %r" % sys_platform)
     return os, arch
@@ -45,7 +49,9 @@ on_windows_64 = on_windows and current_arch == "64"
 on_mac = current_os == "mac"
 on_linux = current_os == "linux"
 on_freebsd = current_os == "freebsd"
-on_posix = not on_windows and (on_mac or on_linux or on_freebsd)
+on_sunos = current_os == "sunos"
+on_haiku = current_os == "haiku"
+on_posix = not on_windows and (on_mac or on_linux or on_freebsd or on_sunos or on_haiku)
 
 current_os_arch = "%(current_os)s-%(current_arch)s" % locals()
 noarch = "noarch"
