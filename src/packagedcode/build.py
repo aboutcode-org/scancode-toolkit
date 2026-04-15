@@ -7,9 +7,10 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import os
-import logging
 import ast
+import json
+import logging
+import os
 from collections import defaultdict
 import re
 
@@ -444,7 +445,58 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
         )
 
 
-class BazelModuleHandler(models.DatafileHandler):
+class BaseBazelModuleHandler(models.DatafileHandler):
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder):
+        if resource.has_parent():
+            directory = resource.parent(codebase)
+        else:
+            directory = resource
+
+        if not directory:
+            yield from super().assemble(
+                package_data=package_data,
+                resource=resource,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
+            return
+
+        if not codebase.has_single_resource:
+            siblings = list(directory.children(codebase))
+        else:
+            siblings = [directory]
+
+        pkgdata_resources = []
+        for datafile_name in ("MODULE.bazel", "MODULE.bazel.lock"):
+            for sibling in siblings:
+                if sibling.name != datafile_name:
+                    continue
+
+                for sibling_package_data in sibling.package_data:
+                    pkgdata_resources.append(
+                        (models.PackageData.from_dict(sibling_package_data), sibling)
+                    )
+
+        if pkgdata_resources:
+            yield from cls.assemble_from_many(
+                pkgdata_resources=pkgdata_resources,
+                codebase=codebase,
+                package_adder=package_adder,
+                ignore_name_check=True,
+                parent_resource=directory,
+            )
+            return
+
+        yield from super().assemble(
+            package_data=package_data,
+            resource=resource,
+            codebase=codebase,
+            package_adder=package_adder,
+        )
+
+
+class BazelModuleHandler(BaseBazelModuleHandler):
     """
     Handle Bazel MODULE.bazel module manifest files used by Bzlmod.
     See: https://bazel.build/external/module
@@ -473,6 +525,11 @@ class BazelModuleHandler(models.DatafileHandler):
             block = module_match.group(1)
             name = _extract_starlark_kwarg(block, "name")
             version = _extract_starlark_kwarg(block, "version")
+
+        # Root Bazel modules can omit module(), so fall back to the enclosing
+        # directory name to keep the manifest assemblable.
+        if not name:
+            name = fileutils.file_name(fileutils.parent_directory(location))
 
         # --- Extract bazel_dep() declarations ---
         dependencies = []
@@ -509,4 +566,38 @@ class BazelModuleHandler(models.DatafileHandler):
             name=name,
             version=version,
             dependencies=dependencies,
+        )
+
+
+class BazelModuleLockHandler(BaseBazelModuleHandler):
+    """
+    Handle Bazel MODULE.bazel.lock files and merge their metadata with a
+    sibling MODULE.bazel manifest during assembly.
+    """
+
+    datasource_id = "bazel_module_lock"
+    path_patterns = ("*/MODULE.bazel.lock",)
+    default_package_type = "bazel"
+    is_lockfile = True
+    description = "Bazel MODULE.bazel lockfile"
+    documentation_url = "https://bazel.build/external/lockfile"
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location, encoding="utf-8", errors="replace") as f:
+            parsed = json.load(f)
+
+        registry_file_hashes = parsed.get("registryFileHashes") or {}
+        module_extensions = parsed.get("moduleExtensions") or {}
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            extra_data={
+                "bazel_lockfile_version": parsed.get("lockFileVersion"),
+                "bazel_registry_file_hashes_count": len(registry_file_hashes),
+                "bazel_module_extensions": sorted(module_extensions),
+                "bazel_selected_yanked_versions": parsed.get("selectedYankedVersions")
+                or {},
+            },
         )

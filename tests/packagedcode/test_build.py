@@ -30,6 +30,18 @@ class TestBuild(PackageTester):
         run_scan_click(["--package", test_file, "--json-pp", result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
+    def test_end2end_scan_can_detect_bazel_build_and_module_together(self):
+        test_file = self.get_test_loc("bazel/allocation-instrumenter")
+        expected_file = self.get_test_loc("bazel/allocation-instrumenter-expected.json")
+        result_file = self.get_temp_file("results.json")
+        run_scan_click(["--package", test_file, "--json-pp", result_file])
+        check_json_scan(
+            expected_file,
+            result_file,
+            remove_uuid=True,
+            regen=REGEN_TEST_FIXTURES,
+        )
+
     def test_end2end_scan_can_detect_buck(self):
         test_file = self.get_test_loc("buck/end2end")
         expected_file = self.get_test_loc("buck/end2end-expected.json")
@@ -191,9 +203,36 @@ class TestBazelModuleHandler(PackageTester):
         assert pkg.name == "minimal_module"
         assert pkg.version is None
 
+    def test_parse_module_without_module_declaration_uses_directory_name(self):
+        location = self.get_test_loc("build/bazel/allocation-instrumenter/MODULE.bazel")
+        results = list(build.BazelModuleHandler.parse(location))
+
+        assert len(results) == 1
+        pkg = results[0]
+        assert pkg.name == "allocation-instrumenter"
+        assert pkg.version is None
+
+    def test_parse_module_lock_metadata(self):
+        location = self.get_test_loc("build/bazel/allocation-instrumenter/MODULE.bazel.lock")
+        results = list(build.BazelModuleLockHandler.parse(location))
+
+        assert len(results) == 1
+        pkg = results[0]
+        assert pkg.datasource_id == "bazel_module_lock"
+        assert pkg.extra_data["bazel_lockfile_version"] == 18
+        assert pkg.extra_data["bazel_registry_file_hashes_count"] == 7
+        assert pkg.extra_data["bazel_module_extensions"] == [
+            "@@rules_python+//python/private/pypi:pip.bzl%pip_internal"
+        ]
+
     def test_path_pattern_matches(self):
         handler = build.BazelModuleHandler
         assert handler.is_datafile("some/path/MODULE.bazel", _bare_filename=True)
         assert not handler.is_datafile("some/path/notMODULE.bazel", _bare_filename=True)
         assert not handler.is_datafile("some/path/WORKSPACE", _bare_filename=True)
         assert not handler.is_datafile("some/path/BUILD", _bare_filename=True)
+
+    def test_lock_path_pattern_matches(self):
+        handler = build.BazelModuleLockHandler
+        assert handler.is_datafile("some/path/MODULE.bazel.lock", _bare_filename=True)
+        assert not handler.is_datafile("some/path/MODULE.bazel", _bare_filename=True)

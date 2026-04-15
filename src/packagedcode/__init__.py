@@ -56,6 +56,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     build.AutotoolsConfigureHandler,
     build.BazelBuildHandler,
     build.BazelModuleHandler,
+    build.BazelModuleLockHandler,
     build.BuckMetadataBzlHandler,
     build.BuckPackageHandler,
     cargo.CargoLockHandler,
