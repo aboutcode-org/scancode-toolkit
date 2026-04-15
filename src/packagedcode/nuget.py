@@ -276,10 +276,7 @@ class DotNetDepsJsonHandler(models.DatafileHandler):
     @classmethod
     def parse(cls, location, package_only=False):
         with open(location) as loc:
-            try:
-                parsed = json.load(loc)
-            except Exception:
-                return
+            parsed = json.load(loc)
 
         if not parsed or not isinstance(parsed, dict):
             return
@@ -320,66 +317,115 @@ class DotNetDepsJsonHandler(models.DatafileHandler):
         if not selected_targets:
             selected_targets = available_targets
 
-        for lib_key, lib_info in libraries.items():
-            if not lib_key or '/' not in lib_key:
-                continue
-            if not isinstance(lib_info, dict):
-                continue
+        packages = parse_deps_json_libraries(
+            libraries=libraries,
+            selected_targets=selected_targets,
+            runtime_target_matched=runtime_target_matched,
+            target_framework=target_framework,
+            datasource_id=cls.datasource_id,
+            default_package_type=cls.default_package_type,
+        )
 
-            name, version = lib_key.split('/', 1)
-
-            package_type = lib_info.get('type')
-
-            # Extract dependencies from targets
-            dependencies = []
-            seen_dependencies = set()
-            for scope, target_obj in selected_targets:
-                target_lib = target_obj.get(lib_key) or {}
-                if not isinstance(target_lib, dict):
-                    continue
-
-                deps = target_lib.get('dependencies')
-                if not deps or not isinstance(deps, dict):
-                    continue
-
-                for dep_name, dep_version in deps.items():
-                    if not dep_name:
-                        continue
-
-                    dep_key = (dep_name, dep_version, scope)
-                    if dep_key in seen_dependencies:
-                        continue
-                    seen_dependencies.add(dep_key)
-
-                    dependencies.append(
-                        models.DependentPackage(
-                            purl=str(PackageURL(type='nuget', name=dep_name, version=dep_version)),
-                            extracted_requirement=dep_version,
-                            scope=scope,
-                            is_runtime=True,
-                            is_optional=False,
-                            is_pinned=True,
-                            is_direct=True,
-                        ).to_dict()
-                    )
-
-            extra_data = {}
-            if runtime_target_matched:
-                extra_data['target_framework'] = target_framework
-            elif len(selected_targets) == 1:
-                extra_data['target_framework'] = selected_targets[0][0]
-            elif selected_targets:
-                extra_data['target_frameworks'] = [scope for scope, _target_obj in selected_targets]
-
-            if package_type:
-                extra_data['type'] = package_type
-
-            package_data = dict(
-                datasource_id=cls.datasource_id,
-                type=cls.default_package_type,
-                name=name,
-                version=version,
-                dependencies=dependencies,
-                extra_data=extra_data,
-            )
+        for package_data in packages:
             yield models.PackageData.from_data(package_data, package_only)
+
+
+def parse_deps_json_libraries(
+    libraries,
+    selected_targets,
+    runtime_target_matched,
+    target_framework,
+    datasource_id,
+    default_package_type,
+):
+    """
+    Parse the libraries and targets sections of a .deps.json file.
+    Returns a list of package dictionaries.
+    """
+    packages = []
+    if not selected_targets:
+        selected_targets = []
+
+    for lib_key, lib_info in libraries.items():
+        if not lib_key or '/' not in lib_key:
+            continue
+        if not isinstance(lib_info, dict):
+            continue
+
+        name, version = lib_key.split('/', 1)
+        package_type = lib_info.get('type')
+        dependencies = get_deps_json_dependencies(
+            lib_key=lib_key,
+            selected_targets=selected_targets,
+            default_package_type=default_package_type,
+        )
+
+        extra_data = {}
+        if runtime_target_matched:
+            extra_data['target_framework'] = target_framework
+        elif len(selected_targets) == 1:
+            extra_data['target_framework'] = selected_targets[0][0]
+        elif selected_targets:
+            extra_data['target_frameworks'] = [scope for scope, _target_obj in selected_targets]
+
+        if package_type:
+            extra_data['type'] = package_type
+
+        package_data = dict(
+            datasource_id=datasource_id,
+            type=default_package_type,
+            name=name,
+            version=version,
+            dependencies=dependencies,
+            extra_data=extra_data,
+        )
+        packages.append(package_data)
+
+    return packages
+
+
+def get_deps_json_dependencies(lib_key, selected_targets, default_package_type):
+    """
+    Return dependency mappings for ``lib_key`` gathered from all ``selected_targets``.
+    """
+    dependencies = []
+    seen_dependencies = set()
+
+    for scope, target_obj in selected_targets:
+        target_lib = target_obj.get(lib_key) or {}
+        if not isinstance(target_lib, dict):
+            continue
+
+        deps = target_lib.get('dependencies')
+        if not deps or not isinstance(deps, dict):
+            continue
+
+        for dep_name, dep_version in deps.items():
+            if not dep_name:
+                continue
+
+            dep_key = (dep_name, dep_version, scope)
+            if dep_key in seen_dependencies:
+                continue
+            seen_dependencies.add(dep_key)
+
+            purl = PackageURL(type=default_package_type, name=dep_name, version=dep_version)
+            resolved_package = models.PackageData(
+                type=purl.type,
+                name=dep_name,
+                version=dep_version,
+            ).to_dict()
+
+            dependency = models.DependentPackage(
+                purl=str(purl),
+                extracted_requirement=dep_version,
+                scope=scope,
+                is_runtime=True,
+                is_optional=False,
+                is_pinned=True,
+                is_direct=True,
+                resolved_package=resolved_package,
+            )
+            dependencies.append(dependency.to_dict())
+
+    return dependencies
