@@ -1,16 +1,7 @@
 ---
 license_expression: bsd-new
 is_license_notice: yes
-ignorable_copyrights:
-    - (c) Copyright 2006-2025 Salvatore Filippone Alfredo Buttari
-ignorable_holders:
-    - Salvatore Filippone Alfredo Buttari
 ---
-
-Parallel Sparse BLAS  version 3.9
-    (C) Copyright 2006-2025
-        Salvatore Filippone
-        Alfredo Buttari
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions
