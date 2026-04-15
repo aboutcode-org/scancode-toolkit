@@ -1,5 +1,5 @@
-notes: Minimal Wt-derived regression fixture for issue #3553, keeping the passwdqc disclaimer immediately before the IBPP reference and appendix intro.
+notes: Wt-derived appendix excerpt for issue #3553, preserving the upstream passwdqc and Sha1 blocks immediately before the IBPP appendix text without the table-row reference shortcut.
 license_expressions:
   - bsd-1-clause
-  - ibpp
+  - fpl
   - ibpp

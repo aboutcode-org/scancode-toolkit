@@ -377,6 +377,10 @@ def test_match_reference_license():
 
 
 def test_wt_ibpp_interference_is_detected_in_scan_output():
+    from licensedcode.cache import get_index
+
+    get_index(force=True)
+
     test_file = test_env.get_test_loc('datadriven/lic1/wt_ibpp_interference.md')
     result_file = test_env.get_temp_file('json')
     args = [
@@ -395,9 +399,9 @@ def test_wt_ibpp_interference_is_detected_in_scan_output():
     codebase = VirtualCodebase(result_file)
     resource = codebase.get_resource(path='wt_ibpp_interference.md')
 
-    assert resource.detected_license_expression == 'bsd-1-clause AND ibpp'
+    assert resource.detected_license_expression == 'bsd-1-clause AND fpl AND ibpp'
     assert any(
-        match['license_expression'] == 'ibpp'
+        match['rule_identifier'] in {'ibpp.LICENSE', 'ibpp_text.RULE'}
         for detection in resource.license_detections
         for match in detection['matches']
     )
