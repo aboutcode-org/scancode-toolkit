@@ -706,7 +706,6 @@ def party_mapper(role, names=[], emails=[]):
             models.Party(type=models.party_person, email=email, role=role)
             for email in emails
         )
-    return ()
 
 
 def get_parties(gem_data):

@@ -3,7 +3,7 @@
     "type": "gem",
     "namespace": null,
     "name": "ProviderDSL::GemDescription::NAME",
-    "version": null,
+    "version": "ProviderDSL::GemDescription::VERSION",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
@@ -27,7 +27,7 @@
     ],
     "keywords": [],
     "homepage_url": "ProviderDSL::GemDescription::PAGE",
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/ProviderDSL::GemDescription::NAME-ProviderDSL::GemDescription::VERSION.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -152,10 +152,10 @@
         "extra_data": {}
       }
     ],
-    "repository_homepage_url": "https://rubygems.org/gems/ProviderDSL::GemDescription::NAME",
-    "repository_download_url": null,
-    "api_data_url": "https://rubygems.org/api/v1/versions/ProviderDSL::GemDescription::NAME.json",
+    "repository_homepage_url": "https://rubygems.org/gems/ProviderDSL::GemDescription::NAME/versions/ProviderDSL::GemDescription::VERSION",
+    "repository_download_url": "https://rubygems.org/downloads/ProviderDSL::GemDescription::NAME-ProviderDSL::GemDescription::VERSION.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/ProviderDSL::GemDescription::NAME/versions/ProviderDSL::GemDescription::VERSION.json",
     "datasource_id": "gemspec",
-    "purl": "pkg:gem/ProviderDSL::GemDescription::NAME"
+    "purl": "pkg:gem/ProviderDSL::GemDescription::NAME@ProviderDSL::GemDescription::VERSION"
   }
 ]

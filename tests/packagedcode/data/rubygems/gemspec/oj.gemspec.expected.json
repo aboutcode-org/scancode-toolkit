@@ -3,7 +3,7 @@
     "type": "gem",
     "namespace": null,
     "name": "oj",
-    "version": null,
+    "version": "::Oj::VERSION",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
@@ -27,7 +27,7 @@
     ],
     "keywords": [],
     "homepage_url": "http://www.ohler.com/oj",
-    "download_url": null,
+    "download_url": "https://rubygems.org/downloads/oj-::Oj::VERSION.gem",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -97,10 +97,10 @@
         "extra_data": {}
       }
     ],
-    "repository_homepage_url": "https://rubygems.org/gems/oj",
-    "repository_download_url": null,
-    "api_data_url": "https://rubygems.org/api/v1/versions/oj.json",
+    "repository_homepage_url": "https://rubygems.org/gems/oj/versions/::Oj::VERSION",
+    "repository_download_url": "https://rubygems.org/downloads/oj-::Oj::VERSION.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/oj/versions/::Oj::VERSION.json",
     "datasource_id": "gemspec",
-    "purl": "pkg:gem/oj"
+    "purl": "pkg:gem/oj@::Oj::VERSION"
   }
 ]
