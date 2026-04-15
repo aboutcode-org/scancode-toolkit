@@ -483,7 +483,7 @@
       "is_source": true,
       "is_script": false,
       "is_legal": true,
-      "is_manifest": false,
+      "is_manifest": true,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
