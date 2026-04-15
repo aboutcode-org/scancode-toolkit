@@ -1,3 +1,5 @@
+# Hand-crafted publiccode.yml test fixture based on examples from:
+# https://github.com/publiccodeyml/publiccode.yml/blob/main/docs/standard/schema.core.rst
 publiccodeYmlVersion: "0.4"
 
 name: Medusa

@@ -7,8 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import logging
-import os
+import io
 
 import saneyaml
 
@@ -20,14 +19,17 @@ publiccode.yml is a metadata standard for public sector open source software.
 See https://github.com/publiccodeyml/publiccode.yml
 """
 
-TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
-
-logger = logging.getLogger(__name__)
+EXTRA_DATA_KEYS = (
+    'publiccodeYmlVersion',
+    'platforms',
+    'developmentStatus',
+    'softwareType',
+)
 
 
 class PubliccodeYmlHandler(models.DatafileHandler):
     datasource_id = 'publiccode_yml'
-    path_patterns = ('*/publiccode.yml', '*/publiccode.yaml')
+    path_patterns = ('*publiccode.yml', '*publiccode.yaml')
     default_package_type = 'publiccode'
     default_primary_language = None
     description = 'publiccode.yml metadata file'
@@ -35,81 +37,34 @@ class PubliccodeYmlHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with open(location, 'rb') as f:
-            data = saneyaml.load(f.read())
+        with io.open(location, encoding='utf-8') as loc:
+            data = saneyaml.load(loc.read())
 
-        if not data or not isinstance(data, dict):
+        if not is_publiccode_yml_data(data):
             return
 
-        # Validate: a publiccode.yml must have 'publiccodeYmlVersion'
-        if 'publiccodeYmlVersion' not in data:
-            return
-
-        name = data.get('name')
-        version = data.get('softwareVersion')
-        vcs_url = data.get('url')
-        homepage_url = data.get('landingURL') or vcs_url
-
-        # License is under legal.license (SPDX expression)
-        legal = data.get('legal') or {}
-        declared_license = legal.get('license')
-        copyright_statement = legal.get('mainCopyrightOwner') or legal.get('repoOwner')
-
-        # Description: prefer English, fall back to first available language
-        description = _get_description(data)
-
-        # Keywords from categories
-        categories = data.get('categories') or []
-        keywords = ', '.join(categories) if categories else None
-
-        # Parties from maintenance.contacts
-        parties = []
-        maintenance = data.get('maintenance') or {}
-        for contact in maintenance.get('contacts') or []:
-            contact_name = contact.get('name')
-            contact_email = contact.get('email')
-            if contact_name or contact_email:
-                parties.append(
-                    models.Party(
-                        type=models.party_person,
-                        name=contact_name,
-                        email=contact_email,
-                        role='maintainer',
-                    )
-                )
-
-        # Extra data
-        extra_data = {}
-        schema_version = data.get('publiccodeYmlVersion')
-        if schema_version:
-            extra_data['publiccodeYmlVersion'] = schema_version
-        platforms = data.get('platforms')
-        if platforms:
-            extra_data['platforms'] = platforms
-        development_status = data.get('developmentStatus')
-        if development_status:
-            extra_data['developmentStatus'] = development_status
-        software_type = data.get('softwareType')
-        if software_type:
-            extra_data['softwareType'] = software_type
-
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
-            name=name,
-            version=version,
-            vcs_url=vcs_url,
-            homepage_url=homepage_url,
-            description=description,
-            declared_license_expression=declared_license,
-            copyright=copyright_statement,
-            keywords=keywords,
-            parties=parties,
-            extra_data=extra_data or None,
+            name=data.get('name'),
+            version=data.get('softwareVersion'),
+            vcs_url=data.get('url'),
+            homepage_url=data.get('landingURL') or data.get('url'),
+            description=get_description(data),
+            extracted_license_statement=get_extracted_license_statement(data),
+            copyright=get_copyright_statement(data),
+            keywords=get_categories(data),
+            parties=get_parties(data),
+            extra_data=get_extra_data(data) or None,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
-def _get_description(data):
+def is_publiccode_yml_data(data):
+    return isinstance(data, dict) and 'publiccodeYmlVersion' in data
+
+
+def get_description(data):
     """
     Extract the best available description from publiccode.yml's
     multilingual 'description' block. Prefer English, fall back to
@@ -119,11 +74,16 @@ def _get_description(data):
     if not description_block:
         return
 
-    lang_data = (
-        description_block.get('en')
-        or description_block.get('eng')
-        or next(iter(description_block.values()), None)
-    )
+    lang_data = None
+    for language, localized_description in description_block.items():
+        primary_language = language.lower().split('-')[0]
+        if primary_language == 'en':
+            lang_data = localized_description
+            break
+
+    if not lang_data:
+        lang_data = next(iter(description_block.values()), None)
+
     if not lang_data:
         return
 
@@ -131,3 +91,61 @@ def _get_description(data):
     short_desc = lang_data.get('shortDescription', '').strip()
 
     return long_desc or short_desc or None
+
+
+def get_extracted_license_statement(data):
+    legal = data.get('legal') or {}
+    return legal.get('license')
+
+
+def get_copyright_statement(data):
+    legal = data.get('legal') or {}
+    copyright_holders = []
+
+    for key in ('mainCopyrightOwner', 'repoOwner'):
+        value = legal.get(key)
+        if value and value not in copyright_holders:
+            copyright_holders.append(value)
+
+    return '\n'.join(copyright_holders) or None
+
+
+def get_categories(data):
+    categories = data.get('categories') or []
+    if isinstance(categories, str):
+        return [categories]
+    return categories
+
+
+def get_parties(data):
+    parties = []
+    maintenance = data.get('maintenance') or {}
+
+    for contact in maintenance.get('contacts') or []:
+        contact_name = contact.get('name')
+        contact_email = contact.get('email')
+
+        if not (contact_name or contact_email):
+            continue
+
+        parties.append(
+            models.Party(
+                type=models.party_person,
+                name=contact_name,
+                email=contact_email,
+                role='maintainer',
+            )
+        )
+
+    return parties
+
+
+def get_extra_data(data):
+    extra_data = {}
+
+    for key in EXTRA_DATA_KEYS:
+        value = data.get(key)
+        if value:
+            extra_data[key] = value
+
+    return extra_data

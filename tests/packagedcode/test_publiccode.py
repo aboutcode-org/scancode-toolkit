@@ -5,42 +5,60 @@
 #
 
 import os
-import pytest
 
-from packagedcode.publiccode import PubliccodeYmlHandler
-
-TESTDATA_DIR = os.path.join(os.path.dirname(__file__), 'data', 'publiccode')
-
-
-def test_publiccode_yml_basic():
-    location = os.path.join(TESTDATA_DIR, 'publiccode.yml')
-    packages = list(PubliccodeYmlHandler.parse(location))
-    assert len(packages) == 1
-    pkg = packages[0]
-
-    assert pkg.name == 'Medusa'
-    assert pkg.version == '1.0.3'
-    assert pkg.vcs_url == 'https://example.com/italia/medusa.git'
-    assert pkg.homepage_url == 'https://example.com/medusa'
-    assert pkg.declared_license_expression == 'AGPL-3.0-or-later'
-    assert pkg.copyright == 'City of Example'
-    assert 'financial-reporting' in pkg.keywords
-    assert len(pkg.parties) == 1
-    assert pkg.parties[0].name == 'Francesco Rossi'
-    assert pkg.parties[0].email == 'f.rossi@example.com'
-    assert pkg.parties[0].role == 'maintainer'
+from packagedcode import publiccode
+from packages_test_utils import PackageTester
+from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import run_scan_click
+from scancode_config import REGEN_TEST_FIXTURES
 
 
-def test_publiccode_yml_no_version_key_returns_nothing(tmp_path):
-    """A YAML file without publiccodeYmlVersion should yield nothing."""
-    f = tmp_path / 'publiccode.yml'
-    f.write_text('name: something\nversion: 1.0\n')
-    packages = list(PubliccodeYmlHandler.parse(str(f)))
-    assert packages == []
+class TestPubliccode(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+    def test_publiccode_yml_is_datafile(self):
+        test_file = self.get_test_loc('publiccode/publiccode.yml')
+        assert publiccode.PubliccodeYmlHandler.is_datafile(test_file)
 
-def test_publiccode_yml_path_patterns():
-    assert PubliccodeYmlHandler.path_patterns == (
-        '*/publiccode.yml',
-        '*/publiccode.yaml',
-    )
+    def test_parse_publiccode_yml(self):
+        test_file = self.get_test_loc('publiccode/publiccode.yml')
+        packages = publiccode.PubliccodeYmlHandler.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'publiccode/publiccode.yml-expected.json',
+            must_exist=False,
+        )
+        self.check_packages_data(
+            packages_data=packages,
+            expected_loc=expected_loc,
+            must_exist=False,
+            regen=REGEN_TEST_FIXTURES,
+        )
+
+    def test_scan_cli_works(self):
+        test_file = self.get_test_loc('publiccode/publiccode.yml')
+        expected_file = self.get_test_loc(
+            'publiccode/publiccode.yml-scancode.json',
+            must_exist=False,
+        )
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file=expected_file,
+            result_file=result_file,
+            remove_uuid=True,
+            regen=REGEN_TEST_FIXTURES,
+        )
+
+    def test_publiccode_yml_no_version_key_returns_nothing(self):
+        test_file = self.get_temp_file(extension='yml', file_name='publiccode')
+        with open(test_file, 'w') as temp_file:
+            temp_file.write('name: something\nversion: 1.0\n')
+
+        packages = list(publiccode.PubliccodeYmlHandler.parse(test_file))
+        assert packages == []
+
+    def test_publiccode_yml_path_patterns(self):
+        assert publiccode.PubliccodeYmlHandler.path_patterns == (
+            '*publiccode.yml',
+            '*publiccode.yaml',
+        )
