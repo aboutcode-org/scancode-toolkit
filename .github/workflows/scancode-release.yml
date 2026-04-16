@@ -32,10 +32,12 @@ jobs:
         shell: bash
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: 3.14
 
@@ -46,7 +48,7 @@ jobs:
         run: etc/release/licensedcode-create-pypi-wheel-and-sdist.sh
 
       - name: Collect built wheels and sdist
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: wheels_sdist
           path: dist/*
@@ -69,11 +71,13 @@ jobs:
        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
       - run: git fetch --prune --unshallow
 
       - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }} 
 
@@ -81,7 +85,7 @@ jobs:
         run: etc/release/scancode-create-release-app-linux.sh ${{ matrix.pyver }}
 
       - name: Collect built linux app for python ${{ matrix.pyver }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: linux_app_py_${{ matrix.pyver }}
           path: release/*
@@ -104,11 +108,13 @@ jobs:
        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
       - run: git fetch --prune --unshallow
 
       - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }} 
 
@@ -116,7 +122,7 @@ jobs:
         run: etc/release/scancode-create-release-app-macos.sh ${{ matrix.pyver }}
 
       - name: Collect built mac app for python ${{ matrix.pyver }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: macos_app_py_${{ matrix.pyver }}
           path: release/*
@@ -139,11 +145,13 @@ jobs:
        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
       - run: git fetch --prune --unshallow
 
       - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }} 
 
@@ -151,7 +159,7 @@ jobs:
         run: etc/release/scancode-create-release-app-windows.sh ${{ matrix.pyver }}
 
       - name: Collect built windows app for python ${{ matrix.pyver }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: windows_app_py_${{ matrix.pyver }}
           path: release/*
@@ -171,11 +179,13 @@ jobs:
       fail-fast: true
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
       - run: git fetch --prune --unshallow
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: "3.14"
 
@@ -183,17 +193,17 @@ jobs:
         run: etc/release/scancode-create-release-app-sources.sh
 
       - name: Collect built source app tarball
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: source_app
           path: release/*
 
 
-  smoke_test_install_and_run_pypi_wheels_on_posix:
+  smoke_test_install_and_run_pypi_wheels_on_linux:
     permissions:
       contents: read # to fetch code (actions/checkout)
 
-    name: Test PyPI wheels on linux and mac
+    name: Test PyPI wheels on linux
     needs:
       - build_scancode_wheels_sdist_for_pypi
     runs-on: ${{ matrix.os }}
@@ -205,19 +215,21 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-24.04, ubuntu-24.04, macos-14, macos-15]
+        os: [ubuntu-24.04, ubuntu-24.04]
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download wheels artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: wheels_sdist
           path: dist
@@ -259,15 +271,17 @@ jobs:
        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download wheels artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: wheels_sdist
           path: dist
@@ -308,15 +322,17 @@ jobs:
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download a single artifact linux_app_py_${{ matrix.pyver }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_${{ matrix.pyver }}
           path: dist
@@ -353,15 +369,17 @@ jobs:
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download a single artifact macos_app_py_${{ matrix.pyver }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_${{ matrix.pyver }}
           path: dist
@@ -398,15 +416,17 @@ jobs:
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download a single artifact windows_app_py_${{ matrix.pyver }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_${{ matrix.pyver }}
           path: dist
@@ -439,103 +459,103 @@ jobs:
 
     steps:
       - name: Download a single artifact source_app
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: source_app
           path: dist
 
       - name: Download a single artifact macos_app for python 3.10
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_3.10
           path: dist
 
       - name: Download a single artifact macos_app for python 3.11
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_3.11
           path: dist
 
       - name: Download a single artifact macos_app for python 3.12
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_3.12
           path: dist
 
       - name: Download a single artifact macos_app for python 3.13
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_3.13
           path: dist
 
       - name: Download a single artifact macos_app for python 3.14
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_3.14
           path: dist
 
       - name: Download a single artifact linux_app for python 3.10
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_3.10
           path: dist
 
       - name: Download a single artifact linux_app for python 3.11
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_3.11
           path: dist
 
       - name: Download a single artifact linux_app for python 3.12
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_3.12
           path: dist
 
       - name: Download a single artifact linux_app for python 3.13
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_3.13
           path: dist
 
       - name: Download a single artifact linux_app for python 3.14
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_3.14
           path: dist
 
       - name: Download a single artifact windows_app for python 3.10
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_3.10
           path: dist
 
       - name: Download a single artifact windows_app for python 3.11
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_3.11
           path: dist
 
       - name: Download a single artifact windows_app for python 3.12
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_3.12
           path: dist
 
       - name: Download a single artifact windows_app for python 3.13
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_3.13
           path: dist
 
       - name: Download a single artifact windows_app for python 3.14
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_3.14
           path: dist
 
       - name: Download scancode and licensedcode wheels
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: wheels_sdist
           path: dist
@@ -545,7 +565,7 @@ jobs:
           ls -al dist
 
       - name: Create release and publish archives
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda
         with:
           draft: true
           files: dist/*
@@ -556,7 +576,8 @@ jobs:
     needs:
       - build_scancode_wheels_sdist_for_pypi
       - smoke_test_install_and_run_pypi_wheels_on_windows
-      - smoke_test_install_and_run_pypi_wheels_on_posix
+      - smoke_test_install_and_run_pypi_wheels_on_macos
+      - smoke_test_install_and_run_pypi_wheels_on_linux
       - publish_to_gh_release
     runs-on: ubuntu-24.04
     environment: pypi-publish
@@ -568,12 +589,12 @@ jobs:
 
     steps:
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: 3.14
 
       - name: scancode and licensedcode wheels
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: wheels_sdist
           path: dist
@@ -584,4 +605,4 @@ jobs:
 
       - name: Publish distributions to PyPI
         if: startsWith(github.ref, 'refs/tags')
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b
