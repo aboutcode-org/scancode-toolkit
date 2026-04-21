@@ -41,6 +41,8 @@
 
 --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
 
+--spdx-json FILE        Write scan output as SPDX JSON to FILE.
+
 --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
 
 --html-app FILE         [DEPRECATED] Use ``scancode-workbench``

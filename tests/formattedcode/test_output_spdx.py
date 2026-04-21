@@ -9,6 +9,7 @@
 #
 
 import io
+import json
 import os
 import re
 
@@ -178,6 +179,20 @@ def check_tv_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES):
     assert result == expected
 
 
+def check_json_spdx_scan(result_file):
+    """
+    Return SPDX JSON data after basic structural validation.
+    """
+    with io.open(result_file, encoding='utf-8') as co:
+        data = json.load(co)
+
+    assert data.get('spdxVersion', '').startswith('SPDX-')
+    assert data.get('SPDXID') == 'SPDXRef-DOCUMENT'
+    assert isinstance(data.get('packages'), list)
+    assert 'creationInfo' in data
+    return data
+
+
 def test_spdx_rdf_basic():
     test_file = test_env.get_test_loc('spdx/simple/test.txt')
     result_file = test_env.get_temp_file('rdf')
@@ -192,6 +207,14 @@ def test_spdx_tv_basic():
     expected_file = test_env.get_test_loc('spdx/simple/expected.tv')
     run_scan_click([test_dir, '-clip', '--spdx-tv', result_file])
     check_tv_scan(expected_file, result_file)
+
+
+def test_spdx_json_basic():
+    test_file = test_env.get_test_loc('spdx/simple/test.txt')
+    result_file = test_env.get_temp_file('spdx.json')
+    run_scan_click([test_file, '-clip', '--spdx-json', result_file])
+    data = check_json_spdx_scan(result_file)
+    assert data['packages']
 
 
 @pytest.mark.scanslow
@@ -222,12 +245,30 @@ def test_spdx_tv_with_known_licenses():
 
 
 @pytest.mark.scanslow
+def test_spdx_json_with_known_licenses():
+    test_dir = test_env.get_test_loc('spdx/license_known/scan')
+    result_file = test_env.get_temp_file('spdx.json')
+    run_scan_click([test_dir, '-clip', '--spdx-json', result_file])
+    data = check_json_spdx_scan(result_file)
+    assert data['files']
+
+
+@pytest.mark.scanslow
 def test_spdx_tv_with_license_ref():
     test_dir = test_env.get_test_loc('spdx/license_ref/scan')
     result_file = test_env.get_temp_file('tv')
     expected_file = test_env.get_test_loc('spdx/license_ref/expected.tv')
     run_scan_click([test_dir, '-clip', '--spdx-tv', result_file])
     check_tv_scan(expected_file, result_file)
+
+
+@pytest.mark.scanslow
+def test_spdx_json_with_license_ref():
+    test_dir = test_env.get_test_loc('spdx/license_ref/scan')
+    result_file = test_env.get_temp_file('spdx.json')
+    run_scan_click([test_dir, '-clip', '--spdx-json', result_file])
+    data = check_json_spdx_scan(result_file)
+    assert data['hasExtractedLicensingInfos']
 
 
 @pytest.mark.scanslow
@@ -258,12 +299,30 @@ def test_spdx_tv_with_known_licenses_with_text():
 
 
 @pytest.mark.scanslow
+def test_spdx_json_with_known_licenses_with_text():
+    test_dir = test_env.get_test_loc('spdx/license_known/scan')
+    result_file = test_env.get_temp_file('spdx.json')
+    run_scan_click(['-clip', '--license-text', test_dir, '--spdx-json', result_file])
+    data = check_json_spdx_scan(result_file)
+    assert data['files']
+
+
+@pytest.mark.scanslow
 def test_spdx_tv_with_license_ref_with_text():
     test_dir = test_env.get_test_loc('spdx/license_ref/scan')
     result_file = test_env.get_temp_file('tv')
     expected_file = test_env.get_test_loc('spdx/license_ref/expected_with_text.tv')
     run_scan_click(['-clip', '--license-text', test_dir, '--spdx-tv', result_file])
     check_tv_scan(expected_file, result_file)
+
+
+@pytest.mark.scanslow
+def test_spdx_json_with_license_ref_with_text():
+    test_dir = test_env.get_test_loc('spdx/license_ref/scan')
+    result_file = test_env.get_temp_file('spdx.json')
+    run_scan_click(['-clip', '--license-text', test_dir, '--spdx-json', result_file])
+    data = check_json_spdx_scan(result_file)
+    assert data['hasExtractedLicensingInfos']
 
 
 @pytest.mark.scanslow
@@ -282,6 +341,15 @@ def test_spdx_rdf_tree():
     expected_file = test_env.get_test_loc('spdx/tree/expected.rdf')
     run_scan_click(['-clip', test_dir, '--spdx-rdf', result_file])
     check_rdf_scan(expected_file, result_file)
+
+
+@pytest.mark.scanslow
+def test_spdx_json_tree():
+    test_dir = test_env.get_test_loc('spdx/tree/scan')
+    result_file = test_env.get_temp_file('spdx.json')
+    run_scan_click(['-clip', test_dir, '--spdx-json', result_file])
+    data = check_json_spdx_scan(result_file)
+    assert len(data['files']) > 1
 
 
 @pytest.mark.scanslow
@@ -304,6 +372,17 @@ def test_spdx_rdf_with_unicode_license_text_does_not_fail():
             '--license-text', test_file, '--spdx-rdf', result_file]
     run_scan_plain(args)
     check_rdf_scan(expected_file, result_file)
+
+
+@pytest.mark.scanslow
+def test_spdx_json_with_unicode_license_text_does_not_fail():
+    test_file = test_env.get_test_loc('spdx/unicode/et131x.h')
+    result_file = test_env.get_temp_file('spdx.json')
+    args = ['--license', '--copyright', '--info', '--strip-root',
+            '--license-text', test_file, '--spdx-json', result_file]
+    run_scan_plain(args)
+    data = check_json_spdx_scan(result_file)
+    assert data['files']
 
 
 @pytest.mark.scanslow
@@ -339,6 +418,16 @@ def test_spdx_rdf_with_empty_scan():
 
 
 @pytest.mark.scanslow
+def test_spdx_json_with_empty_scan():
+    test_file = test_env.get_test_loc('spdx/empty/scan')
+    result_file = test_env.get_temp_file('spdx.json')
+    args = ['--license', '--strip-root', '--info', '--only-findings', test_file, '--spdx-json', result_file]
+    run_scan_plain(args)
+    data = check_json_spdx_scan(result_file)
+    assert data['packages']
+
+
+@pytest.mark.scanslow
 def test_output_spdx_rdf_can_handle_non_ascii_paths():
     test_file = test_env.get_test_loc('spdx/unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
@@ -354,6 +443,29 @@ def test_output_spdx_tv_can_handle_non_ascii_paths():
     with io.open(result_file, encoding='utf-8') as res:
         results = res.read()
     assert 'han/据.svg' in results
+
+
+def test_output_spdx_json_can_handle_non_ascii_paths():
+    test_file = test_env.get_test_loc('spdx/unicode.json')
+    result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
+    run_scan_click(['--from-json', test_file, '--spdx-json', result_file])
+    with io.open(result_file, encoding='utf-8') as res:
+        results = res.read()
+    assert 'han/据.svg' in results
+
+
+def test_output_can_create_multiple_spdx_outputs_in_a_single_scan():
+    test_file = test_env.get_test_loc('spdx/simple/test.txt')
+    result_tv = test_env.get_temp_file('tv')
+    result_rdf = test_env.get_temp_file('rdf')
+    result_json = test_env.get_temp_file('json')
+    run_scan_click([test_file, '-clip', '--spdx-tv', result_tv, '--spdx-rdf', result_rdf, '--spdx-json', result_json])
+    assert os.path.exists(result_tv)
+    assert os.path.exists(result_rdf)
+    assert os.path.exists(result_json)
+    assert os.path.getsize(result_tv) > 0
+    assert os.path.getsize(result_rdf) > 0
+    assert os.path.getsize(result_json) > 0
 
 def test_output_spdx_tv_sh1_of_empty_file():
     test_dir = test_env.get_test_loc('spdx/empty/scan/somefile')

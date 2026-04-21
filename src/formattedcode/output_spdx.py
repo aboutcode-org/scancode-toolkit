@@ -119,6 +119,36 @@ class SpdxRdfOutput(OutputPlugin):
             input_path=kwargs.get('input', ''),
             output_file=spdx_rdf,
             as_tagvalue=False,
+            as_json=False,
+            **kwargs
+        )
+
+
+@output_impl
+class SpdxJsonOutput(OutputPlugin):
+
+    options = [
+        PluggableCommandLineOption(('--spdx-json',),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            metavar='FILE',
+            default=None,
+            help='Write scan output as SPDX JSON to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order=70,
+        )
+    ]
+
+    def is_enabled(self, spdx_json, **kwargs):
+        return spdx_json
+
+    def process_codebase(self, codebase, spdx_json, **kwargs):
+        _process_codebase(
+            spdx_plugin=self,
+            codebase=codebase,
+            input_path=kwargs.get('input', ''),
+            output_file=spdx_json,
+            as_tagvalue=False,
+            as_json=True,
             **kwargs
         )
 
@@ -129,6 +159,7 @@ def _process_codebase(
     input_path,
     output_file,
     as_tagvalue=True,
+    as_json=False,
     **kwargs,
 ):
     check_sha1(codebase)
@@ -148,6 +179,7 @@ def _process_codebase(
         notice=notice,
         package_name=package_name,
         as_tagvalue=as_tagvalue,
+        as_json=as_json,
     )
 
 
@@ -188,6 +220,7 @@ def write_spdx(
     package_name='',
     download_location=SpdxNoAssertion(),
     as_tagvalue=True,
+    as_json=False,
     spdx_version = (2, 2),
     with_notice_text=False,
 ):
@@ -205,7 +238,7 @@ def write_spdx(
     licenses = cache.get_licenses_db()
     licensing = Licensing()
 
-    as_rdf = not as_tagvalue
+    as_rdf = not as_tagvalue and not as_json
 
     ns_prefix = '_'.join(package_name.lower().split())
     comment = notice + f'\nSPDX License List: {scancode_config.spdx_license_list_version}'
@@ -347,7 +380,7 @@ def write_spdx(
         relationship = Relationship(package.spdx_id, RelationshipType.CONTAINS, file_entry.spdx_id)
         doc.relationships.append(relationship)
 
-    if not doc.files:
+    if not doc.files and not as_json:
         if as_tagvalue:
             msg = "# No results for package '{}'.\n".format(package.name)
         else:
@@ -388,7 +421,7 @@ def write_spdx(
     # one case we do need to deal with bytes and decode before writing (rdf) and
     # in the other case we deal with text all the way.
 
-    if doc.files:
+    if doc.files or as_json:
         if as_tagvalue:
             from spdx_tools.spdx.writer.tagvalue.tagvalue_writer import write_document_to_stream  # NOQA
             spdx_output = StringIO()
@@ -396,8 +429,14 @@ def write_spdx(
             from spdx_tools.spdx.writer.rdf.rdf_writer import write_document_to_stream  # NOQA
             # rdf is utf-encoded bytes
             spdx_output = BytesIO()
+        elif as_json:
+            try:
+                from spdx_tools.spdx.writer.json.json_writer import write_document_to_stream  # NOQA
+            except ImportError:
+                from spdx_tools.spdx.writer.json_writer import write_document_to_stream  # NOQA
+            spdx_output = StringIO()
 
-        write_document_to_stream(doc, spdx_output, validate=False)
+        write_document_to_stream(doc, spdx_output, validate=as_json)
         result = spdx_output.getvalue()
 
         if as_rdf:

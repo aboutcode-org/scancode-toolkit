@@ -97,6 +97,7 @@ The following help text is displayed for ScanCode version 32.0.0:
       --custom-template FILE  Use this Jinja template FILE as a custom template.
       --cyclonedx FILE        Write scan output in CycloneDX JSON format to FILE.
       --cyclonedx-xml FILE    Write scan output in CycloneDX XML format to FILE.
+      --spdx-json FILE        Write scan output as SPDX JSON to FILE.
       --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
       --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
       --html-app FILE         (DEPRECATED: use the ScanCode Workbench app instead)
@@ -432,6 +433,17 @@ for ScanCode Version 32.0.0.
     options:
       help_group: output formats, name: output_json_lines: --json-lines
         help: Write scan output as JSON Lines to FILE.
+    doc: None
+
+  --------------------------------------------
+  Plugin: scancode_output:spdx-json  class: formattedcode.output_spdx:SpdxJsonOutput
+    codebase_attributes:
+    resource_attributes:
+    sort_order: 100
+    required_plugins:
+    options:
+      help_group: output formats, name: spdx_json: --spdx-json
+        help: Write scan output as SPDX JSON to FILE.
     doc: None
 
   --------------------------------------------
