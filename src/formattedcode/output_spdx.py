@@ -9,6 +9,7 @@
 import os
 import sys
 import uuid
+import json
 from datetime import datetime
 from io import BytesIO
 from io import StringIO
@@ -274,6 +275,15 @@ def write_spdx(
         packages=[package],
     )
 
+    if as_json:
+        doc.relationships.append(
+            Relationship(
+                spdx_element_id=creation_info.spdx_id,
+                relationship_type=RelationshipType.DESCRIBES,
+                related_spdx_element_id=package.spdx_id,
+            )
+        )
+
     # Use a set of unique copyrights for the package.
     package_copyright_texts = set()
 
@@ -442,5 +452,8 @@ def write_spdx(
         if as_rdf:
             # rdf is utf-encoded bytes
             result = result.decode('utf-8')
+
+        if as_json:
+            result = json.dumps(json.loads(result), indent=4, ensure_ascii=False)
 
         output_file.write(result)
