@@ -1,0 +1,234 @@
+---
+key: health-ai-developer-tou-2024
+short_name: Health AI Developer Foundations TOU 2024
+name: Health AI Developer Foundations Terms of Use 2024
+category: Proprietary Free
+owner: Google
+homepage_url: https://developers.google.com/health-ai-developer-foundations/terms
+spdx_license_key: LicenseRef-scancode-health-ai-developer-tou-2024
+text_urls:
+    - https://developers.google.com/health-ai-developer-foundations/terms.md.txt
+other_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0
+    - https://developers.google.com/health-ai-developer-foundations/prohibited-use-policy
+ignorable_urls:
+    - https://developers.google.com/health-ai-developer-foundations
+    - https://developers.google.com/health-ai-developer-foundations/prohibited-use-policy
+    - https://developers.google.com/health-ai-developer-foundations/terms
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
+# Health AI Developer Foundations Terms of Use
+
+Last modified: November 15, 2024
+
+By using, reproducing, modifying, distributing, performing, or displaying any
+portion or element of the HAI-DEF Services (as defined below), or otherwise
+accepting these Health AI Developer Foundations Terms of Use (the
+"**Agreement**"), you agree to be bound by this Agreement.
+
+## Section 1: DEFINITIONS
+
+### 1.1 Definitions
+
+(a) "**Clinical Use**" means, any use in diagnosis or treatment of patients
+(including as part of a research study).
+
+(b) "**Distribution** " or "**Distribute** " means any transmission, publication,
+or other sharing of HAI-DEF or Model Derivatives to a third party, including by
+providing or making HAI-DEF or its functionality available as a hosted service
+via API, web access, or any other electronic or remote means ("**Hosted
+Service**").
+
+(c) "**Google**" means Google LLC.
+
+(d) "**Health AI Developer Foundations** " or "**HAI-DEF** " means the set of
+machine learning language models, trained model weights, and parameters
+identified at
+[developers.google.com/health-ai-developer-foundations](https://developers.google.com/health-ai-developer-foundations),
+regardless of the source that you obtained it from.
+
+(e) "**Health AI Developer Foundations Services** " or "**HAI-DEF Services**"
+means collectively HAI-DEF or Model Derivatives, including as may be accessed or
+used via a Hosted Service.
+
+(f) "**Health Regulatory Authority**" means any regulatory authority that
+oversees health-related products and services, including any national, supra
+national, regional, state, or local regulatory authority, department, bureau,
+commission, council, or other authority that is responsible for granting Health
+Regulatory Authorizations allowing distribution of products, or overseeing the
+development, use, manufacture, transport, storage, or commercialization of
+products and services for the diagnosis, cure, prevention, treatment, and/or
+mitigation of disorders, diseases, or conditions in humans.
+
+(g) "**Health Regulatory Authorization**" means, with respect to any country or
+jurisdiction, all approvals, registrations, licenses, or authorizations from the
+relevant Regulatory Authority in a country or jurisdiction for conducting
+research, Clinical Use, marketing and/or commercializing of a product or service
+in such country or jurisdiction.
+
+(h) "**Model Derivatives**" means (i) all modifications to HAI-DEF, (ii) all
+works based on HAI-DEF, or (iii) any other machine learning model which is
+created by transfer of patterns of the weights, parameters, operations, or
+Output of HAI-DEF, to that model in order to cause that model to perform
+similarly to HAI-DEF, including distillation methods that use intermediate data
+representations or methods based on the generation of synthetic data Outputs by
+HAI-DEF for training that model. Outputs are not deemed Model Derivatives.
+
+(i) "**Output**" means the information content output of HAI-DEF or a Model
+Derivative that results from operating or otherwise using HAI-DEF or the Model
+Derivative, including via a Hosted Service.
+
+### 1.2
+
+In this Agreement, "**including** " means "**including but not limited to**".
+
+## Section 2: ELIGIBILITY AND USAGE
+
+### 2.1 Eligibility
+
+You represent and warrant that you have the legal capacity to enter into this
+Agreement (including being of sufficient age of consent). If you are accessing
+or using any of the HAI-DEF Services for or on behalf of a legal entity, (a) you
+are entering into this Agreement on behalf of yourself and that legal entity,
+(b) you represent and warrant that you have the authority to act on behalf of
+and bind that entity to this Agreement, and (c) references to "**you** " or
+"**your**" in the remainder of this Agreement refers to both you (as an
+individual) and that entity.
+
+### 2.2 Use
+
+You may use, reproduce, modify, Distribute, perform, or display any of the
+HAI-DEF Services only in accordance with the terms of this Agreement, and must
+not violate (or encourage or permit anyone else to violate) any term of this
+Agreement. HAI-DEF's recipe source code, model inference code, model training
+code, utility code, and other source code deliverables are licensed under Apache
+2.0 available at
+<https://www.apache.org/licenses/LICENSE-2.0>.
+
+## Section 3: DISTRIBUTION AND RESTRICTIONS
+
+### 3.1 Distribution and Redistribution
+
+You may reproduce or Distribute copies of HAI-DEF or Model Derivatives if you
+meet all of the following conditions:
+
+1. You must include the use restrictions in Section 3.2 as an enforceable provision in any agreement (e.g., license agreement, terms of use, etc.) governing the use and/or Distribution of HAI-DEF or Model Derivatives and you must notify subsequent users you Distribute to that HAI-DEF or Model Derivatives are subject to the use restrictions in Section 3.2.
+2. You must provide all third party recipients of HAI-DEF or Model Derivatives a copy of this Agreement.
+3. You must, when applicable, seek Health Regulatory Authorization from the relevant Health Regulatory Authority.
+4. You must cause any modified files to carry prominent notices stating that you modified the files.
+5. All Distributions (other than through a Hosted Service) must be accompanied by a "**Notice** " text file that contains the following notice: "**HAI-DEF
+   is provided under and subject to the Health AI Developer Foundations Terms
+   of Use found at
+   https://developers.google.com/health-ai-developer-foundations/terms**".
+
+You may add your own intellectual property statement to your modifications and,
+except as set forth in this Section, may provide additional or different terms
+and conditions for use, reproduction, or Distribution of your modifications, or
+for any such Model Derivatives as a whole, provided your use, reproduction,
+modification, Distribution, performance, and display of HAI-DEF otherwise
+complies with the terms and conditions of this Agreement. Any additional or
+different terms and conditions you impose must not conflict with the terms of
+this Agreement.
+
+### 3.2 Use Restrictions
+
+You must not use any of the HAI-DEF Services:
+
+1. for the restricted uses described in the Health AI Developer Foundations Prohibited Use Policy at <https://developers.google.com/health-ai-developer-foundations/prohibited-use-policy> ("**Prohibited Use Policy**"), which is hereby incorporated by reference into this Agreement;
+2. for any use that could cause a Health Regulatory Authority to deem Google to be a "manufacturer" of a medical device; or
+3. in violation of applicable laws and regulations.
+
+To the maximum extent permitted by law and without limiting any of Google's
+other rights, Google reserves the right to restrict (remotely or otherwise)
+usage of any of the HAI-DEF Services that Google reasonably believes are in
+violation of this Agreement.
+
+### 3.3 Generated Output
+
+Google will not claim ownership over any original Outputs you generate using
+HAI-DEF. You acknowledge that Google or HAI-DEF may generate the same or similar
+Outputs for others, including Google, and that Google reserves all of Google's
+rights in the Outputs it generates independently of you. You and your users are
+solely responsible for Outputs and their subsequent uses.
+
+## Section 4: ADDITIONAL PROVISIONS
+
+### 4.1 Updates
+
+Google may update HAI-DEF from time to time.
+
+### 4.2 Trademarks
+
+Nothing in this Agreement grants you any rights to use Google's trademarks,
+trade names, logos or to otherwise suggest endorsement or misrepresent the
+relationship between you and Google. Google reserves any rights not expressly
+granted herein.
+
+### 4.3 DISCLAIMER OF WARRANTY
+
+UNLESS REQUIRED BY APPLICABLE LAW, THE HAI-DEF SERVICES AND OUTPUTS ARE PROVIDED
+ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER
+EXPRESS OR IMPLIED, INCLUDING ANY WARRANTIES OR CONDITIONS OF TITLE,
+NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. YOU ARE
+SOLELY RESPONSIBLE FOR DETERMINING THE APPROPRIATENESS OF USING, REPRODUCING,
+MODIFYING, PERFORMING, DISPLAYING, OR DISTRIBUTING ANY OF THE HAI-DEF SERVICES
+OR OUTPUTS AND ASSUME ANY AND ALL RISKS ASSOCIATED WITH YOUR USE OR DISTRIBUTION
+OF ANY OF THE HAI-DEF SERVICES OR OUTPUTS AND YOUR EXERCISE OF RIGHTS AND
+PERMISSIONS UNDER THIS AGREEMENT. YOU AGREE THAT GOOGLE WILL NOT BE DEEMED TO BE
+FURNISHING ANY MEDICAL ADVICE OR HEALTH CARE SERVICES BY VIRTUE OF PROVIDING THE
+HAI-DEF SERVICES.
+
+### 4.4 LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT AND UNDER NO
+LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY,
+CONTRACT, OR OTHERWISE, UNLESS REQUIRED BY APPLICABLE LAW, WILL GOOGLE OR ITS
+AFFILIATES BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY DIRECT, INDIRECT,
+SPECIAL, INCIDENTAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR LOST
+PROFITS OF ANY KIND ARISING FROM THIS AGREEMENT OR RELATED TO ANY OF THE HAI-DEF
+SERVICES OR OUTPUTS EVEN IF GOOGLE OR ITS AFFILIATES HAVE BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+### 4.5 Indemnification
+
+Unless prohibited by applicable law, you will defend and indemnify Google, and
+its affiliates, directors, officers, employees, and contractors against all
+liabilities, damages, losses, costs, fees (including legal fees), and expenses
+relating to any allegations or third-party legal proceeding (including
+regulatory proceedings) to the extent arising from: (a) your violation of any
+term of this Agreement; (b) damage or injury to any person or property as a
+result of your use of HAI-DEF (including your modification, Distribution,
+reproduction, performance, display, or adaptation of HAI-DEF); (c) your gross
+negligence or willful misconduct in connection with HAI-DEF; or (d) any claim
+that any modifications or combinations to HAI-DEF made by you, including Model
+Derivatives, infringe or violate a third party's intellectual property or other
+rights, including applicable privacy or data protection rights.
+
+### 4.6 Term, Termination, and Survival
+
+The term of this Agreement will commence upon your acceptance of this Agreement
+(including acceptance by your use, modification, or Distribution, reproduction,
+performance, or display of any portion or element of the HAI-DEF Services) and
+will continue in full force and effect until terminated in accordance with the
+terms of this Agreement. Google may terminate this Agreement if you are in
+breach of any term of this Agreement or if Google reasonably determines that a
+Health Regulatory Authority may deem that Google is, or is reasonably likely to
+be considered a "manufacturer" of a medical device in connection with your use
+of the HAI-DEF Services. Upon termination of this Agreement, you must delete and
+cease use and Distribution of all copies of HAI-DEF and Model Derivatives in
+your possession or control. Sections 1, 2.1, 3.3, and 4.2 to 4.7 will survive
+the termination of this Agreement.
+
+### 4.7 General Legal Terms
+
+This Agreement states all terms agreed between the parties and supersedes all
+other agreements between the parties relating to its subject matter. If any
+provision of this Agreement is held to be invalid, illegal or unenforceable, the
+rest of the Agreement will remain in effect. Google's delay or omission in
+exercising any right under this Agreement will not be treated as a waiver of
+that right. CALIFORNIA LAW WILL GOVERN ALL DISPUTES ARISING OUT OF OR RELATING
+TO THIS AGREEMENT AND THE HAI-DEF SERVICES, REGARDLESS OF ANY CONFLICT OF LAWS
+RULES. THESE DISPUTES WILL BE RESOLVED EXCLUSIVELY IN THE FEDERAL OR STATE
+COURTS OF SANTA CLARA COUNTY, CALIFORNIA, USA, AND THE PARTIES CONSENT TO
+PERSONAL JURISDICTION IN THOSE COURTS.
