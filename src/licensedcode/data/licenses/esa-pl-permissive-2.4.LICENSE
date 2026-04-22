@@ -2,8 +2,8 @@
 key: esa-pl-permissive-2.4
 short_name: ESA-PL – v2.4 – Permissive (Type 3)
 name: European Space Agency Public License – v2.4 – Permissive (Type 3)
-owner: ESA
 category: Permissive
+owner: ESA
 spdx_license_key: ESA-PL-permissive-2.4
 other_urls:
     - https://essr.esa.int/license/european-space-agency-public-license-v2-4-permissive-type-3

@@ -4,8 +4,8 @@ short_name: ALGLIB Documentation License
 name: ALGLIB Documentation License
 category: Permissive
 owner: ALGLIB Project
-spdx_license_key: ALGLIB-Documentation
 notes: a variation of freebsd-doc LICENSE
+spdx_license_key: ALGLIB-Documentation
 ---
 
 Redistribution and use of this document (ALGLIB Reference Manual) with or
