@@ -11,7 +11,7 @@ license_detections:
         license_expression_spdx: LGPL-2.0-only
         from_file:
         start_line: 15
-        end_line: '19'
+        end_line: 19
         matcher: 2-aho
         score: '100.0'
         matched_length: 42

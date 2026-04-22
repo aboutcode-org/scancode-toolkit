@@ -410,7 +410,7 @@ Package type:  gem
   documentation URL: https://bundler.io/man/gemfile.5.html
   primary language:  Ruby
   description:       RubyGems Bundler Gemfile
-  path_patterns:    '*/Gemfile', '*/*.gemfile', '*/Gemfile-*'
+  path_patterns:    '*/Gemfile', '*.gemfile', '*/Gemfile-*'
 --------------------------------------------
 Package type:  gem
   datasource_id:     gemfile_extracted

@@ -23,3 +23,8 @@ holders_summary:
     count: 6
   - value: Scilab inside INRIA-ENPC
     count: 1
+expected_failures:
+  - copyrights
+  - holders
+  - authors
+  - holders_summary

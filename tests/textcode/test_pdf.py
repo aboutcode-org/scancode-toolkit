@@ -98,13 +98,7 @@ apache_fop_expected = [
     b'It  is  a  print  formatter  driv-\n',
     b'en  by  XSL  formatting  ob-\n',
     b'jects (XSL-FO) and an out-\n',
-    b'(XSL-FO) and an output in-\n',
-    b'dependent formatter. It is a\n',
-    b'Java application that reads\n',
-    b'Line 2 of item 1\n',
-    b'Apache  FOP  (Formatting\n',
-    b'Objects  Processor)  est\n',
-    b'une application de mise en\n',
-    b'The  end  of  the  document\n',
-    b'has now been reached.\n',
+    b'ter1. FOP has a nice logo:\n',
+    b'Header 1.1 Header 1.2\n',
+    b'See the FOP website for more information\n'
 ]

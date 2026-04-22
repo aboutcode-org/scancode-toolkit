@@ -235,7 +235,7 @@ create_virtualenv() {
         fi
 
         $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
-            --wheel embed --pip embed --setuptools embed \
+            --pip embed --setuptools embed \
             --seeder pip \
             --never-download \
             --no-periodic-update \
@@ -319,6 +319,6 @@ find_python
 create_virtualenv "$VIRTUALENV_DIR"
 install_packages "$CFG_REQUIREMENTS"
 . "$CFG_BIN_DIR/activate"
-
+"$CFG_BIN_DIR/scancode-train-gibberish-model"
 
 set +e

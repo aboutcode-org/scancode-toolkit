@@ -532,7 +532,9 @@ class NpmPackageJsonHandler(BaseNpmHandler):
 
         namespace, name = split_scoped_package_name(name)
 
-        is_private = json_data.get('private') or False
+        is_private = False
+        if json_data.get('private'):
+            is_private = True
         if is_private:
             urls = {}
         else:

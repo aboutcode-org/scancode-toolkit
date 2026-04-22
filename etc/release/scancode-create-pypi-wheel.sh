@@ -19,6 +19,8 @@ set -e
 
 ./configure --dev
 venv/bin/scancode-reindex-licenses
+venv/bin/scancode-reindex-package-patterns
+venv/bin/scancode-train-gibberish-model
 
 python_tag=$( python -c "import platform;print(f\"cp{''.join(platform.python_version_tuple()[:2])}\")" )
 

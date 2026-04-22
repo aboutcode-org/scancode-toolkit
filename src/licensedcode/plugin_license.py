@@ -152,6 +152,9 @@ class LicenseScanner(ScanPlugin):
         This is a cache warmup such that child process inherit from the
         loaded index.
         """
+        if kwargs.get("package_only"):
+            return
+
         from licensedcode.cache import populate_cache
         populate_cache()
 
