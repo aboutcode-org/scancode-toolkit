@@ -366,3 +366,33 @@ def get_file_info(location, **kwargs):
     result['is_source'] = bool(collector.is_source)
     result['is_script'] = bool(collector.is_script)
     return result
+
+def get_patents(location, threshold=50, **kwargs):
+    from itertools import islice
+    from cluecode.patents import find_patents
+
+    raw_matches = find_patents(location)
+
+    seen = set()
+    matches = []
+    for kind, value, line_num in raw_matches:
+        key = (kind, value, line_num)
+        if key not in seen:
+            seen.add(key)
+            matches.append(key)
+
+    if threshold and threshold > 0:
+        matches = list(islice(matches, threshold))
+
+    results = []
+    for kind, value, line_num in matches:
+        results.append({
+            "type": kind,
+            "patent_reference": value,
+            "start_line": line_num,
+            "end_line": line_num,
+        })
+
+    return dict(patent_detections=results)
+
+    

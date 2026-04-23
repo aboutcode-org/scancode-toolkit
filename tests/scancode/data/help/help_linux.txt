@@ -21,6 +21,7 @@ Options:
     -c, --copyright        Scan <input> for copyrights.
     --go-symbol            Collect Go symbols.
     --rust-symbol          Collect Rust symbols from rust binaries.
+    --patent               Scan <input> for patent references and patent numbers.
 
   other scans:
     -i, --info   Scan <input> for file information (size, checksums, etc).
@@ -47,7 +48,10 @@ Options:
                                  0 for no limit.  [default: 50]
     --max-url INT                Report only up to INT urls found in a file. Use 0
                                  for no limit.  [default: 50]
+    --max-patent INT             Report only up to INT patent references found in a
+                                 file. Use 0 for no limit.  [default: 50]
     --unknown-licenses           [EXPERIMENTAL] Detect unknown licenses.
+    
 
   output formats:
     --json FILE             Write scan output as compact JSON to FILE.
