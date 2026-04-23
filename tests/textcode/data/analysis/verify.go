@@ -197,7 +197,7 @@ type VerifyOptions struct {
 	// irrespective of this value. This matches the Windows CryptoAPI behavior,
 	// but not the spec.
 	KeyUsages []ExtKeyUsage
-	// MaxConstraintComparisions is the maximum number of comparisons to
+	// MaxConstraintComparisions is the maximum number of comparisions to
 	// perform when checking a given certificate's name constraints. If
 	// zero, a sensible default is used. This limit prevents pathological
 	// certificates from consuming excessive amounts of CPU time when

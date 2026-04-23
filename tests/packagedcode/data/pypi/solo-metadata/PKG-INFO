@@ -112,7 +112,7 @@ for upcoming features.
 Build and tests status
 ======================
 
-We run tests on multiple CIs to ensure a good platform compabitility and on
+We run tests on multiple CIs to ensure a good platform compatibility and on
 multiple version of Windows, Linux and macOS.
 
 +--------------+--------------+--------------+

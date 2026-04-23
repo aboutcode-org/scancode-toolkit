@@ -2047,9 +2047,9 @@ PATTERNS = [
     (r'^\(?[Rr]ecoded$', 'AUTH2'),
     (r'^\(?[Mm]odified$', 'AUTH2'),
     (r'^\(?[Cc]reated$', 'AUTH2'),
-    # written is often mispelled
+    # written is often misspelled
     (r'^\(?[Ww]ritt?e[dn]$', 'AUTH2'),
-    # rewritten is often mispelled
+    # rewritten is often misspelled
     (r'^\(?[Rr]ewritt?e[dn]$', 'AUTH2'),
     (r'^\(?[Mm]aintained$', 'AUTH2'),
     (r'^\(?[Dd]eveloped$', 'AUTH2'),

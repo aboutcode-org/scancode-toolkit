@@ -190,7 +190,7 @@ var number = bar / 2/e
 The above example is also correctly identified as division, because `e` is not a
 valid regex flag. I initially wanted to future-proof by allowing `[a-zA-Z]*`
 (any letter) as flags, but it is not worth it since it increases the amount of
-ambigous cases. So only the standard `g`, `m`, `i`, `y` and `u` flags are
+ambiguous cases. So only the standard `g`, `m`, `i`, `y` and `u` flags are
 allowed. This means that the above example will be identified as division as
 long as you don’t rename the `e` variable to some permutation of `gmiyu` 1 to 5
 characters long.

@@ -5749,7 +5749,7 @@ namespace cimg_library {
       return 0;
     }
 
-    //! Print informations about %CImg environement variables.
+    //! Print informations about %CImg environment variables.
     /**
        Printing is done on the standard error output.
     **/

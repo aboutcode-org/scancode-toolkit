@@ -46,7 +46,7 @@ class AdditionalLicenseLocationProviderPlugin(object):
     Base plugin class for plugins that provide path locations for one or more
     keys such as the path location to a native binary executable or related
     system files.
-    A plugin is configured as it own package with proper environemnt markers
+    A plugin is configured as it own package with proper environment markers
     """
 
     # name string under which this plugin is registered.

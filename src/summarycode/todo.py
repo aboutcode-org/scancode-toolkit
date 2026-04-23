@@ -362,7 +362,7 @@ class AmbiguousDetection:
 
 class PackageDetectionCategory(Enum):
     """
-    These are the primary types of Detections which a ambigously detected
+    These are the primary types of Detections which a ambiguously detected
     package data is classified into.
 
     These are logged in PackageDetection.detection_log for verbosity.
