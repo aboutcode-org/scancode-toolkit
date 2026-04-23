@@ -211,6 +211,49 @@ def check_sha1(codebase):
         )
 
 
+def update_json_package_files(spdx_json):
+    """
+    Ensure SPDX JSON packages list their file members explicitly.
+    """
+    packages = spdx_json.get('packages') or []
+    files = spdx_json.get('files') or []
+    if not packages or not files:
+        return spdx_json
+
+    relationships = spdx_json.get('relationships') or []
+    package_file_map = {}
+    for relationship in relationships:
+        if relationship.get('relationshipType') != 'CONTAINS':
+            continue
+        package_id = relationship.get('spdxElementId')
+        file_id = relationship.get('relatedSpdxElement')
+        if not package_id or not file_id:
+            continue
+        package_file_map.setdefault(package_id, set()).add(file_id)
+
+    if not package_file_map and len(packages) == 1:
+        package_id = packages[0].get('SPDXID')
+        if package_id:
+            file_ids = {f.get('SPDXID') for f in files if f.get('SPDXID')}
+            if file_ids:
+                package_file_map[package_id] = file_ids
+
+    for package in packages:
+        package_id = package.get('SPDXID')
+        if not package_id:
+            continue
+        file_ids = package_file_map.get(package_id)
+        if file_ids:
+            package['hasFiles'] = sorted(file_ids)
+
+    if not spdx_json.get('documentDescribes'):
+        described = [p.get('SPDXID') for p in packages if p.get('SPDXID')]
+        if described:
+            spdx_json['documentDescribes'] = described
+
+    return spdx_json
+
+
 def write_spdx(
     codebase,
     output_file,
@@ -454,6 +497,8 @@ def write_spdx(
             result = result.decode('utf-8')
 
         if as_json:
-            result = json.dumps(json.loads(result), indent=4, ensure_ascii=False)
+            spdx_json = json.loads(result)
+            spdx_json = update_json_package_files(spdx_json)
+            result = json.dumps(spdx_json, indent=4, ensure_ascii=False)
 
         output_file.write(result)
