@@ -1,0 +1,268 @@
+# =============================================================================
+# ScanCode Toolkit - Custom Dictionary for codespell
+# =============================================================================
+# Project-specific terms, technical words, and proper nouns that should not
+# be flagged as spelling mistakes. One word per line.
+# Lines starting with # are comments.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Project Names and Brands
+# -----------------------------------------------------------------------------
+scancode
+ScanCode
+aboutcode
+AboutCode
+nexb
+nexB
+packageurl
+PackageURL
+dejacode
+DejaCode
+clearcode
+ClearCode
+vulnerablecode
+VulnerableCode
+purldb
+PurlDB
+fetchcode
+FetchCode
+scanpipe
+ScanPipe
+matchcode
+aboutfiles
+
+# -----------------------------------------------------------------------------
+# ScanCode Internal Module Names
+# -----------------------------------------------------------------------------
+licensedcode
+packagedcode
+cluecode
+extractcode
+textcode
+formattedcode
+summarycode
+plugincode
+commoncode
+typecode
+scancode_config
+
+# -----------------------------------------------------------------------------
+# Dependencies and Libraries
+# -----------------------------------------------------------------------------
+saneyaml
+pygmars
+intbitset
+pluggy
+jaraco
+jinja
+lxml
+pdfminer
+pefile
+pkginfo
+pymaven
+pyahocorasick
+chardet
+ftfy
+jsonstreams
+markupsafe
+beautifulsoup
+dparse
+gemfileparser
+javaproperties
+normality
+packvers
+publicsuffix
+urlpy
+xmltodict
+tomli
+colorama
+fasteners
+cyseq
+multiregex
+
+# -----------------------------------------------------------------------------
+# Package Managers and Ecosystems
+# -----------------------------------------------------------------------------
+pypi
+PyPI
+nuget
+NuGet
+rubygems
+RubyGems
+packagist
+cocoapods
+CocoaPods
+cpan
+CPAN
+cran
+CRAN
+opam
+conda
+hackage
+bitbucket
+golang
+npmjs
+crates
+chocolatey
+sourceforge
+launchpad
+
+# -----------------------------------------------------------------------------
+# License and Legal Terms
+# -----------------------------------------------------------------------------
+copyleft
+sublicense
+sublicensable
+relicensing
+licensee
+licensor
+spdx
+SPDX
+cyclonedx
+CycloneDX
+sbom
+SBOM
+purl
+
+# -----------------------------------------------------------------------------
+# File Formats and Extensions
+# -----------------------------------------------------------------------------
+restructuredtext
+reStructuredText
+pyc
+pyo
+sdist
+bdist
+whl
+gemfile
+Gemfile
+gemspec
+podspec
+cabal
+csproj
+pom
+
+# -----------------------------------------------------------------------------
+# Development and Build Tools
+# -----------------------------------------------------------------------------
+virtualenv
+venv
+pytest
+xdist
+sphinx
+setuptools
+setuptools_scm
+ruff
+isort
+pycodestyle
+flake8
+autopep
+doc8
+readthedocs
+codecov
+tox
+makefile
+dockerfile
+editorconfig
+twine
+vendorize
+autobuild
+
+# -----------------------------------------------------------------------------
+# ScanCode-Specific Terms
+# -----------------------------------------------------------------------------
+codebase
+datafile
+datafiles
+lockfile
+subpackage
+subpackages
+fingerprinting
+workbench
+pre_scan
+post_scan
+scanpipe
+reindex
+
+# -----------------------------------------------------------------------------
+# Technical Terms
+# -----------------------------------------------------------------------------
+multiprocessing
+multicore
+preprocessing
+preprocessed
+serializable
+deserialize
+deserialized
+unmapped
+unprocessed
+unicode
+ascii
+utf
+commitish
+deque
+boolean
+namespace
+namespaces
+metadata
+hashable
+iterable
+refactor
+refactored
+pluggable
+encodings
+endianness
+walkable
+
+# -----------------------------------------------------------------------------
+# Abbreviations and Acronyms
+# -----------------------------------------------------------------------------
+cli
+CLI
+api
+API
+oss
+OSS
+vcs
+VCS
+uuid
+sha
+posix
+POSIX
+elf
+ELF
+dwarf
+DWARF
+rpm
+RPM
+deb
+apk
+bom
+eof
+EOF
+pe
+PE
+
+# -----------------------------------------------------------------------------
+# Variable Names and Code Identifiers (false positives)
+# -----------------------------------------------------------------------------
+te
+fo
+siz
+ro
+ws
+nd
+ened
+requestors
+IFF
+
+# -----------------------------------------------------------------------------
+# Other
+# -----------------------------------------------------------------------------
+nexb
+thead
+connexant
+Jupyter
+thirdparty
+re-used
