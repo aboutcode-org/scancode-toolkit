@@ -1,0 +1,113 @@
+---
+key: yandexgpt-5-lite-8b-2025
+short_name: YandexGPT-5-Lite-8B License 2025
+name: YandexGPT-5-Lite-8B License 2025
+category: Proprietary Free
+owner: Yandex
+homepage_url: https://huggingface.co/yandex/YandexGPT-5-Lite-8B-instruct/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-yandexgpt-5-lite-8b-2025
+ignorable_copyrights:
+    - Copyright (c) 20252025, LLC
+ignorable_holders:
+    - LLC
+ignorable_emails:
+    - -sales@yandex-team.ru
+    - cloud-sales@yandex-team.ru
+---
+
+YandexGPT- 5 -Lite- 8 B
+
+This license agreement (“the Agreement”) applies to any natural or legal person (“you”, “Your” or “Licensat”) that uses or distributes Materials or Derivatives or илиany of their parts. The terms listed with a capital letter and not having a definition are given in section XI of the Agreement. 
+
+This Agreement grants the right to use the Model for research, Non-commercial and Commercial purposes under the conditions set forth in the Agreement. 
+
+By using or distributing Materials or Derivatives or any of their parts, you agree that you have read, understood and agree to comply with the terms of the Agreement. If you do not agree to the terms of the Agreement, then you may неnot use or distribute Materials or Derivatives and must immediately stop using the Materials and/or Derivatives. 
+
+If you act on behalf of a legal entity (employer or other organization), then “you”, “Your” or “Licensitator” includes you and such a legal entity, and you agree that you: (i) are an authorized representative of a legal entity with the authority to conclude the Agreement on behalf of such legal entity and (ii) accept the terms of the Agreement on behalf of such a legal entity. If you do not have the necessary authority, you do not have the right to enter into an Agreement and access the Materials on behalf of such a legal entity. 
+
+I. CONDITIONS OF THE LICENSE 
+
+a. In accordance with the terms of the Agreement, Yandex grants you a non-exclusive, worldwide, неnon-subscribe-of-subqualified and gratuitous license in respect of the right to use the Materials by means of reproduction, distribution, processing and creation of Derivative works for research or Non-commercial purposes. 
+
+b. In accordance with the terms of the Agreement, Yandex grants you a non-exclusive, world-wide, неnon-subscribable and non-subqualified license in respect of the right to use the Materials by means of reproduction, distribution, processing and creation of Derivative Works for Commercial purposes. If when using the Model You reach the value of 10 million output Tokens per month (hereinafter далееreferred to as "Purpose value"), then you are required within 30 calendar days following the month in which the Threshold Value was reached, contact Yandex at поcloud-sales@yandex-team.ru for the continuation of the Model and other Materials on the agreed terms with Yandex. In case of non-reception in Yandex within the prescribed period or failure to reach an agreement with Yandex on the terms of further use of the Model and / or other Materials, any licenses granted under the Agreement will be дляrevoked for you, and the Agreement will cease поafter 30 calendar days following the month in which you reached the Threshold Moutine of the Model.
+
+c. The license under this Agreement is personal and you may not condone or sublicense the right to use the Materials or any other rights or obligations under поthe Agreement without the prior written consent of Yandex; any such assignment or sublicense will be invalid and automatically and immediately will lead to the termination of the Agreement. 
+
+d. No other licenses or rights неare granted to you under the Agreement, except those expressly specified in Section I. Yandex and its licensors reserve all rights not expressly granted to you by the Agreement.
+
+e. To use the Materials on other terms other than the terms of the license in Section I, you must contact Yandex at the following cloud-sales@yandex-team.ru. 
+
+II. RESTRICTIONS 
+
+You are not entitled to yourself, and also do not have the right to authorize or assist third parties in the following actions: 
+
+a. use the Materials or Derivatives in such a way that it leads to or may result in the receipt, creation or dissemination of the following information or materials:
+
+    • Illegal and/or prohibited дляinformation;
+    • information containing advice on поthe circumvention of the law, instructions and instructions on how to violate the rights of third parties;
+    • unethical or offensive information дляfor individuals or categories of persons;
+    • Information that incites ethnic discord, promoting hatred and/or илиdiscrimination against people on racial, ethnic, sex, religious, social and other grounds, discrediting the honour, dignity and/or business reputation of third parties;
+    • pornographic materials, including those involving minors;
+    • information that violates the rights to privacy, containing personal data of persons, as well as other information of limited access, including commercial, banking, tax, family medical secrets, secrets of correspondence, etc.;
+    • information that violates copyrights, trademark rights, means of individualization and / or rights to other intellectual property belonging to third parties.
+
+b. modify or remove notices of copyright and other property rights contained in the Materials; 
+
+c. use any hardware, device, software or other means to дляbypass or eliminate any means of protection used by Yandex in relation to the Model, or дляto bypass or eliminate any restrictions on its use, or дляto include the functions of the Model disconnected by Yandex; or 
+
+d. To propose or impose any conditions on Materials that change, or илиare incompatible with the terms of the Agreement. 
+
+
+III. INDICATION OF AUTHORSHIP 
+
+When disseminating the Materials, as well as their Derivatives, or works including the Materials), you must (i) provide a copy of the Agreement and (ii) specify the following copyright notice: “YandexGPT- 5 -Lite-8 8B applies to the terms of the YandexGPT-5 -Lite-8 B License Agreement. Copyright (c) 20252025, LLC "YANDEX". All rights reserved.” 
+
+IV. REFUSAL TO RESPONSIBILITY 
+
+THE MATERIALS ARE PROVIDED “AS IS” AND “WITH ALL CORRECTIONS” WITHOUT ANY GUARANTEES, CLEAR OR IMPLIED. YANDEX CATEGORICALLY RENOUNCES ALL STATEMENTS AND GUARANTEES, CLEAR OR IMPLIED, WHETHER DUE TO THE LAW, USE, USE OR OTHERWISE, IN RESPECT OF ANY ISSUES RELATED TO MATERIALS, BUT NOT LIMITED, MEANINGFUL GUARANTEES OF TRADEMNESS, SUBSTANTIALITY FOR ДЛЯA DEFINEMENT FOR A DEFERT PURPOSE, RIGHTS OF RIGHTS, RIGHTSИЛИ.ПРАВ YANDEX DOES NOT GIVE ANY GUARANTEES OR ASSURANCES THAT MATERIALS DO NOT CONTAIN ERRORS, VIRUSES OR OTHER MALICIOUS COMPONENTS, AND THAT THE USE OF MATERIALS LEADS TO ANY SPECIFIC RESULTS. 
+
+V. LIMITATION OF LIABILITY 
+
+YANDEX, UNDER NO CIRCUMSTANCES IS НЕRESPONSIBLE TO YOU (A) FOR ANY LOSSES AND CONSEQUENCES OF THE USE OF MATERIALS IN ACCORDANCE WITHIN OR IN VIOLATION OF THE TERMS OF THE AGREEMENT, ИЛИOR (B) FOR ANY INDIRECT, RANDOM, PENALTY OR SPECIAL LOSSES, INCLUDING LOSSES THAT IF ЕСЛИJANDEX WAS KNOWN ABOUT THE POSSIBILITY OF SUCH SUCH BARE SUCH. MATERIALS, THEIR COMPONENTS AND ANY WEEKEND OF ИЗSUCH MATERIALS ARE NOT DEVELOPED AND НЕDESIGNED FOR ДЛЯUSE IN ANY APPLICATIONS OR SITUATIONS WHERE IT CAN BE REASONED TO ASSUME THAT THE INCORRECT WORK OF MATERIALS, FAILURE IN THEM CAN LEAD TO INJURIES OR HUMAN RIGHTS.
+
+VI. TERMINATION OF THE AGREEMENT
+
+    a. The Agreement is automatically terminated in case of any violation of the terms of the Agreement. 
+    b. The following sections of the Agreement shall remain in force even after the termination of its operation: II (RESTRICTIONS), III (RESISTANCE OF AUTHORSHIP), IV (RECORD OF RESPONSIBILITY), V (RESISTANCE OF LIABILITY), VI (OCCUPATION OF THE ACTION OF THE AGREEMENT), VII (TRADEMARKS AND MENTIONS OF YANDEX), VIII (APPENDATED LAW; PROCEDURE FOR DISPUTING) and IX (NO). 
+
+
+VII. TRADEMARKS AND MENTIONING OF YANDEX
+
+The agreement does not imply the granting of a license to the License or other permission in respect of the right to use Yandex trademarks or other Yandex designations. The Licensee shall not have the right to use any Yandex name or trademarks without the prior written consent of Yandex, except in cases where it is necessary to дляindicate the notice of copyright required by Section III “AUTHORASTIC INDICATION” of the Agreement. 
+
+VIII. APPLICABLE RIGHT; PROCEDURE FOR RESOLVING DISPUTES
+
+The agreement is regulated and interpreted in accordance with the legislation of the Russian Federation. Any claim or proceedings arising from or related to the Agreement shall be considered before the courts. Moscow, and each party, is unconditionally subject to the jurisdiction and place of such courts. 
+
+IX. OTHER 
+
+If any provision or part of the provisions of the Agreement is recognized as unlawful, null or неvoid, such provision or part thereof shall be deemed to be excluded from the Agreement and do not affect the validity and applicability of the other provisions of the Agreement. Non-relevant Yandex of any right or provision of the Agreement will not be considered a waiver of such a right or a provision. The agreement, together with the Documentation, forms a single agreement between you and Yandex regarding the subject matter of the Agreement and replaces all other written or oral agreements and arrangements for such an item. No changes or additions to any provisions of the Agreement неwill be binding unless they are неin writing and неsigned by authorized representatives from you and Yandex.
+
+X. TERMS 
+
+“Affiliates” means any legal or natural persons that have direct or indirect control over Yandex; over which Yandex has direct or indirect control; or which are with Yandex under general direct or indirect control.
+
+“Documentation” means any specifications, manuals, documents and other written information provided by Yandex in relation to the Model.
+
+“Research goals” – the goals of academic or scientific development, not aimed at extracting commercial benefits or obtaining monetary compensation by you or others.
+
+“Commercial Purposes” means any purpose different from Research Purposes or Non-Profit Purposes, which is intended to дляextract commercial benefits or receive monetary compensation by you or others, including but not limited to the specified, (i) creation, use, modification and distribution of the product or service, including through remote access to it, and (ii) use for дляthe internal needs of your business or organization. If the original purposes of the use of the Materials were research or non-commercial, but subsequently the results of the use of the Materials for such purposes formed the basis of a product whose use or implementation is intended to obtain commercial benefits or receive monetary compensation by you or others, then such use неof the Materials may not be subject to research or non-commercial purposes and will be considered commercially used from the very beginning of the use of the Materials. 
+
+“Materials” – jointly Model and Documentation (any part of them or combination) owned by Yandex and provided поunder the Agreement. 
+
+“Model” – Collectively, Yandex’s own models and algorithms, including machine learning models, weights of trained models (the basic parameters of the trained machine learning model that determine how the model makes the prediction of the next token), software and other elements of the above, which are licensed under the Agreement.
+
+“Non-commercial purposes” is any purpose different from the research purposes of Non-commercial purposes that is not aimed at extracting commercial gain or obtaining monetary compensation by you or others, such as дляfor personal use or for evaluation and testing.  
+
+"Production works" - (a) any derivatives of the Work from the Materials in the meaning provided for by the Civil Code of the Russian Federation and (b) any modifications of the Model and any other models created on the basis of the Model or derived from it or output Models.
+
+"Agreement" - this License Agreement YandexGPT - 5 -Lite-8 B.
+
+"Tokens" - a sequence of text response symbols determined in accordance with the tokenizer algorithms.
+
+"Yandex" - LLC "YANDEX" and its affiliates.

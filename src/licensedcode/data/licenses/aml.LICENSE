@@ -6,6 +6,8 @@ category: Permissive
 owner: Apple
 homepage_url: https://fedoraproject.org/wiki/Licensing/Apple_MIT_License
 spdx_license_key: AML
+other_urls:
+    - https://huggingface.co/apple/OpenELM/blob/main/LICENSE
 ---
 
 IMPORTANT: This Apple software is supplied to you by Apple Computer, Inc. ("Apple") in consideration of your agreement to the following terms, and your use, installation, modification or redistribution of this Apple software constitutes acceptance of these terms. If you do not agree with these terms, please do not use, install, modify or redistribute this Apple software.

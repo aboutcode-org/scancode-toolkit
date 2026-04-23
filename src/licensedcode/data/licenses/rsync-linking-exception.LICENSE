@@ -2,8 +2,8 @@
 key: rsync-linking-exception
 short_name: rsync Linking Exception
 name: rsync Linking Exception
-owner: rsync project
 category: Copyleft Limited
+owner: rsync project
 is_exception: yes
 spdx_license_key: rsync-linking-exception
 other_urls:

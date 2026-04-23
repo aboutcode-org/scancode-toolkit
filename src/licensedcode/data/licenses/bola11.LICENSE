@@ -1,16 +1,16 @@
 ---
 key: bola11
-short_name: Buena Onda License Agreement (v1.1)
+short_name: BOLA - Buena Onda License Agreement (v1.1)
 name: BOLA - Buena Onda License Agreement (v1.1)
 category: Permissive
 owner: blitiri
 homepage_url: https://blitiri.com.ar/p/bola/
+notes: |
+    Added in SPDX license list 3.28
+    This was previously the license rule: other-permissive_189.RULE
 spdx_license_key: BOLA-1.1
 other_spdx_license_keys:
-   - LicenseRef-scancode-bola11
-notes: |
-   Added in SPDX license list 3.28
-   This was previously the license rule: other-permissive_189.RULE
+    - LicenseRef-scancode-bola11
 ---
 
 I don't like licenses, because I don't like having to worry about all this

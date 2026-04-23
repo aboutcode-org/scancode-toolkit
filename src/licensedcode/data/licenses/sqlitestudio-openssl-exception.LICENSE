@@ -2,8 +2,8 @@
 key: sqlitestudio-openssl-exception
 short_name: sqlitestudio OpenSSL exception
 name: sqlitestudio OpenSSL exception
-owner: Paweł Salawa 
 category: Copyleft Limited
+owner: Paweł Salawa
 is_exception: yes
 spdx_license_key: sqlitestudio-OpenSSL-exception
 other_urls:

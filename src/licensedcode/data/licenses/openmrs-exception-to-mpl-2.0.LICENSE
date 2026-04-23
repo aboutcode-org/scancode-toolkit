@@ -7,6 +7,8 @@ owner: OpenMRS Project
 homepage_url: https://openmrs.org/license/
 is_exception: yes
 spdx_license_key: LicenseRef-scancode-openmrs-exception-to-mpl-2.0
+text_urls:
+    - https://github.com/openmrs/openmrs-core/blob/master/LICENSE#L366
 faq_url: https://wiki.openmrs.org/display/RES/OpenMRS+License+FAQ
 other_urls:
     - https://github.com/search?q=Health-Related+Additional+Disclaimer+of+Warranty+and+Limitation+of+Liability.&type=code
