@@ -1,0 +1,93 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "31.0.0b5",
+      "options": {
+        "input": [
+          "tests/summarycode/data/file_cat/code/media01"
+        ],
+        "--file-cat": true,
+        "--info": true,
+        "--json-pp": "tests/summarycode/data/file_cat/scans/media01/media01-info-scan.json"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2022-05-21T010012.311818",
+      "end_timestamp": "2022-05-21T010012.367067",
+      "output_format_version": "2.0.0",
+      "duration": 0.0552670955657959,
+      "message": null,
+      "errors": [],
+      "warnings": [],
+      "extra_data": {
+        "system_environment": {
+          "operating_system": "linux",
+          "cpu_architecture": "64",
+          "platform": "Linux-5.10.102.1-microsoft-standard-WSL2-x86_64-with-glibc2.29",
+          "platform_version": "#1 SMP Wed Mar 2 00:30:59 UTC 2022",
+          "python_version": "3.8.10 (default, Mar 15 2022, 12:22:08) \n[GCC 9.4.0]"
+        },
+        "spdx_license_list_version": "3.16",
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "media01",
+      "type": "directory",
+      "name": "media01",
+      "base_name": "media01",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "analysis_priority": null,
+      "file_category": null,
+      "file_subcategory": null,
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 105451,
+      "scan_errors": []
+    },
+    {
+      "path": "media01/jarDependImg.png",
+      "type": "file",
+      "name": "jarDependImg.png",
+      "base_name": "jarDependImg",
+      "extension": ".png",
+      "size": 105451,
+      "date": "2008-01-06",
+      "sha1": "d8b1b95b564b776e24b8de15699471c8e871fd34",
+      "md5": "cbaa0aefb8e2505c2670db5832c2316f",
+      "sha256": "9bf513e9a63aad6d99c3a76759ba2b5f4bb795568a35ddd41d8d9460c8fb9673",
+      "mime_type": "image/png",
+      "file_type": "PNG image data, 600 x 400, 8-bit/color RGBA, non-interlaced",
+      "programming_language": null,
+      "is_binary": true,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": true,
+      "is_source": false,
+      "is_script": false,
+      "analysis_priority": "3",
+      "file_category": "media",
+      "file_subcategory": "image",
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}
