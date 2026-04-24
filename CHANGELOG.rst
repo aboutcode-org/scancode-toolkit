@@ -3,6 +3,8 @@ Changelog
 
 Next release
 --------------
+- Addition of CLI options ``--spdx-json`` to create SPDX output in json format.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3698
 
 v3.5.0 - 2026-01-15
 -------------------

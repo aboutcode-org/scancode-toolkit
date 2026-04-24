@@ -325,6 +325,25 @@ Comparing different ``json`` output formats
 
 ----
 
+.. _cli-json-spdx-option:
+
+``--spdx-json FILE``
+--------------------
+
+    SPDX JSON output writes a Software Bill of Materials in the SPDX JSON format
+    using the same scan data model as other SPDX outputs.
+
+    **Example**
+
+    The following code performs a scan on the samples directory, and publishes the results in
+    ``spdx-json`` format
+
+    .. code-block:: shell
+
+        scancode -clpieu --spdx-json output.spdx.json samples
+
+----
+
 .. _cli-rdf-option:
 
 ``--spdx-rdf FILE``

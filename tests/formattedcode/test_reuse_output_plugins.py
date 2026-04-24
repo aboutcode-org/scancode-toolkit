@@ -71,6 +71,11 @@ def test_can_call_spdxrdf_output_from_regular_code_with_virtualcodebase():
     check_plugin(plug, 'reuse/vb.json', force_text=True)
 
 
+def test_can_call_spdxjson_output_from_regular_code_with_virtualcodebase():
+    from formattedcode.output_spdx import SpdxJsonOutput as plug
+    check_plugin(plug, 'reuse/vb.json', force_text=True)
+
+
 def test_can_call_html_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_html import  HtmlOutput as plug
     check_plugin(plug, 'reuse/vb.json', force_text=True)

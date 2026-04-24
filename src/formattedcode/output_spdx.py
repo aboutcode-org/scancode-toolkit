@@ -9,6 +9,7 @@
 import os
 import sys
 import uuid
+import json
 from datetime import datetime
 from io import BytesIO
 from io import StringIO
@@ -119,6 +120,36 @@ class SpdxRdfOutput(OutputPlugin):
             input_path=kwargs.get('input', ''),
             output_file=spdx_rdf,
             as_tagvalue=False,
+            as_json=False,
+            **kwargs
+        )
+
+
+@output_impl
+class SpdxJsonOutput(OutputPlugin):
+
+    options = [
+        PluggableCommandLineOption(('--spdx-json',),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            metavar='FILE',
+            default=None,
+            help='Write scan output as SPDX JSON to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order=70,
+        )
+    ]
+
+    def is_enabled(self, spdx_json, **kwargs):
+        return spdx_json
+
+    def process_codebase(self, codebase, spdx_json, **kwargs):
+        _process_codebase(
+            spdx_plugin=self,
+            codebase=codebase,
+            input_path=kwargs.get('input', ''),
+            output_file=spdx_json,
+            as_tagvalue=False,
+            as_json=True,
             **kwargs
         )
 
@@ -129,6 +160,7 @@ def _process_codebase(
     input_path,
     output_file,
     as_tagvalue=True,
+    as_json=False,
     **kwargs,
 ):
     check_sha1(codebase)
@@ -148,6 +180,7 @@ def _process_codebase(
         notice=notice,
         package_name=package_name,
         as_tagvalue=as_tagvalue,
+        as_json=as_json,
     )
 
 
@@ -178,6 +211,49 @@ def check_sha1(codebase):
         )
 
 
+def update_json_package_files(spdx_json):
+    """
+    Ensure SPDX JSON packages list their file members explicitly.
+    """
+    packages = spdx_json.get('packages') or []
+    files = spdx_json.get('files') or []
+    if not packages or not files:
+        return spdx_json
+
+    relationships = spdx_json.get('relationships') or []
+    package_file_map = {}
+    for relationship in relationships:
+        if relationship.get('relationshipType') != 'CONTAINS':
+            continue
+        package_id = relationship.get('spdxElementId')
+        file_id = relationship.get('relatedSpdxElement')
+        if not package_id or not file_id:
+            continue
+        package_file_map.setdefault(package_id, set()).add(file_id)
+
+    if not package_file_map and len(packages) == 1:
+        package_id = packages[0].get('SPDXID')
+        if package_id:
+            file_ids = {f.get('SPDXID') for f in files if f.get('SPDXID')}
+            if file_ids:
+                package_file_map[package_id] = file_ids
+
+    for package in packages:
+        package_id = package.get('SPDXID')
+        if not package_id:
+            continue
+        file_ids = package_file_map.get(package_id)
+        if file_ids:
+            package['hasFiles'] = sorted(file_ids)
+
+    if not spdx_json.get('documentDescribes'):
+        described = [p.get('SPDXID') for p in packages if p.get('SPDXID')]
+        if described:
+            spdx_json['documentDescribes'] = described
+
+    return spdx_json
+
+
 def write_spdx(
     codebase,
     output_file,
@@ -188,6 +264,7 @@ def write_spdx(
     package_name='',
     download_location=SpdxNoAssertion(),
     as_tagvalue=True,
+    as_json=False,
     spdx_version = (2, 2),
     with_notice_text=False,
 ):
@@ -205,7 +282,7 @@ def write_spdx(
     licenses = cache.get_licenses_db()
     licensing = Licensing()
 
-    as_rdf = not as_tagvalue
+    as_rdf = not as_tagvalue and not as_json
 
     ns_prefix = '_'.join(package_name.lower().split())
     comment = notice + f'\nSPDX License List: {scancode_config.spdx_license_list_version}'
@@ -240,6 +317,15 @@ def write_spdx(
         creation_info=creation_info,
         packages=[package],
     )
+
+    if as_json:
+        doc.relationships.append(
+            Relationship(
+                spdx_element_id=creation_info.spdx_id,
+                relationship_type=RelationshipType.DESCRIBES,
+                related_spdx_element_id=package.spdx_id,
+            )
+        )
 
     # Use a set of unique copyrights for the package.
     package_copyright_texts = set()
@@ -347,7 +433,7 @@ def write_spdx(
         relationship = Relationship(package.spdx_id, RelationshipType.CONTAINS, file_entry.spdx_id)
         doc.relationships.append(relationship)
 
-    if not doc.files:
+    if not doc.files and not as_json:
         if as_tagvalue:
             msg = "# No results for package '{}'.\n".format(package.name)
         else:
@@ -388,7 +474,7 @@ def write_spdx(
     # one case we do need to deal with bytes and decode before writing (rdf) and
     # in the other case we deal with text all the way.
 
-    if doc.files:
+    if doc.files or as_json:
         if as_tagvalue:
             from spdx_tools.spdx.writer.tagvalue.tagvalue_writer import write_document_to_stream  # NOQA
             spdx_output = StringIO()
@@ -396,12 +482,23 @@ def write_spdx(
             from spdx_tools.spdx.writer.rdf.rdf_writer import write_document_to_stream  # NOQA
             # rdf is utf-encoded bytes
             spdx_output = BytesIO()
+        elif as_json:
+            try:
+                from spdx_tools.spdx.writer.json.json_writer import write_document_to_stream  # NOQA
+            except ImportError:
+                from spdx_tools.spdx.writer.json_writer import write_document_to_stream  # NOQA
+            spdx_output = StringIO()
 
-        write_document_to_stream(doc, spdx_output, validate=False)
+        write_document_to_stream(doc, spdx_output, validate=as_json)
         result = spdx_output.getvalue()
 
         if as_rdf:
             # rdf is utf-encoded bytes
             result = result.decode('utf-8')
+
+        if as_json:
+            spdx_json = json.loads(result)
+            spdx_json = update_json_package_files(spdx_json)
+            result = json.dumps(spdx_json, indent=4, ensure_ascii=False)
 
         output_file.write(result)
