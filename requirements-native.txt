@@ -1,7 +1,7 @@
 cffi==2.0.0
-cyseq==0.1.2
-intbitset==4.1.0
-lxml==6.0.2
+cyseq==0.1.3
+intbitset==4.1.2
+lxml==6.1.0
 MarkupSafe==3.0.3
-pyahocorasick==2.3.0
+pyahocorasick==2.3.1
 PyYAML==6.0.3

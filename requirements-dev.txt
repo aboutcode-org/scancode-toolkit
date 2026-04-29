@@ -1,7 +1,7 @@
 aboutcode-toolkit==11.1.1
 alabaster==0.7.16
 beartype==0.22.9
-black==22.6.0
+black==26.3.1
 bleach==5.0.1
 build==1.2.2.post1
 commonmark==0.9.1
@@ -16,12 +16,12 @@ jeepney==0.8.0
 keyring==23.7.0
 mypy-extensions==0.4.3
 openpyxl==3.0.10
-pathspec==0.9.0
+pathspec==1.0.0
 pep517==0.12.0
 pkginfo==1.12.1.2
 platformdirs==2.5.2
 py==1.11.0
-pytest==8.4.2
+pytest==9.0.3
 pytest-forked==1.4.0
 pytest-rerunfailures==16.1
 pytest-xdist==2.5.0
