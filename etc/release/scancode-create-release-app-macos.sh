@@ -65,7 +65,7 @@ cp -r etc/thirdparty $release_dir/etc
 venv/bin/scancode-reindex-package-patterns
 venv/bin/scancode-train-gibberish-model
 venv/bin/scancode-reindex-licenses
-venv/bin/flot --pyproject pyproject-scancode-toolkit-mini.toml --wheel
+venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --wheel
 venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel
 
 cp -r \
@@ -78,10 +78,6 @@ cp -r \
 
 cp -r \
   dist/licensedcode_index*.whl \
-  $release_dir/thirdparty
-
-cp -r \
-  etc/thirdparty/dummy_dist/*.whl \
   $release_dir/thirdparty
 
 tarball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.tar.gz

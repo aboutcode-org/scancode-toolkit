@@ -271,7 +271,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [macos-14, macos-15, macos-14-intel, macos-15-intel]
+        os: [macos-14, macos-15, macos-15-intel]
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
@@ -287,7 +287,7 @@ jobs:
       - name: Install system dependencies
         run: |
           brew update
-          brew install p7zip libarchive libmagic
+          brew install libarchive libmagic
 
       - name: Download wheels artifact
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
@@ -307,7 +307,7 @@ jobs:
             done
           for f in `find dist -type f -name "scancode_toolkit_mini-*.whl"`; \
             do \
-              venv/bin/python -m pip install --find-links=./etc/thirdparty/dummy_dist --force-reinstall "$f[full]" ; \
+              venv/bin/python -m pip install --force-reinstall "$f[full]" ; \
               venv/bin/scancode -clipeu --json-pp - some.file ; \
             done
 
@@ -428,9 +428,8 @@ jobs:
         shell: bash
 
     strategy:
-      fail-fast: true
       matrix:
-        os: [macos-14, macos-15]
+        os: [macos-14, macos-15, macos-15-intel]
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
@@ -446,7 +445,7 @@ jobs:
       - name: Install system dependencies
         run: |
           brew update
-          brew install p7zip libarchive libmagic
+          brew install libarchive libmagic
 
       - name: Download a single artifact macos_app_py_${{ matrix.pyver }}
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131

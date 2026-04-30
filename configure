@@ -149,7 +149,6 @@ BASE_DEV=".[packages,dev]"
 if [[ $OSTYPE == 'darwin'* ]]; then
     BASE="."
     BASE_DEV=".[dev]"
-    PIP_EXTRA_ARGS="--find-links=./etc/thirdparty/dummy_dist"
 fi
 
 # Requirement arguments passed to pip and used by default or with --dev.
