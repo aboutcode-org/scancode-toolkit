@@ -155,7 +155,7 @@ fi
 REQUIREMENTS="--no-build-isolation --editable $BASE --constraint requirements.txt --constraint requirements-linux.txt"
 DEV_REQUIREMENTS="--no-build-isolation --editable $BASE_DEV --constraint requirements.txt --constraint requirements-linux.txt --constraint requirements-dev.txt"
 PROD_REQUIREMENTS="--no-build-isolation scancode_toolkit*.whl"
-FLOT_REQUIREMENTS="etc/thirdparty/flot*.whl"
+FLOT_REQUIREMENTS="etc/thirdparty/flot-0.7.3-py3-none-any.whl"
 
 # where we create a virtualenv
 VIRTUALENV_DIR=venv

@@ -29,13 +29,13 @@
 set "REQUIREMENTS=--no-build-isolation --editable . --constraint requirements.txt"
 set "DEV_REQUIREMENTS=--no-build-isolation --editable .[dev] --constraint requirements.txt --constraint requirements-dev.txt"
 set "PROD_REQUIREMENTS=--no-build-isolation scancode_toolkit*.whl"
-set "FLOT_REQUIREMENTS= .\etc\thirdparty\flot*.whl"
+set "FLOT_REQUIREMENTS=etc/thirdparty/flot-0.7.3-py3-none-any.whl"
 
 @rem # where we create a virtualenv
 set "VIRTUALENV_DIR=venv"
 
 @rem # Cleanable files and directories to delete with the --clean option
-set "CLEANABLE=tmp build dist venv .cache .eggs"
+set "CLEANABLE=build dist venv .cache .eggs *.egg-info docs/_build/ pip-selfcheck.json"
 
 @rem # extra  arguments passed to pip
 set "PIP_EXTRA_ARGS= "
