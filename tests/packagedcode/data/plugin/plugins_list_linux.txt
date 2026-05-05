@@ -791,6 +791,20 @@ Package type:  pypi
   path_patterns:    '*setup.py'
 --------------------------------------------
 Package type:  pypi
+  datasource_id:     pypi_uv_lock
+  documentation URL: https://docs.astral.sh/uv/concepts/projects/sync/#the-uvlock-file
+  primary language:  Python
+  description:       Python UV lockfile
+  path_patterns:    '*uv.lock'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_uv_pyproject_toml
+  documentation URL: https://docs.astral.sh/uv/concepts/projects/
+  primary language:  Python
+  description:       Python UV pyproject.toml
+  path_patterns:    '*pyproject.toml'
+--------------------------------------------
+Package type:  pypi
   datasource_id:     pypi_wheel
   documentation URL: https://peps.python.org/pep-0427/
   primary language:  Python

@@ -174,6 +174,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     pypi.PyprojectTomlHandler,
     pypi.PoetryPyprojectTomlHandler,
     pypi.PoetryLockHandler,
+    pypi.UvPyprojectTomlHandler,
+    pypi.UvLockHandler,
     pypi.PythonEditableInstallationPkgInfoFile,
     pypi.PythonEggPkgInfoFile,
     pypi.PythonInstalledWheelMetadataFile,

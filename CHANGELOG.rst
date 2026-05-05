@@ -4,6 +4,14 @@ Changelog
 Next release
 --------------
 
+- Add support for the Python UV package manager. Two new package data
+  handlers parse ``pyproject.toml`` files containing a ``[tool.uv]`` table
+  and ``uv.lock`` lockfiles, including PEP 735 ``[dependency-groups]``,
+  and the package assembly walks both files together so that the project
+  metadata and the resolved transitive dependencies are reported as a
+  single Python package.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4501
+
 v3.5.0 - 2026-01-15
 -------------------
 

@@ -467,6 +467,7 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
         return (
             super().is_datafile(location, filetypes=filetypes)
             and not is_poetry_pyproject_toml(location)
+            and not is_uv_pyproject_toml(location)
         )
 
     @classmethod
@@ -821,6 +822,299 @@ class PoetryLockHandler(BasePoetryPythonLayout):
         extra_data = {}
         extra_data['python_version'] = metadata.get("python-versions")
         extra_data['lock_version'] = metadata.get("lock-version")
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            extra_data=extra_data,
+            dependencies=dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+def is_uv_pyproject_toml(location):
+    """
+    Return True if the pyproject.toml file at ``location`` is for a UV
+    project (it contains a ``[tool.uv]`` table).
+    """
+    with open(location, 'r') as fp:
+        if "[tool.uv]" in fp.read():
+            return True
+    return False
+
+
+def get_dependency_group_dependencies(groups):
+    """
+    Return a list of DependentPackage parsed from a PEP 735 ``[dependency-groups]``
+    mapping as found in a pyproject.toml file. ``include-group`` references are
+    skipped: their resolved members are emitted by their own group entry.
+    """
+    dependencies = []
+    for group_name, group_items in (groups or {}).items():
+        requires = []
+        for item in group_items:
+            # entries are either a requirement string or a mapping such as
+            # ``{include-group = "tests"}`` which we skip as a forward reference
+            if isinstance(item, str):
+                requires.append(item)
+        dependencies.extend(
+            get_requires_dependencies(
+                requires=requires,
+                default_scope=group_name,
+                is_optional=True,
+                is_runtime=False,
+            )
+        )
+    return dependencies
+
+
+class BaseUvPythonLayout(BaseExtractedPythonLayout):
+    """
+    Base class for UV-managed Python projects, which has a ``pyproject.toml``
+    paired with a ``uv.lock`` lockfile.
+    """
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder):
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
+            return
+
+        package_resource = None
+        if resource.name == 'pyproject.toml':
+            package_resource = resource
+        elif resource.name == 'uv.lock':
+            if resource.has_parent():
+                siblings = resource.siblings(codebase)
+                pyprojects = [r for r in siblings if r.name == 'pyproject.toml']
+                if pyprojects:
+                    package_resource = pyprojects[0]
+
+        if not package_resource:
+            yield from yield_dependencies_from_package_resource(resource)
+            return
+
+        assert len(package_resource.package_data) == 1, f'Invalid pyproject.toml for {package_resource.path}'
+        pkg_data = package_resource.package_data[0]
+        pkg_data = models.PackageData.from_dict(pkg_data)
+
+        package_uid = None
+        if pkg_data.purl:
+            package = models.Package.from_package_data(
+                package_data=pkg_data,
+                datafile_path=package_resource.path,
+            )
+            package_uid = package.package_uid
+            package.populate_license_fields()
+            yield package
+
+            root = package_resource.parent(codebase)
+            if root:
+                for pypi_res in cls.walk_pypi(resource=root, codebase=codebase):
+                    if package_uid and package_uid not in pypi_res.for_packages:
+                        package_adder(package_uid, pypi_res, codebase)
+                    yield pypi_res
+
+            yield package_resource
+
+        yield from yield_dependencies_from_package_data(pkg_data, package_resource.path, package_uid)
+
+        yield package_resource
+
+        for lock_file in package_resource.siblings(codebase):
+            if lock_file.name == 'uv.lock':
+                yield from yield_dependencies_from_package_resource(lock_file, package_uid)
+
+                if package_uid and package_uid not in lock_file.for_packages:
+                    package_adder(package_uid, lock_file, codebase)
+                yield lock_file
+
+
+class UvPyprojectTomlHandler(BaseUvPythonLayout):
+    datasource_id = 'pypi_uv_pyproject_toml'
+    path_patterns = ('*pyproject.toml',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python UV pyproject.toml'
+    documentation_url = 'https://docs.astral.sh/uv/concepts/projects/'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        return (
+            super().is_datafile(location, filetypes=filetypes)
+            and is_uv_pyproject_toml(location)
+        )
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location, "rb") as fp:
+            toml_data = tomllib.load(fp)
+
+        project_data = toml_data.get("project")
+        if not project_data:
+            return
+
+        name = project_data.get('name')
+        version = project_data.get('version')
+        description = project_data.get('description') or ''
+        description = description.strip()
+
+        urls, extra_data = get_urls(metainfo=project_data, name=name, version=version)
+
+        extracted_license_statement, license_file = get_declared_license(project_data)
+        if license_file:
+            extra_data['license_file'] = license_file
+
+        requires_python = project_data.get('requires-python')
+        if requires_python:
+            extra_data['python_requires'] = requires_python
+
+        dependencies = []
+        dependencies.extend(
+            get_requires_dependencies(requires=project_data.get("dependencies", []))
+        )
+
+        for dep_type, deps in project_data.get("optional-dependencies", {}).items():
+            dependencies.extend(
+                get_requires_dependencies(
+                    requires=deps,
+                    default_scope=dep_type,
+                    is_optional=True,
+                )
+            )
+
+        dependencies.extend(
+            get_dependency_group_dependencies(toml_data.get("dependency-groups", {}))
+        )
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            name=name,
+            version=version,
+            extracted_license_statement=extracted_license_statement,
+            description=description,
+            keywords=get_keywords(project_data),
+            parties=get_pyproject_toml_parties(project_data),
+            dependencies=dependencies,
+            extra_data=extra_data,
+            **urls,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+class UvLockHandler(BaseUvPythonLayout):
+    datasource_id = 'pypi_uv_lock'
+    path_patterns = ('*uv.lock',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python UV lockfile'
+    documentation_url = 'https://docs.astral.sh/uv/concepts/projects/sync/#the-uvlock-file'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location, "rb") as fp:
+            toml_data = tomllib.load(fp)
+
+        packages = toml_data.get('package')
+        if not packages:
+            return
+
+        dependencies = []
+        for package in packages:
+            source = package.get('source') or {}
+            # skip the editable root project entry: the local pyproject.toml is
+            # parsed independently and the resolved transitive dependencies are
+            # surfaced as their own ``[[package]]`` entries.
+            if 'editable' in source or 'virtual' in source:
+                continue
+
+            name = package.get('name')
+            version = package.get('version')
+            if not name:
+                continue
+
+            dependencies_for_resolved = []
+            for dep in (package.get('dependencies') or []):
+                dep_name = dep.get('name')
+                if not dep_name:
+                    continue
+                dep_purl = PackageURL(type=cls.default_package_type, name=dep_name)
+                dependencies_for_resolved.append(
+                    models.DependentPackage(
+                        purl=dep_purl.to_string(),
+                        extracted_requirement=dep.get('marker'),
+                        scope='dependencies',
+                        is_runtime=True,
+                        is_optional=False,
+                        is_direct=True,
+                        is_pinned=False,
+                    ).to_dict()
+                )
+
+            sha256 = None
+            download_url = None
+            file_name = None
+            sdist = package.get('sdist')
+            if isinstance(sdist, dict):
+                download_url = sdist.get('url')
+                hash_value = sdist.get('hash') or ''
+                if hash_value.startswith('sha256:'):
+                    sha256 = hash_value[len('sha256:'):]
+                if download_url:
+                    file_name = posixpath.basename(download_url) or None
+
+            urls = get_pypi_urls(name, version)
+            if download_url:
+                # prefer the exact sdist URL recorded in the lock file
+                urls['repository_download_url'] = download_url
+
+            qualifiers = {}
+            if file_name:
+                # per purl-spec PyPI definition the artifact ``file_name`` is
+                # carried as a purl qualifier so the purl identifies the
+                # specific sdist recorded in the lock file.
+                qualifiers['file_name'] = file_name
+
+            resolved_package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language='Python',
+                name=name,
+                version=version,
+                qualifiers=qualifiers,
+                sha256=sha256,
+                is_virtual=True,
+                dependencies=dependencies_for_resolved,
+                **urls,
+            )
+            resolved_package = models.PackageData.from_data(resolved_package_data, package_only)
+
+            dependencies.append(
+                models.DependentPackage(
+                    purl=resolved_package.purl,
+                    extracted_requirement=None,
+                    scope=None,
+                    is_runtime=True,
+                    is_optional=False,
+                    is_direct=False,
+                    is_pinned=True,
+                    resolved_package=resolved_package.to_dict(),
+                ).to_dict()
+            )
+
+        extra_data = {}
+        requires_python = toml_data.get('requires-python')
+        if requires_python:
+            extra_data['python_requires'] = requires_python
+        lock_version = toml_data.get('version')
+        if lock_version is not None:
+            extra_data['lock_version'] = lock_version
+        revision = toml_data.get('revision')
+        if revision is not None:
+            extra_data['revision'] = revision
 
         package_data = dict(
             datasource_id=cls.datasource_id,
