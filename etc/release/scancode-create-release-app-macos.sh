@@ -29,22 +29,9 @@ mkdir -p $release_dir
 echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
 git describe --tags > $release_dir/SCANCODE_VERSION
 thirdparty_dir=$release_dir/thirdparty
-thirdparty_src_dir=$release_dir/thirdparty-src
 mkdir -p $thirdparty_dir
-mkdir -p $thirdparty_src_dir
 
 ./configure --dev
-
-venv/bin/python etc/scripts/fetch_thirdparty.py \
-  --requirements requirements-native.txt \
-  --wheel-only packagedcode-msitools \
-  --wheel-only rpm-inspector-rpm \
-  --wheel-only extractcode-7z \
-  --wheel-only extractcode-libarchive \
-  --wheel-only typecode-libmagic \
-  --dest $thirdparty_src_dir \
-  --sdists \
-  --use-cached-index
 
 venv/bin/python etc/scripts/fetch_thirdparty.py \
   --requirements requirements.txt \
@@ -53,9 +40,6 @@ venv/bin/python etc/scripts/fetch_thirdparty.py \
   --python-version=$python_version \
   --wheels \
   --use-cached-index
-
-mv $thirdparty_src_dir/* $thirdparty_dir/
-rm -rf $thirdparty_src_dir
 
 mkdir -p $release_dir/etc
 cp -r etc/thirdparty $release_dir/etc
