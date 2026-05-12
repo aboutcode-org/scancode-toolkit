@@ -327,7 +327,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       os: [windows-2025, windows-2022]
+       os: [windows-2025-vs2026, windows-2022]
        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
@@ -481,7 +481,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [windows-2025, windows-2022]
+        os: [windows-2025-vs2026, windows-2022]
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
