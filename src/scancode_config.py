@@ -134,7 +134,7 @@ if not __version__:
 # See https://scancode-toolkit.readthedocs.io/en/latest/misc/versioning.html for
 # more information on versioning
 if not __version__:
-    __version__ = '32.5.0'
+    __version__ = '33.0.0rc1'
 
 #######################
 # used to warn user when the version is out of date

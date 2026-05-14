@@ -4,7 +4,7 @@ build-backend = "flot.buildapi"
 
 [project]
 name = "scancode-toolkit-mini"
-version = "32.5.0"
+version = "33.0.0rc1"
 description = "ScanCode is a tool to scan code for license, copyright, package and their documented dependencies and other interesting facts."
 readme = "README.rst"
 license = { text = "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft" }
@@ -151,7 +151,7 @@ dev = [
 
 
 [tool.bumpversion]
-current_version = "32.5.0"
+current_version = "33.0.0rc1"
 allow_dirty = true
 
 files = [
