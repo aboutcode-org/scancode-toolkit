@@ -882,7 +882,14 @@
     "is_private": false,
     "is_virtual": false,
     "extra_data": {
-      "Documentation": "https://urllib3.readthedocs.io/"
+      "Documentation": "https://urllib3.readthedocs.io/",
+      "wheel_tags": [
+        "py2-none-any",
+        "py3-none-any"
+      ],
+      "wheel_version": "1.0",
+      "wheel_generator": "bdist_wheel (0.24.0)",
+      "root_is_purelib": true
     },
     "dependencies": [
       {

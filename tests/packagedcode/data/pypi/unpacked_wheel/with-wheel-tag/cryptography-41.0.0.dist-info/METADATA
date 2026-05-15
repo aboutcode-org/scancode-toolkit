@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: cryptography
+Version: 41.0.0
+Summary: Cryptographic recipes and primitives
+Home-page: https://github.com/pyca/cryptography
+Author: The cryptography developers
+License: Apache-2.0 OR BSD-3-Clause

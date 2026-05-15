@@ -726,7 +726,118 @@ def check_setup_py_parsing(test_loc):
         must_exist=False,
     )
 
+class TestWheelTagCollection(PackageTester):
+    """Tests for collecting WHEEL file tags from installed wheels.
+    See https://github.com/aboutcode-org/scancode-toolkit/issues/4214
+    """
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+    def test_parse_wheel_tags_with_platform_specific_tag(self):
+        dist_info = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/numpy-1.23.0.dist-info'
+        )
+        result = pypi.parse_wheel_tags(dist_info)
+        assert result == {
+            'wheel_version': '1.0',
+            'generator': 'bdist_wheel (0.37.1)',
+            'root_is_purelib': False,
+            'tags': ['cp310-cp310-manylinux_2_17_x86_64'],
+        }
+
+    def test_parse_wheel_tags_with_multi_tags(self):
+        dist_info = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/cryptography-41.0.0.dist-info'
+        )
+        result = pypi.parse_wheel_tags(dist_info)
+        assert result == {
+            'wheel_version': '1.0',
+            'generator': 'bdist_wheel (0.37.1)',
+            'root_is_purelib': False,
+            'tags': [
+                'cp37-abi3-manylinux_2_28_x86_64',
+                'cp37-abi3-manylinux_2_17_x86_64',
+            ],
+        }
+
+    def test_parse_wheel_tags_with_pure_wheel(self):
+        dist_info = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/requests-2.28.0.dist-info'
+        )
+        result = pypi.parse_wheel_tags(dist_info)
+        assert result == {
+            'wheel_version': '1.0',
+            'generator': 'bdist_wheel (0.37.1)',
+            'root_is_purelib': True,
+            'tags': ['py3-none-any'],
+        }
+
+    def test_parse_wheel_tags_with_no_wheel_file(self):
+        dist_info = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/no-wheel-1.0.0.dist-info'
+        )
+        result = pypi.parse_wheel_tags(dist_info)
+        assert result == {}
+
+    def test_reconstruct_wheel_filename_platform_specific(self):
+        result = pypi.reconstruct_wheel_filename(
+            'numpy', '1.23.0', 'cp310-cp310-manylinux_2_17_x86_64'
+        )
+        assert result == 'numpy-1.23.0-cp310-cp310-manylinux_2_17_x86_64.whl'
+
+    def test_reconstruct_wheel_filename_pure_wheel(self):
+        result = pypi.reconstruct_wheel_filename(
+            'requests', '2.28.0', 'py3-none-any'
+        )
+        assert result == 'requests-2.28.0-py3-none-any.whl'
+
+    def test_reconstruct_wheel_filename_with_hyphenated_name(self):
+        result = pypi.reconstruct_wheel_filename(
+            'my-package', '1.0.0', 'py3-none-any'
+        )
+        assert result == 'my_package-1.0.0-py3-none-any.whl'
+
+    def test_parse_metadata_with_platform_wheel_tag(self):
+        test_file = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/numpy-1.23.0.dist-info/METADATA'
+        )
+        package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/numpy-1.23.0.dist-info-expected.json'
+        )
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_metadata_with_multi_wheel_tags(self):
+        test_file = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/cryptography-41.0.0.dist-info/METADATA'
+        )
+        package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/cryptography-41.0.0.dist-info-expected.json'
+        )
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_metadata_with_pure_wheel_tag(self):
+        test_file = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/requests-2.28.0.dist-info/METADATA'
+        )
+        package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/requests-2.28.0.dist-info-expected.json'
+        )
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_metadata_without_wheel_file(self):
+        test_file = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/no-wheel-1.0.0.dist-info/METADATA'
+        )
+        package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/unpacked_wheel/with-wheel-tag/no-wheel-1.0.0.dist-info-expected.json'
+        )
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        
+        
+        
 env = PackageTester()
 
 

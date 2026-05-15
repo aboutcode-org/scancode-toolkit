@@ -1,0 +1,85 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "cryptography",
+    "version": "41.0.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Cryptographic recipes and primitives",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "The cryptography developers",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/pyca/cryptography",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "apache-2.0 OR bsd-new",
+    "declared_license_expression_spdx": "Apache-2.0 OR BSD-3-Clause",
+    "license_detections": [
+      {
+        "license_expression": "apache-2.0 OR bsd-new",
+        "license_expression_spdx": "Apache-2.0 OR BSD-3-Clause",
+        "matches": [
+          {
+            "license_expression": "apache-2.0 OR bsd-new",
+            "license_expression_spdx": "Apache-2.0 OR BSD-3-Clause",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 7,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-apache_2_0_or_bsd_new-9e2c047dc96b4eb698fc3278b976613ceade5228",
+            "rule_url": null,
+            "matched_text": "Apache-2.0 OR BSD-3-Clause"
+          }
+        ],
+        "identifier": "apache_2_0_or_bsd_new-c172d894-de7e-a89b-a8ac-7b6fb5d7dc95"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "license: Apache-2.0 OR BSD-3-Clause\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "wheel_tags": [
+        "cp37-abi3-manylinux_2_28_x86_64",
+        "cp37-abi3-manylinux_2_17_x86_64"
+      ],
+      "wheel_version": "1.0",
+      "wheel_generator": "bdist_wheel (0.37.1)",
+      "root_is_purelib": false
+    },
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/cryptography",
+    "repository_download_url": "https://pypi.org/packages/source/c/cryptography/cryptography-41.0.0.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/cryptography/41.0.0/json",
+    "datasource_id": "pypi_wheel_metadata",
+    "purl": "pkg:pypi/cryptography@41.0.0"
+  }
+]
