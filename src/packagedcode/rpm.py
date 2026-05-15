@@ -270,7 +270,7 @@ class RpmInstalledBdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
 
 # TODO: implement me!!@
 class RpmSpecfileHandler(models.NonAssemblableDatafileHandler):
-    datasource_id = 'rpm_spefile'
+    datasource_id = 'rpm_specfile'
     path_patterns = ('*.spec',)
     default_package_type = 'rpm'
     default_package_namespace = 'TBD'

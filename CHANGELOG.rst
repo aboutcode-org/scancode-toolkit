@@ -4,6 +4,10 @@ Changelog
 Next release
 --------------
 
+- Fix typo in ``RpmSpecfileHandler``: rename ``datasource_id`` from
+  ``rpm_spefile`` to ``rpm_specfile``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4869
+
 v3.5.0 - 2026-01-15
 -------------------
 
