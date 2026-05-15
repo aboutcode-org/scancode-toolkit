@@ -832,6 +832,44 @@ class PoetryLockHandler(BasePoetryPythonLayout):
         yield models.PackageData.from_data(package_data, package_only)
 
 
+class PylockTomlHandler(models.DatafileHandler):
+    datasource_id = 'pypi_pylock_toml'
+    path_patterns = ('*pylock.toml',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python pylock.toml'
+    documentation_url = 'https://github.com/nexB/scancode-toolkit'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        pylock_data = parse_pylock(location)
+        if not pylock_data:
+            return
+
+        dependencies = []
+        for package_name, package_info in pylock_data.get('package', {}).items():
+            version = package_info.get('version')
+            purl = PackageURL(type='pypi', name=package_name, version=version)
+            dependency = models.DependentPackage(
+                purl=purl.to_string(),
+                extracted_requirement=f'{package_name}=={version}' if version else package_name,
+                scope='install',
+                is_runtime=True,
+                is_optional=False,
+                is_direct=True,
+                is_pinned=bool(version),
+            )
+            dependencies.append(dependency.to_dict())
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            dependencies=dependencies,
+            extra_data=pylock_data,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
 class PipInspectDeplockHandler(models.DatafileHandler):
     datasource_id = 'pypi_inspect_deplock'
     path_patterns = ('*pip-inspect.deplock',)

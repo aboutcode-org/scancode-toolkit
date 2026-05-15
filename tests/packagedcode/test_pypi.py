@@ -15,6 +15,7 @@ from commoncode.resource import VirtualCodebase
 from commoncode.system import on_windows
 
 from packagedcode import pypi
+from scancode.pylock import parse_pylock
 from packages_test_utils import check_result_equals_expected_json
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
@@ -427,6 +428,19 @@ class TestPipInspectDeplockHandler(PackageTester):
 
 class TestPipRequirementsFileHandler(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+class TestPylockTomlHandler(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pylock_toml(self):
+        test_file = self.get_test_loc('pypi/pylock/pylock.toml')
+        assert pypi.PylockTomlHandler.is_datafile(test_file)
+
+    def test_parse_pylock_toml(self):
+        test_file = self.get_test_loc('pypi/pylock/pylock.toml')
+        package = pypi.PylockTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pylock/pylock.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_python_requirements_is_package_data_file(self):
         test_file = self.get_test_loc('pypi/requirements_txt/basic/requirements.txt')
