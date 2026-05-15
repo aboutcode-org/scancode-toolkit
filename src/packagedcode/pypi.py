@@ -832,6 +832,238 @@ class PoetryLockHandler(BasePoetryPythonLayout):
         yield models.PackageData.from_data(package_data, package_only)
 
 
+class PylockTomlHandler(models.DatafileHandler):
+    datasource_id = 'pypi_pylock_toml'
+    path_patterns = ('*pylock.toml', '*pylock.*.toml',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python pylock.toml lockfile (PEP 751)'
+    documentation_url = 'https://peps.python.org/pep-0751/'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        """
+        Parse a pylock.toml file according to PEP 751.
+        
+        The pylock.toml format records Python dependencies for reproducible installation.
+        Each package entry contains name, version, and optionally wheels, sdist,
+        or other source information.
+        """
+        with open(location, "rb") as fp:
+            toml_data = tomllib.load(fp)
+
+        lock_version = toml_data.get('lock-version')
+        created_by = toml_data.get('created-by')
+        requires_python = toml_data.get('requires-python')
+        environments = toml_data.get('environments', [])
+        extras = toml_data.get('extras', [])
+        dependency_groups = toml_data.get('dependency-groups', [])
+        default_groups = toml_data.get('default-groups', [])
+        
+        packages = toml_data.get('packages', [])
+        if not packages:
+            # Still yield a package data even if no packages
+            extra_data = {
+                'lock_version': lock_version,
+                'created_by': created_by,
+            }
+            if requires_python:
+                extra_data['requires_python'] = requires_python
+            if environments:
+                extra_data['environments'] = environments
+            if extras:
+                extra_data['extras'] = extras
+            if dependency_groups:
+                extra_data['dependency_groups'] = dependency_groups
+            if default_groups:
+                extra_data['default_groups'] = default_groups
+                
+            package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                extra_data=extra_data,
+                dependencies=[],
+            )
+            yield models.PackageData.from_data(package_data, package_only)
+            return
+
+        dependencies = []
+        for package in packages:
+            name = package.get('name')
+            version = package.get('version')
+            marker = package.get('marker')
+            pkg_requires_python = package.get('requires-python')
+            index = package.get('index')
+            
+            # Get source information (wheels, sdist, vcs, directory, archive)
+            wheels = package.get('wheels', [])
+            sdist = package.get('sdist')
+            vcs = package.get('vcs')
+            directory = package.get('directory')
+            archive = package.get('archive')
+            
+            # Get package dependencies
+            pkg_dependencies = package.get('dependencies', [])
+            dependencies_for_resolved = []
+            for dep in pkg_dependencies:
+                dep_name = dep.get('name')
+                if dep_name:
+                    dep_purl = PackageURL(
+                        type=cls.default_package_type,
+                        name=canonicalize_name(dep_name),
+                    )
+                    dep_version = dep.get('version')
+                    if dep_version:
+                        dep_purl = dep_purl._replace(version=dep_version)
+                    
+                    dep_obj = models.DependentPackage(
+                        purl=dep_purl.to_string(),
+                        scope="dependencies",
+                        is_runtime=True,
+                        is_optional=False,
+                        is_direct=True,
+                        is_pinned=bool(dep_version),
+                    )
+                    dependencies_for_resolved.append(dep_obj.to_dict())
+
+            # Build download URL from wheels or sdist
+            download_url = None
+            sha256 = None
+            file_references = []
+            
+            if wheels:
+                for wheel in wheels:
+                    wheel_url = wheel.get('url')
+                    wheel_path = wheel.get('path')
+                    wheel_name = wheel.get('name')
+                    wheel_size = wheel.get('size')
+                    wheel_hashes = wheel.get('hashes', {})
+                    
+                    file_ref = {}
+                    if wheel_name:
+                        file_ref['name'] = wheel_name
+                    if wheel_url:
+                        file_ref['url'] = wheel_url
+                        if not download_url:
+                            download_url = wheel_url
+                    if wheel_path:
+                        file_ref['path'] = wheel_path
+                    if wheel_size:
+                        file_ref['size'] = wheel_size
+                    if wheel_hashes:
+                        file_ref['hashes'] = wheel_hashes
+                        if 'sha256' in wheel_hashes and not sha256:
+                            sha256 = wheel_hashes['sha256']
+                    if file_ref:
+                        file_references.append({'wheel': file_ref})
+            
+            if sdist:
+                sdist_url = sdist.get('url')
+                sdist_path = sdist.get('path')
+                sdist_name = sdist.get('name')
+                sdist_size = sdist.get('size')
+                sdist_hashes = sdist.get('hashes', {})
+                
+                file_ref = {}
+                if sdist_name:
+                    file_ref['name'] = sdist_name
+                if sdist_url:
+                    file_ref['url'] = sdist_url
+                    if not download_url:
+                        download_url = sdist_url
+                if sdist_path:
+                    file_ref['path'] = sdist_path
+                if sdist_size:
+                    file_ref['size'] = sdist_size
+                if sdist_hashes:
+                    file_ref['hashes'] = sdist_hashes
+                    if 'sha256' in sdist_hashes and not sha256:
+                        sha256 = sdist_hashes['sha256']
+                if file_ref:
+                    file_references.append({'sdist': file_ref})
+
+            # Build extra_data for the resolved package
+            resolved_extra_data = {}
+            if marker:
+                resolved_extra_data['marker'] = marker
+            if pkg_requires_python:
+                resolved_extra_data['requires_python'] = pkg_requires_python
+            if index:
+                resolved_extra_data['index'] = index
+            if file_references:
+                resolved_extra_data['file_references'] = file_references
+            if vcs:
+                resolved_extra_data['vcs'] = vcs
+            if directory:
+                resolved_extra_data['directory'] = directory
+            if archive:
+                resolved_extra_data['archive'] = archive
+            
+            # Get URLs for PyPI
+            urls = get_pypi_urls(name, version) if name else {}
+
+            resolved_package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                name=name,
+                version=version,
+                is_virtual=True,
+                download_url=download_url,
+                sha256=sha256,
+                dependencies=dependencies_for_resolved,
+                extra_data=resolved_extra_data if resolved_extra_data else None,
+                **urls,
+            )
+            resolved_package = models.PackageData.from_data(resolved_package_data, package_only)
+
+            # Create a dependency entry for the resolved package
+            if name:
+                purl = PackageURL(
+                    type=cls.default_package_type,
+                    name=canonicalize_name(name),
+                    version=version,
+                )
+                
+                dependency = models.DependentPackage(
+                    purl=purl.to_string(),
+                    scope=None,
+                    is_runtime=True,
+                    is_optional=False,
+                    is_direct=False,
+                    is_pinned=bool(version),
+                    resolved_package=resolved_package.to_dict()
+                )
+                dependencies.append(dependency.to_dict())
+
+        # Build extra_data for the lockfile itself
+        extra_data = {
+            'lock_version': lock_version,
+        }
+        if created_by:
+            extra_data['created_by'] = created_by
+        if requires_python:
+            extra_data['requires_python'] = requires_python
+        if environments:
+            extra_data['environments'] = environments
+        if extras:
+            extra_data['extras'] = extras
+        if dependency_groups:
+            extra_data['dependency_groups'] = dependency_groups
+        if default_groups:
+            extra_data['default_groups'] = default_groups
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            extra_data=extra_data,
+            dependencies=dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
 class PipInspectDeplockHandler(models.DatafileHandler):
     datasource_id = 'pypi_inspect_deplock'
     path_patterns = ('*pip-inspect.deplock',)

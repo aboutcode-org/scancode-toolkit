@@ -405,6 +405,30 @@ class TestPoetryHandler(PackageTester):
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
+class TestPylockTomlHandler(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pylock_toml(self):
+        test_file = self.get_test_loc('pypi/pylock-toml/pylock.toml')
+        assert pypi.PylockTomlHandler.is_datafile(test_file)
+
+    def test_is_pylock_named_toml(self):
+        test_file = self.get_test_loc('pypi/pylock-toml/pylock.dev.toml')
+        assert pypi.PylockTomlHandler.is_datafile(test_file)
+
+    def test_parse_pylock_toml(self):
+        test_file = self.get_test_loc('pypi/pylock-toml/pylock.toml')
+        package = pypi.PylockTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pylock-toml/pylock-toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pylock_dev_toml(self):
+        test_file = self.get_test_loc('pypi/pylock-toml/pylock.dev.toml')
+        package = pypi.PylockTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pylock-toml/pylock.dev-toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
 class TestPipInspectDeplockHandler(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
