@@ -139,7 +139,7 @@ ABIS_BY_PYTHON_VERSION = {
     "311": ["cp311", "cp311m", "abi3"],
     "312": ["cp312", "cp312m", "abi3"],
     "313": ["cp313", "cp313m", "abi3"],
-    "314": ["cp314", "cp314m", "abi3"],
+    "314": ["cp314", "cp314m", "cp314t", "abi3"],
 }
 
 PLATFORMS_BY_OS = {
@@ -148,6 +148,16 @@ PLATFORMS_BY_OS = {
         "manylinux1_x86_64",
         "manylinux2010_x86_64",
         "manylinux2014_x86_64",
+        "manylinux_2_17_x86_64",
+        "linux_aarch64",
+        "manylinux1_aarch64",
+        "manylinux2010_aarch64",
+        "manylinux2014_aarch64",
+        "manylinux_2_17_aarch64",
+        "manylinux_2_26_aarch64",
+        "manylinux_2_28_aarch64",
+        "musllinux_1_2_x86_64",
+        "musllinux_1_2_aarch64",
     ],
     "macos": [
         "macosx_10_6_intel",
@@ -178,7 +188,7 @@ PLATFORMS_BY_OS = {
         "macosx_10_14_universal2",
         "macosx_10_15_universal2",
         "macosx_11_0_universal2",
-        # 'macosx_11_0_arm64',
+        "macosx_11_0_arm64",
     ],
     "windows": [
         "win_amd64",

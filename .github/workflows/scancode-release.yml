@@ -20,7 +20,7 @@ on:
 permissions: {}
 jobs:
 
-  build_scancode_wheel_for_pypi:
+  build_scancode_wheels_sdist_for_pypi:
     permissions:
       contents: read # to fetch code (actions/checkout)
 
@@ -31,59 +31,27 @@ jobs:
       run:
         shell: bash
 
-    strategy:
-      fail-fast: true
-      matrix:
-       pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
-
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
-          python-version: ${{ matrix.pyver }} 
-
-      - name: Install requirements then build main and mini wheel
-        run: etc/release/scancode-create-pypi-wheel.sh
-
-      - name: Collect built wheels for ${{ matrix.pyver }} 
-        uses: actions/upload-artifact@v4
-        with:
-          name: wheels-${{ matrix.pyver }}
-          path: dist/*.whl
-
-
-  build_scancode_sdist_for_pypi:
-    permissions:
-      contents: read # to fetch code (actions/checkout)
-
-    name: Build PyPI sdist archives
-    runs-on: ubuntu-24.04
-
-    defaults:
-      run:
-        shell: bash
-
-    strategy:
-      fail-fast: true
-
-    steps:
-      - uses: actions/checkout@v4
+          persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
-          python-version: "3.14"
+          python-version: 3.14
 
-      - name: Install requirements then build main and mini sdist
-        run: etc/release/scancode-create-pypi-sdist.sh
+      - name: Install requirements then build main and mini wheel, sdist
+        run: etc/release/scancode-create-pypi-wheel-and-sdist.sh
 
-      - name: Collect built sdist
-        uses: actions/upload-artifact@v4
+      - name: Install requirements then build licensedcode data/index wheels, sdist
+        run: etc/release/licensedcode-create-pypi-wheel-and-sdist.sh
+
+      - name: Collect built wheels and sdist
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
-          name: sdists
-          path: dist/*.tar.gz
+          name: wheels_sdist
+          path: dist/*
 
 
   build_scancode_for_release_linux:
@@ -103,11 +71,13 @@ jobs:
        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
       - run: git fetch --prune --unshallow
 
       - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }} 
 
@@ -115,7 +85,7 @@ jobs:
         run: etc/release/scancode-create-release-app-linux.sh ${{ matrix.pyver }}
 
       - name: Collect built linux app for python ${{ matrix.pyver }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: linux_app_py_${{ matrix.pyver }}
           path: release/*
@@ -138,11 +108,13 @@ jobs:
        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
       - run: git fetch --prune --unshallow
 
       - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }} 
 
@@ -150,7 +122,7 @@ jobs:
         run: etc/release/scancode-create-release-app-macos.sh ${{ matrix.pyver }}
 
       - name: Collect built mac app for python ${{ matrix.pyver }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: macos_app_py_${{ matrix.pyver }}
           path: release/*
@@ -173,11 +145,13 @@ jobs:
        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
       - run: git fetch --prune --unshallow
 
       - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }} 
 
@@ -185,7 +159,7 @@ jobs:
         run: etc/release/scancode-create-release-app-windows.sh ${{ matrix.pyver }}
 
       - name: Collect built windows app for python ${{ matrix.pyver }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: windows_app_py_${{ matrix.pyver }}
           path: release/*
@@ -205,11 +179,13 @@ jobs:
       fail-fast: true
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
       - run: git fetch --prune --unshallow
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: "3.14"
 
@@ -217,19 +193,19 @@ jobs:
         run: etc/release/scancode-create-release-app-sources.sh
 
       - name: Collect built source app tarball
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: source_app
           path: release/*
 
 
-  smoke_test_install_and_run_pypi_wheels_on_posix:
+  smoke_test_install_and_run_pypi_wheels_on_linux:
     permissions:
       contents: read # to fetch code (actions/checkout)
 
-    name: Test PyPI wheels on linux and mac
+    name: Test PyPI wheels on linux
     needs:
-      - build_scancode_wheel_for_pypi
+      - build_scancode_wheels_sdist_for_pypi
     runs-on: ${{ matrix.os }}
 
     defaults:
@@ -239,35 +215,101 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-24.04, ubuntu-24.04, macos-14, macos-15]
+        os: [ubuntu-22.04, ubuntu-24.04]
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }}
 
+      - name: Install system dependencies
+        run: |
+          sudo apt update
+          sudo apt install p7zip-full libarchive-dev libmagic1 libmagic-dev
+
       - name: Download wheels artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
-          name: wheels-${{ matrix.pyver }}
+          name: wheels_sdist
           path: dist
 
-      - name: test install wheels
+      - name: install and test wheels
         run: |
           echo "license: gpl-2.0" > some.file
           rm -rf venv;  \
           python -m venv venv
           venv/bin/python -m pip install --upgrade pip wheel setuptools
-          for f in `find dist -type f -name "*${{ matrix.pyver }}*"`; \
+          for f in `find dist -type f -name "licensedcode*.whl"`; \
+            do \
+              venv/bin/python -m pip install --force-reinstall "$f" ; \
+            done
+          for f in `find dist -type f -name "scancode_toolkit-*.whl"`; \
             do \
               venv/bin/python -m pip install --force-reinstall "$f[full]" ; \
               venv/bin/scancode -clipeu --json-pp - some.file ; \
             done
 
+  smoke_test_install_and_run_pypi_wheels_on_macos:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
+    name: Test PyPI wheels on mac
+    needs:
+      - build_scancode_wheels_sdist_for_pypi
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [macos-14, macos-15, macos-15-intel]
+        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
+
+      - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
+        with:
+          python-version: ${{ matrix.pyver }}
+
+      - name: Install system dependencies
+        run: |
+          brew update
+          brew install libarchive libmagic
+
+      - name: Download wheels artifact
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        with:
+          name: wheels_sdist
+          path: dist
+
+      - name: install and test wheels
+        run: |
+          echo "license: gpl-2.0" > some.file
+          rm -rf venv;  \
+          python -m venv venv
+          venv/bin/python -m pip install --upgrade pip wheel setuptools
+          for f in `find dist -type f -name "licensedcode*.whl"`; \
+            do \
+              venv/bin/python -m pip install --force-reinstall "$f" ; \
+            done
+          for f in `find dist -type f -name "scancode_toolkit_mini-*.whl"`; \
+            do \
+              venv/bin/python -m pip install --force-reinstall "$f[full]" ; \
+              venv/bin/scancode -clipeu --json-pp - some.file ; \
+            done
 
   smoke_test_install_and_run_pypi_wheels_on_windows:
     permissions:
@@ -275,7 +317,7 @@ jobs:
 
     name: Test PyPI wheels on Windows
     needs:
-      - build_scancode_wheel_for_pypi
+      - build_scancode_wheels_sdist_for_pypi
     runs-on: ${{ matrix.os }}
 
     defaults:
@@ -285,29 +327,35 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       os: [windows-2025, windows-2022]
+       os: [windows-2025-vs2026, windows-2022]
        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download wheels artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
-          name: wheels-${{ matrix.pyver }}
+          name: wheels_sdist
           path: dist
 
-      - name: test install wheel
+      - name: install and test wheels
         run: |
           echo "license: gpl-2.0" > some.file
           python -m venv venv
           venv/Scripts/python.exe -m pip install --upgrade pip
-          for f in `find dist -type f  -name "*${{ matrix.pyver }}*"`; \
+          for f in `find dist -type f -name "licensedcode*.whl"`; \
+            do \
+              venv/Scripts/python.exe -m pip install --force-reinstall "$f" ; \
+            done
+          for f in `find dist -type f  -name "scancode_toolkit-*.whl"`; \
             do \
               venv/Scripts/python.exe -m pip install --force-reinstall "$f[full]" ; \
               venv/Scripts/scancode -clipeu --json-pp - some.file ; \
@@ -330,19 +378,26 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-24.04, ubuntu-24.04]
+        os: [ubuntu-22.04, ubuntu-24.04]
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }}
 
+      - name: Install system dependencies
+        run: |
+          sudo apt update
+          sudo apt install p7zip-full libarchive-dev libmagic1 libmagic-dev
+
       - name: Download a single artifact linux_app_py_${{ matrix.pyver }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_${{ matrix.pyver }}
           path: dist
@@ -373,21 +428,27 @@ jobs:
         shell: bash
 
     strategy:
-      fail-fast: true
       matrix:
-        os: [macos-14, macos-15]
+        os: [macos-14, macos-15, macos-15-intel]
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }}
 
+      - name: Install system dependencies
+        run: |
+          brew update
+          brew install libarchive libmagic
+
       - name: Download a single artifact macos_app_py_${{ matrix.pyver }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_${{ matrix.pyver }}
           path: dist
@@ -420,19 +481,21 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [windows-2025, windows-2022]
+        os: [windows-2025-vs2026, windows-2022]
         pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download a single artifact windows_app_py_${{ matrix.pyver }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_${{ matrix.pyver }}
           path: dist
@@ -454,6 +517,7 @@ jobs:
       - build_scancode_for_release_windows
       - build_scancode_for_release_linux
       - build_scancode_for_release_macos
+      - build_scancode_wheels_sdist_for_pypi
 
     runs-on: ubuntu-24.04
     defaults:
@@ -464,99 +528,105 @@ jobs:
 
     steps:
       - name: Download a single artifact source_app
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: source_app
           path: dist
 
       - name: Download a single artifact macos_app for python 3.10
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_3.10
           path: dist
 
       - name: Download a single artifact macos_app for python 3.11
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_3.11
           path: dist
 
       - name: Download a single artifact macos_app for python 3.12
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_3.12
           path: dist
 
       - name: Download a single artifact macos_app for python 3.13
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_3.13
           path: dist
 
       - name: Download a single artifact macos_app for python 3.14
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: macos_app_py_3.14
           path: dist
 
       - name: Download a single artifact linux_app for python 3.10
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_3.10
           path: dist
 
       - name: Download a single artifact linux_app for python 3.11
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_3.11
           path: dist
 
       - name: Download a single artifact linux_app for python 3.12
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_3.12
           path: dist
 
       - name: Download a single artifact linux_app for python 3.13
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_3.13
           path: dist
 
       - name: Download a single artifact linux_app for python 3.14
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: linux_app_py_3.14
           path: dist
 
       - name: Download a single artifact windows_app for python 3.10
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_3.10
           path: dist
 
       - name: Download a single artifact windows_app for python 3.11
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_3.11
           path: dist
 
       - name: Download a single artifact windows_app for python 3.12
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_3.12
           path: dist
 
       - name: Download a single artifact windows_app for python 3.13
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_3.13
           path: dist
 
       - name: Download a single artifact windows_app for python 3.14
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: windows_app_py_3.14
+          path: dist
+
+      - name: Download scancode and licensedcode wheels
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        with:
+          name: wheels_sdist
           path: dist
 
       - name: Mock GH release
@@ -564,7 +634,7 @@ jobs:
           ls -al dist
 
       - name: Create release and publish archives
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda
         with:
           draft: true
           files: dist/*
@@ -573,10 +643,10 @@ jobs:
   publish_to_pypi:
     name: Publish to PyPI
     needs:
-      - build_scancode_wheel_for_pypi
-      - build_scancode_sdist_for_pypi
+      - build_scancode_wheels_sdist_for_pypi
       - smoke_test_install_and_run_pypi_wheels_on_windows
-      - smoke_test_install_and_run_pypi_wheels_on_posix
+      - smoke_test_install_and_run_pypi_wheels_on_macos
+      - smoke_test_install_and_run_pypi_wheels_on_linux
       - publish_to_gh_release
     runs-on: ubuntu-24.04
     environment: pypi-publish
@@ -585,21 +655,17 @@ jobs:
     defaults:
       run:
         shell: bash
-    strategy:
-      fail-fast: false
-      matrix:
-        dist_names: ["wheels-3.10", "wheels-3.11", "wheels-3.12", "wheels-3.13", "wheels-3.14", "sdists"]
 
     steps:
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: 3.14
 
-      - name: Download a single artifact
-        uses: actions/download-artifact@v4
+      - name: scancode and licensedcode wheels
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
-          name: ${{ matrix.dist_names }}
+          name: wheels_sdist
           path: dist
 
       - name: Mock PyPI upload
@@ -607,4 +673,5 @@ jobs:
           ls -al dist
 
       - name: Publish distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
+        if: startsWith(github.ref, 'refs/tags')
+        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b

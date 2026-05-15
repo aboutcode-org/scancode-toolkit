@@ -22,18 +22,9 @@ venv/bin/scancode-reindex-licenses
 venv/bin/scancode-reindex-package-patterns
 venv/bin/scancode-train-gibberish-model
 
-python_tag=$( python -c "import platform;print(f\"cp{''.join(platform.python_version_tuple()[:2])}\")" )
-
-venv/bin/python setup.py --quiet bdist_wheel --python-tag $python_tag
-
-rm -rf build .eggs src/scancode_toolkit*.egg-info src/scancode_toolkit_mini*.egg-info
-cp setup.cfg setup-main.cfg
-cp setup-mini.cfg setup.cfg
-
-venv/bin/python setup.py --quiet bdist_wheel --python-tag $python_tag
-
-cp setup-main.cfg setup.cfg
-rm setup-main.cfg
+# build license data packages
+venv/bin/flot --pyproject pyproject-licensedcode-data.toml --wheel --sdist
+venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel --sdist
 
 venv/bin/twine check dist/*
 
