@@ -730,7 +730,12 @@ def test_scan_errors_out_with_unknown_option():
     test_file = test_env.get_test_loc('license_text/test.txt')
     args = ['--json--info', test_file]
     result = run_scan_click(args, expected_rc=2)
-    assert 'Error: No such option: --json--info'.lower() in result.output.lower()
+    # Accept both the old and new click error message formats:
+    #   click < 8.2:  "Error: No such option: --json--info"
+    #   click >= 8.2: "Error: No such option '--json--info'. (Did you mean ...)"
+    output = result.output.lower()
+    assert 'no such option' in output
+    assert '--json--info' in output
 
 
 def test_scan_to_json_without_FILE_does_not_write_to_next_option():
