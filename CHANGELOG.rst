@@ -4,6 +4,10 @@ Changelog
 Next release
 --------------
 
+- Fix detection of "Happy Bunny License or MIT License" dual-license
+  statement to correctly use OR instead of AND
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4982
+
 v3.5.0 - 2026-01-15
 -------------------
 
