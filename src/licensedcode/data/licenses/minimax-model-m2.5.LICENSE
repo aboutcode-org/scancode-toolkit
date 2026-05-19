@@ -1,0 +1,70 @@
+---
+key: minimax-model-m2.5
+short_name: MiniMax Model License M2.5
+name: MiniMax Model License M2.5
+category: Proprietary Free
+owner: MiniMax
+homepage_url: https://github.com/MiniMax-AI/MiniMax-M2.5/blob/main/LICENSE-MODEL
+spdx_license_key: LicenseRef-scancode-minimax-model-m2.5
+ignorable_copyrights:
+    - Copyright (c) MiniMax
+ignorable_holders:
+    - MiniMax
+---
+
+MINIMAX MODEL LICENSE
+MiniMax-M2.5 Version Release Date: 2026-02-13
+
+1. Definitions
+
+"Agreement" means the terms and conditions for use, reproduction, distribution and modification of the Model Materials set forth herein.
+
+"Licensee" or "you" means you, or your employer or any other person or entity (if you are entering into this Agreement on such person or entity's behalf), of the age required under applicable laws, rules or regulations to provide legal consent and that has legal authority to bind your employer or such other person or entity if you are entering in this Agreement on their behalf.
+
+"Model" means the foundational large language models and software and algorithms, including machine-learning model code, trained model weights, inference-enabling code, training-enabling code, fine-tuning enabling code and other elements of the foregoing distributed by MiniMax.
+
+"Model Materials" means, collectively, the Model and any source code, scripts, specifications, manuals and documentation accompanying the Model (and any portion thereof) made available under this Agreement.
+
+"MiniMax" or "we" means MiniMax AI.
+
+2. License Rights and Redistribution
+
+a. Grant of Rights. You are granted a non-exclusive, worldwide and royalty-free limited license under MiniMax's intellectual property or other rights owned by MiniMax embodied in the Model Materials to use, reproduce, distribute, copy, create derivative works of, and make modifications to the Model Materials.
+
+b. Redistribution and Use.
+
+   i. If you distribute or make available the Model Materials (or any derivative works thereof), or a product or service that uses any of them, including another AI model, you shall provide a copy of this Agreement with any such the Model Materials or derivative works and cause any modified files to carry prominent notices stating that you changed the files. You may add your own copyright statement to your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of your modifications, or for any such derivative works as a whole, provided your use, reproduction, and distribution of the work otherwise complies with the terms and conditions of this Agreement.
+
+   ii. You must retain in all copies of the Model Materials that you distribute the following attribution notice within a "Notice" text file distributed as a part of such copies: "MiniMax AI model is licensed under the MiniMax Model License, Copyright © MiniMax. All Rights Reserved."
+
+   iii. Your use of the Model Materials must comply with applicable laws and regulations (including trade compliance laws and regulations) and adhere to the Prohibited Uses Policy for the Model Materials, which is hereby incorporated by reference into this Agreement.
+
+3. Disclaimer of Warranty. UNLESS REQUIRED BY APPLICABLE LAW, THE MODEL MATERIALS AND ANY OUTPUT AND RESULTS THEREFROM ARE PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, AND MINIMAX DISCLAIMS ALL WARRANTIES OF ANY KIND, BOTH EXPRESS AND IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. YOU ARE SOLELY RESPONSIBLE FOR DETERMINING THE APPROPRIATENESS OF USING OR REDISTRIBUTING THE MODEL MATERIALS AND ASSUME ANY RISKS ASSOCIATED WITH YOUR USE OF THE MODEL MATERIALS AND ANY OUTPUT AND RESULTS.
+
+4. Limitation of Liability. IN NO EVENT WILL MINIMAX OR ITS AFFILIATES BE LIABLE UNDER ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, TORT, NEGLIGENCE, PRODUCTS LIABILITY, OR OTHERWISE, ARISING OUT OF THIS AGREEMENT, FOR ANY LOST PROFITS OR ANY INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL, EXEMPLARY OR PUNITIVE DAMAGES, EVEN IF MINIMAX OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF ANY OF THE FOREGOING.
+
+5. Intellectual Property.
+
+a. No trademark license is granted to use the trade names, trademarks, service marks, or product names of MiniMax, except as required to fulfill notice requirements under this Agreement.
+
+b. Subject to MiniMax's ownership of the Model Materials and derivatives made by or for MiniMax, with respect to any derivative works and modifications of the Model Materials that are made by you, as between you and MiniMax, you are and will be the owner of such derivative works and modifications.
+
+c. If you institute litigation or other proceedings against MiniMax or any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Model Materials or outputs or results, or any portion of any of the foregoing, constitutes infringement of intellectual property or other rights owned or licensable by you, then any licenses granted to you under this Agreement shall terminate as of the date such litigation or claim is filed or instituted. You will indemnify and hold harmless MiniMax from and against any claim by any third party arising out of or related to your use or distribution of the Model Materials.
+
+6. Term and Termination. The term of this Agreement will commence upon your acceptance of this Agreement or access to the Model Materials and will continue in full force and effect until terminated in accordance with the terms and conditions herein. MiniMax may terminate this Agreement if you are in breach of any term or condition of this Agreement. Upon termination of this Agreement, you shall delete and cease use of the Model Materials. Sections 3, 4 and 7 shall survive the termination of this Agreement.
+
+7. Governing Law and Jurisdiction. This Agreement will be governed and construed under the laws of Singapore without regard to choice of law principles, and the UN Convention on Contracts for the International Sale of Goods does not apply to this Agreement. Any dispute arising out of or in connection with this Agreement, including any question regarding its existence, validity or termination, shall be referred to and finally resolved by arbitration administered by the Singapore International Arbitration Centre ("SIAC") in accordance with the Arbitration Rules of the Singapore International Arbitration Centre ("SIAC Rules") for the time being in force, which rules are deemed to be incorporated by reference in this clause.
+
+Prohibited Uses Policy
+
+You agree you will not use, or allow others to use, the Models or any derivatives of the Models to:
+
+1. Violate any applicable federal, state, local, or international law or regulation, or infringe upon the lawful rights or interests of any third party.
+2. Assist with, engage in or otherwise support any military purpose.
+3. Exploit, harm, or attempt to exploit or harm minors in any way.
+4. Generate or disseminate false or misleading information with the intent to cause harm.
+5. Generate or disseminate content prohibited by applicable laws or regulations.
+6. Generate or disseminate personally identifiable information without proper authorization or for unlawful or unreasonable purposes.
+7. Defame, disparage, harass, or cause harm to any individual or entity.
+8. Conduct fully automated decision-making that adversely affects an individual's legal rights or creates or modifies a binding, enforceable obligation.
+9. Promote discrimination, hate speech, or harmful behavior against individuals or groups based on race or ethnic origin, religion, disability, age, nationality and national origin, veteran status, sexual orientation, gender or gender identity, caste, immigration status, or any other characteristic that is associated with systemic discrimination or marginalization.
