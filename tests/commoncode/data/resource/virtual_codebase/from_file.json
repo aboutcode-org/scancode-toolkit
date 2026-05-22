@@ -1,0 +1,22 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an ....",
+  "scancode_version": "2.9.7.post137.2e29fe3.dirty.20181120225811",
+  "scancode_options": {
+    "input": "han/",
+    "--json-pp": "-"
+  },
+  "scan_start": "2018-11-23T123252.191917",
+  "files_count": 1,
+  "files": [
+    {
+      "path": "han",
+      "type": "directory",
+      "scan_errors": []
+    },
+    {
+      "path": "han/bar.svg",
+      "type": "file",
+      "scan_errors": []
+    }
+  ]
+}
