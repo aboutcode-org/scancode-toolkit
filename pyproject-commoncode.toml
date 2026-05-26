@@ -1,71 +1,106 @@
-[metadata]
-name = commoncode
-author = nexB. Inc. and others
-author_email = info@aboutcode.org
-license = Apache-2.0
+[build-system]
+requires = [ "flot>=0.7.0" ]
+build-backend = "flot.buildapi"
+
+[project]
+name = "commoncode"
+version = "32.4.2"
+authors = [
+    { name = "nexB. Inc. and others", email = "info@aboutcode.org" },
+]
+license = "Apache-2.0"
 
 # description must be on ONE line https://github.com/pypa/setuptools/issues/1390
-description = Set of common utilities, originally split from ScanCode
-long_description = file:README.rst
-long_description_content_type = text/x-rst
-url = https://github.com/aboutcode-org/commoncode
-classifiers =
-    Development Status :: 5 - Production/Stable
-    Intended Audience :: Developers
-    Programming Language :: Python :: 3
-    Programming Language :: Python :: 3 :: Only
-    Topic :: Software Development
-    Topic :: Utilities
+description = "Set of common utilities, originally split from ScanCode"
+long_description_content_type = "text/x-rst"
+readme = "src/commoncode/README.rst"
 
-keywords =
-    utilities
-    scancode-toolkit
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+]
 
-license_files =
-    apache-2.0.LICENSE
-    NOTICE
-    AUTHORS.rst
-    CHANGELOG.rst
-    CODE_OF_CONDUCT.rst
-    README.rst
-    commoncode.ABOUT
+keywords = [
+    "utilities",
+    "scancode-toolkit"
+]
 
-[options]
-python_requires = >=3.10
-package_dir =
-    =src
-packages = find:
-include_package_data = true
-zip_safe = false
+metadata_files = [
+    "apache-2.0.LICENSE",
+    "NOTICE",
+    "AUTHORS.rst",
+    "CHANGELOG.rst",
+    "CODE_OF_CONDUCT.rst",
+    "README.rst",
+    "commoncode.ABOUT"
+]
 
-setup_requires = setuptools_scm[toml] >= 4
+requires-python = ">=3.10"
 
-install_requires =
-    attrs >= 18.1,!=20.1.0;python_version<'3.11'
-    attrs >= 22.1.0;python_version>='3.11'
-    Beautifulsoup4[chardet] >= 4.13.0
-    click >= 8.3.0
-    requests[use_chardet_on_py3] >= 2.7.0
-    saneyaml >= 0.5.2
-    text_unidecode >= 1.0
+[project.urls]
+Homepage = "https://github.com/nexB/scancode-toolkit"
 
-
-[options.packages.find]
-where = src
+dependencies = [
+    "attrs >= 18.1,!=20.1.0;python_version<'3.11'",
+    "attrs >= 22.1.0;python_version>='3.11'",
+    "Beautifulsoup4[chardet] >= 4.13.0",
+    "click >= 8.3.0",
+    "requests[use_chardet_on_py3] >= 2.7.0",
+    "saneyaml >= 0.5.2",
+    "text_unidecode >= 1.0"
+]
 
 
-[options.extras_require]
-dev =
-    pytest >= 7.0.1
-    pytest-xdist >= 2
-    aboutcode-toolkit >= 11.1.1
-    pycodestyle >= 2.8.0
-    twine
-    ruff
-    Sphinx>=5.0.2
-    sphinx-rtd-theme>=1.0.0
-    sphinx-reredirects >= 0.1.2
-    doc8>=0.11.2
-    sphinx-autobuild
-    sphinx-rtd-dark-mode>=1.3.0
-    sphinx-copybutton
+[project.optional-dependencies]
+dev = [
+    "pytest >= 7.0.1",
+    "pytest-xdist >= 2",
+    "aboutcode-toolkit >= 11.1.1",
+    "pycodestyle >= 2.8.0",
+    "twine",
+    "ruff",
+    "Sphinx>=5.0.2",
+    "sphinx-rtd-theme>=1.0.0",
+    "sphinx-reredirects >= 0.1.2",
+    "doc8>=0.11.2",
+    "sphinx-autobuild",
+    "sphinx-rtd-dark-mode>=1.3.0",
+    "sphinx-copybutton"
+]
+
+[tool.flot]
+wheel_path_prefixes_to_strip = [ "src" ]
+
+includes = [
+    "src/commoncode/*",
+]
+
+excludes = [
+    "docs/build/**/*",
+
+    # Python compiled files
+    "**/*.py[cod]",
+    "**/*.egg-info",
+    # Various junk and temp files
+    "**/.DS_Store",
+    "**/*~",
+    "**/.*.sw[po]",
+    "**/.ve",
+    "**/*.bak",
+    "**/.ipynb_checkpoints",
+]
+
+metadata_files = [
+    "*.LICENSE",
+    "NOTICE",
+    "AUTHORS.rst",
+    "CHANGELOG.rst",
+    "CODE_OF_CONDUCT.rst",
+]
+
+editable_paths = [ "src/commoncode/", "tests/commoncode/" ]
+
