@@ -8,7 +8,8 @@ version = "32.4.2"
 authors = [
     { name = "nexB. Inc. and others", email = "info@aboutcode.org" },
 ]
-license = "Apache-2.0"
+license = { text = "Apache-2.0" }
+
 
 # description must be on ONE line https://github.com/pypa/setuptools/issues/1390
 description = "Set of common utilities, originally split from ScanCode"
