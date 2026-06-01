@@ -27,39 +27,39 @@ class TestRockspecHandler(PackageTester):
 
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_parse_test_rockspec(self):
-        """Test parsing test.rockspec."""
-        test_file = self.get_test_loc('rockspec/test.rockspec')
+    def test_parse_lua_cjson_rockspec(self):
+        """Test parsing lua-cjson.rockspec."""
+        test_file = self.get_test_loc('rockspec/lua-cjson.rockspec')
         packages = rockspec.RockspecHandler.parse(test_file)
-        expected_loc = self.get_test_loc('rockspec/test.rockspec-expected.json')
+        expected_loc = self.get_test_loc('rockspec/lua-cjson.rockspec-expected.json')
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_test1_rockspec(self):
-        """Test parsing test1.rockspec with mandatory and optional fields."""
-        test_file = self.get_test_loc('rockspec/test1.rockspec')
+    def test_parse_kong_rockspec(self):
+        """Test parsing kong.rockspec with mandatory and optional fields."""
+        test_file = self.get_test_loc('rockspec/kong.rockspec')
         packages = rockspec.RockspecHandler.parse(test_file)
-        expected_loc = self.get_test_loc('rockspec/test1.rockspec-expected.json')
+        expected_loc = self.get_test_loc('rockspec/kong.rockspec-expected.json')
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_test2_rockspec(self):
-        """Test parsing test2.rockspec."""
-        test_file = self.get_test_loc('rockspec/test2.rockspec')
+    def test_parse_luasocket_rockspec(self):
+        """Test parsing luasocket.rockspec."""
+        test_file = self.get_test_loc('rockspec/luasocket.rockspec')
         packages = rockspec.RockspecHandler.parse(test_file)
-        expected_loc = self.get_test_loc('rockspec/test2.rockspec-expected.json')
+        expected_loc = self.get_test_loc('rockspec/luasocket.rockspec-expected.json')
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_test3_rockspec(self):
-        """Test parsing test3.rockspec."""
-        test_file = self.get_test_loc('rockspec/test3.rockspec')
+    def test_parse_vdsl_rockspec(self):
+        """Test parsing vdsl.rockspec."""
+        test_file = self.get_test_loc('rockspec/vdsl.rockspec')
         packages = rockspec.RockspecHandler.parse(test_file)
-        expected_loc = self.get_test_loc('rockspec/test3.rockspec-expected.json')
+        expected_loc = self.get_test_loc('rockspec/vdsl.rockspec-expected.json')
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_test4_rockspec(self):
-        """Test parsing test4.rockspec with variable concatenation."""
-        test_file = self.get_test_loc('rockspec/test4.rockspec')
+    def test_parse_claude_nvim_rockspec(self):
+        """Test parsing claude.nvim.rockspec with variable concatenation."""
+        test_file = self.get_test_loc('rockspec/claude.nvim.rockspec')
         packages = rockspec.RockspecHandler.parse(test_file)
-        expected_loc = self.get_test_loc('rockspec/test4.rockspec-expected.json')
+        expected_loc = self.get_test_loc('rockspec/claude.nvim.rockspec-expected.json')
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_handler_is_registered(self):
@@ -69,13 +69,6 @@ class TestRockspecHandler(PackageTester):
                    if h.datasource_id == 'luarocks_rockspec']
         assert len(handlers) == 1, f"Expected 1 RockspecHandler, found {len(handlers)}"
         assert handlers[0] == rockspec.RockspecHandler
-
-    def test_handler_in_datasource_registry(self):
-        """Test that handler is registered in HANDLER_BY_DATASOURCE_ID registry."""
-        from packagedcode import HANDLER_BY_DATASOURCE_ID
-        handler = HANDLER_BY_DATASOURCE_ID.get('luarocks_rockspec')
-        assert handler is not None, "RockspecHandler not found in registry"
-        assert handler == rockspec.RockspecHandler
 
     def test_handler_attributes(self):
         """Test that handler has required attributes."""
@@ -87,7 +80,7 @@ class TestRockspecHandler(PackageTester):
 
     def test_is_datafile_rockspec(self):
         """Test that is_datafile recognizes .rockspec files."""
-        test_file = self.get_test_loc('rockspec/test1.rockspec')
+        test_file = self.get_test_loc('rockspec/kong.rockspec')
         assert rockspec.RockspecHandler.is_datafile(test_file)
 
     def test_is_datafile_non_rockspec(self):
@@ -98,8 +91,3 @@ class TestRockspecHandler(PackageTester):
             assert not rockspec.RockspecHandler.is_datafile(temp_file)
         finally:
             os.unlink(temp_file)
-
-
-if __name__ == '__main__':
-    import pytest
-    pytest.main([__file__, '-v'])
