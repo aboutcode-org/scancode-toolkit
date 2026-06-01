@@ -99,9 +99,18 @@ class RockspecHandler(models.DatafileHandler):
         version_number = dep_components.get('version_number')
         version_spec = dep_components.get('version_spec')
 
-        purl_str = cls._create_purl_string(name, version_number)
-        # Determine if pinned (exact version with == operator)
-        is_pinned = bool(version_spec and '==' in str(version_spec))
+        # Determine if pinned (exact version with == operator or no operator)
+        is_pinned = False
+        if version_spec:
+            v_spec_str = str(version_spec).strip()
+            if '==' in v_spec_str:
+                is_pinned = True
+            elif v_spec_str == version_number:
+                is_pinned = True
+
+        # Only include version in PURL if pinned
+        purl_version = version_number if is_pinned else None
+        purl_str = cls._create_purl_string(name, purl_version)
 
         return models.DependentPackage(
             purl=purl_str,
@@ -174,6 +183,7 @@ class RockspecParser:
         self.rockspec_path = rockspec_path
         self.ast_tree = None
         self.errors = []
+        self._description_table = None
 
     def parse(self):
         """Read file, parse AST, extract all rockspec fields and return data dict."""
@@ -214,6 +224,20 @@ class RockspecParser:
             return ast.parse(code)
         except Exception as e:
             raise RuntimeError(f"Lua parse error: {e}")
+
+    def _get_description_table(self):
+        """Return the description table as a dict if present."""
+        if self._description_table is not None:
+            return self._description_table
+
+        assignment = self._find_assignment('description')
+        if not assignment:
+            self._description_table = {}
+        else:
+            _, value = assignment
+            self._description_table = self._extract_table_values(value)
+
+        return self._description_table
 
     def _find_assignment(self, var_name):
         """Return (target_node, value_node) tuple for variable assignment or None."""
@@ -445,38 +469,28 @@ class RockspecParser:
         return str(source_url)
 
     def _extract_description(self):
-        """Extract and return optional description.summary field."""
-        assignment = self._find_assignment('description')
-        if not assignment:
-            return None
-
-        _, value = assignment
-        desc_table = self._extract_table_values(value)
-
+        """Extract and return combined optional description fields."""
+        desc_table = self._get_description_table()
         summary = desc_table.get('summary')
-        return str(summary) if summary else None
+        detailed = desc_table.get('detailed')
+
+        parts = []
+        if summary:
+            parts.append(str(summary).strip())
+        if detailed:
+            parts.append(str(detailed).strip())
+
+        return '\n'.join(parts) if parts else None
 
     def _extract_license(self):
         """Extract and return optional license field from description table."""
-        assignment = self._find_assignment('description')
-        if not assignment:
-            return None
-
-        _, value = assignment
-        desc_table = self._extract_table_values(value)
-
+        desc_table = self._get_description_table()
         license_val = desc_table.get('license')
         return str(license_val) if license_val else None
 
     def _extract_homepage(self):
         """Extract and return optional homepage URL from description table."""
-        assignment = self._find_assignment('description')
-        if not assignment:
-            return None
-
-        _, value = assignment
-        desc_table = self._extract_table_values(value)
-
+        desc_table = self._get_description_table()
         homepage = desc_table.get('homepage')
         return str(homepage) if homepage else None
 
@@ -541,14 +555,11 @@ class RockspecParser:
         version_spec = None
 
         if version_raw:
-            version_raw = version_raw.strip()
-            version_match = re.search(r'([0-9][0-9.]*)', version_raw)
-            if version_match:
-                version_number = version_match.group(1)
-                if operator:
-                    version_spec = operator + ' ' + version_number
-                else:
-                    version_spec = version_number
+            version_number = version_raw.strip()
+            if operator:
+                version_spec = f"{operator} {version_number}"
+            else:
+                version_spec = version_number
 
         return {
             'name': name,
