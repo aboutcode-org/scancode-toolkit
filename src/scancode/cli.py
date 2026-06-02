@@ -221,6 +221,26 @@ def default_processes():
     callback=validate_input_path,
     type=click.Path(exists=True, readable=True, path_type=str))
 
+@click.option('--include',
+    multiple=True,
+    default=None,
+    metavar='<pattern>',
+    help='Include files matching <pattern>.',
+    sort_order=11,
+    help_group=cliutils.CORE_GROUP,
+    cls=PluggableCommandLineOption,
+)
+
+@click.option('--ignore',
+    multiple=True,
+    default=None,
+    metavar='<pattern>',
+    help='Ignore files matching <pattern>.',
+    sort_order=10,
+    help_group=cliutils.CORE_GROUP,
+    cls=PluggableCommandLineOption,
+)
+
 @click.option('--strip-root',
     is_flag=True,
     default=False,
@@ -395,6 +415,8 @@ def default_processes():
 def scancode(
     ctx,
     input,  # NOQA
+    include,
+    ignore,
     strip_root,
     full_root,
     processes,
@@ -505,6 +527,8 @@ def scancode(
         # run proper
         success, _results = run_scan(
             input=input,
+            include=include,
+            ignore=ignore,
             from_json=from_json,
             strip_root=strip_root,
             full_root=full_root,
@@ -545,7 +569,9 @@ def scancode(
 
 
 def run_scan(
-    input,  # NOQA
+    input,  # 
+    include=[],
+    ignore=[],
     from_json=False,
     strip_root=False,
     full_root=False,
@@ -644,12 +670,10 @@ def run_scan(
         # and we craft a list of synthetic --include path pattern options from
         # the input list of paths
         included_paths = [as_posixpath(path).rstrip('/') for path in input]
-        # FIXME: this is a hack as this "include" is from an external plugin!!!
-        include = list(requested_options.get('include', []) or [])
         include.extend(included_paths)
-        requested_options['include'] = include
 
         # ... and use the common prefix as our new input
+        # FIXME: we should not walk outside inputs
         input = common_prefix  # NOQA
 
     # build mappings of all options to pass down to plugins
@@ -894,6 +918,8 @@ def run_scan(
         try:
             codebase = codebase_class(
                 location=input,
+                includes=include,
+                ignores=ignore,
                 resource_attributes=resource_attributes,
                 codebase_attributes=codebase_attributes,
                 full_root=full_root,

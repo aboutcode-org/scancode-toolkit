@@ -55,6 +55,11 @@ class FilesetTest(commoncode.testcase.FileBasedTesting):
         assert fileset.is_included("/some/src/this/that", incs, excs)
         assert not fileset.is_included("/src/dist/build/mylib.so", incs, excs)
 
+    def test_is_included_is_included_inside_exclusions(self):
+        incs = {"/src/*.so": ".scanignore"}
+        excs = {"/src/*": ".scanignore"}
+        assert not fileset.is_included("/src/dist/build/mylib.so", incs, excs)
+
     def test_is_included_empty_exclusions(self):
         incs = {"/src/*": ".scanignore"}
         excs = {"": ".scanignore"}
