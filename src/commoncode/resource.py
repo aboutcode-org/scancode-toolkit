@@ -63,7 +63,7 @@ This module handles all the details of walking files, path handling and caching.
 
 # Tracing flags
 TRACE = False
-TRACE_DEEP = True
+TRACE_DEEP = False
 
 
 def logger_debug(*args):
@@ -110,7 +110,7 @@ def skip_ignored(location):
     return is_special(location) or ignored(location)
 
 
-def is_ignored(location,  includes=None, excludes=None):
+def is_ignored(location,  includes=tuple(), excludes=tuple()):
 
     excludes = {
         pattern: 'User ignore: Supplied by --ignore' for pattern in excludes
@@ -339,8 +339,8 @@ class Codebase:
 
         # finally populate
         self.paths = self._prepare_clean_paths(paths)
+        self.includes = self._prepare_clean_paths(includes)
         self.ignores = ignores
-        self.includes = includes
         self._populate()
 
     def _prepare_clean_paths(self, paths=tuple()):
@@ -593,29 +593,47 @@ class Codebase:
                 f"ERROR: cannot populate codebase: {_error}\n{traceback.format_exc()}"
             )
 
-        skip_ignored = partial(is_ignored, includes=includes, excludes=ignores)
+        # ignore creating resources based on path patterns
+        skip_ignored = partial(is_ignored, excludes=ignores)
 
         if TRACE_DEEP:
             logger_debug(f"parents_by_loc: {parents_by_loc}, ignores: {ignores}, includes: {includes}")
 
-        # Walk over the directory and build the resource tree
-        for top, dirs, files in depth_walk(
-            root_location=root.location,
-            skip_ignored=skip_ignored,
-            max_depth=self.max_depth,
-            error_handler=err,
-        ):
-            parent = parents_by_loc.pop(top)
-            for created in self._create_resources(
-                parent=parent,
-                top=top,
-                dirs=dirs,
-                files=files,
-                skip_ignored=skip_ignored,
+        # in the case of a single input location, walking starts from
+        # the root and only the root location
+        if not includes:
+            includes = [root.location]
+        else:
+            # create the directory resources between the common
+            # prefix and the included locations so that they are
+            # connected to the root
+            for created in self._create_resources_common_prefix_to_inputs(
+                root=root,
+                includes=includes,
             ):
-                # on the plain, bare FS, files cannot be parents
                 if not created.is_file:
                     parents_by_loc[created.location] = created
+
+        # we start walking through all the input locations
+        for included_location in includes:
+            # Walk over the directory and build the resource tree
+            for top, dirs, files in depth_walk(
+                root_location=included_location,
+                skip_ignored=skip_ignored,
+                max_depth=self.max_depth,
+                error_handler=err,
+            ):
+                parent = parents_by_loc.pop(top)
+                for created in self._create_resources(
+                    parent=parent,
+                    top=top,
+                    dirs=dirs,
+                    files=files,
+                    skip_ignored=skip_ignored,
+                ):
+                    # on the plain, bare FS, files cannot be parents
+                    if not created.is_file:
+                        parents_by_loc[created.location] = created
 
     def _create_resources(self, parent, top, dirs, files, skip_ignored=skip_ignored):
         """
@@ -640,6 +658,28 @@ class Codebase:
                 if TRACE:
                     logger_debug("Codebase.create_resources:", res)
                 yield res
+
+    def _create_resources_common_prefix_to_inputs(self, root, includes):
+
+        if TRACE_DEEP:
+            logger_debug(f"_create_resources_common_prefix_to_inputs: root:{root.location}, includes: {includes}")
+
+        for included_path in includes:
+            _, _, extra_dir_path = included_path.rpartition(root.location)
+            extra_dirs = extra_dir_path.strip("/").split("/")
+            if TRACE_DEEP:
+                    logger_debug(f"_create_resources_common_prefix_to_inputs: root:{root.location}, includes: {includes}")
+
+            dir_resource = root
+            for dir_segment in extra_dirs:
+                dir_resource = self._get_or_create_resource(
+                    name=dir_segment,
+                    parent=dir_resource,
+                    is_file=False,
+                )
+                if TRACE:
+                    logger_debug("Codebase.create_resources:", dir_resource)
+                yield dir_resource
 
     def _create_root_resource(self):
         """
@@ -1606,8 +1646,8 @@ def clean_path(path):
     Return a cleaned and normalized POSIX ``path``.
     """
     path = path or ""
-    # convert to posix and ensure we have no slash at both ends
-    path = posixpath_normpath(path.replace("\\", "/").strip("/"))
+    # convert to posix and ensure we have no slash at the end
+    path = posixpath_normpath(path.replace("\\", "/").rstrip("/"))
     if path == ".":
         path = ""
     return path
