@@ -258,7 +258,6 @@ scancode-train-gibberish-model = "textcode.train_gibberish_model:train_gibberish
 # scancode_pre_scan is the entry point for pre_scan plugins executed before the
 # scans. See also plugincode.pre_scan module for details and doc.
 [project.entry-points.scancode_pre_scan]
-ignore = "scancode.plugin_ignore:ProcessIgnore"
 facet = "summarycode.facet:AddFacet"
 
 
