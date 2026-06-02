@@ -93,7 +93,7 @@ class FileDrivenTesting(object):
 
     test_data_dir = None
 
-    def get_test_loc(self, test_path, copy=False, debug=False, must_exist=True):
+    def get_test_loc(self, test_path, copy=False, debug=False, must_exist=True, relative=False):
         """
         Given a `test_path` relative to the self.test_data_dir directory, return the
         location to a test file or directory for this path. Copy to a temp
@@ -129,6 +129,11 @@ class FileDrivenTesting(object):
                 # cleanup of VCS that could be left over from checkouts
                 self.remove_vcs(target_dir)
                 test_loc = target_dir
+        
+        if relative:
+            _, _, rel_test_loc = test_loc.rpartition(os.getcwd())
+            return rel_test_loc.strip("/")
+
         return test_loc
 
     def get_temp_file(self, extension=None, dir_name="td", file_name="tf"):

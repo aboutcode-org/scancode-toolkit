@@ -167,6 +167,7 @@ def test_scan_info_returns_full_root():
     result_data = json.loads(open(result_file).read())
     file_paths = [f['path'] for f in result_data['files']]
     assert len(file_paths) == 12
+    # note that we strip paths from leading and trailing slashes
     root = fileutils.as_posixpath(test_dir)
     assert all(p.startswith(root) for p in file_paths)
 
@@ -181,7 +182,12 @@ def test_scan_info_returns_correct_full_root_with_single_file():
     # we have a single file
     assert len(files) == 1
     scanned_file = files[0]
+<<<<<<< HEAD
     # and we check that the path is the full absolute path without repeating the file name
+=======
+    # and we check that the path is the full path without repeating the file name
+    # note that the path never contain leading and trailing slashes
+>>>>>>> 8e88b94261 (Do not codebase walk outside input paths)
     assert scanned_file['path'] == fileutils.as_posixpath(test_file)
 
 
@@ -833,6 +839,15 @@ def test_scan_should_not_fail_with_low_max_in_memory_setting_when_ignoring_files
     result_file = test_env.get_temp_file('json')
     args = ['--info', '-n', '-1', '--ignore', '*.gif', '--max-in-memory=1', test_file, '--json', result_file]
     run_scan_click(args, expected_rc=0)
+
+
+def test_scan_supports_multiple_input_paths():
+    test_file_1 = test_env.get_test_loc('summaries/client', relative=True)
+    test_file_2 = test_env.get_test_loc('summaries/counts', relative=True)
+    result_file = test_env.get_temp_file('json')
+    args = ['--info', '-n', '1', test_file_1, test_file_2, '--json', result_file]
+    run_scan_click(args, expected_rc=0)
+
 
 
 def test_get_displayable_summary():
