@@ -49,6 +49,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Li Ha @linexb
 - Mankaran Singh @MankaranSingh
 - Marc-Etienne Vargenau @vargenau
+- Marco Berger @marcoberger
 - Martin Petkov @MartinPetkov
 - Maximilian Huber @maxhbr
 - Michael Herzog @mjherzog
