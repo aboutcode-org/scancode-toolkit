@@ -1,0 +1,28 @@
+---
+key: lightbend-use-grant-bsl-1.1
+short_name: Lightbend Use Grant for BSL 1.1
+name: Lightbend Additional Use Grant for BSL 1.1
+category: Source-available
+owner: Typesafe
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-lightbend-use-grant-bsl-1.1
+ignorable_copyrights:
+    - (c) 2022 Lightbend Inc.
+ignorable_holders:
+    - Lightbend Inc.
+ignorable_urls:
+    - https://www.akka.io/
+---
+
+Parameters
+Licensor:	Lightbend, Inc.
+Licensed Work:	Akka
+The Licensed Work is (c) 2022 Lightbend Inc.
+
+Additional Use Grant:	If you develop an application using a version of Play Framework that utilizes binary versions of akka-streams and its dependencies, you may use such binary versions of akka-streams and its dependencies in the development of your application only as they are incorporated into Play Framework and solely to implement the functionality provided by Play Framework; provided that, they are only used in the following way: Connecting to a Play Framework websocket and/or Play Framework request/response bodies for server and play-ws client.
+
+Change Date:	3 years after release
+
+Change License:	Apache License, Version 2.0
+
+For information about alternative licensing arrangements for the Software, please visit: https://www.akka.io/

@@ -1,0 +1,47 @@
+---
+key: mgb-brainiac-nc-2026
+short_name: MGB BrainIAC Research-Only License 2026
+name: MGB BrainIAC Research-Only License 2026
+category: Non-Commercial
+owner: MGB
+homepage_url: https://github.com/AIM-KannLab/BrainIAC/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-mgb-brainiac-nc-2026
+ignorable_copyrights:
+    - Copyright (c) 2026 Mass General Brigham and contributors
+ignorable_holders:
+    - Mass General Brigham and contributors
+---
+
+BrainIAC Research-Only License
+
+Copyright © 2026
+Mass General Brigham and contributors
+
+Permission is hereby granted to use, copy, modify, and distribute this
+software and associated documentation files (the “Software”) solely for
+non-commercial academic research and educational purposes.
+
+Commercial use of the Software is strictly prohibited without a separate
+written license from Mass General Brigham. Commercial use includes, but is
+not limited to:
+- Use in products, services, or platforms offered for a fee or other
+  commercial advantage;
+- Use in clinical workflows, decision support systems, or healthcare
+  operations;
+- Use by for-profit entities for internal or external commercial purposes;
+- Redistribution or deployment of the Software or derived works as part
+  of a commercial offering.
+
+The Software may not be sublicensed, sold, leased, or otherwise transferred
+for commercial purposes without prior written authorization from
+Mass General Brigham.
+
+The Software is provided “AS IS”, without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose, and non-infringement. In no event shall
+the authors or copyright holders be liable for any claim, damages, or other
+liability, whether in an action of contract, tort, or otherwise, arising
+from, out of, or in connection with the Software or the use or other
+dealings in the Software.
+
+All commercial rights are expressly reserved.
