@@ -1,5 +1,5 @@
-refs=$Format:%D$
-commit=$Format:%H$
-abbrev_commit=$Format:%h$
-committer_date=$Format:%cs$
-git_describe=$Format:%(describe)$
+refs=HEAD -> develop
+commit=ea42c1d09d38444c6206a245d67ca3d99930c9b0
+abbrev_commit=ea42c1d09d3
+committer_date=2026-05-26
+git_describe=v33.0.0rc1-4-gea42c1d09d3
