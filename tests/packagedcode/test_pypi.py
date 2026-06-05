@@ -458,6 +458,40 @@ class TestUvHandler(PackageTester):
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
 
+class TestPylockTomlHandler(PackageTester):
+    # PEP 751 pylock.toml fixtures, see https://peps.python.org/pep-0751/
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pylock_toml(self):
+        test_file = self.get_test_loc('pypi/pylock/sample/pylock.toml')
+        assert pypi.PylockTomlHandler.is_datafile(test_file)
+
+    def test_is_pylock_toml_named_variant(self):
+        test_file = self.get_test_loc('pypi/pylock/named/pylock.dev.toml')
+        assert pypi.PylockTomlHandler.is_datafile(test_file)
+
+    def test_parse_pylock_toml(self):
+        test_file = self.get_test_loc('pypi/pylock/sample/pylock.toml')
+        package = pypi.PylockTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/pylock/sample-pylock.toml-expected.json',
+            must_exist=False,
+        )
+        self.check_packages_data(
+            package, expected_loc, must_exist=False, regen=REGEN_TEST_FIXTURES,
+        )
+
+    def test_package_scan_pylock_end_to_end(self):
+        test_dir = self.get_test_loc('pypi/pylock/sample/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc(
+            'pypi/pylock/sample-package-assembly-expected.json',
+            must_exist=False,
+        )
+        run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+
 class TestPipInspectDeplockHandler(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 

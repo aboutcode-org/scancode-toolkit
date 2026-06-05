@@ -8,6 +8,12 @@ Next release
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
+- Add support for PEP 751 ``pylock.toml`` standardized Python lockfiles. A new
+  ``pypi_pylock_toml`` package datafile handler parses ``pylock.toml`` and
+  ``pylock.<name>.toml`` files into resolved PyPI dependencies with their
+  versions, hashes and sources.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4962
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
