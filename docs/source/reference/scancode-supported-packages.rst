@@ -1,9 +1,11 @@
-.. _supported-packages:
+
+
+.. _supported_packages:
 
 Supported package manifests and package datafiles
 -------------------------------------------------
 
-ScanCode supports a wide variety of package manifests, lockfiles
+Scancode supports a wide variety of package manifests, lockfiles
 and other package datafiles containing package and dependency
 information.
 
@@ -138,13 +140,6 @@ parsers in scancode-toolkit during documentation builds.
      - ``cargo_toml``
      - Rust
      - https://doc.rust-lang.org/cargo/reference/manifest.html
-   * - Rust binary
-     - None
-     - ``cargo``
-     - ``linux``, ``win``, ``mac``
-     - ``rust_binary``
-     - Rust
-     - https://github.com/rust-secure-code/cargo-auditable/blob/master/PARSING.md
    * - Chef cookbook metadata.json
      - ``*/metadata.json``
      - ``chef``
@@ -442,7 +437,7 @@ parsers in scancode-toolkit during documentation builds.
      - https://guides.rubygems.org/specification-reference/
    * - RubyGems Bundler Gemfile
      - ``*/Gemfile``
-       ``*/*.gemfile``
+       ``*.gemfile``
        ``*/Gemfile-*``
      - ``gem``
      - ``linux``, ``win``, ``mac``
@@ -505,13 +500,6 @@ parsers in scancode-toolkit during documentation builds.
      - ``godeps``
      - Go
      - https://github.com/tools/godep
-   * - Go binary
-     - None
-     - ``golang``
-     - ``linux``, ``win``, ``mac``
-     - ``golang_binary``
-     - Go
-     - https://github.com/nexB/go-inspector/
    * - Haxe haxelib.json metadata file
      - ``*/haxelib.json``
      - ``haxe``
@@ -622,13 +610,6 @@ parsers in scancode-toolkit during documentation builds.
      - ``mozilla_xpi``
      - JavaScript
      - https://en.wikipedia.org/wiki/XPInstall
-   * - Microsoft MSI installer
-     - ``*.msi``
-     - ``msi``
-     - ``linux``
-     - ``msi_installer``
-     - None
-     - https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal
    * - npm package.json
      - ``*/package.json``
      - ``npm``
@@ -812,6 +793,14 @@ parsers in scancode-toolkit during documentation builds.
      - ``pypi_poetry_pyproject_toml``
      - Python
      - https://packaging.python.org/en/latest/specifications/pyproject-toml/
+   * - PEP 751 pylock.toml Python lockfile
+     - ``*pylock.toml``
+       ``*pylock.*.toml``
+     - ``pypi``
+     - ``linux``, ``win``, ``mac``
+     - ``pypi_pylock_toml``
+     - Python
+     - https://peps.python.org/pep-0751/
    * - Python pyproject.toml
      - ``*pyproject.toml``
      - ``pypi``
@@ -840,6 +829,20 @@ parsers in scancode-toolkit during documentation builds.
      - ``pypi_setup_py``
      - Python
      - https://docs.python.org/3.11/distutils/setupscript.html
+   * - Python UV lockfile
+     - ``*uv.lock``
+     - ``pypi``
+     - ``linux``, ``win``, ``mac``
+     - ``pypi_uv_lock``
+     - Python
+     - https://docs.astral.sh/uv/concepts/projects/sync/#the-uvlock-file
+   * - Python UV pyproject.toml
+     - ``*pyproject.toml``
+     - ``pypi``
+     - ``linux``, ``win``, ``mac``
+     - ``pypi_uv_pyproject_toml``
+     - Python
+     - https://docs.astral.sh/uv/concepts/projects/
    * - PyPI wheel
      - ``*.whl``
      - ``pypi``
@@ -876,27 +879,6 @@ parsers in scancode-toolkit during documentation builds.
      - ``rpm_archive``
      - None
      - https://en.wikipedia.org/wiki/RPM_Package_Manager
-   * - RPM installed package BDB database
-     - ``*var/lib/rpm/Packages``
-     - ``rpm``
-     - ``linux``
-     - ``rpm_installed_database_bdb``
-     - None
-     - https://man7.org/linux/man-pages/man8/rpmdb.8.html
-   * - RPM installed package NDB database
-     - ``*usr/lib/sysimage/rpm/Packages.db``
-     - ``rpm``
-     - ``linux``
-     - ``rpm_installed_database_ndb``
-     - None
-     - https://fedoraproject.org/wiki/Changes/NewRpmDBFormat
-   * - RPM installed package SQLite database
-     - ``*rpm/rpmdb.sqlite``
-     - ``rpm``
-     - ``linux``
-     - ``rpm_installed_database_sqlite``
-     - None
-     - https://fedoraproject.org/wiki/Changes/Sqlite_Rpmdb
    * - RPM mariner distroless package manifest
      - ``*var/lib/rpmmanifest/container-manifest-2``
      - ``rpm``
@@ -970,27 +952,6 @@ parsers in scancode-toolkit during documentation builds.
      - ``java_war_web_xml``
      - Java
      - https://en.wikipedia.org/wiki/WAR_(file_format)
-   * - Windows Registry Installed Program - Docker SOFTWARE
-     - ``*/Files/Windows/System32/config/SOFTWARE``
-     - ``windows-program``
-     - ``linux``
-     - ``win_reg_installed_programs_docker_file_software``
-     - None
-     - https://en.wikipedia.org/wiki/Windows_Registry
-   * - Windows Registry Installed Program - Docker Software Delta
-     - ``*/Hives/Software_Delta``
-     - ``windows-program``
-     - ``linux``
-     - ``win_reg_installed_programs_docker_software_delta``
-     - None
-     - https://en.wikipedia.org/wiki/Windows_Registry
-   * - Windows Registry Installed Program - Docker UtilityVM SOFTWARE
-     - ``*/UtilityVM/Files/Windows/System32/config/SOFTWARE``
-     - ``windows-program``
-     - ``linux``
-     - ``win_reg_installed_programs_docker_utility_software``
-     - None
-     - https://en.wikipedia.org/wiki/Windows_Registry
    * - Microsoft Update Manifest .mum file
      - ``*.mum``
      - ``windows-update``
@@ -1021,3 +982,4 @@ parsers in scancode-toolkit during documentation builds.
      - ``windows_executable``
      - None
      - https://en.wikipedia.org/wiki/Portable_Executable
+   
