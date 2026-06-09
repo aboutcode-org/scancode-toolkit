@@ -1,0 +1,307 @@
+---
+key: wender-media-sal-1.0
+short_name: Wender Media Source License v1.0
+name: Wender Media Source License, Version 1.0
+category: Source-available
+owner: Arnold Wender
+homepage_url: https://github.com/arnoldwender/wm-project-astro-components/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-wender-media-sal-1.0
+ignorable_copyrights:
+    - Copyright (c) 2007-2026 Arnold Wender
+ignorable_holders:
+    - Arnold Wender
+ignorable_urls:
+    - https://github.com/arnoldwender/wm-project-astro-components
+    - https://img.shields.io/badge/built%20with-wendermedia-blue
+    - https://www.wendermedia.com/
+ignorable_emails:
+    - info@wendermedia.com
+---
+
+Wender Media Source License, Version 1.0
+=========================================
+
+SPDX-License-Identifier: LicenseRef-Wender-Media-Source-1.0
+
+Copyright (c) 2007-2026 Arnold Wender · Wender Media
+All Rights Reserved.
+
+Project:  @wendermedia/astro-components
+URL:      https://github.com/arnoldwender/wm-project-astro-components
+Contact:  Arnold Wender <info@wendermedia.com> · https://www.wendermedia.com
+
+------------------------------------------------------------------------
+Preamble
+------------------------------------------------------------------------
+
+This is a source-available proprietary license. The Software is made
+available so that You can read, study, modify, build with, and
+redistribute it, while ownership and the right to set the license terms
+remain with the Licensor (Arnold Wender · Wender Media).
+
+The license intends to be friendly to commercial and non-commercial Use
+without fee or tier limit, while ensuring that the Software cannot be
+relicensed under more permissive terms (such as MIT, Apache, or any
+similar permissive or public-domain regime) and that authorship is not
+misrepresented.
+
+This license is not an Open Source license as defined by the Open Source
+Initiative.
+
+------------------------------------------------------------------------
+1. Definitions
+------------------------------------------------------------------------
+
+1.1 "Software" means the source code, compiled artifacts, configuration
+    files, templates, design tokens, documentation, and any other
+    materials distributed under this License from the Project URL above
+    or via the npm registry under the package name
+    `@wendermedia/astro-components`.
+
+1.2 "Licensor" means Arnold Wender, doing business as Wender Media.
+
+1.3 "You" (or "Your") means an individual or legal entity exercising
+    permissions granted by this License.
+
+1.4 "Modification" means any change, addition, deletion, or
+    transformation of the Software.
+
+1.5 "Derivative Work" means any work that is based on (or derived from)
+    the Software, including Modifications, translations, adaptations,
+    arrangements, ports, and combinations with other software in which
+    the Software is included as a meaningful component.
+
+1.6 "Distribute" means to make available to a third party, whether by
+    download, copy, transmission, hosting, embedding in a published
+    artifact, or any other means.
+
+1.7 "Contribution" means any work of authorship submitted to the
+    Licensor for inclusion in the Software (for example, by pull
+    request, patch, issue attachment, or email).
+
+1.8 "Use" means to install, run, evaluate, integrate with, or otherwise
+    operate the Software for any commercial or non-commercial purpose.
+
+------------------------------------------------------------------------
+2. Grant of Copyright License
+------------------------------------------------------------------------
+
+Subject to the terms and conditions of this License, the Licensor
+hereby grants You a worldwide, royalty-free, non-exclusive,
+non-transferable license to:
+
+(a) Use the Software, for commercial and non-commercial purposes,
+    without quantity, revenue, or seat limits;
+
+(b) Reproduce the Software in source or compiled form;
+
+(c) Modify the Software and create Derivative Works thereof for
+    Your own use and for Distribution under this License;
+
+(d) Distribute the Software and Derivative Works, in source or
+    compiled form, provided that You comply with Section 4
+    (Conditions) and Section 5 (Restrictions).
+
+------------------------------------------------------------------------
+3. Grant of Patent License
+------------------------------------------------------------------------
+
+3.1 Subject to the terms and conditions of this License, the Licensor
+    hereby grants You a worldwide, royalty-free, non-exclusive,
+    irrevocable (except as stated in this Section) patent license to
+    make, have made, use, offer to sell, sell, import, and otherwise
+    transfer the Software, where such license applies only to those
+    patent claims licensable by the Licensor that are necessarily
+    infringed by the Software alone or by combination of the Software
+    with the Project to which the Software was contributed.
+
+3.2 If You institute patent litigation against any entity (including a
+    cross-claim or counterclaim in a lawsuit) alleging that the
+    Software, a Contribution incorporated within the Software, or any
+    Derivative Work, constitutes direct or contributory patent
+    infringement, then any patent licenses granted to You under this
+    License for the Software shall terminate as of the date such
+    litigation is filed.
+
+------------------------------------------------------------------------
+4. Conditions
+------------------------------------------------------------------------
+
+When You Distribute the Software or any Derivative Work, You must:
+
+4.1 Preserve all copyright, patent, trademark, and attribution notices
+    contained in the source files of the Software, including any
+    `@copyright` and `@license` headers in source files. You may add
+    Your own copyright notice for Modifications You author, provided
+    You do not remove or obscure those of the Licensor.
+
+4.2 Include a verbatim, unmodified copy of this License (in a file
+    named `LICENSE`) and the `NOTICE` file (if present) in any
+    distribution that contains the Software or a Derivative Work.
+
+4.3 If You distribute a `package.json`, `pyproject.toml`, `Cargo.toml`,
+    `composer.json`, or comparable manifest that originated from the
+    Software, preserve the `author` and `contributors` fields therein.
+    You may append Your own entries; You must not remove or
+    misrepresent those of the Licensor.
+
+4.4 License the entirety of any Derivative Work You Distribute under
+    this same License, Version 1.0 or any later version published by
+    the Licensor (this is a weak copyleft: it covers the parts of the
+    Derivative Work that contain the Software or Modifications of it,
+    not unrelated software that merely interoperates with it via
+    documented interfaces, configuration files, or runtime APIs).
+
+4.5 If You modify a source file of the Software, carry prominent
+    notices stating that You changed the file and the date of any
+    change.
+
+------------------------------------------------------------------------
+5. Restrictions
+------------------------------------------------------------------------
+
+You must not:
+
+5.1 Sublicense the Software or any Derivative Work under any license
+    that is more permissive than this License, including but not
+    limited to the MIT License, the BSD licenses, the Apache License
+    2.0, the ISC License, the Creative Commons CC0 dedication or any
+    Creative Commons "Attribution" license, the Mozilla Public License,
+    the Eclipse Public License, the Unlicense, or any release into the
+    public domain.
+
+5.2 Remove, alter, or obscure any copyright, patent, trademark, or
+    attribution notices contained in the Software.
+
+5.3 Misrepresent the authorship of the Software, including by
+    presenting unmodified Software, modified Software, or any
+    Derivative Work as Your own original work, or by removing
+    references to the Licensor as the original author.
+
+5.4 Use the names "Wender Media", "Arnold Wender", "WenderMedia", or
+    "@wendermedia" in the name of a Derivative Work, in marketing
+    material, in domain names, or in any way that suggests endorsement
+    by or affiliation with the Licensor, without prior written
+    permission from the Licensor.
+
+------------------------------------------------------------------------
+6. Recommended (Non-Mandatory) Attribution
+------------------------------------------------------------------------
+
+The following attribution practices are appreciated by the Licensor
+and encouraged in the community, but are NOT required by this License
+and their omission is NOT a breach:
+
+(a) A "Built with @wendermedia/astro-components" badge in Your README:
+
+    [![Built with @wendermedia/astro-components](https://img.shields.io/badge/built%20with-wendermedia-blue)](https://github.com/arnoldwender/wm-project-astro-components)
+
+(b) A "Components by Wender Media (https://www.wendermedia.com)" line
+    in Your project credits, About page, or footer.
+
+------------------------------------------------------------------------
+7. Contributions
+------------------------------------------------------------------------
+
+7.1 Unless You explicitly state otherwise in writing at the time of
+    submission, any Contribution You intentionally submit for inclusion
+    in the Software shall be licensed to the Licensor under the terms
+    of this License, without any additional terms or conditions, and
+    You represent that You have the right to submit it under such
+    terms.
+
+7.2 The Licensor may, at the Licensor's sole discretion, accept,
+    modify, or reject any Contribution.
+
+------------------------------------------------------------------------
+8. Trademarks
+------------------------------------------------------------------------
+
+This License does not grant You any rights to use the trade names,
+trademarks, service marks, or product names of the Licensor, except as
+required for describing the origin of the Software and reproducing the
+content of the LICENSE and NOTICE files.
+
+------------------------------------------------------------------------
+9. Disclaimer of Warranty
+------------------------------------------------------------------------
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
+NON-INFRINGEMENT. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF
+THE SOFTWARE IS WITH YOU. SHOULD THE SOFTWARE PROVE DEFECTIVE, YOU
+ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR, OR CORRECTION.
+
+------------------------------------------------------------------------
+10. Limitation of Liability
+------------------------------------------------------------------------
+
+IN NO EVENT AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING
+NEGLIGENCE), CONTRACT, OR OTHERWISE, UNLESS REQUIRED BY APPLICABLE LAW
+(SUCH AS DELIBERATE AND GROSSLY NEGLIGENT ACTS) OR AGREED TO IN
+WRITING, SHALL THE LICENSOR BE LIABLE TO YOU FOR DAMAGES, INCLUDING
+ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF
+ANY CHARACTER ARISING AS A RESULT OF THIS LICENSE OR OUT OF THE USE OR
+INABILITY TO USE THE SOFTWARE (INCLUDING BUT NOT LIMITED TO DAMAGES
+FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION,
+OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES), EVEN IF THE
+LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+------------------------------------------------------------------------
+11. Termination
+------------------------------------------------------------------------
+
+11.1 This License and the rights granted hereunder will terminate
+     automatically if You fail to comply with any of its terms and
+     conditions.
+
+11.2 Notwithstanding Section 11.1, if You cure the breach within
+     thirty (30) calendar days after becoming aware of it (whether by
+     Your own discovery or by written notice from the Licensor),
+     Your rights under this License are reinstated retroactively from
+     the date of the breach, provided that the breach is the first
+     such breach received from You.
+
+11.3 Sections 5 (Restrictions), 8 (Trademarks), 9 (Disclaimer of
+     Warranty), 10 (Limitation of Liability), 12 (Severability), and
+     13 (Governing Law) survive termination.
+
+11.4 Termination of Your rights under this License does not terminate
+     the rights of recipients who have received copies or rights from
+     You under this License and who continue to comply with its terms.
+
+------------------------------------------------------------------------
+12. Severability
+------------------------------------------------------------------------
+
+If any provision of this License is held to be unenforceable, such
+provision shall be reformed only to the extent necessary to make it
+enforceable. The remaining provisions shall remain in full force and
+effect.
+
+------------------------------------------------------------------------
+13. Governing Law
+------------------------------------------------------------------------
+
+This License shall be governed by and construed in accordance with the
+laws of the Federal Republic of Germany, excluding its conflict-of-laws
+rules and excluding the United Nations Convention on Contracts for the
+International Sale of Goods. Place of jurisdiction is Halle (Saale),
+Germany, to the extent permitted by applicable law.
+
+------------------------------------------------------------------------
+14. Entire Agreement
+------------------------------------------------------------------------
+
+This License constitutes the entire agreement between You and the
+Licensor with respect to the Software and supersedes all prior or
+contemporaneous understandings regarding such subject matter. The
+Licensor may publish revised and/or new versions of this License from
+time to time. Each version will be given a distinguishing version
+number. Except as expressly stated, no version automatically applies
+to Software released under a previous version.
+
+------------------------------------------------------------------------
+
+End of Wender Media Source License, Version 1.0
