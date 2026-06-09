@@ -15,6 +15,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Aryan Kenchappagol @aryanxk02
 - Avi Aryan @aviaryan
 - Aviral Verma @avirlrma
+- Ayush @macayu17
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
 - Ayush Jain @aj4ayushjain
 - Bruno Oliveira @nicoddemus

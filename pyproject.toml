@@ -113,7 +113,7 @@ Homepage = "https://github.com/nexB/scancode-toolkit"
 [project.optional-dependencies]
 # no impact but added for symmetry with the other pyproject.toml
 licenses = [
-    "licensecode-data",
+    "licensedcode-data",
     "licensedcode-index",
 ]
 
