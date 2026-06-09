@@ -1,0 +1,11 @@
+NAME="KDE neon"
+VERSION="5.9"
+ID=neon
+ID_LIKE="ubuntu debian"
+PRETTY_NAME="KDE neon User Edition 5.9"
+VERSION_ID="16.04"
+HOME_URL="http://neon.kde.org/"
+SUPPORT_URL="http://neon.kde.org/"
+BUG_REPORT_URL="http://bugs.kde.org/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial

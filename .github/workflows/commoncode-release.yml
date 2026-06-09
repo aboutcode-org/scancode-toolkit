@@ -1,0 +1,92 @@
+name: Create library release archives, create a GH release and publish PyPI wheel and sdist on tag in main branch
+
+
+# This is executed automatically on a tag in the main branch
+
+# Summary of the steps:
+# - build wheels and sdist
+# - upload wheels and sdist to PyPI
+# - create gh-release and upload wheels and dists there
+# TODO: smoke test wheels and sdist
+# TODO: add changelog to release text body
+
+# WARNING: this is designed only for packages building as pure Python wheels
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "commoncode-v*.*.*"
+
+jobs:
+  build-pypi-distribs:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+
+    name: Build and publish library to PyPI
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
+        with:
+          python-version: 3.14
+
+      - name: Install pypa/build and twine
+        run: python -m pip install --user --upgrade build twine pkginfo flot
+
+      - name: Install requirements then build main and mini wheel
+        run: etc/release/commoncode-create-pypi-wheel-and-sdist.sh
+
+      - name: Upload built archives
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: pypi_archives
+          path: dist/*
+
+
+  create-gh-release:
+    permissions:
+      contents: write
+
+    name: Create GH release
+    needs:
+      - build-pypi-distribs
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Download built archives
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        with:
+          name: pypi_archives
+          path: dist
+
+      - name: Create GH release
+        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda
+        with:
+          draft: true
+          files: dist/*
+
+
+  create-pypi-release:
+    name: Create PyPI release
+    needs:
+      - create-gh-release
+    runs-on: ubuntu-24.04
+    environment: pypi-publish
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Download built archives
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        with:
+          name: pypi_archives
+          path: dist
+
+      - name: Publish to PyPI
+        if: startsWith(github.ref, 'refs/tags')
+        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b

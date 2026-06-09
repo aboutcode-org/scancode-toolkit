@@ -1,0 +1,13 @@
+{
+  "NAME": "SharkLinux",
+  "VERSION": "SharkLinux OS (CR)",
+  "ID": "sharklinux",
+  "ID_LIKE": "ubuntu",
+  "PRETTY_NAME": "SharkLinux",
+  "VERSION_ID": "CR",
+  "HOME_URL": "http://www.sharklinuxos.org/",
+  "SUPPORT_URL": "http://support.sharklinuxos.org/",
+  "BUG_REPORT_URL": "http://support.sharklinuxos.org/",
+  "VERSION_CODENAME": "sharklinuxos",
+  "UBUNTU_CODENAME": "xenial"
+}

@@ -1,0 +1,17 @@
+{
+  "NAME": "Fedora",
+  "VERSION": "27 (Twenty Seven)",
+  "ID": "fedora",
+  "VERSION_ID": "27",
+  "PRETTY_NAME": "Fedora 27 (Twenty Seven)",
+  "ANSI_COLOR": "0;34",
+  "CPE_NAME": "cpe:/o:fedoraproject:fedora:27",
+  "HOME_URL": "https://fedoraproject.org/",
+  "SUPPORT_URL": "https://fedoraproject.org/wiki/Communicating_and_getting_help",
+  "BUG_REPORT_URL": "https://bugzilla.redhat.com/",
+  "REDHAT_BUGZILLA_PRODUCT": "Fedora",
+  "REDHAT_BUGZILLA_PRODUCT_VERSION": "27",
+  "REDHAT_SUPPORT_PRODUCT": "Fedora",
+  "REDHAT_SUPPORT_PRODUCT_VERSION": "27",
+  "PRIVACY_POLICY_URL": "https://fedoraproject.org/wiki/Legal:PrivacyPolicy"
+}

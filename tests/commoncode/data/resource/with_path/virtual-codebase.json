@@ -1,0 +1,75 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "31.0.0b4",
+      "options": {
+        "input": [
+          "tests/data/resource/with_path/codebase"
+        ],
+        "--json-pp": "tests/data/resource/with_path/virtual-codebase.json"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2022-05-16T125046.244384",
+      "end_timestamp": "2022-05-16T125046.286382",
+      "output_format_version": "2.0.0",
+      "duration": 0.0420069694519043,
+      "message": null,
+      "errors": [],
+      "warnings": [],
+      "extra_data": {
+        "system_environment": {
+          "operating_system": "linux",
+          "cpu_architecture": "64",
+          "platform": "Linux-4.15.0-177-generic-x86_64-with-glibc2.17",
+          "platform_version": "#186~16.04.1-Ubuntu SMP Wed Apr 20 09:41:17 UTC 2022",
+          "python_version": "3.8.12 (default, Jan 29 2022, 10:00:28) \n[GCC 5.4.0 20160609]"
+        },
+        "spdx_license_list_version": "3.16",
+        "files_count": 5
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "codebase",
+      "type": "directory",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/abc",
+      "type": "file",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/et131x.h",
+      "type": "file",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/dir",
+      "type": "directory",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/dir/that",
+      "type": "file",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/dir/this",
+      "type": "file",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/other dir",
+      "type": "directory",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/other dir/file",
+      "type": "file",
+      "scan_errors": []
+    }
+  ]
+}

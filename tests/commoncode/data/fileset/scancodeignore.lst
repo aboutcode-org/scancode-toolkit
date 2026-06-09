@@ -1,0 +1,5 @@
+/foo/*
+!/foobar/*
+
+bar/*
+#comment
