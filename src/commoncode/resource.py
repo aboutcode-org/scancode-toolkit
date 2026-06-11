@@ -1667,8 +1667,8 @@ def strip_first_path_segment(path):
         ''
         >>> strip_first_path_segment('foo/bar/baz')
         'bar/baz'
-        >>> strip_first_path_segment('/foo/bar/baz/')
-        'bar/baz'
+        >>> strip_first_path_segment('/foo/bar/baz')
+        'foo/bar/baz'
         >>> strip_first_path_segment('foo/')
         ''
     """

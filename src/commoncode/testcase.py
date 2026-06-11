@@ -132,7 +132,7 @@ class FileDrivenTesting(object):
         
         if relative:
             _, _, rel_test_loc = test_loc.rpartition(os.getcwd())
-            return rel_test_loc.strip("/")
+            return rel_test_loc.strip("/").strip("\\")
 
         return test_loc
 
