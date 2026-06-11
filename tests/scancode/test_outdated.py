@@ -152,8 +152,8 @@ def test_fetch_newer_version_no_new_version():
             json=jget,
             status_code=200
         )
-        assert not outdated.fetch_newer_version(force=True)
-        assert not outdated.check_scancode_version(force=True)
+        assert not outdated.fetch_newer_version(force=True, is_test=True)
+        assert not outdated.check_scancode_version(force=True, is_test=True)
 
 
 def test_fetch_newer_version_local_git_version():
