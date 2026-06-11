@@ -42,9 +42,6 @@ metadata_files = [
 
 requires-python = ">=3.10"
 
-[project.urls]
-Homepage = "https://github.com/nexB/scancode-toolkit"
-
 dependencies = [
     "attrs >= 18.1,!=20.1.0;python_version<'3.11'",
     "attrs >= 22.1.0;python_version>='3.11'",
@@ -55,6 +52,8 @@ dependencies = [
     "text_unidecode >= 1.0"
 ]
 
+[project.urls]
+Homepage = "https://github.com/nexB/scancode-toolkit"
 
 [project.optional-dependencies]
 dev = [

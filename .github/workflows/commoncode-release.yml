@@ -1,4 +1,4 @@
-name: Create library release archives, create a GH release and publish PyPI wheel and sdist on tag in main branch
+name: Create and release commoncode wheels on GitHub and Pypi
 
 
 # This is executed automatically on a tag in the main branch
