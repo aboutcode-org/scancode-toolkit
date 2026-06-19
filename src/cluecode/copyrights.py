@@ -1234,6 +1234,9 @@ PATTERNS = [
 
     (r"^[a-z].+\(s\)[\.,]?$", 'JUNK'),
 
+    # acronym with an opening parenthesized expansion, as in "KISA(Korea"
+    (r"^[A-Z]{2,}\([A-Z][A-Za-z]+$", 'NNP'),
+
     # parens in the middle: for(var
     (r"^[a-zA-Z]+[\)\(]+,?[\)\(]?[a-zA-Z]+[\.,]?$", 'JUNK'),
 

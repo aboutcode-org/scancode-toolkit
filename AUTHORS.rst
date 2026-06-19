@@ -102,6 +102,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Vibhu Agarwal @Vibhu-Agarwal
 - Viktor Tiulpin @tiulpin
 - Vinay Kumar Singh @Vinay0001
+- Vincent Gao @gaoflow
 - Virag Umathe @viragumathe5
 - Yash D. Saraf @yashdsaraf
 - Yash Nisar @yash-nisar
