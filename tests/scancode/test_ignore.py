@@ -220,6 +220,21 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
         scan_locs = [x['path'] for x in scan_result['files']]
         assert scan_locs == [u'user', u'user/src', u'user/src/test']
 
+    def test_scancode_ignore_files_from_config(self):
+        test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
+        config_file = self.get_test_loc('plugin_ignore/ignore.yaml')
+        result_file = self.get_temp_file('json')
+        args = ['--copyright', '--strip-root', '--config-file', config_file, test_dir, '--json', result_file]
+        run_scan_click(args)
+        scan_result = load_json_result(result_file)
+        assert scan_result['headers'][0]['extra_data']['files_count'] == 0
+        scan_locs = [x['path'] for x in scan_result['files']]
+        expected = [
+            u'user',
+            u'user/src',
+        ]
+        assert scan_locs == expected
+
     def test_scancode_codebase_attempt_to_access_an_ignored_resourced_cached_to_disk(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
         result_file = self.get_temp_file('json')

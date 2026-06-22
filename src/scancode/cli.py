@@ -17,12 +17,14 @@ import json
 import logging
 import os
 import platform
+import saneyaml
 import sys
 import traceback
 
 from collections import defaultdict
 from functools import partial
 from multiprocessing import TimeoutError
+from pathlib import Path
 from time import sleep
 from time import time
 
@@ -231,6 +233,15 @@ def default_processes():
     cls=PluggableCommandLineOption,
 )
 
+@click.option('-c', '--config-file',
+    type=click.File('r'),
+    required=False,
+    help='Path to the configuration file.',
+    sort_order=11,
+    help_group=cliutils.CORE_GROUP,
+    cls=PluggableCommandLineOption,
+)
+
 @click.option('--strip-root',
     is_flag=True,
     default=False,
@@ -405,6 +416,7 @@ def default_processes():
 def scancode(
     ctx,
     input,  # NOQA
+    config_file,
     ignore,
     strip_root,
     full_root,
@@ -517,6 +529,7 @@ def scancode(
         success, _results = run_scan(
             input=input,
             ignore=ignore,
+            config_file=config_file,
             from_json=from_json,
             strip_root=strip_root,
             full_root=full_root,
@@ -558,6 +571,7 @@ def scancode(
 
 def run_scan(
     input,  # 
+    config_file=None,
     ignore=[],
     from_json=False,
     strip_root=False,
@@ -666,6 +680,10 @@ def run_scan(
         # will start from, even though the root is the common prefix
         include = [as_posixpath(path).rstrip('/') for path in abs_input]
         input = common_prefix  # NOQA
+
+    config_ignores = load_configuration_file(config_file)
+    if config_ignores:
+        ignore = ignore + tuple(config_ignores)
 
     # build mappings of all options to pass down to plugins
     standard_options = dict(
@@ -1106,6 +1124,34 @@ def run_scan(
                 echo_func('done.', fg='green')
 
     return success, results
+
+
+def load_configuration_file(path):
+    """
+    Load scancode configuration values from a file at `path`.
+
+    Currently only supports ignore path patterns specified with
+    "ignored_patterns". This should be compatible with scancode.io
+    configuration values whenever possible:
+    https://scancodeio.readthedocs.io/en/latest/project-configuration.html
+    """
+    ignores = []
+    if not path:
+        return ignores
+
+    click.echo(f"Loading env from {path}")
+    try:
+        
+        config_values = saneyaml.load(path.read())
+        ignores = config_values.get("ignored_patterns", [])
+    except (saneyaml.YAMLError, Exception):
+        msg = (
+            f'Failed to load configuration from "{path}". '
+            f"The file format is invalid."
+        )
+        raise ScancodeError(msg + '\n' + traceback.format_exc())
+
+    return ignores
 
 
 def run_codebase_plugins(
