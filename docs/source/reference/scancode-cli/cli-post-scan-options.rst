@@ -17,6 +17,56 @@ To see all plugins available via command line help, use ``--plugins``.
 
 ----
 
+.. _cli-classify-option:
+
+``--classify``
+--------------
+
+    .. admonition:: Sub-option
+
+        The options ``--license-clarity-score`` and ``--tallies-key-files`` are sub-options of
+        ``--classify``. ``--license-clarity-score`` and ``--tallies-key-files`` are Post-Scan
+        Options.
+
+    **Example**
+
+    .. code-block:: shell
+
+        scancode -clpieu --json-pp sample_facet.json samples --classify
+
+    This option makes ScanCode further classify scanned files/directories, to determine whether they
+    fall in these following categories
+
+    - legal
+    - readme
+    - top-level
+    - manifest
+
+        A manifest file in computing is a file containing metadata for a group of accompanying
+        files that are part of a set or coherent unit.
+
+    - key-file
+
+        A KEY file serves as a keystone element, containing essential
+        information about a software package — such as its dependencies,
+        versioning, licensing, and more. It often contains the
+        ``primary-license`` or the overall license of the package, among
+        other package metadata which are general or ecosystem specific.
+
+    As in, to the JSON object of each file scanned, these extra attributes are added.
+
+    .. code-block:: json
+
+      {
+        "is_legal": false,
+        "is_manifest": false,
+        "is_readme": true,
+        "is_top_level": true,
+        "is_key_file": true
+      }
+
+----
+
 .. _cli-mark-source-option:
 
 ``--mark-source``
