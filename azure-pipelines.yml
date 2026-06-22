@@ -183,6 +183,21 @@ jobs:
                   venv/bin/scancode -i --verbose samples/ -n3 --json foo.json;
                  done
 
+################################################################################
+# Tests with released commoncode instead of local editable commoncode
+################################################################################
+
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          job_name: ubuntu_test_released_commocode
+          image_name: ubuntu-22.04
+          python_versions: ['3.14']
+          python_architecture: x64
+          test_suites:
+              all:
+                venv/bin/pip uninstall commoncode && venv/bin/pip install commoncode
+                venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
+
 
 ################################################################################
 # Tests using a plain pip install to get the latest of all wheels

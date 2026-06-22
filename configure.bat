@@ -162,6 +162,9 @@ if %ERRORLEVEL% neq 0 (
     %PIP_EXTRA_ARGS% ^
     %FLOT_REQUIREMENTS%
 
+"%CFG_BIN_DIR%\flot" --pyproject pyproject-commoncode.toml
+"%CFG_BIN_DIR%\pip" install ./dist/commoncode*.whl
+
 "%CFG_BIN_DIR%\pip" install ^
     --upgrade ^
     %CFG_QUIET% ^
