@@ -195,8 +195,7 @@ jobs:
           python_architecture: x64
           test_suites:
               all:
-                venv/bin/pip uninstall commoncode && venv/bin/pip install commoncode
-                venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
+                venv/bin/pip uninstall -y commoncode && venv/bin/pip install commoncode && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
 
 
 ################################################################################
