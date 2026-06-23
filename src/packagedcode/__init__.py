@@ -167,6 +167,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     pypi.PipfileHandler,
     pypi.PipfileLockHandler,
+    pypi.PipCacheOriginHandler,
     pypi.PipRequirementsFileHandler,
     pypi.PypiEggHandler,
     # pypi.PypiSdistArchiveHandler,

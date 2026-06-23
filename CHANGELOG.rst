@@ -4,6 +4,12 @@ Changelog
 Next release
 --------------
 
+- Add support for parsing pip cache directories. ScanCode now detects
+  ``.cache/pip/wheels/`` directories and parses ``origin.json`` files
+  to collect cached Python packages with their name, version, and
+  SHA-256 hashes.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4220
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
