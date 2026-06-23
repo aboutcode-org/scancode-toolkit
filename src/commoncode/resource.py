@@ -49,6 +49,7 @@ from commoncode.fileutils import delete
 from commoncode.fileutils import file_name
 from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
+from commoncode.system import to_os_native_path
 
 """
 This module provides Codebase and Resource objects as an abstraction for files
@@ -615,6 +616,9 @@ class Codebase:
                 if not created.is_file:
                     parents_by_loc[created.location] = created
 
+        if TRACE_DEEP:
+            logger_debug(f"parents_by_loc: {parents_by_loc}")
+
         # we start walking through all the input locations
         for included_location in includes:
             # Walk over the directory and build the resource tree
@@ -624,7 +628,12 @@ class Codebase:
                 max_depth=self.max_depth,
                 error_handler=err,
             ):
-                parent = parents_by_loc.pop(top)
+                if TRACE_DEEP:
+                    logger_debug(f"parents_by_loc: {parents_by_loc}")
+                try:
+                    parent = parents_by_loc.pop(top)
+                except KeyError:
+                    raise Exception(parents_by_loc, includes, root.location, )
                 for created in self._create_resources(
                     parent=parent,
                     top=top,
@@ -669,7 +678,7 @@ class Codebase:
             _, _, extra_dir_path = included_path.rpartition(root.location)
             extra_dirs = extra_dir_path.strip("/").split("/")
             if TRACE_DEEP:
-                    logger_debug(f"_create_resources_common_prefix_to_inputs: root:{root.location}, includes: {includes}")
+                logger_debug(f"_create_resources_common_prefix_to_inputs: included_path:{included_path}, extra_dirs: {extra_dirs}")
 
             dir_resource = root
             for dir_segment in extra_dirs:
@@ -678,8 +687,9 @@ class Codebase:
                     parent=dir_resource,
                     is_file=False,
                 )
-                if TRACE:
-                    logger_debug("Codebase.create_resources:", dir_resource)
+                if TRACE_DEEP:
+                    logger_debug(f"_create_resources_common_prefix_to_inputs: dir_resource:{dir_resource}, extra_dirs: {extra_dirs}")
+
                 yield dir_resource
 
     def _create_root_resource(self):
