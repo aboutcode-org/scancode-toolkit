@@ -49,6 +49,7 @@ from commoncode.fileutils import delete
 from commoncode.fileutils import file_name
 from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
+from commoncode.system import to_os_native_path
 
 """
 This module provides Codebase and Resource objects as an abstraction for files
@@ -64,7 +65,7 @@ This module handles all the details of walking files, path handling and caching.
 
 # Tracing flags
 TRACE = False
-TRACE_DEEP = False
+TRACE_DEEP = True
 
 
 def logger_debug(*args):
@@ -586,7 +587,7 @@ class Codebase:
         # track resources parents by location during construction.
         # NOTE: this cannot exhaust memory on a large codebase, because we do
         # not keep parents already walked and we walk topdown.
-        parents_by_loc = {root.location: root}
+        parents_by_loc = {to_os_native_path(root.location): root}
 
         def err(_error):
             """os.walk error handler"""
@@ -613,7 +614,10 @@ class Codebase:
                 includes=includes,
             ):
                 if not created.is_file:
-                    parents_by_loc[created.location] = created
+                    parents_by_loc[to_os_native_path(created.location)] = created
+
+        if TRACE_DEEP:
+            logger_debug(f"parents_by_loc: {parents_by_loc}")
 
         # we start walking through all the input locations
         for included_location in includes:
@@ -624,7 +628,12 @@ class Codebase:
                 max_depth=self.max_depth,
                 error_handler=err,
             ):
-                parent = parents_by_loc.pop(top)
+                if TRACE_DEEP:
+                    logger_debug(f"parents_by_loc: {parents_by_loc}")
+                try:
+                    parent = parents_by_loc.pop(top)
+                except KeyError:
+                    raise Exception(parents_by_loc, includes, root.location, )
                 for created in self._create_resources(
                     parent=parent,
                     top=top,
@@ -634,7 +643,7 @@ class Codebase:
                 ):
                     # on the plain, bare FS, files cannot be parents
                     if not created.is_file:
-                        parents_by_loc[created.location] = created
+                        parents_by_loc[to_os_native_path(created.location)] = created
 
     def _create_resources(self, parent, top, dirs, files, skip_ignored=skip_ignored):
         """
