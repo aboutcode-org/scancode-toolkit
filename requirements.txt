@@ -10,6 +10,7 @@ cffi==2.0.0
 chardet==5.2.0
 charset-normalizer==3.4.4
 click==8.3.1
+commoncode==32.5.2
 colorama==0.4.6
 construct==2.10.70
 container-inspector==33.0.0
