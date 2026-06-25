@@ -3,7 +3,7 @@ name: New License Request
 about: Request a new license for scancode detection purposes
 title: 'New license request: '
 labels: new-license
-assignees: DennisClark
+assignees: hesa
 
 ---
 
