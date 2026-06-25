@@ -1,0 +1,12 @@
+NAME="Ubuntu"
+VERSION="16.10 (Yakkety Yak)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.10"
+VERSION_ID="16.10"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="http://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=yakkety
+UBUNTU_CODENAME=yakkety

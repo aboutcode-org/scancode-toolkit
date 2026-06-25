@@ -2,7 +2,7 @@
 key: vcvrack-exception-to-gpl-3.0
 short_name: VCV Rack NC Exception to GPL 3.0
 name: VCV Rack Non-Commercial Plugin License Exception to GPL 3.0
-category: Copyleft Limited
+category: Non-Commercial
 owner: VCVRack
 homepage_url: https://github.com/VCVRack/Rack/blob/v2/LICENSE.md#vcv-rack-non-commercial-plugin-license-exception
 is_exception: yes

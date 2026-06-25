@@ -2,7 +2,7 @@
 key: cockroachdb-2024-10-01
 short_name: CockroachDB Software License 2024-10-01
 name: CockroachDB Software License 2024-10-01
-category: Proprietary Free
+category: Non-Commercial
 owner: Cockroachlabs
 homepage_url: https://github.com/cockroachdb/cockroach/blob/master/LICENSE
 spdx_license_key: LicenseRef-scancode-cockroachdb-2024-10-01

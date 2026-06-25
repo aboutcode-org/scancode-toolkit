@@ -15,6 +15,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Aryan Kenchappagol @aryanxk02
 - Avi Aryan @aviaryan
 - Aviral Verma @avirlrma
+- Ayush @macayu17
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
 - Ayush Jain @aj4ayushjain
 - Bruno Oliveira @nicoddemus
@@ -22,6 +23,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Chaitya Shah @Chaitya62
 - Chin-Yeung Li @chinyeungli
 - Clement Poulain @FOSS117
+- Conley Owens @cco3
 - Daniel Eder @daniel-eder
 - Dan Kegel @dankegel
 - Dennis Clark @DennisClark
@@ -87,6 +89,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Shivam Sandbhor @sbs2001
 - Steven Esser @majurg
 - Sushant Gupta @susg
+- Theodore Aptekarev @piiq
 - Thomas Druez @tdruez
 - Thomas Steenbergen @tsteenbe
 - Thorsten Harter @ThorstenHarter

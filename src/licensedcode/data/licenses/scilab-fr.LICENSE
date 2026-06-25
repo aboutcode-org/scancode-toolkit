@@ -3,7 +3,7 @@ key: scilab-fr
 language: fr
 short_name: SCILAB FR
 name: Licence SCILAB
-category: Proprietary Free
+category: Non-Commercial
 owner: Scilab Consortium (Digiteo)
 homepage_url: http://web.archive.org/web/20051212214843/http://www.scilab.org/legal/license.html
 spdx_license_key: LicenseRef-scancode-scilab-fr

@@ -1,0 +1,26 @@
+---
+key: aikido-dual-agpl-commercial
+short_name: Aikido Dual AGPL-Commercial License
+name: Aikido Dual AGPL-Commercial License
+category: Copyleft
+owner: Aikido Security
+homepage_url: https://github.com/AikidoSec/firewall-php/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-aikido-dual-agpl-commercial
+text_urls:
+    - https://github.com/AikidoSec/safe-chain/blob/main/LICENSE
+ignorable_urls:
+    - https://app.aikido.dev/
+ignorable_emails:
+    - support@aikido.dev
+---
+
+This program is offered under a commercial and under the AGPL license.
+You can be released from the requirements of the AGPL license by purchasing
+a commercial license. Buying such a license is mandatory as soon as you
+develop commercial activities involving the Aikido Firewall software without
+disclosing the source code of your own applications. These activities include
+but are not limited to: offering paid services to customers in a web application
+or shipping Aikido with a closed source product.
+
+For more information, please contact Aikido Security at this
+address: support@aikido.dev or create an account at https://app.aikido.dev.

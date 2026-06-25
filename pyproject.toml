@@ -1,11 +1,330 @@
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+# note: this is the default pyproject.toml that is used only in development
+# we use flot the other pyproject*.toml files to build release wheels and archives
 
-[tool.setuptools_scm]
-# this is used populated when creating a git archive
-# and when there is .git dir and/or there is no git installed
-fallback_version = "9999.$Format:%h-%cs$"
+[build-system]
+requires = [ "flot>=0.7.0" ]
+build-backend = "flot.buildapi"
+
+[project]
+name = "scancode-toolkit-devel"
+version = "33.0.0rc1"
+description = "ScanCode is a tool to scan code for license, copyright, package and their documented dependencies and other interesting facts."
+readme = "README.rst"
+license = { text = "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft" }
+requires-python = ">=3.10"
+authors = [
+    { name = "nexB. Inc. and others", email = "info@aboutcode.org" },
+]
+keywords = [
+    "open source",
+    "scan",
+    "license",
+    "package",
+    "dependency",
+    "copyright",
+    "filetype",
+    "author",
+    "extract",
+    "licensing",
+    "sca",
+    "SBOM",
+    "spdx",
+    "cyclonedx",
+    "package-url",
+    "purl",
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "attrs >= 18.1,!=20.1.0;python_version<'3.11'",
+    "attrs >= 22.1.0;python_version>='3.11'",
+    "Beautifulsoup4[chardet] >= 4.13.0",
+    "boolean.py >= 4.0",
+    "chardet >= 3.0.0",
+    "click >= 6.7, !=7.0, !=8.1.8;python_version<'3.10'",
+    "click >= 8.2.0;python_version>='3.10'",
+    "colorama >= 0.3.9",
+    "cyseq >= 0.1.2",
+    "container-inspector >= 31.0.0",
+    "debian-inspector >= 31.1.0",
+    "dparse2 >= 0.7.0",
+    "fasteners",
+    "fingerprints >= 0.6.0, <=1.2.3",
+    "ftfy >=  6.0.0",
+    "gemfileparser2 >= 0.9.0",
+    "html5lib",
+    "importlib_metadata",
+    "intbitset >= 4.1.0",
+    "jaraco.functools",
+    "javaproperties >= 0.5",
+    "jinja2 >= 2.7.0",
+    "jsonstreams >= 0.5.0",
+    "license_expression >= 30.4.4",
+    "lxml >= 5.4.0",
+    "MarkupSafe >= 2.1.2",
+    "multiregex >= 2.0.3",
+    "normality <= 2.6.1",
+    "packageurl_python >= 0.9.0",
+    "packvers >= 21.0.0",
+    # use temp advanced patched release
+    "parameter-expansion-patched >= 0.3.1",
+    "pdfminer.six >= 20251227",
+    "pefile >= 2020.1.1",
+    "pip-requirements-parser >= 32.0.1",
+    "pkginfo2 >= 30.0.0",
+    "pluggy >= 1.0.0",
+    "plugincode >= 32.0.0",
+    "publicsuffix2",
+    "pyahocorasick >= 2.3.0",
+    "pygmars >= 1.0.0",
+    "pygments >= 1.0.0",
+    "pymaven_patch >= 0.2.8",
+    "requests >= 2.7.0",
+    "saneyaml >= 0.6.0",
+    "spdx_tools == 0.8.2",
+    "text_unidecode >= 1.0",
+    "tomli >= 2",
+    "urlpy",
+    "xmltodict >= 0.11.0",
+    "zipp >= 3.0.0; python_version < \"3.9\"",
+    "typecode >= 30.0.1",
+    "typecode[full] >= 30.1.0",
+    "extractcode[full] >= 31.0.0",
+]
+
+
+[project.urls]
+Homepage = "https://github.com/nexB/scancode-toolkit"
+
+
+[project.optional-dependencies]
+# no impact but added for symmetry with the other pyproject.toml
+licenses = [
+    "licensedcode-data",
+    "licensedcode-index",
+]
+
+# no impact but added for symmetry with the other pyproject.toml
+full = [
+    "extractcode[full] >= 31.0.0",
+    "typecode[full] >= 30.1.0",
+]
+
+# linux-only package handling
+packages = [
+    "rpm_inspector_rpm >= 4.16.1.3; platform_system == 'Linux'",
+    "regipy >= 3.1.0; platform_system == 'Linux'",
+    "packagedcode_msitools >= 0.101.210706; platform_system == 'Linux'",
+    "go-inspector >= 0.5.0; platform_system == 'Linux'",
+    "rust-inspector >= 0.2.1; platform_system == 'Linux'",
+]
+
+dev = [
+    "flot >= 0.7.0",
+    "pytest >= 6, != 7.0.0",
+    "pytest-xdist >= 2",
+    "aboutcode-toolkit >= 7.0.2",
+    "pycodestyle >= 2.8.0",
+    "twine",
+    "black",
+    "isort",
+    "vendorize >= 0.3.0",
+    "pytest-rerunfailures",
+    "ruff",
+    "bump-my-version",
+    "Sphinx >= 5.0.2",
+    "sphinx_rtd_theme >= 0.5.1",
+    "sphinx-reredirects >= 0.1.2",
+    "doc8 >= 0.8.1",
+    "sphinx-autobuild",
+    "sphinx-rtd-dark-mode>=1.3.0",
+    "sphinx-copybutton",
+]
+
+
+[tool.bumpversion]
+current_version = "33.0.0rc1"
+allow_dirty = true
+
+files = [
+    { filename = "src/scancode_config.py" },
+    { filename = "pyproject.toml" },
+    { filename = "pyproject-scancode-toolkit-mini.toml" },
+    { filename = "pyproject-packagedcode.toml" },
+    
+]
+
+
+[tool.flot]
+wheel_path_prefixes_to_strip = [ "src" ]
+
+includes = [
+    "src/**/*",
+]
+
+excludes = [
+    # these are now provided by separate, smaller packages
+    "src/licensedcode/data/**/*",
+
+    # scancode_toolkit.egg-info is only for editable local config
+    "src/scancode_toolkit.egg-info/**/*",
+
+    "docs/build/**/*",
+
+    # Python compiled files
+    "**/*.py[cod]",
+    "**/*.egg-info",
+    # Various junk and temp files
+    "**/.DS_Store",
+    "**/*~",
+    "**/.*.sw[po]",
+    "**/.ve",
+    "**/*.bak",
+    "**/.ipynb_checkpoints",
+]
+
+metadata_files = [
+    "*.LICENSE",
+    "NOTICE",
+    "AUTHORS.rst",
+    "CHANGELOG.rst",
+    "CODE_OF_CONDUCT.rst",
+]
+
+editable_paths = [ "src", "tests" ]
+
+sdist_extra_includes = [
+    "etc/**/*",
+    # "docs/**/*",
+    ".github/**/*",
+    # "samples/**/*",
+    #"tests/**/*",
+    ".gitattributes",
+    ".gitignore",
+    "*.LICENSE",
+    "NOTICE",
+    "*.ABOUT",
+    "*.toml",
+    "*.yml",
+    "*.rst",
+    "*.py",
+
+    "requirements*",
+
+    "configure*",
+    "extractcode*",
+    "scancode*",
+
+    ".dockerignore",
+    "Dockerfile*",
+    # path to executable used by a built app
+    "PYTHON_EXECUTABLE*",
+    ".VERSION",
+]
+
+
+[tool.isort]
+force_single_line = "True"
+line_length = 88
+sections = "FUTURE,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+skip = "doc,venv,tmp,thirdparty,build,dist"
+
+
+[project.scripts]
+scancode = "scancode.cli:scancode"
+scancode-reindex-licenses = "licensedcode.reindex:reindex_licenses"
+scancode-license-data = "licensedcode.license_db:dump_scancode_license_data"
+regen-package-docs = "packagedcode.regen_package_docs:regen_package_docs"
+scancode-reindex-package-patterns = "packagedcode.cache:cache_package_patterns"
+add-required-phrases = "licensedcode.required_phrases:add_required_phrases"
+gen-new-required-phrases-rules = "licensedcode.required_phrases:gen_required_phrases_rules"
+scancode-train-gibberish-model = "textcode.train_gibberish_model:train_gibberish_model"
+
+
+# These are configurations for ScanCode plugins as entry points.
+# Each plugin entry hast this form:
+#   plugin-name = f"ully.qualified.module:PluginClass"
+# where plugin-name must be a unique arbitrary name for this entrypoint.
+
+# scancode_pre_scan is the entry point for pre_scan plugins executed before the
+# scans. See also plugincode.pre_scan module for details and doc.
+[project.entry-points.scancode_pre_scan]
+ignore = "scancode.plugin_ignore:ProcessIgnore"
+facet = "summarycode.facet:AddFacet"
+
+
+# scancode_scan is the entry point for scan plugins that run a scan after the
+# pre_scan plugins and before the post_scan plugins. See also plugincode.scan
+# module for details and doc.
+[project.entry-points.scancode_scan]
+info = "scancode.plugin_info:InfoScanner"
+licenses = "licensedcode.plugin_license:LicenseScanner"
+copyrights = "cluecode.plugin_copyright:CopyrightScanner"
+packages = "packagedcode.plugin_package:PackageScanner"
+emails = "cluecode.plugin_email:EmailScanner"
+urls = "cluecode.plugin_url:UrlScanner"
+generated = "summarycode.generated:GeneratedCodeDetector"
+
+
+# scancode_post_scan is the entry point for post_scan plugins executed after the
+# scan plugins and before the output plugins. See also plugincode.post_scan
+# module for details and doc.
+[project.entry-points.scancode_post_scan]
+summary = "summarycode.summarizer:ScanSummary"
+tallies = "summarycode.tallies:Tallies"
+tallies-with-details = "summarycode.tallies:TalliesWithDetails"
+tallies-key-files = "summarycode.tallies:KeyFilesTallies"
+tallies-by-facet = "summarycode.tallies:FacetTallies"
+license-clarity-score = "summarycode.score:LicenseClarityScore"
+license-policy = "licensedcode.plugin_license_policy:LicensePolicy"
+mark-source = "scancode.plugin_mark_source:MarkSource"
+filter-clues = "cluecode.plugin_filter_clues:RedundantCluesFilter"
+consolidate = "summarycode.plugin_consolidate:Consolidator"
+license-references = "licensedcode.licenses_reference:LicenseReference"
+todo = "summarycode.todo:AmbiguousDetectionsToDoPlugin"
+classify = "summarycode.classify_plugin:FileClassifier"
+
+
+# scancode_output_filter is the entry point for filter plugins executed after
+# the post-scan plugins and used by the output plugins to exclude/filter certain
+# files or directories from the codebase. See also plugincode.post_scan module
+# for details and doc.
+[project.entry-points.scancode_output_filter]
+only-findings = "scancode.plugin_only_findings:OnlyFindings"
+ignore-copyrights = "cluecode.plugin_ignore_copyrights:IgnoreCopyrights"
+
+
+# scancode_output is the entry point for output plugins that write a scan output
+# in a given format at the end of a scan. See also plugincode._output module for
+# details and doc.
+[project.entry-points.scancode_output]
+html = "formattedcode.output_html:HtmlOutput"
+html-app = "formattedcode.output_html:HtmlAppOutput"
+json = "formattedcode.output_json:JsonCompactOutput"
+json-pp = "formattedcode.output_json:JsonPrettyOutput"
+spdx-tv = "formattedcode.output_spdx:SpdxTvOutput"
+spdx-rdf = "formattedcode.output_spdx:SpdxRdfOutput"
+csv = "formattedcode.output_csv:CsvOutput"
+jsonlines = "formattedcode.output_jsonlines:JsonLinesOutput"
+template = "formattedcode.output_html:CustomTemplateOutput"
+debian = "formattedcode.output_debian:DebianCopyrightOutput"
+yaml = "formattedcode.output_yaml:YamlOutput"
+cyclonedx = "formattedcode.output_cyclonedx:CycloneDxJsonOutput"
+cyclonedx-xml = "formattedcode.output_cyclonedx:CycloneDxXmlOutput"
+
 
 [tool.pytest.ini_options]
 norecursedirs = [
@@ -14,6 +333,7 @@ norecursedirs = [
    "dist",
    "build",
    "_build",
+   "dist",
    "etc",
    "local",
    "ci",

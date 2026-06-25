@@ -1,0 +1,94 @@
+---
+key: rexgradient-nc
+short_name: ReXGradient-160K Non-Commercial Data Access
+name: ReXGradient-160K Non-Commercial Data Access and Use Agreement
+category: Non-Commercial
+owner: Rajpurkar Lab
+homepage_url: https://huggingface.co/datasets/rajpurkarlab/ReXGradient-160K/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-rexgradient-nc
+ignorable_emails:
+    - MAIDA_Support@hms.harvard.edu
+---
+
+## ReXGradient-160K Non-Commercial Data Access and Use Agreement
+
+By accessing the ReXGradient-160K Data Repository, as hosted by President and Fellows of Harvard College on behalf of Harvard Medical School ("Harvard"), you ("YOU" or "YOUR") agree to the following terms of this agreement ("Agreement"):
+
+1. Acceptance of this Agreement
+
+By downloading or otherwise accessing the data available from the ReXGradient-160K Data Repository ("Data"), which Data is available for non-commercial research and non-clinical purposes only, YOU (i) accept and agree to the terms of this Agreement, and (ii) further acknowledge that YOU may have an obligation to confirm that YOUR use of the Data under these terms is consistent with YOUR obligations to YOUR institution.
+
+2. Attribution
+
+Data made available via the ReXGradient-160K Data Repository was provided to Harvard by Gradient Health. YOU agree to recognize (i) the ReXGradient-160K Data Repository and (ii) the contribution of Gradient Health as the source of the Data in all written, visual, or oral public disclosures concerning YOUR research using the Data, as appropriate in accordance with scholarly standards. 
+
+3. Use of the Data
+
+Use of the Data is subject to YOUR compliance with all of the terms and conditions of this Agreement. No commercial use of the Data is permitted.
+
+Representations and Covenants:
+
+A. YOU represent and covenant that:
+
+1. YOU are not bound by any pre-existing legal obligations or other applicable laws that prevent YOU from downloading or using the Data;
+2. YOU will access and use the Data in compliance with all applicable laws, rules, and regulations, as well as all professional and ethical standards applicable to scientific research and YOUR research project, including without limitation, all applicable requirements pertaining to human subjects research and animal research;
+3. YOU agree not to use the Data in connection with the diagnosis or treatment of human subjects.
+4. YOU agree to establish appropriate administrative, technical, and physical safeguards to prevent unauthorized use of or access to the Data and comply with any other requirements relating to safeguarding of the Data that the ReXGradient-160K Data Repository may require from time to time;
+5. YOU will only use and download that portion of the Data that is necessary for use in YOUR research project; downloading of the entire ReXGradient-160K Data Repository or portions beyond what is needed for YOUR research project is strictly prohibited. YOU will only share the Data with those authorized employees, fellows, students and agents who have a need to access such Data for purposes of working on YOUR research project, and whose obligations of use are consistent with the terms of this Agreement.
+6. YOU will retain control over the Data YOU access and download.
+7. YOU will not, and will not permit any third party to, at any time, directly or indirectly: (i) disclose, distribute, release, sublicense, sell, rent, lease, loan, or otherwise grant access to the Data to any third party, except other users expressly authorized by Harvard to access and use the Data; (ii) publish or display any compilation or directory of the Data; or (iii) knowingly use the Data in any manner or for any purpose that infringes, misappropriates, or otherwise violates any intellectual property right or other right of any person, or that violates any applicable law.
+8. YOU will use the Data only for scientific research purposes and shall not use the Data for any commercial or clinical activities; 
+9. YOU will regularly check the ReXGradient-160K Data Repository for any updates to Data pertinent to YOUR research project, and will only use the updated version of such Data, and will promptly destroy all outdated Data in YOUR possession; and
+10. YOU shall not use the Data except as authorized under this Agreement. 
+
+B. YOU further covenant that YOU will not:
+
+1. obtain information from the Data that results in YOU or any third party(ies) directly or indirectly identifying any research subjects with the aid of other information acquired elsewhere;
+2. produce connections or links among the information included in Harvard's datasets (including information in the Data), or between the information included in Harvard's datasets (including information in the Data) and other third-party information that could be used to identify any individuals or organizations, not limited to research subjects;
+3. extract information from the Data that could aid YOU in gaining knowledge about or obtaining any means of contacting any subjects already known to YOU; or
+4. use the Data, either alone or in concert with any other information, to make any effort to identify or contact individuals who are or may be the sources of Data.
+
+4. Disclaimer
+THE DATA IS PROVIDED "AS IS" AND "AS AVAILABLE" AND WITH ALL FAULTS AND DEFECTS. HARVARD MAKES NO, AND HEREBY DISCLAIMS ALL, REPRESENTATIONS AND WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR THAT THE USE OF THE DATA WILL NOT INFRINGE OR VIOLATE ANY PATENT, COPYRIGHT, TRADEMARK OR OTHER THIRD PARTY RIGHT, AND ANY WARRANTIES IMPLIED BY ANY COURSE OF PERFORMANCE OR DEALING.
+
+WITHOUT LIMITING THE FOREGOING, HARVARD MAKES NO WARRANTY AS TO THE ACCURACY, COMPLETENESS, RELIABILITY, ORIGINALITY, AVAILABILITY, OR SECURITY OF THE DATA, THAT THE DATA WILL MEET YOUR REQUIREMENTS OR PROVIDE PARTICULAR BENEFITS, OR THAT THE DATA AND ANY RELATED FILES WILL BE FREE FROM DEFECTS, ERRORS, VIRUSES OR OTHER HARMFUL COMPONENTS. YOUR USE OF THE DATA IS SOLELY AT YOUR OWN RISK.
+
+5. Limitation of Liability
+
+IN NO EVENT SHALL HARVARD BE LIABLE UNDER CONTRACT, TORT, STRICT LIABILITY, NEGLIGENCE OR ANY OTHER LEGAL THEORY WITH RESPECT TO THE DATA (I) FOR ANY DIRECT DAMAGES, OR (II) FOR ANY LOST PROFITS OR SPECIAL, INDIRECT, INCIDENTAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES OF ANY KIND WHATSOEVER.
+
+6. Liability
+
+Except to the extent prohibited by law, YOU assume all liability for damages which may arise from YOUR use, storage, download, disclosure, or disposal of the Data. Harvard will not be liable to YOU or any other person or entity for any loss, claim, liability, or demand made by YOU, or made against YOU by any other party, or otherwise relating to or arising in connection with the use of the Data by YOU, except to the extent permitted by law when caused by the gross negligence or willful misconduct of Harvard. No indemnification for any loss, claim, damage, or liability is intended or provided by either party under this Agreement.
+
+7. Governing Law; Venue
+
+This Agreement shall be governed by and interpreted in accordance with the laws of the Commonwealth of Massachusetts (excluding the conflict of laws and rules thereof). All disputes under this Agreement will be resolved in the applicable state or federal courts of Massachusetts. YOU consent to the jurisdiction of such courts and waive any jurisdictional or venue defenses otherwise available.
+
+8. Integration and Severability
+
+This Agreement represents the entire agreement between YOU and Harvard with respect to the subject matter hereof, and supersedes all prior or contemporaneous representations or understandings (whether oral, written or electronic) between YOU and Harvard with respect to the subject matter hereof. If any provision of this Agreement is or becomes invalid or is ruled invalid by any court of competent jurisdiction or is deemed unenforceable, it is the intention of the parties that the remainder of this Agreement shall not be affected.
+
+9. Reporting Requirement
+
+Should YOU (i) inadvertently receive identifiable information or otherwise identify a subject, or (ii) become aware of any use or disclosure of the Data not provided for or permitted by this Agreement, YOU shall immediately notify Harvard via email to [MAIDA_Support@hms.harvard.edu](mailto:MAIDA_Support@hms.harvard.edu) with **"ReXGradient-160K" in the subject line**, and follow Harvard's reasonable written instructions, which may include return or destruction of Data.
+
+10. Ownership
+Harvard shall retain ownership of any rights it may have in the Data, and YOU do not obtain any rights in the Data other than as set forth in this Agreement.
+
+11. Use of Harvard Name
+Except as expressly provided in this Agreement, YOU shall not use or register Harvard's name (alone or as part of another name) or any logos, seals, insignia or other words, names, symbols or devices that identify Harvard, including any Harvard school, unit, division or affiliate ("Harvard Names") for any purpose in connection with this Agreement except with the prior written approval of, and in accordance with restrictions required by, Harvard. The foregoing notwithstanding, YOU may respond to legitimate business inquiries with factual information regarding the existence and purpose of the relationship that is the subject of this Agreement, without written permission from Harvard. Without limiting the foregoing, YOU shall cease all use of Harvard Names permitted under this Agreement on the termination or expiration of this Agreement except as otherwise approved by Harvard. 
+
+Except as expressly provided in Section II. Attribution of this Agreement, YOU shall not use Gradient Health's name, trademarks, or other logos in any publicity, advertising, or news release without the prior written approval of an authorized representative of Gradient Health. 
+
+12. Term and Termination
+YOU may use the Data for the duration of YOUR research project as allowed under the permitted uses in Article III of this Agreement. Either party may terminate this agreement for any reason at any time, however, YOUR obligations that by their nature are intended to persist following termination shall remain in effect even after termination. Upon termination, YOU shall immediately cease use of the Data and destroy Data in YOUR possession and, if requested by Harvard, certify to Harvard as to its destruction.
+
+Harvard may limit, suspend or terminate YOUR access to Data at any time if Harvard believes YOU have violated the terms of this Agreement or otherwise acted negligently with respect to the Data or that continued use of or access to the Data by YOU presents significant risk to the individuals who are the subjects in the Data.
+
+13. Miscellaneous
+YOU may not assign, transfer or delegate any of YOUR rights and obligations hereunder without consent of the other party. No agency, partnership, joint venture, or employment relationship is created as a result of the Agreement. Neither Party shall have authority to make any statements, representations or commitments of any kind on behalf of the other Party, or to take any action which shall be binding on the other Party.
+
+No modification or waiver of any provision of this Agreement shall be valid unless in writing and executed by duly-authorized representatives of both parties. A failure by one of the parties to this Agreement to assert its rights hereunder shall not be deemed a waiver of such rights. No such failure or waiver in writing by any one of the parties hereto with respect to any rights shall extend to or affect any subsequent breach or impair any right consequent thereon.
+
+ReXGradient-160K Non-Commercial Data Access and Use Agreement v.1, April 7, 2025

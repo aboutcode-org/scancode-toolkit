@@ -33,7 +33,8 @@ class CopyrightScanner(ScanPlugin):
 
     options = [
         PluggableCommandLineOption(('-c', '--copyright',),
-            is_flag=True, default=False,
+            is_flag=True,
+            default=False,
             help='Scan <input> for copyrights.',
             help_group=SCAN_GROUP,
             sort_order=50),

@@ -1,0 +1,307 @@
+---
+key: axoniq-osla-1.0
+short_name: AxonIQ Open Source License 1.0
+name: AxonIQ Open Source License Agreement v1.0
+category: Proprietary Free
+owner: AxonIQ
+homepage_url: https://github.com/AxonIQ/axon-server-plugin-api/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-axoniq-osla-1.0
+ignorable_urls:
+    - https://axoniq.io/
+ignorable_emails:
+    - license@axoniq.io
+    - support@axoniq.io
+---
+
+AXONIQ OPEN SOURCE LICENSE AGREEMENT – v1.0
+
+PLEASE READ CAREFULLY THIS LICENSE AGREEMENT (THIS "AGREEMENT"), WHICH
+CONSTITUTES A LEGALLY BINDING AGREEMENT AND GOVERNS ALL OF YOUR USE OF
+ALL OF THE SOFTWARE WITH WHICH THIS AGREEMENT IS INCLUDED ("SOFTWARE")
+THAT IS PROVIDED IN OBJECT CODE FORMAT, AND, IN ACCORDANCE WITH SECTION
+2 BELOW, THE SOFTWARE THAT IS PROVIDED IN SOURCE CODE FORMAT. BY
+INSTALLING OR USING ANY OF THE SOFTWARE GOVERNED BY THIS AGREEMENT, YOU
+ARE ASSENTING TO THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO
+NOT AGREE WITH SUCH TERMS AND CONDITIONS, YOU MAY NOT INSTALL OR USE THE
+SOFTWARE GOVERNED BY THIS AGREEMENT. IF YOU ARE INSTALLING OR USING THE
+SOFTWARE ON BEHALF OF A LEGAL ENTITY, YOU REPRESENT AND WARRANT THAT YOU
+HAVE THE ACTUAL AUTHORITY TO AGREE TO THE TERMS AND CONDITIONS OF THIS
+AGREEMENT ON BEHALF OF SUCH ENTITY.
+
+1. Definitions
+
+1.1 “AxonIQ” means AxonIQ B.V., Vliegend Hertlaan 43, 3526 KT, Utrecht,
+    The Netherlands.
+1.2 “Affiliate” means, with respect to a party, any entity that controls, is
+    controlled by, or which is under common control with, such party, where
+    “control” means ownership of at least 50% of the outstanding voting shares
+    of the entity.
+1.3 “Agreement” means this open core license agreement. 1.4 " Software" means
+    the AxonIQ Software in Object Code or Source Code in any file containing a
+    header stating the contents are subject to this License unless a License
+    file present in the directory subtree declares a different license.
+1.5 "Derivative Work of the Software" means, for purposes of this Agreement,
+    any modification(s) or enhancement(s) to the Software, which represent, as
+    a whole, an original work of authorship.
+1.6 “Documentation” means the user guides and manuals for the installation and
+    use of the Software, provided in electronic form.
+1.7 "License" means a limited, non-exclusive, non-transferable, fully paid up,
+    royalty free, right and license, without the right to grant or authorize
+    sublicenses, solely for your internal business operations to
+    (i)  install and use the applicable Software in Object Code, and
+    (ii) permit your contractors and your Affiliates to use the Software as set
+         forth in (i) above, provided that such use by contractors must be
+         solely for your benefit and/or the benefit of your Affiliates, and you
+         shall be responsible for all acts and omissions of such contractors
+         and Affiliates in connection with their use of the Software that are
+         contrary to the terms and conditions of this Agreement.
+1.8 "Marks and Notices" means all AxonIQ trademarks, trade names, logos and
+    notices present on the Documentation as originally provided by AxonIQ.
+1.9 "Non-production Environment" means an environment for development, testing
+    or quality assurance, where software is not used for production purposes.
+1.10 "Object Code" means any form resulting from mechanical transformation or
+    translation of Source Code form, including but not limited to compiled
+    object code, generated documentation, and conversions to other media types.
+1.11 "Source Code" means the preferred form of computer software for making
+    modifications, including but not limited to software source code,
+    documentation source, and configuration files.
+1.12 “Software” means the computer software programs in object code
+    (machine-readable) form only for which Licensee is granted a license
+    hereunder, the Documentation therefor and Updates thereto.
+1.13 “Update” means:
+    (i)  supplemental programs, if and when developed and distributed by AxonIQ,
+         that may contain bug fixes or improved program functions for the
+         Software; and
+    (ii) a subsequent release of the Software, if and when developed by AxonIQ,
+         which AxonIQ makes available for licensees that have an annual software
+         support agreement. An Update does not include any release, new version,
+         option, or future product, which AxonIQ licenses separately.
+
+2. Object Code End User Licenses, Restrictions and Third-Party Open
+   Source Software
+
+2.1 Object Code End User License. Subject to the terms and conditions of
+Section 2.2 of this Agreement, AxonIQ hereby grants to you, at no charge
+and for so long as you are not in breach of any provision of this
+Agreement, a License to the Software.
+
+2.2 Reservation of Rights; Restrictions. As between AxonIQ and you, AxonIQ and its licensors own
+all right, title and interest in and to the AxonIQ Software, and except
+as expressly set forth in Sections 2.1, and 3.1 of this Agreement, no
+other license to the AxonIQ Software is granted to you under this
+Agreement, by implication, estoppel or otherwise. You agree not to:
+    (i) reverse engineer or decompile, decrypt, disassemble or otherwise reduce
+        any  AxonIQ Software provided to you in Object Code, or any portion
+        thereof, to  Source Code, except and only to the extent any such
+        restriction is prohibited  by applicable law,
+    (ii) except as expressly
+        permitted in this Agreement,  prepare  derivative works from, modify,
+        copy or use the AxonIQ Software Object  Code or the Commercial Software
+        Source Code in any manner;
+    (iii) except as  expressly permitted in
+        Section 2.1 above, transfer, sell, rent, lease,  distribute, sublicense,
+        loan or otherwise transfer, AxonIQ Software Object  Code, in whole or in
+        part, to any third party;
+    (iv) use AxonIQ Software  Object Code for
+        providing time-sharing services, any software-as-a-service,  service
+        bureau services or as part of an application services provider or  other
+        service offering (collectively, "SaaS Offering") where obtaining access
+        to the AxonIQ Software or the features and functions of the AxonIQ
+        Software  is a primary reason or substantial motivation for users of the
+        SaaS Offering  to access and/or use the SaaS Offering ("Prohibited SaaS
+        Offering");
+    (v) circumvent the limitations on use of AxonIQ Software
+        provided to you in  Object Code format that are imposed or preserved by
+        any License Key, or
+    (vi)  alter or remove any Marks and Notices in the AxonIQ Software.
+If you have any question as to whether a specific SaaS
+Offering constitutes a Prohibited SaaS Offering, or are interested in
+obtaining AxonIQ's permission to engage in commercial or non-commercial
+distribution of the AxonIQ Software, please contact license@axoniq.io.
+
+2.3 Open source software. The Software may contain or be provided with open
+source software, which may have applicable license terms as identified or
+provided with the documentation. Notwithstanding anything to the contrary
+herein, use of the open source software shall be subject to the license terms
+and conditions applicable to such open source software, to the extent required
+by the applicable licensor.
+
+Certain components of the Software may be subject to open-source software
+licenses ("Open-Source Components"), which means any software license approved
+as open-source licenses by the Open Source Initiative or any substantially
+similar licenses, including without limitation any license that, as a condition
+of distribution of the software licensed under such license, requires that the
+distributor make the software available in source code format. The Software
+documentation includes an overview including references to the licenses
+applicable to the Open-Source Components.
+
+To the extent there is conflict between the license terms covering the
+Open-Source Components and this Agreement, the terms of such licenses will apply
+in lieu of the terms of this Agreement. To the extent the terms of the licenses
+applicable to Open-Source Components prohibit any of the restrictions in this
+Agreement with respect to such Open-Source Component, such restrictions will not
+apply to such Open-Source Component. To the extent the terms of the licenses
+applicable to Open-Source Components require Licensor to make an offer to
+provide source code in connection with the Product, such offer is hereby made,
+and you may exercise it by contacting support@axoniq.io. AxonIQ may also
+separately provide you with certain open source software that is licensed by
+AxonIQ. Your use of such AxonIQ open source software will not be governed by
+this Agreement, but by the applicable open source license terms.
+
+3. Commercial Software Source Code
+
+3.1 Limited License. Subject to the terms and conditions of Section 3.2
+of this Agreement, AxonIQ hereby grants to you, at no charge and for so
+long as you are not in breach of any provision of this Agreement, a
+limited, non-exclusive, non-transferable, fully paid up royalty free
+right and license to the Commercial Software in Source Code format,
+without the right to grant or authorize sublicenses, to prepare
+Derivative Works of the Commercial Software, provided you (i) do not
+hack the licensing mechanism, or otherwise circumvent the intended
+limitations on the use of the Software to enable features you are
+entitled to as part of a Subscription, and (ii) use the resulting object
+code only for reasonable testing purposes.
+
+3.2 Restrictions. Nothing in Section 3.1 grants you the right to
+    (i)   use the Commercial Software Source Code other than in accordance with
+          Section 3.1 above,
+    (ii)  use a Derivative Work of the Commercial Software outside of a
+          Non-production Environment, in any production capacity, on a temporary
+          or permanent basis, or
+    (iii) transfer, sell, rent, lease, distribute, sublicense, loan or otherwise
+          make available the Commercial Software Source Code, in whole or in
+          part, to any third party. Notwithstanding the foregoing, you may
+          maintain a copy of the repository in which the Source Code of the
+          Commercial Software resides, and that copy may be publicly accessible,
+          provided that you include this Agreement with your copy of the
+          repository.
+
+3.3 High-Risk Use. Unless AxonIQ gives its prior written consent and is
+consulted regarding the specific deployment, system set-up and Software support
+plan, you have  no right to use (and must not use) the Software in any
+application or situation where the failure of the Software could lead to death
+or serious bodily injury of any person, or to severe physical or environmental
+damage (“High Risk Use”). High Risk Use does not include utilization of the
+Software for administrative purposes, to store configuration data, engineering
+and/or configuration tools, or other applications, the failure of which would
+not result in death, personal injury, or severe physical or environmental
+damage. You agrees to indemnify and hold harmless AxonIQ from any third-party
+claim arising out of your use of the Software in connection with any High-Risk
+Use.
+
+3.4 Ownership. AxonIQ retains all title, copyright and other proprietary rights
+in, and ownership of, the Software regardless of the media upon which the
+original or any copy may be recorded or fixed. The Software is licensed, not
+sold.
+
+4. Verification/Audit
+
+At AxonIQ’s written request, not more frequently than annually, you will furnish
+AxonIQ with a signed certification verifying that the Software is being used in
+accordance with the provisions of this Agreement. AxonIQ may audit your use of
+the Software. Any such audit will be conducted during regular business hours
+at your facilities and will not unreasonably interfere with your business
+activities.
+
+5. Limited Warranties and Disclaimers
+
+TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, THE SOFTWARE IS PROVIDED
+"AS IS" WITHOUT WARRANTY OF ANY KIND, AND AXONIQ AND ITS LICENSORS MAKE NO
+WARRANTIES WHETHER EXPRESSED, IMPLIED OR STATUTORY REGARDING OR RELATING TO THE
+SOFTWARE. TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, AXONIQ AND ITS
+LICENSORS SPECIFICALLY DISCLAIM ALL IMPLIED WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT WITH RESPECT TO THE
+SOFTWARE, AND WITH RESPECT TO THE USE OF THE FOREGOING. FURTHER, AXONIQ DOES NOT
+WARRANT RESULTS OF USE OR THAT THE SOFTWARE WILL BE ERROR FREE OR THAT THE USE
+OF THE SOFTWARE WILL BE UNINTERRUPTED.
+
+6. Confidentiality
+
+The Software, including the Documentation, the terms under this Agreement, and
+any other information that may be marked as confidential is the confidential and
+proprietary information of AxonIQ (“Confidential Information”). Results of any
+benchmark tests on the Software run by you may not be disclosed outside of your
+organization without the prior written consent of AxonIQ. Licensee will hold
+the Confidential Information in strict confidence during the term of this
+Agreement and for a period of five (5) years thereafter. You will take
+reasonable steps to ensure that your employees, contractors and agents also
+comply with the confidentiality obligations of this Section 6.
+
+7. Liability Limitations
+
+7.1 NOTWITHSTANDING ANY PROVISION OF THIS AGREEMENT TO THE CONTRARY, IN NO EVENT
+WILL AXONIQ, NOR ANYONE ELSE WHO HAS BEEN INVOLVED IN THE CREATION, PRODUCTION
+OR DELIVERY OF THE SOFTWARE, INCLUDING AXONIQ LICENSORS, BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE OR CONSEQUENTIAL DAMAGES, OR
+DAMAGES FOR LOSS OF PROFITS, BUSINESS, GOODWILL, REVENUE, DATA OR USE, INCURRED
+BY YOU OR ANY THIRD PARTY, WHETHER IN AN ACTION IN CONTRACT OR TORT, EVEN IF
+AXONIQ HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+8. Third Party Software
+
+The Software may incorporate, embed or be bundled with software or components
+that are owned by third parties. Use of a AxonIQ Licensor’s software or
+components is governed by the terms and conditions contained in such AxonIQ
+Licensor’s end user license agreement, a copy of which will be provided with
+delivery of such AxonIQ Licensor’s software.
+
+9. General Terms
+
+9.1 Governing Law and Dispute Resolution. This Agreement will be governed by and
+construed in accordance with the laws of the Netherlands, excluding the U.N.
+Convention on Contracts for the International Sale of Goods. All disputes,
+claims or controversies arising out of or relating to this Agreement that are
+not resolved by the parties’ good faith attempt to negotiate a resolution will
+be submitted to the exclusive jurisdiction of the courts in Amsterdam, the
+Netherlands.
+
+9.2 Export Restrictions. You agrees to comply fully with
+all applicable international and national export laws and regulations,
+including the U.S Export Administration Regulations and the Office of
+Foreign Asset Control Regulations, as well as end-use and destination
+restrictions issued by the U.S and foreign governments to assure that
+neither the Software nor any direct product thereof are
+    (i)  exported, directly or indirectly, in violation of export laws; or
+    (ii) are intended to be used for any purposes prohibited by the export laws.
+
+9.3 Force Majeure. Neither party will be responsible to the other for any
+failure or delay in its performance due to force majeure provided that such
+party gives prompt written notice thereof to the other party and uses its
+diligent efforts to resume performance.
+
+9.4 AxonIQ may amend these license terms and conditions at any time giving one
+months’ prior notice. In case you do not agree to these modified terms you may
+terminate this Agreement and cease using the Software.
+
+9.5 Severability; Waiver. If a court of competent jurisdiction finds any
+provision of this Agreement invalid or unenforceable, that provision of the
+Agreement will be amended to achieve as nearly as possible the intent of the
+parties, and the remainder of this Agreement will remain in full force and
+effect. The waiver by either party of a breach of any provision of this
+Agreement in one instance shall not operate or be construed as a waiver of any
+subsequent breach of the same provision or any other provision of this
+Agreement .
+
+9.6 Notices. All notices required to be sent hereunder will be in writing and
+addressed to the address shown on https://axoniq.io). AxonIQ may give notices
+applicable to the Licensed Software or the Support Services by means of a
+general notice on the AxonIQ portal for its services, and notices specific to
+Licensee by electronic mail to the e-mail address specified in the Software
+Schedule.
+
+9.7 Assignment. You may not assign this Agreement, in whole or in part, without
+AxonIQ’s prior written consent. Any attempt to assign this Agreement without
+such consent will be null and void. Subject to the foregoing, this Agreement
+will bind and inure to the benefit of each party's permitted successors and
+assigns.
+
+9.8 Survival. The Sections of this Agreement that by their nature survive
+expiration or termination of the Agreement include but are not limited to the
+following Sections, 4, 5, 6, 7, and 9.
+
+9.9 Entire Agreement. This Agreement constitutes the entire agreement between
+the parties and supersedes all prior or contemporaneous agreements, written or
+oral, concerning the subject matter of this Agreement. It is expressly agreed
+that the terms of this Agreement will supersede the terms in any purchasing
+document submitted by you; and the terms of any purchasing document are
+expressly rejected to the extent inconsistent with the terms of this Agreement.

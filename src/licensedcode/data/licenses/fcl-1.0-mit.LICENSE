@@ -2,7 +2,7 @@
 key: fcl-1.0-mit
 short_name: FCL-1.0-MIT
 name: Fair Core License, Version 1.0, MIT Future License
-category: Source-available
+category: Non-Commercial
 owner: keygen
 homepage_url: https://github.com/keygen-sh/fcl.dev/blob/master/FCL-1.0-MIT.md
 spdx_license_key: LicenseRef-scancode-fcl-1.0-mit

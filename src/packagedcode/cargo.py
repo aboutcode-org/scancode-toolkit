@@ -12,10 +12,18 @@ import os
 import re
 import sys
 
-import toml
 from packageurl import PackageURL
 
 from packagedcode import models
+
+# tomli was added to the stdlib as tomllib in Python 3.11.
+# It's the same code.
+# Still, prefer tomli if it's installed, as on newer Python versions, it is
+# compiled with mypyc and is more performant.
+try:
+    import tomli as tomllib
+except ImportError:
+    import tomllib
 
 """
 Handle Rust cargo crates
@@ -59,7 +67,13 @@ class CargoBaseHandler(models.DatafileHandler):
                 package_data.extra_data[attribute] = 'workspace'
                 workspace_package_data[attribute] = getattr(package_data, attribute)
 
-        workspace_root_path = resource.parent(codebase).path
+        workspace_root = resource.parent(codebase)
+        if not workspace_root:
+            # If there's no parent (e.g., scanning a single file), use the directory part of the resource path
+            workspace_root_path = os.path.dirname(resource.path)
+        else:
+            workspace_root_path = workspace_root.path
+            
         if workspace_package_data and workspace_members:
 
             # TODO: support glob patterns found in cargo workspaces
@@ -95,12 +109,14 @@ class CargoBaseHandler(models.DatafileHandler):
                     package_adder=package_adder,
                 )
         else:
-            yield from cls.assemble_from_many_datafiles(
-                datafile_name_patterns=('Cargo.toml', 'cargo.toml', 'Cargo.lock', 'cargo.lock'),
-                directory=resource.parent(codebase),
-                codebase=codebase,
-                package_adder=package_adder,
-            )
+            parent_resource = resource.parent(codebase)
+            if parent_resource:
+                yield from cls.assemble_from_many_datafiles(
+                    datafile_name_patterns=('Cargo.toml', 'cargo.toml', 'Cargo.lock', 'cargo.lock'),
+                    directory=parent_resource,
+                    codebase=codebase,
+                    package_adder=package_adder,
+                )
 
     @classmethod
     def update_resource_package_data(cls, workspace, workspace_package_data, resource_package_data, mapping=None):
@@ -170,7 +186,8 @@ class CargoTomlHandler(CargoBaseHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        package_data_toml = toml.load(location, _dict=dict)
+        with open(location, "rb") as fp:
+            package_data_toml = tomllib.load(fp)
         workspace = package_data_toml.get('workspace', {})
         core_package_data = package_data_toml.get('package', {})
         extra_data = {}
@@ -283,7 +300,8 @@ class CargoLockHandler(CargoBaseHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        cargo_lock = toml.load(location, _dict=dict)
+        with open(location, "rb") as fp:
+            cargo_lock = tomllib.load(fp)
         dependencies = []
         package = cargo_lock.get('package', [])
         for dep in package:

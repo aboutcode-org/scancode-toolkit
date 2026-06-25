@@ -283,7 +283,7 @@ other_license_detections:
       - license_expression: apache-2.0
         license_expression_spdx: Apache-2.0
         from_file:
-        start_line: '190'
+        start_line: 190
         end_line: 203
         matcher: 1-hash
         score: '100.0'

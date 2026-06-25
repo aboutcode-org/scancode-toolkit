@@ -27,6 +27,7 @@ class YamlOutput(OutputPlugin):
     options = [
         PluggableCommandLineOption(('--yaml', 'output_yaml',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            default=None,
             metavar='FILE',
             help='Write scan output as YAML to FILE.',
             help_group=OUTPUT_GROUP,

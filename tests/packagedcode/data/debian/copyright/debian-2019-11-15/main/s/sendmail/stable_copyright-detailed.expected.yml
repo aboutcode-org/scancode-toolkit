@@ -14,7 +14,7 @@ other_license_detections:
       - license_expression: sendmail
         license_expression_spdx: Sendmail
         from_file:
-        start_line: '19'
+        start_line: 19
         end_line: 99
         matcher: 3-seq
         score: '97.65'

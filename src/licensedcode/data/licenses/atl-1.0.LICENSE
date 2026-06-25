@@ -1,0 +1,42 @@
+---
+key: atl-1.0
+short_name: ATL-1.0
+name: Anti-Tivo License (ATL) v1.0
+category: Copyleft
+owner: cppfastio
+homepage_url: https://github.com/cppfastio/Anti-Tivo-License-ATL-v1.0/blob/main/license.txt
+spdx_license_key: LicenseRef-scancode-atl-1.0
+faq_url: https://github.com/cppfastio/Anti-Tivo-License-ATL-v1.0/blob/main/README.md
+---
+
+Anti-Tivo License (ATL) v1.0
+
+1. License Grant
+This software is provided under the Anti-Tivo License (ATL), allowing unrestricted commercial use without requiring source code disclosure, except under specific conditions outlined in Section 2.
+
+2. Restrictions on Tivoized Hardware
+Any device using this software must comply with the following:
+
+If the device includes an app store, it must allow users to install modified versions of this software without restrictions.
+
+Manufacturers must not use cryptographic signatures, hardware verification, or other technical measures to prevent users from modifying and reinstalling the software.
+
+If a device does not meet these conditions, the software must be licensed under GPLv3, ensuring full compliance with open-source principles.
+
+3. Prioritization of Cross-Platform Technologies
+When PWA (Progressive Web Applications) or Wine and other cross-platform technologies are available, developers and vendors should prioritize their use to maintain openness and portability.
+
+If a platform deliberately undermines open internet access (e.g., restricting the use of Progressive Web Applications (PWA) through a closed framework), then all software on that platform must be licensed under GPLv3, ensuring users have full modification and installation rights.
+
+4. Exceptions
+No devices are exempted from this license.
+
+5. Enforcement & Non-Mandatory Action
+The copyright holder reserves the right to enforce this license but is not obligated to do so.
+
+Enforcement actions may be taken against entities violating Section 2 or Section 3, particularly those engaging in Tivoization or deliberate internet restrictions.
+
+This license is not subject to any government control, including but not limited to the United States government.
+
+6. Liability Disclaimer
+This software is provided "as is", without warranties of any kind. The author is not liable for any damages resulting from its use.

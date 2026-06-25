@@ -2,7 +2,7 @@
 key: rwth-returnn-2024
 short_name: RWTH RETURNN LIcense 2024
 name: RWTH RETURNN LIcense 2024
-category: Proprietary Free
+category: Non-Commercial
 owner: RWTH Aachen University
 homepage_url: https://github.com/rwth-i6/returnn/blob/master/LICENSE
 spdx_license_key: LicenseRef-scancode-rwth-returnn-2024

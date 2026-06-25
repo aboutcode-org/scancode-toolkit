@@ -256,7 +256,7 @@ license_detections:
       - license_expression: x11-lucent
         license_expression_spdx: dtoa
         from_file:
-        start_line: '194'
+        start_line: 194
         end_line: 203
         matcher: 2-aho
         score: '100.0'

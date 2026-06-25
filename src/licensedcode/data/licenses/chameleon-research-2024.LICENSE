@@ -2,7 +2,7 @@
 key: chameleon-research-2024
 short_name: Chameleon Research License 2024
 name: Chameleon Research License 2024
-category: Proprietary Free
+category: Non-Commercial
 owner: Facebook
 homepage_url: https://huggingface.co/facebook/chameleon-7b/blob/main/LICENSE
 spdx_license_key: LicenseRef-scancode-chameleon-research-2024

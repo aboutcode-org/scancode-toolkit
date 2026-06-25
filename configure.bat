@@ -26,15 +26,16 @@
 @rem ################################
 
 @rem # Requirement arguments passed to pip and used by default or with --dev.
-set "REQUIREMENTS=--editable . --constraint requirements.txt"
-set "DEV_REQUIREMENTS=--editable .[dev] --constraint requirements.txt --constraint requirements-dev.txt"
-set "PROD_REQUIREMENTS=scancode_toolkit*.whl"
+set "REQUIREMENTS=--no-build-isolation --editable . --constraint requirements.txt"
+set "DEV_REQUIREMENTS=--no-build-isolation --editable .[dev] --constraint requirements.txt --constraint requirements-dev.txt"
+set "PROD_REQUIREMENTS=--no-build-isolation scancode_toolkit*.whl"
+set "FLOT_REQUIREMENTS=etc/thirdparty/flot-0.7.3-py3-none-any.whl"
 
 @rem # where we create a virtualenv
 set "VIRTUALENV_DIR=venv"
 
 @rem # Cleanable files and directories to delete with the --clean option
-set "CLEANABLE=tmp build dist venv .cache .eggs"
+set "CLEANABLE=build dist venv .cache .eggs *.egg-info docs/_build/ pip-selfcheck.json"
 
 @rem # extra  arguments passed to pip
 set "PIP_EXTRA_ARGS= "
@@ -116,7 +117,7 @@ if not exist "%CFG_BIN_DIR%\python.exe" (
 
     if exist "%CFG_ROOT_DIR%\etc\thirdparty\virtualenv.pyz" (
         %PYTHON_EXECUTABLE% "%CFG_ROOT_DIR%\etc\thirdparty\virtualenv.pyz" ^
-            --wheel embed --pip embed --setuptools embed ^
+            --pip embed --setuptools embed ^
             --seeder pip ^
             --never-download ^
             --no-periodic-update ^
@@ -132,7 +133,7 @@ if not exist "%CFG_BIN_DIR%\python.exe" (
             )
         )
         %PYTHON_EXECUTABLE% "%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\virtualenv.pyz" ^
-            --wheel embed --pip embed --setuptools embed ^
+            --pip embed --setuptools embed ^
             --seeder pip ^
             --never-download ^
             --no-periodic-update ^
@@ -157,11 +158,17 @@ if %ERRORLEVEL% neq 0 (
 
 "%CFG_BIN_DIR%\pip" install ^
     --upgrade ^
-    --no-build-isolation ^
+    %CFG_QUIET% ^
+    %PIP_EXTRA_ARGS% ^
+    %FLOT_REQUIREMENTS%
+
+"%CFG_BIN_DIR%\pip" install ^
+    --upgrade ^
     %CFG_QUIET% ^
     %PIP_EXTRA_ARGS% ^
     %CFG_REQUIREMENTS%
 
+"%CFG_BIN_DIR%\scancode-train-gibberish-model"
 
 @rem ################################
 :create_bin_junction

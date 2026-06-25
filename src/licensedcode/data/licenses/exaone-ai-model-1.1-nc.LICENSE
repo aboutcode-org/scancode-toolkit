@@ -2,8 +2,8 @@
 key: exaone-ai-model-1.1-nc
 short_name: EXAONE AI Model 1.1 - NC
 name: EXAONE AI Model License Agreement 1.1 - NC
-category: Proprietary Free
-owner: HuggingFace
+category: Non-Commercial
+owner: LG AI EXAONE
 homepage_url: https://huggingface.co/LGAI-EXAONE/EXAONE-Deep-32B/blob/main/LICENSE
 spdx_license_key: LicenseRef-scancode-exaone-ai-model-1.1-nc
 ---

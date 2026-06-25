@@ -202,3 +202,8 @@ class TestRecognize(FileBasedTesting):
         packages = recognize_package_data(test_file, system=True)
         assert packages
         assert isinstance(packages[0], models.PackageData)
+
+    def test_recognize_non_package_manifest_file(self):
+        test_file = self.get_test_loc('cache/.gitignore')
+        packages = recognize_package_data(test_file)
+        assert not packages

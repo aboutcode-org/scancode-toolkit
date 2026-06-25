@@ -26,6 +26,7 @@ class JsonLinesOutput(OutputPlugin):
         PluggableCommandLineOption(('--json-lines', 'output_json_lines',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
+            default=None,
             help='Write scan output as JSON Lines to FILE.',
             help_group=OUTPUT_GROUP,
             sort_order=15),
