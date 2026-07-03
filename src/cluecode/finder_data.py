@@ -7,6 +7,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import re
+
 from functools import partial
 
 
@@ -239,8 +241,19 @@ classify_email = partial(
     ignored_hosts=JUNK_EXACT_DOMAIN_NAMES,
 )
 
+# a regex for copyright lexer
+JUNK_URLS_RE = [f"^\/*{re.escape(u)}\/*$"  for u in JUNK_URLS]
+JUNK_URL_PREFIXES_RE = [f"^\/*{re.escape(u)}\/*" for u in JUNK_URL_PREFIXES]
+JUNK_DOMAIN_SUFFIXES_RE = [f"\/*{re.escape(u)}\/*$" for u in JUNK_DOMAIN_SUFFIXES]
+JUNK_ALL_URLS = "|".join(JUNK_URLS_RE + JUNK_URL_PREFIXES_RE + JUNK_DOMAIN_SUFFIXES_RE)
+JUNK_ALL_URLS = f"({JUNK_ALL_URLS})"
+IS_JUNK_URL = re.compile(JUNK_ALL_URLS, flags=re.IGNORECASE).search
+
 
 def classify_url(url):
+    """
+    Return True if a URL is a proper URL, or False if this is a JUNK URL
+    """
     if not url:
         return False
     u = url.lower().strip('/')

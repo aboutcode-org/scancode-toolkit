@@ -427,7 +427,10 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
 
         if TRACE_TOK:
             logger_debug('  get_tokens: preped line: ' + repr(line))
-
+        
+        # when there is a an openning parens in the middle of a word, add a
+        # space before in some cases: exclude (digit , (s , (c , (- 
+        line = re.sub(pattern=r'(\([^rsc\-\d])', repl=' \g<1>', string=line, flags=re.IGNORECASE)
         for tok in splitter(line):
             # strip trailing quotes+comma
             if tok.endswith("',"):
@@ -729,6 +732,10 @@ PATTERNS = [
     # SPDX-FileContributor as defined in SPDX and seen used in KDE
     (r'^[Ss][Pp][Dd][Xx]-[Ff]ile[Cc]ontributor', 'SPDX-CONTRIB'),
 
+    # damaged PDF to text conversion with (cid:13) and rarer (cid:2)
+    (r'^[Cc]?\(cid:13\)$','COPY'),
+    (r'^[Cc]?\(cid:2\)$','COPY'),
+
     ############################################################################
     # ALL Rights Reserved.
     ############################################################################
@@ -991,6 +998,7 @@ PATTERNS = [
     (r'^.?(null|function|try|catch|except|throw|typeof|catch|switch).?$', 'JUNK'),
     (r'^.*[\.:](?:value|ref|key|case|type|typeof|props|state|error|null)$', 'JUNK'),
     (r'^[a-z]{,5}\[!?]+', 'JUNK'),
+    (r'^(fprintf|stderr)$', 'JUNK'),
 
     # func call with short var in minified code
     (r'^\w{2,6}\([a-z, ]{1,6}\)', 'JUNK'),
@@ -1283,6 +1291,12 @@ PATTERNS = [
     (r'^[Ww]hether$', 'JUNK'),
     (r'^[Bb]oth$', 'JUNK'),
     (r'^[Cc]aller$', 'JUNK'),
+
+    #'!(r)'
+    (r'^!\(r\)$', 'JUNK'),
+
+    # vars with curly braces
+    (r'\(var', 'JUNK'),
 
     # tags
     (r'^E-?[Mm]ail:?$', 'JUNK'),
@@ -2924,7 +2938,8 @@ GRAMMAR = """
     # Copyright 2015 The Happy Campers
     # Copyright 2015 The Error Prone Authors.
     # Copyright 2001-2011 Xiph.Org, Skype Limited, Octasic,
-    COPYRIGHT: {<NNP>? <COPY>+ (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME-EMAIL|NNP>+ <EMAIL>?)+ <AUTHDOT|MAINT>?}        #1630
+    # AssemblyCopyright("(c) 2004 by Henrik Ravn")]
+    COPYRIGHT: {<NNP>? <COPY>+ <PARENS>? <COPY>? (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME-EMAIL|NNP>+ <EMAIL>?)+ <AUTHDOT|MAINT>?}        #1630
 
     COPYRIGHT: {<COPY>+ <NN> <NAME> <YR-RANGE>}        #1650
 
@@ -4013,6 +4028,11 @@ def remove_dupe_copyright_words(c):
     c = c.replace("copyright\'", 'Copyright')
     c = c.replace('and later', ' ')
     c = c.replace('build.year', ' ')
+
+    # PDF to text damages
+    c = c.replace('(cid:13)', '(c)')
+    c = c.replace('(cid:2)', '(c)')
+    
     return c
 
 
