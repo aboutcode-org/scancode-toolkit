@@ -1,4 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - Copyright (c) 2023 Wolken (zwolken@foxmail.com zharry@web.de)
+holders:
+  - Wolken

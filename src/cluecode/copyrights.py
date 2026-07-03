@@ -429,7 +429,8 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
 
         # when there is a an openning parens in the middle of a word, add a
         # space before in some cases: exclude (digit , (s , (c , (-
-        line = re.sub(pattern=r'(\([^rsc\-\d])', repl=' \g<1>', string=line, flags=re.IGNORECASE)
+        # this allows to recover from words like KISA(Korean
+        line = re.sub(pattern=r'(\([^rsc\-\d])', repl=' \g<1>', string=line)
         for tok in splitter(line):
             # strip trailing quotes+comma
             if tok.endswith("',"):
@@ -1236,6 +1237,10 @@ PATTERNS = [
     (r'^param$', 'JUNK'),
     (r'^which$', 'JUNK'),
 
+    # github/gitlab usernames
+    (r'^Hiroki11x$', 'NNP'),
+    (r'^goldze$', 'NNP'),
+
     # "Es6ToEs3ClassSideInheritance. and related names
     (r"^[A-Z]([a-zA-Z]*[0-9]){2,}[a-zA-Z]+[\.,]?", 'JUNK'),
 
@@ -1300,7 +1305,7 @@ PATTERNS = [
     # '!(r)'
     (r'^!\(r\)$', 'JUNK'),
 
-    # vars with curly braces
+    # vars with parens
     (r'\(var', 'JUNK'),
 
     # tags
@@ -1895,7 +1900,7 @@ PATTERNS = [
 
     # rare form of trailing punct in name: Ian Robertson).
     (r'^Robert.*', 'NNP'),
-
+    
     ############################################################################
     # Named entities: companies, groups, universities, etc
     ############################################################################
@@ -2233,6 +2238,7 @@ PATTERNS = [
     (r'^Xiph.Org$', 'NNP'),
     (r'^iClick,?$', 'NNP'),
     (r'^electronics?$', 'NNP'),
+    (r'^semiconductors?[\.,]?$', 'NNP'),
 
     # proper nouns with digits
     (r'^([A-Z][a-z0-9]+){1,2}[\.,]?$', 'NNP'),
@@ -2369,8 +2375,6 @@ PATTERNS = [
 
     # some punctuation combos
     (r'^(?:=>|->|<-|<=)$', 'JUNK'),
-
-    (r'^semiconductors?[\.,]?$', 'NNP'),
 
     ############################################################################
     # catch all other as Nouns

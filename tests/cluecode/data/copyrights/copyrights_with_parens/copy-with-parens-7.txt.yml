@@ -1,4 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - Copyright 2019 ditclear (https://github.com/ditclear)
+holders:
+  - ditclear

@@ -1,4 +1,9 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - Copyright 2019 Dave Peterson (dave@dspeterson.com)
+  - Copyright 2014 if (we), Inc.
+holders:
+  - Dave Peterson
+  - if (we), Inc.
