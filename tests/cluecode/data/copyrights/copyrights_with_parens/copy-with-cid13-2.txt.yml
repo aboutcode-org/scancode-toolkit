@@ -1,4 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - (c) 2006 International Society for Bayesian Analysis
+holders:
+  - International Society for Bayesian Analysis

@@ -1,4 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - Copyright (cid:23) 1999 by Academic Press
+holders:
+  - (cid:23) by Academic Press

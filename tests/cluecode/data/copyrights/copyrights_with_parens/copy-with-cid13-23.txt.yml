@@ -1,4 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - (c) ESO 2014
+holders:
+  - ESO

@@ -1,4 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - (c) 2016 Copyright held by the owner/author(s)
+  - (c) 2016 Copyright held by the owner/author(s)
+  - Copyright held by the owner/author(s)
+  - Copyright is held by the owner/author(s)
+holders:
+  - the owner/author(s)
+  - the owner/author(s)
+  - the owner/author(s)
+  - the owner/author(s)

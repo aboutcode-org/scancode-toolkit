@@ -1,4 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - Copyright (c) 2006, American Association for Articial Intelli- gence (www.aaai.org)
+holders:
+  - American Association for Articial Intelli- gence

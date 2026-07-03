@@ -1,4 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - Copyright (c) Matthew Pulver 2018-2019
+holders:
+  - Matthew Pulver

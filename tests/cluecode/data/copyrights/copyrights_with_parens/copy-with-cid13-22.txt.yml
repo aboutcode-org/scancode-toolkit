@@ -1,4 +1,13 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - Copyright (c) 1990 W. N. Venables
+  - Copyright (c) 1992 W. N. Venables & D. M. Smith
+  - Copyright (c) 1997 R. Gentleman & R. Ihaka
+  - Copyright (c) 1997, 1998 M. Maechler
+holders:
+  - W. N. Venables
+  - W. N. Venables & D. M. Smith
+  - R. Gentleman & R. Ihaka
+  - M. Maechler

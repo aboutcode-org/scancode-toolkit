@@ -1,4 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - (c) 2017 Association for Computational Linguistics
+holders:
+  - Association for Computational Linguistics

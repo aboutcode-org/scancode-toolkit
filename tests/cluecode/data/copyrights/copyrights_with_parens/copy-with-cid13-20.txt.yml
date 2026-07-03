@@ -1,4 +1,7 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - Copyright (c) 2020, Association for the Advancement of Artificial Intelligence (www.aaai.org)
+holders:
+  - Association for the Advancement of Artificial Intelligence

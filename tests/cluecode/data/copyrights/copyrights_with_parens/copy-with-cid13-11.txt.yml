@@ -1,4 +1,9 @@
 what:
   - copyrights
   - holders
-  - holders_summary
+copyrights:
+  - (c) BANDAI NAMCO Entertainment Inc.
+  - Copyright (c) 2017 Live2D Inc.
+holders:
+  - BANDAI NAMCO Entertainment Inc.
+  - Live2D Inc.
