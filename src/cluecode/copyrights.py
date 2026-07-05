@@ -430,7 +430,7 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
         # when there is a an openning parens in the middle of a word, add a
         # space before in some cases: exclude (digit , (s , (c , (-
         # this allows to recover from words like KISA(Korean
-        line = re.sub(pattern=r'(\([^rsc\-\d])', repl=' \g<1>', string=line)
+        line = re.sub(pattern=r'(\([^rsc\-\d])', repl=r' \g<1>', string=line)
         for tok in splitter(line):
             # strip trailing quotes+comma
             if tok.endswith("',"):
