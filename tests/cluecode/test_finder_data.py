@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
@@ -7,77 +8,63 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import re
+import pytest
 
-from functools import partial
-
-
-def set_from_text(text):
-    return set(u.lower().strip('/') for u in text.split())
-
-
-def urls_set_from_text(text):
-    """
-    Return a set from text, ensuring that both http and https scheme are
-    injected for every URL.
-    """
-    https_urls = text.replace("http://", "https://").split()
-    http_urls = text.replace("https://", "http://").split()
-    return set(u.lower().strip('/') for u in http_urls + https_urls)
+from cluecode.finder_data import JUNK_URL_PREFIXES
+from cluecode.finder_data import JUNK_URLS
+from cluecode.finder_data import JUNK_DOMAIN_SUFFIXES
+from cluecode.finder_data import classify_url
 
 
-JUNK_EMAILS = set_from_text(u'''
-    test@test.com
-    exmaple.com
-    example.com
-    example.net
-    example.org
-    test.com
-    localhost
-''')
+@pytest.mark.parametrize('url_prefix', sorted(JUNK_URL_PREFIXES))
+def test_classify_url__junk_urls_prefixes(url_prefix):
+    assert not classify_url(url_prefix)
+    assert classify_url(f"foobar/{url_prefix}")
 
-JUNK_HOSTS_AND_DOMAINS = set_from_text(u'''
-    exmaple.com
-    example.com
-    example.net
-    example.org
-    test.com
-    schemas.android.com
-    1.2.3.4
-    yimg.com
-    a.b.c
-    maps.google.com
-    hostname
-    localhost
-''')
 
-JUNK_IPS = set_from_text(u'''
-    1.2.3.4
-''')
+@pytest.mark.parametrize('url', sorted(JUNK_URLS))
+def test_classify_url__junk_urls(url):
+    assert not classify_url(url)
+    assert classify_url(f"{url}/foobar")
 
-# Check for domain to be exactly one of below mentioned
-JUNK_EXACT_DOMAIN_NAMES = set_from_text(u'''
-    test.com
-    something.com
-    some.com
-    anything.com
-    any.com
-    trial.com
-    sample.com
-    other.com
-    something.com
-    some.com
-''')
 
-JUNK_URLS = urls_set_from_text(u'''
+@pytest.mark.parametrize('suffix', sorted(JUNK_DOMAIN_SUFFIXES))
+def test_classify_url__junk_domain_suffix(suffix):
+    assert not classify_url(f"http://foo/bar{suffix}")
+    assert classify_url(f"{suffix}/some/bar")
+
+
+MORE_JUNK_URLS = '''
     http://www.adobe.com/2006/mxml
+    http://www.w3.org/1999/XSL/Transform
     http://docs.oasis-open.org/ns/xri/xrd-1.0
+    http://www.w3.org/2001/XMLSchema-instance
+    http://www.w3.org/2001/XMLSchema}string
+    http://www.w3.org/2001/XMLSchema
+    http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd
     http://bing.com
     http://google.com
     http://msn.com
     http://maven.apache.org/maven-v4_0_0.xsd
     http://maven.apache.org/POM/4.0.0
     http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd
+    http://www.w3.org/1999/02/22-rdf-syntax-ns
+    http://www.w3.org/1999/xhtml
+    http://www.w3.org/1999/XMLSchema
+    http://www.w3.org/1999/XMLSchema-instance
+    http://www.w3.org/2000/svg
+    http://www.w3.org/2001/XMLSchema
+    http://www.w3.org/2000/10/XMLSchema
+    http://www.w3.org/2000/10/XMLSchema-instance
+    http://www.w3.org/2001/XMLSchema
+    http://www.w3.org/2001/XMLSchema-instance
+    http://www.w3.org/2002/12/soap-encoding
+    http://www.w3.org/2002/12/soap-envelope
+    http://www.w3.org/2005/Atom
+    http://www.w3.org/2006/01/wsdl
+    http://www.w3.org/2006/01/wsdl/http
+    http://www.w3.org/2006/01/wsdl/soap
+    http://www.w3.org/2006/vcard/ns
     http://www.w3.org/International/O-URL-and-ident.html
     http://www.w3.org/MarkUp
     http://www.w3.org/WAI/GL
@@ -93,10 +80,26 @@ JUNK_URLS = urls_set_from_text(u'''
     http://]hostname
     http://+
     http://www
+    http://www.w3.org/1999/xhtml
+    http://www.w3.org/1999/XSL/Transform
+    http://www.w3.org/2001/XMLSchema
+    http://www.w3.org/2001/XMLSchema-instance
+    http://www.w3.org/hypertext/WWW/Protocols/HTTP/HTRESP.html
+    http://www.w3.org/hypertext/WWW/Protocols/HTTP/Object_Headers.html
     http://www.w3.org/P3P
     http://www.w3.org/pub/WWW
+    http://www.w3.org/TR/html4/strict.dtd
+    http://www.w3.org/TR/REC-html40/loose.dtd
+    http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd
+    http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd
+    http://www.w3.org/TR/xslt
     https:
     https://+
+    http://www.example.com
+    http://www.example.com/dir/file
+    http://www.example.com:dir/file
+    http://www.your.org.here
+    http://hostname
     https://www.trustedcomputinggroup.org/XML/SCHEMA/TNCCS_1.0.xsd
     http://glade.gnome.org/glade-2.0.dtd
     http://pagesperso-orange.fr/sebastien.godard/sysstat.dtd
@@ -104,13 +107,6 @@ JUNK_URLS = urls_set_from_text(u'''
     http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd
     http://gcc.gnu.org/bugs.html
     http://nsis.sf.net/NSIS_Error
-    http://www.your.org.here
-''')
-
-JUNK_URL_PREFIXES = sorted(urls_set_from_text('''
-    http://hostname
-    http://www.example.com
-    http://example.com
     http://www.springframework.org/dtd/
     http://www.slickedit.com/dtd/
     http://www.oexchange.org/spec/0.8/
@@ -120,21 +116,15 @@ JUNK_URL_PREFIXES = sorted(urls_set_from_text('''
     http://foo.bar.baz
     http://foo.bar.com
     http://foobar.com
-    http://java.sun.com/xml/ns
+    http://java.sun.com/xml/ns/
     http://java.sun.com/j2se/1.4/docs/
     http://java.sun.com/j2se/1.5.0/docs/
-    http://java.sun.com/dtd/
-    http://java.sun.com/j2ee/dtds/
-    http://java.sun.com/xml/ns/
     http://developer.apple.com/certificationauthority/
     http://www.apple.com/appleca/
     https://www.apple.com/certificateauthority/
     http://schemas.microsoft.com/
     http://dublincore.org/schemas/
     http://www.w3.org/TR/
-    http://www.w3.org/1
-    http://www.w3.org/2
-    http://www.w3.org/hypertext/WWW/Protocols/
     http://www.apple.com/DTDs
     http://apache.org/xml/features/
     http://apache.org/xml/properties/
@@ -146,6 +136,8 @@ JUNK_URL_PREFIXES = sorted(urls_set_from_text('''
     http://csc3-2009-2-crl.verisign.com
     http://dellincca.dell.com/crl
     http://ts-crl.ws.symantec.com
+    http://java.sun.com/dtd/
+    http://java.sun.com/j2ee/dtds/
     http://jakarta.apache.org/commons/dtds/
     http://jakarta.apache.org/struts/dtds/
     http://www.jboss.org/j2ee/dtd/
@@ -171,60 +163,9 @@ JUNK_URL_PREFIXES = sorted(urls_set_from_text('''
     http://www.microsoft.com/pki/certs/
     http://www.microsoft.com/pkiops/crl
     http://www.microsoft.com/PKI/
-'''))
-
-JUNK_DOMAIN_SUFFIXES = ('.gif', '.jpeg', '.jpg', '.png')
+'''.split()
 
 
-def classify(s, data_set, suffixes=None, ignored_hosts=None):
-    """
-    Return True or some classification string value that evaluates to True if
-    the data in string `s` is not junk. Return False if the data in string `s` is
-    classified as 'junk' or uninteresting. Use `data_set` set of junk strings,
-    `suffixes` optional set of junk suffixes, and `ignored_hosts` set of junk
-    email host names for classification.
-    """
-    if not s:
-        return False
-    s = s.lower().strip('/')
-    # Separate test for emails - need to ignore xyz@some.com, but not say, xyz@gruesome.com
-    if ignored_hosts and '@' in s:
-        _name, _at, host_name = s.rpartition('@')
-        if host_name in ignored_hosts:
-            return False
-    if any(d in s for d in data_set):
-        return False
-    if suffixes and s.endswith(suffixes):
-        return False
-    return True
-
-
-classify_ip = partial(classify, data_set=JUNK_IPS)
-
-classify_host = partial(
-    classify,
-    data_set=JUNK_HOSTS_AND_DOMAINS,
-    suffixes=JUNK_DOMAIN_SUFFIXES,
-)
-
-classify_email = partial(
-    classify,
-    data_set=JUNK_EMAILS,
-    suffixes=JUNK_DOMAIN_SUFFIXES,
-    ignored_hosts=JUNK_EXACT_DOMAIN_NAMES,
-)
-
-# a Junk URL big regex for use in copyright lexers
-JUNK_URLS_RE = [fr"^/?{re.escape(u)}/?$"  for u in JUNK_URLS]
-JUNK_URL_PREFIXES_RE = [fr"^/?{re.escape(u)}/?" for u in JUNK_URL_PREFIXES]
-JUNK_DOMAIN_SUFFIXES_RE = [fr"{re.escape(u)}/?$" for u in JUNK_DOMAIN_SUFFIXES]
-JUNK_ALL_URLS = "|".join(JUNK_URLS_RE + JUNK_URL_PREFIXES_RE + JUNK_DOMAIN_SUFFIXES_RE)
-JUNK_ALL_URLS = f"({JUNK_ALL_URLS})"
-IS_JUNK_URL = re.compile(JUNK_ALL_URLS, flags=re.IGNORECASE).search
-
-
-def classify_url(url):
-    """
-    Return True if a URL is a proper URL, or False if this is a JUNK URL
-    """
-    return url and not IS_JUNK_URL(url)
+@pytest.mark.parametrize('url', sorted(MORE_JUNK_URLS))
+def test_classify_url__more_junk_urls(url):
+    assert not classify_url(url)
