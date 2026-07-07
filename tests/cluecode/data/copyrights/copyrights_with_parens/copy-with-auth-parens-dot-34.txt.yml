@@ -2,3 +2,7 @@ what:
   - copyrights
   - holders
   - authors
+copyrights:
+  - Copyright (c) 2012-2016 The go-diff Authors
+holders:
+  - The go-diff Authors

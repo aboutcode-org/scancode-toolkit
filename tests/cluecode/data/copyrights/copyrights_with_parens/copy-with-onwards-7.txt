@@ -1,0 +1,6 @@
+Copyright (C) 2005 and onwards by AmbieSense Limited, 
+    and/or its subsidiaries and co-founders.
+    
+    
+copyright = '2006 and onwards by the authors'
+author = 'Neos Team and Contributors'

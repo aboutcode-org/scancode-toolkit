@@ -2,3 +2,7 @@ what:
   - copyrights
   - holders
   - authors
+copyrights:
+  - (c) Don Brutzman and Len Daly
+holders:
+  - Don Brutzman and Len Daly

@@ -2,3 +2,7 @@ what:
   - copyrights
   - holders
   - authors
+copyrights:
+  - Copyright 2018 The Abseil Authors
+holders:
+  - The Abseil Authors

@@ -2,3 +2,7 @@ what:
   - copyrights
   - holders
   - authors
+copyrights:
+  - Copyright (c) 1995-2012 held by the author(s)
+holders:
+  - the author(s)

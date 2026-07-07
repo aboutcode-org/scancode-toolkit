@@ -2,3 +2,35 @@ what:
   - copyrights
   - holders
   - authors
+copyrights:
+  - Copyright (c) 1997-2001 Geoff Wing <gcw@pobox.com>
+  - Copyright (c) 2000,2001 Teepanis Chachiyo <teepanis@physics.purdue.edu>
+  - Copyright (c) 2001 Marius Gedminas <marius.gedminas@uosis.mif.vu.lt>
+  - Copyright (c) 2003 David Hull
+  - Copyright (c) 2003 Yamanobe Kiichiro <yamky@cocoa.freemail.ne.jp>
+  - Copyright (c) 2003 Mamoru Komachi <usata@usata.org>
+  - Copyright (c) 2005 William P. Y. Hadisoeseno <williampoetra@users.sourceforge.net>
+  - Copyright (c) 2004-2005 Jingmin Zhou <jimmyzhou@users.sourceforge.net>
+  - Copyright (c) 1992 John Bovey, University of Kent at Canterbury <jdb@ukc.ac.uk>
+  - Copyright (c) 1994 Robert Nation <nation@rocket.sanders.lockheed.com>
+  - Copyright (c) 1996 Chuck Blake <cblake@BBN.COM>
+  - Copyright (c) 1997 mj olesen <olesen@me.queensu.ca>
+  - Copyright (c) 1997,1998 Oezguer Kesim <kesim@math.fu-berlin.de>
+  - Copyright (c) 1998-2001 Geoff Wing <gcw@pobox.com>
+  - Copyright (c) 2003-2008 Marc Lehmann <pcg@goof.com>
+holders:
+  - Geoff Wing
+  - Teepanis Chachiyo
+  - Marius Gedminas
+  - David Hull
+  - Yamanobe Kiichiro
+  - Mamoru Komachi
+  - William P. Y. Hadisoeseno
+  - Jingmin Zhou
+  - John Bovey, University of Kent at Canterbury
+  - Robert Nation
+  - Chuck Blake
+  - mj olesen
+  - Oezguer Kesim
+  - Geoff Wing
+  - Marc Lehmann

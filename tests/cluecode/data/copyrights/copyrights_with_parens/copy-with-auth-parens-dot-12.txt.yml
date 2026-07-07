@@ -2,3 +2,7 @@ what:
   - copyrights
   - holders
   - authors
+copyrights:
+  - Copyright (c) 2018 the Author(s)
+holders:
+  - the Author(s)

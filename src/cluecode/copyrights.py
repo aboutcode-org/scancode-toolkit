@@ -1003,6 +1003,8 @@ PATTERNS = [
     (r'^[a-z]{,5}\[!?]+', 'JUNK'),
     (r'^(fprintf|stderr)$', 'JUNK'),
 
+    (r'^[Aa]uthor\(s\)\.?$', 'AUTHDOT'),
+
     # func call with short var in minified code
     (r'^\w{2,6}\([a-z, ]{1,6}\)', 'JUNK'),
 
@@ -2047,9 +2049,9 @@ PATTERNS = [
     (r'^[Aa]uthor$', 'AUTH'),
     (r'^[Aa]uthor\.$', 'AUTHDOT'),
     (r'^[Aa]uthors?\.$', 'AUTHDOT'),
+    (r'^[Aa]uthor\(s\)\.?$', 'AUTHDOT'),
     (r'^([Aa]uthors|author\')$', 'AUTHS'),
     (r'^[Aa]uthor\(s\)$', 'AUTHS'),
-    (r'^[Aa]uthor\(s\)\.?$', 'AUTHDOT'),
     # as javadoc
     (r'^@[Aa]uthors?:?$', 'AUTH'),
 
@@ -2218,6 +2220,12 @@ PATTERNS = [
 
     # all other cardinal numbers
     (r'^-?[0-9]+(.[0-9]+)?[\.,]?$', 'CD'),
+
+    # onwards used in year ranges
+    (r'^onwards,?$', 'ONWARDS'),
+    # beyond is the same
+    (r'^beyond,?$', 'ONWARDS'),
+
 
     ############################################################################
     # All caps and proper nouns
@@ -2409,6 +2417,9 @@ GRAMMAR = """
 
     # 5 Jan 2003
     YR-RANGE: {<CDS>  <NNP>  <YR-RANGE>} #72.3
+    
+    # 2024 and? onwards
+    YR-RANGE: {<YR-RANGE><CC>?<ONWARDS>}
 
 
 #######################################
@@ -3071,6 +3082,9 @@ GRAMMAR = """
     # Copyright base-x contributors (c) 2016
     COPYRIGHT: {<COPY>+  <NN> <CONTRIBUTORS|COMMIT|AUTHS|MAINT> <COPY>  <YR-RANGE>}  #22793.2
 
+    # Copyright © 2021 Ha and Maguire.
+    COPYRIGHT: {<COPY>+  <YR-RANGE> <NN> <CC> <NNP>}  #22793.31
+
     # Copyright (c) 2017 odahcam
     # Copyright (C) 2006 XStream committers.
     # Copyright (c) 2019-2021, Open source contributors.
@@ -3108,6 +3122,9 @@ GRAMMAR = """
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
     COPYRIGHT2: {<COPY><IS>?<HELD><BY><NN>?<NNP>}        #2280-12
+
+    # Copyright (c) 1995-2012 held by the author(s). All rights reserved.'
+    COPYRIGHT: {<COPYRIGHT2><HELD><BY><NN><AUTHDOT>} #2280-40
 
     COPYRIGHT: {<COPYRIGHT2>  <BY>  <NAME-YEAR|NAME-EMAIL> <BY>?  <NAME-YEAR|NAME-EMAIL>? } #2280-4
 
@@ -3319,7 +3336,8 @@ GRAMMAR = """
     COPYRIGHT: {<COPY> <COPY> <ANDCO>}  #2841
 
     # Copyright (c) 1995-2018 The PNG Reference Library Authors. (with and without trailing dot)
-    COPYRIGHT: {<COPYRIGHT> <NN> <AUTHDOT>} #35011
+    # Copyright 2001 - 2009 by the original author(s).
+    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2> <NN>{0,2} <AUTHDOT>} #35011
 
     ############ All right reserved in the middle ##############################
 
@@ -3437,6 +3455,11 @@ GRAMMAR = """
     NAME-EMAIL: {<DASH>  <NAME-EMAIL> <NN>?} #157999.14
     COPYRIGHT: {<COPYRIGHT2> <FOLLOWING> <AUTHS> <NAME-EMAIL>+ } #157999.14
 
+    # Copyright (C) 2011-2012  The OpenTSDB Authors.
+    COPYRIGHT: {<COPYRIGHT> <AUTHDOT>}  #160000
+
+    # (c) The Author(s).
+    COPYRIGHT: {<COPY> <NN> <AUTHS>}
 
 #######################################
 # Copyright is held by ....
