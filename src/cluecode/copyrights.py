@@ -1254,9 +1254,6 @@ PATTERNS = [
     (r"^owner/author\(s\)\.?$", 'NNP'),
     (r"^[a-z].+\(s\)[\.,]?$", 'JUNK'),
 
-    # parens in the middle: for(var
-    (r"^[a-zA-Z]+[\)\(]+,?[\)\(]?[a-zA-Z]+[\.,]?$", 'JUNK'),
-
     # single period
     (r"^\.$", 'JUNK'),
 
