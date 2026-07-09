@@ -167,8 +167,8 @@ def test_scan_info_returns_full_root():
     result_data = json.loads(open(result_file).read())
     file_paths = [f['path'] for f in result_data['files']]
     assert len(file_paths) == 12
-    # note that we strip paths from leading and trailing slashes
-    root = fileutils.as_posixpath(test_dir).strip('/')
+    # note that we strip paths from trailing slashes
+    root = fileutils.as_posixpath(test_dir).rstrip('/')
     assert all(p.startswith(root) for p in file_paths)
 
 
@@ -184,7 +184,7 @@ def test_scan_info_returns_correct_full_root_with_single_file():
     scanned_file = files[0]
     # and we check that the path is the full path without repeating the file name
     # note that the path never contain leading and trailing slashes
-    assert scanned_file['path'] == fileutils.as_posixpath(test_file).strip('/')
+    assert scanned_file['path'] == fileutils.as_posixpath(test_file).rstrip('/')
 
 
 def test_scan_info_returns_does_not_strip_root_with_single_file():
