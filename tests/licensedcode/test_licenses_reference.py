@@ -21,7 +21,7 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
 def test_licenses_reference_works():
-    test_dir = test_env.get_test_loc('licenses_reference_reporting/scan', copy=True)
+    test_dir = test_env.get_test_loc('licenses_reference_reporting/scan')
     result_file = test_env.get_temp_file('json')
     args = [
         '--license', '--package', '--license-references',
@@ -34,7 +34,7 @@ def test_licenses_reference_works():
     )
 
 def test_licenses_reference_works_with_matched_text():
-    test_dir = test_env.get_test_loc('licenses_reference_reporting/scan', copy=True)
+    test_dir = test_env.get_test_loc('licenses_reference_reporting/scan')
     result_file = test_env.get_temp_file('json')
     args = [
         '--license', '--package',  '--license-text', '--license-text-diagnostics', '--license-diagnostics',
@@ -47,7 +47,7 @@ def test_licenses_reference_works_with_matched_text():
     )
 
 def test_licenses_reference_works_with_license_clues():
-    test_dir = test_env.get_test_loc('licenses_reference_reporting/python.LICENSE', copy=True)
+    test_dir = test_env.get_test_loc('licenses_reference_reporting/python.LICENSE')
     result_file = test_env.get_temp_file('json')
     args = [
         '--license',  '--license-text', '--license-text-diagnostics', '--license-diagnostics',
