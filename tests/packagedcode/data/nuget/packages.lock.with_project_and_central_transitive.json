@@ -1,0 +1,30 @@
+{
+    "version": 2,
+    "dependencies": {
+      "net8.0": {
+        "Example.Direct": {
+          "type": "Direct",
+          "requested": "[1.0.0, )",
+          "resolved": "1.0.0",
+          "contentHash": "abc123=="
+        },
+        "Example.Transitive": {
+          "type": "Transitive",
+          "resolved": "2.0.0",
+          "contentHash": "def456=="
+        },
+        "Example.CentralTransitive": {
+          "type": "CentralTransitive",
+          "requested": "[3.0.0, )",
+          "resolved": "3.0.0",
+          "contentHash": "ghi789=="
+        },
+        "example.project.reference": {
+          "type": "Project",
+          "dependencies": {
+            "Example.Direct": "[1.0.0, )"
+          }
+        }
+      }
+    }
+  }

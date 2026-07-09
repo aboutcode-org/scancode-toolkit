@@ -237,6 +237,10 @@ class NugetPackagesLockHandler(models.DatafileHandler):
                     is_direct = True
                 elif package_type == "Transitive":
                     is_direct = False
+                elif package_type == "CentralTransitive":
+                    is_direct = False
+                elif package_type == "Project":
+                    is_direct = True
                 else:
                     raise Exception(f"Unknown package type: {package_type} for package {package_name} in {location}")
                     
