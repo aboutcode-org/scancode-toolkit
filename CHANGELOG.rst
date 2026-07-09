@@ -8,6 +8,9 @@ Next release
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
+- Improve copyright detection for statements with parens or trailing "authors"
+
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
