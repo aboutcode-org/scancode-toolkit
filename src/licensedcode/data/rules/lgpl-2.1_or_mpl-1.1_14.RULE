@@ -1,0 +1,10 @@
+---
+license_expression: lgpl-2.1 OR mpl-1.1
+is_license_reference: yes
+referenced_filenames:
+    - COPYING
+---
+
+* The code in the patch is copyright under the LGPL, but
+ * has been relicensed under the LGPL/MPL dual license for inclusion
+ * into (see COPYING).
