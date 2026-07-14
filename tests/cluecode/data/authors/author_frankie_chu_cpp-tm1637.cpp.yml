@@ -1,0 +1,9 @@
+what:
+  - authors
+  - authors_summary
+authors:
+  - Frankie.Chu
+authors_summary:
+  - value: Frankie.Chu
+    count: 1
+notes: Detect glued C++ Author:Name tags without space after colon (issue #4229)

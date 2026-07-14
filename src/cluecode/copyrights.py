@@ -428,6 +428,9 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
         if TRACE_TOK:
             logger_debug('  get_tokens: preped line: ' + repr(line))
 
+        # Author:Frankie.Chu -> Author: Frankie.Chu for AUTH + name tokenization
+        line = re.sub(r'(?i)\b(authors?|@authors?)(:)(?=\S)', r'\1\2 ', line)
+
         for tok in splitter(line):
             # strip trailing quotes+comma
             if tok.endswith("',"):
@@ -2227,6 +2230,10 @@ PATTERNS = [
     # proper noun with some separator and trailing comma
     (r'^[A-Z]+\.[A-Z][a-z]+,?$', 'NNP'),
 
+    # Mixed-case dotted name (Frankie.Chu). Not NNP: AUTHOR uses AUTH+NAME-DOT only.
+    # Exclude common org suffixes and license-prose glue tails (Assignment.This).
+    (r'^[A-Z][a-z0-9]+(?:\.(?!Org,?$|Com,?$|Net,?$|Edu,?$|Gov,?$|Inc,?$|Ltd,?$|Co,?$|This,?$|In,?$|All,?$|The,?$|Of,?$|And,?$|For,?$|By,?$|With,?$|From,?$|To,?$|As,?$|Or,?$|An,?$|At,?$|On,?$|Is,?$|Are,?$|Was,?$|Be,?$|If,?$|Not,?$|No,?$|Any,?$|Such,?$|That,?$|These,?$|Those,?$|When,?$|Where,?$|Which,?$|Who,?$|Will,?$|Shall,?$|May,?$|Can,?$|Must,?$|Should,?$|Would,?$|Could,?$|Rights,?$|Reserved,?$|Agreement,?$|Event,?$|Breach,?$|License,?$|Software,?$|Source,?$|Code,?$|File,?$|Files,?$|Notice,?$|Notices,?$|Subject,?$|Terms,?$|Conditions,?$|Section,?$|Clause,?$|Party,?$|Parties,?$)[A-Z][a-z0-9]+)+,?$', 'NAME-DOT'),
+
     # proper noun with apostrophe ': D'Orleans, D'Arcy, T'so, Ts'o
     (r"^[A-Z][a-z]?'[A-Z]?[a-z]+[,\.]?$", 'NNP'),
 
@@ -2552,6 +2559,8 @@ GRAMMAR = """
 
     # NAME-YEAR starts or ends with a YEAR range
     NAME-YEAR: {<YR-RANGE> <NNP> <NNP>+} #350
+    NAME-YEAR: {<YR-RANGE> <NAME-DOT> <COMP|COMPANY|NNP|NN>+} #350.05
+    NAME-YEAR: {<YR-RANGE> <NAME-DOT>} #350.06
 
     COPYRIGHT: {<COPY>  <YR-RANGE>  <NNP>  <NN>  <NNP>  <NNP>  <NNP>  <EMAIL>} #350.1
 
@@ -2699,6 +2708,8 @@ GRAMMAR = """
     # Companies
     COMPANY: {<NAME|NAME-EMAIL|NAME-YEAR|NNP>+ <OF> <NN>? <COMPANY|COMP> <NNP>?}        #770
     COMPANY: {<NNP> <COMP|COMPANY> <COMP|COMPANY>}        #780
+    # NAME-DOT + company words only (not bare NAME-DOT)
+    COMPANY: {<NAME-DOT> <COMP|COMPANY>+}        #780.1
     COMPANY: {<NN>? <COMPANY|NAME|NAME-EMAIL> <CC> <COMPANY|NAME|NAME-EMAIL>}        #790
     COMPANY: {<COMP|COMPANY|NNP> <NN> <COMPANY|COMPANY> <NNP>+}        #800
 
@@ -3474,6 +3485,8 @@ GRAMMAR = """
 
     # author (Panagiotis Tsirigotis)
     AUTHOR: {<AUTH>  <NNP><NNP>+} #author Foo Bar
+
+    AUTHOR: {<AUTH> <NAME-DOT>} #author Frankie.Chu
 
     # Author: Tim (xtimor@gmail.com)
     AUTHOR: {<AUTH>  <NNP>+ <EMAIL>+} #Author Foo joe@email.com
