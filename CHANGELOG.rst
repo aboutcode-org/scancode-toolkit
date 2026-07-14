@@ -4,6 +4,11 @@ Changelog
 Next release
 --------------
 
+- Document the Apple Silicon (M1/M2/M3/M4) ``./configure --dev`` workaround
+  in ``CONTRIBUTING.rst`` for contributors using an arm64-only Homebrew
+  Python.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4650
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

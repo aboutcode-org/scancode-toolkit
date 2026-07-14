@@ -140,6 +140,28 @@ To set up ScanCode for local development:
 
         configure --dev
 
+   If you are on Apple Silicon (M1/M2/M3/M4) and your ``python3`` is an
+   arm64-only Homebrew install, ``./configure --dev`` may fail with an
+   error such as::
+
+       ERROR: No matching distribution found for extractcode-7z==16.5.210531
+
+   This happens because some native thirdparty dependencies do not have
+   pre-built wheels for the arm64 architecture. ``configure`` already
+   relaunches itself under Rosetta on Apple Silicon, but this only helps
+   if the Python interpreter it finds is a universal or x86_64 binary; an
+   arm64-only Homebrew Python still runs natively and the pinned arm64-less
+   dependencies fail to resolve. To work around this, install an x86_64
+   Python via Rosetta and point ``configure`` to it::
+
+       arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+       arch -x86_64 /usr/local/bin/brew install python@3.12
+       echo "/usr/local/bin/python3.12" > PYTHON_EXECUTABLE
+       ./configure --dev
+
+   See `issue #3205 <https://github.com/aboutcode-org/scancode-toolkit/issues/3205>`_
+   for more background on Apple Silicon compatibility.
+
    Then activate the virtual environment::
 
         source venv/bin/activate
