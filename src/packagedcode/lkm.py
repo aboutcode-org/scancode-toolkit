@@ -23,7 +23,7 @@ class LinuxKernelModuleHandler(DatafileHandler):
     default_package_type = 'linux-kernel-module'
     path_patterns = ('*.ko',)
     description = 'Linux Kernel Module'
-    documentation_url = "..."
+    documentation_url = "https://docs.kernel.org/kbuild/modules.html"
 
     @classmethod
     def parse(cls, location: str, package_only=False) -> Iterator[PackageData]:
@@ -135,12 +135,15 @@ class LinuxKernelModuleHandler(DatafileHandler):
         }
 
         extra_data = {
-        "srcversion": cls.get_first(metadata, "srcversion"),
-        "aliases": metadata.get("alias", []),
-        "intree": cls.get_first(metadata, "intree"),
-        "vermagic": cls.get_first(metadata, "vermagic"),
-        "Depends" : cls.get_dependencies(metadata)
+            key: values
+            for key, values in metadata.items()
+            if key not in normalized_keys
         }
+
+        dependency_names = cls.get_dependency_names(metadata)
+
+        if dependency_names:
+            extra_data['depends'] = dependency_names
 
         package_data = dict(
             datasource_id=cls.datasource_id,
