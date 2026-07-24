@@ -1,70 +1,78 @@
-import re
-from typing import Iterator, Dict, Any, List, Optional
-from packagedcode.models import DatafileHandler, PackageData, DependentPackage, Party
+#
+# Copyright (c) nexB Inc. and others. All rights reserved.
+# ScanCode is a trademark of nexB Inc.
+# SPDX-License-Identifier: Apache-2.0
+# See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
+# See https://github.com/nexB/scancode-toolkit for support or download.
+# See https://aboutcode.org for more information about nexB OSS projects.
+#
+
 import os
+
+from typing import Iterator
+from typing import Dict
+from typing import List
+from typing import Optional
 
 from elftools.common.exceptions import ELFError
 from elftools.elf.elffile import ELFFile
+from packageurl import PackageURL
 
-
-# Inside ScanCode, we would import the official classes:
-# from packagedcode.models import Package, Party, Dependency
-# from packagedcode import DatafileHandler
+from packagedcode.models import DatafileHandler
+from packagedcode.models import DependentPackage
+from packagedcode.models import PackageData
+from packagedcode.models import Party
 
 class LinuxKernelModuleHandler(DatafileHandler):
     """
-    DatafileHandler for compiled Linux Kernel Modules (.ko binaries).
-    Extracts the .modinfo section and maps it to ScanCode's standard PackageData.
+    Extract package metadata from compiled Linux Kernel Module ELF files.
     """
-
     datasource_id = 'linux_kernel_module'
     datasource_type = 'sys'
     supported_oses = ('linux',)
     default_package_type = 'linux-kernel-module'
     path_patterns = ('*.ko',)
     description = 'Linux Kernel Module'
-    documentation_url = "https://docs.kernel.org/kbuild/modules.html"
+    documentation_url = 'https://docs.kernel.org/kbuild/modules.html'
 
     @classmethod
     def parse(cls, location: str, package_only=False) -> Iterator[PackageData]:
-        #Main entry point called by ScanCode when scanning directories.
-        raw_metadata = cls.extract_modinfo(location)
-        if not raw_metadata:
+        metadata = cls.extract_modinfo(location)
+        
+        if not metadata:
             return
 
-        #Ensures no empty or invalid package data is yielded
-
-        yield cls.build_package(
-        metadata=raw_metadata,
-        location=location,
-        package_only=package_only,
+        yield cls.build_package_data(
+            metadata=metadata,
+            location=location,
+            package_only=package_only,
         )
     
 
     @staticmethod
     def extract_modinfo(location: str) -> Dict[str, List[str]]:
         """
-        Reads the .modinfo byte section from the ELF file in-memory.
-        Uses pyelftools (which is already a ScanCode dependency).
+        Reads the .modinfo byte section from the ELF file in-memory using pyelftools.
+        Returns a dictionary of metadata where keys are the .modinfo keys and values are lists of strings.
         """
-
         metadata: Dict[str, List[str]] = {}
 
         try:
             with open(location, 'rb') as module_file:
-                elffile = ELFFile(module_file)
+                elf_file = ELFFile(module_file)
 
-                # Locate the specific .modinfo section in the ELF structure
-                modinfo_sec = elffile.get_section_by_name('.modinfo')
-                if modinfo_sec is None:
+                # Restrict parsing to .modinfo instead of searching arbitrary binary data.
+                modinfo_section = elf_file.get_section_by_name('.modinfo')
+                if modinfo_section is None:
                     return {}
 
                 # Extract the raw binary block
-                raw_bytes = modinfo_sec.data()
+                raw_bytes = modinfo_section.data()
 
         except (ELFError, OSError):
             return {}
-            # Split null-terminated bytes on \x00
+        
+        # Entries in .modinfo are NULL-terminated key=value strings.
         for raw_entry in raw_bytes.split(b'\x00'):
             if not raw_entry:
                 continue
@@ -89,9 +97,12 @@ class LinuxKernelModuleHandler(DatafileHandler):
         return values[0] if values else None
     
     @staticmethod
-    def get_dependencies(metadata: Dict[str, List[str]]) -> List[str]:
+    def get_dependency_names(
+        metadata: Dict[str, List[str]]
+    ) -> List[str]:
         dependencies = []
 
+        # The depends field lists modules required when this module is loaded.
         for depends_entry in metadata.get('depends', []):
             dependencies.extend(
                 dependency.strip()
@@ -100,14 +111,40 @@ class LinuxKernelModuleHandler(DatafileHandler):
             )
 
         return dependencies
+    
+    @classmethod
+    def get_dependent_packages(
+        cls,
+        metadata: Dict[str, List[str]],
+    ) -> List[DependentPackage]:
+        dependency_names = cls.get_dependency_names(metadata)
+
+        return [
+            DependentPackage(
+                purl=PackageURL(
+                    type=cls.default_package_type,
+                    name=dependency_name,
+                ).to_string(),
+                extracted_requirement=None,
+                scope='runtime',
+                is_runtime=True,
+                is_optional=False,
+            )
+            for dependency_name in dependency_names
+        ]
 
     @classmethod
-    def build_package(cls, metadata: Dict[str, Any], location: str, package_only: bool = False) -> PackageData:
+    def build_package_data(
+        cls, 
+        metadata: Dict[str, List[str]], 
+        location: str, 
+        package_only: bool = False
+    ) -> PackageData:
         """
         Maps raw .modinfo dictionary keys into ScanCode's standard PackageData models.
         """
-        # 1. Map Authors to standard 'Party' objects
 
+        # Represent every declared author as a package party.
         parties = []
         for author in metadata.get('author', []):
             author = author.strip()
@@ -120,30 +157,26 @@ class LinuxKernelModuleHandler(DatafileHandler):
                         name=author,
                     )
                 )
-        
-
 
         filename = os.path.basename(location)
         name = filename[:-3] if filename.endswith('.ko') else filename
-
 
         normalized_keys = {
             'author',
             'description',
             'license',
             'version',
+            'depends',
         }
 
+        #Preserve additional metadata that is not mapped to PackageData fields.
         extra_data = {
             key: values
             for key, values in metadata.items()
             if key not in normalized_keys
         }
 
-        dependency_names = cls.get_dependency_names(metadata)
-
-        if dependency_names:
-            extra_data['depends'] = dependency_names
+        dependencies = cls.get_dependent_packages(metadata)
 
         package_data = dict(
             datasource_id=cls.datasource_id,
@@ -151,8 +184,9 @@ class LinuxKernelModuleHandler(DatafileHandler):
             name=name,
             version=cls.get_first(metadata, 'version'),
             description=cls.get_first(metadata, 'description'),
-            extracted_license_statement=cls.get_first(metadata,'license'),
+            extracted_license_statement=cls.get_first(metadata, 'license'),
             parties=parties,
+            dependencies=dependencies,
             extra_data=extra_data,
         )
 
