@@ -1,0 +1,4 @@
+about_resource: CONTROL
+download_url: https://raw.githubusercontent.com/microsoft/vcpkg/2020.11/ports/curl/CONTROL
+name: vcpkg curl CONTROL fixture
+version: 2020.11
