@@ -26,6 +26,7 @@ from packagedcode import freebsd
 from packagedcode import godeps
 from packagedcode import golang
 from packagedcode import haxe
+from packagedcode import lkm
 from packagedcode import maven
 from packagedcode import misc
 from packagedcode import npm
@@ -233,8 +234,10 @@ SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
     debian.DebianInstalledMd5sumFilelistHandler,
     debian.DebianInstalledStatusDatabaseHandler,
 
+    lkm.LinuxKernelModuleHandler,
+
     rpm.RpmLicenseFilesHandler,
-    rpm.RpmMarinerContainerManifestHandler
+    rpm.RpmMarinerContainerManifestHandler,
 ]
 
 if on_linux:

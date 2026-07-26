@@ -8,6 +8,9 @@ Next release
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
+- Add a package data handler for compiled Linux Kernel Module (``.ko``)
+  files that extracts metadata from the ELF ``.modinfo`` section.
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 

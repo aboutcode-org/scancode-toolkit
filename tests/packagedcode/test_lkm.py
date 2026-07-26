@@ -1,6 +1,7 @@
 import shutil
 import os
 from pathlib import Path
+from xml.sax import handler
 
 import pytest
 
@@ -9,6 +10,7 @@ from packagedcode.models import DatafileHandler
 from packagedcode.models import PackageData
 from packagedcode.models import Party
 from packagedcode.models import DependentPackage
+from packagedcode import HANDLER_BY_DATASOURCE_ID
 
 
 class TestLinuxKernelModule:
@@ -237,3 +239,10 @@ class TestLinuxKernelModule:
             'Alice',
             'Bob',
         ]
+
+    def test_datasource_id_is_registered(self):
+        handler = HANDLER_BY_DATASOURCE_ID[
+            lkm.LinuxKernelModuleHandler.datasource_id
+        ]
+
+        assert handler is lkm.LinuxKernelModuleHandler

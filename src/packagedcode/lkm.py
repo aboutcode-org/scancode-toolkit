@@ -9,8 +9,8 @@
 
 import os
 
-from typing import Iterator
 from typing import Dict
+from typing import Iterator
 from typing import List
 from typing import Optional
 
@@ -22,6 +22,7 @@ from packagedcode.models import DatafileHandler
 from packagedcode.models import DependentPackage
 from packagedcode.models import PackageData
 from packagedcode.models import Party
+
 
 class LinuxKernelModuleHandler(DatafileHandler):
     """
@@ -52,9 +53,12 @@ class LinuxKernelModuleHandler(DatafileHandler):
     @staticmethod
     def extract_modinfo(location: str) -> Dict[str, List[str]]:
         """
-        Reads the .modinfo byte section from the ELF file in-memory using pyelftools.
-        Returns a dictionary of metadata where keys are the .modinfo keys and values are lists of strings.
+        Return .modinfo metadata as a mapping of keys to lists of values.
+
+        Multiple values are preserved because fields such as 'author', 'alias',
+        and 'firmware' may appear more than once.
         """
+
         metadata: Dict[str, List[str]] = {}
 
         try:
@@ -66,13 +70,13 @@ class LinuxKernelModuleHandler(DatafileHandler):
                 if modinfo_section is None:
                     return {}
 
-                # Extract the raw binary block
+                # Read only the raw bytes stored in the ELF .modinfo section.
                 raw_bytes = modinfo_section.data()
 
         except (ELFError, OSError):
             return {}
         
-        # Entries in .modinfo are NULL-terminated key=value strings.
+        # Entries in .modinfo are NUL-terminated key=value strings.
         for raw_entry in raw_bytes.split(b'\x00'):
             if not raw_entry:
                 continue
@@ -135,13 +139,13 @@ class LinuxKernelModuleHandler(DatafileHandler):
 
     @classmethod
     def build_package_data(
-        cls, 
-        metadata: Dict[str, List[str]], 
-        location: str, 
-        package_only: bool = False
+        cls,
+        metadata: Dict[str, List[str]],
+        location: str,
+        package_only: bool = False,
     ) -> PackageData:
         """
-        Maps raw .modinfo dictionary keys into ScanCode's standard PackageData models.
+        Return PackageData built from raw .modinfo metadata.
         """
 
         # Represent every declared author as a package party.
@@ -175,6 +179,13 @@ class LinuxKernelModuleHandler(DatafileHandler):
             for key, values in metadata.items()
             if key not in normalized_keys
         }
+
+        # PackageData stores only the first value for these normalized fields.
+        # Preserve all values in extra_data when a field occurs more than once.
+        for key in ('description', 'license', 'version'):
+            values = metadata.get(key, [])
+            if len(values) > 1:
+                extra_data[key] = values
 
         dependencies = cls.get_dependent_packages(metadata)
 

@@ -88,6 +88,7 @@ dependencies = [
     "plugincode >= 32.0.0",
     "publicsuffix2",
     "pyahocorasick >= 2.3.0",
+    "pyelftools >= 0.32",
     "pygmars >= 1.0.0",
     "pygments >= 1.0.0",
     "pymaven_patch >= 0.2.8",
