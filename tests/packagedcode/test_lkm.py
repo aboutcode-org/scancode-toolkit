@@ -246,3 +246,17 @@ class TestLinuxKernelModule:
         ]
 
         assert handler is lkm.LinuxKernelModuleHandler
+
+    def test_build_package_data_multiple_alias_entries(self):
+        metadata = {
+            'license': ['GPL'],
+            'alias': ['usbcore', 'cfg80211'],
+        }
+
+        package_data = lkm.LinuxKernelModuleHandler.build_package_data(
+            metadata=metadata,
+            location='/tmp/example.ko',
+        )
+
+        assert package_data.extra_data['alias'] == ['usbcore', 'cfg80211']
+        assert 'depends' not in package_data.extra_data
