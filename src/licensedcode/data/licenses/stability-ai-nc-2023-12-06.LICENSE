@@ -2,7 +2,7 @@
 key: stability-ai-nc-2023-12-06
 short_name: Stability AI Non-Commercial Research 2023-12-06
 name: Stability AI Non-Commercial Research Community License Agreement 2023-12-06
-category: Proprietary Free
+category: Non-Commercial
 owner: Stability AI
 homepage_url: https://huggingface.co/stabilityai/stablelm-2-12b-chat/blob/main/LICENSE
 spdx_license_key: LicenseRef-scancode-stability-ai-nc-2023-12-06

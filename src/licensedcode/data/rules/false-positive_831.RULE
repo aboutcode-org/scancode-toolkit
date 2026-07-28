@@ -1,5 +1,6 @@
 ---
 is_false_positive: yes
-notes: This is a mention of GPL in relation to a website and not the code in question
+notes: Seen in go-go1.24.11/src/hash/crc32/gen_const_ppc64le.go. This is about the license of an other open source component (antonblanchard/crc32-vpmsum).
 ---
-(An updated version on the author's website came with a license that contained a GPL-incompatible advertising clause.) 
+
+The following is derived from code written by Anton Blanchard <anton@au.ibm.com> found at https://github.com/antonblanchard/crc32-vpmsum. The original is dual licensed under GPL and Apache 2. 

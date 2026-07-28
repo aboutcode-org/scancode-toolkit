@@ -1,0 +1,17 @@
+---
+key: tigerdataset-nc-2025
+short_name: tigerdataset non-commercial license 2025
+name: tigerdataset non-commercial license 2025
+category: Non-Commercial
+owner: XianpanZhou
+homepage_url: https://huggingface.co/datasets/tinytigerpan/tigerdataset/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-tigerdataset-nc-2025
+---
+
+This dataset and code is made available by xianpanzhou for non-commercial, research purposes only. 
+Non-commercial means not primarily intended for or directed towards commercial advantage or monetary compensation. 
+Research purposes mean solely for study, instruction, or non-commercial research, testing or validation. 
+No commercial license, whether implied or otherwise, is granted in or to this dataset and code. 
+This dataset and code is provided as-is, without warranty of any kind, express or implied, including any warranties of merchantability, title, fitness for a particular purpose, non-infringement, or that the code is free of defects, errors or viruses. 
+In no event we will be liable for any damages or losses of any kind arising from this dataset and code or your use thereof. 
+Any redistribution of this dataset and code must retain or reproduce the above copyright notice, conditions and disclaimer.

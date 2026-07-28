@@ -2,7 +2,7 @@
 key: pipedream-sal-1.0
 short_name: Pipedream Source Available License 1.0
 name: Pipedream Source Available License Version 1.0
-category: Source-available
+category: Non-Commercial
 owner: Pipedream
 homepage_url: https://github.com/PipedreamHQ/pipedream/blob/master/LICENSE
 spdx_license_key: LicenseRef-scancode-pipedream-sal-1.0

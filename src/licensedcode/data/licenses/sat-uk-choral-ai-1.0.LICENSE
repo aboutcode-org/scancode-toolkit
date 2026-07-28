@@ -1,0 +1,86 @@
+---
+key: sat-uk-choral-ai-1.0
+short_name: SAT UK Choral AI 1.0
+name: Serpentine Arts Technologies UK Choral AI Dataset Licence v1.0
+category: Non-Commercial
+owner: Serpentine
+homepage_url: https://huggingface.co/datasets/serpentineartstech/uk-choral-ai-preview-ogg/resolve/main/LICENSE.md
+spdx_license_key: LicenseRef-scancode-sat-uk-choral-ai-1.0
+other_urls:
+    - https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en
+ignorable_authors:
+    - The Serpentine Trust
+ignorable_urls:
+    - https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en
+---
+
+# Serpentine Arts Technologies UK Choral AI Dataset Licence (sat-uk-choral-ai-1.0)
+Version 1.0, January 2025
+
+## INTRODUCTION
+This licence agreement (“Agreement”) sets out the terms upon which we licence you to use one or more datasets of choral recordings (“Datasets”), including in relation to the training of machine learning models.
+
+The Datasets that are subject to this Agreement, along with the period of the licence (“Licence Period”), shall be agreed by you and us in writing.
+
+For the purposes of the following provisions of this Agreement, “Datasets” shall include datasets that incorporate the Datasets in whole or part, whether created by you or a third party.  Machine learning models trained in whole or in part using the Datasets are referred to in this Agreement as the “AI Models”.
+
+
+## LICENCE
+We grant to you a worldwide, non-exclusive, non-transferable and revocable licence, during the Licence Period, to:
+- do the Permitted Acts;
+- for the Permitted Purposes only; and
+- subject to the Conditions and Prohibitions, 
+
+as specified below.
+
+You may not sub-license these rights except to your technical services providers, for use in the course of their provision of service to you, or with our prior written consent and then, in each case, only for the Permitted Purposes and subject to the Conditions and Prohibitions.
+
+You must, in particular, ensure that the provisions of any technical services provider contracts and licences are consistent with this Agreement.
+
+
+## PERMITTED ACTS
+The “Permitted Acts” are:
+- storing and copying the Datasets;
+- combining the Datasets, in whole or part, with other datasets to create derivative Datasets; and
+- using the Datasets to generate AI Models,
+
+during the Licence Period only.
+
+
+## PERMITTED PURPOSES
+The “Permitted Purposes” are training, testing, validating and using AI Models for your own non-commercial:
+- artistic purposes;
+- educational, academic or research purposes; or
+- private and domestic purposes.
+
+If you wish to use the Datasets for any other purpose (including for any commercial purpose), you must send to us a written request seeking permission, including details of that purpose and of the persons that will be involved. We may either grant or withhold such permission, and we may apply conditions to any grant of permission. 
+
+
+## CONDITIONS
+The licence we grant to you is subject to these conditions (the “Conditions”):
+- you must store, access and use the Datasets securely;
+- you must ensure that the Datasets are not stored in, or transferred to, any location outside: (a) the UK; or (b) another jurisdiction that benefits from an adequacy determination under UK data protection laws;
+- you must comply with, and only use the Datasets and AI Models in accordance with, the code of conduct developed by The Serpentine Trust, a copy of which is available at [URL]; 
+- you must include in all public uses of the Datasets an attribution, in the form specified in the code of conduct or in such alternative form(s) as we may have agreed with you in writing; and
+- you must make any AI Model that you publish or distribute available to all recipients under a Creative Commons ATTRIBUTION-NONCOMMERCIAL-SHAREALIKE 4.0 International licence (as specified at: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en).
+
+
+## PROHIBITIONS
+The licence we grant to you is subject to these prohibitions (the “Prohibitions”):
+- you must not publish, redistribute or share the Datasets, except sharing with permitted sub-licensees;
+- you must not extract individual soloist recordings from the Datasets, or use such recordings independently from the Datasets; and
+- you must not use the Datasets or any AI Model in any way that is unlawful or illegal, for any unlawful or illegal purpose, or in connection with any unlawful or illegal purpose or activity. 
+
+
+## TERM AND TERMINATION
+This Agreement shall automatically terminate at the end of the Licence Period.
+
+This Agreement shall automatically terminate if: (a) we cease to have a right to grant you the rights licensed herein; or (b) you breach any provision of this Agreement or any related contract.
+
+Upon the termination of this Agreement: (a) the licences herein (and any sub-licences you have granted) shall be automatically and immediately revoked; and (b) you must immediately and irreversibly delete all copies of the Datasets licensed under this Agreement.
+
+
+## GENERAL
+This Agreement shall not impose conditions on or otherwise limit any use of the Datasets or AI Models that could lawfully be made without permission under this Agreement.
+
+This Agreement shall be governed by and construed in accordance with English law, and any disputes relating to this Agreement shall be subject to the exclusive jurisdiction of the courts of England.

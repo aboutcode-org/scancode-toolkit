@@ -1,0 +1,55 @@
+---
+key: poke-wiggle-proprietary-2026
+short_name: Poke & Wiggle Proprietary License 2026
+name: Poke & Wiggle Proprietary License 2026
+category: Commercial
+owner: Poke & Wiggle
+homepage_url: https://huggingface.co/datasets/pokeandwiggle/export_117/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-poke-wiggle-proprietary-2026
+ignorable_copyrights:
+    - Copyright (c) 2026 Poke & Wiggle GmbH.
+ignorable_holders:
+    - Poke & Wiggle GmbH.
+ignorable_emails:
+    - licensing@pokeandwiggle.com
+---
+
+Poke & Wiggle Proprietary License
+--------------------------------
+
+Copyright (c) 2026 Poke & Wiggle GmbH.
+All rights reserved.
+
+NO LICENSE GRANTED
+
+No license or other rights are granted under this agreement. Any use of the
+materials in this repository is strictly prohibited unless and until a separate
+written agreement has been executed with Poke & Wiggle GmbH.
+
+PROHIBITED USES
+
+Without limitation, the following actions are prohibited unless expressly
+authorized in a signed agreement with Poke & Wiggle GmbH:
+
+- Accessing or using the materials for any purpose
+- Downloading, copying, or storing any part of the materials
+- Training, fine-tuning, or evaluating any models using the materials
+- Creating derivative works
+- Distributing, sublicensing, or making the materials available to third parties
+- Using the materials for commercial or non-commercial purposes
+
+NO IMPLIED RIGHTS
+
+The availability of the materials in this repository does not grant any rights
+by implication, estoppel, or otherwise.
+
+CONTACT
+
+To obtain a commercial or other license, please contact:
+
+licensing@pokeandwiggle.com
+
+ENFORCEMENT
+
+Any unauthorized use may violate applicable laws and will be enforced to the
+maximum extent permitted.

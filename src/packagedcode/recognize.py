@@ -11,10 +11,12 @@ import os
 import sys
 
 from commoncode import filetype
-from packagedcode import APPLICATION_PACKAGE_DATAFILE_HANDLERS
-from packagedcode import SYSTEM_PACKAGE_DATAFILE_HANDLERS
-from packagedcode import ALL_DATAFILE_HANDLERS
+from commoncode.fileutils import as_posixpath
+
+from packagedcode import HANDLER_BY_DATASOURCE_ID
+from packagedcode import PACKAGE_IN_COMPILED_DATAFILE_HANDLERS
 from packagedcode import models
+from packagedcode.cache import get_cache
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
@@ -44,6 +46,7 @@ def recognize_package_data(
     location,
     application=True,
     system=False,
+    compiled=False,
     package_only=False,
 ):
     """
@@ -56,25 +59,21 @@ def recognize_package_data(
     if not filetype.is_file(location):
         return []
 
-    assert application or system or package_only
-    if package_only or (application and system):
-        datafile_handlers = ALL_DATAFILE_HANDLERS
-    elif application:
-        datafile_handlers = APPLICATION_PACKAGE_DATAFILE_HANDLERS
-    elif system:
-        datafile_handlers = SYSTEM_PACKAGE_DATAFILE_HANDLERS
-
     return list(_parse(
         location=location,
+        application=application,
+        system=system,
+        compiled=compiled,
         package_only=package_only,
-        datafile_handlers=datafile_handlers,
     ))
 
 
 def _parse(
     location,
+    application=True,
+    system=False,
+    compiled=False,
     package_only=False,
-    datafile_handlers=APPLICATION_PACKAGE_DATAFILE_HANDLERS,
 ):
     """
     Yield parsed PackageData objects from ``location``. Raises Exceptions on errors.
@@ -82,6 +81,46 @@ def _parse(
     Use the provided ``datafile_handlers`` list of DatafileHandler classes.
     Default to use application packages
     """
+
+    package_path = as_posixpath(location)
+    package_patterns = get_cache()
+
+    has_patterns = application or system or package_only
+    assert has_patterns or compiled
+    if package_only or (application and system):
+        package_matcher = package_patterns.all_package_matcher
+    elif application:
+        package_matcher = package_patterns.application_package_matcher
+    elif system:
+        package_matcher = package_patterns.system_package_matcher
+
+    matched_patterns = []
+    if has_patterns:
+        matched_patterns = package_matcher.match(package_path)
+
+    all_handler_ids = []
+    for matched_pattern in matched_patterns:
+        regex, _match = matched_pattern
+        handler_ids = package_patterns.handler_by_regex.get(regex.pattern)
+        if TRACE:
+            logger_debug(f'_parse:.handler_ids: {handler_ids}')
+
+        all_handler_ids.extend([
+            handler_id
+            for handler_id in handler_ids
+            if handler_id not in all_handler_ids
+        ])
+
+    datafile_handlers = [
+        HANDLER_BY_DATASOURCE_ID.get(handler_id)
+        for handler_id in all_handler_ids
+    ]
+
+    if not datafile_handlers:
+        if compiled:
+            datafile_handlers.extend(PACKAGE_IN_COMPILED_DATAFILE_HANDLERS)
+        elif TRACE:
+            logger_debug(f'_parse: no package datafile detected at {package_path}')
 
     for handler in datafile_handlers:
         if TRACE:

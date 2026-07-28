@@ -14758,7 +14758,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:npm/JSV@4.0.2",
+        "purl": "pkg:npm/jsv@4.0.2",
         "extracted_requirement": "4.0.2",
         "scope": "dependencies",
         "is_runtime": true,
@@ -14819,7 +14819,7 @@
           "repository_download_url": "https://registry.npmjs.org/JSV/-/JSV-4.0.2.tgz",
           "api_data_url": "https://registry.npmjs.org/JSV/4.0.2",
           "datasource_id": "npm_shrinkwrap_json",
-          "purl": "pkg:npm/JSV@4.0.2"
+          "purl": "pkg:npm/jsv@4.0.2"
         },
         "extra_data": {}
       },

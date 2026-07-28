@@ -1,0 +1,11 @@
+---
+key: ncsc-nl-disclaimer
+short_name: NCSC-NL Vulnerabilities Disclaimer
+name: NCSC-NL Vulnerabilities Disclaimer
+category: Permissive
+owner: NCSC-NL
+homepage_url: https://vulnerabilities.ncsc.nl/vulnerability.html?id=2025/cve-2025-5115#disclaimer
+spdx_license_key: LicenseRef-scancode-ncsc-nl-disclaimer
+---
+
+The Netherlands Cyber Security Center (henceforth: NCSC-NL) maintains this portal to enhance access to its information and vulnerabilities. The use of this information is subject to the following terms and conditions: The vulnerabilities disclosed in this portal are gathered by NCSC-NL from a variety of open sources, which the user can retrieve from other platforms. NCSC-NL makes every reasonable effort to ensure that the content of this portal is kept up to date, and that it is accurate and complete. Nevertheless, NCSC-NL cannot entirely rule out the possibility of errors, and therefore cannot give any warranty in respect of its completeness, accuracy or real-time keeping up-to-date. NCSC-NL does not control nor guarantee the accuracy, relevance, timeliness or completeness of information obtained from these external sources. The vulnerabilities disclosed in this portal are intended solely for the convenience of professional parties to take appropriate measures to manage the risks posed to the cybersecurity. No rights can be derived from the information provided therein. NCSC-NL and the Kingdom of the Netherlands assume no legal liability or responsibility for any damage resulting from either the use or inability of use of the vulnerabilities disclosed in this portal. This includes damage resulting from the inaccuracy of incompleteness of the information contained in it. The information on this page is subject to Dutch law. All disputes related to or arising from the use of this portal regarding the disclosure of vulnerabilities will be submitted to the competent court in The Hague. This choice of means also applies to the court in summary proceedings.

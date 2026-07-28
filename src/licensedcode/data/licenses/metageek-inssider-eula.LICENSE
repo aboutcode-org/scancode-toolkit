@@ -2,7 +2,7 @@
 key: metageek-inssider-eula
 short_name: inSSIDer EULA
 name: inSSIDer End User License Agreement
-category: Proprietary Free
+category: Non-Commercial
 owner: MetaGeek
 homepage_url: https://www.metageek.com/legal/eula/inssider.html
 spdx_license_key: LicenseRef-scancode-metageek-inssider-eula

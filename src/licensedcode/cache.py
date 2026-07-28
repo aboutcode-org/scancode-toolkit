@@ -34,7 +34,6 @@ LICENSE_INDEX_LOCK_TIMEOUT = 60 * 6
 LICENSE_INDEX_DIR = 'license_index'
 LICENSE_INDEX_FILENAME = 'index_cache'
 LICENSE_LOCKFILE_NAME = 'scancode_license_index_lockfile'
-LICENSE_CHECKSUM_FILE = 'scancode_license_index_tree_checksums'
 
 
 class LicenseCache:

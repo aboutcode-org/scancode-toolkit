@@ -9,7 +9,7 @@ Every little bit helps, and a credit will always be given.
 __ issues_
 
 If you are new to ScanCode and want to find easy tickets to work on,
-check `easy issues <https://github.com/nexB/scancode-toolkit/labels/easy>`_
+check `good first issues <https://github.com/nexB/scancode-toolkit/labels/easy>`_
 
 When contributing to ScanCode (such as code, bugs, documentation, etc.) you
 agree to the Developer `Certificate of Origin <http://developercertificate.org/>`_
@@ -85,7 +85,7 @@ template. Your help and contribution make ScanCode docs better, we love hearing 
 
 The ScanCode documentation is hosted at `scancode-toolkit.readthedocs.io <https://scancode-toolkit.readthedocs.io/en/latest/>`_.
 
-If you want to contribute to Scancode Documentation, you'll find `this guide here <https://scancode-toolkit.readthedocs.io/en/latest/contribute/contrib_doc.html>`_ helpful.
+If you want to contribute to Scancode Documentation, you'll find `this guide here https://scancode-toolkit.readthedocs.io/en/latest/getting-started/contribute/contributing-docs.html`_ helpful.
 
 Development
 ===========

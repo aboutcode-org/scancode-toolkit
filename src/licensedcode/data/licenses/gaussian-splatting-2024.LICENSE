@@ -2,7 +2,7 @@
 key: gaussian-splatting-2024
 short_name: Gaussian-Splatting License 2024
 name: Gaussian-Splatting License 2024
-category: Proprietary Free
+category: Non-Commercial
 owner: INRIA
 homepage_url: https://github.com/graphdeco-inria/gaussian-splatting/blob/main/LICENSE.md?plain=1
 spdx_license_key: LicenseRef-scancode-gaussian-splatting-2024

@@ -1,0 +1,65 @@
+---
+key: meralion-pl-2025
+short_name: MERaLiON Public Licence 2025
+name: MERaLiON Public Licence 2025
+category: Permissive
+owner: A-STAR
+homepage_url: https://huggingface.co/MERaLiON/MERaLiON-SER-v1
+spdx_license_key: LicenseRef-scancode-meralion-pl-2025
+text_urls:
+    - https://huggingface.co/MERaLiON/MERaLiON-SER-v1/resolve/main/MERaLiON-Public-Licence-SER-V1.pdf
+ignorable_authors:
+    - the Institute for Infocomm Research ("I2R"), a national research institute of the Agency
+        for Science Technology And Research
+ignorable_urls:
+    - https://opensource.org/license/mit
+---
+
+MERaLiON Public Licence
+
+MERaLiON is developed by the Institute for Infocomm Research (“I²R”), a national research
+institute of the Agency for Science Technology And Research (“A*STAR”), funded by the
+National Research Foundation, Singapore under its National Large Language Models Funding
+Initiative.
+
+MERaLiON (the “Software”) is available for use on the terms set out below. Your use of the
+Software is conditional on your agreement to these terms. Please do not proceed if you do
+not agree to these terms.
+
+MERaLiON-SER-v1
+The MIT License
+https://opensource.org/license/mit
+
+Terms of Use
+You agree that if you share or otherwise distribute the Software (including in an adapted or
+modified form (“Derivative Work”)), you must:
+(a) Retain the identity of the creators.
+(b) Retain a copyright notice,
+(c) Include a disclaimer of warranties,
+(d) Indicate if you have modified the Software and retain an indication of the modifications,
+and
+(e) Indicate that this Software is licensed under these public license terms and include the
+text of or a link to these license terms.
+
+If you share or otherwise distribute Derivative Works, you agree that:
+(a) you shall not use or combine the Software with third-party resources with incompatible
+terms,
+(b) you are responsible for ensuring that you have all necessary rights and permissions to
+use the third-party resources,
+(c) you shall indemnify and hold harmless the creators for any and all liability, loss,
+damage, costs and expense arising from any claims in relation to your use of the
+Software and third-party resources in or in generating the Derivative Works, and
+(d) the license you apply to the Derivative Works must not prevent recipients of the
+Derivative Works from complying with these terms.
+
+Specific Disclaimer
+
+The Software has not been specifically aligned for safety and may generate content that is
+inappropriate, offensive, or harmful. Developers and users are responsible for performing their
+own safety fine-tuning and implementing necessary security measures. The creators shall not
+be held liable for any claims, damages, or other liabilities arising from the use of the Software,
+weights, or code.
+
+Out-of-Scope Use
+
+The Software is not intended for use in math and coding tasks.

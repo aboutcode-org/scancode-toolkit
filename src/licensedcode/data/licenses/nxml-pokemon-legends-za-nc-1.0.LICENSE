@@ -1,0 +1,118 @@
+---
+key: nxml-pokemon-legends-za-nc-1.0
+short_name: nxml-pokemon-legends-za Non-Commercial v1.0
+name: nxml-pokemon-legends-za Non-Commercial Research License v1.0
+category: Non-Commercial
+owner: Clark Saben
+homepage_url: https://huggingface.co/datasets/arelius/nxml-pokemon-legends-za-latents/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-nxml-pokemon-legends-za-nc-1.0
+ignorable_copyrights:
+    - Copyright (c) 2026 Clark Saben
+ignorable_holders:
+    - Clark Saben
+---
+
+# nxml-pokemon-legends-za — Non-Commercial Research License v1.0
+
+Copyright (c) 2026 Clark Saben
+
+> ⚠️ Important: this license covers **only** the original contribution by
+> the licensor — primarily the 26-dim controller-action recordings, the
+> per-episode metadata, the parquet/manifest schemas, and the encoding /
+> packaging code. It does **not** purport to license any underlying
+> audio-visual game content.
+>
+> The video frames included in this dataset depict **Pokémon Legends: Z-A**.
+> All rights in the underlying game audio-visual content (including but not
+> limited to character designs, models, environments, music, sound effects,
+> user-interface elements, and on-screen text) are reserved by their
+> respective owners: **Nintendo Co., Ltd.**, **The Pokémon Company**,
+> **Game Freak Inc.**, and **Creatures Inc.** This dataset is not licensed
+> by, endorsed by, or affiliated with those rights holders.
+
+## 1. Definitions
+
+- **"Dataset"** means the files distributed under this license at the
+  HuggingFace dataset repositories `arelius/nxml-pokemon-legends-za`,
+  `arelius/nxml-pokemon-legends-za-mp4`, and
+  `arelius/nxml-pokemon-legends-za-latents`, including video files,
+  parquet files, manifests, README, and accompanying code.
+- **"Licensor"** means Clark Saben, the uploader.
+- **"You"** means the individual or entity that has accepted the gated-
+  access terms on HuggingFace and is exercising rights under this license.
+- **"Non-commercial research"** means academic or personal research that is
+  not, and is not intended to be, sold, licensed, or otherwise
+  monetised, and that is not undertaken by, for, or on behalf of, a
+  commercial entity for the development of a commercial product or
+  service.
+
+## 2. Grant of rights (limited to the Licensor's own contribution)
+
+Subject to your compliance with the terms below, Licensor grants you a
+worldwide, royalty-free, non-exclusive, non-sublicensable, revocable
+license to:
+
+a. download a single copy of the Dataset to a machine under your control;
+b. use the Dataset for **non-commercial research** purposes, including the
+   training of statistical / machine-learning models for personal study
+   or academic publication;
+c. publish results (figures, tables, qualitative descriptions, model
+   weights) derived from such research, provided that those results do
+   not enable bulk reconstruction of the original audio-visual content.
+
+This grant **does not** include any rights in the underlying audio-visual
+game content. Those rights remain with the rights holders identified above.
+
+## 3. Restrictions
+
+You shall **not**:
+
+a. use the Dataset, in whole or in part, for any commercial purpose;
+b. redistribute, mirror, host, sell, sublicense, or otherwise make the
+   Dataset (or any meaningful portion of the video frames it contains)
+   available to third parties — instead, direct them to the original
+   gated HuggingFace repositories;
+c. publish model weights whose primary intended or marketed use is to
+   regenerate, upscale, or reconstruct the underlying audio-visual game
+   content depicted in the Dataset;
+d. use the Dataset in any way that would mislead a reasonable observer
+   into believing the Dataset, or works derived from it, are endorsed by,
+   licensed by, or affiliated with the rights holders identified above;
+e. remove or obscure this `LICENSE` file, the gated-access notice on the
+   HuggingFace repository, or the attribution to the rights holders in
+   the README.
+
+## 4. Takedown
+
+Licensor will, on receipt of a credible request from any of the rights
+holders identified above (or their authorised representatives), remove the
+Dataset from public distribution promptly. Your license terminates
+automatically on such removal, except that this section and Section 5
+(Disclaimer / liability) survive.
+
+## 5. Disclaimer & liability
+
+THE DATASET IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND ABSENCE OF
+THIRD-PARTY CLAIMS. IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY
+CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE
+DATASET OR THE USE OR OTHER DEALINGS IN THE DATASET. You are solely
+responsible for evaluating whether your use complies with the intellectual
+property rights of the rights holders identified above and with applicable
+law in your jurisdiction.
+
+## 6. Termination
+
+This license terminates automatically if you breach any of its terms, or
+on the removal contemplated by Section 4. Upon termination you must cease
+using the Dataset and destroy any local copies. Sections 4 and 5 survive
+termination.
+
+## 7. No legal advice
+
+This license is provided in good faith but is not legal advice. If your
+intended use is non-obvious — in particular, anything that touches on
+commercial activity, public model release, or large-scale redistribution
+of derived content — you should consult a qualified attorney.

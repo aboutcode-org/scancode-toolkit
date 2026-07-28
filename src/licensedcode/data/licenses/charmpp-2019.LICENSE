@@ -2,7 +2,7 @@
 key: charmpp-2019
 short_name: Charm++ Software License 2019
 name: Charm++ Software License 2019
-category: Proprietary Free
+category: Non-Commercial
 owner: NCSA - University of Illinois
 homepage_url: https://github.com/charmplusplus/charm/blob/046c0b5b4231a2e2c1dc20e55d7fe02668356b36/LICENSE
 spdx_license_key: LicenseRef-scancode-charmpp-2019

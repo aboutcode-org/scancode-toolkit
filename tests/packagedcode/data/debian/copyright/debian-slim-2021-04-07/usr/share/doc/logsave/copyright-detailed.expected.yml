@@ -1,8 +1,8 @@
 declared_license:
 declared_license_expression: (gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert)
-  AND ntp-0 AND bsd-new
+  AND ntp-0 AND bsd-3-clause-tso
 declared_license_expression_spdx: (GPL-2.0-only AND LGPL-2.0-only AND BSD-3-Clause AND NTP)
-  AND NTP-0 AND BSD-3-Clause
+  AND NTP-0 AND BSD-3-Clause-Tso
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -31,8 +31,8 @@ license_detections:
           \ the complete text of the GNU General Public\nLicense can be found in `/usr/share/common-licenses/GPL-2'.\
           \  The\ncomplete text of the GNU Library General Public License can be found\nin '/usr/share/common-licenses/LGPL-2'."
     identifier: gpl_2_0_and_lgpl_2_0_and_bsd_new_and_mit_old_style_no_advert-aed55561-0504-0265-5986-832cc7f7bbf2
-  - license_expression: ntp-0 AND bsd-new
-    license_expression_spdx: NTP-0 AND BSD-3-Clause
+  - license_expression: ntp-0 AND bsd-3-clause-tso
+    license_expression_spdx: NTP-0 AND BSD-3-Clause-Tso
     matches:
       - license_expression: ntp-0
         license_expression_spdx: NTP-0
@@ -55,8 +55,8 @@ license_detections:
              M.I.T. S.I.P.B. make no representations about the suitability of
              this software for any purpose.  It is provided "as is" without
              express or implied warranty.
-      - license_expression: bsd-new
-        license_expression_spdx: BSD-3-Clause
+      - license_expression: bsd-3-clause-tso
+        license_expression_spdx: BSD-3-Clause-Tso
         from_file:
         start_line: 49
         end_line: 73
@@ -65,8 +65,8 @@ license_detections:
         matched_length: 210
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: bsd-new_117.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_117.RULE
+        rule_identifier: bsd-3-clause-tso_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-3-clause-tso_1.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -93,7 +93,7 @@ license_detections:
              (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
              USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH
              DAMAGE.
-    identifier: ntp_0_and_bsd_new-3e70b37e-1d4e-a210-b9e4-4e4dae842319
+    identifier: ntp_0_and_bsd_3_clause_tso-25faf16a-82b3-20cb-c6f2-b92dba67bfb1
 other_license_detections: []
 copyright: |
   Copyright (c) 2003-2007 Theodore Ts'o <tytso@mit.edu>

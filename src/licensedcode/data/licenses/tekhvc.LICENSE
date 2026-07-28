@@ -4,9 +4,12 @@ short_name: TekHVC License
 name: TekHVC License
 category: Permissive
 owner: Tektronix
-spdx_license_key: LicenseRef-scancode-tekhvc
+spdx_license_key: TekHVC
+other_spdx_license_keys:
+    - LicenseRef-scancode-tekhvc
 other_urls:
     - https://www.x.org/releases/individual/lib/libX11-1.7.2.tar.bz2
+    - https://gitlab.freedesktop.org/xorg/lib/libx11/-/blob/master/COPYING?ref_type=heads#L138-171
 ---
 
 Permission is hereby granted to use, copy,

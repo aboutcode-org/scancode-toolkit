@@ -2,7 +2,7 @@
 key: nanoporetech-public-1.0
 short_name: Nanoporetech Public License 1.0
 name: Oxford Nanopore Technologies PLC. Public License Version 1.0
-category: Proprietary Free
+category: Non-Commercial
 owner: Oxford Nanopore Technologies
 homepage_url: https://github.com/nanoporetech/modkit/blob/master/LICENCE.txt
 spdx_license_key: LicenseRef-scancode-nanoporetech-public-1.0

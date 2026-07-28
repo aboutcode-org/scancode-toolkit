@@ -1,0 +1,77 @@
+---
+key: keychron-sal-2024
+short_name: Keychron Source-Available License 2024
+name: Keychron Source-Available License 2024
+category: Non-Commercial
+owner: Keychron
+homepage_url: https://github.com/Keychron/Keychron-Keyboards-Hardware-Design/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-keychron-sal-2024
+ignorable_copyrights:
+    - Copyright (c) 2024-present Keychron (Keychron Technology, Inc)
+ignorable_holders:
+    - Keychron (Keychron Technology, Inc)
+---
+
+Keychron Source-Available License
+
+Copyright (c) 2024-present Keychron (Keychron Technology, Inc)
+
+This project is source-available. Commercial use of the design files is limited as described below, except that original compatible accessories and add-ons are not subject to the commercial-use restriction in this license when they follow the accessory conditions below.
+
+PERMISSIONS — You MAY:
+
+  1. View, download, and study the design files for personal or
+     educational purposes.
+  2. Modify the files and create derivative works for personal,
+     non-commercial use (e.g., 3D printing a custom case for yourself).
+  3. Share the original, unmodified files with others, provided this
+     license and copyright notice are included in full.
+  4. Reference or cite the files in academic or educational contexts.
+  5. Design, manufacture, and sell original accessories or add-ons that
+     are compatible with Keychron products. Such accessories and add-ons
+     are not subject to the commercial-use restriction in this license,
+     provided that:
+     - the accessory is not a keyboard, mouse, or a substantially similar
+       copy of a Keychron product;
+     - the accessory does not copy or reproduce a complete Keychron
+       keyboard or mouse design from these files; and
+     - you do not use Keychron trademarks, logos, or branding except for
+       truthful compatibility statements such as "compatible with
+       Keychron Q1".
+
+RESTRICTIONS — You MAY NOT:
+
+  1. Use the files, or any derivative of them, for commercial purposes.
+     unless that use is expressly allowed under Permission 5 above.
+  2. Sublicense, relicense, or redistribute modified versions of the
+     files without prior written permission from Keychron.
+  3. Remove or alter this license notice, copyright notice, or any
+     attribution to Keychron.
+  4. Represent derivative works as officially endorsed by Keychron.
+  5. Manufacture, sell, offer for sale, or distribute keyboards, mice,
+     or substantially similar products based on these files or their
+     derivatives.
+  6. Use Keychron trademarks, logos, product names, or other branding as
+     your own branding, in a way that implies source or endorsement, or
+     in a way that is likely to confuse customers. Compatibility
+     references must remain descriptive and must not imply official
+     authorization.
+
+COMMERCIAL ACCESSORY USE:
+
+Original compatible accessories and add-ons are not subject to the
+commercial-use restriction in this license, provided they comply with
+Permission 5 and the restrictions above.
+
+If you want to manufacture or sell keyboards, mice, or other products
+that reproduce Keychron product designs, you must obtain prior written
+permission from Keychron.
+
+DISCLAIMER:
+
+  THE FILES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+  OR IMPLIED. IN NO EVENT SHALL KEYCHRON BE LIABLE FOR ANY CLAIM,
+  DAMAGES, OR OTHER LIABILITY ARISING FROM THE USE OF THESE FILES.
+
+  Keychron reserves the right to modify the terms of this license for
+  future releases of these design files.

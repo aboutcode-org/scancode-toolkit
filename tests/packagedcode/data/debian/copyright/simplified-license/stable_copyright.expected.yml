@@ -155,7 +155,7 @@ other_license_detections:
         license_expression_spdx: HPND-sell-variant
         from_file:
         start_line: 172
-        end_line: '191'
+        end_line: 191
         matcher: 2-aho
         score: '100.0'
         matched_length: 168
@@ -187,7 +187,7 @@ other_license_detections:
       - license_expression: metamail
         license_expression_spdx: metamail
         from_file:
-        start_line: '197'
+        start_line: 197
         end_line: 206
         matcher: 2-aho
         score: '100.0'

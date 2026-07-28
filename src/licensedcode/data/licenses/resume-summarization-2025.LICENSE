@@ -1,0 +1,19 @@
+---
+key: resume-summarization-2025
+short_name: resume-summarization-dataset license 2025
+name: resume-summarization-dataset license 2025
+category: Non-Commercial
+owner: Juan Ignacio Beiroa
+homepage_url: https://huggingface.co/datasets/jbeiroa/resume-summarization-dataset/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-resume-summarization-2025
+---
+
+## License
+
+This dataset aggregates content from multiple public sources.
+
+- Portions of the data are licensed under CC0 1.0 and MIT (see below).
+- Other portions are from publicly accessible datasets with no explicit license; as such, redistribution may be restricted.
+- Therefore, this dataset is made available **for research and non-commercial use only**.
+
+If you are the owner of any portion of this dataset and wish for it to be removed or credited differently, please contact the maintainers.

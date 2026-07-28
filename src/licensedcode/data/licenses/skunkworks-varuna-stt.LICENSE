@@ -1,0 +1,49 @@
+---
+key: skunkworks-varuna-stt
+short_name: SkunkWorks Modified MIT License
+name: SkunkWorks Modified MIT License
+category: Proprietary Free
+owner: Skunk Work Labs
+homepage_url: https://huggingface.co/SkunkWorkLabs/varuna-stt/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-skunkworks-varuna-stt
+text_urls:
+    - https://huggingface.co/SkunkWorkLabs/varuna-stt/blob/main/LICENSE
+other_urls:
+    - https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/
+ignorable_copyrights:
+    - Copyright (c) 2026 SkunkWorks Labs
+ignorable_holders:
+    - SkunkWorks Labs
+---
+
+SkunkWorks Modified MIT License
+
+Copyright (c) 2026 SkunkWorks Labs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software, model weights, and associated documentation files (the
+"Software"), to deal in the Software without restriction, including without
+limitation the rights to use, copy, modify, merge, publish, distribute,
+sublicense, and/or sell copies of the Software, and to permit persons to whom
+the Software is furnished to do so, subject to the following conditions:
+
+1. ATTRIBUTION
+   The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software. Any product, paper, or
+   public-facing distribution that uses Varuna STT must visibly credit
+   "Varuna STT by SkunkWorks Labs" with a link to the source repository.
+
+2. UPSTREAM ATTRIBUTION
+   Varuna STT is fine-tuned from NVIDIA NeMo's
+   `nemotron-speech-streaming-en-0.6b` base model. Use of this Software is
+   subject to the upstream NeMo / NVIDIA model license, which the user is
+   responsible for reviewing and complying with separately.
+
+3. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+   IN THE SOFTWARE.

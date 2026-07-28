@@ -1,0 +1,6 @@
+about_resource: .
+download_url: https://gitlab.com/zygoon/os-release-zoo/-/archive/4bb083bb9f3f488893401f4d8d49ce4f1c091636/os-release-zoo-4bb083bb9f3f488893401f4d8d49ce4f1c091636.zip
+homepage_url: https://gitlab.com/zygoon/os-release-zoo
+license_expression: cc0-1.0
+notes: os_release contains the /etc/os-release file from many Linux distros.
+

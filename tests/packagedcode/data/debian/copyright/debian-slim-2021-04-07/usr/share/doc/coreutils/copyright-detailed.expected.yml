@@ -260,7 +260,7 @@ license_detections:
       - license_expression: gpl-3.0-plus
         license_expression_spdx: GPL-3.0-or-later
         from_file:
-        start_line: '193'
+        start_line: 193
         end_line: 204
         matcher: 2-aho
         score: '100.0'

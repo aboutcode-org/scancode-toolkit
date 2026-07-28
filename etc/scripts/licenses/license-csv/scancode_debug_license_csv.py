@@ -45,6 +45,7 @@ class LicenseCsvOutput(OutputPlugin):
     options = [
         PluggableCommandLineOption(('--license-csv',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            default=None,
             metavar='FILE',
             help='Write license scan debug output as CSV to FILE.',
             help_group=OUTPUT_GROUP,

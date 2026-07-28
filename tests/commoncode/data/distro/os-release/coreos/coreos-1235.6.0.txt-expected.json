@@ -1,0 +1,11 @@
+{
+  "NAME": "Container Linux by CoreOS",
+  "ID": "coreos",
+  "VERSION": "1235.6.0",
+  "VERSION_ID": "1235.6.0",
+  "BUILD_ID": "2017-01-10-0545",
+  "PRETTY_NAME": "Container Linux by CoreOS 1235.6.0 (Ladybug)",
+  "ANSI_COLOR": "38;5;75",
+  "HOME_URL": "https://coreos.com/",
+  "BUG_REPORT_URL": "https://github.com/coreos/bugs/issues"
+}

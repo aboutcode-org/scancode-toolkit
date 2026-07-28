@@ -1,0 +1,37 @@
+---
+key: roofsuit-2025
+short_name: Roofsuit License 2025
+name: Roofsuit License 2025
+category: Non-Commercial
+owner: Elementum Publishing
+homepage_url: https://huggingface.co/datasets/ElementumPublishing/Roofsuit/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-roofsuit-2025
+ignorable_copyrights:
+    - Copyright (c) 2025 Elementum Publishing
+ignorable_holders:
+    - Elementum Publishing
+ignorable_emails:
+    - elementum_publishing@proton.me
+---
+
+White-Label GTP Process Framework – Demo Dataset
+
+Copyright (c) 2025 Elementum Publishing
+
+---------------------------------------------------------------
+ENGLISH VERSION
+
+This demo dataset is provided for evaluation, research, and educational purposes only.
+- Commercial use, resale, redistribution, or integration in other products is NOT permitted without a separate, written license agreement.
+- For commercial licensing, custom integration, or exclusive/full access, please contact: elementum_publishing@proton.me
+
+All rights reserved.
+
+---------------------------------------------------------------
+DEUTSCHE VERSION
+
+Dieses Demo-Dataset darf ausschließlich für Evaluierung, Forschung und Bildungszwecke verwendet werden.
+- Kommerzielle Nutzung, Weiterverkauf, Verbreitung oder Integration in andere Produkte ist NICHT gestattet ohne separate, schriftliche Lizenzvereinbarung.
+- Für kommerzielle Lizenzen, individuelle Integrationen oder exklusiven Zugriff kontaktieren Sie bitte: elementum_publishing@proton.me
+
+Alle Rechte vorbehalten.

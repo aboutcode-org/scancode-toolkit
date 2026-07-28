@@ -211,7 +211,7 @@ class GemspecInInstalledVendorBundleSpecificationsHandler(GemspecHandler):
 # TODO: https://stackoverflow.com/questions/41454333/meaning-of-new-block-git-sourcegithub-in-gemfile
 class GemfileHandler(GemspecHandler):
     datasource_id = 'gemfile'
-    path_patterns = ('*/Gemfile', '*/*.gemfile', '*/Gemfile-*')
+    path_patterns = ('*/Gemfile', '*.gemfile', '*/Gemfile-*')
     default_package_type = 'gem'
     default_primary_language = 'Ruby'
     description = 'RubyGems Bundler Gemfile'

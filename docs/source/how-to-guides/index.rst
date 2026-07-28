@@ -4,9 +4,10 @@
 =================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   add_new_license
-   add_new_license_detection_rule
-   install_new_license_plugin
-   generate_attribution
+   how-to-add-new-license
+   how-to-add-new-license-detection-rule
+   how-to-install-new-license-plugin
+   how-to-generate-attribution-docs
+   how-to-extract-archives

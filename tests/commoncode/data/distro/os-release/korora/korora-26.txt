@@ -1,0 +1,10 @@
+NAME=Korora
+VERSION="26 (Bloat)"
+ID=korora
+ID_LIKE=fedora
+VERSION_ID=26
+PRETTY_NAME="Korora 26 (Bloat)"
+ANSI_COLOR="0;34"
+CPE_NAME="cpe:/o:kororaproject:korora:26"
+HOME_URL="https://kororaproject.org/"
+PRIVACY_POLICY_URL=https://fedoraproject.org/wiki/Legal:PrivacyPolicy

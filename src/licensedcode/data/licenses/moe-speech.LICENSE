@@ -1,0 +1,87 @@
+---
+key: moe-speech
+language: ja
+short_name: MoeSpeech License
+name: MoeSpeech License
+category: Proprietary Free
+owner: ayousanz
+homepage_url: https://huggingface.co/datasets/ayousanz/moe-speech-plus/blob/main/LICENSE.md
+spdx_license_key: LicenseRef-scancode-moe-speech
+---
+
+MoeSpeech LICENSE
+
+このライセンスは日本語と英語の両方で提供されています。両方のバージョンが法的に有効ですが、解釈に矛盾が生じた場合は日本語版が優先されます。
+
+This license is provided in both Japanese and English. Both versions are legally valid, but in the event of any inconsistencies in interpretation, the Japanese version shall take precedence.
+日本語版 [Japanese Version]
+定義
+
+このライセンスで用いる用語の定義は以下の通りです。
+
+    公開: ある情報を、利用者以外の第三者（人数は問わない）が取得可能な状態にすること。また、DiscordやXの非公開アカウントへの投稿等、一部のユーザーのみが取得可能な状態にすることも公開とみなします。
+    再配布: このデータセットの全体または一部を公開すること（その際に元のデータから修正・改変した場合も含む）。ただし、このデータセットを用いて機械学習モデルを作成した場合、そのモデルを公開することは再配布とみなしません。
+
+利用条件
+
+このデータセットは、以下のライセンスに基づいて利用することができます。
+
+このデータセット内のデータは、日本の著作権法（昭和45年5月6日法律第48号）第三十条の四による利用のみが可能です（ただし、「当該著作物の種類及び用途並びに当該利用の態様に照らし著作権者の利益を不当に害する」ような利用は禁止されています）。
+
+ここで、具体的にどのような利用が可能かについては利用者の判断に委ねられており、このデータセットの提供者はこのデータセットを利用することによって生じたいかなるトラブルや損害に対しても責任を負いません。
+
+またこのデータセットを利用することで得られた情報や機械学習モデルや成果物等については、下記の再配布や改変にあたる場合を除き、自由に公開・共有することができ、このデータセットを使用したことへの言及やクレジット表記は必要ありません。ただしこのデータセットへ言及する際には、識別名と声優やキャラクター名や出典元等との対応が明らかにされるのを防ぐため、少数の識別名のみを使用しその特徴が再現されているような共有物については、使用した識別名を公開しないようにしてください。
+禁止行為
+
+以下の行為は禁止されています。
+
+    このデータセットの特定の識別名のデータを享受目的で利用すること。
+    このデータセットの特定の識別名のデータについて、その一部または全てを公開すること（特定識別名のデータの再配布）。特に、データセット内の音声ファイルを1つであっても公開することは、特定識別名のデータの再配布とみなされます。
+    このデータセットの特別の識別名のデータについて、その音声ファイルを元ゲームのシナリオ順通りに並べようと試みたり、その結果を公開したりすること。
+    このデータセットについて、出典元が同じであるようなキャラクター識別名たちを明らかにし、その結果を公開すること。
+    このデータセットに含まれる音声データについて、その実際のキャラクター名や声優の名前や出典元を明らかにし公開すること（音声データの識別名やファイル名等に言及しない場合も含む）。
+
+その他の重要な条件
+
+    利用者は、このデータセットの利用に際して、自身の国または地域の法律に従うこと。
+    このデータセットの利用によって発生したいかなるトラブルや損害に対しても、データセットの提供者は責任を負わない。
+
+再配布の禁止
+
+    このデータセットは、改変の有無に関わらず、再配布することはできません。
+
+English Version
+Definitions
+
+The definitions of terms used in this license are as follows:
+
+    Publication: Making certain information accessible to third parties other than users, regardless of the number of people. This also includes posts to private accounts on platforms like Discord or X, where the information is accessible only to a limited group of users.
+    Redistribution: Publishing the entire or a part of this dataset (including modifications or alterations of the original data). However, publishing a machine learning model created using this dataset is not considered redistribution.
+
+Terms of Use
+
+This dataset may be used under the following license:
+
+The data in this dataset can only be used as permitted by Copyright Law of Japan (Law No. 48 of May 6, 1970) Article 30-4. It is permissible to exploit a work, in any way and to the extent considered necessary, in cases where it is not a person's purpose to personally enjoy or cause another person to enjoy the thoughts or sentiments expressed in that work. However, uses that unreasonably prejudice the interests of the copyright owner in light of the nature or purpose of the work or the circumstances of its exploitation are prohibited.
+
+Here, what constitutes permissible use is left to the discretion of the user, and the provider of this dataset bears no responsibility for any troubles or damages arising from the use of this dataset.
+
+Furthermore, information, machine learning models, or products obtained through the use of this dataset may be freely published or shared, except in cases of redistribution or modification as described below. There is no need for attribution or credit for using this dataset. However, when referring to this dataset, please do not disclose the specific identification names used, to prevent making clear the correspondence between identification names and voice actors, character names, or sources.
+Prohibited Actions
+
+The following actions are prohibited:
+
+    Using specific identification name data in this dataset for the purpose of personal enjoyment.
+    Publishing any part or all of the specific identification name data in this dataset (redistribution of specific identification name data). In particular, publishing even a single audio file from the dataset is considered redistribution of specific identification name data.
+    Attempting to arrange the audio files of this dataset in the order of the original game scenario, or publishing the results.
+    Revealing and publishing the character identification names from the same source in this dataset.
+    Disclosing and publishing the actual character names, voice actor names, or sources of the audio data in this dataset (including cases where identification names or file names are not mentioned).
+
+Other Important Conditions
+
+    Users must comply with the laws of their country or region when using this dataset.
+    The provider of this dataset bears no responsibility for any troubles or damages arising from its use.
+
+Redistribution Prohibited
+
+    This dataset may not be redistributed, regardless of whether or not it has been modified.

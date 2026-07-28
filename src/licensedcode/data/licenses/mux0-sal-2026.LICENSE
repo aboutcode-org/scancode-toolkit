@@ -1,0 +1,196 @@
+---
+key: mux0-sal-2026
+short_name: MUX0 Source-Available License 2026
+name: MUX0 Source-Available License 2026
+category: Non-Commercial
+owner: 10xChengTu
+homepage_url: https://github.com/10xChengTu/Mux0/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-mux0-sal-2026
+ignorable_copyrights:
+    - Copyright (c) 2026 10xChengTu
+ignorable_holders:
+    - 10xChengTu
+ignorable_urls:
+    - https://opensource.org/osd
+---
+
+MUX0 Source-Available License
+Copyright (c) 2026 10xChengTu
+
+All rights reserved.
+
+This source code is published for transparency, auditability, and personal
+reading. It is NOT open-source software as defined by the Open Source
+Initiative (https://opensource.org/osd). No rights are granted under this
+document except those narrowly enumerated below.
+
+1. PERMITTED USES
+
+   Subject to full and ongoing compliance with every term of this license,
+   and only so long as you do not engage in any Prohibited Use (Section 2),
+   the following are permitted without additional permission:
+
+   (a) Viewing and reading the source code in this repository.
+
+   (b) Downloading and installing official pre-built binary releases of
+       MUX0 published by the copyright holder and running them on hardware
+       you own, lease, or otherwise control — including:
+           (i) personal use;
+          (ii) use inside any organization (including for-profit
+               companies), by employees or contractors, on that
+               organization's devices or on personal devices used for
+               that organization's work;
+         (iii) use of MUX0 as a tool to design, build, test, debug,
+               deploy, operate, or support other software, services, or
+               content — including commercial, revenue-generating, or
+               client-facing work. Nothing produced inside MUX0 (code,
+               documents, command output, transcripts, etc.) is subject
+               to this license; you own whatever you create with it.
+
+   (c) Compiling the source code locally, on a machine you own or
+       control, solely for your own or your organization's internal use
+       as described in (b), provided the resulting binary is not
+       redistributed, published, hosted as a service, bundled into any
+       product, or otherwise made accessible to anyone outside your
+       organization.
+
+   (d) Creating a personal fork of this repository on a public
+       code-hosting platform (e.g., GitHub), preparing modifications to
+       the source code on that fork, and proposing those modifications
+       back to the copyright holder via pull request or equivalent
+       contribution channel. Contributions so submitted are governed by
+       Section 9 (Contributions). A fork made under this subsection:
+           (i) must not be promoted, marketed, or distributed as an
+               alternative, replacement, or competing version of MUX0;
+          (ii) must not be used to publish or distribute compiled
+               binaries to anyone other than the fork owner;
+         (iii) must retain a clear reference to this upstream
+               repository and its LICENSE file, unmodified;
+          (iv) must not be renamed or rebranded in a way that would
+               confuse users about its relationship to MUX0.
+       A fork kept up for ongoing contribution is fine; a fork kept up
+       as a parallel distribution is not.
+
+   In short: using MUX0 as a terminal to do your work — personal or
+   commercial — is fine. Forking to contribute back is fine. What is not
+   fine is redistributing, repackaging, reselling, or maintaining a
+   competing distribution of MUX0 itself. See Section 2.
+
+2. PROHIBITED USES
+
+   Except with the prior, specific, written permission of the copyright
+   holder, you MAY NOT:
+
+   (a) Copy, reproduce, mirror, or republish the source code, in whole or
+       in part, in any form or medium, whether verbatim or modified,
+       except as expressly permitted by Section 1(d) (forks for
+       contribution).
+
+   (b) Maintain any fork, mirror, or derivative repository for purposes
+       other than proposing contributions back to the upstream project
+       — including, without limitation, maintaining a long-running
+       divergent fork, a competing distribution, a rebrand, or a
+       hard-fork project.
+
+   (c) Create, prepare, distribute, sublicense, or publish any derivative
+       work, adaptation, port, translation, or modification of the source
+       code or binaries to any third party, whether free of charge or
+       for a fee. (Preparing modifications on a personal contribution
+       fork for the purpose of submitting a pull request is permitted
+       under Section 1(d) and is not considered distribution.)
+
+   (d) Redistribute MUX0 itself (source or binary) to third parties in
+       any form — including, without limitation:
+           (i) reselling, sublicensing, renting, leasing, or lending
+               MUX0;
+          (ii) bundling MUX0 into a product, service, device, or
+               distribution that you ship, sell, license, or otherwise
+               make available to third parties;
+         (iii) hosting MUX0 (or any service whose primary value derives
+               from MUX0) as a Software-as-a-Service or other managed
+               offering available to users outside your organization;
+          (iv) publishing compiled builds of MUX0 on any third-party
+               distribution channel (app store, package manager,
+               website, mirror, etc.) other than the copyright holder's
+               own official channels.
+       This clause is the reason this license exists: MUX0 is free to
+       *use* commercially, but not free to *redistribute* or *productize*.
+
+   (e) Remove, alter, or obscure any copyright, trademark, author,
+       attribution, or proprietary notice contained in the source code
+       or binaries.
+
+   (f) Use the name "MUX0", the MUX0 logo, or any confusingly similar
+       name or mark to identify, promote, or market any product,
+       service, fork, or derivative work.
+
+   (g) Train, fine-tune, evaluate, benchmark, or condition any
+       machine-learning model, dataset, or AI system on the source code
+       (in whole or in part), or publish any dataset derived from the
+       source code for such purposes, without prior written permission.
+
+3. NO TRANSFER OF OWNERSHIP
+
+   All right, title, and interest in and to the source code and binaries,
+   including all intellectual property rights, remain exclusively with
+   the copyright holder. Nothing in this license transfers or assigns
+   any ownership interest to you.
+
+4. THIRD-PARTY COMPONENTS
+
+   This project depends on third-party libraries (including, without
+   limitation, ghostty and Sparkle), each of which is distributed under
+   its own respective license. Those components remain governed by their
+   original licenses, which are not superseded by this document.
+
+5. TERMINATION
+
+   Any breach of Section 1 or Section 2 automatically and immediately
+   terminates all rights granted to you under this license, without
+   notice. Upon termination you must cease all use of the source code
+   and binaries, delete all local copies, and destroy any materials
+   derived from them.
+
+6. NO WARRANTY
+
+   THE SOURCE CODE AND BINARIES ARE PROVIDED "AS IS", WITHOUT WARRANTY
+   OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+   WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+   TITLE, AND NON-INFRINGEMENT.
+
+7. LIMITATION OF LIABILITY
+
+   IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM,
+   DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT,
+   OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOURCE
+   CODE OR BINARIES OR THE USE OR OTHER DEALINGS IN THEM.
+
+8. GOVERNING LAW
+
+   This license is governed by the laws of the jurisdiction of the
+   copyright holder's primary residence, without regard to its conflict
+   of law provisions.
+
+9. CONTRIBUTIONS
+
+   By submitting any contribution (pull request, patch, issue comment
+   containing code, or equivalent) to this project, you:
+
+   (a) Represent that the contribution is your original work, or that
+       you otherwise have the right to submit it under the terms of
+       this license;
+
+   (b) Irrevocably grant the copyright holder a perpetual, worldwide,
+       royalty-free, non-exclusive license to use, reproduce, modify,
+       relicense, sublicense, and distribute your contribution as part
+       of MUX0 under this license or any future license the copyright
+       holder chooses to adopt for MUX0;
+
+   (c) Understand that your contribution, once merged, is subject to
+       the same terms as the rest of MUX0 — in particular, you do not
+       retain the right to redistribute a version of MUX0 containing
+       your contribution outside the terms of this license.
+
+For inquiries about redistribution, bundling, hosting as a service,
+maintaining a non-contribution fork, or any other use not permitted
+above, contact the copyright holder.
