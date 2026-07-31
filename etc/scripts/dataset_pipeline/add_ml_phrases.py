@@ -18,7 +18,6 @@ from licensedcode.models import get_rules_by_expression
 from licensedcode.required_phrases import add_required_phrase_to_rule
 from licensedcode.required_phrases import find_phrase_spans_in_text
 from licensedcode.required_phrases import RequiredPhraseRuleCandidate
-from licensedcode.required_phrases import validate_and_reindex
 from licensedcode.tokenize import get_existing_required_phrase_spans
 from licensedcode.tokenize import required_phrase_splitter
 
@@ -162,8 +161,6 @@ def phrases_from_tags(tags, words, truncated=False):
     """
     phrases = set()
     for start, end in extract_spans(tags):
-        if end >= len(words):
-            continue
         if truncated and end == len(tags) - 1:
             continue
         phrases.add(' '.join(words[start:end + 1]))
@@ -272,9 +269,6 @@ def process_rules(
 
             counts['rules'] += 1
             words = words_from_text(rule.text)
-            if not words:
-                continue
-
             phrases, truncated = predict_phrases(tagger, tokenizer, max_length, words)
             if truncated:
                 counts['truncated'] += 1
@@ -300,14 +294,10 @@ def process_rules(
               help='Predict and check phrases but do not save any rule')
 @click.option('--limit', default=0, type=int,
               help='Stop after this many rules, 0 does all of them')
-@click.option('--validate', is_flag=True, default=False,
-              help='Validate all rules and licenses at the end')
-@click.option('--reindex', is_flag=True, default=False,
-              help='Rebuild and cache the license index at the end')
 @click.option('-v', '--verbose', is_flag=True, default=False,
               help='Print the phrases predicted for each rule')
 @click.help_option('-h', '--help')
-def main(model, license_expression, dry_run, limit, validate, reindex, verbose):
+def main(model, license_expression, dry_run, limit, verbose):
     """Add required phrases to license rules using the trained phrase tagger"""
     tagger, tokenizer, max_length = load_model(model, hf_token=os.environ.get('HF_TOKEN'))
 
@@ -332,10 +322,7 @@ def main(model, license_expression, dry_run, limit, validate, reindex, verbose):
     if dry_run:
         click.echo('dry run, no rules were saved')
     elif counts['written']:
-        if validate or reindex:
-            validate_and_reindex(validate=validate, reindex=reindex, verbose=verbose)
-        if not reindex:
-            click.echo('run scancode-reindex-licenses to pick up the new required phrases')
+        click.echo('run scancode-reindex-licenses to pick up the new required phrases')
 
 
 if __name__ == '__main__':
