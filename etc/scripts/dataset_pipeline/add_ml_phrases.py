@@ -100,31 +100,6 @@ def load_model(model, hf_token=None):
     return tagger, tokenizer, config.max_length
 
 
-def predict_phrases(tagger, tokenizer, max_length, words):
-    """Phrases the tagger predicts for one rule"""
-    import torch
-
-    encoding = tokenizer(
-        words,
-        is_split_into_words=True,
-        truncation=True,
-        max_length=max_length,
-        return_tensors='pt',
-    )
-    word_ids = encoding.word_ids()
-
-    with torch.no_grad():
-        predicted = tagger.predict_words(
-            encoding['input_ids'],
-            encoding['attention_mask'],
-            word_ids,
-        )
-
-    tags = [ID2LABEL.get(int(label), 'O') for label in predicted]
-    truncated = len(tags) < len(words)
-    return phrases_from_tags(tags, words, truncated=truncated), truncated
-
-
 def words_from_text(text):
     """Words for the model, tokenized the way build_dataset.py does it"""
     text = text.replace('\r\n', '\n').replace('\r', '\n')
@@ -195,6 +170,32 @@ def phrases_from_tags(tags, words, truncated=False):
 
     # longest first, same order required phrases are applied in elsewhere
     return sorted(phrases, key=lambda phrase: (-len(phrase), phrase))
+
+
+def predict_phrases(tagger, tokenizer, max_length, words):
+    """Phrases the tagger predicts for one rule"""
+    import torch
+
+    encoding = tokenizer(
+        words,
+        is_split_into_words=True,
+        truncation=True,
+        max_length=max_length,
+        return_tensors='pt',
+    )
+    word_ids = encoding.word_ids()
+
+    with torch.no_grad():
+        predicted = tagger.predict_words(
+            encoding['input_ids'],
+            encoding['attention_mask'],
+            word_ids,
+        )
+
+    tags = [ID2LABEL.get(int(label), 'O') for label in predicted]
+    # fewer tags than words means the rule did not fit in max_length
+    truncated = len(tags) < len(words)
+    return phrases_from_tags(tags, words, truncated=truncated), truncated
 
 
 def inject(rule, phrases, counts, dry_run=False, verbose=False):
