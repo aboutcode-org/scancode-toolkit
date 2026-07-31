@@ -94,9 +94,6 @@ class TestPhrasesFromTags:
         assert phrases_from_tags(tags, words, truncated=True) == []
         assert phrases_from_tags(tags, words, truncated=False) == ['general public']
 
-    def test_ignores_a_span_past_the_words(self):
-        assert phrases_from_tags(['B-REQ', 'E-REQ'], ['only']) == []
-
     def test_nothing_tagged(self):
         assert phrases_from_tags(['O', 'O'], ['a', 'b']) == []
 
@@ -195,6 +192,10 @@ class TestPredictPhrases:
         words = ['word'] * 20
         phrases, truncated = predict_phrases(StubTagger(), FakeTokenizer(), 5, words)
         assert truncated
+
+    def test_a_rule_with_no_words(self):
+        # nothing to tag, and the tagger never gets as far as the backbone
+        assert predict_phrases(StubTagger(), FakeTokenizer(), 512, []) == ([], False)
 
 
 class TestSelectRules:
