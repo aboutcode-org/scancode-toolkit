@@ -51,7 +51,7 @@ class InferenceConfig:
 
 
 def load_model(model, hf_token=None):
-    """Tokenizer and tagger with the trained weights, ready to predict
+    """The trained tagger, its tokenizer and the max length it was trained with
 
     ``model`` is a local directory or a huggingface repo id
     """
@@ -73,11 +73,11 @@ def load_model(model, hf_token=None):
         click.echo(f'no train_config.json in {model_dir}, using the training defaults')
         saved = {}
 
+    # the label order is what ID2LABEL maps over, a different one would quietly
+    # turn every prediction into the wrong tag
     labels = saved.get('labels', LABELS)
-    if len(labels) != len(LABELS):
-        raise click.ClickException(
-            f'this checkpoint has {len(labels)} labels, expected the BIOES {len(LABELS)}'
-        )
+    if labels != LABELS:
+        raise click.ClickException(f'this checkpoint was trained on other labels: {labels}')
 
     config = InferenceConfig(
         model_name=saved.get('model_name', MODEL_NAME),
@@ -198,6 +198,19 @@ def predict_phrases(tagger, tokenizer, max_length, words):
     return phrases_from_tags(tags, words, truncated=truncated), truncated
 
 
+def new_counts():
+    """What a run tallies up as it goes"""
+    return dict(
+        rules=0,
+        truncated=0,
+        rejected=0,
+        not_found=0,
+        injected=0,
+        skipped=0,
+        written=0,
+    )
+
+
 def inject(rule, phrases, counts, dry_run=False, verbose=False):
     """Mark the good phrases in one rule, True if the rule was written"""
     # read the source before the loop, add_required_phrase_to_rule overwrites it
@@ -242,7 +255,7 @@ def process_rules(
     verbose=False,
 ):
     """Predict and mark phrases in every eligible rule, return the counts"""
-    counts = dict(rules=0, truncated=0, rejected=0, not_found=0, injected=0, skipped=0, written=0)
+    counts = new_counts()
 
     selected = select_rules(license_expression=license_expression)
     total = sum(len(rules) for rules in selected.values())
@@ -308,8 +321,7 @@ def main(model, license_expression, dry_run, limit, validate, reindex, verbose):
         verbose=verbose,
     )
 
-    click.echo('')
-    click.echo(f"rules processed  : {counts['rules']}")
+    click.echo(f"\nrules processed  : {counts['rules']}")
     click.echo(f"  truncated      : {counts['truncated']}")
     click.echo(f"phrases injected : {counts['injected']}")
     click.echo(f"  rejected       : {counts['rejected']}")

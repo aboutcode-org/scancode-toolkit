@@ -3,12 +3,14 @@
 import sys
 from pathlib import Path
 
+import click
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent))
 import add_ml_phrases
 from add_ml_phrases import inject
 from add_ml_phrases import is_updatable
+from add_ml_phrases import new_counts
 from add_ml_phrases import phrases_from_tags
 from add_ml_phrases import predict_phrases
 from add_ml_phrases import process_rules
@@ -132,8 +134,12 @@ def make_rule(text, source=None):
     return rule
 
 
-def new_counts():
-    return dict(rules=0, truncated=0, rejected=0, not_found=0, injected=0, skipped=0, written=0)
+def patch_selection(monkeypatch, rules):
+    """Skip the real rule loading, it reads every rule file on disk"""
+    monkeypatch.setattr(
+        add_ml_phrases, 'select_rules',
+        lambda license_expression=None: {'mit': rules},
+    )
 
 
 TEXT = 'Permission is granted under the MIT License to do things with this'
@@ -204,8 +210,9 @@ class TestSelectRules:
         assert len(selected['mit']) == 1
 
     def test_unknown_expression(self, monkeypatch):
-        monkeypatch.setattr(add_ml_phrases, 'get_rules_by_expression', lambda: {'mit': [FakeRule()]})
-        with pytest.raises(Exception):
+        rules = {'mit': [FakeRule()]}
+        monkeypatch.setattr(add_ml_phrases, 'get_rules_by_expression', lambda: rules)
+        with pytest.raises(click.ClickException):
             select_rules('nope-1.0')
 
 
@@ -213,13 +220,17 @@ class TestProcessRules:
 
     def test_dry_run_marks_nothing_on_disk(self, monkeypatch):
         rule = make_rule(TEXT)
-        monkeypatch.setattr(add_ml_phrases, 'select_rules', lambda license_expression=None: {'mit': [rule]})
+        patch_selection(monkeypatch, [rule])
         counts = process_rules(StubTagger(), FakeTokenizer(), 512, dry_run=True)
         assert counts['rules'] == 1
         assert counts['injected'] == 1
 
     def test_limit_stops_early(self, monkeypatch):
-        rules = [make_rule(TEXT) for _ in range(5)]
-        monkeypatch.setattr(add_ml_phrases, 'select_rules', lambda license_expression=None: {'mit': rules})
+        patch_selection(monkeypatch, [make_rule(TEXT) for _ in range(5)])
         counts = process_rules(StubTagger(), FakeTokenizer(), 512, dry_run=True, limit=2)
         assert counts['rules'] == 2
+
+    def test_counts_a_truncated_rule(self, monkeypatch):
+        patch_selection(monkeypatch, [make_rule(TEXT)])
+        counts = process_rules(StubTagger(), FakeTokenizer(), 4, dry_run=True)
+        assert counts['truncated'] == 1
