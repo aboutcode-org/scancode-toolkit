@@ -1,0 +1,41 @@
+{
+  "packages": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "CONTROL",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "CONTROL-expected.json",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "vcpkg-end-to-end-expected.json",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "vcpkg.json",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "vcpkg.json-expected.json",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}
