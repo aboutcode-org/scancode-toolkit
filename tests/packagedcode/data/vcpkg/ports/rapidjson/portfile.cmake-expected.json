@@ -3,7 +3,7 @@
     "type": "vcpkg",
     "namespace": null,
     "name": null,
-    "version": "24b5e7a8b27f42fa16b96fc70aade9106cf7102f",
+    "version": null,
     "qualifiers": {},
     "subpath": null,
     "primary_language": "C++",
@@ -12,7 +12,7 @@
     "parties": [],
     "keywords": [],
     "homepage_url": null,
-    "download_url": null,
+    "download_url": "https://github.com/Tencent/rapidjson/archive/24b5e7a8b27f42fa16b96fc70aade9106cf7102f.tar.gz",
     "size": null,
     "sha1": null,
     "md5": null,
@@ -20,7 +20,7 @@
     "sha512": "50f8723414a6e63eadd45f97be5c44e9fff2d06216c8cc4df802f5bfc2a9416a039f2c69e9bb1882f7e756cd38a7097eea05cab76c739f45805dc41617140799",
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": "https://github.com/Tencent/rapidjson",
+    "vcs_url": "https://github.com/Tencent/rapidjson.git@24b5e7a8b27f42fa16b96fc70aade9106cf7102f",
     "copyright": null,
     "holder": null,
     "declared_license_expression": null,
@@ -35,7 +35,18 @@
     "file_references": [],
     "is_private": false,
     "is_virtual": false,
-    "extra_data": {},
+    "extra_data": {
+      "sources": [
+        {
+          "macro": "vcpkg_from_github",
+          "repository": "Tencent/rapidjson",
+          "reference": "24b5e7a8b27f42fa16b96fc70aade9106cf7102f",
+          "sha512": "50f8723414a6e63eadd45f97be5c44e9fff2d06216c8cc4df802f5bfc2a9416a039f2c69e9bb1882f7e756cd38a7097eea05cab76c739f45805dc41617140799",
+          "vcs_url": "https://github.com/Tencent/rapidjson.git@24b5e7a8b27f42fa16b96fc70aade9106cf7102f",
+          "download_url": "https://github.com/Tencent/rapidjson/archive/24b5e7a8b27f42fa16b96fc70aade9106cf7102f.tar.gz"
+        }
+      ]
+    },
     "dependencies": [],
     "repository_homepage_url": null,
     "repository_download_url": null,

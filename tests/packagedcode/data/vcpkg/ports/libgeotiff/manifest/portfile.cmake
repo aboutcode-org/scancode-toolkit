@@ -11,7 +11,7 @@ vcpkg_from_github(
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     FEATURES
        tools    WITH_JPEG
-       tools    WITH_UTILITIES 
+       tools    WITH_UTILITIES
 )
 
 vcpkg_cmake_configure(

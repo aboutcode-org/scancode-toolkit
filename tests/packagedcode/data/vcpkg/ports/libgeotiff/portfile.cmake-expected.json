@@ -20,7 +20,7 @@
     "sha512": "03468e8eeaf97d82798bf341cf2e27753eb47af985fb08fc6176be799bd0e1e879c6d1701577f7568f269cbef0bb0a20ae460bb943f847daf49aa54601441683",
     "bug_tracking_url": null,
     "code_view_url": null,
-    "vcs_url": "https://github.com/OSGeo/libgeotiff",
+    "vcs_url": "https://github.com/OSGeo/libgeotiff.git",
     "copyright": null,
     "holder": null,
     "declared_license_expression": null,
@@ -35,7 +35,16 @@
     "file_references": [],
     "is_private": false,
     "is_virtual": false,
-    "extra_data": {},
+    "extra_data": {
+      "sources": [
+        {
+          "macro": "vcpkg_from_github",
+          "repository": "OSGeo/libgeotiff",
+          "sha512": "03468e8eeaf97d82798bf341cf2e27753eb47af985fb08fc6176be799bd0e1e879c6d1701577f7568f269cbef0bb0a20ae460bb943f847daf49aa54601441683",
+          "vcs_url": "https://github.com/OSGeo/libgeotiff.git"
+        }
+      ]
+    },
     "dependencies": [],
     "repository_homepage_url": null,
     "repository_download_url": null,

@@ -1,0 +1,14 @@
+{
+  "dependencies": [
+    "fmt",
+    {
+      "name": "ninja",
+      "host": true,
+      "default-features": false
+    }
+  ],
+  "builtin-baseline": "fedcba9876543210",
+  "configuration": {
+    "default-registry": null
+  }
+}

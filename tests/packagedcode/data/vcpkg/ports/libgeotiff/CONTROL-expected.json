@@ -40,7 +40,7 @@
       {
         "purl": "pkg:vcpkg/tiff",
         "extracted_requirement": null,
-        "scope": "install",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_pinned": false,
@@ -51,7 +51,7 @@
       {
         "purl": "pkg:vcpkg/proj4",
         "extracted_requirement": null,
-        "scope": "install",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_pinned": false,
@@ -62,7 +62,7 @@
       {
         "purl": "pkg:vcpkg/zlib",
         "extracted_requirement": null,
-        "scope": "install",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_pinned": false,
@@ -73,7 +73,7 @@
       {
         "purl": "pkg:vcpkg/libjpeg-turbo",
         "extracted_requirement": null,
-        "scope": "install",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_pinned": false,
