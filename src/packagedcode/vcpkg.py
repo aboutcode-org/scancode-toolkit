@@ -9,6 +9,8 @@
 import io
 import json
 import logging
+import os
+import re
 
 from debian_inspector import debcon
 from packageurl import PackageURL
@@ -173,6 +175,89 @@ class VcpkgJsonHandler(models.DatafileHandler):
                 return
 
         package_data = cls._parse(manifest_data, package_only)
+        if package_data:
+            yield package_data
+
+
+class VcpkgPortfileHandler(models.DatafileHandler):
+    datasource_id = "vcpkg_portfile"
+    path_patterns = (
+        "*/portfile.cmake",
+        "portfile.cmake",
+    )
+    default_package_type = "vcpkg"
+    default_primary_language = "C++"
+    description = "vcpkg portfile"
+    documentation_url = "https://learn.microsoft.com/en-us/vcpkg/maintainers/ports"
+
+    @classmethod
+    def _parse(cls, portfile_data, location=None, package_only=False):
+        if not isinstance(portfile_data, str):
+            return
+
+        name = None
+        if location:
+            name = os.path.basename(os.path.dirname(location)) or None
+
+        version = None
+        port_version = None
+        homepage_url = None
+        description = None
+
+        for line in portfile_data.splitlines():
+            raw_line = line.split("#", 1)[0].strip()
+            if not raw_line:
+                continue
+
+            match = re.match(r"^set\(\s*([A-Za-z0-9_]+)\s*(.+)\)$", raw_line)
+            if not match:
+                continue
+
+            key = match.group(1).upper()
+            value = match.group(2).strip()
+            if value.startswith('"') and value.endswith('"') and len(value) >= 2:
+                value = value[1:-1]
+            elif value.startswith("'") and value.endswith("'") and len(value) >= 2:
+                value = value[1:-1]
+
+            if key == "VERSION":
+                version = value
+            elif key == "PORT_VERSION":
+                port_version = value
+            elif key == "HOMEPAGE":
+                homepage_url = value
+            elif key == "DESCRIPTION":
+                description = value
+
+        if not name:
+            return
+
+        qualifiers = {}
+        if port_version not in (None, ""):
+            qualifiers["port_version"] = str(port_version)
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+            qualifiers=qualifiers or None,
+            primary_language=cls.default_primary_language,
+            description=description,
+            homepage_url=homepage_url,
+        )
+        return models.PackageData.from_data(package_data, package_only)
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with io.open(location, encoding="utf-8") as loc:
+            try:
+                portfile_data = loc.read()
+            except Exception as e:
+                logger.warning(f"Failed to parse portfile at {location}: {e}")
+                return
+
+        package_data = cls._parse(portfile_data, location=location, package_only=package_only)
         if package_data:
             yield package_data
 

@@ -34,6 +34,11 @@ class TestVcpkg(PackageTester):
         packages = vcpkg.VcpkgControlHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_vcpkg_portfile(self):
+        test_file = self.get_test_loc("vcpkg/ports/hello/portfile.cmake")
+        packages = vcpkg.VcpkgPortfileHandler.parse(test_file)
+        self.assertEqual(len(list(packages)), 1)
+
     def test_package_scan_vcpkg_end_to_end(self):
         test_dir = self.get_test_loc("vcpkg")
         result_file = self.get_temp_file("json")

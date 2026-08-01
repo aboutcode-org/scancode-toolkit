@@ -82,6 +82,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     conan.ConanDataHandler,
 
     vcpkg.VcpkgJsonHandler,
+    vcpkg.VcpkgPortfileHandler,
     vcpkg.VcpkgControlHandler,
 
     cran.CranDescriptionFileHandler,
