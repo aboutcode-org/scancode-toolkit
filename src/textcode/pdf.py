@@ -43,5 +43,5 @@ def get_text_lines(location, max_pages=5):
                 interpreter.process_page(page)
                 if max_pages and page_num == max_pages:
                     break
-                extracted_text.seek(0)
-                return extracted_text.readlines()
+            extracted_text.seek(0)
+            return extracted_text.readlines()
