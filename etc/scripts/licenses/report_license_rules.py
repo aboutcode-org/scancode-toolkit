@@ -83,8 +83,8 @@ SCANCODE_LICENSEDB_URL = "https://scancode-licensedb.aboutcode.org/{}"
 
 def write_data_to_csv(data, output_csv, fieldnames):
 
-    with open(output_csv, "w") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
+    with open(output_csv, "w", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
         w.writeheader()
         for entry in data:
             w.writerow(entry)
@@ -180,6 +180,7 @@ def cli(licenses, rules, category, license_key, with_text):
     licenses_output = []
     rules_output = []
 
+    click.echo("Loading licenses from the database...")
     licenses_data = load_licenses()
 
     if licenses:
@@ -208,8 +209,10 @@ def cli(licenses, rules, category, license_key, with_text):
         write_data_to_csv(data=licenses_output, output_csv=licenses, fieldnames=LICENSES_FIELDNAMES)
 
     if rules:
-        rules_data = list(load_rules())
-        for rule in rules_data:
+        click.echo("Loading 30,000+ rules from the database. This will take several minutes, so please be patient...")
+        for i, rule in enumerate(load_rules()):
+            if i > 0 and i % 5000 == 0:
+                click.echo(f"Processed {i} rules...")
             rule_data = rule.to_dict()
             rule_data["identifier"] = rule.identifier
             rule_data["referenced_filenames"] = rule.referenced_filenames
@@ -239,6 +242,9 @@ def cli(licenses, rules, category, license_key, with_text):
 
         rules_output = flatten_output(rules_output)
         write_data_to_csv(data=rules_output, output_csv=rules, fieldnames=RULES_FIELDNAMES)
+
+    if licenses or rules:
+        click.echo("Export complete! Check your CSV files.")
 
 
 if __name__ == "__main__":

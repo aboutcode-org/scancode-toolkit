@@ -294,6 +294,7 @@ def cli(licenses_file, dump_to_file_on_errors=False):
     """
 
     rules_data = load_data(licenses_file)
+    click.echo("Loading existing rules to check for duplicates. This may take several minutes...")
     rule_by_tokens = all_rule_by_tokens()
 
     licenses_by_key = cache.get_licenses_db()
