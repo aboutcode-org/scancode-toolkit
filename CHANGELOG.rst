@@ -11,7 +11,7 @@ Next release
 - Fix ``report_license_rules.py`` and ``buildrules.py`` in
   ``etc/scripts/licenses/`` to work correctly with the YAML frontmatter
   fields added in #3100.
-  https://github.com/aboutcode-org/scancode-toolkit/issues/3138
+  https://github.com/aboutcode-org/scancode-toolkit/pull/5259
 
 
 
