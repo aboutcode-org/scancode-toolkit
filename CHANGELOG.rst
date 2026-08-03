@@ -8,6 +8,10 @@ Next release
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
+- Fix a regression in PDF text extraction that silently stopped after the
+  first page, so copyright/license detection missed text on later pages.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/5260
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
