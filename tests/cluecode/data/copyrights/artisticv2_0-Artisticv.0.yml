@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: The Perl Foundation
     count: 1
+allrights:
+  - Copyright (c) 2000-2006, The Perl Foundation.

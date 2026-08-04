@@ -11,3 +11,6 @@ holders:
 holders_summary:
   - value: Fredrik Lundh
     count: 2
+allrights:
+  - Copyright (c) 1999-2007 by Fredrik Lundh. All rights reserved.
+  - Copyright (c) 1999-2007 by Fredrik Lundh

@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Richard M. Stallman
     count: 1
+allrights:
+  - Copyright (c) 1988 Richard M. Stallman
+  - Copyright (c) 1989 Aladdin Enterprises. All rights reserved.

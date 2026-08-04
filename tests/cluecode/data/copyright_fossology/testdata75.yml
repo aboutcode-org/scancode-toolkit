@@ -15,3 +15,8 @@ holders:
 authors:
   - Mark W. Eichin eichin@kitten.gen.ma.us
   - Gerrit Pape <pape@smarden.org>
+allrights:
+  - Copyright (c) 1989-1994 The Regents of the University of California. All rights reserved.
+  - Copyright (c) 1997 Christos Zoulas. All rights reserved.
+  - Copyright (c) 1997-2005 Herbert Xu <herbert@gondor.apana.org.au> All rights reserved.
+  - Copyright (c) 1992 Free Software Foundation, Inc.

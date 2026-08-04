@@ -55,6 +55,7 @@ class CopyrightTest(object):
     # one of holders, copyrights, authors
     what = attr.ib(default=attr.Factory(list))
     copyrights = attr.ib(default=attr.Factory(list))
+    allrights = attr.ib(default=attr.Factory(list))
     holders = attr.ib(default=attr.Factory(list))
     authors = attr.ib(default=attr.Factory(list))
 
@@ -175,6 +176,7 @@ def make_copyright_test_functions(
     index,
     test_data_dir=test_env.test_data_dir,
     regen=REGEN_TEST_FIXTURES,
+    with_allrights=False,
 ):
     """
     Build and return a test function closing on tests arguments and the function
@@ -188,7 +190,7 @@ def make_copyright_test_functions(
     from summarycode.copyright_tallies import tally_persons
 
     def closure_test_function(*args, **kwargs):
-        detections = detect_copyrights(test_file)
+        detections = detect_copyrights(test_file, include_copyright_allrights=with_allrights)
         copyrights, holders, authors = Detection.split_values(detections)
 
         holders_summary = []
@@ -215,7 +217,12 @@ def make_copyright_test_functions(
         expected_yaml = test.dumps()
 
         for wht in test.what:
-            setattr(test, wht, results.get(wht))
+            # use the fact we are overriding attributes, leave copyrights as is
+            # and add allrights section. This shortcut needs a better solution.
+            if test.allrights and with_allrights and wht == 'copyrights':
+                setattr(test, 'allrights', results.get(wht))
+            else:
+                setattr(test, wht, results.get(wht))
         results_yaml = test.dumps()
 
         if regen:
@@ -246,6 +253,7 @@ def build_tests(
     clazz,
     test_data_dir=test_env.test_data_dir,
     regen=REGEN_TEST_FIXTURES,
+    with_allrights=False,
 ):
     """
     Dynamically build test methods from a sequence of CopyrightTest and attach
@@ -263,6 +271,7 @@ def build_tests(
             index=i,
             test_data_dir=test_data_dir,
             regen=actual_regen,
+            with_allrights=with_allrights,
         )
 
         # attach that method to our test class

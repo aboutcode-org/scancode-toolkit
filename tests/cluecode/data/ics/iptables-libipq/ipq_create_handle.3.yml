@@ -11,3 +11,6 @@ holders:
 holders_summary:
   - value: Netfilter Core Team
     count: 2
+allrights:
+  - Copyright (c) 2000-2001 Netfilter Core Team
+  - Copyright (c) 2000-2001 Netfilter Core Team.

@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: WIDE Project
     count: 1
+allrights:
+  - Copyright (c) 2000-2003 Damien Miller. All rights reserved.
+  - Copyright (c) 1999 WIDE Project. All rights reserved.

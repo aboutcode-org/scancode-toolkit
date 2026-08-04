@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Free Software Foundation, Inc., and others
     count: 1
+allrights:
+  - Copyright 2001-2017 Free Software Foundation, Inc., and others.
