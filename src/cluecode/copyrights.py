@@ -286,6 +286,17 @@ class CopyrightDetector(object):
         # first, POS tag each token using token regexes
         lexed_text = list(self.lexer.lex_tokens(tokens, trace=TRACE_TOK))
 
+
+        for index, token in enumerate(lexed_text):
+            if (
+                index
+                and token.label == 'JUNK'
+                and lexed_text[index - 1].label == 'YR'
+                and token.start_line == lexed_text[index - 1].start_line
+                and re.match(r'^[a-z]{2,}[A-Z][a-z]+(?:[A-Z][a-z]+)*[\.,]?$', token.value)
+            ):
+                token.label = 'MIXEDCAP'
+
         if TRACE or TRACE_DEEP:
             logger_debug(f'CopyrightDetector: lexed tokens:')
             for l in lexed_text:

@@ -4,6 +4,8 @@ Changelog
 Next release
 --------------
 
+- Improve copyright holder detection for lower camel case names.
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
