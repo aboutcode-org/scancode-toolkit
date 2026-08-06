@@ -1,6 +1,29 @@
 Release notes
 =============
 
+Version 32.5.2 - (2026-06-11)
+-----------------------------
+
+- Bump version properly.
+
+Version 32.5.1 - (2026-06-11)
+-----------------------------
+
+- Minor fix in pyproject.toml to release wheels
+  to pypi properly.
+
+Version 32.5.0 - (2026-06-11)
+-----------------------------
+
+- Merge commoncode back into scancode-toolkit
+  https://github.com/aboutcode-org/scancode-toolkit/pull/5116
+
+- Add support to create codebase from multiple input paths by
+  starting codebase walk from these inputs and then ignoring
+  based on path patterns. Improves codebase and resource
+  collection and creation performance for multi-path scan inputs
+  https://github.com/aboutcode-org/scancode-toolkit/pull/5055
+
 Version 32.4.2 - (2025-01-08)
 -----------------------------
 

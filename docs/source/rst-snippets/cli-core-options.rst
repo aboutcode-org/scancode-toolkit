@@ -1,37 +1,40 @@
 **Core options**
 ----------------
 
--n, --processes INTEGER  Scan ``<input>`` using n parallel processes.
+--ignore <pattern>          Ignore files matching ``<pattern>``.
 
-                         Default: ``(number of CPUs)-1``
+-n, --processes INTEGER     Scan ``<input>`` using n parallel processes.
 
--v, --verbose            Print verbose file-by-file progress messages.
+                            Default: ``(number of CPUs)-1``
 
--q, --quiet              Do not print summary or progress messages.
+-c, --config-file FILENAME  Path to the configuration file.
+-v, --verbose               Print verbose file-by-file progress messages.
 
---timeout FLOAT          Stop scanning a file if scanning takes longer
-                         than a timeout in seconds.
+-q, --quiet                 Do not print summary or progress messages.
 
-                         Default: ``120``
+--timeout FLOAT            Stop scanning a file if scanning takes longer
+                           than a timeout in seconds.
 
---from-json              Load codebase from one or more existing JSON scans to:
+                           Default: ``120``
 
-                         - apply post-scan options to do additional processing
-                           of scan results
-                         - merge multiple JSON scans into one.
+--from-json                Load codebase from one or more existing JSON scans to:
 
---max-in-memory INTEGER  Maximum number of files and directories scan
-                         details kept in memory during a scan.
-                         Additional files and directories scan details
-                         above this number are cached on-disk rather
-                         than in memory. Use 0 to use unlimited memory
-                         and disable on-disk caching. Use -1 to use
-                         only on-disk caching.
+                           - apply post-scan options to do additional processing
+                             of scan results
+                           - merge multiple JSON scans into one.
 
-                         Default: ``10000``
+--max-in-memory INTEGER    Maximum number of files and directories scan
+                           details kept in memory during a scan.
+                           Additional files and directories scan details
+                           above this number are cached on-disk rather
+                           than in memory. Use 0 to use unlimited memory
+                           and disable on-disk caching. Use -1 to use
+                           only on-disk caching.
 
---max-depth INTEGER      Descend at most INTEGER levels of directories
-                         including and below the starting point. INTEGER
-                         must be positive or zero for no limit.
+                           Default: ``10000``
 
-                         Default: ``0``
+--max-depth INTEGER        Descend at most INTEGER levels of directories
+                           including and below the starting point. INTEGER
+                           must be positive or zero for no limit.
+
+                           Default: ``0``

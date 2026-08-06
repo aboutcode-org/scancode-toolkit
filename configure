@@ -256,6 +256,15 @@ install_packages() {
         $1
 }
 
+install_packages_with_local() {
+    # commoncode is present as dependencies of dependencies and so
+    # we need to install commoncode from local source first so this
+    # is tested and not the released commoncode
+    "$CFG_BIN_DIR/flot" --pyproject pyproject-commoncode.toml
+    "$CFG_BIN_DIR/pip" install ./dist/commoncode*.whl
+    install_packages "$CFG_REQUIREMENTS"
+}
+
 
 ################################
 cli_help() {
@@ -313,7 +322,7 @@ PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS"
 find_python
 create_virtualenv "$VIRTUALENV_DIR"
 install_packages "$FLOT_REQUIREMENTS"
-install_packages "$CFG_REQUIREMENTS"
+install_packages_with_local
 . "$CFG_BIN_DIR/activate"
 "$CFG_BIN_DIR/scancode-train-gibberish-model"
 
