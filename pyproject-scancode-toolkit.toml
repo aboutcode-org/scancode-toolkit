@@ -267,6 +267,7 @@ facet = "summarycode.facet:AddFacet"
 # module for details and doc.
 [project.entry-points.scancode_scan]
 info = "scancode.plugin_info:InfoScanner"
+lkm = "scancode.plugin_lkm:LinuxKernelModuleScanner"
 licenses = "licensedcode.plugin_license:LicenseScanner"
 copyrights = "cluecode.plugin_copyright:CopyrightScanner"
 packages = "packagedcode.plugin_package:PackageScanner"
