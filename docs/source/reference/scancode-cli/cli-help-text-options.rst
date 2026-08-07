@@ -125,8 +125,6 @@ The following help text is displayed for ScanCode version 32.0.0:
                     such that all paths have a common root directory.
 
     pre-scan:
-      --ignore <pattern>         Ignore files matching <pattern>.
-      --include <pattern>        Include files matching <pattern>.
       --classify                 Classify files with flags indicating whether the file is a
                                  legal, readme, test or similar file.
       --facet <facet>=<pattern>  Add the <facet> to files with a path matching
@@ -169,11 +167,13 @@ The following help text is displayed for ScanCode version 32.0.0:
                                at the file and directory level.
 
     core:
+      --ignore <pattern>      Ignore files matching <pattern>.
       --timeout <seconds>     Stop an unfinished file scan after a timeout in
                               seconds. [default: 120 seconds]
       -n, --processes INT     Set the number of parallel processes to use. Disable
                               parallel processing if 0. Also disable threading if
                               -1. [default: (number of CPUs)-1]
+      -c, --config-file FILENAME  Path to the configuration file.
       -q, --quiet             Do not print summary or progress.
       -v, --verbose           Print progress as file-by-file path instead of a
                               progress bar. Print verbose scan counters.
@@ -512,7 +512,7 @@ for ScanCode Version 32.0.0.
   --------------------------------------------
   Plugin: scancode_post_scan:classify  class: summarycode.classify_plugin:FileClassifier
     codebase_attributes:
-    resource_attributes: is_legal, is_manifest, is_readme, is_top_level, is_key_file
+    resource_attributes: is_legal, is_manifest, is_readme, is_top_level, is_key_file, is_community
     sort_order: 4
     required_plugins:
     options:
@@ -691,6 +691,19 @@ for ScanCode Version 32.0.0.
 
 
   --------------------------------------------
+  Plugin: scancode_post_scan:todo  class: summarycode.todo:AmbiguousDetectionsToDoPlugin
+    codebase_attributes: todo
+    resource_attributes: for_todo
+    sort_order: 3
+    required_plugins:
+    options:
+      help_group: post-scan, name: todo: --todo
+        help: Summarize scans by providing all ambiguous detections which are todo items and needs manual review.
+    doc:
+      Summarize a scan by compiling review items of ambiguous detections.
+
+
+  --------------------------------------------
   Plugin: scancode_pre_scan:facet  class: summarycode.facet:AddFacet
     codebase_attributes:
     resource_attributes: facets
@@ -703,21 +716,6 @@ for ScanCode Version 32.0.0.
       Assign one or more "facet" to each file (and NOT to directories). Facets are
       a way to qualify that some part of the scanned code may be core code vs.
       test vs. data, etc.
-
-
-  --------------------------------------------
-  Plugin: scancode_pre_scan:ignore  class: scancode.plugin_ignore:ProcessIgnore
-    codebase_attributes:
-    resource_attributes:
-    sort_order: 100
-    required_plugins:
-    options:
-      help_group: pre-scan, name: ignore: --ignore
-        help: Ignore files matching <pattern>.
-      help_group: pre-scan, name: include: --include
-        help: Include files matching <pattern>.
-    doc:
-      Include or ignore files matching patterns.
 
 
   --------------------------------------------
@@ -762,9 +760,22 @@ for ScanCode Version 32.0.0.
 
 
   --------------------------------------------
+  Plugin: scancode_scan:go_symbol  class: go_inspector.plugin:GoSymbolScannerPlugin
+    codebase_attributes:
+    resource_attributes: go_symbols
+    sort_order: 100
+    required_plugins:
+    options:
+      help_group: primary scans, name: go_symbol: --go-symbol
+        help: Collect Go symbols.
+    doc:
+      Scan a Go binary for symbols using GoReSym.
+
+
+  --------------------------------------------
   Plugin: scancode_scan:info  class: scancode.plugin_info:InfoScanner
     codebase_attributes:
-    resource_attributes: date, sha1, md5, sha256, mime_type, file_type, programming_language, is_binary, is_text, is_archive, is_media, is_source, is_script
+    resource_attributes: date, sha1, md5, sha256, sha1_git, mime_type, file_type, programming_language, is_binary, is_text, is_archive, is_media, is_source, is_script
     sort_order: 0
     required_plugins:
     options:
@@ -779,7 +790,7 @@ for ScanCode Version 32.0.0.
   Plugin: scancode_scan:licenses  class: licensedcode.plugin_license:LicenseScanner
     codebase_attributes: license_detections
     resource_attributes: detected_license_expression, detected_license_expression_spdx, license_detections, license_clues, percentage_of_license_text
-    sort_order: 4
+    sort_order: 5
     required_plugins:
     options:
       help_group: primary scans, name: license: -l, --license
@@ -804,13 +815,15 @@ for ScanCode Version 32.0.0.
   Plugin: scancode_scan:packages  class: packagedcode.plugin_package:PackageScanner
     codebase_attributes: packages, dependencies
     resource_attributes: package_data, for_packages
-    sort_order: 3
+    sort_order: 4
     required_plugins: scan:licenses
     options:
       help_group: primary scans, name: package: -p, --package
         help: Scan <input> for application package and dependency manifests, lockfiles and related data.
       help_group: primary scans, name: system_package: --system-package
         help: Scan <input> for installed system package databases.
+      help_group: primary scans, name: package_in_compiled: --package-in-compiled
+        help: Scan <input> for package and dependency related data in compiled binaries. Currently supported compiled binaries: Go, Rust.
       help_group: primary scans, name: package_only: --package-only
         help: Scan for system and application package data and skip license/copyright detection and top-level package creation.
       help_group: documentation, name: list_packages: --list-packages
@@ -819,6 +832,19 @@ for ScanCode Version 32.0.0.
       Scan a Resource for Package data and report these as "package_data" at the
       file level. Then create "packages" from these "package_data" at the top
       level.
+
+
+  --------------------------------------------
+  Plugin: scancode_scan:rust_symbol  class: rust_inspector.plugin:RustSymbolScannerPlugin
+    codebase_attributes:
+    resource_attributes: rust_symbols
+    sort_order: 100
+    required_plugins:
+    options:
+      help_group: primary scans, name: rust_symbol: --rust-symbol
+        help: Collect Rust symbols from rust binaries.
+    doc:
+      Scan a Rust binary for symbols using blint, lief and symbolic.
 
 
   --------------------------------------------

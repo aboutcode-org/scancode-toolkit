@@ -14,7 +14,6 @@ from commoncode.testcase import FileDrivenTesting
 from commoncode.fileset import is_included
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import load_json_result
-from scancode.plugin_ignore import ProcessIgnore
 from commoncode.resource import Codebase
 
 
@@ -48,15 +47,13 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
         assert not is_included(location, excludes=excludes)
 
     def check_ProcessIgnore(self, test_dir, expected, ignore, include=()):
-        codebase = Codebase(test_dir)
-        test_plugin = ProcessIgnore()
-        test_plugin.process_codebase(codebase, ignore=ignore, include=include)
+        codebase = Codebase(location=test_dir, ignores=ignore, includes=include)
         resources = [res.strip_root_path for res in codebase.walk(skip_root=True)]
         assert sorted(resources) == expected
 
     def test_ProcessIgnore_with_single_file(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
-        ignore = ('sample.doc',)
+        ignore = ('*sample.doc',)
         expected = [
             'user',
             'user/ignore.doc',
@@ -69,7 +66,7 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
 
     def test_ProcessIgnore_with_multiple_files(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
-        ignore = ('ignore.doc', 'sample.doc',)
+        ignore = ('*ignore.doc', '*sample.doc',)
         expected = [
             'user',
             'user/src',
@@ -111,25 +108,10 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
         ]
         self.check_ProcessIgnore(test_dir, expected, ignore)
 
-    def test_ProcessIgnore_include_with_glob_for_extension(self):
-        test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
-        include = ('*.doc',)
-        expected = [
-            'user',
-            'user/ignore.doc',
-            'user/src',
-            'user/src/ignore.doc',
-            'user/src/test',
-            'user/src/test/sample.doc',
-        ]
-        self.check_ProcessIgnore(test_dir, expected, ignore=(), include=include)
-
     def test_ProcessIgnore_process_codebase_does_not_fail_to_access_an_ignored_resourced_cached_to_disk(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
-        codebase = Codebase(test_dir, max_in_memory=1)
-        test_plugin = ProcessIgnore()
         ignore = ['test']
-        test_plugin.process_codebase(codebase, ignore=ignore)
+        Codebase(location=test_dir, max_in_memory=1, ignores=ignore)
 
 
 class TestScanPluginIgnoreFiles(FileDrivenTesting):
@@ -238,10 +220,25 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
         scan_locs = [x['path'] for x in scan_result['files']]
         assert scan_locs == [u'user', u'user/src', u'user/src/test']
 
+    def test_scancode_ignore_files_from_config(self):
+        test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
+        config_file = self.get_test_loc('plugin_ignore/ignore.yaml')
+        result_file = self.get_temp_file('json')
+        args = ['--copyright', '--strip-root', '--config-file', config_file, test_dir, '--json', result_file]
+        run_scan_click(args)
+        scan_result = load_json_result(result_file)
+        assert scan_result['headers'][0]['extra_data']['files_count'] == 0
+        scan_locs = [x['path'] for x in scan_result['files']]
+        expected = [
+            u'user',
+            u'user/src',
+        ]
+        assert scan_locs == expected
+
     def test_scancode_codebase_attempt_to_access_an_ignored_resourced_cached_to_disk(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
         result_file = self.get_temp_file('json')
-        args = ['--copyright', '--strip-root', '--ignore', 'test', test_dir, '--max-in-memory', '1', '--json', result_file]
+        args = ['--copyright', '--strip-root', '--ignore', '*test', test_dir, '--max-in-memory', '1', '--json', result_file]
         run_scan_click(args)
         scan_result = load_json_result(result_file)
         assert scan_result['headers'][0]['extra_data']['files_count'] == 2
@@ -251,6 +248,5 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
             u'user/ignore.doc',
             u'user/src',
             u'user/src/ignore.doc',
-            u'user/src/test',
         ]
         assert scan_locs == expected

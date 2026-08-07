@@ -95,7 +95,7 @@ if _SCANCODE_DEV_MODE:
     from subprocess import CalledProcessError
 
     # this may fail with exceptions
-    cmd = 'git', 'describe', '--tags',
+    cmd = 'git', 'describe', '--tags', '--match="v*"'
     try:
         output = check_output(cmd, stderr=STDOUT)
         __version__ = output.decode('utf-8').strip()

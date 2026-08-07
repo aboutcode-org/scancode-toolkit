@@ -162,6 +162,9 @@ if %ERRORLEVEL% neq 0 (
     %PIP_EXTRA_ARGS% ^
     %FLOT_REQUIREMENTS%
 
+"%CFG_BIN_DIR%\flot" --pyproject pyproject-commoncode.toml
+"%CFG_BIN_DIR%\pip" install --force-reinstall ./dist/commoncode-32.5.2-py3-none-any.whl
+
 "%CFG_BIN_DIR%\pip" install ^
     --upgrade ^
     %CFG_QUIET% ^
