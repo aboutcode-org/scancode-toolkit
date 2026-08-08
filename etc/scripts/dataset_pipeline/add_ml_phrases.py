@@ -91,7 +91,11 @@ def load_model(model, hf_token=None):
         raise click.ClickException('need a fast tokenizer for word_ids, got a slow one')
 
     tagger = PhraseTagger(config)
-    tagger.load_state_dict(load_file(str(model_dir / 'model.safetensors')), strict=True)
+    state = load_file(str(model_dir / 'model.safetensors'))
+    # training registers class_weights for the auxiliary loss, we compute no loss
+    # so the buffer is not there to load into
+    state.pop('class_weights', None)
+    tagger.load_state_dict(state, strict=True)
     # only needed while training and it warns under no_grad
     tagger.backbone.gradient_checkpointing_disable()
     tagger.eval()
