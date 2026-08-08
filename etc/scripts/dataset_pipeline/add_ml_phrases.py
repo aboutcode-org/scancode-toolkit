@@ -14,9 +14,9 @@ os.environ.setdefault('USE_TF', '0')
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from licensedcode.models import get_rules_by_expression
 from licensedcode.required_phrases import add_required_phrase_to_rule
 from licensedcode.required_phrases import find_phrase_spans_in_text
+from licensedcode.required_phrases import get_base_rules_by_expression
 from licensedcode.required_phrases import RequiredPhraseRuleCandidate
 from licensedcode.tokenize import get_existing_required_phrase_spans
 from licensedcode.tokenize import required_phrase_splitter
@@ -133,16 +133,13 @@ def select_rules(license_expression=None):
     """Rules that can take new required phrases, by license expression
 
     get_updatable_rules_by_expression reloads every rule file each time it is
-    called and skips everything when passed None, so load the rules once here
-    and do the filtering in memory
+    called and skips everything when passed None, so start from the base mapping
+    and do the filtering here
     """
-    rules_by_expression = get_rules_by_expression()
-
-    if license_expression:
-        rules = rules_by_expression.get(license_expression)
-        if not rules:
-            raise click.ClickException(f'no rules for license expression: {license_expression}')
-        rules_by_expression = {license_expression: rules}
+    try:
+        rules_by_expression = get_base_rules_by_expression(license_expression)
+    except KeyError:
+        raise click.ClickException(f'no rules for license expression: {license_expression}')
 
     selected = {}
     for expression, rules in rules_by_expression.items():

@@ -205,21 +205,34 @@ class TestPredictPhrases:
         assert predict_phrases(StubTagger(), FakeTokenizer(), 512, []) == ([], False)
 
 
+def patch_base_rules(monkeypatch, rules):
+    """Stand in for get_base_rules_by_expression, KeyError and all"""
+
+    def base_rules(license_expression=None):
+        if license_expression:
+            return {license_expression: rules[license_expression]}
+        return rules
+
+    monkeypatch.setattr(add_ml_phrases, 'get_base_rules_by_expression', base_rules)
+
+
 class TestSelectRules:
 
     def test_filters_and_groups(self, monkeypatch):
-        rules = {
+        patch_base_rules(monkeypatch, {
             'mit': [FakeRule(), FakeRule(is_from_license=True)],
             'bsd-new': [FakeRule(skip=True)],
-        }
-        monkeypatch.setattr(add_ml_phrases, 'get_rules_by_expression', lambda: rules)
+        })
         selected = select_rules()
         assert list(selected) == ['mit']
         assert len(selected['mit']) == 1
 
+    def test_one_expression(self, monkeypatch):
+        patch_base_rules(monkeypatch, {'mit': [FakeRule()], 'bsd-new': [FakeRule()]})
+        assert list(select_rules('mit')) == ['mit']
+
     def test_unknown_expression(self, monkeypatch):
-        rules = {'mit': [FakeRule()]}
-        monkeypatch.setattr(add_ml_phrases, 'get_rules_by_expression', lambda: rules)
+        patch_base_rules(monkeypatch, {'mit': [FakeRule()]})
         with pytest.raises(click.ClickException):
             select_rules('nope-1.0')
 
