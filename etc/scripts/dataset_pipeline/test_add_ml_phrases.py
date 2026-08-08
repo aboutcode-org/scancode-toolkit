@@ -170,6 +170,13 @@ class TestInject:
         assert not inject(rule, ['Apache License'], counts, dry_run=True)
         assert counts['not_found'] == 1
 
+    def test_marks_two_phrases_in_one_rule(self):
+        rule = make_rule(TEXT)
+        counts = new_counts()
+        assert inject(rule, ['MIT License', 'do things'], counts, dry_run=True)
+        assert counts['injected'] == 2
+        assert rule.text.count('{{') == rule.text.count('}}') == 2
+
     def test_does_not_mark_the_same_phrase_twice(self):
         rule = make_rule(TEXT)
         counts = new_counts()
