@@ -1,0 +1,20 @@
+{
+  "packages": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "sample",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "sample/pylock.toml",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}

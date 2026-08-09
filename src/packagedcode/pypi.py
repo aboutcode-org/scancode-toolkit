@@ -1126,6 +1126,180 @@ class UvLockHandler(BaseUvPythonLayout):
         yield models.PackageData.from_data(package_data, package_only)
 
 
+class PylockTomlHandler(models.DatafileHandler):
+    datasource_id = 'pypi_pylock_toml'
+    path_patterns = ('*pylock.toml', '*pylock.*.toml',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'PEP 751 pylock.toml Python lockfile'
+    documentation_url = 'https://peps.python.org/pep-0751/'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location, "rb") as fp:
+            toml_data = tomllib.load(fp)
+
+        # PEP 751 uses a top-level ``packages`` array (note: plural, unlike the
+        # ``package`` key used by uv.lock and poetry.lock).
+        packages = toml_data.get('packages')
+        if not packages:
+            return
+
+        dependencies = []
+        for package in packages:
+            name = package.get('name')
+            if not name:
+                continue
+            version = package.get('version')
+
+            # ``[[packages.dependencies]]`` are edges referencing other locked
+            # packages by name (the resolved dependency graph).
+            dependencies_for_resolved = []
+            for dep in (package.get('dependencies') or []):
+                dep_name = dep.get('name')
+                if not dep_name:
+                    continue
+                dep_purl = PackageURL(type=cls.default_package_type, name=dep_name)
+                dependencies_for_resolved.append(
+                    models.DependentPackage(
+                        purl=dep_purl.to_string(),
+                        extracted_requirement=None,
+                        scope='dependencies',
+                        is_runtime=True,
+                        is_optional=False,
+                        is_direct=True,
+                        is_pinned=False,
+                    ).to_dict()
+                )
+
+            # PEP 751 package sources are mutually exclusive: an ``index``
+            # (with ``sdist`` and/or ``wheels``), ``vcs``, ``directory`` or
+            # ``archive``. Unlike uv.lock, hashes are stored as a table keyed
+            # by algorithm (e.g. ``hashes.sha256``) rather than a
+            # ``"sha256:<hex>"`` string.
+            download_url = None
+            sha256 = None
+            file_name = None
+            vcs_url = None
+            extra_data = {}
+
+            sdist = package.get('sdist')
+            wheels = package.get('wheels')
+            archive = package.get('archive')
+            vcs = package.get('vcs')
+            directory = package.get('directory')
+            index = package.get('index')
+
+            if isinstance(sdist, dict):
+                download_url = sdist.get('url')
+                sha256 = (sdist.get('hashes') or {}).get('sha256')
+            elif wheels:
+                first_wheel = wheels[0] or {}
+                download_url = first_wheel.get('url')
+                sha256 = (first_wheel.get('hashes') or {}).get('sha256')
+            elif isinstance(archive, dict):
+                download_url = archive.get('url')
+                sha256 = (archive.get('hashes') or {}).get('sha256')
+                extra_data['source_type'] = 'archive'
+            elif isinstance(vcs, dict):
+                vcs_url = vcs.get('url')
+                extra_data['source_type'] = 'vcs'
+                commit_id = vcs.get('commit-id')
+                if commit_id:
+                    extra_data['vcs_commit_id'] = commit_id
+            elif isinstance(directory, dict):
+                extra_data['source_type'] = 'directory'
+                dir_path = directory.get('path')
+                if dir_path:
+                    extra_data['directory'] = dir_path
+
+            if index:
+                extra_data['index'] = index
+
+            marker = package.get('marker')
+            if marker:
+                extra_data['marker'] = marker
+
+            if download_url:
+                file_name = posixpath.basename(download_url) or None
+
+            # Only synthesize PyPI URLs for packages actually sourced from a
+            # PyPI-style index. For ``vcs``, ``directory`` or ``archive``
+            # sources we record only what the lock file provides (e.g. the
+            # archive ``url`` as the download URL, the git URL in ``vcs_url``)
+            # rather than inventing a pypi.org URL that does not exist.
+            if index or isinstance(sdist, dict) or wheels:
+                urls = get_pypi_urls(name, version)
+                if download_url:
+                    # prefer the exact artifact URL recorded in the lock file
+                    urls['repository_download_url'] = download_url
+            else:
+                urls = dict(
+                    repository_homepage_url=None,
+                    repository_download_url=download_url,
+                    api_data_url=None,
+                )
+
+            qualifiers = {}
+            if file_name:
+                # per purl-spec PyPI definition the artifact ``file_name`` is
+                # carried as a purl qualifier so the purl identifies the
+                # specific artifact recorded in the lock file.
+                qualifiers['file_name'] = file_name
+
+            resolved_package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language='Python',
+                name=name,
+                version=version,
+                qualifiers=qualifiers,
+                sha256=sha256,
+                vcs_url=vcs_url,
+                is_virtual=True,
+                dependencies=dependencies_for_resolved,
+                extra_data=extra_data,
+                **urls,
+            )
+            resolved_package = models.PackageData.from_data(resolved_package_data, package_only)
+
+            dependencies.append(
+                models.DependentPackage(
+                    purl=resolved_package.purl,
+                    extracted_requirement=None,
+                    scope=None,
+                    is_runtime=True,
+                    is_optional=False,
+                    is_direct=False,
+                    is_pinned=bool(version),
+                    resolved_package=resolved_package.to_dict(),
+                ).to_dict()
+            )
+
+        extra_data = {}
+        lock_version = toml_data.get('lock-version')
+        if lock_version is not None:
+            extra_data['lock_version'] = lock_version
+        requires_python = toml_data.get('requires-python')
+        if requires_python:
+            extra_data['python_requires'] = requires_python
+        created_by = toml_data.get('created-by')
+        if created_by:
+            extra_data['created_by'] = created_by
+        environments = toml_data.get('environments')
+        if environments:
+            extra_data['environments'] = environments
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            extra_data=extra_data,
+            dependencies=dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
 class PipInspectDeplockHandler(models.DatafileHandler):
     datasource_id = 'pypi_inspect_deplock'
     path_patterns = ('*pip-inspect.deplock',)

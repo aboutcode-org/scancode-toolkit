@@ -1,0 +1,43 @@
+lock-version = "1.0"
+environments = ["sys_platform == 'linux'", "sys_platform == 'win32'"]
+requires-python = ">=3.9"
+created-by = "uv"
+
+[[packages]]
+name = "attrs"
+version = "25.1.0"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple"
+sdist = {name = "attrs-25.1.0.tar.gz", url = "https://files.pythonhosted.org/packages/source/a/attrs/attrs-25.1.0.tar.gz", size = 810562, hashes = {sha256 = "1c97078a80c814273a76b2a8da89c3b3b4b5e3e9c4b0c1d2e3f4a5b6c7d8e9f0"}}
+wheels = [{name = "attrs-25.1.0-py3-none-any.whl", url = "https://files.pythonhosted.org/packages/py3/a/attrs/attrs-25.1.0-py3-none-any.whl", size = 63152, hashes = {sha256 = "c75a69e28a550a7e93789579886901d0f06d3fa8fd1ec9a5e5b5b5b5b5b5b5b5"}}]
+
+[[packages]]
+name = "cattrs"
+version = "24.1.2"
+index = "https://pypi.org/simple"
+dependencies = [{name = "attrs"}]
+sdist = {name = "cattrs-24.1.2.tar.gz", url = "https://files.pythonhosted.org/packages/source/c/cattrs/cattrs-24.1.2.tar.gz", size = 426414, hashes = {sha256 = "8028cfe1ff5382df59dd36474a86e02d817b06eaf8af84555441bac915d2ef85"}}
+wheels = [{name = "cattrs-24.1.2-py3-none-any.whl", url = "https://files.pythonhosted.org/packages/py3/c/cattrs/cattrs-24.1.2-py3-none-any.whl", size = 66446, hashes = {sha256 = "67c7495b760168d931a10233f979b28dc04daf853b30752246f4f8471c6d68d0"}}]
+
+[[packages]]
+name = "tomli"
+version = "2.0.1"
+marker = "python_version < '3.11'"
+index = "https://pypi.org/simple"
+sdist = {name = "tomli-2.0.1.tar.gz", url = "https://files.pythonhosted.org/packages/source/t/tomli/tomli-2.0.1.tar.gz", hashes = {sha256 = "de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"}}
+
+[[packages]]
+name = "examplelib"
+version = "1.2.3"
+dependencies = [{name = "attrs"}]
+[packages.vcs]
+type = "git"
+url = "https://github.com/example/examplelib.git"
+requested-revision = "main"
+commit-id = "fde1660f7f5b3b3b3b3b3b3b3b3b3b3b3b3b3b3b"
+
+[[packages]]
+name = "localproject"
+[packages.directory]
+path = "."
+editable = true

@@ -1,0 +1,9 @@
+lock-version = "1.0"
+requires-python = ">=3.9"
+created-by = "pip"
+
+[[packages]]
+name = "click"
+version = "8.1.7"
+index = "https://pypi.org/simple"
+sdist = {name = "click-8.1.7.tar.gz", url = "https://files.pythonhosted.org/packages/source/c/click/click-8.1.7.tar.gz", hashes = {sha256 = "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"}}
