@@ -8,6 +8,11 @@ Next release
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
+- Fix author detection to recognize an ``Author:`` tag glued directly
+  to a name with no space, and a first/last name joined by a dot such
+  as ``Author:Frankie.Chu``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4229
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 

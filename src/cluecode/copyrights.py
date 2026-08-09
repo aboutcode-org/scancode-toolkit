@@ -392,7 +392,13 @@ class CopyrightDetector(object):
                     yield author
 
 
-def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
+def get_tokens(
+    numbered_lines,
+    splitter=re.compile(r'[\t =;]+').split,
+    author_tag=re.compile(r'^([Aa]uthors?):(\S+)$').match,
+    author_name=re.compile(r'^[Aa]uthors?$').match,
+    dot_joined_name=re.compile(r'^([A-Z][a-z]+)\.([A-Z][a-z]+)(,?)$').match,
+):
     """
     Return an iterable of pygmars.Token built from a ``numbered_lines`` iterable
     of tuples of (line number, text).
@@ -400,6 +406,7 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
     We perform a simple tokenization on spaces, tabs and some punctuation: =;
     """
     last_line = ""
+    last_token = ""
     for start_line, line in numbered_lines:
         pos = 0
 
@@ -440,10 +447,32 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
                 .strip()
             )
 
+            # split a leading Author/Authors tag glued to a name with no
+            # space in between, e.g. "Author:Frankie.Chu", into two tokens
+            tag_match = author_tag(tok)
+            if tag_match:
+                tag, name = tag_match.groups()
+                yield Token(value=tag, start_line=start_line, pos=pos)
+                pos += 1
+                last_token = tag
+                tok = name
+
+            # split a first/last name joined by a dot right after an
+            # Author/Authors tag, e.g. "Author: Frankie.Chu" or the glued
+            # "Author:Frankie.Chu", into two separate name tokens
+            if tok and author_name(last_token):
+                name_match = dot_joined_name(tok)
+                if name_match:
+                    first_name, last_name, trailing_comma = name_match.groups()
+                    yield Token(value=first_name, start_line=start_line, pos=pos)
+                    pos += 1
+                    tok = last_name + trailing_comma
+
             # the tokenizer allows a single colon or dot to be a token and we discard these
             if tok and tok not in ':.':
                 yield Token(value=tok, start_line=start_line, pos=pos)
                 pos += 1
+                last_token = tok
 
 
 class Detection:
