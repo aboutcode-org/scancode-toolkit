@@ -90,8 +90,13 @@ def load_model(model, hf_token=None):
     if not tokenizer.is_fast:
         raise click.ClickException('need a fast tokenizer for word_ids, got a slow one')
 
+    # check this before building the backbone, that pulls the base model first
+    weights = model_dir / 'model.safetensors'
+    if not weights.exists():
+        raise click.ClickException(f'no model.safetensors in {model_dir}')
+
     tagger = PhraseTagger(config)
-    state = load_file(str(model_dir / 'model.safetensors'))
+    state = load_file(str(weights))
     # training registers class_weights for the auxiliary loss, we compute no loss
     # so the buffer is not there to load into
     state.pop('class_weights', None)
