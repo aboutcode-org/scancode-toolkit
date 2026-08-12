@@ -8,6 +8,12 @@ Next release
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
+- Ensure each license rule has a unique generated validation 
+  test name, by renaming colliding rule files and adding a 
+  regression test to prevent rule name collisions.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5257
+  
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
