@@ -16,6 +16,14 @@ os.environ.setdefault('USE_TF', '0')
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+from licensedcode.required_phrases import find_phrase_spans_in_text
+from licensedcode.required_phrases import RequiredPhraseRuleCandidate
+
+from add_ml_phrases import load_model
+from add_ml_phrases import MIN_SINGLE_TOKEN_LEN
+from add_ml_phrases import MIN_TOKENS
+from add_ml_phrases import select_rules
+from add_ml_phrases import words_from_text
 from train_model import extract_spans
 from train_model import first_subword_positions
 from train_model import ID2LABEL
@@ -23,6 +31,8 @@ from train_model import ID2LABEL
 # far enough below the real emission scores to take a label out of the running,
 # finite so the forward algorithm never ends up with inf minus inf
 PIN_PENALTY = 10000.0
+
+HISTOGRAM_BINS = 20
 
 # tiers a phrase can land in, and the decision each one starts life with
 AUTO = 'auto'
@@ -210,3 +220,170 @@ def tag_and_score(tagger, tokenizer, max_length, words):
                 confidences[text] = confidence
 
     return list(confidences.items()), truncated
+
+
+def new_predict_counts():
+    """What a predict run tallies
+
+    add_ml_phrases.new_counts is the injection tally and half of it means
+    nothing here, apply reuses that one instead
+    """
+    return dict(rules=0, truncated=0, rejected=0, not_found=0, auto=0, review=0, low=0)
+
+
+def check_thresholds(auto_threshold, review_threshold):
+    """Both in range and the right way round, before anything expensive starts"""
+    for name, value in (
+        ('--auto-threshold', auto_threshold),
+        ('--review-threshold', review_threshold),
+    ):
+        if not 0.0 <= value <= 1.0:
+            raise click.ClickException(f'{name} is {value}, it must be between 0 and 1')
+
+    if review_threshold > auto_threshold:
+        raise click.ClickException(
+            f'--review-threshold {review_threshold} is above '
+            f'--auto-threshold {auto_threshold}, nothing would ever be reviewed'
+        )
+
+
+def tier_for(confidence, auto_threshold, review_threshold):
+    """The tier a confidence lands in and the decision it starts with"""
+    if confidence >= auto_threshold:
+        return AUTO, AUTO
+    if confidence >= review_threshold:
+        return REVIEW, PENDING
+    return LOW, DROPPED
+
+
+def is_injectable(rule, phrase, counts):
+    """True if scancode would take this phrase, counting the ones it would not
+
+    is_good goes first because find_phrase_spans_in_text reads the first token
+    of the normalized phrase and raises when there is none
+    """
+    candidate = RequiredPhraseRuleCandidate.create(rule.license_expression, phrase)
+    if not candidate.is_good(rule, MIN_TOKENS, MIN_SINGLE_TOKEN_LEN):
+        counts['rejected'] += 1
+        return False
+
+    # the words came from NFKC normalized text but the markers go into the raw
+    # text, so check the phrase can still be found there
+    if not find_phrase_spans_in_text(rule.text, phrase):
+        counts['not_found'] += 1
+        return False
+
+    return True
+
+
+def print_histogram(confidences):
+    """Where the confidences actually fell
+
+    The thresholds are guesses until someone looks at this
+    """
+    counted = [0] * HISTOGRAM_BINS
+    for confidence in confidences:
+        counted[min(int(confidence * HISTOGRAM_BINS), HISTOGRAM_BINS - 1)] += 1
+
+    width = 1.0 / HISTOGRAM_BINS
+    click.echo('\nconfidence spread')
+    for index, count in enumerate(counted):
+        low = index * width
+        click.echo(f'  {low:.2f} - {low + width:.2f} : {count}')
+
+
+@click.group()
+@click.help_option('-h', '--help')
+def cli():
+    """Review the required phrases the phrase tagger predicts, then inject them"""
+
+
+@cli.command()
+@click.option('--model', required=True,
+              help='Trained model directory, or a huggingface repo id to download')
+@click.option('--review-file', required=True, type=click.Path(dir_okay=False),
+              help='Where to write the predictions, must not exist yet')
+@click.option('--license-expression', default=None,
+              help='Only tag rules for this license expression, example: apache-2.0')
+@click.option('--auto-threshold', default=0.95, show_default=True, type=float,
+              help='Confidence at or above which a phrase skips review, provisional')
+@click.option('--review-threshold', default=0.60, show_default=True, type=float,
+              help='Confidence below which a phrase is dropped, provisional')
+@click.option('--limit', default=0, type=int,
+              help='Stop after this many rules, 0 does all of them')
+@click.option('-v', '--verbose', is_flag=True, default=False,
+              help='Print the phrases predicted for each rule')
+@click.help_option('-h', '--help')
+def predict(model, review_file, license_expression, auto_threshold, review_threshold,
+            limit, verbose):
+    """Predict required phrases and file them for review
+
+    The confidence is how much of its own probability mass the model puts on a
+    span, not proof the phrase is right. is_good and the review pass are what
+    keep a bad phrase out of a rule. Both thresholds are starting points until
+    the confidences of the final checkpoint have been looked at
+    """
+    check_thresholds(auto_threshold, review_threshold)
+    if os.path.exists(review_file):
+        raise click.ClickException(
+            f'{review_file} exists already, move or delete it: predict appends a '
+            f'record per rule and a second run would double them up'
+        )
+
+    try:
+        tagger, tokenizer, max_length = load_model(model, hf_token=os.environ.get('HF_TOKEN'))
+    except ImportError as e:
+        raise click.ClickException(f'{e}, install etc/requirements-ml.txt')
+
+    selected = select_rules(license_expression=license_expression)
+    rules = [rule for expression in selected.values() for rule in expression]
+    click.echo(f'tagging {len(rules)} rules in {len(selected)} license expressions')
+    if limit:
+        rules = rules[:limit]
+
+    counts = new_predict_counts()
+    confidences = []
+
+    # written as we go, a full pass takes hours and a crash should not cost all of it
+    with open(review_file, 'w', encoding='utf-8') as out:
+        for rule in rules:
+            counts['rules'] += 1
+            words = words_from_text(rule.text)
+            scored, truncated = tag_and_score(tagger, tokenizer, max_length, words)
+            if truncated:
+                counts['truncated'] += 1
+
+            phrases = []
+            for text, confidence in scored:
+                if not is_injectable(rule, text, counts):
+                    continue
+
+                tier, decision = tier_for(confidence, auto_threshold, review_threshold)
+                counts[tier] += 1
+                confidences.append(confidence)
+                phrases.append(new_phrase(text, round(confidence, 4), tier, decision))
+
+            if not phrases:
+                continue
+
+            if verbose:
+                click.echo(f'  {rule.identifier}: {[phrase["text"] for phrase in phrases]}')
+
+            write_review_record(out, new_record(rule, phrases, truncated))
+
+    click.echo(f"\nrules processed  : {counts['rules']}")
+    click.echo(f"  truncated      : {counts['truncated']}")
+    click.echo(f"phrases filed    : {counts[AUTO] + counts[REVIEW] + counts[LOW]}")
+    click.echo(f"  auto           : {counts[AUTO]}")
+    click.echo(f"  review         : {counts[REVIEW]}")
+    click.echo(f"  low            : {counts[LOW]}")
+    click.echo(f"  rejected       : {counts['rejected']}")
+    click.echo(f"  not found      : {counts['not_found']}")
+    click.echo(f'\nreview file      : {review_file}')
+
+    if confidences:
+        print_histogram(confidences)
+
+
+if __name__ == '__main__':
+    cli()
