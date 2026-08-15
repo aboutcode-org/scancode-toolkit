@@ -23,9 +23,11 @@ from licensedcode.required_phrases import add_required_phrase_to_rule
 from licensedcode.required_phrases import find_phrase_spans_in_text
 from licensedcode.required_phrases import RequiredPhraseRuleCandidate
 
+from add_ml_phrases import inject
 from add_ml_phrases import load_model
 from add_ml_phrases import MIN_SINGLE_TOKEN_LEN
 from add_ml_phrases import MIN_TOKENS
+from add_ml_phrases import new_counts
 from add_ml_phrases import select_rules
 from add_ml_phrases import words_from_text
 from train_model import extract_spans
@@ -585,6 +587,70 @@ def review(review_file):
     click.echo(f"rejected       : {counts['rejected']}")
     click.echo(f"nothing to add : {counts['nothing']}")
     click.echo(f"stale rules    : {counts['stale']}")
+
+
+def accepted_phrases(record):
+    """The phrases of one record to inject, longest first"""
+    texts = [
+        phrase['text'] for phrase in record['phrases']
+        if phrase['decision'] in (APPROVED, AUTO)
+    ]
+    return sorted(texts, key=phrase_sort_key)
+
+
+@cli.command()
+@click.option('--review-file', required=True,
+              type=click.Path(exists=True, dir_okay=False),
+              help='Review file to inject from')
+@click.option('--dry-run', is_flag=True, default=False,
+              help='Check the phrases but do not save any rule')
+@click.option('-v', '--verbose', is_flag=True, default=False,
+              help='Print the phrases injected into each rule')
+@click.help_option('-h', '--help')
+def apply(review_file, dry_run, verbose):
+    """Inject the approved and auto approved phrases
+
+    Every phrase goes through is_good and find_phrase_spans_in_text again on the
+    way in, against the rule as it is on disk, so an old review file can only
+    end up doing less than it says, never something wrong
+    """
+    records = read_review_file(review_file)
+    work = [(record, accepted_phrases(record)) for record in records]
+    work = [(record, phrases) for record, phrases in work if phrases]
+
+    if not work:
+        click.echo('nothing accepted to apply')
+        return
+
+    counts = new_counts()
+    counts['stale'] = 0
+
+    for record, phrases in work:
+        counts['rules'] += 1
+        # read fresh, the file may have moved on since predict ran
+        rule = load_rule(record['identifier'])
+        if rule is None:
+            counts['stale'] += 1
+            continue
+
+        if verbose:
+            click.echo(f"{record['identifier']}: {phrases}")
+
+        if inject(rule, phrases, counts, dry_run=dry_run, verbose=verbose):
+            counts['written'] += 1
+
+    click.echo(f"\nrules            : {counts['rules']}")
+    click.echo(f"phrases injected : {counts['injected']}")
+    click.echo(f"  rejected       : {counts['rejected']}")
+    click.echo(f"  not found      : {counts['not_found']}")
+    click.echo(f"  nothing to add : {counts['skipped']}")
+    click.echo(f"stale rules      : {counts['stale']}")
+    click.echo(f"rules written    : {counts['written']}")
+
+    if dry_run:
+        click.echo('dry run, no rules were saved')
+    elif counts['written']:
+        click.echo('run scancode-reindex-licenses to pick up the new required phrases')
 
 
 if __name__ == '__main__':
