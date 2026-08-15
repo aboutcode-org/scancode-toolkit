@@ -437,5 +437,155 @@ def predict(model, review_file, license_expression, auto_threshold, review_thres
         print_histogram(confidences)
 
 
+def new_review_counts():
+    """What a review session tallies"""
+    return dict(approved=0, edited=0, rejected=0, nothing=0, stale=0)
+
+
+def show_phrase(record, phrase, rule, preview):
+    """The rule, the phrase and what marking it would do to the text"""
+    click.echo(f"\n{record['identifier']}  {record['license_expression']}")
+    click.echo(
+        f"phrase: {phrase['text']}"
+        f"  {phrase['confidence']:.0%} {phrase['tier']}"
+    )
+    render_diff(record['identifier'], rule.text, preview)
+
+
+def edit_phrase(rule, phrase):
+    """Retype a phrase until one passes the gates, False to go back
+
+    Both gates run here so a phrase that scancode would refuse cannot be
+    approved, and is_good runs first for the same reason it does in predict
+    """
+    click.echo('\nrule text')
+    click.echo(rule.text)
+
+    while True:
+        click.echo(f"\ncurrently: {phrase['text']}")
+        text = click.prompt(
+            'phrase, empty to go back',
+            default='',
+            show_default=False,
+        ).strip()
+        if not text:
+            return False
+
+        candidate = RequiredPhraseRuleCandidate.create(rule.license_expression, text)
+        if not candidate.is_good(rule, MIN_TOKENS, MIN_SINGLE_TOKEN_LEN):
+            click.echo('is_good refused it: too short, or a stopword in a short phrase')
+            continue
+
+        if not find_phrase_spans_in_text(rule.text, text):
+            click.echo('not found in the rule text, it has to be word for word')
+            continue
+
+        changed, preview = preview_injection(rule, text)
+        if not changed:
+            click.echo('nothing to mark, it sits on an existing marker or an ignorable')
+            continue
+
+        render_diff(rule.identifier, rule.text, preview)
+        phrase['text'] = text
+        phrase['decision'] = APPROVED
+        return True
+
+
+def ask_phrase(rule, phrase, counts):
+    """Take a decision on one phrase, False if the maintainer wants to stop"""
+    while True:
+        answer = click.prompt(
+            '[y] approve  [n] reject  [e] edit  [q] quit',
+            default='',
+            show_default=False,
+        ).strip().lower()
+
+        if answer == 'y':
+            phrase['decision'] = APPROVED
+            counts['approved'] += 1
+            return True
+
+        if answer == 'n':
+            phrase['decision'] = REJECTED
+            counts['rejected'] += 1
+            return True
+
+        if answer == 'q':
+            return False
+
+        if answer == 'e':
+            if edit_phrase(rule, phrase):
+                counts['approved'] += 1
+                counts['edited'] += 1
+                return True
+            continue
+
+        click.echo('answer y, n, e or q')
+
+
+def walk_records(records, review_file, counts):
+    """Ask about every pending phrase, saving after each decision"""
+    for record in records:
+        pending = [
+            phrase for phrase in record['phrases']
+            if phrase['decision'] == PENDING
+        ]
+        if not pending:
+            continue
+
+        rule = load_rule(record['identifier'])
+        if rule is None:
+            counts['stale'] += 1
+            continue
+
+        for phrase in pending:
+            changed, preview = preview_injection(rule, phrase['text'])
+            # covers a phrase that is no longer there, one that overlaps a
+            # marker or an ignorable, and one that would rewrite the ignorables
+            if not changed:
+                counts['nothing'] += 1
+                continue
+
+            show_phrase(record, phrase, rule, preview)
+            if not ask_phrase(rule, phrase, counts):
+                return
+
+            # rewritten now rather than at the end, so a stop here costs nothing
+            write_review_file(review_file, records)
+
+
+@cli.command()
+@click.option('--review-file', required=True,
+              type=click.Path(exists=True, dir_okay=False),
+              help='Review file written by predict')
+@click.help_option('-h', '--help')
+def review(review_file):
+    """Approve, reject or edit the phrases that need a decision
+
+    Only the review tier is asked about. Stopping is safe, every decision is
+    written before the next phrase comes up, so a rerun carries on where this
+    one left off
+    """
+    records = read_review_file(review_file)
+    counts = new_review_counts()
+
+    waiting = sum(
+        1 for record in records for phrase in record['phrases']
+        if phrase['decision'] == PENDING
+    )
+    if not waiting:
+        click.echo('nothing left to review')
+        return
+
+    click.echo(f'{waiting} phrases waiting')
+    walk_records(records, review_file, counts)
+
+    click.echo(f"\napproved       : {counts['approved']}")
+    click.echo(f"  edited       : {counts['edited']}")
+    click.echo(f"rejected       : {counts['rejected']}")
+    click.echo(f"nothing to add : {counts['nothing']}")
+    click.echo(f"stale rules    : {counts['stale']}")
+
+
 if __name__ == '__main__':
     cli()
