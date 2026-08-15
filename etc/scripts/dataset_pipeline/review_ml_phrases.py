@@ -3,6 +3,7 @@
 # a maintainer, apply injects what came back accepted
 # a wrong required phrase silently drops a real license detection, so nothing is
 # written on the model's word alone
+import difflib
 import json
 import os
 import sys
@@ -16,6 +17,9 @@ os.environ.setdefault('USE_TF', '0')
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+from licensedcode.models import Rule
+from licensedcode.models import rules_data_dir
+from licensedcode.required_phrases import add_required_phrase_to_rule
 from licensedcode.required_phrases import find_phrase_spans_in_text
 from licensedcode.required_phrases import RequiredPhraseRuleCandidate
 
@@ -290,6 +294,54 @@ def print_histogram(confidences):
     for index, count in enumerate(counted):
         low = index * width
         click.echo(f'  {low:.2f} - {low + width:.2f} : {count}')
+
+
+def load_rule(identifier):
+    """The rule a record names, or None if its file has gone
+
+    A record names one rule, so read that one file. select_rules would reload
+    all 36k of them and drop the ones that already have markers, which is
+    exactly the ones an earlier apply run just marked
+    """
+    rule_file = os.path.join(rules_data_dir, identifier)
+    if not os.path.exists(rule_file):
+        return None
+    return Rule.from_file(rule_file, is_builtin=True)
+
+
+def preview_injection(rule, phrase):
+    """What apply would write for this phrase, and whether it would write at all
+
+    Done by letting add_required_phrase_to_rule mark the rule under dry_run and
+    then putting the rule back as it was. Working the spans out here instead
+    would miss that it marks every non overlapping one, and that it refuses when
+    a span sits on an existing marker or an ignorable. source is restored with
+    the text so whatever we pass for it never lands anywhere
+    """
+    text, source = rule.text, rule.source
+    changed = add_required_phrase_to_rule(
+        rule=rule,
+        required_phrase=phrase,
+        source='ml_model',
+        dry_run=True,
+    )
+    preview = rule.text
+    rule.text, rule.source = text, source
+    return changed, preview
+
+
+def render_diff(identifier, before, after):
+    """The injection as a unified diff"""
+    lines = difflib.unified_diff(
+        before.splitlines(keepends=True),
+        after.splitlines(keepends=True),
+        fromfile=f'a/{identifier}',
+        tofile=f'b/{identifier}',
+    )
+    colours = {'+': 'green', '-': 'red', '@': 'cyan'}
+    for line in lines:
+        line = line.rstrip('\n')
+        click.echo(click.style(line, fg=colours.get(line[:1])))
 
 
 @click.group()
