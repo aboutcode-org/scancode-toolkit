@@ -72,3 +72,29 @@ class TestNuget(PackageTester):
     def test_package_lock_json_is_package_data_file(self):
         test_file = self.get_test_loc('nuget/packages.lock.json')
         assert nuget.NugetPackagesLockHandler.is_datafile(test_file)
+        
+        
+    
+    def test_parse_creates_package_from_nuspec_specflow_mstest_license_file(self):
+        test_file = self.get_test_loc('nuget/SpecFlow.MsTest.3.1.89.nuspec')
+        package = nuget.NugetNuspecHandler.parse(test_file)
+        expected_loc = self.get_test_loc('nuget/SpecFlow.MsTest.3.1.89.nuspec.json.expected')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_creates_package_from_nuspec_plain_license(self):
+        test_file = self.get_test_loc('nuget/PlainLicense.nuspec')
+        package = nuget.NugetNuspecHandler.parse(test_file)
+        expected_loc = self.get_test_loc('nuget/PlainLicense.nuspec.json.expected')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_creates_package_from_nuspec_license_url_only(self):
+        test_file = self.get_test_loc('nuget/LicenseUrlOnly.nuspec')
+        package = nuget.NugetNuspecHandler.parse(test_file)
+        expected_loc = self.get_test_loc('nuget/LicenseUrlOnly.nuspec.json.expected')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_creates_package_from_nuspec_no_license_info(self):
+        test_file = self.get_test_loc('nuget/NoLicenseInfo.nuspec')
+        package = nuget.NugetNuspecHandler.parse(test_file)
+        expected_loc = self.get_test_loc('nuget/NoLicenseInfo.nuspec.json.expected')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
