@@ -114,9 +114,8 @@ def extract_modinfo(location: str) -> Dict[str, List[str]]:
 
 def get_dependency_names(metadata: Dict[str, List[str]]) -> List[str]:
     """
-    Returns a list of strings, each being a kernel module name
-    Normalized fields to a list of strings derived from the '.modinfo' metadata. The 'depends' field is a
-    comma-separated list of required kernel module names 
+    Return normalized kernel module dependency names from '.modinfo' metadata.
+    The 'depends' field is a comma-separated list of required module names.
     """
     dependency_names = []
 
