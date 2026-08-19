@@ -73,8 +73,6 @@ class TestNuget(PackageTester):
         test_file = self.get_test_loc('nuget/packages.lock.json')
         assert nuget.NugetPackagesLockHandler.is_datafile(test_file)
         
-        
-    
     def test_parse_creates_package_from_nuspec_specflow_mstest_license_file(self):
         test_file = self.get_test_loc('nuget/SpecFlow.MsTest.3.1.89.nuspec')
         package = nuget.NugetNuspecHandler.parse(test_file)
@@ -97,4 +95,10 @@ class TestNuget(PackageTester):
         test_file = self.get_test_loc('nuget/NoLicenseInfo.nuspec')
         package = nuget.NugetNuspecHandler.parse(test_file)
         expected_loc = self.get_test_loc('nuget/NoLicenseInfo.nuspec.json.expected')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        
+    def test_parse_creates_package_from_nuspec_expression_license(self):
+        test_file = self.get_test_loc('nuget/ExpressionLicense.nuspec')
+        package = nuget.NugetNuspecHandler.parse(test_file)
+        expected_loc = self.get_test_loc('nuget/ExpressionLicense.nuspec.json.expected')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
