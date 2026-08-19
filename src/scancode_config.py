@@ -191,13 +191,14 @@ __env_package_cache_dir = os.getenv('SCANCODE_PACKAGE_INDEX_CACHE')
 packagedcode_cache_dir = (__env_package_cache_dir or std_package_cache_dir)
 
 
-std_resource_cache_dir = join(scancode_src_dir, 'commoncode', 'data', 'cache')
+std_resource_cache_dir = join(scancode_src_dir, 'commoncode', 'data', 'cache', 'resource_cache_index')
 __env_resource_cache_dir = os.getenv('SCANCODE_RESOURCE_INDEX_CACHE')
 resource_cache_dir = (__env_resource_cache_dir or std_resource_cache_dir)
 
 _create_dir(licensedcode_cache_dir)
 _create_dir(packagedcode_cache_dir)
 _create_dir(scancode_cache_dir)
+_create_dir(resource_cache_dir)
 
 # - scancode_temp_dir: for short-lived temporary files which are import- or run-
 # specific that may live for the duration of a function call or for the duration
