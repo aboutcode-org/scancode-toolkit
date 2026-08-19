@@ -4452,7 +4452,7 @@ fold_consecutive_quotes = re.compile(r"'\"{2,}").sub
 remove_weird_comment_markers = re.compile(r'^(rem|\@rem|dnl)\s+').sub
 
 # common comment line prefix in man pages
-remove_man_comment_markers = re.compile(r'\."').sub
+remove_man_comment_markers = re.compile(r'^\.\\"').sub
 
 
 def remove_code_comment_markers(s):
