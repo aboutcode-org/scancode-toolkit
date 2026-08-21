@@ -8,6 +8,11 @@ Next release
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
+- Fixed nuget/nuspec parser to correctly extract file-referenced and
+  expression-based <license> elements instead of the deprecated 
+  licenseUrl fallback
+  https://github.com/aboutcode-org/scancode-toolkit/pull/5271
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
