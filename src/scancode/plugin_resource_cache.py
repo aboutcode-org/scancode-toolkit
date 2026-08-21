@@ -17,7 +17,10 @@ from commoncode.cliutils import OTHER_SCAN_GROUP
 from commoncode.hash import binary_chunks
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from scancode_config import resource_cache_dir
+from scancode_config import scancode_cache_dir
+
+
+RESOURCE_CACHE_DIR = os.path.join(scancode_cache_dir, "resource_cache_index")
 
 
 def hasher_from_chunks(chunks):
@@ -55,7 +58,7 @@ def get_resource_cache_file_location(resource_cache_index):
     prefix1 = resource_cache_index[:2]
     prefix2 = resource_cache_index[2:4]
     filename = resource_cache_index[4:]
-    resource_cache_file_path = os.path.join(resource_cache_dir, prefix1, prefix2, filename)
+    resource_cache_file_path = os.path.join(RESOURCE_CACHE_DIR, prefix1, prefix2, filename)
     return resource_cache_file_path
 
 
