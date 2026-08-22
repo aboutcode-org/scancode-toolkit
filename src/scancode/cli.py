@@ -67,6 +67,7 @@ from scancode import ScancodeCliUsageError
 from scancode import notice
 from scancode import print_about
 from scancode import Scanner
+from scancode import resource_cache
 from scancode.help import epilog_text
 from scancode.help import examples_text
 from scancode.interrupt import DEFAULT_TIMEOUT
@@ -1493,6 +1494,7 @@ def scan_resource(
     results = {}
     scan_errors = []
     timings = {} if with_timing else None
+    scanners_to_run = []
 
     if not with_threading:
         interruptor = fake_interruptible
@@ -1503,8 +1505,24 @@ def scan_resource(
     # and start returning values. The kill timeout is otherwise there
     # as a gatekeeper for runaway processes.
 
-    # run each scanner in sequence in its own interruptible
+    # compute resource_cache_index
+    resource_cache_index = resource_cache.compute_resource_cache_index(location=location, path=path)
+
+    # update `results` with cached data or add scanner to scanners_to_run if no
+    # cache data is available
     for scanner in scanners:
+        # get resource_cache_data
+        resource_cache_data = resource_cache.get_resource_cache_data(
+            resource_cache_index=resource_cache_index,
+            plugin_name=scanner.name
+        )
+        if resource_cache_data:
+            results.update(resource_cache_data)
+        else:
+            scanners_to_run.append(scanner)
+
+    # run each scanner in sequence in its own interruptible
+    for scanner in scanners_to_run:
         if with_timing:
             start = time()
 
@@ -1523,6 +1541,10 @@ def scan_resource(
             # the return value of a scanner fun MUST be a mapping
             if values_mapping:
                 results.update(values_mapping)
+                resource_cache.update_resource_cache_data(
+                    resource_cache_index=resource_cache_index,
+                    plugin_name=scanner.name
+                )
 
         except Exception:
             msg = 'ERROR: for scanner: ' + scanner.name + ':\n' + traceback.format_exc()
