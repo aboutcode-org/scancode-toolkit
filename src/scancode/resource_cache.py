@@ -11,6 +11,7 @@ import hashlib
 import json
 import os
 
+from commoncode.fileutils import create_dir
 from commoncode.hash import binary_chunks
 from scancode_config import scancode_cache_dir
 
@@ -82,9 +83,11 @@ def update_resource_cache_data(resource_cache_index, plugin_name, results):
     Update the resource cache with the `results` of the scanner `plugin_name`
     for the resource keyed by `resource_cache_index`.
     """
-    resource_cache_file_location = get_resource_cache_file_location(
-        resource_cache_index=resource_cache_index,
-        plugin_name=plugin_name
+    resource_cache_directory_location = get_resource_cache_directory_location(
+        resource_cache_index=resource_cache_index
     )
+    if not os.path.exists(resource_cache_directory_location):
+        create_dir(resource_cache_directory_location)
+    resource_cache_file_location = os.path.join(resource_cache_directory_location, plugin_name)
     with open(resource_cache_file_location, 'w') as f:
         json.dump(results, f)

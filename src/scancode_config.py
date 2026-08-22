@@ -221,3 +221,6 @@ scancode_temp_dir = tempfile.mkdtemp(prefix=_prefix, dir=__scancode_temp_base_di
 
 # Used for tests to regenerate fixtures with regen=True
 REGEN_TEST_FIXTURES = SCANCODE_REGEN_TEST_FIXTURES = os.getenv('SCANCODE_REGEN_TEST_FIXTURES', False)
+
+# Used to control whether or not we use cached results during scan time
+USE_CACHED_RESULTS = SCANCODE_USE_CACHED_RESULTS = os.getenv('SCANCODE_USE_CACHED_RESULTS', True)

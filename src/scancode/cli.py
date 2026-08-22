@@ -74,6 +74,7 @@ from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
 from scancode.pool import ScanCodeTimeoutError
+from scancode_config import USE_CACHED_RESULTS
 
 # Tracing flags
 TRACE = False
@@ -1508,21 +1509,22 @@ def scan_resource(
     # compute resource_cache_index
     resource_cache_index = resource_cache.compute_resource_cache_index(location=location, path=path)
 
-    # update `results` with cached data or add scanner to scanners_to_run if no
-    # cache data is available
-    for scanner in scanners:
-        # get resource_cache_data
-        resource_cache_data = resource_cache.get_resource_cache_data(
-            resource_cache_index=resource_cache_index,
-            plugin_name=scanner.name
-        )
-        if resource_cache_data:
-            results.update(resource_cache_data)
-        else:
-            scanners_to_run.append(scanner)
+    if USE_CACHED_RESULTS:
+        # update `results` with cached data or add scanner to scanners_to_run if no
+        # cache data is available
+        for scanner in scanners:
+            # get resource_cache_data
+            resource_cache_data = resource_cache.get_resource_cache_data(
+                resource_cache_index=resource_cache_index,
+                plugin_name=scanner.name
+            )
+            if resource_cache_data:
+                results.update(resource_cache_data)
+            else:
+                scanners_to_run.append(scanner)
 
     # run each scanner in sequence in its own interruptible
-    for scanner in scanners_to_run:
+    for scanner in scanners_to_run or scanners:
         if with_timing:
             start = time()
 
@@ -1541,10 +1543,12 @@ def scan_resource(
             # the return value of a scanner fun MUST be a mapping
             if values_mapping:
                 results.update(values_mapping)
-                resource_cache.update_resource_cache_data(
-                    resource_cache_index=resource_cache_index,
-                    plugin_name=scanner.name
-                )
+                if USE_CACHED_RESULTS:
+                    resource_cache.update_resource_cache_data(
+                        resource_cache_index=resource_cache_index,
+                        plugin_name=scanner.name,
+                        results=values_mapping,
+                    )
 
         except Exception:
             msg = 'ERROR: for scanner: ' + scanner.name + ':\n' + traceback.format_exc()
