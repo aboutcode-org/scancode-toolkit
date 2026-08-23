@@ -13,6 +13,15 @@ import sys
 from commoncode.distro import parse_os_release
 
 
+def to_os_native_path(path):
+    """
+    Normalize a path to use the native OS path separator.
+    """
+    OS_PATH_SEP = "\\" if on_windows else "/"
+
+    return path.replace("/", OS_PATH_SEP).replace("\\", OS_PATH_SEP).rstrip(OS_PATH_SEP)
+
+
 def os_arch():
     """
     Return a tuple for the current the OS and architecture.

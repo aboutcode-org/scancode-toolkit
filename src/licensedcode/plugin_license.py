@@ -210,7 +210,7 @@ class LicenseScanner(ScanPlugin):
         modified = False
         for resource in codebase.walk(topdown=False):
             # follow license references to other files
-            if TRACE:
+            if TRACE_REFERENCE:
                 license_expressions_before = resource.detected_license_expression
 
             try:
@@ -218,7 +218,7 @@ class LicenseScanner(ScanPlugin):
             except Exception as e:
                 raise Exception(f"Failed to process resource: {resource!r}") from e
 
-            if TRACE and modified:
+            if TRACE_REFERENCE and modified:
                 license_expressions_after = resource.detected_license_expression
                 logger_debug(
                     f'add_referenced_filenames_license_matches: Modified:',
@@ -290,6 +290,11 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
                     f'No references to resolve at license detection with expression: {license_detection.license_expression}',
                 )
             continue
+
+        if TRACE_REFERENCE:
+            logger_debug(
+                f'add_referenced_license_matches: referenced_filenames: {referenced_filenames}',
+            )
 
         is_modified = update_detection_from_referenced_files(
             referenced_filenames=referenced_filenames,

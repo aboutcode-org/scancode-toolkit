@@ -37,87 +37,63 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-@pre_scan_impl
-class ProcessIgnore(PreScanPlugin):
+def process_codebase(codebase, ignore=(), include=(), **kwargs):
     """
-    Include or ignore files matching patterns.
+    WARNING: DEPRECATED, ignore/include moved to codebase import
+    step in core plugins.
+    Keep only included and non-ignored Resources in the codebase.
     """
 
-    options = [
-        PluggableCommandLineOption(('--ignore',),
-           multiple=True,
-           default=None,
-           metavar='<pattern>',
-           help='Ignore files matching <pattern>.',
-           sort_order=10,
-           help_group=PRE_SCAN_GROUP),
-        PluggableCommandLineOption(('--include',),
-           multiple=True,
-           default=None,
-           metavar='<pattern>',
-           help='Include files matching <pattern>.',
-           sort_order=11,
-           help_group=PRE_SCAN_GROUP)
-    ]
+    if not (ignore or include):
+        return
 
-    def is_enabled(self, ignore, include, **kwargs):
-        return ignore or include
+    excludes = {
+        pattern: 'User ignore: Supplied by --ignore' for pattern in ignore
+    }
 
-    def process_codebase(self, codebase, ignore=(), include=(), **kwargs):
-        """
-        Keep only included and non-ignored Resources in the codebase.
-        """
+    includes = {
+        pattern: 'User include: Supplied by --include' for pattern in include
+    }
 
-        if not (ignore or include):
-            return
+    included = partial(is_included, includes=includes, excludes=excludes)
 
-        excludes = {
-            pattern: 'User ignore: Supplied by --ignore' for pattern in ignore
-        }
+    paths_to_remove = set()
+    paths_to_remove_add = paths_to_remove.add
+    paths_to_remove_discard = paths_to_remove.discard
 
-        includes = {
-            pattern: 'User include: Supplied by --include' for pattern in include
-        }
+    # Walk codebase top-down to collect the paths of Resources to remove.
+    for resource in codebase.walk(topdown=True):
+        if resource.is_root:
+            continue
 
-        included = partial(is_included, includes=includes, excludes=excludes)
+        resource_path = resource.path
 
-        paths_to_remove = set()
-        paths_to_remove_add = paths_to_remove.add
-        paths_to_remove_discard = paths_to_remove.discard
+        if not included(resource_path):
+            for child in resource.children(codebase):
+                paths_to_remove_add(child.path)
+            paths_to_remove_add(resource_path)
+        else:
+            # we may have been selected for removal based on a parent dir
+            # but may be explicitly included. Honor that
+            paths_to_remove_discard(resource_path)
 
-        # Walk codebase top-down to collect the paths of Resources to remove.
-        for resource in codebase.walk(topdown=True):
-            if resource.is_root:
-                continue
+    if TRACE:
+        logger_debug('process_codebase: paths_to_remove')
+        logger_debug(paths_to_remove)
+        for path in sorted(paths_to_remove):
+            logger_debug(codebase.get_resource(path))
 
-            resource_path = resource.path
+    remove_resource = codebase.remove_resource
 
-            if not included(resource_path):
-                for child in resource.children(codebase):
-                    paths_to_remove_add(child.path)
-                paths_to_remove_add(resource_path)
-            else:
-                # we may have been selected for removal based on a parent dir
-                # but may be explicitly included. Honor that
-                paths_to_remove_discard(resource_path)
-
-        if TRACE:
-            logger_debug('process_codebase: paths_to_remove')
-            logger_debug(paths_to_remove)
-            for path in sorted(paths_to_remove):
-                logger_debug(codebase.get_resource(path))
-
-        remove_resource = codebase.remove_resource
-
-        # Then, walk bottom-up and remove the non-included Resources from the
-        # Codebase if the Resource path is in our list of paths to remove.
-        for resource in codebase.walk(topdown=False):
-            resource_path = resource.path
-            if resource.is_root:
-                continue
-            # removing dirs will also remove its files
-            if resource.is_dir:
-                continue
-            if resource_path in paths_to_remove:
-                paths_to_remove_discard(resource_path)
-                remove_resource(resource)
+    # Then, walk bottom-up and remove the non-included Resources from the
+    # Codebase if the Resource path is in our list of paths to remove.
+    for resource in codebase.walk(topdown=False):
+        resource_path = resource.path
+        if resource.is_root:
+            continue
+        # removing dirs will also remove its files
+        if resource.is_dir:
+            continue
+        if resource_path in paths_to_remove:
+            paths_to_remove_discard(resource_path)
+            remove_resource(resource)

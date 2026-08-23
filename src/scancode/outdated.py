@@ -83,7 +83,11 @@ def total_seconds(td):
 
 class VersionCheckState:
 
-    def __init__(self):
+    def __init__(self, is_test=False):
+        if is_test:
+            self.state={}
+            return
+
         self.statefile_path = os.path.join(
             scancode_cache_dir, 'scancode-version-check.json')
         self.lockfile_path = self.statefile_path + '.lockfile'
@@ -135,6 +139,7 @@ def check_scancode_version(
     release_date=scancode_release_date,
     new_version_url='https://pypi.org/pypi/scancode-toolkit/json',
     force=False,
+    is_test=False,
 ):
     """
     Check for an updated version of scancode-toolkit. Return a message to
@@ -146,6 +151,7 @@ def check_scancode_version(
         installed_version=installed_version,
         new_version_url=new_version_url,
         force=force,
+        is_test=is_test,
     )
     if newer_version:
         return build_outdated_message(
@@ -159,6 +165,7 @@ def fetch_newer_version(
     installed_version=scancode_version,
     new_version_url='https://pypi.org/pypi/scancode-toolkit/json',
     force=False,
+    is_test=False,
 ):
     """
     Return a version string if there is an updated version of scancode-toolkit
@@ -175,9 +182,10 @@ def fetch_newer_version(
 
     try:
         installed_version = packaging_version.parse(installed_version)
-        state = VersionCheckState()
+        state = VersionCheckState(is_test=is_test)
 
         current_time = datetime.datetime.utcnow()
+        latest_version = None
         # Determine if we need to refresh the state
         if ('last_check' in state.state and 'latest_version' in state.state):
             last_check = datetime.datetime.strptime(
