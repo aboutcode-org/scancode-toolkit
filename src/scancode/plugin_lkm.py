@@ -14,8 +14,6 @@ import attr
 
 from commoncode.cliutils import OTHER_SCAN_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
-from elftools.common.exceptions import ELFError
-from elftools.elf.elffile import ELFFile
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 
@@ -73,25 +71,90 @@ def scan_linux_kernel_module(location, **kwargs):
 
 def extract_modinfo(location: str) -> Dict[str, List[str]]:
     """
-    Extract '.modinfo' metadata from the Linux kernel module file at 'location'.
+    Extract '.modinfo' metadata from the Linux kernel module file at 'location'
+    using a custom minimal ELF parser.
 
     Return '.modinfo' metadata as a mapping of keys to lists of values.
 
     Multiple values are preserved because fields such as 'author', 'alias',
     and 'firmware' may occur more than once.
     """
+    import struct
+
     metadata: Dict[str, List[str]] = {}
+    raw_bytes = b''
 
     try:
-        with open(location, 'rb') as module_file:
-            elf_file = ELFFile(module_file)
-            modinfo_section = elf_file.get_section_by_name('.modinfo')
-            if modinfo_section is None:
-                return {}
+        with open(location, 'rb') as f:
+            e_ident = f.read(16)
+            if len(e_ident) == 16 and e_ident[0:4] == b'\x7fELF':
+                ei_class = e_ident[4]  # 1 = 32-bit, 2 = 64-bit
+                ei_data = e_ident[5]   # 1 = LSB, 2 = MSB
+                
+                if ei_class in (1, 2) and ei_data in (1, 2):
+                    endian = '<' if ei_data == 1 else '>'
+                    
+                    if ei_class == 1:
+                        # 32-bit ELF
+                        f.seek(32)
+                        header_data = f.read(20)
+                        if len(header_data) == 20:
+                            e_shoff, _, _, _, _, e_shentsize, e_shnum, e_shstrndx = struct.unpack(
+                                endian + 'IIHHHHHH', header_data
+                            )
+                    else:
+                        # 64-bit ELF
+                        f.seek(40)
+                        header_data = f.read(24)
+                        if len(header_data) == 24:
+                            e_shoff, _, _, _, _, e_shentsize, e_shnum, e_shstrndx = struct.unpack(
+                                endian + 'QIHHHHHH', header_data
+                            )
+                    
+                    if e_shnum > 0 and e_shentsize > 0:
+                        f.seek(e_shoff)
+                        section_headers_data = f.read(e_shnum * e_shentsize)
+                        if len(section_headers_data) == e_shnum * e_shentsize:
+                            
+                            # Helper to parse section header at index
+                            def get_section_header(idx):
+                                offset = idx * e_shentsize
+                                entry_data = section_headers_data[offset:offset + e_shentsize]
+                                if len(entry_data) < e_shentsize:
+                                    return None
+                                if ei_class == 1:
+                                    sh_name, _, _, _, sh_offset, sh_size = struct.unpack(
+                                        endian + 'IIIIII', entry_data[:24]
+                                    )
+                                else:
+                                    sh_name, _, _, _, sh_offset, sh_size = struct.unpack(
+                                        endian + 'IIQQQQ', entry_data[:40]
+                                    )
+                                return sh_name, sh_offset, sh_size
 
-            raw_bytes = modinfo_section.data()
-
-    except (ELFError, OSError):
+                            shstr_header = get_section_header(e_shstrndx)
+                            if shstr_header:
+                                _, shstr_offset, shstr_size = shstr_header
+                                f.seek(shstr_offset)
+                                shstr_table = f.read(shstr_size)
+                                if len(shstr_table) == shstr_size:
+                                    for i in range(e_shnum):
+                                        header = get_section_header(i)
+                                        if not header:
+                                            continue
+                                        sh_name, sh_offset, sh_size = header
+                                        
+                                        end = shstr_table.find(b'\x00', sh_name)
+                                        if end != -1:
+                                            name = shstr_table[sh_name:end].decode('utf-8', errors='ignore')
+                                        else:
+                                            name = shstr_table[sh_name:].decode('utf-8', errors='ignore')
+                                        
+                                        if name == '.modinfo':
+                                            f.seek(sh_offset)
+                                            raw_bytes = f.read(sh_size)
+                                            break
+    except Exception:
         return {}
 
     # Entries in .modinfo are NUL-terminated key=value strings.

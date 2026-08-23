@@ -63,7 +63,6 @@ publicsuffix2==2.20191221
 py==1.11.0
 pyahocorasick==2.3.1
 pycparser==2.23
-pyelftools==0.32
 pygmars==1.0.0
 Pygments==2.13.0
 pymaven-patch==0.3.2
