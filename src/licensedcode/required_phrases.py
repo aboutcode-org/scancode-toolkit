@@ -346,7 +346,7 @@ def get_updatable_rules_by_expression(license_expression=None, simple_expression
     # filter rules to keep only updatable rules
     for expression, rules in rules_by_expression.items():
         if simple_expression:
-            license_keys = licensing.license_keys(license_expression)
+            license_keys = licensing.license_keys(expression)
             if len(license_keys) != 1:
                 continue
 
@@ -441,7 +441,7 @@ def add_license_attributes_as_required_phrases_to_rules_text(
     }
 
     for rule in rules:
-        for field_name, required_phrase_texts in license_fields_mapping_by_order.values():
+        for field_name, required_phrase_texts in license_fields_mapping_by_order.items():
             for required_phrase_text in required_phrase_texts:
                 debug = False
                 if rule.identifier in TRACE_REQUIRED_PHRASE_FOR_RULES:
