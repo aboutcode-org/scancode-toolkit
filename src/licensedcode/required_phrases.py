@@ -593,6 +593,202 @@ def update_rules_using_license_attributes(
             dry_run=dry_run,
         )
 
+
+def get_required_phrases_by_key(rules_by_expression, licenses_by_key):
+    """
+    Return required phrase candidates grouped by license key.
+    Only collect from required phrase rules with a single non generic key.
+    """
+    licensing = Licensing()
+    required_phrases_by_key = {}
+    required_phrases_by_expression = collect_is_required_phrase_from_rules(
+        rules_by_expression=rules_by_expression,
+    )
+
+    for expression, required_phrases in required_phrases_by_expression.items():
+        license_keys = licensing.license_keys(expression, unique=True)
+        if len(license_keys) != 1:
+            continue
+
+        license_key = license_keys[0]
+        if licenses_by_key[license_key].is_generic:
+            continue
+
+        if required_phrases:
+            required_phrases_by_key[license_key] = required_phrases
+
+    return required_phrases_by_key
+
+
+def _get_required_phrase_matches(rule, license_keys, required_phrases_by_key):
+    """
+    Return one non overlapping required phrase match for every license key.
+    Prefer phrases already marked in the rule and return None if no complete match exists.
+    """
+    existing_spans = get_existing_required_phrase_spans(rule.text)
+    unavailable_spans = existing_spans + get_ignorable_spans(rule)
+    matches_by_key = {}
+
+    for license_key in license_keys:
+        marked_matches = []
+        new_matches = []
+
+        for candidate in required_phrases_by_key.get(license_key, []):
+            phrase_spans = find_phrase_spans_in_text(
+                rule.text,
+                candidate.required_phrase_text,
+            )
+            marked_spans = [
+                span
+                for span in phrase_spans
+                if any(span in existing for existing in existing_spans)
+            ]
+            if marked_spans:
+                marked_matches.extend(
+                    (candidate, True, [span])
+                    for span in marked_spans
+                )
+                continue
+
+            spans_to_add = list(
+                get_non_overlapping_spans(
+                    old_required_phrase_spans=unavailable_spans,
+                    new_required_phrase_spans=phrase_spans,
+                )
+            )
+            if spans_to_add:
+                new_matches.append((candidate, False, spans_to_add))
+
+        matches_by_key[license_key] = marked_matches + new_matches
+        if not matches_by_key[license_key]:
+            return
+
+    def find_matches(remaining_keys, matched_spans):
+        if not remaining_keys:
+            return []
+
+        license_key = remaining_keys[0]
+        for required_phrase, is_marked, phrase_spans in matches_by_key[license_key]:
+            if any(
+                span.overlap(matched)
+                for span in phrase_spans
+                for matched in matched_spans
+            ):
+                continue
+
+            remaining_matches = find_matches(
+                remaining_keys=remaining_keys[1:],
+                matched_spans=matched_spans + phrase_spans,
+            )
+            if remaining_matches is not None:
+                return [
+                    (required_phrase, is_marked),
+                    *remaining_matches,
+                ]
+
+    return find_matches(
+        remaining_keys=license_keys,
+        matched_spans=[],
+    )
+
+
+def add_required_phrases_to_composite_rules(
+    rules,
+    license_keys,
+    required_phrases_by_key,
+    write_phrase_source=False,
+    dry_run=False,
+):
+    """
+    Add existing required phrases to rules when every license key has a matching phrase.
+    """
+    for rule in rules:
+        matched_required_phrases = _get_required_phrase_matches(
+            rule=rule,
+            license_keys=license_keys,
+            required_phrases_by_key=required_phrases_by_key,
+        )
+        if not matched_required_phrases:
+            continue
+
+        original_text = rule.text
+        original_source = rule.source
+        updated = False
+
+        for required_phrase, is_marked in matched_required_phrases:
+            if is_marked:
+                continue
+
+            source = rule.source
+            if write_phrase_source:
+                phrase_source = required_phrase.rule.identifier
+                source = f"{source} {phrase_source}" if source else phrase_source
+
+            added = add_required_phrase_to_rule(
+                rule=rule,
+                required_phrase=required_phrase.required_phrase_text,
+                source=source,
+                dry_run=True,
+            )
+            if not added:
+                rule.text = original_text
+                rule.source = original_source
+                updated = False
+                break
+
+            updated = True
+
+        if updated and not dry_run:
+            rule.dump(rules_data_dir)
+
+
+def update_composite_rules_using_required_phrases(
+    license_expression=None,
+    write_phrase_source=False,
+    verbose=False,
+    dry_run=False,
+):
+    """
+    Collect existing required phrases from single license key rules and add them to composite rules
+    only when every non generic license key has a non overlapping match.
+    """
+    licensing = Licensing()
+    licenses_by_key = get_licenses_db()
+    rules_by_expression = get_base_rules_by_expression()
+    required_phrases_by_key = get_required_phrases_by_key(
+        rules_by_expression=rules_by_expression,
+        licenses_by_key=licenses_by_key,
+    )
+    updatable_rules_by_expression = get_updatable_rules_by_expression(
+        license_expression=license_expression,
+        simple_expression=False,
+    )
+
+    for expression, updatable_rules in updatable_rules_by_expression.items():
+        license_keys = licensing.license_keys(expression, unique=True)
+        if len(license_keys) < 2:
+            continue
+
+        license_keys = [
+            license_key
+            for license_key in license_keys
+            if not licenses_by_key[license_key].is_generic
+        ]
+        if not license_keys:
+            continue
+
+        if verbose:
+            click.echo(f'Annotating required phrases for expression: {expression}')
+
+        add_required_phrases_to_composite_rules(
+            rules=updatable_rules,
+            license_keys=license_keys,
+            required_phrases_by_key=required_phrases_by_key,
+            write_phrase_source=write_phrase_source,
+            dry_run=dry_run,
+        )
+
+
 ####################################################################################################
 #
 # Inject new required phrase in rules
@@ -617,7 +813,8 @@ def delete_required_phrase_rules_source_debug(rules_data_dir):
     is_flag=True,
     default=False,
     help="Propagate existing required phrases from other rules to all selected rules. "
-    "Mutually exclusive with --from-license-attributes.",
+    "Mutually exclusive with --from-license-attributes and --composite-rules.",
+    conflicting_options=["from_license_attributes", "composite_rules"],
     cls=PluggableCommandLineOption,
 )
 @click.option(
@@ -626,7 +823,18 @@ def delete_required_phrase_rules_source_debug(rules_data_dir):
     is_flag=True,
     default=False,
     help="Propagate license attributes as required phrases to all selected rules. "
-    "Mutually exclusive with --from-other-rule.",
+    "Mutually exclusive with --from-other-rules and --composite-rules.",
+    conflicting_options=["from_other_rules", "composite_rules"],
+    cls=PluggableCommandLineOption,
+)
+@click.option(
+    "-c",
+    "--composite-rules",
+    is_flag=True,
+    default=False,
+    help="Add required phrases to composite (with multiple license keys) rules "
+    "using existing required phrases.",
+    conflicting_options=["from_other_rules", "from_license_attributes"],
     cls=PluggableCommandLineOption,
 )
 @click.option(
@@ -691,6 +899,7 @@ def delete_required_phrase_rules_source_debug(rules_data_dir):
 def add_required_phrases(
     from_other_rules,
     from_license_attributes,
+    composite_rules,
     license_expression,
     validate,
     reindex,
@@ -702,6 +911,12 @@ def add_required_phrases(
     """
     Update license detection rules with new "required phrases" to improve rules detection accuracy.
     """
+    update_modes = (from_other_rules, from_license_attributes, composite_rules)
+    if sum(update_modes) > 1:
+        raise click.UsageError(
+            "Options --from-other-rules, --from-license-attributes, and --composite-rules "
+            "are mutually exclusive."
+        )
 
     if delete_phrase_source:
         click.echo('Deleting rules phrase source debug data.')
@@ -720,6 +935,15 @@ def add_required_phrases(
     elif from_license_attributes:
         click.echo('Updating rules from license attributes.')
         update_rules_using_license_attributes(
+            license_expression=license_expression,
+            write_phrase_source=write_phrase_source,
+            dry_run=dry_run,
+            verbose=verbose,
+        )
+
+    elif composite_rules:
+        click.echo('Updating composite rules from required phrases.')
+        update_composite_rules_using_required_phrases(
             license_expression=license_expression,
             write_phrase_source=write_phrase_source,
             dry_run=dry_run,
