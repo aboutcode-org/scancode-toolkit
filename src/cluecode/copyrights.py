@@ -638,7 +638,8 @@ _YEAR_YEAR_PUNCT = _YEAR_YEAR + _PUNCT
 _YEAR_SHORT_PUNCT = _YEAR_SHORT + _PUNCT
 _YEAR_OR_YEAR_YEAR_WITH_PUNCT = fr'({_YEAR_PUNCT}|{_YEAR_YEAR_PUNCT})'
 _YEAR_THEN_YEAR_SHORT = fr'({_YEAR_OR_YEAR_YEAR_WITH_PUNCT}({_YEAR_SHORT_PUNCT})*)'
-_YEAR_DASH_PRESENT = _YEAR + r'[\-~]? ?[Pp]resent\.?,?'
+_YEAR_DASH_PRESENT = '(?:' + _YEAR + ')' + r'[\-~]? ?[Pp]resent\.?,?'
+_YEAR_DASH_NOW = '(?:' + _YEAR + ')' + r'[\-~]? ?[Nn][Oo][Ww]\.?,?'
 
 PATTERNS = [
     ############################################################################
@@ -2168,6 +2169,8 @@ PATTERNS = [
     (r'^(' + _YEAR_YEAR + ')+$', 'YR'),
 
     (r'^(' + _YEAR_DASH_PRESENT + ')+$', 'YR'),
+
+    (r'^(' + _YEAR_DASH_NOW + ')+$', 'YR'),
 
     # ISO dates as in 2024-12-09
     (r'^' + _YEAR + '-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$', 'YR'),
