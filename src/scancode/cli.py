@@ -415,11 +415,11 @@ def default_processes():
     hidden=True,
     help_group=cliutils.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 
-@click.option('--no-cached-results',
+@click.option('--use-cached-results',
     is_flag=True,
     default=False,
     hidden=True,
-    help='ScanCode will not use cached results during scan time.',
+    help='ScanCode will use cached results during scan time.',
     help_group=cliutils.CORE_GROUP, sort_order=250, cls=PluggableCommandLineOption)
 def scancode(
     ctx,
@@ -441,7 +441,7 @@ def scancode(
     test_error_mode,
     keep_temp_files,
     check_version,
-    no_cached_results,
+    use_cached_results,
     echo_func=echo_stderr,
     *args,
     **kwargs,
@@ -558,7 +558,7 @@ def scancode(
             return_results=False,
             echo_func=echo_func,
             outdated=outdated,
-            use_cached_results=not no_cached_results,
+            use_cached_results=use_cached_results,
             *args,
             **kwargs
         )
