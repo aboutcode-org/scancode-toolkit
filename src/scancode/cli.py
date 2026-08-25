@@ -67,14 +67,13 @@ from scancode import ScancodeCliUsageError
 from scancode import notice
 from scancode import print_about
 from scancode import Scanner
-from scancode import resource_cache
+from scancode import results_cache
 from scancode.help import epilog_text
 from scancode.help import examples_text
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
 from scancode.pool import ScanCodeTimeoutError
-from scancode_config import USE_CACHED_RESULTS
 
 # Tracing flags
 TRACE = False
@@ -415,6 +414,13 @@ def default_processes():
     # not yet supported in Click 6.7 but added in PluggableCommandLineOption
     hidden=True,
     help_group=cliutils.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
+
+@click.option('--no-cached-results',
+    is_flag=True,
+    default=False,
+    hidden=True,
+    help='ScanCode will not use cached results during scan time.',
+    help_group=cliutils.CORE_GROUP, sort_order=250, cls=PluggableCommandLineOption)
 def scancode(
     ctx,
     input,  # NOQA
@@ -435,6 +441,7 @@ def scancode(
     test_error_mode,
     keep_temp_files,
     check_version,
+    no_cached_results,
     echo_func=echo_stderr,
     *args,
     **kwargs,
@@ -551,6 +558,7 @@ def scancode(
             return_results=False,
             echo_func=echo_func,
             outdated=outdated,
+            use_cached_results=not no_cached_results,
             *args,
             **kwargs
         )
@@ -596,6 +604,7 @@ def run_scan(
     pretty_params=None,
     plugin_options=plugin_options,
     outdated=None,
+    use_cached_results=False,
     *args,
     **kwargs
 ):
@@ -1008,6 +1017,7 @@ def run_scan(
             verbose=verbose,
             kwargs=requested_options,
             echo_func=echo_func,
+            use_cached_results=use_cached_results,
         )
         success = success and scan_success
 
@@ -1228,6 +1238,7 @@ def run_scanners(
     verbose=False,
     kwargs=None,
     echo_func=echo_stderr,
+    use_cached_results=False,
 ):
     """
     Run the list of `stage` ScanPlugin `plugins` on `codebase`.
@@ -1269,7 +1280,8 @@ def run_scanners(
     # TODO: add CLI option to bypass cache entirely?
     scan_success = scan_codebase(
         codebase, scanners, processes, timeout,
-        with_timing=timing, progress_manager=progress_manager)
+        with_timing=timing, progress_manager=progress_manager,
+        use_cached_results=use_cached_results)
 
     # TODO: add progress indicator
     # run the process codebase of each scan plugin (most often a no-op)
@@ -1307,6 +1319,7 @@ def scan_codebase(
     with_timing=False,
     progress_manager=None,
     echo_func=echo_stderr,
+    use_cached_results=False,
 ):
     """
     Run the `scanners` Scanner objects on the `codebase` Codebase. Return True
@@ -1336,7 +1349,8 @@ def scan_codebase(
         scanners=scanners,
         timeout=timeout,
         with_timing=with_timing,
-        with_threading=use_threading
+        with_threading=use_threading,
+        use_cached_results=use_cached_results,
     )
 
     if TRACE:
@@ -1469,6 +1483,7 @@ def scan_resource(
     timeout=DEFAULT_TIMEOUT,
     with_timing=False,
     with_threading=True,
+    use_cached_results=False,
 ):
     """
     Given a ``location_path`` tuple pf (location, path), return a tuple of:
@@ -1506,16 +1521,17 @@ def scan_resource(
     # and start returning values. The kill timeout is otherwise there
     # as a gatekeeper for runaway processes.
 
-    # compute resource_cache_index
-    resource_cache_index = resource_cache.compute_resource_cache_index(location=location, path=path)
+    results_cache_index = ''
+    if use_cached_results:
+        # compute results_cache_index
+        results_cache_index = results_cache.compute_results_cache_index(location=location, path=path)
 
-    if USE_CACHED_RESULTS:
         # update `results` with cached data or add scanner to scanners_to_run if no
         # cache data is available
         for scanner in scanners:
             # get resource_cache_data
-            resource_cache_data = resource_cache.get_resource_cache_data(
-                resource_cache_index=resource_cache_index,
+            resource_cache_data = results_cache.get_results_cache_data(
+                results_cache_index=results_cache_index,
                 plugin_name=scanner.name
             )
             if resource_cache_data:
@@ -1543,9 +1559,9 @@ def scan_resource(
             # the return value of a scanner fun MUST be a mapping
             if values_mapping:
                 results.update(values_mapping)
-                if USE_CACHED_RESULTS:
-                    resource_cache.update_resource_cache_data(
-                        resource_cache_index=resource_cache_index,
+                if use_cached_results:
+                    results_cache.update_results_cache_data(
+                        results_cache_index=results_cache_index,
                         plugin_name=scanner.name,
                         results=values_mapping,
                     )
