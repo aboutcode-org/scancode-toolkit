@@ -1538,9 +1538,11 @@ def scan_resource(
                 results.update(resource_cache_data)
             else:
                 scanners_to_run.append(scanner)
+    else:
+        scanners_to_run = scanners
 
     # run each scanner in sequence in its own interruptible
-    for scanner in scanners_to_run or scanners:
+    for scanner in scanners_to_run:
         if with_timing:
             start = time()
 
