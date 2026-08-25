@@ -1,0 +1,180 @@
+---
+key: pixal-sal-1.1
+short_name: Pixal Source-Available License 1.1
+name: Pixal Source-Available License Version 1.1
+category: Source-available
+owner: Jesse Dubberke
+homepage_url: https://github.com/JesseDubb/pixal-releases/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-pixal-sal-1.1
+text_urls:
+    - https://raw.githubusercontent.com/JesseDubb/pixal-releases/main/LICENSE
+ignorable_copyrights:
+    - Copyright (c) 2026 Jesse Dubberke
+ignorable_holders:
+    - Jesse Dubberke
+ignorable_emails:
+    - jesse.dubberke@gmail.com
+---
+
+Pixal Source-Available License
+Version 1.1, 2026-08-20
+
+Copyright (c) 2026 Jesse Dubberke. All rights reserved.
+
+Pixal is source-available, not open source. You can read it, run it, and
+change it for yourself. You cannot pass it on. Contributions are welcome.
+
+
+1. DEFINITIONS
+
+   "The Software" is Pixal: the source code, configuration, templates,
+   documentation, brand assets and installers in this repository.
+
+   "Licensor" is Jesse Dubberke, the copyright holder.
+
+   "You" is the individual or entity exercising the permissions below.
+
+   "Third-Party Components" are the separately licensed works listed in
+   THIRD_PARTY_NOTICES.md, together with everything the installer downloads
+   at run time - ComfyUI, node packs, model weights, runtimes and
+   dependencies. They are not covered by this License. See Section 6.
+
+
+2. WHAT YOU MAY DO
+
+   Subject to Sections 3 and 4, the Licensor grants You a worldwide,
+   royalty-free, non-exclusive, non-transferable, revocable license to:
+
+   (a) install and run the Software on machines You own or control, for any
+       purpose including commercial purposes, subject to Section 6;
+
+   (b) view and study the source code;
+
+   (c) modify the Software for Your own use, and run Your modified version
+       on machines You own or control;
+
+   (d) make backup copies for Your own use; and
+
+   (e) submit Your modifications back to the Licensor under Section 5.
+
+   Images, video and other output You create with the Software are Yours.
+   The Licensor claims no rights in Your output. Note that some model
+   licenses impose their own terms - see Section 6.
+
+
+3. WHAT YOU MAY NOT DO
+
+   Without the Licensor's prior written permission, You may not:
+
+   (a) distribute, publish, share, sell, rent, lease, sublicense or otherwise
+       make the Software - modified or unmodified, in whole or in
+       substantial part - available to any third party;
+
+   (b) host the Software as a service, or otherwise make its functionality
+       available to third parties over a network;
+
+   (c) publish the source code, or post it to any public repository, paste
+       site, model hub, forum or archive;
+
+   (d) remove, obscure or alter any copyright, license or attribution notice,
+       including the brand assets in brand/ and web/icons/; or
+
+   (e) use the Licensor's names, logos or marks to endorse or promote any
+       product, except to state factually that a work was made with Pixal.
+
+   Receiving a copy of the Software does not grant You the right to give one
+   to anybody else. Refer them to the Licensor instead.
+
+   FORKING TO CONTRIBUTE. Sections 3(a) and 3(c) do not prohibit You from
+   using the fork feature of a hosting platform on which the Licensor has
+   himself published the Software, where You do so in order to prepare and
+   submit a contribution under Section 5. Such a fork must stay on that
+   platform, must keep this License and every attribution notice intact, and
+   must not be presented as an independent or competing distribution. It is
+   not permission to publish the Software anywhere else, and the Licensor may
+   ask You to remove it once it has served its purpose.
+
+
+4. RESERVATION OF RIGHTS
+
+   All rights not expressly granted in Section 2 are reserved by the
+   Licensor. No rights are granted by implication or estoppel.
+
+
+5. CONTRIBUTIONS
+
+   Contributions are genuinely welcome. See CONTRIBUTING.md for how to
+   submit them and for the terms that apply.
+
+   In short: by submitting a contribution You grant the Licensor a perpetual,
+   irrevocable, worldwide, royalty-free license to use, modify, sublicense
+   and relicense it, including under different license terms in future
+   versions of the Software. You keep Your own copyright in what You wrote.
+   You confirm You have the right to grant this.
+
+   This exists so that the Software can be relicensed later - including as
+   open source - without having to track down every past contributor.
+
+
+6. THIRD-PARTY COMPONENTS
+
+   The Software drives, installs and downloads software and models it does
+   not own. Those carry their own licenses, and this License grants You no
+   rights in them. THIRD_PARTY_NOTICES.md lists what the Licensor is aware
+   of. Two consequences worth stating plainly:
+
+   (a) ComfyUI is licensed under GPL-3.0. The Software is an independent
+       program that communicates with ComfyUI over its HTTP API as a
+       separate process; it is not a derivative work of ComfyUI and is not
+       distributed with it. Any ComfyUI custom node authored by the Licensor
+       is a separate work carrying its own GPL-3.0 license.
+
+   (b) Some model weights carry non-commercial or otherwise restricted
+       licenses - the Anima model is one. The Software does not redistribute
+       weights; it downloads them to Your machine on Your instruction, and
+       Your use of them is governed by their licenses, not this one. It is
+       Your responsibility to comply with them.
+
+
+7. TERM AND TERMINATION
+
+   This License applies for as long as You comply with it. It terminates
+   automatically if You breach Section 3, and the Licensor may terminate it
+   at any time on written notice. On termination You must stop using the
+   Software and destroy Your copies. Sections 4, 6, 8, 9 and 10 survive.
+
+
+8. NO WARRANTY
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND
+   NONINFRINGEMENT. THE SOFTWARE IS PRE-RELEASE AND MAY BE INCOMPLETE OR
+   UNSTABLE. IT DOWNLOADS AND RUNS LARGE THIRD-PARTY SOFTWARE AND MODELS,
+   AND USES YOUR GPU; YOU RUN IT AT YOUR OWN RISK.
+
+
+9. LIMITATION OF LIABILITY
+
+   TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL THE LICENSOR BE
+   LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+   CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+   THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE, INCLUDING ANY
+   LOSS OF DATA, LOSS OF PROFITS, OR DAMAGE TO HARDWARE.
+
+
+10. GENERAL
+
+    If any provision of this License is held unenforceable, the rest remains
+    in effect. The Licensor's failure to enforce any provision is not a
+    waiver of it. This License is the entire agreement between You and the
+    Licensor concerning the Software.
+
+
+11. GRANTING MORE
+
+    The Licensor may grant broader permissions in writing, and intends to
+    consider more open terms as the project matures. If You want to do
+    something this License does not allow, ask.
+
+    Contact: jesse.dubberke@gmail.com
