@@ -26,14 +26,13 @@ def hasher_from_chunks(chunks):
     return hasher
 
 
-def compute_results_cache_index(location, path):
+def compute_results_cache_index(location, filename):
     """
     Compute results_cache_index value for a Resource at `location`.
     """
     chunks = binary_chunks(location=location)
     sha256_hasher = hasher_from_chunks(chunks=chunks)
-    # TODO: consider using filename instead of path
-    sha256_hasher.update(path.encode('utf-8', 'surrogateescape'))
+    sha256_hasher.update(filename.encode('utf-8', 'surrogateescape'))
     return sha256_hasher.hexdigest()
 
 

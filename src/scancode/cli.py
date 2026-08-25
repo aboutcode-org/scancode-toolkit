@@ -1341,7 +1341,7 @@ def scan_codebase(
     """
 
     # NOTE: we never scan directories
-    resources = ((r.location, r.path) for r in codebase.walk() if r.is_file)
+    resources = ((r.location, r.path, r.name) for r in codebase.walk() if r.is_file)
 
     use_threading = processes >= 0
     runner = partial(
@@ -1478,7 +1478,7 @@ def terminate_pool_with_backoff(pool, number_of_trials=3):
 
 
 def scan_resource(
-    location_path,
+    location_path_name,
     scanners,
     timeout=DEFAULT_TIMEOUT,
     with_timing=False,
@@ -1506,7 +1506,7 @@ def scan_resource(
     processing and threading works.
     """
     scan_time = time()
-    location, path = location_path
+    location, path, name = location_path_name
     results = {}
     scan_errors = []
     timings = {} if with_timing else None
@@ -1524,7 +1524,7 @@ def scan_resource(
     results_cache_index = ''
     if use_cached_results:
         # compute results_cache_index
-        results_cache_index = results_cache.compute_results_cache_index(location=location, path=path)
+        results_cache_index = results_cache.compute_results_cache_index(location=location, filename=name)
 
         # update `results` with cached data or add scanner to scanners_to_run if no
         # cache data is available
