@@ -10,6 +10,7 @@ Next release
 
 - Improve copyright detection for statements with parens or trailing "authors"
 
+- Add experimental option for using cached results during scan time.
 
 v33.0.0rc1 - 2026-05-14
 ------------------------

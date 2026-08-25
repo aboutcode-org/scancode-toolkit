@@ -408,8 +408,8 @@ def default_processes():
     help_group=cliutils.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 
 @click.option(
-    "--check-version/--no-check-version",
-    help="Whether to check for new versions. Defaults to true.",
+    '--check-version/--no-check-version',
+    help='Whether to check for new versions. Defaults to true.',
     default=True,
     # not yet supported in Click 6.7 but added in PluggableCommandLineOption
     hidden=True,
@@ -419,7 +419,7 @@ def default_processes():
     is_flag=True,
     default=False,
     hidden=True,
-    help='ScanCode will use cached results during scan time.',
+    help='(EXPERIMENTAL) ScanCode will use cached results during scan time.',
     help_group=cliutils.CORE_GROUP, sort_order=250, cls=PluggableCommandLineOption)
 def scancode(
     ctx,
@@ -580,7 +580,7 @@ def scancode(
 
 
 def run_scan(
-    input,  # 
+    input,  #
     config_file=None,
     ignore=[],
     from_json=False,
@@ -1153,7 +1153,7 @@ def load_configuration_file(path):
 
     click.echo(f"Loading env from {path}")
     try:
-        
+
         config_values = saneyaml.load(path.read())
         ignores = config_values.get("ignored_patterns", [])
     except (saneyaml.YAMLError, Exception):
