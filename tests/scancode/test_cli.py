@@ -183,12 +183,7 @@ def test_scan_info_returns_correct_full_root_with_single_file():
     # we have a single file
     assert len(files) == 1
     scanned_file = files[0]
-<<<<<<< HEAD
     # and we check that the path is the full absolute path without repeating the file name
-=======
-    # and we check that the path is the full path without repeating the file name
-    # note that the path never contain leading and trailing slashes
->>>>>>> 8e88b94261 (Do not codebase walk outside input paths)
     assert scanned_file['path'] == fileutils.as_posixpath(test_file)
 
 
