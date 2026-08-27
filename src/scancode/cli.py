@@ -233,7 +233,7 @@ def default_processes():
     cls=PluggableCommandLineOption,
 )
 
-@click.option('-c', '--config-file',
+@click.option('--config-file',
     type=click.File('r'),
     required=False,
     help='Path to the configuration file.',

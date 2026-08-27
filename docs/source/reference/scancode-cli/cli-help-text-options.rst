@@ -173,7 +173,7 @@ The following help text is displayed for ScanCode version 32.0.0:
       -n, --processes INT     Set the number of parallel processes to use. Disable
                               parallel processing if 0. Also disable threading if
                               -1. [default: (number of CPUs)-1]
-      -c, --config-file FILENAME  Path to the configuration file.
+      --config-file FILENAME  Path to the configuration file.
       -q, --quiet             Do not print summary or progress.
       -v, --verbose           Print progress as file-by-file path instead of a
                               progress bar. Print verbose scan counters.
