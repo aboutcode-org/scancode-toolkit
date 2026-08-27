@@ -79,6 +79,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Sankha Das @sankha555
 - Saravanan G @SaravananOffl
 - Sarita Singh @itssingh
+- Sarthak Shubham @sarthak-shubham
 - Savino Sguera @savinos
 - Sebastian Roth @ened
 - Sebastian Schuberth @sschuberth

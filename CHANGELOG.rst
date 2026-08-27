@@ -8,6 +8,13 @@ Next release
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
+- Fix ``report_license_rules.py`` and ``buildrules.py`` in
+  ``etc/scripts/licenses/`` to work correctly with the YAML frontmatter
+  fields added in #3100.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/5259
+
+
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
