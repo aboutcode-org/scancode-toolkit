@@ -29,7 +29,7 @@ from commoncode.archive import extract_zip
 from commoncode.archive import extract_zip_raw
 from commoncode.archive import tar_can_extract  # NOQA
 from commoncode.system import on_posix
-from commoncode.system import on_windows
+from commoncode.system import to_os_native_path
 
 # a base test dir specific to a given test run
 # to ensure that multiple tests run can be launched in parallel
@@ -37,15 +37,6 @@ test_run_temp_dir = None
 
 # set to 1 to see the slow tests
 timing_threshold = sys.maxsize
-
-
-def to_os_native_path(path):
-    """
-    Normalize a path to use the native OS path separator.
-    """
-    OS_PATH_SEP = "\\" if on_windows else "/"
-
-    return path.replace("/", OS_PATH_SEP).replace("\\", OS_PATH_SEP).rstrip(OS_PATH_SEP)
 
 
 def get_test_loc(
@@ -93,7 +84,7 @@ class FileDrivenTesting(object):
 
     test_data_dir = None
 
-    def get_test_loc(self, test_path, copy=False, debug=False, must_exist=True):
+    def get_test_loc(self, test_path, copy=False, debug=False, must_exist=True, relative=False):
         """
         Given a `test_path` relative to the self.test_data_dir directory, return the
         location to a test file or directory for this path. Copy to a temp
@@ -129,6 +120,11 @@ class FileDrivenTesting(object):
                 # cleanup of VCS that could be left over from checkouts
                 self.remove_vcs(target_dir)
                 test_loc = target_dir
+        
+        if relative:
+            _, _, rel_test_loc = test_loc.rpartition(os.getcwd())
+            return rel_test_loc.strip("/").strip("\\")
+
         return test_loc
 
     def get_temp_file(self, extension=None, dir_name="td", file_name="tf"):

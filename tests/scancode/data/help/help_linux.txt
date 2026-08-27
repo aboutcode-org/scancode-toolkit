@@ -94,8 +94,6 @@ Options:
                   such that all paths have a common root directory.
 
   pre-scan:
-    --ignore <pattern>         Ignore files matching <pattern>.
-    --include <pattern>        Include files matching <pattern>.
     --facet <facet>=<pattern>  Add the <facet> to files with a path matching
                                <pattern>.
 
@@ -140,11 +138,13 @@ Options:
                              which are todo items and needs manual review.
 
   core:
+    --ignore <pattern>       Ignore files matching <pattern>.
     --timeout <seconds>      Stop an unfinished file scan after a timeout in
                              seconds. [default: 120 seconds]
     -n, --processes INT      Set the number of parallel processes to use. Disable
                              parallel processing if 0. Also disable threading if
                              -1. [default: (number of CPUs)-1]
+    --config-file FILENAME   Path to the configuration file.
     -q, --quiet              Do not print summary or progress.
     -v, --verbose            Print progress as file-by-file path instead of a
                              progress bar. Print verbose scan counters.

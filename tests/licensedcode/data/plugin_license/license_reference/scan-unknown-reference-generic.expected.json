@@ -1,0 +1,276 @@
+{
+  "license_detections": [
+    {
+      "identifier": "lgpl_2_1_or_mpl_1_1__and_other_permissive-1ee33085-e414-376f-d358-b08f23c2584e",
+      "license_expression": "(lgpl-2.1 OR mpl-1.1) AND other-permissive",
+      "license_expression_spdx": "(LGPL-2.1-only OR MPL-1.1) AND LicenseRef-scancode-other-permissive",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "(lgpl-2.1 OR mpl-1.1) AND other-permissive",
+          "license_expression_spdx": "(LGPL-2.1-only OR MPL-1.1) AND LicenseRef-scancode-other-permissive",
+          "from_file": "cairo-1.18.4/util/cairo-script/COPYING",
+          "start_line": 3,
+          "end_line": 17,
+          "matcher": "3-seq",
+          "score": 93.58,
+          "matched_length": 102,
+          "match_coverage": 93.58,
+          "rule_relevance": 100,
+          "rule_identifier": "lgpl-2.1_or_mpl-1.1_and_other-permissive_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_or_mpl-1.1_and_other-permissive_1.RULE",
+          "matched_text": "Every source file in the implementation of cairo is available to be\nredistributed and/or modified under the terms of either the GNU Lesser\nGeneral Public License (LGPL) version 2.1 or the Mozilla Public\nLicense (MPL) version 1.1.  Some files are available under more\nliberal terms, but we believe that in all cases, each file may be used\nunder either the LGPL or the MPL.\n\nSee the following files in this directory for the precise terms and\nconditions of either license:\n\n\tCOPYING-LGPL-2.1\n\tCOPYING-MPL-1.1\n\nPlease see each file in the implementation for copyright and licensing\ninformation, (in the opening comment of each file).",
+          "matched_text_diagnostics": "is available to be\nredistributed and/or modified under the terms of either the GNU Lesser\nGeneral Public License (LGPL) version 2.1 or the Mozilla Public\nLicense (MPL) version 1.1.  Some files are available under more\nliberal terms, but we believe that in all cases, each file may be used\nunder either the LGPL or the MPL.\n\nSee the following files in this directory for the precise terms and\nconditions of either license:\n\n\tCOPYING-LGPL-2.1\n\tCOPYING-MPL-1.1\n\nPlease see each file in the implementation for copyright and licensing\ninformation, (in the opening comment of each file)."
+        }
+      ]
+    },
+    {
+      "identifier": "lgpl_2_1-be3f3949-802d-9c3e-b5f0-b2466a0bd98b",
+      "license_expression": "lgpl-2.1",
+      "license_expression_spdx": "LGPL-2.1-only",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "lgpl-2.1",
+          "license_expression_spdx": "LGPL-2.1-only",
+          "from_file": "cairo-1.18.4/COPYING-LGPL-2.1",
+          "start_line": 2,
+          "end_line": 3,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 8,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "lgpl-2.1_36.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
+          "matched_text": "                  GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1, February 1999",
+          "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1,"
+        }
+      ]
+    },
+    {
+      "identifier": "lgpl_2_1_or_mpl_1_1-5bba2e46-ab42-c51a-524c-b2a67454e599",
+      "license_expression": "lgpl-2.1 OR mpl-1.1",
+      "license_expression_spdx": "LGPL-2.1-only OR MPL-1.1",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "lgpl-2.1 OR mpl-1.1",
+          "license_expression_spdx": "LGPL-2.1-only OR MPL-1.1",
+          "from_file": "cairo-1.18.4/COPYING",
+          "start_line": 1,
+          "end_line": 33,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 261,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "lgpl-2.1_or_mpl-1.1_5.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_or_mpl-1.1_5.RULE",
+          "matched_text": "Cairo is free software.\n\nEvery source file in the implementation[*] of cairo is available to be\nredistributed and/or modified under the terms of either the GNU Lesser\nGeneral Public License (LGPL) version 2.1 or the Mozilla Public\nLicense (MPL) version 1.1.  Some files are available under more\nliberal terms, but we believe that in all cases, each file may be used\nunder either the LGPL or the MPL.\n\nSee the following files in this directory for the precise terms and\nconditions of either license:\n\n\tCOPYING-LGPL-2.1\n\tCOPYING-MPL-1.1\n\nPlease see each file in the implementation for copyright and licensing\ninformation, (in the opening comment of each file).\n\n[*] The implementation of cairo is contained entirely within the \"src\"\ndirectory of the cairo source distribution. There are other components\nof the cairo source distribution (such as the \"test\", \"util\", and \"perf\")\nthat are auxiliary to the library itself. None of the source code in these\ndirectories contributes to a build of the cairo library itself, (libcairo.so\nor cairo.dll or similar).\n\nThese auxiliary components are also free software, but may be under\ndifferent license terms than cairo itself. For example, most of the\ntest cases in the perf and test directories are made available under\nan MIT license to simplify any use of this code for reference purposes\nin using cairo itself. Other files might be available under the GNU\nGeneral Public License (GPL), for example. Again, please see the COPYING\nfile under each directory and the opening comment of each file for copyright\nand licensing information.",
+          "matched_text_diagnostics": "Cairo is free software.\n\nEvery source file in the implementation[*] of cairo is available to be\nredistributed and/or modified under the terms of either the GNU Lesser\nGeneral Public License (LGPL) version 2.1 or the Mozilla Public\nLicense (MPL) version 1.1.  Some files are available under more\nliberal terms, but we believe that in all cases, each file may be used\nunder either the LGPL or the MPL.\n\nSee the following files in this directory for the precise terms and\nconditions of either license:\n\n\tCOPYING-LGPL-2.1\n\tCOPYING-MPL-1.1\n\nPlease see each file in the implementation for copyright and licensing\ninformation, (in the opening comment of each file).\n\n[*] The implementation of cairo is contained entirely within the \"src\"\ndirectory of the cairo source distribution. There are other components\nof the cairo source distribution (such as the \"test\", \"util\", and \"perf\")\nthat are auxiliary to the library itself. None of the source code in these\ndirectories contributes to a build of the cairo library itself, (libcairo.so\nor cairo.dll or similar).\n\nThese auxiliary components are also free software, but may be under\ndifferent license terms than cairo itself. For example, most of the\ntest cases in the perf and test directories are made available under\nan MIT license to simplify any use of this code for reference purposes\nin using cairo itself. Other files might be available under the GNU\nGeneral Public License (GPL), for example. Again, please see the COPYING\nfile under each directory and the opening comment of each file for copyright\nand licensing information."
+        }
+      ]
+    },
+    {
+      "identifier": "mpl_1_1-bda94646-bce9-7c88-28d3-e530599274c6",
+      "license_expression": "mpl-1.1",
+      "license_expression_spdx": "MPL-1.1",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "mpl-1.1",
+          "license_expression_spdx": "MPL-1.1",
+          "from_file": "cairo-1.18.4/COPYING-MPL-1.1",
+          "start_line": 1,
+          "end_line": 2,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mpl-1.1_16.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_16.RULE",
+          "matched_text": "                          MOZILLA PUBLIC LICENSE\n                                Version 1.1",
+          "matched_text_diagnostics": "MOZILLA PUBLIC LICENSE\n                                Version 1.1"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "COPYING",
+      "type": "file",
+      "detected_license_expression": "lgpl-2.1 OR mpl-1.1",
+      "detected_license_expression_spdx": "LGPL-2.1-only OR MPL-1.1",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-2.1 OR mpl-1.1",
+          "license_expression_spdx": "LGPL-2.1-only OR MPL-1.1",
+          "matches": [
+            {
+              "license_expression": "lgpl-2.1 OR mpl-1.1",
+              "license_expression_spdx": "LGPL-2.1-only OR MPL-1.1",
+              "from_file": "cairo-1.18.4/COPYING",
+              "start_line": 1,
+              "end_line": 33,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 261,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "lgpl-2.1_or_mpl-1.1_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_or_mpl-1.1_5.RULE",
+              "matched_text": "Cairo is free software.\n\nEvery source file in the implementation[*] of cairo is available to be\nredistributed and/or modified under the terms of either the GNU Lesser\nGeneral Public License (LGPL) version 2.1 or the Mozilla Public\nLicense (MPL) version 1.1.  Some files are available under more\nliberal terms, but we believe that in all cases, each file may be used\nunder either the LGPL or the MPL.\n\nSee the following files in this directory for the precise terms and\nconditions of either license:\n\n\tCOPYING-LGPL-2.1\n\tCOPYING-MPL-1.1\n\nPlease see each file in the implementation for copyright and licensing\ninformation, (in the opening comment of each file).\n\n[*] The implementation of cairo is contained entirely within the \"src\"\ndirectory of the cairo source distribution. There are other components\nof the cairo source distribution (such as the \"test\", \"util\", and \"perf\")\nthat are auxiliary to the library itself. None of the source code in these\ndirectories contributes to a build of the cairo library itself, (libcairo.so\nor cairo.dll or similar).\n\nThese auxiliary components are also free software, but may be under\ndifferent license terms than cairo itself. For example, most of the\ntest cases in the perf and test directories are made available under\nan MIT license to simplify any use of this code for reference purposes\nin using cairo itself. Other files might be available under the GNU\nGeneral Public License (GPL), for example. Again, please see the COPYING\nfile under each directory and the opening comment of each file for copyright\nand licensing information.",
+              "matched_text_diagnostics": "Cairo is free software.\n\nEvery source file in the implementation[*] of cairo is available to be\nredistributed and/or modified under the terms of either the GNU Lesser\nGeneral Public License (LGPL) version 2.1 or the Mozilla Public\nLicense (MPL) version 1.1.  Some files are available under more\nliberal terms, but we believe that in all cases, each file may be used\nunder either the LGPL or the MPL.\n\nSee the following files in this directory for the precise terms and\nconditions of either license:\n\n\tCOPYING-LGPL-2.1\n\tCOPYING-MPL-1.1\n\nPlease see each file in the implementation for copyright and licensing\ninformation, (in the opening comment of each file).\n\n[*] The implementation of cairo is contained entirely within the \"src\"\ndirectory of the cairo source distribution. There are other components\nof the cairo source distribution (such as the \"test\", \"util\", and \"perf\")\nthat are auxiliary to the library itself. None of the source code in these\ndirectories contributes to a build of the cairo library itself, (libcairo.so\nor cairo.dll or similar).\n\nThese auxiliary components are also free software, but may be under\ndifferent license terms than cairo itself. For example, most of the\ntest cases in the perf and test directories are made available under\nan MIT license to simplify any use of this code for reference purposes\nin using cairo itself. Other files might be available under the GNU\nGeneral Public License (GPL), for example. Again, please see the COPYING\nfile under each directory and the opening comment of each file for copyright\nand licensing information."
+            }
+          ],
+          "detection_log": [],
+          "identifier": "lgpl_2_1_or_mpl_1_1-5bba2e46-ab42-c51a-524c-b2a67454e599"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "scan_errors": []
+    },
+    {
+      "path": "COPYING-LGPL-2.1",
+      "type": "file",
+      "detected_license_expression": "lgpl-2.1",
+      "detected_license_expression_spdx": "LGPL-2.1-only",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-2.1",
+          "license_expression_spdx": "LGPL-2.1-only",
+          "matches": [
+            {
+              "license_expression": "lgpl-2.1",
+              "license_expression_spdx": "LGPL-2.1-only",
+              "from_file": "cairo-1.18.4/COPYING-LGPL-2.1",
+              "start_line": 2,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 8,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "lgpl-2.1_36.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
+              "matched_text": "                  GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1, February 1999",
+              "matched_text_diagnostics": "GNU LESSER GENERAL PUBLIC LICENSE\n                       Version 2.1,"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "lgpl_2_1-be3f3949-802d-9c3e-b5f0-b2466a0bd98b"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 80.0,
+      "scan_errors": []
+    },
+    {
+      "path": "COPYING-MPL-1.1",
+      "type": "file",
+      "detected_license_expression": "mpl-1.1",
+      "detected_license_expression_spdx": "MPL-1.1",
+      "license_detections": [
+        {
+          "license_expression": "mpl-1.1",
+          "license_expression_spdx": "MPL-1.1",
+          "matches": [
+            {
+              "license_expression": "mpl-1.1",
+              "license_expression_spdx": "MPL-1.1",
+              "from_file": "cairo-1.18.4/COPYING-MPL-1.1",
+              "start_line": 1,
+              "end_line": 2,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mpl-1.1_16.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_16.RULE",
+              "matched_text": "                          MOZILLA PUBLIC LICENSE\n                                Version 1.1",
+              "matched_text_diagnostics": "MOZILLA PUBLIC LICENSE\n                                Version 1.1"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "mpl_1_1-bda94646-bce9-7c88-28d3-e530599274c6"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "scan_errors": []
+    },
+    {
+      "path": "util",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "util/COPYING",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "util/cairo-script",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "util/cairo-script/COPYING",
+      "type": "file",
+      "detected_license_expression": "(lgpl-2.1 OR mpl-1.1) AND other-permissive",
+      "detected_license_expression_spdx": "(LGPL-2.1-only OR MPL-1.1) AND LicenseRef-scancode-other-permissive",
+      "license_detections": [
+        {
+          "license_expression": "(lgpl-2.1 OR mpl-1.1) AND other-permissive",
+          "license_expression_spdx": "(LGPL-2.1-only OR MPL-1.1) AND LicenseRef-scancode-other-permissive",
+          "matches": [
+            {
+              "license_expression": "(lgpl-2.1 OR mpl-1.1) AND other-permissive",
+              "license_expression_spdx": "(LGPL-2.1-only OR MPL-1.1) AND LicenseRef-scancode-other-permissive",
+              "from_file": "cairo-1.18.4/util/cairo-script/COPYING",
+              "start_line": 3,
+              "end_line": 17,
+              "matcher": "3-seq",
+              "score": 93.58,
+              "matched_length": 102,
+              "match_coverage": 93.58,
+              "rule_relevance": 100,
+              "rule_identifier": "lgpl-2.1_or_mpl-1.1_and_other-permissive_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_or_mpl-1.1_and_other-permissive_1.RULE",
+              "matched_text": "Every source file in the implementation of cairo is available to be\nredistributed and/or modified under the terms of either the GNU Lesser\nGeneral Public License (LGPL) version 2.1 or the Mozilla Public\nLicense (MPL) version 1.1.  Some files are available under more\nliberal terms, but we believe that in all cases, each file may be used\nunder either the LGPL or the MPL.\n\nSee the following files in this directory for the precise terms and\nconditions of either license:\n\n\tCOPYING-LGPL-2.1\n\tCOPYING-MPL-1.1\n\nPlease see each file in the implementation for copyright and licensing\ninformation, (in the opening comment of each file).",
+              "matched_text_diagnostics": "is available to be\nredistributed and/or modified under the terms of either the GNU Lesser\nGeneral Public License (LGPL) version 2.1 or the Mozilla Public\nLicense (MPL) version 1.1.  Some files are available under more\nliberal terms, but we believe that in all cases, each file may be used\nunder either the LGPL or the MPL.\n\nSee the following files in this directory for the precise terms and\nconditions of either license:\n\n\tCOPYING-LGPL-2.1\n\tCOPYING-MPL-1.1\n\nPlease see each file in the implementation for copyright and licensing\ninformation, (in the opening comment of each file)."
+            }
+          ],
+          "detection_log": [],
+          "identifier": "lgpl_2_1_or_mpl_1_1__and_other_permissive-1ee33085-e414-376f-d358-b08f23c2584e"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 89.47,
+      "scan_errors": []
+    }
+  ]
+}
