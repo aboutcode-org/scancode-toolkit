@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2018, 2019, 2020, 2021, 2022, 2023, 2024 PySimpleGUI (tm)
+  - Copyright 2024 PySimpleSoft, Inc.
+  - Copyright 2024 MB
+  - Copyright 2024 FreeSimpleGUI (Spencer Phillip Young)
+holders:
+  - PySimpleGUI (tm)
+  - PySimpleSoft, Inc.
+  - MB
+  - FreeSimpleGUI (Spencer Phillip Young)

@@ -11,6 +11,9 @@ Next release
 - Add a file-level scan plugin for compiled Linux Kernel Module (``.ko``)
   files that extracts metadata from the ELF ``.modinfo`` section.
 
+- Improve copyright detection for statements with parens or trailing "authors"
+
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
