@@ -58,7 +58,7 @@ def compute_results_cache_index(location, filename):
     return sha256_hasher.hexdigest()
 
 
-def get_results_cache_directory_location(results_cache_index):
+def get_results_cache_directory_location(results_cache_index, results_cache_dir=results_cache_dir):
     """
     Return the location of the directory containing the cache files for a given
     `results_cache_index` hexstring.
@@ -70,16 +70,19 @@ def get_results_cache_directory_location(results_cache_index):
     return os.path.join(results_cache_dir, prefix1, prefix2, directory_name)
 
 
-def get_results_cache_file_location(results_cache_index, plugin_name):
+def get_results_cache_file_location(results_cache_index, plugin_name, results_cache_dir=results_cache_dir):
     """
     Return the location of the file containing the cached results of the scanner
     `plugin_name` for a resource keyed by `results_cache_index` hexstring.
     """
-    results_cache_directory_location = get_results_cache_directory_location(results_cache_index=results_cache_index)
+    results_cache_directory_location = get_results_cache_directory_location(
+        results_cache_index=results_cache_index,
+        results_cache_dir=results_cache_dir
+    )
     return os.path.join(results_cache_directory_location, plugin_name)
 
 
-def get_results_cache_data(results_cache_index, plugin_name):
+def get_results_cache_data(results_cache_index, plugin_name, results_cache_dir=results_cache_dir):
     """
     Return a mapping containing the results of scan plugin, `plugin_name`, for a
     resource keyed by `resource_cache_index` hexstring. If the cache file does
@@ -87,7 +90,8 @@ def get_results_cache_data(results_cache_index, plugin_name):
     """
     results_cache_file_location = get_results_cache_file_location(
         results_cache_index=results_cache_index,
-        plugin_name=plugin_name
+        plugin_name=plugin_name,
+        results_cache_dir=results_cache_dir,
     )
     if os.path.exists(results_cache_file_location):
         with open(results_cache_file_location) as f:
@@ -96,13 +100,14 @@ def get_results_cache_data(results_cache_index, plugin_name):
         return {}
 
 
-def update_results_cache_data(results_cache_index, plugin_name, results):
+def update_results_cache_data(results_cache_index, plugin_name, results, results_cache_dir=results_cache_dir):
     """
     Update the results cache with the `results` of the scanner `plugin_name`
     for the resource keyed by `results_cache_index`.
     """
     results_cache_directory_location = get_results_cache_directory_location(
-        results_cache_index=results_cache_index
+        results_cache_index=results_cache_index,
+        results_cache_dir=results_cache_dir,
     )
     if not os.path.exists(results_cache_directory_location):
         create_dir(results_cache_directory_location)
