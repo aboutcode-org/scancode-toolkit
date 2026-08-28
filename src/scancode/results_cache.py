@@ -16,6 +16,28 @@ from commoncode.hash import binary_chunks
 from scancode_config import results_cache_dir
 
 
+"""
+This module provides functions for the storage, retrieval, and organization of
+cached ScanCode scanner results.
+
+The cache is stored in the ScanCode .cache directory. Depending on the setup,
+this could either be in the .cache directory in the user's home folder for a
+particular ScanCode version (in the case of running a ScanCode release) or in
+the .cache directory in the ScanCode directory (in the case of running a
+ScanCode git checkout).
+
+In the .cache directory, the scanner results for a given Resource is stored in a
+directory whose path is created from the sha256 hexdigest of the Resource's
+content and its filename. Inside the results directory are JSON files with the
+name of scanners (license, copyright, etc.) and inside are the cached results.
+
+When the --use-cached-results option is enabled in the ScanCode CLI, during scan
+time for a given Resource, we iterate through the active scanners and see if we
+have cached results for those already. If we do, we update our results with the
+cached data. If not, we add those scanners to a list of scanners to be run.
+After scanning, the cache is updated.
+"""
+
 def hasher_from_chunks(chunks):
     """
     Return a sha256 hasher loaded with `chunks`.
