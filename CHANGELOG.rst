@@ -8,6 +8,9 @@ Next release
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
+- Add a file-level scan plugin for compiled Linux Kernel Module (``.ko``)
+  files that extracts metadata from the ELF ``.modinfo`` section.
+
 - Improve copyright detection for statements with parens or trailing "authors"
 
 

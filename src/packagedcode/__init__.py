@@ -234,7 +234,7 @@ SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
     debian.DebianInstalledStatusDatabaseHandler,
 
     rpm.RpmLicenseFilesHandler,
-    rpm.RpmMarinerContainerManifestHandler
+    rpm.RpmMarinerContainerManifestHandler,
 ]
 
 if on_linux:
