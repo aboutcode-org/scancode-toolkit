@@ -17,12 +17,14 @@ import json
 import logging
 import os
 import platform
+import saneyaml
 import sys
 import traceback
 
 from collections import defaultdict
 from functools import partial
 from multiprocessing import TimeoutError
+from pathlib import Path
 from time import sleep
 from time import time
 
@@ -221,6 +223,25 @@ def default_processes():
     callback=validate_input_path,
     type=click.Path(exists=True, readable=True, path_type=str))
 
+@click.option('--ignore',
+    multiple=True,
+    default=None,
+    metavar='<pattern>',
+    help='Ignore files matching <pattern>.',
+    sort_order=10,
+    help_group=cliutils.CORE_GROUP,
+    cls=PluggableCommandLineOption,
+)
+
+@click.option('--config-file',
+    type=click.File('r'),
+    required=False,
+    help='Path to the configuration file.',
+    sort_order=11,
+    help_group=cliutils.CORE_GROUP,
+    cls=PluggableCommandLineOption,
+)
+
 @click.option('--strip-root',
     is_flag=True,
     default=False,
@@ -395,6 +416,8 @@ def default_processes():
 def scancode(
     ctx,
     input,  # NOQA
+    config_file,
+    ignore,
     strip_root,
     full_root,
     processes,
@@ -505,6 +528,8 @@ def scancode(
         # run proper
         success, _results = run_scan(
             input=input,
+            ignore=ignore,
+            config_file=config_file,
             from_json=from_json,
             strip_root=strip_root,
             full_root=full_root,
@@ -545,7 +570,9 @@ def scancode(
 
 
 def run_scan(
-    input,  # NOQA
+    input,  # 
+    config_file=None,
+    ignore=[],
     from_json=False,
     strip_root=False,
     full_root=False,
@@ -597,6 +624,9 @@ def run_scan(
         msg = 'At least one input path is required.'
         raise ScancodeError(msg)
 
+    # To support multiple path inputs
+    include = []
+
     if not isinstance(input, (list, tuple)):
         if not isinstance(input, str):
             msg = 'Unknown <input> format: "{}".'.format(repr(input))
@@ -611,8 +641,6 @@ def run_scan(
     # VirtualCodebase; otherwise we have to process `input` to make it a single
     # root with excludes.
     elif not from_json:
-        # FIXME: support the multiple root better. This is quirky at best
-
         # This is the case where we have a list of input path and the
         # `from_json` option is not selected: we can handle this IFF they share
         # a common root directory and none is an absolute path
@@ -624,33 +652,38 @@ def run_scan(
             )
             raise ScancodeError(msg)
 
+        abs_input = [os.path.abspath(i) for i in input]
+
         # find the common prefix directory (note that this is a pre string
         # operation hence it may return non-existing paths
-        common_prefix = os.path.commonprefix(input)
+        common_prefix = os.path.commonprefix(abs_input)
 
         if not common_prefix:
             # we have no common prefix, but all relative. therefore the
-            # parent/root is the current ddirectory
+            # parent/root is the current directory
             common_prefix = str('.')
+        elif not common_prefix.endswith("/"):
+            # common prefix has trailing incomplete dirname
+            # for example the common prefix of "/temp/scancode"
+            # and "/temp/scans" is "/temp/scan"
+            common_prefix, _, _ = common_prefix.rpartition("/")
 
         elif not os.path.isdir(common_prefix):
             msg = (
                 'Invalid inputs: all input paths must share a '
-                'common single parent directory.'
+                f'common single parent directory. common part: {common_prefix}'
             )
 
             raise ScancodeError(msg)
 
-        # and we craft a list of synthetic --include path pattern options from
-        # the input list of paths
-        included_paths = [as_posixpath(path).rstrip('/') for path in input]
-        # FIXME: this is a hack as this "include" is from an external plugin!!!
-        include = list(requested_options.get('include', []) or [])
-        include.extend(included_paths)
-        requested_options['include'] = include
-
-        # ... and use the common prefix as our new input
+        # and we craft a list of include paths where the codebase walks
+        # will start from, even though the root is the common prefix
+        include = [as_posixpath(path).rstrip('/') for path in abs_input]
         input = common_prefix  # NOQA
+
+    config_ignores = load_configuration_file(config_file)
+    if config_ignores:
+        ignore = ignore + tuple(config_ignores)
 
     # build mappings of all options to pass down to plugins
     standard_options = dict(
@@ -894,6 +927,8 @@ def run_scan(
         try:
             codebase = codebase_class(
                 location=input,
+                includes=include,
+                ignores=ignore,
                 resource_attributes=resource_attributes,
                 codebase_attributes=codebase_attributes,
                 full_root=full_root,
@@ -1089,6 +1124,34 @@ def run_scan(
                 echo_func('done.', fg='green')
 
     return success, results
+
+
+def load_configuration_file(path):
+    """
+    Load scancode configuration values from a file at `path`.
+
+    Currently only supports ignore path patterns specified with
+    "ignored_patterns". This should be compatible with scancode.io
+    configuration values whenever possible:
+    https://scancodeio.readthedocs.io/en/latest/project-configuration.html
+    """
+    ignores = []
+    if not path:
+        return ignores
+
+    click.echo(f"Loading env from {path}")
+    try:
+        
+        config_values = saneyaml.load(path.read())
+        ignores = config_values.get("ignored_patterns", [])
+    except (saneyaml.YAMLError, Exception):
+        msg = (
+            f'Failed to load configuration from "{path}". '
+            f"The file format is invalid."
+        )
+        raise ScancodeError(msg + '\n' + traceback.format_exc())
+
+    return ignores
 
 
 def run_codebase_plugins(

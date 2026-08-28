@@ -145,3 +145,98 @@ Comparing progress message options
 
     This would scan the file ``samples/levelone/leveltwo/file`` but ignore
     ``samples/levelone/leveltwo/levelthree/file``
+
+----
+
+.. _cli-ignore-option:
+
+``--ignore <pattern>``
+----------------------
+
+    In a scan, all files inside the directory specified as an input argument is scanned. But if
+    there are some files which you don't want to scan, the ``--ignore`` option can be used to do
+    the same.
+
+    **Example**
+
+    .. code-block:: shell
+
+        scancode --ignore "*.java" samples samples.json
+
+    Here, ScanCode ignores files ending with `.java`, and continues with other files as usual.
+
+    More information on :ref:`glob-pattern-matching`.
+
+----
+
+.. _cli-config-option:
+
+``--config-file <path>``
+------------------------
+
+    Path patterns which should be ignored in the scan can also be provided
+    through a configuration file.
+
+    **Example**
+
+    .. code-block:: shell
+
+        scancode --config-file scancode-config.yaml samples samples.json
+
+    .. code-block:: yaml
+
+        ignored_patterns:
+        - '*.java'
+        - '*/licenses/*'
+
+    Here, ScanCode ignores files ending with `.java` and the `licenses` directory,
+    and continues with other files as usual.
+
+    This is also compatible with the `scancode.io configuration file <https://scancodeio.readthedocs.io/en/latest/project-configuration.html#ignored-patterns>`_.
+
+----
+
+.. _glob-pattern-matching:
+
+Glob Pattern Matching
+---------------------
+
+    All the pre-scan options use pattern matching, so the basics of Glob Pattern Matching is
+    discussed briefly below.
+
+    Glob pattern matching is useful for matching a group of files, by using patterns in their
+    names. Then using these patterns, files are grouped and treated differently as required.
+
+    Here are some rules from the `Linux Manual <http://man7.org/linux/man-pages/man7/glob.7.html>`_
+    on glob patterns. Refer the same for more detailed information.
+
+    A string is a wildcard pattern if it contains one of the characters '?', '*' or '['.  Globbing
+    is the operation that expands a wildcard pattern into the list of pathnames matching the
+    pattern. Matching is defined by:
+
+    - A '?' (not between brackets) matches any single character.
+
+    - A '*' (not between brackets) matches any string, including the empty string.
+
+    - An expression "[...]" where the first character after the leading '[' is not an '!' matches a
+      single character, namely any of the characters enclosed by the brackets.
+
+    - There is one special convention: two characters separated by '-' denote a range.
+
+    - An expression "[!...]" matches a single character, namely any character that is not matched
+      by the expression obtained by removing the first '!' from it.
+
+    - A '/' in a pathname cannot be matched by a '?' or '*' wildcard, or by a range like "[.-0]".
+
+    Note that wildcard patterns are not regular expressions, although they are a bit similar.
+
+    For more information on glob pattern matching refer these resources:
+
+        - `Linux Manual <http://man7.org/linux/man-pages/man7/glob.7.html>`_
+        - `Wildcard Match Documentation <https://facelessuser.github.io/wcmatch/glob/>`_.
+
+    You can also import these Python Libraries to practice UNIX style pattern matching:
+
+    - `fnmatch <https://docs.python.org/2/library/fnmatch.html>`_ for File Name matching
+    - `glob <https://docs.python.org/2/library/glob.html#module-glob>`_ for File Path matching
+

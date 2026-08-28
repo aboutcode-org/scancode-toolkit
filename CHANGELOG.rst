@@ -12,6 +12,9 @@ Next release
   first page, so copyright/license detection missed text on later pages.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5260
 
+- Improve copyright detection for statements with parens or trailing "authors"
+
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 

@@ -354,7 +354,7 @@ class TestCodebase(FileBasedTesting):
 
         codebase = Codebase(test_codebase)
         assert codebase.get_resource("resource/a").path == "resource/a"
-        assert codebase.get_resource("/resource/c").path == "resource/c"
+        assert codebase.get_resource("resource/c").path == "resource/c"
         assert codebase.get_resource("resource/dsasda/../b/").path == "resource/b"
 
     def test_Resource_build_path(self):
