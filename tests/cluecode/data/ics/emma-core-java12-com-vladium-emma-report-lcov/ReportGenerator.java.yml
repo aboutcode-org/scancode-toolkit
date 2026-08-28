@@ -21,3 +21,8 @@ holders_summary:
     count: 1
   - value: Vladimir Roubtsov
     count: 1
+allrights:
+  - Copyright 2009 Google Inc. All Rights Reserved.
+  - Copyright (c) 2003 Vladimir Roubtsov.
+  - Vlad Roubtsov, (c) 2003
+  - Tim Baverstock, (c) 2009

@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Expat maintainers
     count: 1
+allrights:
+  - Copyright (c) 2001-2007 Expat maintainers.

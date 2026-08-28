@@ -17,3 +17,7 @@ holders_summary:
     count: 1
   - value: Theo de Raadt
     count: 1
+allrights:
+  - Copyright (c) 1999 Theo de Raadt. All rights reserved.
+  - Copyright (c) 1999 Aaron Campbell. All rights reserved.
+  - Copyright (c) 1983, 1990, 1992, 1993, 1995 The Regents of the University of California. All rights reserved.

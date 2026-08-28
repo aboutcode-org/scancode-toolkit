@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Paul Mackerras
     count: 1
+allrights:
+  - Copyright (c) 1984-2000 Carnegie Mellon University. All rights reserved.
+  - Copyright (c) 1999-2004 Paul Mackerras. All rights reserved.

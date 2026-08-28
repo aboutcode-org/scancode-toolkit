@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Android Open Source Project
     count: 1
+allrights:
+  - Copyright (c) 2008, The Android Open Source Project All rights reserved.

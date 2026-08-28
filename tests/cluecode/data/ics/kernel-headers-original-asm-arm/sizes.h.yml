@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: ARM Limited
     count: 1
+allrights:
+  - Copyright (c) ARM Limited 1998. All rights reserved.

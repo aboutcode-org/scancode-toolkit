@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Sebastian Wilhelmi. Modified by the GLib Team and others
     count: 1
+allrights:
+  - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald.
+  - Copyright (c) 1998 Sebastian Wilhelmi. Modified by the GLib Team and others

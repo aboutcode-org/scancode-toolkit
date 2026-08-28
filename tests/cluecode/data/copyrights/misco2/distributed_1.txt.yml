@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Distributed Frontera developers
     count: 1
+allrights:
+  - Copyright (c) Distributed Frontera developers. All rights reserved.

@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Wolfgang Denk, DENX Software Engineering
     count: 1
+allrights:
+  - (c) Copyright 2000-2005 Wolfgang Denk, DENX Software Engineering, wd@denx.de.

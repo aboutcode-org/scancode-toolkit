@@ -9,3 +9,6 @@ holders_summary:
     count: 1
   - value: Jouni Malinen and contributors
     count: 1
+allrights:
+  - Copyright (c) 2004-2005, Jouni Malinen <jkmaline@cc.hut.fi>
+  - Copyright (c) 2004-2005, Jouni Malinen <jkmaline@cc.hut.fi> and contributors

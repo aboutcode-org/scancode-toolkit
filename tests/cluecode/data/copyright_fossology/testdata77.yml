@@ -11,3 +11,6 @@ holders:
 authors:
   - sean finney <seanius@debian.org>
   - sean finney <seanius@debian.org>
+allrights:
+  - copyright (c) 2005 sean finney
+  - copyright (c) 2000-2004 Ola Lundqvist.

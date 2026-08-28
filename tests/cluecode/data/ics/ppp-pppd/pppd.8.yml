@@ -41,3 +41,14 @@ holders_summary:
     count: 1
   - value: Tommi Komulainen
     count: 1
+allrights:
+  - Copyright (c) 1993-2003 Paul Mackerras <paulus@samba.org>
+  - Copyright (c) 1984-2000 Carnegie Mellon University. All rights reserved.
+  - Copyright (c) 1993-2004 Paul Mackerras. All rights reserved.
+  - Copyright (c) 1995 Pedro Roque Marques. All rights reserved.
+  - Copyright (c) 1995 Eric Rosenquist. All rights reserved.
+  - Copyright (c) 1999 Tommi Komulainen. All rights reserved.
+  - Copyright (c) Andrew Tridgell 1999
+  - Copyright (c) 2000 by Sun Microsystems, Inc. All rights reserved.
+  - Copyright (c) 2001 by Sun Microsystems, Inc. All rights reserved.
+  - Copyright (c) 2002 The Android Open Source Project
