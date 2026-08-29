@@ -13,6 +13,8 @@ Next release
   regression test to prevent rule name collisions.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5257
   
+- Improve copyright detection for statements with parens or trailing "authors"
+
 
 v33.0.0rc1 - 2026-05-14
 ------------------------

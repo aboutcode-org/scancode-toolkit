@@ -7,7 +7,7 @@
 
                             Default: ``(number of CPUs)-1``
 
--c, --config-file FILENAME  Path to the configuration file.
+--config-file FILENAME      Path to the configuration file.
 -v, --verbose               Print verbose file-by-file progress messages.
 
 -q, --quiet                 Do not print summary or progress messages.

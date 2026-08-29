@@ -1,20 +1,21 @@
 from collections import defaultdict
 from pathlib import Path
+
 from commoncode.text import python_safe_name
+from licensedcode.models import rules_data_dir
 
-RULES_DATA_DIR = Path(__file__).parents[2] / "src" / "licensedcode" / "data" / "rules"
 
-def test_rule_file_names_generate_unique_python_names():
-    rule_names_by_python_name = defaultdict(list)
+def test_rule_file_names_generate_unique_test_method_names():
+    method_to_files = defaultdict(list)
 
-    for rule_file in RULES_DATA_DIR.glob("*.RULE"):
-        python_name = python_safe_name(rule_file.name)
-        rule_names_by_python_name[python_name].append(rule_file.name)
+    for rule_file in Path(rules_data_dir).glob("*.RULE"):
+        method_name = python_safe_name(rule_file.stem)
+        method_to_files[method_name].append(rule_file.name)
 
-    duplicate_names = {
-        python_name: sorted(rule_names)
-        for python_name, rule_names in rule_names_by_python_name.items()
-        if len(rule_names) > 1
-    }
+    duplicate_names = [
+        (method_name, files)
+        for method_name, files in method_to_files.items()
+        if len(files) > 1
+    ]
 
-    assert not duplicate_names, duplicate_names
+    assert not duplicate_names, f"Duplicate test method names found: {duplicate_names}"

@@ -1,0 +1,28 @@
+*
+ * All portions of code are copyright by their respective author/s.
+ * Copyright (c) 1997-2001   Geoff Wing <gcw@pobox.com>
+ * Copyright (C) 2000,2001   Teepanis Chachiyo <teepanis@physics.purdue.edu>
+ * Copyright (c) 2001        Marius Gedminas <marius.gedminas@uosis.mif.vu.lt>
+ * Copyright (c) 2003        David Hull
+ * Copyright (c) 2003        Yamanobe Kiichiro <yamky@cocoa.freemail.ne.jp>
+ * Copyright (c) 2003        Mamoru Komachi <usata@usata.org>
+ * Copyright (c) 2005        William P. Y. Hadisoeseno <williampoetra@users.sourceforge.net>
+ * Copyright (c) 2004-2005   Jingmin Zhou <jimmyzhou@users.sourceforge.net>
+ *
+ 
+  * All portions of code are copyright by their respective author/s.
+ * Copyright (c) 1992      John Bovey, University of Kent at Canterbury <jdb@ukc.ac.uk>
+ *                              - original version
+ * Copyright (c) 1994      Robert Nation <nation@rocket.sanders.lockheed.com>
+ *                              - extensive modifications
+ * Copyright (c) 1996      Chuck Blake <cblake@BBN.COM>
+ * Copyright (c) 1997      mj olesen <olesen@me.queensu.ca>
+ * Copyright (c) 1997,1998 Oezguer Kesim <kesim@math.fu-berlin.de>
+ * Copyright (c) 1998-2001 Geoff Wing <gcw@pobox.com>
+ *                              - extensive modifications
+ * Copyright (c) 2003-2008 Marc Lehmann <pcg@goof.com>
+ 
+ 
+ (a book serving as documentation for various tooling
+surrounding TeachBooks) written by the Author(s).
+Stefan Aarninkhof, Dean of Civil Engineering & Geosciences

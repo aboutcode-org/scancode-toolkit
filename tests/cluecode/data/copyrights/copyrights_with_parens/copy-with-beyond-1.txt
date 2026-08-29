@@ -1,0 +1,4 @@
+  Copyright 2017 and beyond Isomorphic Software, Inc. All rights reserved.
+  
+  
+  * Copyright 2008 and beyond, Isomorphic Software, Inc.

@@ -61,7 +61,6 @@ if TRACE or TRACE_TOK:
 if TRACE_DEEP:
     logger_debug = print
 
-
 """
 Detect and collect copyright statements.
 
@@ -428,6 +427,10 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
         if TRACE_TOK:
             logger_debug('  get_tokens: preped line: ' + repr(line))
 
+        # when there is a an openning parens in the middle of a word, add a
+        # space before in some cases: exclude (digit , (s , (c , (-
+        # this allows to recover from words like KISA(Korean
+        line = re.sub(pattern=r'(\([^rsc\-\d])', repl=r' \g<1>', string=line)
         for tok in splitter(line):
             # strip trailing quotes+comma
             if tok.endswith("',"):
@@ -729,6 +732,10 @@ PATTERNS = [
     # SPDX-FileContributor as defined in SPDX and seen used in KDE
     (r'^[Ss][Pp][Dd][Xx]-[Ff]ile[Cc]ontributor', 'SPDX-CONTRIB'),
 
+    # damaged PDF to text conversion with (cid:13) and rarer (cid:2)
+    (r'^[Cc]?\(cid:13\)$', 'COPY'),
+    (r'^[Cc]?\(cid:2\)$', 'COPY'),
+
     ############################################################################
     # ALL Rights Reserved.
     ############################################################################
@@ -813,6 +820,9 @@ PATTERNS = [
     (r'^Fu$', 'NNP'),
     (r'^W3C\(r\)$', 'COMP'),
     (r'^TeX$', 'NNP'),
+
+    # Copyright (c) 1989 ITAA, formerly ADAPSO
+    (r'^formerly', 'NNP'),
 
     # Three or more AsCamelCase GetQueueReference, with some exceptions
     (r'^(?:OpenStreetMap|AliasDotCom|AllThingsTalk).?$', 'NAME'),
@@ -991,6 +1001,9 @@ PATTERNS = [
     (r'^.?(null|function|try|catch|except|throw|typeof|catch|switch).?$', 'JUNK'),
     (r'^.*[\.:](?:value|ref|key|case|type|typeof|props|state|error|null)$', 'JUNK'),
     (r'^[a-z]{,5}\[!?]+', 'JUNK'),
+    (r'^(fprintf|stderr)$', 'JUNK'),
+
+    (r'^[Aa]uthor\(s\)\.?$', 'AUTHDOT'),
 
     # func call with short var in minified code
     (r'^\w{2,6}\([a-z, ]{1,6}\)', 'JUNK'),
@@ -1226,16 +1239,20 @@ PATTERNS = [
     (r'^param$', 'JUNK'),
     (r'^which$', 'JUNK'),
 
+    # github/gitlab usernames
+    (r'^Hiroki11x$', 'NNP'),
+    (r'^goldze$', 'NNP'),
+
     # "Es6ToEs3ClassSideInheritance. and related names
     (r"^[A-Z]([a-zA-Z]*[0-9]){2,}[a-zA-Z]+[\.,]?", 'JUNK'),
 
     # owlocationNameEntitieship.
     (r"^([a-z]{2,}[A-Z]){2,}[a-z]+[\.,]?", 'JUNK'),
 
+    # lower case with (s)
+    # but not owner/author(s).
+    (r"^owner/author\(s\)\.?$", 'NNP'),
     (r"^[a-z].+\(s\)[\.,]?$", 'JUNK'),
-
-    # parens in the middle: for(var
-    (r"^[a-zA-Z]+[\)\(]+,?[\)\(]?[a-zA-Z]+[\.,]?$", 'JUNK'),
 
     # single period
     (r"^\.$", 'JUNK'),
@@ -1283,6 +1300,12 @@ PATTERNS = [
     (r'^[Ww]hether$', 'JUNK'),
     (r'^[Bb]oth$', 'JUNK'),
     (r'^[Cc]aller$', 'JUNK'),
+
+    # '!(r)'
+    (r'^!\(r\)$', 'JUNK'),
+
+    # vars with parens
+    (r'\(var', 'JUNK'),
 
     # tags
     (r'^E-?[Mm]ail:?$', 'JUNK'),
@@ -1876,7 +1899,7 @@ PATTERNS = [
 
     # rare form of trailing punct in name: Ian Robertson).
     (r'^Robert.*', 'NNP'),
-
+    
     ############################################################################
     # Named entities: companies, groups, universities, etc
     ############################################################################
@@ -2023,9 +2046,9 @@ PATTERNS = [
     (r'^[Aa]uthor$', 'AUTH'),
     (r'^[Aa]uthor\.$', 'AUTHDOT'),
     (r'^[Aa]uthors?\.$', 'AUTHDOT'),
+    (r'^[Aa]uthor\(s\)\.?$', 'AUTHDOT'),
     (r'^([Aa]uthors|author\')$', 'AUTHS'),
     (r'^[Aa]uthor\(s\)$', 'AUTHS'),
-    (r'^[Aa]uthor\(s\)\.?$', 'AUTHDOT'),
     # as javadoc
     (r'^@[Aa]uthors?:?$', 'AUTH'),
 
@@ -2195,6 +2218,12 @@ PATTERNS = [
     # all other cardinal numbers
     (r'^-?[0-9]+(.[0-9]+)?[\.,]?$', 'CD'),
 
+    # onwards used in year ranges
+    (r'^onwards,?$', 'ONWARDS'),
+    # beyond is the same
+    (r'^beyond,?$', 'ONWARDS'),
+
+
     ############################################################################
     # All caps and proper nouns
     ############################################################################
@@ -2214,6 +2243,7 @@ PATTERNS = [
     (r'^Xiph.Org$', 'NNP'),
     (r'^iClick,?$', 'NNP'),
     (r'^electronics?$', 'NNP'),
+    (r'^semiconductors?[\.,]?$', 'NNP'),
 
     # proper nouns with digits
     (r'^([A-Z][a-z0-9]+){1,2}[\.,]?$', 'NNP'),
@@ -2234,6 +2264,7 @@ PATTERNS = [
     (r"^[a-z]'[A-Z]?[a-z]+[,\.]?$", 'NNP'),
 
     # exceptions to all CAPS words
+    (r'^ISBN$', 'NN'),
     (r'^[A-Z]{3,4}[0-9]{4},?$', 'NN'),
 
     # exceptions to CAPS used in obfuscated emails like in joe AT foo DOT com
@@ -2350,8 +2381,6 @@ PATTERNS = [
     # some punctuation combos
     (r'^(?:=>|->|<-|<=)$', 'JUNK'),
 
-    (r'^semiconductors?[\.,]?$', 'NNP'),
-
     ############################################################################
     # catch all other as Nouns
     ############################################################################
@@ -2385,6 +2414,9 @@ GRAMMAR = """
 
     # 5 Jan 2003
     YR-RANGE: {<CDS>  <NNP>  <YR-RANGE>} #72.3
+    
+    # 2024 and? onwards
+    YR-RANGE: {<YR-RANGE><CC>?<ONWARDS>}
 
 
 #######################################
@@ -2924,7 +2956,8 @@ GRAMMAR = """
     # Copyright 2015 The Happy Campers
     # Copyright 2015 The Error Prone Authors.
     # Copyright 2001-2011 Xiph.Org, Skype Limited, Octasic,
-    COPYRIGHT: {<NNP>? <COPY>+ (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME-EMAIL|NNP>+ <EMAIL>?)+ <AUTHDOT|MAINT>?}        #1630
+    # AssemblyCopyright("(c) 2004 by Henrik Ravn")]
+    COPYRIGHT: {<NNP>? <COPY>+ <PARENS>? <COPY>? (<YR-RANGE>+ <BY>? <NN>? <COMPANY|NAME|NAME-EMAIL|NNP>+ <EMAIL>?)+ <AUTHDOT|MAINT>?}        #1630
 
     COPYRIGHT: {<COPY>+ <NN> <NAME> <YR-RANGE>}        #1650
 
@@ -3046,6 +3079,9 @@ GRAMMAR = """
     # Copyright base-x contributors (c) 2016
     COPYRIGHT: {<COPY>+  <NN> <CONTRIBUTORS|COMMIT|AUTHS|MAINT> <COPY>  <YR-RANGE>}  #22793.2
 
+    # Copyright © 2021 Ha and Maguire.
+    COPYRIGHT: {<COPY>+  <YR-RANGE> <NN> <CC> <NNP>}  #22793.31
+
     # Copyright (c) 2017 odahcam
     # Copyright (C) 2006 XStream committers.
     # Copyright (c) 2019-2021, Open source contributors.
@@ -3076,8 +3112,16 @@ GRAMMAR = """
     # Author: Jeff LaBundy <jeff@labundy.com>
     COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <AUTH>  <NAME-EMAIL>} #2280-3
 
+    # Common for ACM notices
+    # Copyright is held by the owner/author(s).
+    # (c) 2016 Copyright held by the owner/author(s).
+    COPYRIGHT2: {<COPY>+ <YR-RANGE>+ <COPY><IS>?<HELD><BY><NN>?<NNP>}        #2280-9
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
+    COPYRIGHT2: {<COPY><IS>?<HELD><BY><NN>?<NNP>}        #2280-12
+
+    # Copyright (c) 1995-2012 held by the author(s). All rights reserved.'
+    COPYRIGHT: {<COPYRIGHT2><HELD><BY><NN><AUTHDOT>} #2280-40
 
     COPYRIGHT: {<COPYRIGHT2>  <BY>  <NAME-YEAR|NAME-EMAIL> <BY>?  <NAME-YEAR|NAME-EMAIL>? } #2280-4
 
@@ -3107,7 +3151,8 @@ GRAMMAR = """
     # Rare form Copyright (c) 2008 All rights reserved by Amalasoft Corporation.
     COPYRIGHT: {<COPYRIGHT2> <ALLRIGHTRESERVED> <BY> <COMPANY>}        #2861
 
-    # Copyright (c) 1996 Adrian Rodriguez (adrian@franklins-tower.rutgers.edu) Laboratory for Computer Science Research Computing Facility
+    # Copyright (c) 1996 Adrian Rodriguez (adrian@franklins-tower.rutgers.edu) L
+    # aboratory for Computer Science Research Computing Facility
     COPYRIGHT: {<COPYRIGHT> <NAME>} #2400
 
     # copyrights in the style of Scilab/INRIA
@@ -3288,7 +3333,12 @@ GRAMMAR = """
     COPYRIGHT: {<COPY> <COPY> <ANDCO>}  #2841
 
     # Copyright (c) 1995-2018 The PNG Reference Library Authors. (with and without trailing dot)
-    COPYRIGHT: {<COPYRIGHT> <NN> <AUTHDOT>} #35011
+    # Copyright 2001 - 2009 by the original author(s).
+    # Copyright 2021 The logr Authors.
+    # Copyright 2022 The JSpecify Authors.
+    # attach a trailing "Authors." even when the preceding name was already
+    # absorbed into the COPYRIGHT node (e.g. names tagged NN like "logr", "JSpecify")
+    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2> <NN>{0,2} <AUTHDOT>} #35011
 
     ############ All right reserved in the middle ##############################
 
@@ -3406,6 +3456,11 @@ GRAMMAR = """
     NAME-EMAIL: {<DASH>  <NAME-EMAIL> <NN>?} #157999.14
     COPYRIGHT: {<COPYRIGHT2> <FOLLOWING> <AUTHS> <NAME-EMAIL>+ } #157999.14
 
+    # Copyright (C) 2011-2012  The OpenTSDB Authors.
+    COPYRIGHT: {<COPYRIGHT> <AUTHDOT>}  #160000
+
+    # (c) The Author(s).
+    COPYRIGHT: {<COPY> <NN> <AUTHS>}
 
 #######################################
 # Copyright is held by ....
@@ -4013,6 +4068,7 @@ def remove_dupe_copyright_words(c):
     c = c.replace("copyright\'", 'Copyright')
     c = c.replace('and later', ' ')
     c = c.replace('build.year', ' ')
+
     return c
 
 
@@ -4544,6 +4600,10 @@ def prepare_text_line(line):
         # \xc2 is a Â
         .replace('\xc2', '')
         .replace('\\xc2', '')
+
+        # PDF to text damages
+        .replace('c(cid:13)', '(c) ')
+        .replace('c(cid:2)', '(c) ')
 
         # not really a dash: an emdash
         .replace('–', '-')

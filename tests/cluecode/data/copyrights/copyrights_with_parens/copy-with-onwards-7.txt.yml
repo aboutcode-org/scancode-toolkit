@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2005 and onwards by AmbieSense Limited, and/or its subsidiaries
+  - copyright 2006 and onwards by the authors
+holders:
+  - AmbieSense Limited, and/or its subsidiaries
+  - the authors
+authors:
+  - Neos Team and Contributors

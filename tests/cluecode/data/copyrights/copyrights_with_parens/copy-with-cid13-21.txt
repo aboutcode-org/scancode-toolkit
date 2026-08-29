@@ -1,0 +1,3 @@
+Copyright c(cid:13) 2019 for this paper by its authors. Use permitted under Creative Com-
+mons License Attribution 4.0 International (CC BY 4.0). CLEF 2019, 9-12 Septem-
+ber 2019, Lugano, Switzerland.
