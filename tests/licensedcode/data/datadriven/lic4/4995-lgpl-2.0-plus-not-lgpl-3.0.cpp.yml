@@ -1,0 +1,10 @@
+license_expressions:
+  - lgpl-2.0-plus
+  - lgpl-2.0-plus
+notes: |
+    LGPL "either version 2 of the License, or (at your option) any later
+    version" notice header from KDE libqzeitgeist src/logbrowser.cpp as
+    reported in https://github.com/aboutcode-org/scancode-toolkit/issues/4995
+    This notice never mentions version 3 and must not be detected as lgpl-3.0:
+    it used to match lgpl-3.0_16.RULE by a partial sequence match before that
+    rule got required phrases.

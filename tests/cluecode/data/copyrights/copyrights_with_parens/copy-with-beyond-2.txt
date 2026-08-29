@@ -1,0 +1,1 @@
+Copyright 2020 and beyond [unlimitDesign](https://unlimit.design). Codes are released under [the MIT license](https://github.com/unlimitDesign/timbercss/blob/master/LICENSE).

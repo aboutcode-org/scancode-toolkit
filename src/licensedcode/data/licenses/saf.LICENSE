@@ -6,9 +6,9 @@ category: Permissive
 owner: Service Availability Forum
 spdx_license_key: LicenseRef-scancode-saf
 ignorable_copyrights:
-    - Copyright (c) Service Availability(TM) Forum
+    - Copyright (c) Service Availability (TM) Forum
 ignorable_holders:
-    - Service Availability(TM) Forum
+    - Service Availability (TM) Forum
 ---
 
 Service Availability Forum License
