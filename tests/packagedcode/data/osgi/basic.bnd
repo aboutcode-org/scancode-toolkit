@@ -1,0 +1,9 @@
+Bundle-Name: Vaadin Open
+Bundle-SymbolicName: com.vaadin.open
+Bundle-Version: 8.5.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
+Import-Package: javax.management,\
+  org.apache.commons.io;version="[1.4,2)"
+Export-Package: com.vaadin.open;version="8.5.0"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"

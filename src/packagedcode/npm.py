@@ -380,10 +380,10 @@ class BaseNpmHandler(models.DatafileHandler):
                     if '_' in metadata:
                         requirement, _extra = metadata.split('_')
 
-                if ':' in requirement and '@' in requirement:
+                if isinstance(requirement, str) and requirement.startswith('npm:') and '@' in requirement:
                     # dependencies with requirements like this are aliases and should be reported
                     aliased_package, _, constraint = requirement.rpartition('@')
-                    _, _, aliased_package_name = aliased_package.rpartition(':')
+                    _, _, aliased_package_name = aliased_package.partition('npm:')
                     sdns, _ , sdname = aliased_package_name.rpartition('/')
                     dep_purl = PackageURL(
                         type=cls.default_package_type,
@@ -1848,10 +1848,10 @@ def deps_mapper(deps, package, field_name, is_direct=True):
         if not name:
             continue
 
-        if ':' in requirement and '@' in requirement:
+        if isinstance(requirement, str) and requirement.startswith('npm:') and '@' in requirement:
             # dependencies with requirements like this are aliases and should be reported
             aliased_package, _, requirement = requirement.rpartition('@')
-            _, _, aliased_package_name = aliased_package.rpartition(':')
+            _, _, aliased_package_name = aliased_package.partition('npm:')
             ns, _ , name = aliased_package_name.rpartition('/')
 
         purl = PackageURL(type='npm', namespace=ns, name=name).to_string()

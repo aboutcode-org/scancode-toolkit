@@ -108,6 +108,12 @@ class TestNpm(PackageTester):
         packages = npm.NpmPackageJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_git_urls(self):
+        test_file = self.get_test_loc('npm/git_urls/package.json')
+        expected_loc = self.get_test_loc('npm/git_urls/package.json.expected')
+        packages = npm.NpmPackageJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_faulty_npm(self):
         test_file = self.get_test_loc('npm/casepath/package.json')
         expected_loc = self.get_test_loc('npm/casepath/package.json.expected')

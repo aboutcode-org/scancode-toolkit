@@ -1,0 +1,10 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "dependencies": {
+    "private-lib": "git+ssh://git@github.com:org/repo.git#v1.0.0"
+  },
+  "devDependencies": {
+    "my-alias": "npm:original-package@^1.2.3"
+  }
+}

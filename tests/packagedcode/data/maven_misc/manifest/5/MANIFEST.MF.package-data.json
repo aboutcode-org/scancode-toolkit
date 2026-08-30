@@ -17,6 +17,32 @@
   "vcs_url": null,
   "code_view_url": null,
   "extra_data": {
-    "documentation_url": "http://www.oracle.com"
-  }
+    "documentation_url": "http://www.oracle.com",
+    "import_package": "javax.annotation,javax.inject",
+    "export_package": "org.glassfish.hk2.utilities.cache;version=\"2.4.0\",org.glassfish.hk2.utilities.general;version=\"2.4.0\";uses:=\"org.glassfish.hk2.utilities.cache\",org.glassfish.hk2.utilities.reflection;version=\"2.4.0\",org.glassfish.hk2.utilities.reflection.internal;version=\"2.4.0\";uses:=\"org.glassfish.hk2.utilities.reflection\",org.jvnet.hk2.component;version=\"2.4.0\",org.jvnet.tiger_types;version=\"2.4.0\""
+  },
+  "dependencies": [
+    {
+      "purl": "pkg:osgi/javax.annotation",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.inject",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    }
+  ]
 }
