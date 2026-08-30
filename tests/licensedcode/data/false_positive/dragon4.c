@@ -1,0 +1,1 @@
+As a special exception the smallest normal value
