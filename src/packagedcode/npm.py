@@ -2023,3 +2023,85 @@ def keywords_mapper(keywords, package):
 
     package.keywords = keywords
     return package
+
+
+class NpmRcHandler(models.NonAssemblableDatafileHandler):
+    """
+    Handle npm configuration files (.npmrc).
+
+    An .npmrc file configures npm registries, authentication tokens,
+    and per-scope registry overrides. Parsing it reveals the npm
+    registry URLs in use, which is useful for identifying private
+    registries and understanding the package sources for a project.
+
+    See https://docs.npmjs.com/cli/v11/configuring-npm/npmrc for details.
+
+    Example .npmrc content::
+
+        registry=https://registry.npmjs.org/
+        @mycompany:registry=https://npm.mycompany.com/
+        //npm.mycompany.com/:_authToken=TOKEN
+        always-auth=false
+
+    The primary output is ``extra_data`` containing:
+    - ``registry``: the default registry URL
+    - ``scoped_registries``: a mapping of scope to registry URL
+
+    """
+    datasource_id = 'npm_npmrc'
+    path_patterns = ('*/.npmrc', '*/npmrc',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'npm .npmrc configuration file'
+    documentation_url = 'https://docs.npmjs.com/cli/v11/configuring-npm/npmrc'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        """
+        Parse an .npmrc file and extract registry configuration.
+        """
+        registry = None
+        scoped_registries = {}
+
+        with io.open(location, encoding='utf-8', errors='replace') as loc:
+            for line in loc:
+                # Strip inline comments and whitespace
+                if ';' in line:
+                    line = line[:line.index(';')]
+                line = line.strip()
+
+                if not line or line.startswith('#'):
+                    continue
+
+                if '=' not in line:
+                    continue
+
+                key, _, value = line.partition('=')
+                key = key.strip()
+                value = value.strip()
+
+                if not key or not value:
+                    continue
+
+                # Default registry: registry=https://...
+                if key == 'registry':
+                    registry = value
+
+                # Scoped registry: @scope:registry=https://...
+                elif key.startswith('@') and key.endswith(':registry'):
+                    scope = key[: key.rfind(':registry')]
+                    scoped_registries[scope] = value
+
+        extra_data = {}
+        if registry:
+            extra_data['registry'] = registry
+        if scoped_registries:
+            extra_data['scoped_registries'] = scoped_registries
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            extra_data=extra_data,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
