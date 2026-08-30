@@ -7,6 +7,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+from urllib.parse import urlsplit
+
 from packageurl import PackageURL
 
 try:
@@ -112,6 +114,62 @@ def normalize_vcs_url(repo_url, vcs_tool=None):
         return f'https://github.com/{repo_url}'
 
     return repo_url
+
+
+BUG_TRACKING_SUFFIXES = {
+    'github.com':    '/issues',
+    'gitlab.com':    '/-/issues',
+    'codeberg.org':  '/issues',
+    'bitbucket.org': '/issues',
+}
+
+# each platform has a different path scheme for browsing a tagged tree
+CODE_VIEW_SUFFIXES = {
+    'github.com':    '/tree/{version}',
+    'gitlab.com':    '/-/tree/{version}',
+    'codeberg.org':  '/src/tag/{version}',
+    'bitbucket.org': '/src/{version}',
+}
+
+
+def parse_vcs_urls(vcs_url, version=None):
+    """
+    Given a ``vcs_url`` and an optional ``version``, return a
+    (code_view_url, bug_tracking_url) tuple for recognized hosting platforms,
+    or (None, None) otherwise.
+
+    ``code_view_url`` points to the source tree at a specific version tag and
+    is only populated when a concrete ``version`` is provided.
+    """
+    cleaned = normalize_vcs_url(vcs_url)
+    if not cleaned:
+        return None, None
+
+    if cleaned.endswith('.git'):
+        cleaned = cleaned[:-4]
+
+    # urlsplit can't parse git@ SSH form like git@github.com:owner/repo
+    if cleaned.startswith('git@'):
+        cleaned = 'https://' + cleaned[4:].replace(':', '/')
+
+    parsed = urlsplit(cleaned)
+    host = parsed.netloc.lower()
+    path = parsed.path.rstrip('/')
+    base = f'https://{host}{path}'
+
+    bug_suffix = BUG_TRACKING_SUFFIXES.get(host)
+    if not bug_suffix:
+        return None, None
+
+    bug_tracking_url = base + bug_suffix
+
+    code_view_url = None
+    if version:
+        code_suffix = CODE_VIEW_SUFFIXES.get(host)
+        if code_suffix:
+            code_view_url = base + code_suffix.format(version=version)
+
+    return code_view_url, bug_tracking_url
 
 
 def build_description(summary, description):
