@@ -1126,6 +1126,146 @@ class UvLockHandler(BaseUvPythonLayout):
         yield models.PackageData.from_data(package_data, package_only)
 
 
+def is_pylock_toml(filename):
+    """
+    Return True if the ``filename`` is a valid PEP 751 lock file name, e.g.
+    ``pylock.toml`` or ``pylock.dev.toml``.
+    See https://peps.python.org/pep-0751/#file-name
+    """
+    return filename == 'pylock.toml' or bool(re.match(r'^pylock\.[^.]+\.toml$', filename))
+
+
+class PylockTomlHandler(models.DatafileHandler):
+    datasource_id = 'pypi_pylock_toml'
+    path_patterns = ('*pylock.toml', '*pylock.*.toml')
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python pylock.toml lockfile'
+    documentation_url = 'https://peps.python.org/pep-0751/'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        return (
+            super().is_datafile(location, filetypes=filetypes)
+            and is_pylock_toml(fileutils.file_name(location))
+        )
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location, "rb") as fp:
+            toml_data = tomllib.load(fp)
+
+        packages = toml_data.get('packages')
+        if not packages:
+            return
+
+        dependencies = []
+        for package in packages:
+            name = package.get('name')
+            if not name:
+                continue
+            version = package.get('version')
+
+            dependencies_for_resolved = []
+            for dep in (package.get('dependencies') or []):
+                dep_name = dep.get('name')
+                if not dep_name:
+                    continue
+                dep_purl = PackageURL(type=cls.default_package_type, name=dep_name)
+                dependencies_for_resolved.append(
+                    models.DependentPackage(
+                        purl=dep_purl.to_string(),
+                        extracted_requirement=dep.get('marker') or dep.get('version'),
+                        scope='dependencies',
+                        is_runtime=True,
+                        is_optional=False,
+                        is_direct=True,
+                        is_pinned=False,
+                    ).to_dict()
+                )
+
+            # a package can carry a single sdist and/or several wheels (one
+            # per platform/interpreter); prefer the sdist as the canonical
+            # source and fall back to the first wheel, since the resolved
+            # package purl can only point to one download.
+            source = package.get('sdist')
+            if not isinstance(source, dict):
+                wheels = package.get('wheels') or []
+                source = wheels[0] if wheels else None
+
+            download_url = None
+            sha256 = None
+            file_name = None
+            if isinstance(source, dict):
+                download_url = source.get('url')
+                hashes = source.get('hashes') or {}
+                sha256 = hashes.get('sha256')
+                file_name = source.get('name') or (
+                    download_url and posixpath.basename(download_url)
+                )
+
+            urls = get_pypi_urls(name, version)
+            if download_url:
+                urls['repository_download_url'] = download_url
+
+            qualifiers = {}
+            if file_name:
+                qualifiers['file_name'] = file_name
+
+            extra_data = {}
+            marker = package.get('marker')
+            if marker:
+                extra_data['marker'] = marker
+
+            resolved_package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language='Python',
+                name=name,
+                version=version,
+                qualifiers=qualifiers,
+                sha256=sha256,
+                is_virtual=True,
+                extra_data=extra_data,
+                dependencies=dependencies_for_resolved,
+                **urls,
+            )
+            resolved_package = models.PackageData.from_data(resolved_package_data, package_only)
+
+            dependencies.append(
+                models.DependentPackage(
+                    purl=resolved_package.purl,
+                    extracted_requirement=None,
+                    scope=None,
+                    is_runtime=True,
+                    is_optional=False,
+                    is_direct=False,
+                    is_pinned=True,
+                    resolved_package=resolved_package.to_dict(),
+                ).to_dict()
+            )
+
+        extra_data = {}
+        requires_python = toml_data.get('requires-python')
+        if requires_python:
+            extra_data['python_requires'] = requires_python
+        lock_version = toml_data.get('lock-version')
+        if lock_version is not None:
+            extra_data['lock_version'] = lock_version
+        created_by = toml_data.get('created-by')
+        if created_by:
+            extra_data['created_by'] = created_by
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            extra_data=extra_data,
+            dependencies=dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
 class PipInspectDeplockHandler(models.DatafileHandler):
     datasource_id = 'pypi_inspect_deplock'
     path_patterns = ('*pip-inspect.deplock',)
