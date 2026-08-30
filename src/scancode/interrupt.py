@@ -45,6 +45,7 @@ class TimeoutError(Exception):  # NOQA
 
 
 DEFAULT_TIMEOUT = 120  # seconds
+DEFAULT_PLUGIN_TIMEOUT = 2400 # seconds
 
 TIMEOUT_MSG = 'ERROR: Processing interrupted: timeout after %(timeout)d seconds.'
 ERROR_MSG = 'ERROR: Unknown error:\n'
