@@ -165,6 +165,7 @@ class TestCargo(PackageTester):
         )
 
     def test_scan_works_on_rust_binary_with_inspector(self):
+        pytest.importorskip("rust_inspector")
         test_file = self.get_test_loc('cargo/binary/cargo_dependencies')
         expected_file = self.get_test_loc('cargo/binary/cargo-binary.expected.json')
         result_file = self.get_temp_file('results.json')
