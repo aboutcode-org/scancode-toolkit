@@ -392,3 +392,34 @@ def test_match_reference_license():
         must_exist=False,
     )
     check_json_scan(expected_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_wt_ibpp_interference_is_detected_in_scan_output():
+    from licensedcode.cache import get_index
+
+    get_index(force=True)
+
+    test_file = test_env.get_test_loc('datadriven/lic1/wt_ibpp_interference.md')
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
+        '--strip-root',
+        '--json', result_file,
+        test_file,
+    ]
+    run_scan_click(args, processes='1')
+
+    from commoncode.resource import VirtualCodebase
+
+    codebase = VirtualCodebase(result_file)
+    resource = codebase.get_resource(path='wt_ibpp_interference.md')
+
+    assert resource.detected_license_expression == 'bsd-1-clause AND fpl AND ibpp'
+    assert any(
+        match['rule_identifier'] in {'ibpp.LICENSE', 'ibpp_text.RULE'}
+        for detection in resource.license_detections
+        for match in detection['matches']
+    )
