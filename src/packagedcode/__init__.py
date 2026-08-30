@@ -102,6 +102,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     godeps.GodepsHandler,
     golang.GoModHandler,
     golang.GoSumHandler,
+    golang.GoWorkHandler,
 
     haxe.HaxelibJsonHandler,
 
