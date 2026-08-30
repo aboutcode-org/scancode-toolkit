@@ -304,3 +304,4 @@ def is_simple_path(path):
 
 def is_simple_path_pattern(path):
     return path.endswith('*') and path.count('*') == 1
+
