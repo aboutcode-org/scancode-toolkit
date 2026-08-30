@@ -1,0 +1,4 @@
+Source: obsolete-control-name
+Version: 1.0
+Description: Legacy metadata that must not replace the JSON manifest.
+Build-Depends: old-dependency
