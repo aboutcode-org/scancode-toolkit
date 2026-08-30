@@ -12,6 +12,7 @@ from packagedcode import about
 from packagedcode import alpine
 from packagedcode import bower
 from packagedcode import build
+from packagedcode import buildpack
 from packagedcode import build_gradle
 from packagedcode import cargo
 from packagedcode import chef
@@ -61,6 +62,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     build.BazelBuildHandler,
     build.BuckMetadataBzlHandler,
     build.BuckPackageHandler,
+
+    buildpack.BuildpackHandler,
 
     cargo.CargoLockHandler,
     cargo.CargoTomlHandler,

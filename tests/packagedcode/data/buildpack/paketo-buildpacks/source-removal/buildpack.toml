@@ -1,0 +1,12 @@
+api = "0.7"
+
+[buildpack]
+id = "paketo-buildpacks/source-removal"
+name = "Paketo Buildpack for Source Removal"
+
+[metadata]
+include-files = ["bin/run", "bin/build","bin/detect","buildpack.toml"]
+pre-package = "./scripts/build.sh"
+
+[[stacks]]
+id = "*"
