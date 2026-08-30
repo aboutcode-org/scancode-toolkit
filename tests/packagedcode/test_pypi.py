@@ -398,6 +398,39 @@ class TestPoetryHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/poetry/univers-poetry.lock-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_poetry_lock_package_optional(self):
+        test_file = self.get_temp_file('poetry.lock')
+        with open(test_file, 'w') as lockfile:
+            lockfile.write('''\
+[[package]]
+name = "required-dep"
+version = "1.0.0"
+description = "required dependency"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
+name = "optional-dep"
+version = "2.0.0"
+description = "optional dependency"
+optional = true
+python-versions = ">=3.8"
+
+[metadata]
+lock-version = "2.0"
+python-versions = ">=3.8"
+content-hash = "test"
+''')
+
+        package_data = list(pypi.PoetryLockHandler.parse(test_file))[0]
+        dependencies_by_purl = {
+            dependency['purl']: dependency
+            for dependency in package_data.dependencies
+        }
+
+        assert dependencies_by_purl['pkg:pypi/required-dep@1.0.0']['is_optional'] is False
+        assert dependencies_by_purl['pkg:pypi/optional-dep@2.0.0']['is_optional'] is True
+
     def test_parse_pyproject_toml_poetry_univers(self):
         test_file = self.get_test_loc('pypi/poetry/univers/pyproject.toml')
         package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
@@ -805,4 +838,3 @@ def test_parse_setup_py(test_loc):
 )
 def test_parse_more_setup_py(test_loc):
     check_setup_py_parsing(test_loc)
-
