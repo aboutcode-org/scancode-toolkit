@@ -35,6 +35,7 @@
   "bug_tracking_url": "http://homepage.com/issues",
   "code_view_url": "http://homepage.com/code",
   "vcs_url": "git+http://homepage.com/code.git@12ed302c4b4c2aa10638db3890",
+  "documentation_url": null,
   "copyright": "copyright (c) nexB Inc.",
   "holder": "nexB Inc.",
   "declared_license_expression": "apache-2.0",
