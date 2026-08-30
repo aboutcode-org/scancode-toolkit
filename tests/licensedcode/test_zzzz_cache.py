@@ -159,7 +159,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
     def test_build_spdx_license_expression(self):
         from licensedcode.cache import build_spdx_license_expression
         assert build_spdx_license_expression("mit")
-    
+
     def test_build_spdx_license_expression_fails_on_invalid_key_none(self):
         from licensedcode.cache import build_spdx_license_expression
         from licensedcode.cache import InvalidLicenseKeyError
