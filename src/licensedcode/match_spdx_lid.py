@@ -27,12 +27,12 @@ from textcode.markup import demarkup_text
 Matching strategy for license expressions and "SPDX-License-Identifier:"
 expression tags. This is also for spdx license-expressions with other
 prefix strings (example: NuGet License URLs).
-The matching aproach is a tad different:
+The matching approach is a tad different:
 
 First, we do not run this matcher against whole queries. Instead the matchable
 text is collected during the query processing as Query.spdx_lines for any line
-that starts withs these tokens ['spdx', 'license', 'identifier'] or ['spdx',
-'licence', 'identifier'] begining with the first, second or third token position
+that starts with these tokens ['spdx', 'license', 'identifier'] or ['spdx',
+'licence', 'identifier'] beginning with the first, second or third token position
 in a line.
 
 Then the words after "SPDX-license-identifier" are parsed as if they were an
@@ -245,7 +245,7 @@ def _parse_expression(text, licensing, expression_symbols, unknown_symbol):
     updated = expression.subs(old_expressions_subs)
 
     # collect known symbols and build substitution table: replace known symbols
-    # with a symbol wrapping a known license and unkown symbols with the
+    # with a symbol wrapping a known license and unknown symbols with the
     # unknown-spdx symbol
     symbols_table = {}
 
@@ -254,7 +254,7 @@ def _parse_expression(text, licensing, expression_symbols, unknown_symbol):
 
     for symbol in licensing.license_symbols(updated, unique=True, decompose=False):
         if isinstance(symbol, LicenseWithExceptionSymbol):
-            # we have two symbols:make a a new symbo, from that
+            # we have two symbols: make a new symbol from that
             new_with = LicenseWithExceptionSymbol(
                 license_symbol=_get_matching_symbol(symbol.license_symbol),
                 exception_symbol=_get_matching_symbol(symbol.exception_symbol)
@@ -344,7 +344,7 @@ def prepare_text(text):
     """
     Return a 2-tuple of (`prefix`, `expression_text`) built from `text` where
     the `expression_text` is prepared to be suitable for SPDX license identifier
-    detection stripped from leading and trailing punctuations, normalized for
+    detection stripped from leading and trailing punctuation, normalized for
     spaces and separateed from an SPDX-License-Identifier `prefix`.
     """
     if is_markup_text(text):
@@ -358,7 +358,7 @@ def prepare_text(text):
 def clean_text(text):
     """
     Return a text suitable for SPDX license identifier detection cleaned from
-    certain leading and trailing punctuations and normalized for spaces.
+    certain leading and trailing punctuation and normalized for spaces.
     """
     if is_markup_text(text):
         text = demarkup_text(text)
@@ -370,7 +370,7 @@ def clean_text(text):
 
     text = ' '.join(text.split())
     punctuation_spaces = "!\"#$%&'*,-./:;<=>?@[\\]^_`{|}~\t\r\n "
-    # remove significant expression punctuations in wrong spot: closing parens
+    # remove significant expression punctuation in wrong spot: closing parens
     # at head and opening parens or + at tail.
     leading_punctuation_spaces = punctuation_spaces + ")+"
     trailng_punctuation_spaces = punctuation_spaces + "("

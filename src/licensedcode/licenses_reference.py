@@ -150,7 +150,7 @@ def collect_references_from_packages(codebase):
                 license_keys.update(licensing.license_keys(expression))
 
     for rule in rules_by_identifier.values():
-        # TODO: consider using the expresion object directly instead
+        # TODO: consider using the expression object directly instead
         expo = rule.license_expression
         license_keys.update(licensing.license_keys(expo))
 
@@ -182,7 +182,7 @@ def collect_references_from_files(codebase):
         rules_by_identifier.update(rules_by_id)
 
     for rule in rules_by_identifier.values():
-        # TODO: consider using the expresion object directly instead
+        # TODO: consider using the expression object directly instead
         expo = rule.license_expression
         license_keys.update(licensing.license_keys(expo))
 

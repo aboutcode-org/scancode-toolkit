@@ -120,7 +120,7 @@ def multisets_intersector(qmset, imset):
     """
     Return the intersection of a query and index token ids multisets. For a
     token id present in both multisets, the intersection value is the smaller of
-    the occurence count in the query and rule for this token.
+    the occurrence count in the query and rule for this token.
     Optimized for defaultdicts.
     """
     # NOTE: Using a Counter is less efficient
@@ -139,7 +139,7 @@ def multisets_intersector(qmset, imset):
 
 def multiset_counter(mset):
     """
-    Return the sum of occurences of elements present in a token ids multiset,
+    Return the sum of occurrences of elements present in a token ids multiset,
     aka. the multiset cardinality.
     """
     return sum(mset.values())

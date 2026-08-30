@@ -21,7 +21,7 @@ def run_app_smoke_tests(app_archive):
     """
     Run basic "smoke" scancode tests for the app release archive `app_archive`
     """
-    # Extract app archive which has this namin pattern:
+    # Extract app archive which has this naming pattern:
     # scancode-toolki-21.1.21_py36-linux.tar.xz
     # or scancode-toolkit-21.1.21_py36-windows.zip
     # We split the name on "_" to extract the laft hand side which is name of

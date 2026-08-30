@@ -559,7 +559,7 @@ ALGO_BY_ID = {
 
 def get_digest_algo(rpm_tags):
     """
-    Return a string representing a digest algorightm given an ``rpm_tags``
+    Return a string representing a digest algorithm given an ``rpm_tags``
     RPMtags object
     """
     fda = rpm_tags.files_digest_algo

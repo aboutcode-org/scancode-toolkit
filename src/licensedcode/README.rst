@@ -102,7 +102,7 @@ Matching pipeline
 The matching pipeline consist of:
 
 - we start with matching the whole query at once against hashes on the whole text
-  looked up agains a mapping of hash to license rule. We exit if we have a match.
+  looked up against a mapping of hash to license rule. We exit if we have a match.
  
 - then we match the whole query for exact matches using an automaton (Aho-Corasick).
   We exit if we have a match.
@@ -129,7 +129,7 @@ The matching pipeline consist of:
     in this step is also made much smaller by the pre-matching done using sets.
     
 - finally all the collected matches are merged, refined and filtered to yield the
-  final results. The merging considers the ressemblance, containment and overlap
+  final results. The merging considers the resemblance, containment and overlap
   between scanned texts and the matched texts and several secondary factors.
   Filtering is based on the density and length of matches as well as the number of
   good or frequent tokens matched.

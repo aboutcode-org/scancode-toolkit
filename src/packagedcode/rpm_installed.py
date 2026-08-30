@@ -44,7 +44,7 @@ def parse_rpm_xmlish(location, datasource_id, package_type, package_only=False):
     if not location or not os.path.exists(location):
         return
 
-    # there are smetimes weird encodings. We avoid issues there
+    # there are sometimes weird encodings. We avoid issues there
     with open(location, 'rb') as f:
         rpms = as_unicode(f.read())
 
@@ -171,7 +171,7 @@ def build_package(rpm_tags, datasource_id, package_type, package_namespace=None,
 # and handlers MUST accept **kwargs as they also receive the whole current data
 # being processed so far as kwargs.
 
-# TODO: process lists in a more explict way
+# TODO: process lists in a more explicit way
 # Most handler do not use it, but parallel list handlers (such as for files) use
 # this to process such lists by accumulating data passed around
 
@@ -241,7 +241,7 @@ ALGO_BY_HEX_LEN = {
 
 def infer_digest_algo(digest):
     """
-    Given a ``digest`` string, return an inferred digest algorightm.
+    Given a ``digest`` string, return an inferred digest algorithm.
 
     We assume hex encoding for now (base64 with or without padding is common these days)
 

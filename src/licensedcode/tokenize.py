@@ -69,7 +69,7 @@ def query_lines(
         else:
             yield line_number, line.rstrip('\n') + '\n'
 
-# Split on whitespace and punctuations: keep only characters and numbers and +
+# Split on whitespace and punctuation: keep only characters and numbers and +
 # when in the middle or end of a word. Keeping the trailing + is important for
 # licenses name such as GPL2+. The use a double negation "not non word" meaning
 # "words" to define the character ranges
@@ -349,7 +349,7 @@ tokens_and_non_tokens = re.compile(_text_capture_pattern, re.UNICODE).finditer
 def matched_query_text_tokenizer(text):
     """
     Return an iterable of tokens and non-tokens punctuation from a unicode query
-    text keeping everything (including punctuations, line endings, etc.)
+    text keeping everything (including punctuation, line endings, etc.)
     The returned iterable contains 2-tuples of:
     - True if the string is a text token or False if this is not
       (such as punctuation, spaces, etc).

@@ -86,7 +86,7 @@ def update_with_dejacode_data(distribution):
 
 def update_with_dejacode_about_data(distribution):
     """
-    Update the Distribution `distribution` wiht ABOUT code data fetched from
+    Update the Distribution `distribution` with ABOUT code data fetched from
     DejaCode. Return True if data was updated.
     """
     package_data = get_package_data(distribution)

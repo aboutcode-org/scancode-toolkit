@@ -388,7 +388,7 @@ def parse_scm_connection(scm_connection):
 def get_datasource_id(package_type):
     """
     Get the corresponding `datasource_id` for the given
-    `package_type`. This is a seperate function to avoid
+    `package_type`. This is a separate function to avoid
     cyclic imports.
     """
     from packagedcode.maven import JavaJarManifestHandler

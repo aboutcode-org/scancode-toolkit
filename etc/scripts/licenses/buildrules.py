@@ -24,7 +24,7 @@ A script to generate license detection rules from a simple text data file.
 Note that the .yml data files are validated and the script will report
 errors and stop if a rule data is not valid.
 
-Typicaly validation errors include:
+Typically validation errors include:
 - missing license expressions
 - unknown license keys
 - presence of multiple is_license_xxx: flags (only one is allowed)

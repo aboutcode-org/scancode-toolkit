@@ -243,7 +243,7 @@ class DebianCopyrightFileInSourceHandler(BaseDebianCopyrightFileHandler):
             return cls.assign_package_to_resources(package, root, codebase, package_adder)
 
 
-# TODO: distiguish the cased of an installed package vs. the case of an extracted .deb
+# TODO: distinguish the case of an installed package vs. the case of an extracted .deb
 class DebianCopyrightFileInPackageHandler(BaseDebianCopyrightFileHandler):
     datasource_id = 'debian_copyright_in_package'
     description = 'Debian machine readable file in source'
@@ -1527,7 +1527,7 @@ class EnhancedDebianCopyright:
 
     @property
     def is_all_licenses_used(self):
-        # FIXME: If `lgpl` isn't used but there is `lgpl+` somwhere this
+        # FIXME: If `lgpl` isn't used but there is `lgpl+` somewhere this
         # wouldn't detect correctly. Could be parsed, normalized and the
         # individual components could be matched exactly.
 

@@ -142,7 +142,7 @@ This is a patch release with bugfixes and improvements::
   improvements by removing unnecessary regex substitutions.
   https://github.com/aboutcode-org/scancode-toolkit/issues/4063
 
-- Fix misc scancode doumentation related issues
+- Fix misc scancode documentation related issues
   https://github.com/aboutcode-org/scancode-toolkit/pull/4457
   https://github.com/aboutcode-org/scancode-toolkit/pull/4458
   https://github.com/aboutcode-org/scancode-toolkit/pull/4462
@@ -171,7 +171,7 @@ from ``4.0.0`` to ``4.1.0``. The changes in Output Data Structure are:
     directories. This is returned optionally with the ``--info`` plugin.
 
   - A new resource level attribute ``is_community`` is added, which is
-    True from commonly used files used for community/project maintainence.
+    True from commonly used files used for community/project maintenance.
     This is returned optionally with the ``--classify`` plugin.
 
 These are the details for the most important changes introduced::
@@ -384,7 +384,7 @@ v32.2.1 - 2024-07-02
 - Add support for poetry packages, with poetry specific pyproject.toml
   support, poetry.lock and package assembly support. Also add support
   for parsing and storing resolved packages and dependency relationships
-  required to statically resolve poetry dependecy graphs.
+  required to statically resolve poetry dependency graphs.
   See https://github.com/nexB/scancode-toolkit/issues/2109
 
 - Add support for pyproject.toml files in python projects.
@@ -422,7 +422,7 @@ v32.2.0 - 2024-06-19
   - Fix a bug in dependency parsing (we were not returning any dependencies)
   - Also support getting dependency versions from workspace
   - Support more attributes from cargo
-  - Better handle workspace data thorugh extra_data attribute
+  - Better handle workspace data through extra_data attribute
   See https://github.com/nexB/scancode-toolkit/pull/3783
 
 - We now support parsing the Swift manifest JSON dump and the
@@ -499,7 +499,7 @@ Changes in Output Data Structure:
     - in package ``license_detections`` and ``other_license_detections``
     - ``matches`` for ``license_detections`` everywhere
 
-  - Adds all rule atrribute level info in codebase level ``todo``
+  - Adds all rule attribute level info in codebase level ``todo``
     data, to assist in review. This includes length, text, notes,
     referenced_filenames, and the boolean attributes (like
     is_license_notice, is_license_intro etc, as applicable).
@@ -859,7 +859,7 @@ License detection:
   license ``key`` of a matched license expression. We now report instead one
   single match for each matched license expression, and list the license keys
   as a ``licenses`` attribute. This avoids data duplication.
-  Inside each match, we list each match and matched rule attributred directly
+  Inside each match, we list each match and matched rule attributed directly
   avoiding nesting. See `license updates doc <https://scancode-toolkit.readthedocs.io/en/latest/reference/license-detection-reference.html#licensematch-result-data>`_
   for examples and details.
 
@@ -885,7 +885,7 @@ License detection:
   - There is an ``--additional-directory`` option with the ``scancode-reindex-licenses``
     command to add the licenses from a directory.
 
-  - There is also a ``--only-builtin`` option to use ony builtin licenses
+  - There is also a ``--only-builtin`` option to use only builtin licenses
     ignoring any additional license plugins.
 
   - See https://github.com/nexB/scancode-toolkit/issues/480 for more details.
@@ -931,7 +931,7 @@ v31.2.6 - 2023-04-25
 
 This is a minor hotfix release.
 
-This fix a crash when parsing a .deb Dbeian package filename
+This fix a crash when parsing a .deb Debian package filename
 reported in https://github.com/nexB/scancode-toolkit/issues/3259
 
 
@@ -1049,7 +1049,7 @@ Important API changes:
     instances that can be aggregating data from multiple manifests.
 
   - There is a a new top-level "dependencies" attribute that contains each
-    dependency instance, these can be standalone or releated to a package.
+    dependency instance, these can be standalone or related to a package.
     These contain a new "extra_data" object.
 
   - There is a new resource-level attribute "for_packages" which refers to
@@ -1079,9 +1079,9 @@ Important API changes:
 - ``DatafileHandler.assemble()``, ``DatafileHandler.assemble_from_many()``, and
   the other ``.assemble()`` methods from the other Package handlers from
   packagedcode, have been updated to yield Package items before Dependency or
-  Resource items. This is particulary important in the case where we are calling
+  Resource items. This is particularly important in the case where we are calling
   the ``assemble()`` method outside of the scancode-toolkit context, where we
-  need to ensure that a Package exists before we assocate a Resource or
+  need to ensure that a Package exists before we associate a Resource or
   Dependency to it.
 
 Copyright detection:
@@ -1417,7 +1417,7 @@ v30.0.0 - 2021-09-23
 This is a major release with new features, and several bug fixes and
 improvements including major updates to the license detection.
 
-We have droped using calendar-based versions and are now switched back to semver
+We have dropped using calendar-based versions and are now switched back to semver
 versioning. To ensure that there is no ambiguity, the new major version has been
 updated from 21 to 30. The primary reason is that calver was not helping
 integrators to track major version changes like semver does.
@@ -1984,7 +1984,7 @@ v3.2.0rc1 (2020-09-08)
  - Improve license detection #1999 - Bryan Sutula
  - Correct CC0 license #1984 - Carmen Bianca Bakker
  - Add documentation for the usage of `cpp_includes` plugin - Chin Yeung Li
- - Improve andling of npm package-lock.json #1993 - Chin Yeung Li
+ - Improve handling of npm package-lock.json #1993 - Chin Yeung Li
  - Add new license detection rules - Gaupeng
  - Improve documentation - Issei Horie
  - Improve consolidation plugin - Jono Yang @JonoYang
@@ -2071,7 +2071,7 @@ Other features and fixes:
 v3.1.0 (2019-08-12)
 -------------------
 
- - Add partial suport for Python 3.6+ #295 @Abhishek-Dev09
+ - Add partial support for Python 3.6+ #295 @Abhishek-Dev09
  - Add plugin to collect dwarf references #1167 @licodeli
  - Add fingerprint plugin #1651 @arnav-mandal1234
  - Add summary and consolidation plugin #1673
@@ -2252,8 +2252,8 @@ v2.9.6 (2018-10-25)
 
  - Add declared license normalization #1092
  - Add new and improved license rules
- - Add mising and clean up ABOUT files for all embedded third-party libraries
- - Improve npm package.json handling (better keuword support)
+ - Add missing and clean up ABOUT files for all embedded third-party libraries
+ - Improve npm package.json handling (better keyword support)
  - Update thirdparty libraries #1224
 
 Credits: Many thanks to everyone that contributed to this release with code and bug reports
@@ -2332,7 +2332,7 @@ Misc:
  - Add facet, classification and summarizer plugins #357
  - Fix file counts #1055
  - Fix corrupted license cache error
- - Upgrade all thridparty libraries #1070
+ - Upgrade all third party libraries #1070
  - De-vendor prebuilt binaries to ease packaging for Linux distros #469
 
 Credits: Many thanks to everyone that contributed to this release with code and bug reports
@@ -2473,8 +2473,8 @@ Licenses:
    words compared to the number of words in the matched rule.
  - The license cache is not checked anymore for consistency once created which
    improved startup times. (unless you are using a Git checkout and you are
-   developping with a SCANCODE_DEV_MODE tag file present)
- - License catagory names have been improved
+   developing with a SCANCODE_DEV_MODE tag file present)
+ - License category names have been improved
 
 Copyrights:
  - Copyright detection in binary files has been improved
@@ -2497,7 +2497,7 @@ Misc:
  - Move essential configuration to a scancode_config.py module
  - Only read a few pages from PDF files by default
  - Improve handling of files with weird characters in their names on all OSses
- - Improve detection of archive vs. comrpessed files
+ - Improve detection of archive vs. compressed files
  - Make all copyright tests data driven using YAML files like for license tests
 
 

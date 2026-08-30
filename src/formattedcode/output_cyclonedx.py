@@ -513,7 +513,7 @@ class CycloneDxDependency(ToDictMixin):
         # holds a mapping of purl -> list(purl)
         dependencies_by_dependent = defaultdict(set)
 
-        # ist of error messages for a given "ref"
+        # list of error messages for a given "ref"
         warnings_by_dependent = defaultdict(list)
 
         for dependency in package.get('dependencies', []):

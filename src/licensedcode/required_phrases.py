@@ -334,7 +334,7 @@ def get_updatable_rules_by_expression(license_expression=None, simple_expression
     """
     Return a mapping of rules_by_expression, filtered for an optional ``license_expression``.
     The rules are suitable to receive required phrase updates
-    If simple_expression is True, only consider lincense rules with a single license key.
+    If simple_expression is True, only consider license rules with a single license key.
     """
     rules_by_expression = get_base_rules_by_expression(license_expression)
 
@@ -580,7 +580,7 @@ def update_rules_using_license_attributes(
 
     licenses_by_key = get_licenses_db()
 
-    # license expression is alway  a single key here
+    # license expression is always a single key here
     for license_key, rules in rules_by_expression.items():
         licence_object = licenses_by_key[license_key]
         if verbose:
@@ -855,7 +855,7 @@ def generate_new_required_phrase_rules(
     update_only=False,
 ):
     """
-    Create new rules created from collecting unique required phrases accross all rules.
+    Create new rules created from collecting unique required phrases across all rules.
 
     As a side effect, also update existing rules matched to a required phrase text with the
     "is_required_phrase" flag.

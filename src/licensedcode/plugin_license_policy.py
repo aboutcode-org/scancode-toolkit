@@ -64,7 +64,7 @@ def validate_policy_path(ctx, param, value):
 @post_scan_impl
 class LicensePolicy(PostScanPlugin):
     """
-    Add the "license_policy" attribute to a resouce if it contains a
+    Add the "license_policy" attribute to a resource if it contains a
     detected license key that is found in the license_policy.yml file
     """
 
