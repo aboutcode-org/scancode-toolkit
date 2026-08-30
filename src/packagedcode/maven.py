@@ -7,6 +7,9 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import io
+import json
+
 import logging
 import os.path
 from pprint import pformat
@@ -1529,3 +1532,213 @@ def get_extension(packaging):
         return packaging
     else:
         return 'jar'
+
+class GradleModuleMetadataHandler(MavenBasePackageHandler):
+    """
+    Handler for Gradle Module Metadata files (.module).
+    Specification: https://github.com/gradle/gradle/blob/master/platforms/documentation/docs/src/docs/design/gradle-module-metadata-latest-specification.md
+    Example: https://repo1.maven.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.module
+    """
+
+    datasource_id = 'gradle_module_metadata'
+    path_patterns = ('*.module',)
+    default_package_type = 'maven'
+    default_primary_language = 'Java'
+    description = 'Gradle Module Metadata'
+    documentation_url = 'https://github.com/gradle/gradle/blob/master/platforms/documentation/docs/src/docs/design/gradle-module-metadata-latest-specification.md'
+
+    @classmethod
+    def parse(cls, location, package_only=False, base_url='https://repo1.maven.org/maven2'):
+        """
+        Parse a Gradle Module Metadata file and yield PackageData.
+        """
+        with io.open(location, encoding='utf-8') as f:
+            module_data = json.load(f)
+
+        if TRACE:
+            logger.debug(f'GradleModuleMetadataHandler.parse: module_data: {module_data!r}')
+
+        component = module_data.get('component', {})
+        namespace = component.get('group')
+        name = component.get('module')
+        version = component.get('version')
+
+        if not (namespace and name and version):
+            if TRACE:
+                logger.debug(
+                    f'GradleModuleMetadataHandler.parse: Incomplete GAV: '
+                    f'"{namespace}":"{name}":"{version}"'
+                )
+            return
+
+        format_version = module_data.get('formatVersion')
+
+        created_by = module_data.get('createdBy', {})
+        gradle_info = created_by.get('gradle', {})
+        gradle_version = gradle_info.get('version')
+
+        component_attributes = component.get('attributes', {})
+        gradle_status = component_attributes.get('org.gradle.status')
+
+        variants = module_data.get('variants', [])
+        primary_file_data = cls._extract_primary_file_data(variants, name, version)
+        variants_data = cls._extract_variants_metadata(variants)
+
+        extra_data = {
+            'format_version': format_version,
+            'gradle_version': gradle_version,
+            'gradle_status': gradle_status,
+            'component_attributes': component_attributes,
+            'variants': variants_data,
+        }
+
+        # Remove empty values
+        extra_data = {k: v for k, v in extra_data.items() if v}
+
+        urls = cls._build_urls(namespace, name, version, base_url)
+        description = cls._build_description(name, version, gradle_status)
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            namespace=namespace,
+            name=name,
+            version=version,
+            description=description,
+            extra_data=extra_data,
+            **urls,
+            **primary_file_data,
+        )
+
+        yield models.PackageData.from_data(package_data, package_only)
+
+    @classmethod
+    def _extract_primary_file_data(cls, variants, name, version):
+        """
+        Extract checksum and size information from the primary JAR file.
+        Preference order:
+        1. apiElements
+        2. runtimeElements
+        3. any variant containing the primary JAR
+        """
+        primary_jar_name = f'{name}-{version}.jar'
+
+        def iter_files(variants):
+            for variant in variants:
+                for file_info in variant.get('files', []) or []:
+                    yield variant.get('name'), file_info
+
+        # Index files by variant name
+        files_by_variant = {}
+        for variant_name, file_info in iter_files(variants):
+            if file_info.get('name') == primary_jar_name:
+                files_by_variant.setdefault(variant_name, []).append(file_info)
+
+        # Try preferred variants first
+        for preferred in ('apiElements', 'runtimeElements'):
+            for file_info in files_by_variant.get(preferred, []):
+                data = cls._extract_file_checksums(file_info)
+                if data:
+                    return data
+
+        # Fallback to any variant
+        for files in files_by_variant.values():
+            for file_info in files:
+                data = cls._extract_file_checksums(file_info)
+                if data:
+                    return data
+
+        return {}
+
+    @classmethod
+    def _extract_file_checksums(cls, file_info):
+        """
+        Extract checksum and size information from a file info dictionary.
+        """
+        checksums = {}
+        checksum_fields = ['sha1', 'sha256', 'sha512', 'md5', 'size']
+
+        for field in checksum_fields:
+            if file_info.get(field):
+                checksums[field] = file_info[field]
+
+        return checksums
+
+    @classmethod
+    def _extract_variants_metadata(cls, variants):
+        """
+        Extract non-semantic metadata about each variant.
+        """
+        variants_metadata = []
+        for variant in variants:
+            variant_info = {
+                'name': variant.get('name'),
+            }
+
+            attributes = variant.get('attributes')
+            if attributes:
+                variant_info['attributes'] = attributes
+
+            files = variant.get('files') or []
+            if files:
+                variant_info['files'] = [
+                    {
+                        'name': f.get('name'),
+                        'url': f.get('url'),
+                        'size': f.get('size'),
+                    }
+                    for f in files
+                ]
+
+            variants_metadata.append(variant_info)
+
+        return variants_metadata
+
+    @classmethod
+    def _build_urls(cls, namespace, name, version, base_url):
+        """
+        Build repository URLs for the package.
+        """
+        # Build repository path
+        namespace_path = namespace.replace('.', '/')
+        repo_path = f'{namespace_path}/{name}/{version}'
+
+        return {
+            'repository_homepage_url': f'{base_url}/{repo_path}/',
+            'repository_download_url': f'{base_url}/{repo_path}/{name}-{version}.jar',
+            'api_data_url': f'{base_url}/{repo_path}/{name}-{version}.module',
+        }
+
+    @classmethod
+    def _build_description(cls, name, version, gradle_status):
+        """
+        Build a description string for the package.
+        """
+        desc_parts = [f'{name}']
+        if version:
+            desc_parts.append(f'version {version}')
+        if gradle_status:
+            desc_parts.append(f'(status: {gradle_status})')
+
+        return ' '.join(desc_parts)
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
+        """
+        Assign package to resources in the codebase.
+        """
+        if resource.path.endswith('.module'):
+            return models.DatafileHandler.assign_package_to_parent_tree(
+                package,
+                resource,
+                codebase,
+                package_adder
+            )
+
+        return models.DatafileHandler.assign_package_to_resources(
+            package,
+            resource=resource,
+            codebase=codebase,
+            package_adder=package_adder,
+        )
