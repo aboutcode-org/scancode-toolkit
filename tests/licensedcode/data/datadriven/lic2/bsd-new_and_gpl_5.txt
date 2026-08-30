@@ -74,13 +74,13 @@ fp_scan:
 | first two instruction words are kept in %d2
 	getuser.l (%a0)+,%d2,fp_err_ua1,%a0
 	fp_put_pc %a0
-fp_decode_cond:				| seperate conditional instr
+fp_decode_cond:				| separate conditional instr
 	fp_decode_cond_instr_type
 
 	.long	fp_decode_move, fp_fscc
 	.long	fp_fbccw, fp_fbccl
 
-fp_decode_move:				| seperate move instr
+fp_decode_move:				| separate move instr
 	fp_decode_move_instr_type
 
 	.long	fp_fgen_fp, fp_ill

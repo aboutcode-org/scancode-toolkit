@@ -36,7 +36,7 @@ fonts feature known as @font-face [5]. As Dave's very first typeface
 design, the typeface has many faults, yet he asserts it achieves 
 his goal of improving readability on this device.
 
-The regular member of the family has had recieved the most focus, and a bold
+The regular member of the family has had received the most focus, and a bold
 family has been developed quickly to provide better somewhat better results
 that an operating system's automatic bolding. In the case of oblique, we
 decided to rely on the system generated variant for now. An actual italics
