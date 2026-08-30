@@ -763,6 +763,13 @@ Package type:  pypi
   path_patterns:    '*pyproject.toml'
 --------------------------------------------
 Package type:  pypi
+  datasource_id:     pypi_pylock_toml
+  documentation URL: https://packaging.python.org/en/latest/specifications/pylock-toml/
+  primary language:  Python
+  description:       Python pylock.toml lockfile (PEP 751)
+  path_patterns:    '*pylock.toml'
+--------------------------------------------
+Package type:  pypi
   datasource_id:     pypi_pyproject_toml
   documentation URL: https://packaging.python.org/en/latest/specifications/pyproject-toml/
   primary language:  Python
