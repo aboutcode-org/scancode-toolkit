@@ -209,7 +209,11 @@ class Query(object):
         or junk-only lines.
         Line numbers start at ``start_line`` which is 1-based by default.
         """
-        assert (location or query_string) and idx
+        if not ((location or query_string) and idx):
+        raise ValueError(
+        "Either location or query_string must be provided, and idx must be set"
+    )
+
 
         self.location = location
         self.query_string = query_string
