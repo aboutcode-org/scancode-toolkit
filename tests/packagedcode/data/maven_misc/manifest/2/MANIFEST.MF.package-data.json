@@ -15,5 +15,40 @@
     }
   ],
   "vcs_url": null,
-  "code_view_url": null
+  "code_view_url": null,
+  "dependencies": [
+    {
+      "purl": "pkg:osgi/org.eclipse.ui",
+      "extracted_requirement": null,
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.eclipse.core.runtime",
+      "extracted_requirement": null,
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/jRegistryKey",
+      "extracted_requirement": "[1.4.5,2.0.0)",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    }
+  ]
 }

@@ -173,6 +173,32 @@ class JavaOSGiManifestHandler(JavaJarManifestHandler):
     default_package_type = 'osgi'
 
 
+class OsgiBndHandler(MavenBasePackageHandler):
+    datasource_id = 'osgi_bnd'
+    path_patterns = ('*.bnd',)
+    default_package_type = 'osgi'
+    default_primary_language = 'Java'
+    description = 'OSGi bnd file'
+    documentation_url = 'https://bnd.bndtools.org/chapters/800-headers.html'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        import javaproperties
+        from packagedcode.jar_manifest import get_normalized_java_manifest_data
+        with open(location) as props:
+            properties = javaproperties.load(props) or {}
+            if TRACE:
+                logger.debug(f'OsgiBndHandler.parse: properties: {properties!r}')
+            if properties:
+                manifest_data = get_normalized_java_manifest_data(properties)
+                if manifest_data:
+                    manifest_data['datasource_id'] = cls.datasource_id
+                    # get_normalized_java_manifest_data might set package_type
+                    # to maven or jar, but for bnd files it must be osgi
+                    manifest_data['type'] = cls.default_package_type
+                    yield models.PackageData.from_data(manifest_data, package_only)
+
+
 class MavenPomXmlHandler(MavenBasePackageHandler):
     datasource_id = 'maven_pom'
     # NOTE: Maven 1.x used project.xml
