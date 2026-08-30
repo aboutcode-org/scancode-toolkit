@@ -15,6 +15,7 @@ from packagedcode import build
 from packagedcode import build_gradle
 from packagedcode import cargo
 from packagedcode import chef
+from packagedcode import componentjs
 from packagedcode import debian
 from packagedcode import debian_copyright
 from packagedcode import distro
@@ -81,7 +82,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     conan.ConanDataHandler,
 
     cran.CranDescriptionFileHandler,
-
+    componentjs.ComponentJSONMetadataHandler,
     debian_copyright.DebianCopyrightFileInPackageHandler,
     debian_copyright.StandaloneDebianCopyrightFileHandler,
     debian.DebianDscFileHandler,
