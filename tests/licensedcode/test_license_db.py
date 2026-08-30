@@ -45,6 +45,22 @@ class LicenseDbTest(FileBasedTesting):
         expected_license_index_json = self.get_test_loc('index.json-expected.json')
         load_both_and_check_json(expected_license_index_json, license_index_json, regen=REGEN_TEST_FIXTURES)
 
+    def test_generate_license_dump_with_invalid_yaml_raises_exception(self):
+        import saneyaml
+        from unittest.mock import patch
+        
+        licenses = self.get_test_loc('licenses')
+        licenses_dump = self.get_temp_dir()
+
+        def mock_dump(*args, **kwargs):
+            return "invalid: yaml: :"
+            
+        with patch.object(saneyaml, "dump", side_effect=mock_dump):
+            with pytest.raises(ValueError) as exc_info:
+                generate(build_location=licenses_dump, licenses_data_dir=licenses, test=True)
+            
+        assert "Unable to parse generated YAML for index.yml" in str(exc_info.value) or "Unable to parse generated YAML for license" in str(exc_info.value)
+
 class LicenseDBScanTest(FileDrivenTesting):
 
     @pytest.mark.scanslow
