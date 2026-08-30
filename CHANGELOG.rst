@@ -152,6 +152,9 @@ This is a patch release with bugfixes and improvements::
   https://github.com/aboutcode-org/scancode-toolkit/pull/4476
 
 
+- Progress bar now shows length. You can estimate the duration now.
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/3342
+
 v32.4.0 - 2025-06-26
 --------------------
 
