@@ -1,0 +1,31 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.112.0/containers/python-3
+{
+	"name": "ScanCode-Toolkit",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+	"settings": {
+		"puppet.installType": "pdk",
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.languageServer": "Pylance",
+		"python.linting.enabled": true,
+		"python.formatting.provider": "black",
+		"python.unitTest.pyTestEnabled": true,
+		"editor.formatOnSave": true,
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"shardulm94.trailing-spaces",
+		"formulahendry.code-runner",
+		"aaron-bond.better-comments",
+		"eamodio.gitlens",
+		"wholroyd.jinja",
+		// "xdebug.php-pack",
+		// "puppet.puppet-vscode",
+	],
+	// "postCreateCommand": "./configure --dev",
+	"postStartCommand": "pip install -r requirements.txt -r requirements-dev.txt"
+}
