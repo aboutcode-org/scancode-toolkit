@@ -132,6 +132,21 @@ To set up ScanCode for local development:
    libraries (from the `thirdparty/ directory`), setup the paths, etc.
    See https://virtualenv.pypa.io/en/latest/ for more details.
 
+   .. warning::
+
+   **Apple Silicon (M1/M2/M3/M4) users**
+
+   Due to missing ARM64 wheels for some native dependencies, the contributor
+   setup may fail when using ARM-native Python.
+
+   Use an x86_64 Python installation under Rosetta and configure ScanCode
+   to use it explicitly before running ``./configure --dev``.
+
+   See the Homebrew and Python documentation for installing x86_64 Python
+   under Rosetta, and issue #3205 for more context on Apple Silicon
+   compatibility.
+
+
    Run this command to configure ScanCode::
 
         ./configure --dev
