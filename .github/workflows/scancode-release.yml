@@ -403,15 +403,7 @@ jobs:
           path: dist
 
       - name: test install app archive
-        run: |
-          for f in `find dist -type f -name "*.zip"`; \
-            do \
-                unzip file.zip $f; \
-            done
-          for f in `find dist -type f -name "*.tar.gz"`; \
-            do \
-                python etc/release/scancode_release_tests.py $f; \
-            done
+        run: python etc/release/scancode_release_tests.py --directory dist
 
 
   smoke_test_install_and_run_app_archives_on_macos:
@@ -454,15 +446,7 @@ jobs:
           path: dist
 
       - name: test install app archive
-        run: |
-          for f in `find dist -type f -name "*.zip"`; \
-            do \
-                unzip file.zip $f; \
-            done
-          for f in `find dist -type f -name "*.tar.gz"`; \
-            do \
-                python etc/release/scancode_release_tests.py $f; \
-            done
+        run: python etc/release/scancode_release_tests.py --directory dist
 
 
   smoke_test_install_and_run_app_archives_on_windows:
@@ -501,8 +485,7 @@ jobs:
           path: dist
 
       - name: test install app archive
-        run: |
-          for %%F in (dist/*.zip) do python etc/release/scancode_release_tests.py dist/%%F
+        run: python etc/release/scancode_release_tests.py --directory dist
 
   publish_to_gh_release:
     permissions:
