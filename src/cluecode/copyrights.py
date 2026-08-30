@@ -2385,6 +2385,10 @@ PATTERNS = [
     # catch all other as Nouns
     ############################################################################
 
+    # Dot-separated proper names like Frankie.Chu (used as author handles)
+    # Changes made by Aditya issue no. #4229 regarding to Author detection
+    (r'^[A-Z][a-z]+\.[A-Z][a-z]+$', 'NAME'),
+
     # nouns (default)
     (r'.+', 'NN'),
 ]
@@ -4503,6 +4507,11 @@ remove_ascii_decorations = re.compile(r'[\-_\*!]{2,}|/{3,}|[=!]{4,}').sub
 
 fold_consecutive_quotes = re.compile(r"'\"{2,}").sub
 
+# normalize "Author:" (and variants) not followed by a space so that
+# "Author:Name" becomes "Author: Name" and can be properly tokenized.
+# Changes made by Aditya issue no. #4229 regarding to Author detection
+normalize_author_colon = re.compile(r'(?i)\b(authors?)\s*:\s*(?=\S)').sub
+
 # less common rem comment line prefix in dos
 # less common dnl comment line prefix in autotools am/in
 remove_weird_comment_markers = re.compile(r'^(rem|\@rem|dnl)\s+').sub
@@ -4558,6 +4567,12 @@ def prepare_text_line(line):
     line = remove_code_comment_markers(line)
     if TRACE_TOK:
         logger_debug('    prepare_text_line: after remove_code_comment_markers: ' + repr(line))
+
+    # normalize "Author:Name" to "Author: Name"
+    # Changes made by Aditya issue no. #4229 regarding to Author detection
+    line = normalize_author_colon(r'\1: ', line)
+    if TRACE_TOK:
+        logger_debug('    prepare_text_line: after normalize_author_colon: ' + repr(line))
 
     line = (line
         # C and C++ style comment markers
