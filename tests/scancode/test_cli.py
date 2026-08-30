@@ -791,8 +791,20 @@ def test_scan_with_timing_json_return_timings_for_each_scanner():
     check_timings(expected, file_results)
 
 
-@pytest.mark.scanslow
-@pytest.mark.skipif(on_windows, reason='Somehow this test fails for now on Python 3')
+def test_scan_without_timing_flag_does_not_collect_scan_timings():
+    test_dir = test_env.extract_test_tar('timing/basic.tgz')
+    result_file = test_env.get_temp_file('json')
+    args = ['--email', '--url', '--license', '--copyright', '--info',
+            '--package', '--json', result_file, test_dir]
+    run_scan_click(args)
+    file_results = load_json_result(result_file)['files']
+    for res in file_results:
+        if res['type'] == 'file':
+            assert not res.get('scan_timings'), (
+                'scan_timings should be empty when --timing is not passed'
+            )
+
+            
 def test_scan_with_timing_jsonpp_return_timings_for_each_scanner():
     test_dir = test_env.extract_test_tar('timing/basic.tgz')
     result_file = test_env.get_temp_file('json')

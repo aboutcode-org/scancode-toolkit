@@ -1001,7 +1001,7 @@ def run_scan(
             codebase=codebase,
             processes=processes,
             timeout=timeout,
-            timing=timeout,
+            timing=timing,
             quiet=quiet,
             verbose=verbose,
             kwargs=requested_options,
