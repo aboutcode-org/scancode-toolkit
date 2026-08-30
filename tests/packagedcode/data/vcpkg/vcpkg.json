@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "fmt",
+  "version-string": "8.1.1",
+  "port-version": 1,
+  "description": "Formatting library for C++",
+  "homepage": "https://github.com/fmtlib/fmt",
+  "license": "MIT",
+  "maintainers": [
+    "fmt maintainers <fmt@example.com>"
+  ],
+  "dependencies": [
+    "zlib",
+    {
+      "name": "boost-system",
+      "version>=": "1.75.0"
+    }
+  ],
+  "features": {
+    "header-only": {
+      "description": "Header-only version of fmt",
+      "dependencies": [
+        "boost-core"
+      ]
+    }
+  }
+}
