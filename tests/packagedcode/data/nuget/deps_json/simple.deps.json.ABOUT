@@ -1,0 +1,2 @@
+about_resource: simple.deps.json
+notes: Minimal hand-crafted .deps.json fixture used to cover parser edge cases that are awkward to isolate from larger real-world files.
