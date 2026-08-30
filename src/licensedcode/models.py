@@ -499,7 +499,7 @@ class License:
         content = get_yaml_safe_text(content)
         output = dumps_frontmatter(content=content, metadata=metadata)
         license_file = self.license_file(licenses_data_dir=licenses_data_dir)
-        with open(license_file, 'w') as of:
+        with open(license_file, 'w', encoding='utf-8') as of:
             of.write(output)
 
     def load(self, license_file, check_consistency=True):
@@ -2419,7 +2419,7 @@ class Rule(BasicRule):
             metadata.update(kwargs)
         content = self.text
         output = dumps_frontmatter(content=content, metadata=metadata)
-        with open(rule_file, 'w') as of:
+        with open(rule_file, 'w', encoding='utf-8') as of:
             of.write(output)
 
     def load(self, rule_file, with_checks=True):
