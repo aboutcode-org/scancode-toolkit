@@ -68,6 +68,7 @@
     "other_license_expression_spdx": null,
     "other_license_detections": [],
     "extracted_license_statement": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm",
+    "license_file_references": [],
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
