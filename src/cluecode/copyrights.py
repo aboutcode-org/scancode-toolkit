@@ -2981,6 +2981,9 @@ GRAMMAR = """
 
     COPYRIGHT: {<COPY> <COPY> <NNP>+}        #1800
 
+    # Copyright holder without year (e.g., Copyright The OpenTelemetry Authors)
+    COPYRIGHT: {<COPY>+ <NNP|NAME> <NNP|NAME|COMPANY>+ <AUTHS>?}
+
     # Copyright (c) 2003+ Evgeniy Polyakov <johnpol@2ka.mxt.ru>
     COPYRIGHT: {<COPY> <COPY> <YR-PLUS> <NAME|NAME-EMAIL|NAME-YEAR>+}        #1801
 
