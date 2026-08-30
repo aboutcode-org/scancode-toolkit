@@ -2,6 +2,10 @@
 license_expression: umich-merit
 is_license_text: yes
 minimum_coverage: 95
+ignorable_copyrights:
+    - (c) The Regents of the University of Michigan and Merit Network, Inc. 1992, 1993, 1994, 1995
+ignorable_holders:
+    - The Regents of the University of Michigan and Merit Network, Inc.
 ---
 
 [C] The Regents of the University of Michigan and Merit Network, Inc. 1992,
