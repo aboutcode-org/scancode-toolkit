@@ -102,7 +102,6 @@ if TRACE or TRACE_QR or TRACE_QR_BREAK or TRACE_STOP_AND_UNKNOWN:
 # on a single line (e.g. minified JS or CSS).
 MAX_TOKEN_PER_LINE = 25
 
-
 # Break quary in runs if there are `LINES_THRESHOLD` number of empty
 # or non-legalese/junk lines
 LINES_THRESHOLD = 4
@@ -248,11 +247,15 @@ class Query(object):
         # TODO: consider using an intbitset
         self.shorts_and_digits_pos = set()
 
-        # list of the three SPDX-License-Identifier tokens to identify to detect
+        # list of the base SPDX-License-Identifier tokens to identify and detect
         # a line for SPDX id matching.
         # note: this will not match anything if the index is not properly set
         dic_get = idx.dictionary.get
         spdxid = [dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')]
+
+        # "SPDX Short identifier" is also an unfortunate thing in the wild
+        # both with and without dash
+        spdxid2 = [dic_get(u'spdx'), dic_get(u'short'), dic_get(u'identifier')]
 
         # There's also other spdx license identifiers like NuGet license URLs
         # Like: `https://licenses.nuget.org/(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0+)`
@@ -260,7 +263,7 @@ class Query(object):
 
         # None, None None: this is mostly a possible issue in test mode
         self.spdx_lid_token_ids = [
-            x for x in [spdxid, nuget_spdx_id, ] if x != [None, None, None]
+            x for x in [spdxid, nuget_spdx_id, spdxid2] if None not in x
         ]
 
         # list of tuple (original line text, start known pos, end known pos) for
@@ -497,7 +500,7 @@ class Query(object):
                 spdx_start_offset = 2
 
             if spdx_start_offset is not None:
-                    
+
                 # keep the line, start/end known pos for SPDX matching
                 spdx_prefix, spdx_expression = split_spdx_lid(line)
                 spdx_text = ''.join([spdx_prefix or '', spdx_expression])
