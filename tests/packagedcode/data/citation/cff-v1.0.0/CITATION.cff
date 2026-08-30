@@ -1,0 +1,7 @@
+cff-version: 1.0.0
+title: Backward Compatibility Test
+message: "Testing older CFF version 1.0.0"
+authors:
+  - family-names: Legacy
+    given-names: Author
+version: 0.1.0
