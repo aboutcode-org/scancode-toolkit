@@ -139,73 +139,71 @@ class BasePodHandler(models.DatafileHandler):
         """
         if codebase.has_single_resource:
             yield from models.DatafileHandler.assemble(package_data, resource, codebase)
-        else:
-            # do we have more than one podspec?
-            parent = resource.parent(codebase)
-            sibling_podspecs = [
-                r for r in parent.children(codebase)
-                if r.name.endswith('.podspec')
-            ]
+            return
 
-            siblings_counts = len(sibling_podspecs)
-            has_single_podspec = siblings_counts == 1
-            has_multiple_podspec = siblings_counts > 1
+        # do we have more than one podspec?
+        parent = resource.parent(codebase)
+        sibling_podspecs = [
+            r for r in parent.children(codebase)
+            if r.name.endswith('.podspec')
+        ]
 
-            datafile_name_patterns = (
-                'Podfile.lock',
-                'Podfile',
+        siblings_counts = len(sibling_podspecs)
+        has_single_podspec = siblings_counts == 1
+        has_multiple_podspec = siblings_counts > 1
+
+        datafile_path_patterns = (
+            PodfileLockHandler.path_patterns +
+            PodfileHandler.path_patterns
+        )
+        if has_single_podspec:
+            # we can treat all podfile/spec as being for one package
+            podspec_path_patterns = (f"*{sibling_podspecs[0].name}",)
+            yield from cls.assemble_from_many_datafiles(
+                datafile_path_patterns=podspec_path_patterns + datafile_path_patterns,
+                resource=parent,
+                codebase=codebase,
+                package_adder=package_adder,
             )
 
-            if has_single_podspec:
-                # we can treat all podfile/spec as being for one package
-                datafile_name_patterns = (sibling_podspecs[0].name,) + datafile_name_patterns
+        elif has_multiple_podspec:
+            # treat each of podspec and podfile alone without meraging
+            # as we cannot determine easily which podfile is for which
+            # podspec
+            podspec = sibling_podspecs.pop()
+            podspec_path_patterns = (f"*{podspec.name}",)
+            yield from cls.assemble_from_many_datafiles(
+                datafile_path_patterns=podspec_path_patterns + datafile_path_patterns,
+                resource=parent,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
 
-                yield from models.DatafileHandler.assemble_from_many_datafiles(
-                    datafile_name_patterns=datafile_name_patterns,
-                    directory=parent,
-                    codebase=codebase,
-                    package_adder=package_adder,
-                )
+            for resource in sibling_podspecs:
+                datafile_path = resource.path
+                for package_data in resource.package_data:
+                    package_data = models.PackageData.from_dict(package_data)
+                    package = models.Package.from_package_data(
+                        package_data=package_data,
+                        datafile_path=datafile_path,
+                    )
+                    cls.assign_package_to_resources(
+                        package=package,
+                        resource=resource,
+                        codebase=codebase,
+                        package_adder=package_adder,
+                    )
+                    yield package
+                yield resource
 
-            elif has_multiple_podspec:
-                # treat each of podspec and podfile alone without meraging
-                # as we cannot determine easily which podfile is for which
-                # podspec
-                podspec = sibling_podspecs.pop()
-                datafile_name_patterns = (podspec.name,) + datafile_name_patterns
-
-                yield from models.DatafileHandler.assemble_from_many_datafiles(
-                    datafile_name_patterns=datafile_name_patterns,
-                    directory=parent,
-                    codebase=codebase,
-                    package_adder=package_adder,
-                )
-
-                for resource in sibling_podspecs:
-                    datafile_path = resource.path
-                    for package_data in resource.package_data:
-                        package_data = models.PackageData.from_dict(package_data)
-                        package = models.Package.from_package_data(
-                            package_data=package_data,
-                            datafile_path=datafile_path,
-                        )
-                        cls.assign_package_to_resources(
-                            package=package,
-                            resource=resource,
-                            codebase=codebase,
-                            package_adder=package_adder,
-                        )
-                        yield package
-                    yield resource
-
-            else:
-                # has_no_podspec:
-                yield from models.DatafileHandler.assemble_from_many_datafiles(
-                    datafile_name_patterns=datafile_name_patterns,
-                    directory=parent,
-                    codebase=codebase,
-                    package_adder=package_adder,
-                )
+        else:
+            # has_no_podspec:
+            yield from cls.assemble_from_many_datafiles(
+                datafile_path_patterns=datafile_path_patterns,
+                resource=parent,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
 
 
 class PodspecHandler(BasePodHandler):
