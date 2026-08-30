@@ -69,6 +69,20 @@ Package type:  bazel
   description:       Bazel BUILD
   path_patterns:    '*/BUILD'
 --------------------------------------------
+Package type:  bazel
+  datasource_id:     bazel_module
+  documentation URL: https://bazel.build/external/module
+  primary language:  None
+  description:       Bazel MODULE.bazel module manifest (Bzlmod)
+  path_patterns:    '*/MODULE.bazel'
+--------------------------------------------
+Package type:  bazel
+  datasource_id:     bazel_module_lock
+  documentation URL: https://bazel.build/external/lockfile
+  primary language:  None
+  description:       Bazel MODULE.bazel lockfile
+  path_patterns:    '*/MODULE.bazel.lock'
+--------------------------------------------
 Package type:  bower
   datasource_id:     bower_json
   documentation URL: https://bower.io

@@ -49,75 +49,57 @@ if on_linux:
 # a handler classes MUST be added to this list to be active
 APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     about.AboutFileHandler,
-
     alpine.AlpineApkArchiveHandler,
     alpine.AlpineApkbuildHandler,
-
     bower.BowerJsonHandler,
-
     build_gradle.BuildGradleHandler,
-
     build.AutotoolsConfigureHandler,
     build.BazelBuildHandler,
+    build.BazelModuleHandler,
+    build.BazelModuleLockHandler,
     build.BuckMetadataBzlHandler,
     build.BuckPackageHandler,
-
     cargo.CargoLockHandler,
     cargo.CargoTomlHandler,
-
     chef.ChefMetadataJsonHandler,
     chef.ChefMetadataRbHandler,
-
     cocoapods.PodspecHandler,
     cocoapods.PodspecJsonHandler,
     cocoapods.PodfileLockHandler,
     cocoapods.PodfileHandler,
-
     conda.CondaMetaJsonHandler,
     conda.CondaMetaYamlHandler,
     conda.CondaYamlHandler,
-
     conan.ConanFileHandler,
     conan.ConanDataHandler,
-
     cran.CranDescriptionFileHandler,
-
     debian_copyright.DebianCopyrightFileInPackageHandler,
     debian_copyright.StandaloneDebianCopyrightFileHandler,
     debian.DebianDscFileHandler,
-
     debian.DebianControlFileInExtractedDebHandler,
     debian.DebianControlFileInSourceHandler,
-
     debian.DebianDebPackageHandler,
     debian.DebianMd5sumFilelistInPackageHandler,
-
     debian.DebianSourcePackageMetadataTarballHandler,
     debian.DebianSourcePackageTarballHandler,
-
     distro.EtcOsReleaseHandler,
-
     freebsd.CompactManifestHandler,
-
     godeps.GodepsHandler,
     golang.GoModHandler,
     golang.GoSumHandler,
-
     haxe.HaxelibJsonHandler,
-
     maven.MavenPomXmlHandler,
     maven.MavenPomPropertiesHandler,
     maven.JavaJarManifestHandler,
     maven.JavaOSGiManifestHandler,
-
     misc.AndroidAppArchiveHandler,
     misc.AndroidLibraryHandler,
     misc.AppleDmgHandler,
-    misc.Axis2MarArchiveHandler ,
-    misc.Axis2MarModuleXmlHandler ,
+    misc.Axis2MarArchiveHandler,
+    misc.Axis2MarModuleXmlHandler,
     misc.CabArchiveHandler,
     misc.ChromeExtensionHandler,
-    misc.CpanDistIniHandler ,
+    misc.CpanDistIniHandler,
     misc.CpanMakefilePlHandler,
     misc.CpanManifestHandler,
     misc.CpanMetaJsonHandler,
@@ -126,19 +108,14 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     misc.IosAppIpaHandler,
     misc.IsoImageHandler,
     misc.IvyXmlHandler,
-
-    misc.JavaEarAppXmlHandler ,
-    misc.JavaEarHandler ,
-
+    misc.JavaEarAppXmlHandler,
+    misc.JavaEarHandler,
     # is this redundant with Jar manifest?
     misc.JavaJarHandler,
-
     misc.JavaWarHandler,
     misc.JavaWarWebXmlHandler,
-
-    misc.JBossSarHandler ,
-    misc.JBossServiceXmlHandler ,
-
+    misc.JBossSarHandler,
+    misc.JBossServiceXmlHandler,
     misc.MeteorPackageHandler,
     misc.MozillaExtensionHandler,
     misc.NsisInstallerHandler,
@@ -152,19 +129,14 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     npm.PnpmShrinkwrapYamlHandler,
     npm.PnpmLockYamlHandler,
     npm.PnpmWorkspaceYamlHandler,
-
     nuget.NugetNupkgHandler,
     nuget.NugetNuspecHandler,
     nuget.NugetPackagesLockHandler,
-
     opam.OpamFileHandler,
-
     phpcomposer.PhpComposerJsonHandler,
     phpcomposer.PhpComposerLockHandler,
-
     pubspec.DartPubspecYamlHandler,
     pubspec.DartPubspecLockHandler,
-
     pypi.PipfileHandler,
     pypi.PipfileLockHandler,
     pypi.PipRequirementsFileHandler,
@@ -182,36 +154,26 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     pypi.PythonSdistPkgInfoFile,
     pypi.PythonSetupPyHandler,
     pypi.SetupCfgHandler,
-
     readme.ReadmeHandler,
-
     rpm.RpmArchiveHandler,
     rpm.RpmSpecfileHandler,
-
     rubygems.GemMetadataArchiveExtractedHandler,
     rubygems.GemArchiveHandler,
-
     # the order of these handlers matter
     rubygems.GemfileInExtractedGemHandler,
     rubygems.GemfileHandler,
-
     # the order of these handlers matter
     rubygems.GemfileLockInExtractedGemHandler,
     rubygems.GemfileLockHandler,
-
     # the order of these handlers matter
     rubygems.GemspecInInstalledVendorBundleSpecificationsHandler,
     rubygems.GemspecInExtractedGemHandler,
     rubygems.GemspecHandler,
-
     swift.SwiftManifestJsonHandler,
     swift.SwiftPackageResolvedHandler,
     swift.SwiftShowDependenciesDepLockHandler,
-
     windows.MicrosoftUpdateManifestHandler,
-
     win_pe.WindowsExecutableHandler,
-
     # These are handlers for deplock generated files
     pypi.PipInspectDeplockHandler,
 ]
@@ -223,18 +185,14 @@ if on_linux:
 
 SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
     alpine.AlpineInstalledDatabaseHandler,
-
     debian_copyright.DebianCopyrightFileInPackageHandler,
     debian_copyright.DebianCopyrightFileInSourceHandler,
-
     debian.DebianDistrolessInstalledDatabaseHandler,
-
     debian.DebianInstalledFilelistHandler,
     debian.DebianInstalledMd5sumFilelistHandler,
     debian.DebianInstalledStatusDatabaseHandler,
-
     rpm.RpmLicenseFilesHandler,
-    rpm.RpmMarinerContainerManifestHandler
+    rpm.RpmMarinerContainerManifestHandler,
 ]
 
 if on_linux:
@@ -242,7 +200,6 @@ if on_linux:
         rpm.RpmInstalledBdbDatabaseHandler,
         rpm.RpmInstalledSqliteDatabaseHandler,
         rpm.RpmInstalledNdbDatabaseHandler,
-
         win_reg.InstalledProgramFromDockerSoftwareDeltaHandler,
         win_reg.InstalledProgramFromDockerFilesSoftwareHandler,
         win_reg.InstalledProgramFromDockerUtilityvmSoftwareHandler,
@@ -257,6 +214,7 @@ PACKAGE_IN_COMPILED_DATAFILE_HANDLERS = []
 
 try:
     from go_inspector.binary import get_go_binary_handler
+
     handler = get_go_binary_handler()
     PACKAGE_IN_COMPILED_DATAFILE_HANDLERS.append(handler)
 except ImportError:
@@ -264,16 +222,20 @@ except ImportError:
 
 try:
     from rust_inspector.packages import get_rust_binary_handler
+
     handler = get_rust_binary_handler()
     PACKAGE_IN_COMPILED_DATAFILE_HANDLERS.append(handler)
 except ImportError:
     pass
 
 ALL_DATAFILE_HANDLERS = (
-    APPLICATION_PACKAGE_DATAFILE_HANDLERS + [
-        p for p in SYSTEM_PACKAGE_DATAFILE_HANDLERS
+    APPLICATION_PACKAGE_DATAFILE_HANDLERS
+    + [
+        p
+        for p in SYSTEM_PACKAGE_DATAFILE_HANDLERS
         if p not in APPLICATION_PACKAGE_DATAFILE_HANDLERS
-    ] + PACKAGE_IN_COMPILED_DATAFILE_HANDLERS
+    ]
+    + PACKAGE_IN_COMPILED_DATAFILE_HANDLERS
 )
 
 # registry of all handler classes keyed by datasource_id
@@ -296,6 +258,4 @@ def get_package_handler(package_data):
     return ppc
 
 
-PACKAGE_DATA_CLASS_BY_DATASOURCE_ID = {
-    maven.MavenPackageData.datasource_id: maven.MavenPackageData
-}
+PACKAGE_DATA_CLASS_BY_DATASOURCE_ID = {maven.MavenPackageData.datasource_id: maven.MavenPackageData}
