@@ -51,6 +51,79 @@ ERROR_MSG = 'ERROR: Unknown error:\n'
 NO_ERROR = None
 NO_VALUE = None
 
+from ctypes import c_long
+from ctypes import py_object
+from ctypes import pythonapi
+from multiprocessing import TimeoutError as MpTimeoutError
+
+from queue import Empty as Queue_Empty
+from queue import Queue
+from _thread import start_new_thread
+
+def async_raise(tid, exctype=Exception):
+    """
+    Raise an Exception in the Thread with id `tid`. Perform cleanup if
+    needed.
+
+    Based on Killable Threads By Tomer Filiba
+    from http://tomerfiliba.com/recipes/Thread2/
+    license: public domain.
+    """
+    assert isinstance(tid, int), 'Invalid  thread id: must an integer'
+
+    tid = c_long(tid)
+    exception = py_object(Exception)
+    res = pythonapi.PyThreadState_SetAsyncExc(tid, exception)
+    if res == 0:
+        raise ValueError('Invalid thread id.')
+    elif res != 1:
+        # if it returns a number greater than one, you're in trouble,
+        # and you should call it again with exc=NULL to revert the effect
+        pythonapi.PyThreadState_SetAsyncExc(tid, 0)
+        raise SystemError('PyThreadState_SetAsyncExc failed.')
+
+def thread_interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
+    """
+    Threads-based interruptible runner. It can work on both Windows and POSIX,
+    but is not reliable and works only if everything is pickable.
+    """
+    # We run `func` in a thread and block on a queue until timeout
+    results = Queue()
+
+    def runner():
+        """
+        Run the func and send results back in a queue as a tuple of
+        (`error`, `value`)
+        """
+        try:
+            _res = func(*(args or ()), **(kwargs or {}))
+            results.put((NO_ERROR, _res,))
+        except Exception:
+            results.put((ERROR_MSG + traceback_format_exc(), NO_VALUE,))
+
+    tid = start_new_thread(runner, ())
+
+    try:
+        # wait for the queue results up to timeout
+        err_res = results.get(timeout=timeout)
+
+        if not err_res:
+            return ERROR_MSG, NO_VALUE
+
+        return err_res
+
+    except (Queue_Empty, MpTimeoutError):
+        return TIMEOUT_MSG % locals(), NO_VALUE
+
+    except Exception:
+        return ERROR_MSG + traceback_format_exc(), NO_VALUE
+
+    finally:
+        try:
+            async_raise(tid, Exception)
+        except (SystemExit, ValueError):
+            pass
+
 if not on_windows:
     """
     Some code based in part and inspired from the RobotFramework and
@@ -93,92 +166,23 @@ if not on_windows:
         except TimeoutError:
             return TIMEOUT_MSG % locals(), NO_VALUE
 
-        except Exception:
+        except ValueError as ve:
+            if 'signal only works in main thread' in str(ve):
+                # Fallback to the thread-based implementation if we are not in the main thread of the main interpreter
+                return thread_interruptible(func, args, kwargs, timeout)
             return ERROR_MSG + traceback_format_exc(), NO_VALUE
-
-        finally:
-            setitimer(ITIMER_REAL, 0)
-
-elif on_windows:
-    """
-    Run a function in an interruptible thread with a timeout.
-    Based on an idea of dano "Dan O'Reilly"
-    http://stackoverflow.com/users/2073595/dano
-    But no code has been reused from this post.
-    """
-
-    from ctypes import c_long
-    from ctypes import py_object
-    from ctypes import pythonapi
-    from multiprocessing import TimeoutError as MpTimeoutError
-
-    from queue import Empty as Queue_Empty
-    from queue import Queue
-    from _thread import start_new_thread
-
-    def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
-        """
-        Windows, threads-based interruptible runner. It can work also on
-        POSIX, but is not reliable and works only if everything is pickable.
-        """
-        # We run `func` in a thread and block on a queue until timeout
-        results = Queue()
-
-        def runner():
-            """
-            Run the func and send results back in a queue as a tuple of
-            (`error`, `value`)
-            """
-            try:
-                _res = func(*(args or ()), **(kwargs or {}))
-                results.put((NO_ERROR, _res,))
-            except Exception:
-                results.put((ERROR_MSG + traceback_format_exc(), NO_VALUE,))
-
-        tid = start_new_thread(runner, ())
-
-        try:
-            # wait for the queue results up to timeout
-            err_res = results.get(timeout=timeout)
-
-            if not err_res:
-                return ERROR_MSG, NO_VALUE
-
-            return err_res
-
-        except (Queue_Empty, MpTimeoutError):
-            return TIMEOUT_MSG % locals(), NO_VALUE
 
         except Exception:
             return ERROR_MSG + traceback_format_exc(), NO_VALUE
 
         finally:
             try:
-                async_raise(tid, Exception)
-            except (SystemExit, ValueError):
+                setitimer(ITIMER_REAL, 0)
+            except ValueError:
                 pass
 
-    def async_raise(tid, exctype=Exception):
-        """
-        Raise an Exception in the Thread with id `tid`. Perform cleanup if
-        needed.
-
-        Based on Killable Threads By Tomer Filiba
-        from http://tomerfiliba.com/recipes/Thread2/
-        license: public domain.
-        """
-        assert isinstance(tid, int), 'Invalid  thread id: must an integer'
-
-        tid = c_long(tid)
-        exception = py_object(Exception)
-        res = pythonapi.PyThreadState_SetAsyncExc(tid, exception)
-        if res == 0:
-            raise ValueError('Invalid thread id.')
-        elif res != 1:
-            # if it returns a number greater than one, you're in trouble,
-            # and you should call it again with exc=NULL to revert the effect
-            pythonapi.PyThreadState_SetAsyncExc(tid, 0)
-            raise SystemError('PyThreadState_SetAsyncExc failed.')
+elif on_windows:
+    interruptible = thread_interruptible
 
 
 def fake_interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
