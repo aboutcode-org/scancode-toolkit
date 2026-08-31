@@ -1,0 +1,18 @@
+# Dependencies for training and exporting the required phrase model.
+# Install with: pip install -r etc/requirements-ml.txt
+
+torch>=2.0
+transformers>=4.44
+sentencepiece>=0.2
+protobuf>=3.20
+accelerate>=0.33
+pytorch-crf>=0.7.2
+safetensors>=0.4
+
+# Used explicitly for DeBERTa-large training on a 16 GB GPU.
+bitsandbytes>=0.43
+
+# ONNX export and CPU verification.
+numpy>=1.24
+onnx>=1.16
+onnxruntime>=1.18
