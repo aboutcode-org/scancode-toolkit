@@ -22,8 +22,9 @@ from pdfminer.pdfparser import PDFParser
 
 def get_text_lines(location, max_pages=5):
     """
-    Return a list of unicode text lines extracted from a pdf file at
-    `location`. May raise exceptions. Extract up to `max_pages` pages.
+    Return a list of text lines, as bytes, extracted from a pdf file at
+    `location`. May raise exceptions. Extract up to `max_pages` pages, or
+    all pages if `max_pages` is 0.
     """
     extracted_text = BytesIO()
     laparams = LAParams()
