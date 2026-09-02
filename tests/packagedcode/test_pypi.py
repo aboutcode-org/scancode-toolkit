@@ -398,6 +398,12 @@ class TestPoetryHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/poetry/univers-poetry.lock-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_poetry_lock_package_optional(self):
+        test_file = self.get_test_loc('pypi/poetry/optional/poetry.lock')
+        package = pypi.PoetryLockHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/poetry/optional-poetry.lock-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_pyproject_toml_poetry_univers(self):
         test_file = self.get_test_loc('pypi/poetry/univers/pyproject.toml')
         package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
@@ -805,4 +811,3 @@ def test_parse_setup_py(test_loc):
 )
 def test_parse_more_setup_py(test_loc):
     check_setup_py_parsing(test_loc)
-

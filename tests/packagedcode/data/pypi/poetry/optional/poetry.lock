@@ -1,0 +1,17 @@
+[[package]]
+name = "required-dep"
+version = "1.0.0"
+description = "required dependency"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
+name = "optional-dep"
+version = "2.0.0"
+description = "optional dependency"
+optional = true
+python-versions = ">=3.8"
+
+[metadata]
+lock-version = "2.0"
+python-versions = ">=3.8"

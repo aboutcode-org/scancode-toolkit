@@ -146,7 +146,7 @@
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
-      "is_optional": true,
+      "is_optional": false,
       "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
@@ -579,7 +579,7 @@
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
-      "is_optional": true,
+      "is_optional": false,
       "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
@@ -649,7 +649,7 @@
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
-      "is_optional": true,
+      "is_optional": false,
       "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
@@ -730,7 +730,7 @@
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
-      "is_optional": true,
+      "is_optional": false,
       "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
@@ -921,7 +921,7 @@
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
-      "is_optional": true,
+      "is_optional": false,
       "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
@@ -1033,7 +1033,7 @@
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
-              "is_optional": true,
+              "is_optional": false,
               "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
@@ -1462,7 +1462,7 @@
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
-              "is_optional": true,
+              "is_optional": false,
               "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
@@ -1528,7 +1528,7 @@
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
-              "is_optional": true,
+              "is_optional": false,
               "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
@@ -1605,7 +1605,7 @@
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
-              "is_optional": true,
+              "is_optional": false,
               "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
@@ -1792,7 +1792,7 @@
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
-              "is_optional": true,
+              "is_optional": false,
               "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
