@@ -1061,6 +1061,8 @@ def test_use_cached_results():
     env = {
         'SCANCODE_RESULTS_CACHE': results_cache_location
     }
+    if on_windows:
+        env.update({'PYTHONHASHSEED': '0'})
     args = [
         '--info',
         '--license',
