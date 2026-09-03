@@ -87,6 +87,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Shrijal Acharya @OctoPie23
 - Shivam Chauhan @chashiv
 - Shivam Sandbhor @sbs2001
+- Sidheshwar Sarangal @SidheshwarSarangal
 - Steven Esser @majurg
 - Sushant Gupta @susg
 - Theodore Aptekarev @piiq
