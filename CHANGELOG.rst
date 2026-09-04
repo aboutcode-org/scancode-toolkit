@@ -10,6 +10,12 @@ Next release
 
 - Improve copyright detection for statements with parens or trailing "authors"
 
+- Add experimental option for using cached results during scan time. When the
+  ``--use-cached-results`` option is enabled in the ScanCode CLI, during scan
+  time for a given Resource, we iterate through the active scanners and see if we
+  have cached results for those already. If we do, we update our results with the
+  cached data. If not, we add those scanners to a list of scanners to be run.
+  After scanning, the cache is updated.
 
 v33.0.0rc1 - 2026-05-14
 ------------------------
