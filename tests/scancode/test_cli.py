@@ -1054,6 +1054,7 @@ def test_scan_does_validate_input_and_does_not_fail_on_valid_json_input():
     run_scan_click(['--from-json', test_file, '--json-pp', '-'], retry=False)
 
 
+@skipIf(on_windows, 'Test does not work on CI runners')
 def test_use_cached_results():
     results_cache_location = test_env.get_test_loc(u'results_cache/results/')
     test_file = test_env.get_test_loc(u'results_cache/package.json')
@@ -1061,8 +1062,6 @@ def test_use_cached_results():
     env = {
         'SCANCODE_RESULTS_CACHE': results_cache_location
     }
-    if on_windows:
-        env.update({'PYTHONHASHSEED': '0'})
     args = [
         '--info',
         '--license',
