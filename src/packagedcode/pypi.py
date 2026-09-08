@@ -1942,17 +1942,26 @@ def get_declared_license(metainfo):
     """
     Return a mapping of declared license information and license file name
     found in a ``metainfo`` package data mapping.
+
+    Collects PEP 639 ``License-Expression`` (and pyproject.toml
+    ``license-expression``) in addition to the legacy ``License`` field and
+    license classifiers. ``License-Expression`` is preferred when both it and
+    ``License`` are present: they are mutually exclusive in core metadata, and
+    the expression is the machine-readable declared license.
     """
     declared_license = {}
     # TODO: We should make the declared license as it is, this should be
     # updated in scancode to parse a pure string
     lic = get_attribute(metainfo, 'License')
+    license_expression = get_attribute(metainfo, 'License-Expression')
     license_file = get_attribute(metainfo, 'License-File')
     if not license_file and lic:
         if isinstance(lic, dict) and 'file' in lic.keys():
             license_file = lic.pop('file')
 
-    if lic and not lic == 'UNKNOWN':
+    if license_expression and not license_expression == 'UNKNOWN':
+        declared_license['license'] = license_expression
+    elif lic and not lic == 'UNKNOWN':
         if 'text' in lic:
             declared_license['license'] = lic.get('text')
         else:
