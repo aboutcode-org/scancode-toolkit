@@ -491,6 +491,13 @@ parsers in scancode-toolkit during documentation builds.
      - ``go_mod``
      - Go
      - https://go.dev/ref/mod
+   * - Go module requirement graph
+     - ``*/go-mod-graph.deplock``, ``*/go.mod.graph``
+     - ``golang``
+     - ``linux``, ``win``, ``mac``
+     - ``go_mod_graph``
+     - Go
+     - https://go.dev/ref/mod#go-mod-graph
    * - Go module cheksums file
      - ``*/go.sum``
      - ``golang``

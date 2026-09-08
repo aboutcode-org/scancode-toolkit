@@ -434,6 +434,13 @@ Package type:  golang
   path_patterns:    '*/go.mod'
 --------------------------------------------
 Package type:  golang
+  datasource_id:     go_mod_graph
+  documentation URL: https://go.dev/ref/mod#go-mod-graph
+  primary language:  Go
+  description:       Go module requirement graph from go mod graph
+  path_patterns:    '*/go-mod-graph.deplock', '*/go.mod.graph'
+--------------------------------------------
+Package type:  golang
   datasource_id:     go_sum
   documentation URL: https://go.dev/ref/mod#go-sum-files
   primary language:  Go
