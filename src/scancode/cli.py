@@ -418,8 +418,7 @@ def default_processes():
 @click.option('--use-cached-results',
     is_flag=True,
     default=False,
-    hidden=True,
-    help='(EXPERIMENTAL) ScanCode will use cached results during scan time.',
+    help='(EXPERIMENTAL) Enables the creation, update, and usage of cached results during scan time.',
     help_group=cliutils.CORE_GROUP, sort_order=250, cls=PluggableCommandLineOption)
 def scancode(
     ctx,

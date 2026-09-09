@@ -54,6 +54,26 @@ def get_results_cache_directory_location(results_cache_index, results_cache_dir=
     """
     Return the location of the directory containing the cache files for a given
     `results_cache_index` hexstring.
+
+    A example of a `results_cache_index` string is
+    "b0e3dd13b9b5980bb1ca7aab89e5490cb136952374489a755947ac004309b035"
+
+    This string is split into three parts containing:
+    - the first and second character ("b0")
+    - the third and fourth character ("e3")
+    - the remaining characters
+      ("dd13b9b5980bb1ca7aab89e5490cb136952374489a755947ac004309b035").
+
+    The resulting results_cache_directory_location would be:
+    "b0/e3/dd13b9b5980bb1ca7aab89e5490cb136952374489a755947ac004309b035".
+
+    In the cache directory, there would be a series of nested directories
+    following the structure and naming above, where the last directory contains
+    the results of the scanners run on a resource keyed by
+    `results_cache_index`.
+
+    The directories are organized like this to avoid having too many files in a
+    single directory when the cache grows larger.
     """
     # Split the hash into two subdirectories using the first two prefix pairs
     prefix1 = results_cache_index[:2]
