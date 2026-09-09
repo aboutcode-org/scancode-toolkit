@@ -13,6 +13,7 @@ import os
 
 from commoncode.fileutils import create_dir
 from commoncode.hash import binary_chunks
+from commoncode.hash import hasher_from_chunks
 from scancode_config import results_cache_dir
 
 
@@ -38,22 +39,13 @@ cached data. If not, we add those scanners to a list of scanners to be run.
 After scanning, the cache is updated.
 """
 
-def hasher_from_chunks(chunks):
-    """
-    Return a sha256 hasher loaded with `chunks`.
-    """
-    hasher = hashlib.sha256()
-    for chunk in chunks:
-        hasher.update(chunk)
-    return hasher
-
 
 def compute_results_cache_index(location, filename):
     """
     Compute results_cache_index value for a Resource at `location`.
     """
     chunks = binary_chunks(location=location)
-    sha256_hasher = hasher_from_chunks(chunks=chunks)
+    sha256_hasher = hasher_from_chunks(chunks=chunks, name='sha256')
     sha256_hasher.update(filename.encode('utf-8', 'surrogateescape'))
     return sha256_hasher.hexdigest()
 

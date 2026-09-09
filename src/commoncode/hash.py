@@ -229,15 +229,24 @@ def checksum(location, name, base64=False):
     return checksum_from_chunks(chunks=chunks, total_length=total_length, name=name, base64=base64)
 
 
+def hasher_from_chunks(chunks, name, total_length=0):
+    """
+    Return a hasher of ``name`` checksum algorithm of contains the contents of
+    the iterator of byte strings ``chunks`` of length ``total_length``.
+    """
+    hasher = get_hasher_instance_by_name(name=name, total_length=total_length)
+    for chunk in chunks:
+        hasher.update(chunk)
+    return hasher
+
+
 def checksum_from_chunks(chunks, name, total_length=0, base64=False):
     """
     Return a checksum from the content of the iterator of byte strings ``chunks`` with a
     ``total_length`` combined length using the ``name`` checksum algorithm. The returned checksum is
     a string as a hexdigest or is base64-encoded is ``base64`` is True.
     """
-    hasher = get_hasher_instance_by_name(name=name, total_length=total_length)
-    for chunk in chunks:
-        hasher.update(chunk)
+    hasher = hasher_from_chunks(chunks=chunks, name=name, total_length=total_length)
     if base64:
         return hasher.b64digest()
     return hasher.hexdigest()

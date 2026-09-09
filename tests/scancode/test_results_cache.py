@@ -11,7 +11,6 @@ import json
 from os.path import dirname
 from os.path import join
 
-from commoncode.hash import binary_chunks
 from commoncode.testcase import FileDrivenTesting
 from scancode import results_cache
 
@@ -20,13 +19,6 @@ class TestResultsCache(FileDrivenTesting):
     test_data_dir = join(dirname(__file__), 'data')
     test_results_cache = join(test_data_dir, 'results_cache/results')
     test_results_cache_index = "b0e3dd13b9b5980bb1ca7aab89e5490cb136952374489a755947ac004309b035"
-
-    def test_hasher_from_chunks(self):
-        test_file_loc = self.get_test_loc('results_cache/package.json')
-        chunks = binary_chunks(location=test_file_loc)
-        hasher = results_cache.hasher_from_chunks(chunks=chunks)
-        expected = "cb6f5a82e473620da4d1aecf82dd4d4fa9ada393a7679b28a42cac86f0a83c92"
-        assert hasher.hexdigest() == expected
 
     def test_compute_results_cache_index(self):
         test_file_loc = self.get_test_loc('results_cache/package.json')
