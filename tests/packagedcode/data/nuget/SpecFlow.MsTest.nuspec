@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>SpecFlow.MsTest</id>
+    <version>3.1.89</version>
+    <authors>SpecFlow</authors>
+    <owners>Tricentis</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <projectUrl>https://specflow.org</projectUrl>
+    <description>Provides MsTest bindings for SpecFlow test execution</description>
+    <copyright>Copyright</copyright>
+    <tags>specflow bdd mstest</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="SpecFlow" version="3.1.89" exclude="Build,Analyzers" />
+        <dependency id="MSTest.TestFramework" version="1.3.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
