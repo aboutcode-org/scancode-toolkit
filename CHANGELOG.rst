@@ -17,6 +17,10 @@ Next release
   cached data. If not, we add those scanners to a list of scanners to be run.
   After scanning, the cache is updated.
 
+- Fix ``python_version`` environment markers using ``>``, ``!=`` or ``~=`` being
+  silently dropped from the dependency ``extra_data``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5309
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
