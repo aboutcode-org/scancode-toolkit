@@ -17,6 +17,10 @@ Next release
   cached data. If not, we add those scanners to a list of scanners to be run.
   After scanning, the cache is updated.
 
+- Remove two duplicate keys in the alpine ``DECLARED_TO_SPDX`` mapping that
+  silently discarded the earlier entry of each pair.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5312
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
