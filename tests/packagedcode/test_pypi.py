@@ -806,3 +806,21 @@ def test_parse_setup_py(test_loc):
 def test_parse_more_setup_py(test_loc):
     check_setup_py_parsing(test_loc)
 
+
+@pytest.mark.parametrize(
+    ('requirement', 'expected'),
+    [
+        ('requests; python_version < "3.8"', {'python_version': '< 3.8'}),
+        ('requests; python_version <= "3.8"', {'python_version': '<= 3.8'}),
+        ('requests; python_version != "3.8"', {'python_version': '!= 3.8'}),
+        ('requests; python_version == "3.8"', {'python_version': '== 3.8'}),
+        ('requests; python_version >= "3.8"', {'python_version': '>= 3.8'}),
+        ('requests; python_version > "3.8"', {'python_version': '> 3.8'}),
+        ('requests; python_version ~= "3.8"', {'python_version': '~= 3.8'}),
+    ],
+)
+def test_get_python_version_os_handles_all_comparison_operators(requirement, expected):
+    from packvers.requirements import Requirement
+
+    marker = Requirement(requirement).marker
+    assert pypi.get_python_version_os(marker) == expected
