@@ -1616,7 +1616,6 @@ DECLARED_TO_SPDX = {
     'unrestricted': 'licenseref-scancode-other-permissive',
 
     'open_source': 'licenseref-scancode-free-unknown',
-    'as-is': 'licenseref-scancode-free-unknown',
 
     'elementtree': 'licenseref-scancode-secret-labs-2011 and bsd-3-clause',
 
@@ -1687,7 +1686,6 @@ DECLARED_TO_SPDX = {
     'custom:pil': 'licenseref-scancode-secret-labs-2011',
     'custom:postcardware': 'licenseref-scancode-unknown-license-reference',
     'custom:sip': 'licenseref-scancode-unknown-license-reference',
-    'custom:tu-berlin-2.0': 'licenseref-scancode-unknown-license-reference',
 
     'custom:xfree86': 'mit and x11 and hpnd-sell-variant and hpnd and mit-open-group and licenseref-scancode-other-permissive',
 
