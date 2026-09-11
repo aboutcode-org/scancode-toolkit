@@ -17,6 +17,9 @@ Next release
   cached data. If not, we add those scanners to a list of scanners to be run.
   After scanning, the cache is updated.
 
+- Remove an unreachable duplicate ``LGPL`` key in the rubygems license mapping.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5314
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
