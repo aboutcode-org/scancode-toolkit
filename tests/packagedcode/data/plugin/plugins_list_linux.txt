@@ -545,6 +545,13 @@ Package type:  linux-distro
   description:       Linux OS release metadata file
   path_patterns:    '*etc/os-release', '*usr/lib/os-release'
 --------------------------------------------
+Package type:  luarocks
+  datasource_id:     luarocks_rockspec
+  documentation URL: https://github.com/luarocks/luarocks/blob/main/docs/rockspec_format.md
+  primary language:  Lua
+  description:       LuaRocks rockspec file
+  path_patterns:    '*.rockspec'
+--------------------------------------------
 Package type:  maven
   datasource_id:     build_gradle
   documentation URL: None
