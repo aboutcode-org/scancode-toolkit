@@ -431,6 +431,15 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
         # space before in some cases: exclude (digit , (s , (c , (-
         # this allows to recover from words like KISA(Korean
         line = re.sub(pattern=r'(\([^rsc\-\d])', repl=r' \g<1>', string=line)
+
+        # Split compact author prefixes such as Author:Frankie.Chu while
+        # preserving colons elsewhere, for example in URLs.
+        line = re.sub(
+            pattern=r'(^|\s)([Aa]uthor):(?=\S)',
+            repl=r'\1\2 ',
+            string=line,
+        )
+
         for tok in splitter(line):
             # strip trailing quotes+comma
             if tok.endswith("',"):
@@ -1804,6 +1813,9 @@ PATTERNS = [
     ############################################################################
     # Proper Nouns
     ############################################################################
+
+    # Dotted proper names such as Frankie.Chu
+    (r'^[A-Z][a-z]+(?:\.[A-Z][a-z]+)+$', 'NAME'),
 
     # Title case word with a trailing parens is an NNP, including with an optional trailing period
     (r'^[A-Z][a-z]{3,}\)\.?$', 'NNP'),

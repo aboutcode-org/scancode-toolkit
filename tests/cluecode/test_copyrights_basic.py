@@ -319,6 +319,22 @@ class TestCopyrightDetector(FileBasedTesting):
         ))
         assert results == expected
 
+    def test_detect_author_without_space_and_with_dotted_name(self):
+        numbered_lines = [
+            (1, '//  Date:9 April,2012'),
+            (2, '//  Author:Frankie.Chu'),
+        ]
+        expected = [
+            copyrights.AuthorDetection('Frankie.Chu', 2, 2),
+        ]
+        results = list(copyrights.detect_copyrights_from_lines(
+            numbered_lines,
+            include_copyrights=False,
+            include_holders=False,
+            include_authors=True,
+        ))
+        assert results == expected
+
 
 def check_full_detections(expected, test_file):
     """
