@@ -325,7 +325,7 @@ class TestCopyrightDetector(FileBasedTesting):
             (2, '//  Author:Frankie.Chu'),
         ]
         expected = [
-            copyrights.AuthorDetection('Frankie.Chu', 2, 2),
+            copyrights.AuthorDetection('Frankie Chu', 2, 2),
         ]
         results = list(copyrights.detect_copyrights_from_lines(
             numbered_lines,

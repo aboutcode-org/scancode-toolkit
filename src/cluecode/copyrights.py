@@ -440,6 +440,13 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
             string=line,
         )
 
+        # Normalize dotted names only when they follow an Author tag.
+        line = re.sub(
+            pattern=r'(^|\s)([Aa]uthor)\s+([A-Z][a-z]+)\.([A-Z][a-z]+)(?=\b|[,;])',
+            repl=r'\1\2 \3 \4',
+            string=line,
+        )
+
         for tok in splitter(line):
             # strip trailing quotes+comma
             if tok.endswith("',"):
@@ -1813,9 +1820,6 @@ PATTERNS = [
     ############################################################################
     # Proper Nouns
     ############################################################################
-
-    # Dotted proper names such as Frankie.Chu
-    (r'^[A-Z][a-z]+(?:\.[A-Z][a-z]+)+$', 'NAME'),
 
     # Title case word with a trailing parens is an NNP, including with an optional trailing period
     (r'^[A-Z][a-z]{3,}\)\.?$', 'NNP'),
