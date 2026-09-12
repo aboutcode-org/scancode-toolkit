@@ -4,6 +4,12 @@ Changelog
 Next release
 --------------
 
+- Collect PEP 639 ``License-Expression`` from PyPI METADATA, PKG-INFO and
+  pyproject.toml in ``packagedcode.pypi.get_declared_license``. Wheels that
+  only declare ``License-Expression: MIT`` (with no legacy ``License`` field)
+  were previously reduced to license classifiers, so the expression was
+  ignored. https://github.com/aboutcode-org/scancode-toolkit/issues/4431
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

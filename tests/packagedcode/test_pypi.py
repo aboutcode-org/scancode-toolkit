@@ -260,7 +260,33 @@ class TestPypiInstalledWheel(PackageTester):
         test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.4/narwhals-1.29.0.dist-info/METADATA')
         package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
         expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.4/narwhals-1.29.0.dist-info-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)    
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
+class TestPypiGetDeclaredLicense(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_get_declared_license_from_license_expression(self):
+        declared, license_file = pypi.get_declared_license({
+            'License-Expression': 'MIT',
+        })
+        assert declared == {'license': 'MIT'}
+        assert license_file is None
+
+    def test_get_declared_license_from_pyproject_license_expression(self):
+        declared, license_file = pypi.get_declared_license({
+            'license-expression': 'Apache-2.0 AND MIT',
+        })
+        assert declared == {'license': 'Apache-2.0 AND MIT'}
+        assert license_file is None
+
+    def test_get_declared_license_prefers_license_expression_over_license(self):
+        declared, license_file = pypi.get_declared_license({
+            'License': 'MIT',
+            'License-Expression': 'BSD-3-Clause',
+        })
+        assert declared == {'license': 'BSD-3-Clause'}
+        assert license_file is None
 
 
 class TestPypiUnpackedSdist(PackageTester):
