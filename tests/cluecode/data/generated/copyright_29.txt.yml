@@ -11,3 +11,5 @@ expected_failures:
   - copyrights
   - authors
 
+allrights:
+  - Created by Samvel Khalatyan, May 28, 2013 Copyright 2013, All rights reserved

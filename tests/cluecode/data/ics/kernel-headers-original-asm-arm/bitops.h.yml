@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Russell King
     count: 1
+allrights:
+  - Copyright 1995, Russell King.
+  - Copyright 2001, Nicolas Pitre

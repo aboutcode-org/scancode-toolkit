@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Paul Mackerras, Alan Curry
     count: 1
+allrights:
+  - Copyright 1999 Paul Mackerras, Alan Curry.

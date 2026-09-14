@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: JSR305 expert group
     count: 1
+allrights:
+  - Copyright (c) 2007-2009, JSR305 expert group All rights reserved.

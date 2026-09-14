@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Pascal Andre
     count: 1
+allrights:
+  - Copyright (c) 1995, Pascal Andre (andre@via.ecp.fr).
+  - copyright 1997, 1998, 1999 by D'Arcy J.M. Cain (darcy@druid.net)

@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: The Chromium Authors
     count: 1
+allrights:
+  - Copyright (c) 2010 The Chromium Authors. All rights reserved.
+  - Copyright (c) 2003 IBM Corporation. All Rights Reserved.

@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: The OpenSSL Project
     count: 1
+allrights:
+  - Copyright (c) 2000-2005 The OpenSSL Project. All rights reserved.

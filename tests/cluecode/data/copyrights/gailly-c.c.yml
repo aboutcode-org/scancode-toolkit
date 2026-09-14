@@ -13,3 +13,7 @@ holders:
 holders_summary:
   - value: Jean-loup Gailly
     count: 3
+allrights:
+  - Copyright (c) 1992-1993 Jean-loup Gailly.
+  - Copyright (c) 1992-1993 Jean-loup Gailly
+  - Copyright (c) 1992-1993 Jean-loup Gailly

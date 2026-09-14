@@ -6,3 +6,5 @@ holders:
 holders_summary:
   - value: Frank Strauss
     count: 1
+allrights:
+  - Copyright (c) 2000 Frank Strauss <strauss@ibr.cs.tu-bs.de>

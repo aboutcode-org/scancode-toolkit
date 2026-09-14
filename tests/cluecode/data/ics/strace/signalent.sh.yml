@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Rick Sladkey
     count: 1
+allrights:
+  - Copyright (c) 1996 Rick Sladkey <jrs@world.std.com> All rights reserved.

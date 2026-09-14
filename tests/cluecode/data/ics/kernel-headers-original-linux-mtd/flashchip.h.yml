@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Red Hat
     count: 1
+allrights:
+  - (c) 2000 Red Hat.

@@ -10,3 +10,5 @@ holders:
 holders_summary:
   - value: CKSource Holding sp. z o.o.
     count: 1
+allrights:
+  - Copyright (c) 2003-2022, CKSource Holding sp. z o.o. All rights reserved.

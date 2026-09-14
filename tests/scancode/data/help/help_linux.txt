@@ -18,6 +18,7 @@ Options:
     --package-only         Scan for system and application package data and skip
                            license/copyright detection and top-level package
                            creation.
+    -a, --allrights        Scan <input> for copyrights and all rights reserved.
     -c, --copyright        Scan <input> for copyrights.
     --go-symbol            Collect Go symbols.
     --rust-symbol          Collect Rust symbols from rust binaries.

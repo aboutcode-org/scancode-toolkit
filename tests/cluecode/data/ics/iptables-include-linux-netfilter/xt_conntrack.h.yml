@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Marc Boucher
     count: 1
+allrights:
+  - (c) 2001 Marc Boucher (marc@mbsi.ca).

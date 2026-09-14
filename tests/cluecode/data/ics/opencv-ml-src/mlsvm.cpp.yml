@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Intel Corporation
     count: 1
+allrights:
+  - Copyright (c) 2000, Intel Corporation, all rights reserved.
+  - Copyright (c) 2000-2003 Chih-Chung Chang and Chih-Jen Lin All rights reserved.

@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Tatu Ylonen , Espoo, Finland
     count: 1
+allrights:
+  - Copyright (c) 2000 Markus Friedl. All rights reserved.
+  - Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi> , Espoo, Finland All rights reserved

@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Microsoft
     count: 1
+allrights:
+  - Copyright (c) 1995-1996 Microsoft Corporation. All Rights Reserved.

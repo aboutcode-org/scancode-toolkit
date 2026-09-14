@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Thomas G. Lane
     count: 1
+allrights:
+  - Copyright (c) 1994-1996, Thomas G. Lane.
+  - Copyright (c) 1988 by Jef Poskanzer.

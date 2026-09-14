@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: XStream committers
     count: 1
+allrights:
+  - Copyright (c) 2006 Joe Walnes.
+  - Copyright (c) 2006, 2007, 2008 XStream committers. All rights reserved.

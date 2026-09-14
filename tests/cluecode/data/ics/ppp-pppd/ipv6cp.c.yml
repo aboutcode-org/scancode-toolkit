@@ -21,3 +21,8 @@ holders_summary:
     count: 1
   - value: Tommi Komulainen
     count: 1
+allrights:
+  - Copyright (c) 1999 Tommi Komulainen. All rights reserved.
+  - Copyright (c) 1995, 1996, 1997 Francis.Dupont@inria.fr, INRIA
+  - Copyright (c) 1998, 1999 Francis.Dupont@inria.fr
+  - Copyright (c) 1984-2000 Carnegie Mellon University. All rights reserved.

@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.
     count: 1
+allrights:
+  - Copyright (c) $LastChangedDate$ Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A. ALL RIGHTS RESERVED
+  - Copyright (c) 2004 Benjamin Herrenschmuidt (benh@kernel.crashing.org), IBM Corp.

@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Dag-Erling Codan Smrgrav
     count: 1
+allrights:
+  - Copyright (c) 2003 Dag-Erling Codan Smrgrav All rights reserved.

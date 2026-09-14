@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Sam Lantinga
     count: 1
+allrights:
+  - Copyright (c) 1997-2006 Sam Lantinga
+  - Copyright (c) 1999 Apple Computer, Inc., All Rights Reserved

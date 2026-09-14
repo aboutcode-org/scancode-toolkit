@@ -13,3 +13,7 @@ holders:
 holders_summary:
   - value: The Vitess Authors
     count: 3
+allrights:
+  - Copyright 2019 The Vitess Authors.
+  - Copyright 2019 The Vitess Authors
+  - Copyright 2020 The Vitess Authors.

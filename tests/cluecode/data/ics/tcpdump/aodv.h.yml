@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Bruce M. Simpson
     count: 1
+allrights:
+  - Copyright (c) 2003 Bruce M. Simpson <bms@spc.org> All rights reserved.

@@ -10,3 +10,5 @@ holders:
 holders_summary:
   - value: OCamlPro
     count: 1
+allrights:
+  - Copyright 2013-2020 by OCamlPro.

@@ -21,3 +21,8 @@ holders_summary:
     count: 1
   - value: Silicon Graphics Computer Systems, Inc.
     count: 1
+allrights:
+  - Copyright (c) 1996,1997 Silicon Graphics Computer Systems, Inc.
+  - Copyright (c) 1997 Moscow Center for SPARC Technology
+  - Copyright (c) 1999 Boris Fomitchev
+  - Copyright 2000 Adobe Systems Incorporated and others. All rights reserved.

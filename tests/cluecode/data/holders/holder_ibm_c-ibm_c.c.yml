@@ -19,3 +19,10 @@ holders_summary:
     count: 1
   - value: ibm.com
     count: 1
+allrights:
+  - Copyright (c) ibm technologies 2008
+  - Copyright (c) IBM Corporation 2008
+  - Copyright (c) Ibm Corp. 2008
+  - Copyright (c) ibm.com 2008
+  - Copyright (c) IBM technology 2008
+  - Copyright (c) IBM company 2008
