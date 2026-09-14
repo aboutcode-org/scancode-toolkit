@@ -1,0 +1,3 @@
+about_resource: Snoop.Core.deps.json
+download_url: https://github.com/snoopwpf/snoopwpf/releases/tag/v5.1.0
+notes: Trimmed from the upstream release asset to keep the fixture small while preserving libraries and targets consistency for tests.
