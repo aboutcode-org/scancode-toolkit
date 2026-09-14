@@ -4,6 +4,10 @@ Changelog
 Next release
 --------------
 
+- Add support for parsing ``go mod graph`` dumps as ``go-mod-graph.deplock``
+  and ``go.mod.graph`` package datafiles.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4423
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
