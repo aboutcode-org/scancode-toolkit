@@ -35,7 +35,7 @@ special_names = (
     'COMMITMENT',
     'COMMITMENTS',
     'WARRANTY',
-    'COPYLEFT',
+    
 )
 
 special_names_lower = tuple(x.lower() for x in special_names)

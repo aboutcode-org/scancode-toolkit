@@ -3,6 +3,7 @@ Changelog
 
 Next release
 --------------
+- Remove duplicate 'COPYLEFT' entries in legal file classification lists.(#5319)
 
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
