@@ -58,6 +58,28 @@
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/apache/thrift@v0.12.0",
+        "extracted_requirement": "v0.12.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/git.apache.org/thrift.git",
+        "extracted_requirement": null,
+        "scope": "exclude",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
       }
     ],
     "repository_homepage_url": "https://pkg.go.dev/github.com/census-instrumentation/opencensus-service",
