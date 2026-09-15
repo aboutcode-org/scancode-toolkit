@@ -138,7 +138,7 @@ class Godep:
         Load self from a location string or a file-like object containing a
         Godeps JSON.
         """
-        with io.open(location, encoding='utf-8') as godep:
+        with io.open(location, encoding='utf-8-sig') as godep:
             text = godep.read()
         return self.loads(text)
 

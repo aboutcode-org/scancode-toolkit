@@ -203,7 +203,7 @@ class SwiftShowDependenciesDepLockHandler(BaseSwiftDatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with io.open(location, encoding="utf-8") as loc:
+        with io.open(location, encoding="utf-8-sig") as loc:
             swift_dependency_relation = json.load(loc)
 
         yield cls._parse(swift_dependency_relation, package_only)
@@ -242,7 +242,7 @@ class SwiftManifestJsonHandler(BaseSwiftDatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with io.open(location, encoding="utf-8") as loc:
+        with io.open(location, encoding="utf-8-sig") as loc:
             swift_manifest = json.load(loc)
 
         yield cls._parse(swift_manifest, package_only)
@@ -261,7 +261,7 @@ class SwiftPackageResolvedHandler(BaseSwiftDatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with io.open(location, encoding="utf-8") as loc:
+        with io.open(location, encoding="utf-8-sig") as loc:
             package_resolved = json.load(loc)
 
         resolved_doc_version = package_resolved.get("version")

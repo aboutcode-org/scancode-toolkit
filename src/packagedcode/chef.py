@@ -188,7 +188,7 @@ class ChefMetadataJsonHandler(BaseChefMetadataHandler):
         Yield one or more Package manifest objects given a file ``location``
         pointing to a package archive, manifest or similar.
         """
-        with io.open(location, encoding='utf-8') as loc:
+        with io.open(location, encoding='utf-8-sig') as loc:
             package_data = json.load(loc)
         yield build_package(
             package_data=package_data,
@@ -207,7 +207,7 @@ class ChefMetadataRbHandler(BaseChefMetadataHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with io.open(location, encoding='utf-8') as loc:
+        with io.open(location, encoding='utf-8-sig') as loc:
             file_contents = loc.read()
 
         # we use a Pygments formatter for parsing lexed Ruby code

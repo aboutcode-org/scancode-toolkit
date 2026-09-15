@@ -113,7 +113,7 @@ class CompactManifestHandler(models.DatafileHandler):
         Yield one or more Package manifest objects given a file ``location`` pointing to a
         package archive, manifest or similar.
         """
-        with io.open(location, encoding='utf-8') as loc:
+        with io.open(location, encoding='utf-8-sig') as loc:
             yaml_data = saneyaml.load(loc)
 
         yield cls._parse(yaml_data, package_only)

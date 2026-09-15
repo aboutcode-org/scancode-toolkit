@@ -322,7 +322,7 @@ class CondaMetaJsonHandler(CondaBaseHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with io.open(location, encoding='utf-8') as loc:
+        with io.open(location, encoding='utf-8-sig') as loc:
             conda_metadata = json.load(loc)
 
         name = conda_metadata.get('name')
@@ -614,7 +614,7 @@ def get_meta_yaml_data(location):
     # FIXME: use Jinja to process these
     variables = get_variables(location)
     yaml_lines = []
-    with io.open(location, encoding='utf-8') as metayaml:
+    with io.open(location, encoding='utf-8-sig') as metayaml:
         for line in metayaml:
             if not line:
                 continue
@@ -656,7 +656,7 @@ def get_variables(location):
     {% set sha256 = "bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f" %}
     """
     result = {}
-    with io.open(location, encoding='utf-8') as loc:
+    with io.open(location, encoding='utf-8-sig') as loc:
         for line in loc.readlines():
             if not line:
                 continue

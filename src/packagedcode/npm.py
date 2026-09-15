@@ -609,7 +609,7 @@ class NpmPackageJsonHandler(BaseNpmHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with io.open(location, encoding='utf-8') as loc:
+        with io.open(location, encoding='utf-8-sig') as loc:
             json_data = json.load(loc)
 
         yield cls._parse(json_data, package_only)
@@ -620,7 +620,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
     @classmethod
     def parse(cls, location, package_only=False):
 
-        with io.open(location, encoding='utf-8') as loc:
+        with io.open(location, encoding='utf-8-sig') as loc:
             package_data = json.load(loc)
 
         # we have two formats: v1 and v2
@@ -1004,7 +1004,7 @@ class YarnLockV1Handler(BaseNpmHandler):
 
         Yield a single PackageData
         """
-        with io.open(location, encoding='utf-8') as yl:
+        with io.open(location, encoding='utf-8-sig') as yl:
             yl_dependencies = yl.read().split('\n\n')
 
         dependencies_by_purl = {}
