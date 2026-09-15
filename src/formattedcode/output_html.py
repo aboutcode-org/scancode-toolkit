@@ -83,12 +83,16 @@ class HtmlOutput(OutputPlugin):
         license_references = []
         if hasattr(codebase.attributes, 'license_references'):
             license_references = codebase.attributes.license_references
+        summary = None
+        if hasattr(codebase.attributes, 'summary'):
+            summary = codebase.attributes.summary
         template_loc = join(TEMPLATES_DIR, 'html', 'template.html')
         output_file = html
         write_templated(
             output_file=output_file,
             results=results,
             license_references=license_references,
+            summary=summary,
             version=version,
             template_loc=template_loc,
         )
@@ -133,18 +137,22 @@ class CustomTemplateOutput(OutputPlugin):
         license_references = []
         if hasattr(codebase.attributes, 'license_references'):
             license_references = codebase.attributes.license_references
+        summary = None
+        if hasattr(codebase.attributes, 'summary'):
+            summary = codebase.attributes.summary
         template_loc = custom_template
         output_file = custom_output
         write_templated(
             output_file=output_file,
             results=results,
             license_references=license_references,
+            summary=summary,
             version=version,
             template_loc=template_loc
         )
 
 
-def write_templated(output_file, results, license_references, version, template_loc):
+def write_templated(output_file, results, license_references, summary, version, template_loc):
     """
     Write scan output `results` to the `output_file` opened file using a template
     file at `template_loc`.
@@ -155,6 +163,7 @@ def write_templated(output_file, results, license_references, version, template_
     for template_chunk in generate_output(
         results=results,
         license_references=license_references,
+        summary=summary,
         version=version,
         template=template,
     ):
@@ -184,7 +193,7 @@ def get_template(location):
     return env.get_template(template_name)
 
 
-def generate_output(results, license_references, version, template):
+def generate_output(results, license_references, summary, version, template):
     """
     Yield unicode strings from incrementally rendering `results` and `version`
     with the Jinja `template` object.
@@ -223,12 +232,20 @@ def generate_output(results, license_references, version, template):
                 if TRACE:
                     logger_debug(f"match: {match}")
                 license_expression = match['license_expression']
-                results.append({
+                match_data = {
                     'start': match['start_line'],
                     'end': match['end_line'],
                     'what': 'license',
                     'value': license_expression,
-                })
+                }
+
+                if 'matched_text' in match:
+                    match_data['matched_text'] = match['matched_text']
+
+                if 'matched_text_diagnostics' in match:
+                    match_data['matched_text_diagnostics'] = match['matched_text_diagnostics']
+
+                results.append(match_data)
 
                 if not license_references and license_expression not in licenses:
                     license_object = get_licenses_db().get(license_expression)
@@ -261,7 +278,7 @@ def generate_output(results, license_references, version, template):
         'package_data': converted_packages
     }
 
-    return template.generate(files=files, license_references=license_references, version=version)
+    return template.generate(files=files, license_references=license_references, summary=summary, version=version)
 
 
 @output_impl
