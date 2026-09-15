@@ -167,7 +167,7 @@ class ConanFileHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with io.open(location, encoding="utf-8") as loc:
+        with io.open(location, encoding="utf-8-sig") as loc:
             conan_recipe = loc.read()
 
         yield cls._parse(conan_recipe, package_only)
@@ -186,7 +186,7 @@ class ConanDataHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with io.open(location, encoding="utf-8") as loc:
+        with io.open(location, encoding="utf-8-sig") as loc:
             conan_data = loc.read()
 
         conan_data = saneyaml.load(conan_data)

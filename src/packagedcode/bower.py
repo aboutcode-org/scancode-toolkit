@@ -26,7 +26,7 @@ class BowerJsonHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with io.open(location, encoding='utf-8') as loc:
+        with io.open(location, encoding='utf-8-sig') as loc:
             package_data = json.load(loc)
 
         name = package_data.get('name')

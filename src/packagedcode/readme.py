@@ -56,7 +56,7 @@ class ReadmeHandler(models.NonAssemblableDatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with open(location, encoding='utf-8') as loc:
+        with open(location, encoding='utf-8-sig') as loc:
             readme_manifest = loc.read()
 
         package_data = build_package(readme_manifest, package_only)

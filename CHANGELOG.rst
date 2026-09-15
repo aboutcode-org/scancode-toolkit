@@ -4,6 +4,10 @@ Changelog
 Next release
 --------------
 
+- Read package manifests with the ``utf-8-sig`` codec so that a UTF-8 BOM does
+  not make the package disappear from the scan.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/5321
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

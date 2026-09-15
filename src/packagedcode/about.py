@@ -52,7 +52,7 @@ class AboutFileHandler(models.DatafileHandler):
         Yield one or more Package manifest objects given a file ``location`` pointing to a
         package archive, manifest or similar.
         """
-        with io.open(location, encoding='utf-8') as loc:
+        with io.open(location, encoding='utf-8-sig') as loc:
             package_data = saneyaml.load(loc.read())
 
         # About files can contain any purl and also have a namespace

@@ -109,7 +109,7 @@ class HaxelibJsonHandler(models.DatafileHandler):
             "contributors": ["back2dos", "ncannasse", "jason", "Simn", "nadako", "andyli"]
         }
         """
-        with io.open(location, encoding='utf-8') as loc:
+        with io.open(location, encoding='utf-8-sig') as loc:
             json_data = json.load(loc)
 
         yield cls._parse(json_data, package_only)

@@ -114,7 +114,7 @@ def parse_gomod(location):
         >>> assert p.group('ns_name') == ('github.com/davecgh/go-spew')
         >>> assert p.group('version') == ('v1.1.1')
     """
-    with io.open(location, encoding='utf-8', closefd=True) as data:
+    with io.open(location, encoding='utf-8-sig', closefd=True) as data:
         lines = data.readlines()
 
     gomods = GoModule()
@@ -229,7 +229,7 @@ def parse_gosum(location):
         >>> assert p.group('version') == ('v0.3.1')
         >>> assert p.group('checksum') == ('WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=')
     """
-    with io.open(location, encoding='utf-8', closefd=True) as data:
+    with io.open(location, encoding='utf-8-sig', closefd=True) as data:
         lines = data.readlines()
 
     gosums = []

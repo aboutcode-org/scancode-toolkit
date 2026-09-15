@@ -115,7 +115,7 @@ def get_cran_description(location):
     Parse a CRAN DESCRIPTION file as YAML and return a mapping of metadata.
     """
     yaml_lines = []
-    with io.open(location, encoding='utf-8') as loc:
+    with io.open(location, encoding='utf-8-sig') as loc:
         for line in loc.readlines():
             if not line:
                 continue

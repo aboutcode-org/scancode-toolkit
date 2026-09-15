@@ -410,7 +410,7 @@ class RpmMarinerContainerManifestHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with io.open(location, encoding='utf-8') as data:
+        with io.open(location, encoding='utf-8-sig') as data:
             lines = data.readlines()
 
         for line in lines:

@@ -66,7 +66,7 @@ class PhpComposerJsonHandler(BasePhpComposerHandler):
         Note that this is NOT exactly the packagist.json format (all are closely
         related of course but have important (even if minor) differences.
         """
-        with io.open(location, encoding='utf-8') as loc:
+        with io.open(location, encoding='utf-8-sig') as loc:
             package_json = json.load(loc)
 
         yield build_package_data(package_json, package_only)
@@ -175,7 +175,7 @@ class PhpComposerLockHandler(BasePhpComposerHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        with io.open(location, encoding='utf-8') as loc:
+        with io.open(location, encoding='utf-8-sig') as loc:
             package_data = json.load(loc)
 
         packages = [
