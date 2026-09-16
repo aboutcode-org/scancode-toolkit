@@ -1105,6 +1105,24 @@ def run_scan(
             results = get_results(codebase, as_list=True, **requested_options)
         elif return_codebase:
             results = codebase
+            # Strip root from Resource paths. See #2985
+            if strip_root and not codebase.has_single_resource:
+                from commoncode.resource import strip_first_path_segment
+                new_resources_by_path = {}
+                for old_path, resource in list(codebase.resources_by_path.items()):
+                    stripped_path = strip_first_path_segment(old_path)
+                    resource.path = stripped_path
+                    new_resources_by_path[stripped_path] = resource
+                codebase.resources_by_path = new_resources_by_path
+
+                # Patch parent() for direct children of root with empty parent path.
+                original_parent = codebase.resource_class.parent
+                def patched_parent(self, codebase_arg):
+                    parent_path = self.parent_path()
+                    if parent_path == '':
+                        return codebase_arg.root
+                    return original_parent(self, codebase_arg)
+                codebase.resource_class.parent = patched_parent
 
     finally:
         # remove temporary files
