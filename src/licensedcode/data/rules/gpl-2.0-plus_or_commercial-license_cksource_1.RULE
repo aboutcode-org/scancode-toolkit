@@ -1,0 +1,14 @@
+---
+license_expression: gpl-2.0-plus OR commercial-license
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 80
+notes: |
+  Specific rule for CKEditor 5 CKSource Holding sp. z o.o. copyright headers.
+  Matches the distinctive "CKSource Holding sp. z o.o." entity name and the
+  specific LICENSE.md reference pattern used in CKEditor 5, regardless of year.
+  This prevents false positive detection of LGPL-2.1-plus and MPL-1.1 by the
+  generic CKSource rule which was designed for CKEditor 4.
+---
+CKSource Holding sp. z o.o. All rights reserved.
+For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
