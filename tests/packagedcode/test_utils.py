@@ -10,6 +10,7 @@
 from unittest import TestCase
 
 from packagedcode.utils import normalize_vcs_url
+from packagedcode.utils import parse_vcs_urls
 
 
 class TestPackageUtils(TestCase):
@@ -128,3 +129,72 @@ class TestPackageUtils(TestCase):
         assert normalize_vcs_url(None) == None
         assert normalize_vcs_url('') == None
         assert normalize_vcs_url(' ') == None
+
+    # parse_vcs_urls tests -- without version (code_view_url should be None)
+
+    def test_parse_vcs_urls_github_no_version(self):
+        code, bugs = parse_vcs_urls('https://github.com/owner/repo.git')
+        assert code is None
+        assert bugs == 'https://github.com/owner/repo/issues'
+
+    def test_parse_vcs_urls_gitlab_no_version(self):
+        code, bugs = parse_vcs_urls('git+https://gitlab.com/owner/repo')
+        assert code is None
+        assert bugs == 'https://gitlab.com/owner/repo/-/issues'
+
+    def test_parse_vcs_urls_bitbucket_no_version(self):
+        code, bugs = parse_vcs_urls('git@bitbucket.org:owner/repo')
+        assert code is None
+        assert bugs == 'https://bitbucket.org/owner/repo/issues'
+
+    def test_parse_vcs_urls_codeberg_no_version(self):
+        code, bugs = parse_vcs_urls('https://codeberg.org/owner/repo.git')
+        assert code is None
+        assert bugs == 'https://codeberg.org/owner/repo/issues'
+
+    def test_parse_vcs_urls_unknown_host(self):
+        code, bugs = parse_vcs_urls('https://gitea.example.com/owner/repo.git')
+        assert code is None
+        assert bugs is None
+
+    def test_parse_vcs_urls_empty(self):
+        assert parse_vcs_urls(None) == (None, None)
+        assert parse_vcs_urls('') == (None, None)
+        assert parse_vcs_urls(' ') == (None, None)
+
+    # parse_vcs_urls tests -- with version
+
+    def test_parse_vcs_urls_github_git_ssh_with_version(self):
+        code, bugs = parse_vcs_urls('git@github.com:owner/repo.git', version='1.2.3')
+        assert code == 'https://github.com/owner/repo/tree/1.2.3'
+        assert bugs == 'https://github.com/owner/repo/issues'
+
+    def test_parse_vcs_urls_github_https_with_version(self):
+        code, bugs = parse_vcs_urls('https://github.com/owner/repo.git', version='2.0.0')
+        assert code == 'https://github.com/owner/repo/tree/2.0.0'
+        assert bugs == 'https://github.com/owner/repo/issues'
+
+    def test_parse_vcs_urls_github_git_plus_https_with_version(self):
+        code, bugs = parse_vcs_urls('git+https://github.com/owner/repo.git', version='0.9.1')
+        assert code == 'https://github.com/owner/repo/tree/0.9.1'
+        assert bugs == 'https://github.com/owner/repo/issues'
+
+    def test_parse_vcs_urls_gitlab_with_version(self):
+        code, bugs = parse_vcs_urls('git+https://gitlab.com/owner/repo', version='2.0.0')
+        assert code == 'https://gitlab.com/owner/repo/-/tree/2.0.0'
+        assert bugs == 'https://gitlab.com/owner/repo/-/issues'
+
+    def test_parse_vcs_urls_bitbucket_with_version(self):
+        code, bugs = parse_vcs_urls('git@bitbucket.org:owner/repo', version='3.1.0')
+        assert code == 'https://bitbucket.org/owner/repo/src/3.1.0'
+        assert bugs == 'https://bitbucket.org/owner/repo/issues'
+
+    def test_parse_vcs_urls_codeberg_with_version(self):
+        code, bugs = parse_vcs_urls('https://codeberg.org/owner/repo.git', version='0.5.0')
+        assert code == 'https://codeberg.org/owner/repo/src/tag/0.5.0'
+        assert bugs == 'https://codeberg.org/owner/repo/issues'
+
+    def test_parse_vcs_urls_unknown_host_with_version(self):
+        code, bugs = parse_vcs_urls('https://gitea.example.com/owner/repo.git', version='1.0.0')
+        assert code is None
+        assert bugs is None

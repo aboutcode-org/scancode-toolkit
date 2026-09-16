@@ -768,6 +768,8 @@ class PackageData(IdentifiablePackageData):
         else:
             package_data.normalize_extracted_license_statement()
 
+        package_data.infer_vcs_urls()
+
         return package_data
 
     @property
@@ -856,6 +858,16 @@ class PackageData(IdentifiablePackageData):
                 )
 
         self.normalize_extracted_license_statement()
+
+    def infer_vcs_urls(self):
+        from packagedcode.utils import parse_vcs_urls
+        if not self.vcs_url:
+            return
+        code_view, bug_track = parse_vcs_urls(self.vcs_url, version=self.version)
+        if not self.code_view_url and code_view:
+            self.code_view_url = code_view
+        if not self.bug_tracking_url and bug_track:
+            self.bug_tracking_url = bug_track
 
     def update_purl_fields(self, package_data, replace=False):
 
