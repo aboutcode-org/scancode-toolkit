@@ -17,6 +17,7 @@ from distutils.dir_util import copy_tree
 
 import click
 import saneyaml
+import yaml
 
 from commoncode.cliutils import MISC_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
@@ -28,6 +29,16 @@ from scancode_config import spdx_license_list_version
 
 TEMPLATES_DIR = os.path.join(dirname(__file__), 'templates')
 STATIC_DIR = os.path.join(dirname(__file__), 'static')
+
+def check_yaml_syntax(yaml_content, identifier):
+    """
+    Ensure the generated YAML can be parsed strictly by PyYAML.
+    """
+    try:
+        yaml.safe_load(yaml_content)
+    except yaml.YAMLError as e:
+        raise ValueError(f"Unable to parse generated YAML for {identifier}: {e}")
+
 
 
 def write_file(path, filename, content):
@@ -96,10 +107,13 @@ def generate_indexes(output_path, environment, licenses, test=False):
         "index.json",
         json.dumps(index, indent=2, sort_keys=False)
     )
+    index_yaml_content = saneyaml.dump(index, indent=2)
+    check_yaml_syntax(index_yaml_content, "index.yml")
+
     write_file(
         output_path,
         "index.yml",
-        saneyaml.dump(index, indent=2)
+        index_yaml_content
     )
     return len(index)
 
@@ -131,10 +145,14 @@ def generate_details(output_path, environment, licenses, test=False):
             license_data=license_data,
         )
         write_file(output_path, f"{lic.key}.html", html)
+        
+        yaml_content = saneyaml.dump(license_data_with_text, indent=2)
+        check_yaml_syntax(yaml_content, f"license: {lic.key}")
+            
         write_file(
             output_path,
             f"{lic.key}.yml",
-            saneyaml.dump(license_data_with_text, indent=2)
+            yaml_content
         )
         write_file(
             output_path,
