@@ -500,6 +500,48 @@ class BaseNpmHandler(models.DatafileHandler):
         for member in workspace_members:
             member.save(codebase)
 
+class NpmrcHandler(BaseNpmHandler):
+    datasource_id = 'npmrc'
+    path_patterns = ('*/.npmrc',)
+    default_package_type = 'npm'
+    default_primary_language = None
+    description = 'npm .npmrc configuration file'
+    documentation_url = 'https://docs.npmjs.com/cli/v11/configuring-npm/npmrc'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        """
+        parse [.npmrc] file and store result in key : value pair.
+        convert key : value pair to object and return it.
+        """
+        extra_data = {}
+        with io.open(location, encoding='utf-8') as lines:
+            for line in lines:
+                line = line.strip()
+                if not line or line.startswith(';') or line.startswith('#'):
+                    continue
+                if '=' not in line:
+                    continue
+                key, value = line.split('=', 1)
+                key = key.strip()
+                value = value.strip()
+                # ignore empty key but allow empty values
+                if not key:
+                    continue
+                # if value is in single quote or in double quote, strip them
+                if (value.startswith('"') and value.endswith('"')) or (value.startswith("'") and value.endswith("'")):
+                    if len(value) >= 2:
+                        value = value[1:-1]
+                extra_data[key] = value
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            description=cls.description,
+            extra_data=extra_data,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
 
 def get_urls(namespace, name, version, **kwargs):
     return dict(
