@@ -148,6 +148,8 @@ Options:
                              progress bar. Print verbose scan counters.
     --from-json              Load codebase from one or more <input> JSON scan
                              file(s).
+    --use-cached-results     (EXPERIMENTAL) Enables the creation, update, and
+                             usage of cached results during scan time.
     --max-in-memory INTEGER  Maximum number of files and directories scan details
                              kept in memory during a scan. Additional files and
                              directories scan details above this number are cached
