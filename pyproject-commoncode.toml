@@ -4,7 +4,7 @@ build-backend = "flot.buildapi"
 
 [project]
 name = "commoncode"
-version = "33.0.0rc1"
+version = "33.0.0"
 authors = [
     { name = "nexB. Inc. and others", email = "info@aboutcode.org" },
 ]
