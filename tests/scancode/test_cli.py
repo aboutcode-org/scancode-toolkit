@@ -1052,3 +1052,29 @@ def test_scan_does_validate_input_and_fails_on_faulty_json_input(test_file, expe
 def test_scan_does_validate_input_and_does_not_fail_on_valid_json_input():
     test_file = test_env.get_test_loc('various-inputs/true-scan-json.json')
     run_scan_click(['--from-json', test_file, '--json-pp', '-'], retry=False)
+
+
+@skipIf(on_windows, 'Test does not work on CI runners')
+def test_use_cached_results():
+    results_cache_location = test_env.get_test_loc(u'results_cache/results/')
+    test_file = test_env.get_test_loc(u'results_cache/package.json')
+    result_file = test_env.get_temp_file('json')
+    env = {
+        'SCANCODE_RESULTS_CACHE': results_cache_location
+    }
+    args = [
+        '--info',
+        '--license',
+        '--copyright',
+        '--package',
+        '--email',
+        '--url',
+        '--strip-root',
+        '--use-cached-results',
+        test_file ,
+        '--json',
+        result_file
+    ]
+    results = run_scan_plain(options=args, env=env)
+    expected = test_env.get_test_loc('results_cache/expected.json')
+    check_json_scan(expected, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)

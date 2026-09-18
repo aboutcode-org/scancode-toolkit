@@ -1,6 +1,13 @@
 Release notes
 =============
 
+Version 33.0.0rc1 - (2026-xx-xx)
+--------------------------------
+
+- Split logic from `commoncode.hash.checksum_from_chunks` into new function
+  `commoncode.hash.hasher_from_chunks`. This returns a hasher of a specified
+  checksum that contains the contents of an iterator `chunks`.
+
 Version 32.5.2 - (2026-06-11)
 -----------------------------
 

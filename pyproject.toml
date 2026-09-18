@@ -164,7 +164,6 @@ files = [
     { filename = "pyproject.toml" },
     { filename = "pyproject-scancode-toolkit-mini.toml" },
     { filename = "pyproject-packagedcode.toml" },
-    
 ]
 
 
