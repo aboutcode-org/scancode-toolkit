@@ -1,7 +1,12 @@
 Release notes
 =============
 
-Version 33.0.0rc1 - (2026-xx-xx)
+Version 33.0.0 - (2026-06-11)
+-----------------------------
+
+- Bump version to proper release.
+
+Version 33.0.0rc1 - (2026-09-17)
 --------------------------------
 
 - Split logic from `commoncode.hash.checksum_from_chunks` into new function
