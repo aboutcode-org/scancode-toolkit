@@ -261,8 +261,8 @@ install_packages_with_local() {
     # we need to install commoncode from local source first so this
     # is tested and not the released commoncode
     "$CFG_BIN_DIR/flot" --pyproject pyproject-commoncode.toml
-    "$CFG_BIN_DIR/pip" install ./dist/commoncode*.whl
     install_packages "$CFG_REQUIREMENTS"
+    "$CFG_BIN_DIR/pip" install --force-reinstall ./dist/commoncode*.whl
 }
 
 
