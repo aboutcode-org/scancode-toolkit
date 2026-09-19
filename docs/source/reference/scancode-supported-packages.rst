@@ -956,6 +956,27 @@ parsers in scancode-toolkit during documentation builds.
      - ``swift_package_show_dependencies``
      - Swift
      - https://forums.swift.org/t/swiftpm-show-dependencies-without-fetching-dependencies/51154
+   * - vcpkg CONTROL manifest
+     - ``*/CONTROL``
+     - ``vcpkg``
+     - ``linux``, ``win``, ``mac``
+     - ``vcpkg_control``
+     - C++
+     - https://learn.microsoft.com/vcpkg/maintainers/control-files
+   * - vcpkg JSON manifest
+     - ``*/vcpkg.json``
+     - ``vcpkg``
+     - ``linux``, ``win``, ``mac``
+     - ``vcpkg_json``
+     - C++
+     - https://learn.microsoft.com/vcpkg/reference/vcpkg-json
+   * - vcpkg CMake portfile
+     - ``*/portfile.cmake``
+     - ``vcpkg``
+     - ``linux``, ``win``, ``mac``
+     - ``vcpkg_portfile``
+     - C++
+     - https://learn.microsoft.com/vcpkg/concepts/ports
    * - Java Web Application Archive
      - ``*.war``
      - ``war``

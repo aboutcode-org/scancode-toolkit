@@ -1,0 +1,4 @@
+about_resource: portfile.cmake
+download_url: https://raw.githubusercontent.com/microsoft/vcpkg/2475cc332a47b3a63bb3de58293bdab7726613ca/ports/rapidjson/portfile.cmake
+name: vcpkg rapidjson portfile fixture
+version: 2475cc332a47b3a63bb3de58293bdab7726613ca
