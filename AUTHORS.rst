@@ -61,6 +61,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Nisha Kumar @nishakm
 - Nishchith Shetty @inishchith
 - Nitish Sharma @nitish81299
+- Wonjae Park @JustinWonjaePark
 - Paul Gier @pgier
 - Philippe Ombredanne @pombredanne
 - Pi Delport @PiDelport
