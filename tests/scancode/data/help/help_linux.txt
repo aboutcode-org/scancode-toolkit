@@ -25,6 +25,7 @@ Options:
   other scans:
     -i, --info   Scan <input> for file information (size, checksums, etc).
     --generated  Classify automatically generated code files with a flag.
+    --lkm        Scan Linux kernel module files for .modinfo metadata.
     -e, --email  Scan <input> for emails.
     -u, --url    Scan <input> for urls.
 
