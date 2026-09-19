@@ -381,7 +381,7 @@ report here). We are now just reporting a flat mapping here, and all the
 rule details are also not present in the license match, and only available
 as an optional reference.
 
-See this before/after comparision to see how the license data in results has
+See this before/after comparison to see how the license data in results has
 evolved.
 
 Before::
@@ -536,12 +536,12 @@ This is now default with the CLI option ``--license``, which references from
 the match License-level Data and LicenseDB-level Data, and removes the actual data from
 the matches, and adds them to two top-level lists.
 
-Comparision: Before/After license references
+Comparison: Before/After license references
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To compare how the license output data changes between when license references are not collected
 vs when they are collected (which is default from version 32.x), check out the before/after
-comparision below.
+comparison below.
 
 Before::
 

@@ -584,7 +584,7 @@ for ScanCode Version 32.0.0.
       help_group: post-scan, name: license_policy: --license-policy
         help: Load a License Policy file and apply it to the scan at the Resource level.
     doc:
-      Add the "license_policy" attribute to a resouce if it contains a
+      Add the "license_policy" attribute to a resource if it contains a
       detected license key that is found in the license_policy.yml file
 
 
