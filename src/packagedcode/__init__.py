@@ -161,6 +161,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     phpcomposer.PhpComposerJsonHandler,
     phpcomposer.PhpComposerLockHandler,
+    phpcomposer.PhpSymfonyLockHandler,
 
     pubspec.DartPubspecYamlHandler,
     pubspec.DartPubspecLockHandler,
