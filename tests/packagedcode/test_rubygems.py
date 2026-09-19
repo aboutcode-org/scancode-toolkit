@@ -7,9 +7,11 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import ast
 import io
 import json
 import os
+from pathlib import Path
 
 from commoncode import text
 from commoncode.testcase import FileBasedTesting
@@ -111,6 +113,36 @@ class TestRubyGemMetadata(FileBasedTesting):
     def test_build_rubygem_package_does_not_crash(self):
         test_file = self.get_test_loc('rubygems/metadata/metadata.gz-extract')
         rubygems.GemMetadataArchiveExtractedHandler.parse(test_file)
+
+
+class TestRubygemsLicensesMapping(object):
+
+    def test_licenses_mapping_has_no_duplicated_declared_license(self):
+        # A duplicated key in a dict literal is silently dropped by Python, so
+        # this has to be checked on the source rather than on the loaded dict.
+        source = Path(rubygems.__file__).read_text(encoding='utf-8')
+
+        mapping = None
+        for node in ast.walk(ast.parse(source)):
+            if isinstance(node, ast.Assign) and any(
+                isinstance(target, ast.Name) and target.id == 'LICENSES_MAPPING'
+                for target in node.targets
+            ):
+                mapping = node.value
+
+        assert mapping is not None, 'LICENSES_MAPPING not found in rubygems.py'
+
+        declared = [
+            key.value for key in mapping.keys
+            if isinstance(key, ast.Constant)
+        ]
+        duplicated = sorted(
+            {key for key in declared if declared.count(key) > 1}
+        )
+        assert duplicated == []
+
+    def test_licenses_mapping_maps_bare_lgpl_to_lgpl_2_0_plus(self):
+        assert rubygems.LICENSES_MAPPING['LGPL'] == 'lgpl-2.0-plus'
 
 
 def relative_walk(dir_path, extension='.gem'):
