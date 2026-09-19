@@ -1,0 +1,29 @@
+#Taken from : https://xebia.com/blog/minimal-pyproject-toml-example/
+
+[project]
+name = "titanic_ml"
+description = "titanic_ml example package"
+version = "0.1.0"
+authors = [
+    { name = "Niels Zeilemaker", email = "nielszeilemaker@xebia.com" }
+]
+dependencies = [
+    "pyspark[ml]",
+    "sklearn"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Private :: Do Not Upload"
+]
+
+[project.optional-dependencies]
+dev = [
+    "tox",
+    "pre-commit",
+    "bump2version"
+]
+
+[build-system]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core >=3.2,<4"]
