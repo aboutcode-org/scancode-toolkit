@@ -34,7 +34,7 @@ Several heuristics are used to break down a query in query runs and this process
 is important to the overall speed and accuracy of license detection: since the
 most costly parts of detection is done query run by query run, and sequence
 alignment is performed on the best ranking candidates from a probalistic
-ranking, the defintion of what chunk should be matched matters a lot.
+ranking, the definition of what chunk should be matched matters a lot.
 
 If too small, chunking would favour alignment against smaller rules and increase
 the processing time as more alignments would need to be computed. If too big,
@@ -97,7 +97,7 @@ if TRACE or TRACE_QR or TRACE_QR_BREAK or TRACE_STOP_AND_UNKNOWN:
     def logger_debug(*args):
         return printer(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-# for the cases of very long lines, we break texts in abritrary pseudo lines of
+# for the cases of very long lines, we break texts in arbitrary pseudo lines of
 # up to 25 tokens (aka. words) each to avoid getting huge query runs for texts
 # on a single line (e.g. minified JS or CSS).
 MAX_TOKEN_PER_LINE = 25
@@ -388,7 +388,7 @@ class Query(object):
         # absolute position in a query, including only known tokens
         known_pos = -1
 
-        # flag ifset to True when we have found the first known token globally
+        # flag if set to True when we have found the first known token globally
         # across all query lines
         started = False
 
@@ -448,7 +448,7 @@ class Query(object):
                             if TRACE_STOP_AND_UNKNOWN:
                                 logger_debug(f'      STOPWORD token: known_pos: -1')
                         else:
-                            # here we have a new unknwon token positioned right after
+                            # here we have a new unknown token positioned right after
                             # the current known_pos
                             stopwords_by_pos[known_pos] += 1
                             stopwords_pos_add(known_pos)
@@ -470,7 +470,7 @@ class Query(object):
                                 logger_debug(f'      UNKNOWN token: known_pos: -1')
 
                         else:
-                            # here we have a new unknwon token positioned right after
+                            # here we have a new unknown token positioned right after
                             # the current known_pos
                             unknowns_by_pos[known_pos] += 1
                             unknowns_pos_add(known_pos)
@@ -485,7 +485,7 @@ class Query(object):
 
             # ONLY collect as SPDX a line that starts with SPDX License
             # Identifier. There are cases where this prefix does not start as
-            # the firt tokens such as when we have one or two words (such as a
+            # the first tokens such as when we have one or two words (such as a
             # comment indicator DNL, REM etc.) that start the line and then and
             # an SPDX license identifier.
             spdx_start_offset = None
@@ -546,7 +546,7 @@ class Query(object):
 
     def refine_runs(self):
         # TODO: move me to the approximate matching loop so that this is done
-        # only if neeed rebreak query runs based on potential rule boundaries
+        # only if needed rebreak query runs based on potential rule boundaries
         query_runs = list(chain.from_iterable(
             break_on_boundaries(qr) for qr in self.query_runs))
 
@@ -798,7 +798,7 @@ class QueryRun(object):
     def is_matchable(self, include_low=False, qspans=None):
         """
         Return True if this query run has some matchable high token positions.
-        Optinally if `include_low`m include low tokens.
+        Optionally if `include_low`, include low tokens.
         If a list of `qspans` is provided, their positions are also subtracted.
         """
         if include_low:

@@ -43,7 +43,7 @@ if TRACE:
 Support for Maven POMs including resolution of variables using Maven properties
 when possible.
 
-We have seen Maven pom in three layout syles:
+We have seen Maven pom in three layout styles:
 
 First case: a pom.xml inside a META-INF directory such as in
 /META-INF/maven/log4j/log4j/pom.xml possibly with a pom.properties
@@ -1375,7 +1375,7 @@ class MavenPackageData(models.PackageData):
         # We can detect each license item individually and check if the unknown was detected
         # in the name, URL or comment field.
         # name, URL, comments
-        # name unknwon: keep that unknown in all cases
+        # name unknown: keep that unknown in all cases
         # URL or comments with unknown, but name not unknown: we want to combine the unknown
         # matches with the correct name match
 

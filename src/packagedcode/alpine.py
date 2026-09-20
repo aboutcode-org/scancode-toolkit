@@ -1170,7 +1170,7 @@ def checksums_handler(value, checksum_name, **kwargs):
 def get_source_entries(source):
     """
     Yield source file tuples as (file_name, URL) where URL is None if this is a
-    lcoal file (i.e. for patches) given an APKBUILD ``source`` attribue string.
+    local file (i.e. for patches) given an APKBUILD ``source`` attribute string.
 
     See https://wiki.alpinelinux.org/wiki/APKBUILD_Reference:
     The shape of this is one entry per line::
@@ -1325,7 +1325,7 @@ package_handlers_by_field_name = {
     # TODO: Checksum
     # also in APKBUILD we have sha512sums
     # For example: C:Q1sVrQyQ5Ek9/clI1rkKjgINqJNu8=
-    # like for the file checksums "Z", Q means base64 encoding adn 1 means SHA1
+    # like for the file checksums "Z", Q means base64 encoding and 1 means SHA1
     # The content used for this SHA1 is TBD.
     # ('C', 'checksum'),
 
@@ -1555,7 +1555,7 @@ EXPRESSION_SYNTAX_FIXES = {
 
 def apply_syntax_fixes(s):
     """
-    Fix the expression string ``s`` by aplying replacement for various quirks to get clean license
+    Fix the expression string ``s`` by applying replacement for various quirks to get clean license
     expression syntax.
     """
     for src, tgt in EXPRESSION_SYNTAX_FIXES.items():
@@ -1724,7 +1724,7 @@ def apply_expressions_mapping(expression):
     """
     Return a new license expression string from an ``expression`` string
     replacing subexpressions using the DECLARED_TO_SPDX_SUBS expression
-    subsitution table.
+    substitution table.
     """
     licensing = Licensing()
 

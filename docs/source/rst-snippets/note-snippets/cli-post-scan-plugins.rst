@@ -1,6 +1,6 @@
 .. note::
 
-    Plugins that are shown by using ``--plugins`` inlcude the following:
+    Plugins that are shown by using ``--plugins`` include the following:
 
     #. Post-Scan Plugins (and, the following)
     #. Pre-Scan Plugins

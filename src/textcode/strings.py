@@ -139,9 +139,9 @@ def clean_string(s, min_len=MIN_LEN, junk=JUNK):
     """
     Yield cleaned strings from string s if it passes some validity tests:
      * not made of white spaces
-     * with a minimum length ignoring spaces and punctuations
+     * with a minimum length ignoring spaces and punctuation
      * not made of only two repeated character
-     * not made of only of digits, punctuations and whitespaces
+     * not made of only of digits, punctuation and whitespaces
     """
     s = s.strip()
 
@@ -150,7 +150,7 @@ def clean_string(s, min_len=MIN_LEN, junk=JUNK):
         return (st and len(st) >= min_len
                 # ignore character repeats, e.g need more than two unique characters
                 and len(set(st.lower())) > 1
-                # ignore string made only of digits, spaces or punctuations
+                # ignore string made only of digits, spaces or punctuation
                 and not all(c in junk for c in st))
 
     if valid(s):
@@ -165,7 +165,7 @@ def clean_string(s, min_len=MIN_LEN, junk=JUNK):
 def is_file(s):
     """
     Return True if s looks like a file name.
-    Exmaple: dsdsd.dll
+    Example: dsdsd.dll
     """
     filename = re.compile('^[\\w_\\-]+\\.\\w{1,4}$', re.IGNORECASE).match
     return filename(s)

@@ -491,7 +491,7 @@ parsers in scancode-toolkit during documentation builds.
      - ``go_mod``
      - Go
      - https://go.dev/ref/mod
-   * - Go module cheksums file
+   * - Go module checksums file
      - ``*/go.sum``
      - ``golang``
      - ``linux``, ``win``, ``mac``

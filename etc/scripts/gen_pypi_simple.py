@@ -177,7 +177,7 @@ class Package(NamedTuple):
 def build_pypi_index(directory, base_url="https://thirdparty.aboutcode.org/pypi"):
     """
     Create the a PyPI simple directory index using a ``directory`` directory of wheels and sdists in
-    the direvctory at ``directory``/simple/ populated with the proper PyPI simple index directory
+    the directory at ``directory``/simple/ populated with the proper PyPI simple index directory
     structure crafted using symlinks.
 
     WARNING: The ``directory``/simple/ directory is removed if it exists. NOTE: in addition to the a

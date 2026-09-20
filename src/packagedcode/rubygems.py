@@ -391,7 +391,7 @@ def extract_gem_metadata(location):
     """
     Return the string content of the metadata of a .gem archive file at
     ``location`` or None.
-    This performs an extracion to a temp directory.
+    This performs an extraction to a temp directory.
     """
     extract_loc = None
     try:
@@ -710,7 +710,7 @@ def party_mapper(role, names=[], emails=[]):
 
 def get_parties(gem_data):
     """
-    Return a lits of Party from a mapping of ``gem_data``
+    Return a list of Party from a mapping of ``gem_data``
     """
     parties = []
     authors = gem_data.get('author') or []

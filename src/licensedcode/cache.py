@@ -38,7 +38,7 @@ LICENSE_LOCKFILE_NAME = 'scancode_license_index_lockfile'
 
 class LicenseCache:
     """
-    Represent cachable/pickable LicenseIndex and index-related objects.
+    Represent cacheable/pickable LicenseIndex and index-related objects.
     """
 
     def __init__(
@@ -275,7 +275,7 @@ def build_index(
 
 def build_licensing(licenses_db=None):
     """
-    Return a `license_expression.Licensing` objet built from a `licenses_db`
+    Return a `license_expression.Licensing` object built from a `licenses_db`
     mapping of {key: License} or the standard license db.
     """
     from license_expression import LicenseSymbolLike
@@ -482,7 +482,7 @@ def get_licenses_db():
 
 def get_licensing():
     """
-    Return a license_expression.Licensing objet built from the all the licenses.
+    Return a license_expression.Licensing object built from the all the licenses.
     """
     return get_cache().licensing
 

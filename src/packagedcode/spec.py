@@ -154,7 +154,7 @@ def parse_spec(location, package_type):
 
     # description can be in single or multi-lines
     # There are many different ways to write description.
-    # we reparse for multline
+    # we reparse for multiline
     description = spec_data.get("description")
     if description:
         if '<<-' in description:
@@ -256,7 +256,7 @@ def get_cleaned_string(string):
 def get_multiline_description(description_start, lines):
     """
     Return a multiline description given the ``description_start`` start of the
-    decsription and a ``lines`` list. These are common in .podspec.
+    description and a ``lines`` list. These are common in .podspec.
 
     https://guides.cocoapods.org/syntax/podspec.html#description
     description is in the form:

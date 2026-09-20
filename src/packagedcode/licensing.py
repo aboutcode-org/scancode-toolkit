@@ -711,7 +711,7 @@ def is_declared_license_not_fully_matched(matches):
     # the query object should be the same for all matches. Is this always true??
     for mt in matches:
         if mt.query != query:
-            # FIXME: the expception may be swallowed in callers!!!
+            # FIXME: the exception may be swallowed in callers!!!
             raise Exception(
                 'Inconsistent package.extracted_license_statement: text with multiple "queries".'
                 'Please report this issue to the scancode-toolkit team.\n'

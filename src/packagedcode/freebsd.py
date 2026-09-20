@@ -212,6 +212,6 @@ def arch_mapper(arch, package):
     """
     # the 'arch' field allows us to craft a binary download_url
     # FIXME: due to the rolling-release nature of binary ports, some download URLs
-    # will lead to 404 errors if a newer release of a particular port is availible
+    # will lead to 404 errors if a newer release of a particular port is available
     package.download_url = f'https://pkg.freebsd.org/{arch}/latest/All/{package.name}-{package.version}.txz'
     return package

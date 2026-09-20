@@ -31,7 +31,7 @@ Build and tests status
 ======================
 
 We run 30,000+ tests on each commit on multiple CIs to ensure a good platform
-compabitility with multiple versions of Windows, Linux and macOS.
+compatibility with multiple versions of Windows, Linux and macOS.
 
 +------------+--------------+-------------------------+----------------------------+
 | **Azure**  | **RTD Build**| **GitHub actions Docs** | **GitHub actions Release** |
@@ -64,7 +64,7 @@ Benefits of ScanCode
 
 - ScanCode detects licenses, copyrights, package manifests, direct dependencies,
   and more both in **source code** and **binary** files and is considered as the
-  best-in-class and reference tool in this domain, re-used as the core tools for
+  best-in-class and reference tool in this domain, reused as the core tools for
   software composition data collection by several open source tools.
 
 - ScanCode provides the **most accurate license detection engine** and does a
@@ -92,7 +92,7 @@ If you have a specific problem, suggestion or bug, please submit a
 
 For quick questions or socializing, join the AboutCode community discussions on `Slack <https://join.slack.com/t/aboutcode-org/shared_invite/zt-3li3bfs78-mmtKG0Qhv~G2dSlNCZW2pA>`_.
 
-Interested in commercial suppport? Contact the `AboutCode team <mailto:hello@aboutcode.org>`_.
+Interested in commercial support? Contact the `AboutCode team <mailto:hello@aboutcode.org>`_.
 
 License
 =======

@@ -1,6 +1,6 @@
 .. _how-to-install-new-license-plugin:
 
-How to install external licenses to use in license dectection
+How to install external licenses to use in license detection
 =============================================================
 
 Users can install external licenses and rules in the form of:

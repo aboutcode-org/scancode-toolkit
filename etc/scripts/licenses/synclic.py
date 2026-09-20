@@ -131,7 +131,7 @@ class ExternalLicensesSource:
         """
         Return a mapping of key -> ScanCode License objects either fetched
         externally or loaded from the existing `self.original_dir`
-        If ``force_refetch`` the licenses are always refected. Otherwise if
+        If ``force_refetch`` the licenses are always refetched. Otherwise if
         `self.original_dir` exists, they are loaded from there.
         """
         if not use_cache:
@@ -460,7 +460,7 @@ class SpdxSource(ExternalLicensesSource):
 
         text = (mapping.get("licenseText") or mapping.get("licenseExceptionText")).strip()
         if not text:
-            raise Exception(f"Missing text fpr SPDX {spdx_license_key}")
+            raise Exception(f"Missing text for SPDX {spdx_license_key}")
 
         lic = License(
             key=key,
@@ -554,7 +554,7 @@ class DejaSource(ExternalLicensesSource):
 
     def fetch_license_data(self, per_page=100, max_fetch=None, **kwargs):
         """
-        Yield mappings of license daa fetched from the API.
+        Yield mappings of license data fetched from the API.
         """
         api_url = f"{self.api_base_url}/licenses/"
         for licenses in call_deja_api(api_url, self.api_key, paginate=per_page):
@@ -693,7 +693,7 @@ class DejaSource(ExternalLicensesSource):
 
 def call_deja_api(api_url, api_key, paginate=0, params=None):
     """
-    Yield result mappings from the reponses of calling the API at
+    Yield result mappings from the responses of calling the API at
     `api_url` with `api_key` . Raise an exception on failure.
 
     Pass `headers` and `params` mappings to the

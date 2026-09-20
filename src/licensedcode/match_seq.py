@@ -57,7 +57,7 @@ def match_sequence(
     """
     Return a list of LicenseMatch by matching the `query_run` tokens sequence
     starting at `start_offset` against the `idx` index for the candidate `rule`.
-    Stop processing when reachin the deadline time.
+    Stop processing when reaching the deadline time.
     """
     if not rule:
         return []

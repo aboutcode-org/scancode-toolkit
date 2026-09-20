@@ -172,7 +172,7 @@ def flatten_scan(scan, headers):
                         val = with_two_decimals(val)
 
                     # lines are present in multiple scans: keep their column name as
-                    # not scan-specific. Prefix othe columns with license__
+                    # not scan-specific. Prefix other columns with license__
                     if k not in ('start_line', 'end_line',):
                         k = 'license_match__' + k
 
@@ -257,7 +257,7 @@ def get_package_columns(_columns=set()):
     """
     Return (and cache in_columns) a set of package column names included in the
     CSV output.
-    Some columsn are excluded for now such as lists of mappings: these do not
+    Some columns are excluded for now such as lists of mappings: these do not
     serialize well to CSV
     """
     if _columns:

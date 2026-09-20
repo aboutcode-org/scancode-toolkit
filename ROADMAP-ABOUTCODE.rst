@@ -94,7 +94,7 @@ License detection quality improvements
 Improve package detection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Create synthethic, private packages from non-packaged files based on license and copyright
+- Create synthetic, private packages from non-packaged files based on license and copyright
 - Create simplified purl-only lightweight package detection
 - Evolve model for dependencies towards requirements and true dependencies
 - Track private non-published packages
@@ -142,7 +142,7 @@ PURLDB: PurlDB
 - MatchCode matching engine
 
   - embed a SCIO with a matching pipeline for match a whole codebase at once
-    - expore new endpoint for matching whole codebase
+    - explore new endpoint for matching whole codebase
   - support multiple SCIO workers for indexing
   - implement proper ranking of matched code results
   - refactor directory matching to be a pre-matching step to file matching
@@ -162,7 +162,7 @@ VCIO: VulnerableCode.io
 PURL: purl and vers specs
 --------------------------
 
-- Merge and advertize vers spec.
+- Merge and advertise vers spec.
 - Standardize purl with ECMA
 
 

@@ -15,7 +15,7 @@ import subprocess
 """
 Utilities to manage requirements files and call pip.
 NOTE: this should use ONLY the standard library and not import anything else
-because this is used for boostrapping with no requirements installed.
+because this is used for bootstrapping with no requirements installed.
 """
 
 

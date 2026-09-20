@@ -1273,7 +1273,7 @@ class DatafileHandler:
         Like in ``DatafileHandler.assemble()``, Package items must be yielded
         before Dependency or Resource items. This is to ensure that a Package is
         created before we associate a Resource or Dependency to a Package. This
-        is particulary important in the case where we are calling the
+        is particularly important in the case where we are calling the
         ``assemble()`` method outside of the scancode-toolkit context, as
         ``assemble()`` can call ``assemble_from_many()``.
 
@@ -1309,7 +1309,7 @@ class DatafileHandler:
             else:
                 # FIXME: What is the package_data is NOT for the same package as package?
                 # FIXME: What if the update did not do anything? (it does return True or False)
-                # FIXME: There we would be missing out packges AND/OR errors
+                # FIXME: There we would be missing out packages AND/OR errors
                 package.update(
                     package_data=package_data,
                     datafile_path=resource.path,

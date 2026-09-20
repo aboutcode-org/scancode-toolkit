@@ -172,7 +172,7 @@ Quick reference
 
     It adds the following attributes to the top-level in results:
 
-    1. ``packages``: This is a mapping of package data with all the atrributes
+    1. ``packages``: This is a mapping of package data with all the attributes
        present in file level ``package_data`` with the following extra attributes:
        ``package_uid``, ``datafile_paths`` and ``datasource_ids``.
 
@@ -409,7 +409,7 @@ Quick reference
 ``--email``
 -----------
 
-    The ``--email`` option detects and reports email adresses present in scanned files.
+    The ``--email`` option detects and reports email addresses present in scanned files.
 
     It adds the ``emails`` attribute to the file data with the following attributes:
     ``email`` with the actual email that was present in the file, ``start_line`` and

@@ -64,7 +64,7 @@ STOPWORDS = frozenset({
     'para',
     'ulink',
 
-# Some HTML punctuations and entities all as &emdash;
+# Some HTML punctuation and entities all as &emdash;
 
     'bdquo',
     'bull',

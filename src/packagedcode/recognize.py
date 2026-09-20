@@ -154,7 +154,7 @@ def _parse(
                 raise
 
         except Exception as e:
-            # We should continue when an Exception has occured when trying to
+            # We should continue when an Exception has occurred when trying to
             # recognize a package
             if TRACE:
                 import traceback

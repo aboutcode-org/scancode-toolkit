@@ -94,7 +94,7 @@ README_STARTS_ENDS = (
 )
 
 # Community files are usually files used for FOSS project and community
-# maintainence purposes. We want to detect these as in the context of
+# maintenance purposes. We want to detect these as in the context of
 # licenses as these files don't have interesting license detections, or
 # license detection issues are not important to review for these files.
 # this is similar to `key` files, which also has a lot of community info

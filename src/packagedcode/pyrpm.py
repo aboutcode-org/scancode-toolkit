@@ -43,7 +43,7 @@ See also: http://refspecs.linuxfoundation.org/LSB_5.0.0/LSB-Core-generic/LSB-Cor
 # the first 4 bytes of an RPM
 RPM_LEAD_MAGIC_NUMBER = b'\xed\xab\xee\xdb'
 
-# the start of the header (there are some data we ignore before taht)
+# the start of the header (there are some data we ignore before that)
 RPM_HEADER_MAGIC_NUMBER = b'\x8e\xad\xe8'
 
 RPMTAG_MIN_NUMBER = 1000
@@ -434,7 +434,7 @@ class RPM:
     def read_sigheader(self):
         """
         Read signature header
-        ATN: this will not return any usefull information
+        ATN: this will not return any useful information
         besides the file offset
         """
         start = find_magic_number(self.rpmfile)
@@ -467,7 +467,7 @@ class RPM:
         # lets find the start of the header
         self.rpmfile.seek(offset)
         start = find_magic_number(self.rpmfile)
-        # go back to the begining of the header
+        # go back to the beginning of the header
         self.rpmfile.seek(start)
         header = self.rpmfile.read(16)
         header = self.read_header(header)

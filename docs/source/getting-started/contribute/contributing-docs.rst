@@ -128,7 +128,7 @@ AboutCode documentation uses
 `Intersphinx <https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html>`_
 to link to other Sphinx Documentations, to maintain links to other Aboutcode Projects.
 
-To link sections in the same documentation, standart reST labels are used. Refer
+To link sections in the same documentation, standard reST labels are used. Refer
 `Cross-Referencing <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html>`_
 for more information.
 
@@ -143,7 +143,7 @@ For example::
 
     It refers to the section itself, see :ref:`my-reference-label`.
 
-Now, using Intersphinx, you can create these labels in one Sphinx Documentation and then referance
+Now, using Intersphinx, you can create these labels in one Sphinx Documentation and then reference
 these labels from another Sphinx Documentation, hosted in different locations.
 
 You just have to add the following in the ``conf.py`` file for your Sphinx Documentation, where you
@@ -183,8 +183,8 @@ For more information, refer this tutorial named
 
 .. _contributing-docs-style-conventions:
 
-Style Conventions for the Documentaion
---------------------------------------
+Style Conventions for the Documentation
+----------------------------------------
 
 1. Headings
 

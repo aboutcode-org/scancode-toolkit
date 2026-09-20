@@ -217,7 +217,7 @@ class CargoTomlHandler(CargoBaseHandler):
         categories = core_package_data.get('categories') or []
         keywords.extend(categories)
 
-        # cargo dependencies are complex and can be overriden at multiple levels
+        # cargo dependencies are complex and can be overridden at multiple levels
         dependencies = []
         for key, value in package_data_toml.items():
             if key.endswith('dependencies'):

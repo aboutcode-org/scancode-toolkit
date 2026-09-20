@@ -219,7 +219,7 @@ def match_unknowns(
 
     if len(qspan) < unknown_ngram_length * 4 or len(hispan) < 5:
         if TRACE:
-            print('match_unknowns: Skipping weak unkown match', text)
+            print('match_unknowns: Skipping weak unknown match', text)
         return
 
     match = LicenseMatch(

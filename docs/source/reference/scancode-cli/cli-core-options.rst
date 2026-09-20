@@ -129,7 +129,7 @@ Comparing progress message options
 ``--max_depth INT``
 -------------------
 
-    Normally, the scan takes place upto the maximum level of nesting of directories possible. But
+    Normally, the scan takes place up to the maximum level of nesting of directories possible. But
     using the ``--max-depth`` option, you can specify the maximum level of directories to scan,
     including and below the root location. This can reduce the time taken for the scan when deeper
     directories are not relevant.

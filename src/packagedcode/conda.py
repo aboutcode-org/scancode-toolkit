@@ -206,7 +206,7 @@ class CondaBaseHandler(models.DatafileHandler):
     @classmethod
     def assemble_from_meta_yaml_only(cls, package_data, resource, codebase, package_adder=models.add_to_package):
         """
-        Assemble and yeild package, dependencies and the meta YAML `resource` from
+        Assemble and yield package, dependencies and the meta YAML `resource` from
         it's `package_data`, and also assign resources to the package.
         """
         if not package_data.purl:

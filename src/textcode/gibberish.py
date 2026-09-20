@@ -5,7 +5,7 @@
 # 12Jun2017 Petr Janata - added srcfile and outfile
 # 17Jun2107 Petr Janata - expanded set of accepted characters to include digits and hyphen
 #
-# whch is based off of:
+# which is based off of:
 # https://raw.githubusercontent.com/rrenaud/Gibberish-Detector/aa1d4e4555362b3dada97ebe6ecc23a84fc470fe/gib_detect_train.py
 #
 
@@ -88,7 +88,7 @@ class Gibberish(object):
             for j in range(len(row)):
                 row[j] = math.log(row[j] / s)
 
-        # Find the probability of generating a few arbitrarily choosen good and
+        # Find the probability of generating a few arbitrarily chosen good and
         # bad phrases.
         good_probs = [self.avg_transition_prob(l, counts) for l in open(goodfile, encoding='utf-8')]
         bad_probs = [self.avg_transition_prob(l, counts) for l in open(badfile, encoding='utf-8')]

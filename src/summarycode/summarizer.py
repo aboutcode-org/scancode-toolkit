@@ -162,7 +162,7 @@ def get_declared_holders(codebase, holders_tallies):
     detected from key files.
 
     A declared holder is a copyright holder present in the key files who has the
-    highest amount of refrences throughout the codebase.
+    highest amount of references throughout the codebase.
     """
     entry_by_holders = {
         fingerprints.generate(entry['value']): entry for entry in holders_tallies if entry['value']

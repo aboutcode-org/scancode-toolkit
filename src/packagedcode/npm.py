@@ -1594,7 +1594,7 @@ def split_scoped_package_name(name):
     if not name:
         return None, None
 
-    # this should never happen: wee only have a scope.
+    # this should never happen: we only have a scope.
     # TODO: raise an  exception?
     if is_scoped_package(name) and '/' not in name:
         return name, None

@@ -529,7 +529,7 @@ class LicenseMatch(object):
     def is_continuous(self):
         """
         Return True if the all the matched tokens of this match are continuous
-        without any extra unmatched known or unkwown words, or stopwords.
+        without any extra unmatched known or unknown words, or stopwords.
         """
         return (
             self.len() == self.qregion_len() == self.qmagnitude()
@@ -1527,7 +1527,7 @@ def restore_non_overlapping(matches, discarded):
     """
     Return a tuple of (matches, discarded) sequences of LicenseMatch given
     `matches` and `discarded` sequences of LicenseMatch. Reintegrate as matches
-    these that may have been filtered too agressively.
+    these that may have been filtered too aggressively.
     """
     all_matched_qspans = Span().union(*(m.qspan for m in matches))
 
@@ -1634,7 +1634,7 @@ def filter_matches_to_spurious_single_token(
     A "spurious" single token match is a match to a single token that is
     surrounded on both sides by at least `unknown_count` tokens that are either
     unknown tokens, short tokens composed of a single character, tokens
-    composed only of digits or several punctuations and stopwords.
+    composed only of digits or several punctuation marks and stopwords.
     """
     from licensedcode.match_seq import MATCH_SEQ
     if not query:
@@ -1653,7 +1653,7 @@ def filter_matches_to_spurious_single_token(
             kept_append(match)
             continue
 
-        # always keep extact matches
+        # always keep exact matches
         if match.matcher != MATCH_SEQ:
             kept_append(match)
             continue
@@ -1851,7 +1851,7 @@ def filter_invalid_matches_to_single_word_gibberish(
     - the matched rule "is_license_reference" or "is_license_clue"
     - the matched rule has a low relevance, e.g., under 75
     - the matched text has either:
-      - one or more leading or trailing punctuations (except for +)
+      - one or more leading or trailing punctuation (except for +)
         unless this has a high relevance and the rule is contained as-is
         in the matched text (considering case)
       - mixed upper and lower case characters (but not a Title case) unless
@@ -2339,7 +2339,7 @@ def get_matching_regions(
 
     Two consecutive region Spans are such that:
 
-    - there are no overlaping matches between them
+    - there are no overlapping matches between them
     - there are at least ``min_tokens_gap`` unmatched tokens between them
     - OR there are at least ``min_lines_gap`` unmatched lines between them
     """
@@ -2985,7 +2985,7 @@ def _tokenize_matched_text(
 
                 # 2. to ensure the number of tokens is the same in both
                 # tokenizers (though, of course, the case will differ as the
-                # regular query tokenizer ignores case and punctuations).
+                # regular query tokenizer ignores case and punctuation).
 
                 # NOTE: we have a rare Unicode bug/issue because of some Unicode
                 # codepoint such as some Turkish characters that decompose to
@@ -3236,8 +3236,8 @@ def get_full_qspan_matched_text(
     - ``match_start_line`` is the match start_line
     - ``match_end_line`` is the match= end_line
 
-    The returned strings contains the full text including punctuations and
-    spaces that are not participating in the match proper including punctuations.
+    The returned strings contains the full text including punctuation and
+    spaces that are not participating in the match proper including punctuation.
 
     If ``whole_lines`` is True, the unmatched part at the start of the first
     matched line and the unmatched part at the end of the last matched lines are

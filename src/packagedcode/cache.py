@@ -45,7 +45,7 @@ PACKAGE_LOCKFILE_NAME = 'scancode_package_index_lockfile'
 @attr.s
 class PkgManifestPatternsCache:
     """
-    Represent cachable package manifest regex patterns, prematchers
+    Represent cacheable package manifest regex patterns, prematchers
     and mappings from regex patterns to datasource IDs for all datafile
     handlers.
     """
@@ -164,7 +164,7 @@ def get_prematchers_from_glob_pattern(pattern):
 @attr.s
 class AcceleratedPattern():
     regex :str = attr.ib(default=None) # regular expression string
-    prematchers :list[str] = attr.ib(default=[]) # list of prematcher strinsg for this regex
+    prematchers :list[str] = attr.ib(default=[]) # list of prematcher strings for this regex
     handler_datasource_ids :list[str] = attr.ib(default=[]) # handler
 
 

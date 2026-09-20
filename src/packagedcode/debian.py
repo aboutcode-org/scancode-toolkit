@@ -161,7 +161,7 @@ class DebianControlFileInSourceHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        # NOTE: a control file in a source repo or debina.tar tarball can contain more than one package
+        # NOTE: a control file in a source repo or debian.tar tarball can contain more than one package
         debian_packages = []
         for debian_data in get_paragraphs_data_from_file(location=location):
             debian_packages.append(
@@ -604,7 +604,7 @@ def parse_debian_files_list(location, datasource_id, package_type):
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
-            # for a plain file lits, the md5sum will be empty
+            # for a plain file list, the md5sum will be empty
             md5sum, _, path = line.partition(' ')
             path = path.strip()
             md5sum = md5sum and md5sum.strip() or None
@@ -744,7 +744,7 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
 def populate_debian_namespace(packages):
     """
     For an iterable of debian `packages`, populate the
-    most frequently occuring namespace, or the default
+    most frequently occurring namespace, or the default
     namespace 'debian' in packages without namespace.
     """
     if not packages:
