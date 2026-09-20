@@ -1,0 +1,16 @@
+pkgbase = rust-split
+	pkgdesc = Split package example
+	pkgver = 1.0.0
+	pkgrel = 1
+	arch = x86_64
+	license = MIT
+	makedepends = rust
+	source = source.tar.gz
+
+pkgname = rust-split-bin
+	pkgdesc = Binary package
+	depends = glibc
+
+pkgname = rust-split-lib
+	pkgdesc = Library package
+	depends = gcc-libs
