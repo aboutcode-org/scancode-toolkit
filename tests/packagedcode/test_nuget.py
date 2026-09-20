@@ -21,6 +21,12 @@ class TestNuget(PackageTester):
         test_file = self.get_test_loc('nuget/bootstrap.nuspec')
         assert nuget.NugetNuspecHandler.is_datafile(test_file)
 
+    def test_parse_nuspec_license_file_reference(self):
+        test_file = self.get_test_loc('nuget/license_file.nuspec')
+        package = nuget.NugetNuspecHandler.parse(test_file)
+        expected_loc = self.get_test_loc('nuget/license_file.nuspec.json.expected')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_creates_package_from_nuspec_bootstrap(self):
         test_file = self.get_test_loc('nuget/bootstrap.nuspec')
         package = nuget.NugetNuspecHandler.parse(test_file)

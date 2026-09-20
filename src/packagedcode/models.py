@@ -672,6 +672,12 @@ class PackageData(IdentifiablePackageData):
              'package manifest and extracted. This can be a string, a list or dict of '
              'strings possibly nested, as found originally in the manifest.')
 
+    license_file_references = List(
+        item_type=str,
+        label='license file references',
+        help='A list of license file path references as found in a package manifest.'
+    )
+
     notice_text = String(
         label='notice text',
         help='A notice text for this package.')
@@ -881,7 +887,6 @@ class PackageData(IdentifiablePackageData):
         mapping = super().to_dict(with_details=with_details, **kwargs)
         if not with_details:
             # these are not used in the Package subclass
-            mapping.pop('file_references', None)
             mapping.pop('dependencies', None)
             mapping.pop('datasource_id', None)
 
