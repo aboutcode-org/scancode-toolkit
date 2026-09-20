@@ -405,6 +405,10 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
         if TRACE_TOK:
             logger_debug('  get_tokens: bare line: ' + repr(line))
 
+        # 🔥 NEW FIX: Skip non-meaningful / unicode-heavy lines
+        if not any(c.isalpha() for c in line):
+            continue
+
         # keep or skip empty lines
         if not line.strip():
             stripped = last_line.lower().strip(string.punctuation)
