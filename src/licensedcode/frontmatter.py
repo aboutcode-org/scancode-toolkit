@@ -135,7 +135,7 @@ def load_frontmatter(fd, encoding="utf-8", **defaults):
         text = fd.read()
 
     else:
-        with codecs.open(fd, "r", encoding) as f:
+        with open(fd, "r", encoding=encoding) as f:
             text = f.read()
 
     text = return_unicode(text, encoding)
