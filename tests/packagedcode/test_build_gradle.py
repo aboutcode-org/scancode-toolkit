@@ -50,6 +50,18 @@ def check_gradle_parse(location):
 class TestBuildGradleGroovy(PackageTester):
     test_data_dir = test_data_dir
 
+    def test_build_gradle_version_catalog_fdroid(self):
+        test_file = self.get_test_loc('build_gradle/groovy/fdroid-version-catalog/build.gradle')
+        expected_file = self.get_test_loc('build_gradle/groovy/fdroid-version-catalog/build.gradle-expected.json')
+        packages = build_gradle.BuildGradleHandler.parse(test_file)
+        self.check_packages_data(packages, expected_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_build_gradle_version_catalog_material_lists(self):
+        test_file = self.get_test_loc('build_gradle/groovy/material-lists-version-catalog/build.gradle')
+        expected_file = self.get_test_loc('build_gradle/groovy/material-lists-version-catalog/build.gradle-expected.json')
+        packages = build_gradle.BuildGradleHandler.parse(test_file)
+        self.check_packages_data(packages, expected_file, regen=REGEN_TEST_FIXTURES)
+
 
 build_tests(
     test_dir=os.path.join(test_data_dir, 'build_gradle/groovy'),
@@ -59,7 +71,6 @@ build_tests(
     test_file_suffix='.gradle',
     regen=REGEN_TEST_FIXTURES,
 )
-
 
 class TestBuildGradleKotlin(PackageTester):
     test_data_dir = test_data_dir

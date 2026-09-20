@@ -14,6 +14,11 @@ from pygmars import Token
 from pygmars.parse import Parser
 from pygments import lex
 
+try:
+    import tomllib
+except ImportError:
+    import tomli as tomllib
+
 from packagedcode import groovy_lexer
 from packagedcode import models
 
@@ -86,7 +91,7 @@ grammar = """
 
     DEPENDENCY-4: {<NAME> <TEXT> <NAME-LABEL> <TEXT> <LIT-STRING> <PACKAGE-IDENTIFIER> <PACKAGE-IDENTIFIER> <OPERATOR>? <TEXT>}
 
-    DEPENDENCY-5: {<NAME> <TEXT> <NAME> <OPERATOR> <NAME-ATTRIBUTE>}
+    DEPENDENCY-VERSION-CATALOG: {<NAME> <TEXT> <NAME> <OPERATOR> <NAME-ATTRIBUTE> (<OPERATOR> <NAME-ATTRIBUTE>)*}
 
     NESTED-DEPENDENCY-1: {<NAME> <OPERATOR> <DEPENDENCY-1>+ }
 """
@@ -312,20 +317,116 @@ def get_dependencies_from_parse_tree(parse_tree):
                         dependency[last_key] = remove_quotes(child_node.value)
                 yield dependency
 
-            if tree_node.label == 'DEPENDENCY-5':
+            if tree_node.label == 'DEPENDENCY-VERSION-CATALOG':
                 dependency = {}
+                scope = None
+                name_parts = []
                 for child_node in tree_node.leaves():
                     if child_node.label == 'NAME':
-                        dependency['scope'] = child_node.value
-                    if child_node.label == 'NAME-ATTRIBUTE':
-                        dependency['name'] = child_node.value
-                yield dependency
+                        if not scope:
+                            scope = child_node.value
+                        else:
+                            name_parts.append(child_node.value)
+                    elif child_node.label == 'NAME-ATTRIBUTE':
+                        name_parts.append(child_node.value)
+                if scope and name_parts:
+                    full_name = '.'.join(name_parts)
+                    dependency['scope'] = scope
+                    dependency['name'] = full_name
+                    dependency['namespace'] = ''
+                    dependency['version'] = ''
+                    yield dependency
+
+
+def parse_version_catalog(build_gradle_location):
+    """
+    Parse gradle/libs.versions.toml and return a mapping of alias -> {group, name, version}.
+    Returns empty dict if file not found.
+    """
+    gradle_dir = os.path.dirname(build_gradle_location)
+    catalog_locations = [
+        os.path.join(gradle_dir, 'gradle', 'libs.versions.toml'),
+        os.path.join(os.path.dirname(gradle_dir), 'gradle', 'libs.versions.toml'),
+    ]
+
+    catalog_path = None
+    for loc in catalog_locations:
+        if os.path.exists(loc):
+            catalog_path = loc
+            break
+
+    if not catalog_path:
+        return {}
+
+    with open(catalog_path, 'rb') as f:
+        catalog = tomllib.load(f)
+
+    libraries = catalog.get('libraries', {})
+    versions = catalog.get('versions', {})
+    alias_map = {}
+
+    for alias, lib_spec in libraries.items():
+        normalized_alias = alias.replace('-', '.')
+
+        if isinstance(lib_spec, str):
+            parts = lib_spec.split(':')
+            if len(parts) >= 2:
+                alias_map[normalized_alias] = {
+                    'namespace': parts[0],
+                    'name': parts[1],
+                    'version': parts[2] if len(parts) > 2 else '',
+                }
+
+        elif isinstance(lib_spec, dict):
+            module = lib_spec.get('module', '')
+            if module:
+                module_parts = module.split(':')
+                group = module_parts[0] if len(module_parts) >= 1 else ''
+                name = module_parts[1] if len(module_parts) >= 2 else ''
+            else:
+                group = lib_spec.get('group', '')
+                name = lib_spec.get('name', '')
+
+            version = lib_spec.get('version', '')
+            if isinstance(version, dict) and 'ref' in version:
+                version = versions.get(version['ref'], '')
+
+            alias_map[normalized_alias] = {
+                'namespace': group,
+                'name': name,
+                'version': version,
+            }
+
+    return alias_map
 
 
 def get_dependencies(build_gradle_location):
+    """
+    Parse dependencies from build.gradle, resolving version catalog references.
+    """
     parse_tree = get_parse_tree(build_gradle_location)
-    # Parse `parse_tree` for dependencies and print them
-    return list(get_dependencies_from_parse_tree(parse_tree))
+    raw_dependencies = list(get_dependencies_from_parse_tree(parse_tree))
+    catalog = parse_version_catalog(build_gradle_location)
+
+    resolved_dependencies = []
+    for dep in raw_dependencies:
+        name = dep.get('name', '')
+
+        if name.startswith('libs.'):
+            alias = name[5:]
+            if alias in catalog:
+                catalog_entry = catalog[alias]
+                resolved_dependencies.append({
+                    'namespace': catalog_entry['namespace'],
+                    'name': catalog_entry['name'],
+                    'version': catalog_entry['version'],
+                    'scope': dep.get('scope', ''),
+                })
+                continue
+
+        resolved_dependencies.append(dep)
+
+    return resolved_dependencies
 
 
 def build_package(cls, dependencies, package_only=False):
@@ -334,7 +435,6 @@ def build_package(cls, dependencies, package_only=False):
     """
     package_dependencies = []
     for dependency in dependencies:
-        # Ignore collected dependencies that do not have a name
         name = dependency.get('name', '')
         if not name:
             continue
@@ -342,11 +442,28 @@ def build_package(cls, dependencies, package_only=False):
         namespace = dependency.get('namespace', '')
         version = dependency.get('version', '')
         scope = dependency.get('scope', '')
+
         is_runtime = True
         is_optional = False
         if 'test' in scope.lower():
             is_runtime = False
             is_optional = True
+
+        is_pinned = bool(version)
+
+        resolved_package_data = {}
+        if is_pinned:
+            resolved_package = models.PackageData.from_data(
+                dict(
+                    datasource_id=cls.datasource_id,
+                    type=cls.default_package_type,
+                    namespace=namespace,
+                    name=name,
+                    version=version,
+                ),
+                package_only,
+            )
+            resolved_package_data = resolved_package.to_dict()
 
         package_dependencies.append(
             models.DependentPackage(
@@ -354,13 +471,14 @@ def build_package(cls, dependencies, package_only=False):
                     type=cls.default_package_type,
                     namespace=namespace,
                     name=name,
-                    version=version
+                    version=version,
                 ).to_string(),
                 scope=scope,
                 extracted_requirement=version,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_pinned=bool(version),
+                is_pinned=is_pinned,
+                resolved_package=resolved_package_data,
             )
         )
 

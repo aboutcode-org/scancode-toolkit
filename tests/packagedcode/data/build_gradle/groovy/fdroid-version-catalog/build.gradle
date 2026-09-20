@@ -1,0 +1,10 @@
+// Adapted from https://gitlab.com/fdroid/fdroidclient/-/blob/02100d9218352323140c016b9839da2afe95c41b/app/build.gradle.kts
+dependencies {
+    implementation project(":libs:download")
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.preference.ktx
+    implementation libs.material
+    implementation('com.journeyapps:zxing-android-embedded:4.3.0') { transitive = false }
+    implementation libs.acra.mail
+    implementation libs.acra.dialog
+}

@@ -1,0 +1,13 @@
+# From https://gitlab.com/fdroid/fdroidclient/-/blob/02100d9218352323140c016b9839da2afe95c41b/gradle/libs.versions.toml
+[versions]
+androidx-appcompat = "1.6.1"
+androidx-preference = "1.2.1"
+material = "1.9.0"
+acra = "5.11.3"
+
+[libraries]
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "androidx-preference" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+acra-mail = { group = "ch.acra", name = "acra-mail", version.ref = "acra" }
+acra-dialog = { group = "ch.acra", name = "acra-dialog", version.ref = "acra" }
