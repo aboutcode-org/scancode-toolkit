@@ -1,0 +1,17 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+ignorable_copyrights:
+    - Copyright (c) 2002-2020, the original author or authors
+ignorable_holders:
+    - the original author or authors
+ignorable_urls:
+    - https://opensource.org/licenses/BSD-3-Clause
+
+---
+
+This software is distributable under the BSD license. See the terms of the
+BSD license in the documentation provided with this software.
+
+https://opensource.org/licenses/BSD-3-Clause
