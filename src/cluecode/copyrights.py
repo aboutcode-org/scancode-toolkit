@@ -708,6 +708,48 @@ PATTERNS = [
     # as javadoc
     (r'^@[Cc]opyrights?:?$', 'COPY'),
 
+    ############################################################################
+    # URLS and emails - moved here to prevent (c) in URLs from being matched as copyright
+    ############################################################################
+
+     # email start-at-end: <sebastian.classen at freenet.ag>: <EMAIL_START> <AT> <EMAIL_END>
+    (r'^<([a-zA-Z]+[a-zA-Z\.]){2,5}$', 'EMAIL_START'),
+    (r'^[a-zA-Z\.]{2,5}>$', 'EMAIL_END'),
+
+    # a .sh shell scripts is NOT an email.
+    (r'^.*\.sh\.?$', 'JUNK'),
+    # email eventually in parens or brackets with some trailing punct. Note the @ or "at "
+    (r'^(?:[A-Za-z])*[<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,3}[>\)\.\,]*$', 'EMAIL'),
+
+    # mailto URLs
+    (r'^mailto:.{2,}@.{2,}\.[a-z]{2,3}', 'EMAIL'),
+
+    (r'^<[a-zA-Z]+[a-zA-Z0-9\.]+@[a-zA-Z][a-zA-Z0-9]+\.[a-zA-Z]{2,5}>$', 'EMAIL'),
+
+    # URLS such as <(http://fedorahosted.org/lohit)> or ()
+    (r'[<\(]https?:.*[>\)]', 'URL'),
+    # URLS such as ibm.com without a scheme
+    (r'\s?[a-z0-9A-Z\-\.\\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|se|nl|au|biz|sy|dev)\s?[\.,]?$', 'URL2'),
+    # TODO: add more extensions: there are so many TLDs these days!
+    # URL wrapped in () or <>
+    (r'[\(<]+\s?[a-z0-9A-Z\-\.\\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz|sy|dev)\s?[\.\)>]+$', 'URL'),
+    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz|sy|dev)[\.\)>]?$', 'URL'),
+    # derived from regex in cluecode.finder
+    (r'<?a?.(href)?('
+     r'(?:http|ftp|sftp)s?://[^\s<>\[\]"]+'
+     r'|(?:www|ftp)\.[^\s<>\[\]]+'
+     r')\.?>?', 'URL'),
+
+    (r'^\(?<?https?://[a-zA-Z0-9_\-]+(\\.([a-zA-Z0-9_\-])+)+.?\)?>?$', 'URL'),
+
+    # URLS with trailing/ such as http://fedorahosted.org/lohit/
+    # URLS with leading( such as (http://qbnz.com/highlighter/
+    (r'\(?https?:.*/', 'URL'),
+
+    ############################################################################
+    # Back to COPYRIGHT patterns
+    ############################################################################
+
     (r'^\(C\)\,?$', 'COPY'),
     (r'^\(c\)\,?$', 'COPY'),
 
@@ -2290,44 +2332,6 @@ PATTERNS = [
     (r'^([A-Z][a-z0-9]+){1,2}\.?,?$', 'NNP'),
 
     ############################################################################
-    # URLS and emails
-    ############################################################################
-
-     # email start-at-end: <sebastian.classen at freenet.ag>: <EMAIL_START> <AT> <EMAIL_END>
-    (r'^<([a-zA-Z]+[a-zA-Z\.]){2,5}$', 'EMAIL_START'),
-    (r'^[a-zA-Z\.]{2,5}>$', 'EMAIL_END'),
-
-    # a .sh shell scripts is NOT an email.
-    (r'^.*\.sh\.?$', 'JUNK'),
-    # email eventually in parens or brackets with some trailing punct. Note the @ or "at "
-    (r'^(?:[A-Za-z])*[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,3}[\>\)\.\,]*$', 'EMAIL'),
-
-    # mailto URLs
-    (r'^mailto:.{2,}@.{2,}\.[a-z]{2,3}', 'EMAIL'),
-
-    (r'^<[a-zA-Z]+[a-zA-Z0-9\.]+@[a-zA-Z][a-zA-Z0-9]+\.[a-zA-Z]{2,5}>$', 'EMAIL'),
-
-    # URLS such as <(http://fedorahosted.org/lohit)> or ()
-    (r'[<\(]https?:.*[>\)]', 'URL'),
-    # URLS such as ibm.com without a scheme
-    (r'\s?[a-z0-9A-Z\-\.\_]+\.([Cc][Oo][Mm]|[Nn][Ee][Tt]|[Oo][Rr][Gg]|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|de|be|se|nl|au|biz|sy|dev)\s?[\.,]?$', 'URL2'),
-    # TODO: add more extensions: there are so many TLDs these days!
-    # URL wrapped in () or <>
-    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz|sy|dev)\s?[\.\)>]+$', 'URL'),
-    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|org|us|mil|io|edu|co\.[a-z][a-z]|eu|ch|fr|jp|de|be|se|nl|au|biz|sy|dev)[\.\)>]?$', 'URL'),
-    # derived from regex in cluecode.finder
-    (r'<?a?.(href)?.('
-     r'(?:http|ftp|sftp)s?://[^\s<>\[\]"]+'
-     r'|(?:www|ftp)\.[^\s<>\[\]"]+'
-     r')\.?>?', 'URL'),
-
-    (r'^\(?<?https?://[a-zA-Z0-9_\-]+(\.([a-zA-Z0-9_\-])+)+.?\)?>?$', 'URL'),
-
-    # URLS with trailing/ such as http://fedorahosted.org/lohit/
-    # URLS with leading( such as (http://qbnz.com/highlighter/
-    (r'\(?https?:.*/', 'URL'),
-
-    ############################################################################
     # Misc
     ############################################################################
 
@@ -3838,6 +3842,10 @@ COPYRIGHTS_JUNK = [
     r'^\(c\) \(c\) B$',
     r'^\(c\) group$',
     r'^\(c\) \(c\) A$',
+    # URLs with (c) in path or query - these are false positives
+    r'.*https?://',  # contains http:// or https://
+    r'.*/.*\(c\)',  # has path-like structure with (c)
+    r'\(c\).*https?://',  # (c) followed by URL
 ]
 
 # a collection of junk junk matcher callables
