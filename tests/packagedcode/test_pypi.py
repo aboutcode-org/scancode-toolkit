@@ -364,6 +364,8 @@ class TestPyprojectTomlFileHandler(PackageTester):
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
+
+
 class TestPoetryHandler(PackageTester):
 
     def test_is_pyproject_toml_poetry(self):
@@ -404,6 +406,14 @@ class TestPoetryHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/poetry/univers-pyproject.toml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+class TestPylockTomlHandler(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_parse_pylock_toml(self):
+        test_file = self.get_test_loc('pypi/pylock/pylock.toml')
+        expected_loc = self.get_test_loc('pypi/pylock/pylock.toml.expected')
+        package = pypi.PylockTomlHandler.parse(test_file)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 class TestUvHandler(PackageTester):
     # Test fixtures derived from python-attrs/attrs at release 26.1.0
