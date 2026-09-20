@@ -1,0 +1,20 @@
+[licenses]
+allow = ["MIT", "Apache-2.0"]
+deny = ["GPL-2.0"]
+
+[[licenses.clarify]]
+name = "ring"
+expression = "MIT AND ISC AND OpenSSL"
+
+[[licenses.exceptions]]
+allow = ["LicenseRef-special"]
+name = "special-crate"
+version = "*"
+
+[bans]
+deny = [
+    { name = "openssl", version = "*" }
+]
+
+[advisories]
+ignore = ["RUSTSEC-2020-0001"]

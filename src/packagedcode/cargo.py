@@ -427,3 +427,119 @@ def parse_person(person):
         email = email.strip('<> ')
 
     return name, email
+
+
+class CargoDenyHandler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'cargo_deny'
+    path_patterns = ('*/deny.toml', '*deny.toml',)
+    default_package_type = 'cargo'
+    description = 'Cargo deny.toml license policy file'
+    documentation_url = 'https://embarkstudios.github.io/cargo-deny/'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        try:
+            with open(location, "rb") as fp:
+                cargo_deny = tomllib.load(fp)
+        except (OSError, tomllib.TOMLDecodeError):
+            return
+
+        if not isinstance(cargo_deny, dict):
+            return
+
+        licenses = cargo_deny.get('licenses') or {}
+        if not isinstance(licenses, dict):
+            licenses = {}
+
+        allowed_licenses = licenses.get('allow') or []
+        if not isinstance(allowed_licenses, list):
+            allowed_licenses = [allowed_licenses]
+
+        denied_licenses = licenses.get('deny') or []
+        if not isinstance(denied_licenses, list):
+            denied_licenses = [denied_licenses]
+
+        clarify = licenses.get('clarify') or []
+        if not isinstance(clarify, list):
+            clarify = []
+
+        license_clarifications = []
+        for c in clarify:
+            if not isinstance(c, dict):
+                continue
+            license_clarifications.append({
+                'name': c.get('name'),
+                'expression': c.get('expression'),
+                'license-files': c.get('license-files', [])
+            })
+
+        exceptions = licenses.get('exceptions') or []
+        if not isinstance(exceptions, list):
+            exceptions = []
+
+        license_exceptions = []
+        for e in exceptions:
+            if not isinstance(e, dict):
+                continue
+            license_exceptions.append({
+                'name': e.get('name'),
+                'version': e.get('version'),
+                'allow': e.get('allow', [])
+            })
+
+        bans = cargo_deny.get('bans') or {}
+        if not isinstance(bans, dict):
+            bans = {}
+
+        ban_deny = bans.get('deny') or []
+        if not isinstance(ban_deny, list):
+            ban_deny = []
+
+        dependencies = []
+        for ban in ban_deny:
+            if isinstance(ban, str):
+                name = ban
+                version = '*'
+            elif isinstance(ban, dict):
+                name = ban.get('name')
+                version = ban.get('version', '*')
+            else:
+                continue
+
+            if not name:
+                continue
+
+            purl = PackageURL(type='cargo', name=name).to_string()
+            dependencies.append(
+                models.DependentPackage(
+                    purl=purl,
+                    extracted_requirement=version,
+                    scope='deny',
+                    is_runtime=False,
+                    is_optional=False,
+                )
+            )
+
+        advisories = cargo_deny.get('advisories') or {}
+        if not isinstance(advisories, dict):
+            advisories = {}
+
+        ignored_advisories = advisories.get('ignore') or []
+        if not isinstance(ignored_advisories, list):
+            ignored_advisories = [ignored_advisories]
+
+        extra_data = {
+            'allowed_licenses': allowed_licenses,
+            'denied_licenses': denied_licenses,
+            'license_clarifications': license_clarifications,
+            'license_exceptions': license_exceptions,
+            'ignored_advisories': ignored_advisories,
+        }
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            dependencies=dependencies,
+            extra_data=extra_data,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
