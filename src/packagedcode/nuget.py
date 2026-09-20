@@ -218,28 +218,36 @@ class NugetPackagesLockHandler(models.DatafileHandler):
             extra_data = dict(
                 target_framework=target_framework,
             )
+
             for package_name, package_info in packages.items():
-                dependencies = cls.get_dependencies(package_info=package_info, scope=target_framework)
-                resolved_package_mapping = dict(
-                datasource_id=cls.datasource_id,
-                type=cls.default_package_type,
-                primary_language=cls.default_primary_language,
-                name=package_name,
-                dependencies=[
-                    dep.to_dict() for dep in dependencies
-                ],
-                is_virtual=True,
-                version=package_info.get('resolved'),
-                )
-                resolved_package = models.PackageData.from_data(resolved_package_mapping)
                 package_type = package_info.get('type')
+
+                if package_type == "Project":
+                    continue
+
                 if package_type == "Direct":
                     is_direct = True
-                elif package_type == "Transitive":
+                elif package_type in {"Transitive", "CentralTransitive"}:
                     is_direct = False
                 else:
-                    raise Exception(f"Unknown package type: {package_type} for package {package_name} in {location}")
-                    
+                    raise Exception(
+                        f"Unknown package type: {package_type} "
+                        f"for package {package_name} in {location}"
+                    )
+
+                dependencies = cls.get_dependencies(package_info=package_info, scope=target_framework)
+                resolved_package_mapping = dict(
+                    datasource_id=cls.datasource_id,
+                    type=cls.default_package_type,
+                    primary_language=cls.default_primary_language,
+                    name=package_name,
+                    dependencies=[
+                        dep.to_dict() for dep in dependencies
+                    ],
+                    is_virtual=True,
+                    version=package_info.get('resolved'),
+                )
+                resolved_package = models.PackageData.from_data(resolved_package_mapping)
 
                 version = package_info.get('resolved')
                 requested = package_info.get('requested')
@@ -256,12 +264,12 @@ class NugetPackagesLockHandler(models.DatafileHandler):
                     is_direct=is_direct,
                 )
                 top_dependencies.append(dependency.to_dict())
-        package_data = dict(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            primary_language=cls.default_primary_language,
-            extra_data=extra_data,
-            dependencies=top_dependencies,
-        )
-        yield models.PackageData.from_data(package_data, package_only)
 
+            package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                extra_data=extra_data,
+                dependencies=top_dependencies,
+            )
+            yield models.PackageData.from_data(package_data, package_only)

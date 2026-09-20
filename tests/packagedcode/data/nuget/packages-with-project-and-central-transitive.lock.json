@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dependencies": {
+    "net8.0": {
+      "Direct.Package": {
+        "type": "Direct",
+        "requested": "[1.0.0, )",
+        "resolved": "1.0.0",
+        "contentHash": "direct-package-content-hash",
+        "dependencies": {
+          "Transitive.Package": "2.0.0"
+        }
+      },
+      "Transitive.Package": {
+        "type": "Transitive",
+        "resolved": "2.0.0",
+        "contentHash": "transitive-package-content-hash"
+      },
+      "CentralTransitive.Package": {
+        "type": "CentralTransitive",
+        "requested": "[3.0.0, )",
+        "resolved": "3.0.0",
+        "contentHash": "central-transitive-package-content-hash"
+      },
+      "Local.Project": {
+        "type": "Project",
+        "dependencies": {
+          "CentralTransitive.Package": "[3.0.0, )"
+        }
+      }
+    }
+  }
+}
