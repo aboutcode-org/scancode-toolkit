@@ -1,0 +1,2 @@
+license_expressions: []
+notes: Casual mentions of "open source license" in documentation should not trigger license detection. This test verifies free-unknown_88.RULE (deactivated) does not cause false positives.
