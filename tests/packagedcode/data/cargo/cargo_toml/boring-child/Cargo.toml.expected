@@ -46,6 +46,7 @@
     "bug_tracking_url": null,
     "code_view_url": null,
     "vcs_url": null,
+    "documentation_url": "https://docs.rs/boring-sys",
     "copyright": null,
     "holder": null,
     "declared_license_expression": "mit",
@@ -86,8 +87,7 @@
     "extra_data": {
       "version": "workspace",
       "repository": "workspace",
-      "edition": "workspace",
-      "documentation_url": "https://docs.rs/boring-sys"
+      "edition": "workspace"
     },
     "dependencies": [
       {

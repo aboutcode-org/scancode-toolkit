@@ -228,12 +228,12 @@ class CargoTomlHandler(CargoBaseHandler):
 
         vcs_url = core_package_data.get('repository')
         homepage_url = core_package_data.get('homepage')
+        documentation_url = core_package_data.get('documentation')
         repository_homepage_url = name and f'https://crates.io/crates/{name}'
         repository_download_url = name and version and f'https://crates.io/api/v1/crates/{name}/{version}/download'
         api_data_url = name and f'https://crates.io/api/v1/crates/{name}'
 
         extra_data_mappings = {
-            "documentation": "documentation_url",
             "rust-version": "rust_version",
             "edition": "rust_edition",
         }
@@ -254,6 +254,7 @@ class CargoTomlHandler(CargoBaseHandler):
             extracted_license_statement=extracted_license_statement,
             vcs_url=vcs_url,
             homepage_url=homepage_url,
+            documentation_url=documentation_url,
             repository_homepage_url=repository_homepage_url,
             repository_download_url=repository_download_url,
             api_data_url=api_data_url,
