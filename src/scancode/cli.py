@@ -71,6 +71,7 @@ from scancode import results_cache
 from scancode.help import epilog_text
 from scancode.help import examples_text
 from scancode.interrupt import DEFAULT_TIMEOUT
+from scancode.interrupt import DEFAULT_PLUGIN_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
 from scancode.pool import ScanCodeTimeoutError
@@ -275,6 +276,14 @@ def default_processes():
          f'[default: {DEFAULT_TIMEOUT} seconds]',
     help_group=cliutils.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
+@click.option('--timeout-plugins',
+    type=float,
+    default=DEFAULT_PLUGIN_TIMEOUT,
+    metavar='<seconds>',
+    help='Stop an unfinished codebase processing or post-scan plugin after'
+         f' a timeout in seconds. [default: {DEFAULT_TIMEOUT} seconds]',
+    help_group=cliutils.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
+
 @click.option('-q', '--quiet',
     is_flag=True,
     default=False,
@@ -429,6 +438,7 @@ def scancode(
     full_root,
     processes,
     timeout,
+    timeout_plugins,
     quiet,
     verbose,
     max_depth,
@@ -543,6 +553,7 @@ def scancode(
             full_root=full_root,
             processes=processes,
             timeout=timeout,
+            timeout_plugins=timeout_plugins,
             quiet=quiet,
             verbose=verbose,
             max_depth=max_depth,
@@ -587,7 +598,8 @@ def run_scan(
     full_root=False,
     max_in_memory=10000,
     processes=1,
-    timeout=120,
+    timeout=DEFAULT_TIMEOUT,
+    timeout_plugins=DEFAULT_PLUGIN_TIMEOUT,
     quiet=True,
     verbose=False,
     max_depth=0,
@@ -702,6 +714,7 @@ def run_scan(
         full_root=full_root,
         processes=processes,
         timeout=timeout,
+        timeout_plugins=timeout_plugins,
         quiet=quiet,
         verbose=verbose,
         from_json=from_json,
@@ -992,6 +1005,7 @@ def run_scan(
             stage='pre-scan',
             plugins=pre_scan_plugins,
             codebase=codebase,
+            timeout=timeout_plugins,
             stage_msg='Run %(stage)ss...',
             plugin_msg=' Run %(stage)s: %(name)s...',
             quiet=quiet,
@@ -1011,6 +1025,7 @@ def run_scan(
             codebase=codebase,
             processes=processes,
             timeout=timeout,
+            timeout_plugins=timeout_plugins,
             timing=timeout,
             quiet=quiet,
             verbose=verbose,
@@ -1029,6 +1044,7 @@ def run_scan(
             stage='post-scan',
             plugins=post_scan_plugins,
             codebase=codebase,
+            timeout=timeout_plugins,
             stage_msg='Run %(stage)ss...',
             plugin_msg=' Run %(stage)s: %(name)s...',
             quiet=quiet,
@@ -1047,6 +1063,7 @@ def run_scan(
             stage='output-filter',
             plugins=output_filter_plugins,
             codebase=codebase,
+            timeout=timeout_plugins,
             stage_msg='Apply %(stage)ss...',
             plugin_msg=' Apply %(stage)s: %(name)s...',
             quiet=quiet,
@@ -1081,6 +1098,7 @@ def run_scan(
                 stage='output',
                 plugins=output_plugins,
                 codebase=codebase,
+                timeout=timeout_plugins,
                 stage_msg='Save scan results...',
                 plugin_msg=' Save scan results as: %(name)s...',
                 quiet=quiet,
@@ -1169,6 +1187,7 @@ def run_codebase_plugins(
     stage,
     plugins,
     codebase,
+    timeout,
     stage_msg='',
     plugin_msg='',
     quiet=False,
@@ -1193,6 +1212,7 @@ def run_codebase_plugins(
     # Sort plugins by run_order, from low to high
     sorted_plugins = sorted(plugins, key=lambda x: x.run_order)
 
+    scan_errors = []
     success = True
     # TODO: add progress indicator
     for plugin in sorted_plugins:
@@ -1209,7 +1229,11 @@ def run_codebase_plugins(
                 logger_debug(pformat(sorted(kwargs.items())))
                 logger_debug()
 
-            plugin.process_codebase(codebase, **kwargs)
+            process_codebase_func = partial(plugin.process_codebase, codebase, **kwargs)
+            error, _value = interruptible(process_codebase_func, timeout=timeout)
+            if error:
+                msg = 'ERROR: for scanner: ' + plugin.name + ':\n' + error
+                codebase.errors.append(msg)
 
         except Exception as _e:
             msg = 'ERROR: failed to run %(stage)s plugin: %(name)s:' % locals()
@@ -1232,6 +1256,7 @@ def run_scanners(
     codebase,
     processes,
     timeout,
+    timeout_plugins,
     timing,
     quiet=False,
     verbose=False,
@@ -1284,8 +1309,10 @@ def run_scanners(
 
     # TODO: add progress indicator
     # run the process codebase of each scan plugin (most often a no-op)
+    use_threading = processes >= 0
     scan_process_codebase_success = run_codebase_plugins(
         stage, plugins, codebase,
+        timeout=timeout_plugins,
         stage_msg='Filter %(stage)ss...',
         plugin_msg=' Filter %(stage)s: %(name)s...',
         quiet=quiet, verbose=verbose, kwargs=kwargs,
