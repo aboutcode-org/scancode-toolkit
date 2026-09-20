@@ -419,6 +419,14 @@ class TestNpm(PackageTester):
         packages = npm.NpmPackageJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_package_json_git_url_dependencies(self):
+        # git+ssh and git+https URLs must keep the declared dependency name,
+        # not be treated as npm aliases (issue #4753)
+        test_file = self.get_test_loc('npm/git-deps/package.json')
+        expected_loc = self.get_test_loc('npm/git-deps/package.json.expected')
+        packages = npm.NpmPackageJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_pnpm_scan_with_workspace_package_json(self):
         test_folder = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe/')
         expected_file = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe-scan.expected.json')
