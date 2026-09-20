@@ -1,0 +1,10 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+relevance: 100
+notes: Rule found in Busybox smemcap.c (#4969)
+---
+
+This software may be used and distributed according to the terms of
+{{the GNU General Public License version 2 or later}}, incorporated
+herein by reference.
