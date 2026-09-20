@@ -39,6 +39,19 @@ if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
+# Mapping of legacy Maven/JBoss license name strings (lowercased) to
+# their canonical ScanCode license expression equivalents.
+# These names appear in POM files from the old JBoss Maven repository
+# at http://repository.jboss.com/licenses/license-info.xml
+JBOSS_LICENSE_ALIASES = {
+    "bouncy castle licence": "bouncycastle",
+    "bouncy castle license": "bouncycastle",
+    "hsqldb license": "hsqldb",
+    "sun jaf license": "sun-bcl",
+    "sun javamail license": "sun-bcl",
+    "sun jmf license": "sun-bcl",
+}
+
 """
 Support for Maven POMs including resolution of variables using Maven properties
 when possible.
@@ -1401,10 +1414,18 @@ def clean_licenses(licenses):
             continue
 
         license_attributes.pop("distribution", None)
-        if not license_attributes.get("name"):
+
+        name = license_attributes.get("name")
+        if name:
+            normalized = name.strip().lower()
+            if normalized in JBOSS_LICENSE_ALIASES:
+                license_attributes["name"] = JBOSS_LICENSE_ALIASES[normalized]
+        else:
             license_attributes.pop("name", None)
+
         if not license_attributes.get("url"):
             license_attributes.pop("url", None)
+
         if not license_attributes.get("comments"):
             license_attributes.pop("comments", None)
 

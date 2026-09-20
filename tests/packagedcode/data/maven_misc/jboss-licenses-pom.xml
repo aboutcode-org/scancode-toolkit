@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jboss.test</groupId>
+  <artifactId>jboss-license-test</artifactId>
+  <version>1.0.0</version>
+  <licenses>
+    <license>
+      <name>Bouncy Castle Licence</name>
+      <url>http://www.bouncycastle.org/licence.html</url>
+    </license>
+    <license>
+      <name>HSQLDB License</name>
+      <url>http://hsqldb.org/web/hsqlLicense.html</url>
+    </license>
+    <license>
+      <name>Sun JAF License</name>
+      <url>http://repository.jboss.com/licenses/sun-jaf.txt</url>
+    </license>
+  </licenses>
+</project>

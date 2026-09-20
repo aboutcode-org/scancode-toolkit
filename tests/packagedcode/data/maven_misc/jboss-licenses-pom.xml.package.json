@@ -1,0 +1,91 @@
+{
+  "type": "maven",
+  "namespace": "org.jboss.test",
+  "name": "jboss-license-test",
+  "version": "1.0.0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": "Java",
+  "description": null,
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "holder": null,
+  "declared_license_expression": "mit AND bsd-new",
+  "declared_license_expression_spdx": "MIT AND BSD-3-Clause",
+  "license_detections": [
+    {
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": null,
+          "start_line": 2,
+          "end_line": 2,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_238.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_238.RULE",
+          "matched_text": "url: http://www.bouncycastle.org/licence.html"
+        }
+      ],
+      "identifier": "mit-7e3aeac2-5955-7166-19aa-8cb9602da718"
+    },
+    {
+      "license_expression": "bsd-new",
+      "license_expression_spdx": "BSD-3-Clause",
+      "matches": [
+        {
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "from_file": null,
+          "start_line": 2,
+          "end_line": 2,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "bsd-new_82.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_82.RULE",
+          "matched_text": "url: http://hsqldb.org/web/hsqlLicense.html"
+        }
+      ],
+      "identifier": "bsd_new-f1ebd3aa-2540-19a3-338e-6a998e354d0e"
+    }
+  ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
+  "extracted_license_statement": "- license:\n    name: bouncycastle\n    url: http://www.bouncycastle.org/licence.html\n- license:\n    name: hsqldb\n    url: http://hsqldb.org/web/hsqlLicense.html\n- license:\n    name: sun-bcl\n    url: http://repository.jboss.com/licenses/sun-jaf.txt\n",
+  "notice_text": null,
+  "source_packages": [
+    "pkg:maven/org.jboss.test/jboss-license-test@1.0.0?classifier=sources"
+  ],
+  "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
+  "extra_data": {},
+  "dependencies": [],
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/jboss/test/jboss-license-test/1.0.0/",
+  "repository_download_url": "https://repo1.maven.org/maven2/org/jboss/test/jboss-license-test/1.0.0/jboss-license-test-1.0.0.jar",
+  "api_data_url": "https://repo1.maven.org/maven2/org/jboss/test/jboss-license-test/1.0.0/jboss-license-test-1.0.0.pom",
+  "datasource_id": "maven_pom",
+  "purl": "pkg:maven/org.jboss.test/jboss-license-test@1.0.0"
+}
