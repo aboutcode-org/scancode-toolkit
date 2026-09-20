@@ -1624,6 +1624,12 @@ class Package(PackageData):
         help='List of the datasource ids used to create this package.'
     )
 
+    documentation_url = String(
+        label='Documentation URL',
+        help='URL that documents this package.'
+
+    )
+
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.purl:
             self.purl = self.set_purl()
@@ -1638,10 +1644,11 @@ class Package(PackageData):
         mapping.pop('package_uid', None)
         mapping.pop('datafile_paths', None)
         mapping.pop('datasource_ids', None)
+        mapping.pop('documentation_url', None)
         return PackageData.from_dict(mapping)
 
     @classmethod
-    def from_package_data(cls, package_data, datafile_path=None, package_only=False):
+    def from_package_data(cls, package_data, datafile_path=None, package_only=False , documentation_url=None):
         """
         Return a Package from a ``package_data`` PackageData object
         or mapping. Or None.
@@ -1665,6 +1672,8 @@ class Package(PackageData):
                 for license_match in detection['matches']:
                     if not license_match['from_file']:
                         license_match['from_file'] = datafile_path
+        if documentation_url:
+            package_data_mapping['documentation_url'] = documentation_url
 
         package = cls.from_dict(package_data_mapping)
 
