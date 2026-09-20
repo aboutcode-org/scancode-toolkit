@@ -108,3 +108,4 @@ The following organizations or individuals have contributed to ScanCode:
 - Yash Sharma @yasharmaster
 - Yunus Rahbar @yns88
 - Stefano Zacchiroli @zacchiro
+- Dibyajyoti Mandal @dibyajyoti-mandal
