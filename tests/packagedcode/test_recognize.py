@@ -197,6 +197,12 @@ class TestRecognize(FileBasedTesting):
         assert packages
         assert isinstance(packages[0], models.PackageData)
 
+    def test_recognize_go_mod_graph(self):
+        test_file = self.get_test_loc('golang/gograph/sample/go-mod-graph.deplock')
+        packages = recognize_package_data(test_file)
+        assert packages
+        assert isinstance(packages[0], models.PackageData)
+
     def test_recognize_rpmdb_sqlite(self):
         test_file = self.get_test_loc('rpm/rpmdb.sqlite')
         packages = recognize_package_data(test_file, system=True)

@@ -33,7 +33,12 @@ class BaseGoModuleHandler(models.DatafileHandler):
         Always use go.mod first then go.sum
         """
         yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=('go.mod', 'go.sum',),
+            datafile_name_patterns=(
+                'go.mod',
+                'go.sum',
+                'go-mod-graph.deplock',
+                'go.mod.graph',
+            ),
             directory=resource.parent(codebase),
             codebase=codebase,
             package_adder=package_adder,
@@ -131,6 +136,78 @@ class GoSumHandler(BaseGoModuleHandler):
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             dependencies=package_dependencies,
+            primary_language=cls.default_primary_language,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+class GoModGraphHandler(BaseGoModuleHandler):
+    datasource_id = 'go_mod_graph'
+    path_patterns = ('*/go-mod-graph.deplock', '*/go.mod.graph')
+    default_package_type = 'golang'
+    default_primary_language = 'Go'
+    description = 'Go module requirement graph from go mod graph'
+    documentation_url = 'https://go.dev/ref/mod#go-mod-graph'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        """
+        Parse a ``go mod graph`` dump.
+
+        Direct dependencies are modules required by the main module (the first
+        requiring module in the dump). Other required modules are transitive.
+        Versions in the graph are exact selected versions.
+        """
+        edges = go_mod.parse_gograph(location)
+        if not edges:
+            return
+
+        main = edges[0][0]
+        direct_purls = {
+            dst.purl(include_version=True)
+            for src, dst in edges
+            if src.module == main.module
+        }
+
+        dependencies = []
+        seen = set()
+        for _src, dst in edges:
+            purl = dst.purl(include_version=True)
+            if purl in seen:
+                continue
+            seen.add(purl)
+            dependencies.append(
+                models.DependentPackage(
+                    purl=purl,
+                    extracted_requirement=dst.version,
+                    scope='require',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_pinned=True,
+                    is_direct=purl in direct_purls,
+                )
+            )
+
+        namespace = main.namespace
+        name = main.name
+        homepage_url = None
+        vcs_url = None
+        repository_homepage_url = None
+        if namespace and name:
+            homepage_url = f'https://pkg.go.dev/{namespace}/{name}'
+            vcs_url = f'https://{namespace}/{name}.git'
+            repository_homepage_url = homepage_url
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            namespace=namespace,
+            version=main.version,
+            vcs_url=vcs_url,
+            homepage_url=homepage_url,
+            repository_homepage_url=repository_homepage_url,
+            dependencies=dependencies,
             primary_language=cls.default_primary_language,
         )
         yield models.PackageData.from_data(package_data, package_only)
