@@ -10,5 +10,242 @@
   "homepage_url": null,
   "parties": [],
   "vcs_url": null,
-  "code_view_url": null
+  "code_view_url": null,
+  "dependencies": [
+    {
+      "purl": "pkg:osgi/org.apache.batik.css.engine",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.css.engine.value",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.css.engine.value.svg",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.css.engine.value.svg12",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.dom",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.dom.events",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.dom.svg",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.dom.util",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.ext.awt",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.ext.awt.color",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.ext.awt.geom",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.ext.awt.image",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.ext.awt.image.renderable",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.ext.awt.image.rendered",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.ext.awt.image.spi",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.i18n",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.parser",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.util",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.util.gui.resource",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.batik.xml",
+      "extracted_requirement": "[1.6.0,1.7.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.w3c.dom.svg",
+      "extracted_requirement": "[1.1.0,1.3.0)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    }
+  ],
+  "extra_data": {
+    "import_package": "org.apache.batik.css.engine;version=\"[1.6.0,1.7.0)\",org.apache.batik.css.engine.value;version=\"[1.6.0,1.7.0)\",org.apache.batik.css.engine.value.svg;version=\"[1.6.0,1.7.0)\",org.apache.batik.css.engine.value.svg12;version=\"[1.6.0,1.7.0)\",org.apache.batik.dom;version=\"[1.6.0,1.7.0)\",org.apache.batik.dom.events;version=\"[1.6.0,1.7.0)\",org.apache.batik.dom.svg;version=\"[1.6.0,1.7.0)\",org.apache.batik.dom.util;version=\"[1.6.0,1.7.0)\",org.apache.batik.ext.awt;version=\"[1.6.0,1.7.0)\",org.apache.batik.ext.awt.color;version=\"[1.6.0,1.7.0)\",org.apache.batik.ext.awt.geom;version=\"[1.6.0,1.7.0)\",org.apache.batik.ext.awt.image;version=\"[1.6.0,1.7.0)\",org.apache.batik.ext.awt.image.renderable;version=\"[1.6.0,1.7.0)\",org.apache.batik.ext.awt.image.rendered;version=\"[1.6.0,1.7.0)\",org.apache.batik.ext.awt.image.spi;version=\"[1.6.0,1.7.0)\",org.apache.batik.i18n;version=\"[1.6.0,1.7.0)\",org.apache.batik.parser;version=\"[1.6.0,1.7.0)\",org.apache.batik.util;version=\"[1.6.0,1.7.0)\",org.apache.batik.util.gui.resource;version=\"[1.6.0,1.7.0)\",org.apache.batik.xml;version=\"[1.6.0,1.7.0)\",org.w3c.dom.svg;version=\"[1.1.0,1.3.0)\"",
+    "export_package": "org.apache.batik.bridge;version=\"1.6.0\",org.apache.batik.bridge.svg12;version=\"1.6.0\",org.apache.batik.gvt;version=\"1.6.0\",org.apache.batik.gvt.event;version=\"1.6.0\",org.apache.batik.gvt.filter;version=\"1.6.0\",org.apache.batik.gvt.flow;version=\"1.6.0\",org.apache.batik.gvt.font;version=\"1.6.0\",org.apache.batik.gvt.renderer;version=\"1.6.0\",org.apache.batik.gvt.svg12;version=\"1.6.0\",org.apache.batik.gvt.text;version=\"1.6.0\",org.apache.batik.script;version=\"1.6.0\",org.apache.batik.script.rhino;version=\"1.6.0\",META-INF.services"
+  }
 }

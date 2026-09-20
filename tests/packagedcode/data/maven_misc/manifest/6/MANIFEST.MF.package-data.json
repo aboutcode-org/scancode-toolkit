@@ -15,5 +15,9 @@
     }
   ],
   "vcs_url": null,
-  "code_view_url": null
+  "code_view_url": null,
+  "extra_data": {
+    "import_package": null,
+    "export_package": "javassist.tools.rmi;uses:=\"javassist,javassist.tools.web\";version=\"3.18.1.GA\",javassist.convert;uses:=\"javassist.bytecode,javassist,javassist.bytecode.analysis\";version=\"3.18.1.GA\",javassist.bytecode;uses:=\"javassist.bytecode.annotation,javassist,javassist.bytecode.stackmap\";version=\"3.18.1.GA\",javassist;uses:=\"javassist.compiler,javassist.bytecode,javassist.convert,javassist.expr,javassist.bytecode.annotation,javassist.compiler.ast\";version=\"3.18.1.GA\",javassist.util.proxy;uses:=\"javassist.bytecode,javassist\";version=\"3.18.1.GA\",javassist.expr;uses:=\"javassist.bytecode,javassist,javassist.compiler,javassist.compiler.ast\";version=\"3.18.1.GA\",javassist.bytecode.annotation;uses:=\"javassist.bytecode,javassist\";version=\"3.18.1.GA\",javassist.scopedpool;uses:=javassist;version=\"3.18.1.GA\",javassist.tools.web;uses:=javassist;version=\"3.18.1.GA\",javassist.tools;uses:=\"javassist.bytecode,javassist,javassist.bytecode.analysis\";version=\"3.18.1.GA\",javassist.bytecode.stackmap;uses:=\"javassist.bytecode,javassist\";version=\"3.18.1.GA\",javassist.tools.reflect;uses:=\"javassist,javassist.bytecode\";version=\"3.18.1.GA\",javassist.compiler;uses:=\"javassist.bytecode,javassist,javassist.compiler.ast\";version=\"3.18.1.GA\",javassist.runtime;version=\"3.18.1.GA\",javassist.util;version=\"3.18.1.GA\",javassist.compiler.ast;uses:=\"javassist.compiler,javassist\";version=\"3.18.1.GA\",javassist.bytecode.analysis;uses:=\"javassist.bytecode,javassist,javassist.bytecode.stackmap\";version=\"3.18.1.GA\""
+  }
 }

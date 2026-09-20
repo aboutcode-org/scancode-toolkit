@@ -17,6 +17,8 @@
   "vcs_url": null,
   "code_view_url": null,
   "extra_data": {
-    "documentation_url": "http://fusesource.com/"
+    "documentation_url": "http://fusesource.com/",
+    "import_package": null,
+    "export_package": "org.fusesource.leveldbjni;uses:=\"org.iq80.leveldb\";version=\"1.8\",org.iq80.leveldb;version=\"0.6\""
   }
 }

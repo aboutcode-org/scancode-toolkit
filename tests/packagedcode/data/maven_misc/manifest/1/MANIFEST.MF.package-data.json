@@ -10,5 +10,88 @@
   "homepage_url": null,
   "parties": [],
   "vcs_url": null,
-  "code_view_url": null
+  "code_view_url": null,
+  "dependencies": [
+    {
+      "purl": "pkg:osgi/javax.xml.parsers",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.w3c.dom",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.xml.sax",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.eclipse.core.runtime",
+      "extracted_requirement": "[3.1.0,4.0.0)",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.eclipse.help",
+      "extracted_requirement": "[3.3.0,4.0.0)",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.eclipse.ui",
+      "extracted_requirement": "[3.2.0,4.0.0)",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.eclipse.ui.intro",
+      "extracted_requirement": "[3.2.0,4.0.0)",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    }
+  ],
+  "extra_data": {
+    "import_package": "javax.xml.parsers,org.w3c.dom,org.xml.sax",
+    "export_package": "org.eclipse.ui.internal.intro.universal;x-friends:=\"org.eclipse.ua.tests\",org.eclipse.ui.internal.intro.universal.contentdetect;x-friends:=\"org.eclipse.ua.tests\",org.eclipse.ui.internal.intro.universal.util;x-internal:=true,org.eclipse.ui.intro.universal"
+  }
 }

@@ -10,5 +10,78 @@
   "homepage_url": null,
   "parties": [],
   "vcs_url": null,
-  "code_view_url": null
+  "code_view_url": null,
+  "dependencies": [
+    {
+      "purl": "pkg:osgi/org.apache.tools.ant.taskdefs",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.tools.ant.taskdefs.compilers",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.tools.ant.types",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.codehaus.commons.compiler",
+      "extracted_requirement": "[3.0,4)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.codehaus.janino.util",
+      "extracted_requirement": "[3.0,4)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.codehaus.janino.commons-compiler",
+      "extracted_requirement": null,
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    }
+  ],
+  "extra_data": {
+    "import_package": "org.apache.tools.ant.taskdefs,org.apache.tools.ant.taskdefs.compilers,org.apache.tools.ant.types,org.codehaus.commons.compiler;version=\"[3.0,4)\",org.codehaus.janino.util;version=\"[3.0,4)\"",
+    "export_package": "org.codehaus.janino;version=\"3.0.8\";uses:=\"org.apache.tools.ant.taskdefs.compilers,org.codehaus.commons.compiler,org.codehaus.janino.util,org.codehaus.janino.util.resource\",org.codehaus.janino.samples;version=\"3.0.8\";uses:=\"org.codehaus.commons.compiler,org.codehaus.janino,org.codehaus.janino.util\",org.codehaus.janino.tools;version=\"3.0.8\";uses:=\"org.codehaus.janino\",org.codehaus.janino.util;version=\"3.0.8\";uses:=\"org.codehaus.janino,org.codehaus.janino.util.resource\",org.codehaus.janino.util.resource;version=\"3.0.8\"",
+    "require_capability": "osgi.ee;filter:=\"(&(osgi.ee=JavaSE)(version=1.6))\""
+  }
 }
