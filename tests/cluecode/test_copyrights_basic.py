@@ -14,7 +14,26 @@ import cluecode_test_utils  # NOQA
 from commoncode.testcase import FileBasedTesting
 from cluecode import copyrights
 from cluecode.copyrights import prepare_text_line
-from cluecode.copyrights import remove_non_chars
+from cluecode import copyrights
+from cluecode.copyrights import prepare_text_line, remove_non_chars
+
+def test_copyright_symbol_inside_url_is_ignored():
+    text = "See http://example.com/(c)/path for more information."
+
+    prepped = prepare_text_line(text)
+
+    # sanity check
+    assert '(c)' in prepped
+
+    # URLs containing (c) should NOT be copyright candidates
+    assert not copyrights.is_candidate(prepped)
+
+def test_copyright_with_url_is_still_candidate():
+    text = "Copyright (c) 2000 Foo, http://example.com"
+
+    prepped = prepare_text_line(text)
+
+    assert copyrights.is_candidate(prepped)
 
 
 class TestTextPreparation(FileBasedTesting):
