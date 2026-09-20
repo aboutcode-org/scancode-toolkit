@@ -78,6 +78,18 @@ class TestTextPreparation(FileBasedTesting):
         result = prepare_text_line(cp)
         assert result == 'Jason Hunter <jhunter AT jdom DOT org'
 
+    def test_prepare_text_line_normalizes_author_colon_no_space(self):
+        # Changes made by Aditya issue no. #4229 regarding to Author detection
+        cp = '// Author:Frankie.Chu'
+        result = prepare_text_line(cp)
+        assert 'Author: Frankie.Chu' in result
+
+    def test_prepare_text_line_normalizes_author_colon_with_space(self):
+        # Ensure we don't break the case where there is already a space
+        cp = '// Author: Frankie.Chu'
+        result = prepare_text_line(cp)
+        assert 'Author: Frankie.Chu' in result
+
     def test_is_end_of_statement(self):
         line = '''          "All rights reserved\\n"'''
         prepped_line = prepare_text_line(line)
