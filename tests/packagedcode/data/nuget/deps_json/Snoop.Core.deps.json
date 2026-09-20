@@ -1,0 +1,76 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Snoop.Core/1.0.0": {
+        "dependencies": {
+          "JetBrains.Annotations": "2023.2.0",
+          "Microsoft.CodeAnalysis.CSharp": "4.7.0",
+          "Microsoft.NETFramework.ReferenceAssemblies.net452": "1.0.3"
+        },
+        "runtime": {
+          "Snoop.Core.dll": {}
+        }
+      },
+      "JetBrains.Annotations/2023.2.0": {},
+      "Microsoft.CodeAnalysis.Common/4.7.0": {
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        }
+      },
+      "Microsoft.CodeAnalysis.CSharp/4.7.0": {
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Common": "4.7.0"
+        }
+      },
+      "Microsoft.NETFramework.ReferenceAssemblies.net452/1.0.3": {},
+      "System.Collections.Immutable/7.0.0": {}
+    }
+  },
+  "libraries": {
+    "Snoop.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JetBrains.Annotations/2023.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dvO//8aLmLRsCVVgoc/7qBqi2/y4BTyRcg20LCBWtK4n6E9Um06Zp7jF1n0hOE+yqBHwcrDzAjWvCaM3qH8flg==",
+      "path": "jetbrains.annotations/2023.2.0",
+      "hashPath": "jetbrains.annotations.2023.2.0.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.Common/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pD5S14xMUebSGYe75kt0q/aaS/ftvktSo/pEv7aX7hNPHfdZS+SZeXvkvcffGxWkunYOyRF9m1oN7zzSdYj9dQ==",
+      "path": "microsoft.codeanalysis.common/4.7.0",
+      "hashPath": "microsoft.codeanalysis.common.4.7.0.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JHCP2L6lB0oJ3tQoHkC67SFZxW+KbJVOnAo+6L01K5r/NlBlSUhTk5nUAldWhTVwGdzqNeHqGtnEqpsCmGSwQA==",
+      "path": "microsoft.codeanalysis.csharp/4.7.0",
+      "hashPath": "microsoft.codeanalysis.csharp.4.7.0.nupkg.sha512"
+    },
+    "Microsoft.NETFramework.ReferenceAssemblies.net452/1.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kuFOgilYbs29xENHlqQ6aJYa+t56u+OqHx85P7GYLVlo7HL3nsug9IQY2DoPgkOpZ2xb9btYV2EFK7Enll8S3A==",
+      "path": "microsoft.netframework.referenceassemblies.net452/1.0.3",
+      "hashPath": "microsoft.netframework.referenceassemblies.net452.1.0.3.nupkg.sha512"
+    },
+    "System.Collections.Immutable/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dQPcs0U1IKnBdRDBkrCTi1FoajSTBzLcVTpjO4MBCMC7f4pDOIPzgBoX8JjG7X6uZRJ8EBxsi8+DR1JuwjnzOQ==",
+      "path": "system.collections.immutable/7.0.0",
+      "hashPath": "system.collections.immutable.7.0.0.nupkg.sha512"
+    }
+  }
+}
