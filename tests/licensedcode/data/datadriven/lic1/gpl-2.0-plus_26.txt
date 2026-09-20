@@ -855,7 +855,7 @@ void write_status_file(deb_file_t **deb_file)
 		write_flag = FALSE;
 		tmp_string = strstr(control_buffer, "Status:");
 		if (tmp_string != NULL) {
-			/* Seperate the status value from the control buffer */
+			/* separate the status value from the control buffer */
 			tmp_string += 7;
 			tmp_string += strspn(tmp_string, " \n\t");
 			status_from_file = bb_xstrndup(tmp_string, strcspn(tmp_string, "\n"));
@@ -955,7 +955,7 @@ void write_status_file(deb_file_t **deb_file)
 	fclose(new_status_file);
 
 
-	/* Create a seperate backfile to dpkg */
+	/* Create a separate backfile to dpkg */
 	if (rename("/var/lib/dpkg/status", "/var/lib/dpkg/status.udeb.bak") == -1) {
 		struct stat stat_buf;
 		if (stat("/var/lib/dpkg/status", &stat_buf) == 0) {
@@ -1385,7 +1385,7 @@ void remove_package(const unsigned int package_num, int noisy)
 		bb_error_msg_and_die("script failed, prerm failure");
 	}
 
-	/* Create a list of files to remove, and a seperate list of those to keep */
+	/* Create a list of files to remove, and a separate list of those to keep */
 	sprintf(list_name, "/var/lib/dpkg/info/%s.list", package_name);
 	remove_files = create_list(list_name);
 

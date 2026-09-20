@@ -1,6 +1,7 @@
 primary_license:
 declared_license:
-license_expression: free-unknown AND proprietary-license AND openssl-ssleay AND zlib AND public-domain
+license_expression:
+  free-unknown AND proprietary-license AND openssl-ssleay AND zlib AND public-domain
   AND bsd-new AND gary-s-brown AND other-permissive AND isc AND bsd-unmodified AND (gpl-2.0
   OR bsd-new)
 copyright: |
@@ -23,13 +24,13 @@ copyright: |
   Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
   Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
 matches:
-  - score: '50.0'
+  - score: "50.0"
     start_line: 54
     end_line: 54
     matcher: 2-aho
     rule_length: 3
     matched_length: 3
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 50
     identifier: free-unknown_88.RULE
     license_expression: free-unknown
@@ -39,13 +40,13 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: open source license
-  - score: '16.0'
+  - score: "16.0"
     start_line: 86
     end_line: 87
     matcher: 2-aho
     rule_length: 3
     matched_length: 3
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 16
     identifier: proprietary_36.RULE
     license_expression: proprietary-license
@@ -57,13 +58,13 @@ matches:
     matched_text: |
       confidential and
          proprietary
-  - score: '44.44'
+  - score: "44.44"
     start_line: 231
     end_line: 234
     matcher: 3-seq
     rule_length: 32
     matched_length: 32
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 50
     identifier: proprietary-license_557.RULE
     license_expression: proprietary-license
@@ -77,13 +78,13 @@ matches:
        United States and other countries. All [Qualcomm] [Incorporated] trademarks are used
        with permission. Other products and brand names may be trademarks or registered
        trademarks of their respective owners.
-  - score: '98.28'
+  - score: "98.28"
     start_line: 237
     end_line: 244
     matcher: 3-seq
     rule_length: 58
     matched_length: 57
-    match_coverage: '98.28'
+    match_coverage: "98.28"
     rule_relevance: 100
     identifier: openssl-ssleay_42.RULE
     license_expression: openssl-ssleay
@@ -92,18 +93,19 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "LICENSE [ISSUES]\n   ==============\n \n   The OpenSSL toolkit stays under\
+    matched_text:
+      "LICENSE [ISSUES]\n   ==============\n \n   The OpenSSL toolkit stays under\
       \ a dual license, i.e. both the conditions of\n   the OpenSSL License and the original\
       \ SSLeay license apply to the toolkit.\n   See below for the actual license texts. Actually\
       \ both licenses are BSD-style\n   Open Source licenses. In case of any license issues\
       \ related to OpenSSL\n   please contact openssl-core@openssl.org."
-  - score: '100.0'
+  - score: "100.0"
     start_line: 246
     end_line: 246
     matcher: 2-aho
     rule_length: 2
     matched_length: 2
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: openssl-ssleay_2.RULE
     license_expression: openssl-ssleay
@@ -113,13 +115,13 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: OpenSSL License
-  - score: '100.0'
+  - score: "100.0"
     start_line: 252
     end_line: 360
     matcher: 2-aho
     rule_length: 799
     matched_length: 799
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: openssl-ssleay_34.RULE
     license_expression: openssl-ssleay
@@ -128,7 +130,8 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "Redistribution and use in source and binary forms, with or without\n  * modification,\
+    matched_text:
+      "Redistribution and use in source and binary forms, with or without\n  * modification,\
       \ are permitted provided that the following conditions\n  * are met:\n  *\n  * 1. Redistributions\
       \ of source code must retain the above copyright\n  *    notice, this list of conditions\
       \ and the following disclaimer.\n  *\n  * 2. Redistributions in binary form must reproduce\
@@ -192,16 +195,16 @@ matches:
       \ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n  * LIABILITY,\
       \ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY\n  * OUT OF THE USE OF\
       \ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n  * SUCH DAMAGE.\n  *\n  * The\
-      \ licence and distribution terms for any publically available version or\n  * derivative\
+      \ licence and distribution terms for any publicly available version or\n  * derivative\
       \ of this code cannot be changed.  i.e. this code cannot simply be\n  * copied and put\
       \ under another distribution licence\n  * [including the GNU Public Licence.]"
-  - score: '100.0'
+  - score: "100.0"
     start_line: 371
     end_line: 371
     matcher: 2-aho
     rule_length: 12
     matched_length: 12
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: zlib_5.RULE
     license_expression: zlib
@@ -211,13 +214,13 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: For conditions of distribution and use, see copyright notice in zlib.h
-  - score: '100.0'
+  - score: "100.0"
     start_line: 380
     end_line: 396
     matcher: 2-aho
     rule_length: 144
     matched_length: 144
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: zlib_17.RULE
     license_expression: zlib
@@ -226,7 +229,8 @@ matches:
     is_license_reference: no
     is_license_tag: no
     is_license_intro: no
-    matched_text: "This software is provided 'as-is', without any express or implied\n   warranty.\
+    matched_text:
+      "This software is provided 'as-is', without any express or implied\n   warranty.\
       \  In no event will the authors be held liable for any damages\n   arising from the use\
       \ of this software.\n \n   Permission is granted to anyone to use this software for any\
       \ purpose,\n   including commercial applications, and to alter it and redistribute it\n\
@@ -237,13 +241,13 @@ matches:
       \ be plainly marked as such, and must not be\n      misrepresented as being the original\
       \ software.\n   3. This notice may not be removed or altered from any source distribution.\n\
       \   Jean-loup Gailly        Mark Adler\n   jloup@gzip.org          madler@alumni.caltech.edu"
-  - score: '100.0'
+  - score: "100.0"
     start_line: 413
     end_line: 415
     matcher: 2-aho
     rule_length: 26
     matched_length: 26
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: public-domain_303.RULE
     license_expression: public-domain
@@ -256,13 +260,13 @@ matches:
       This code was
         * written by Colin Plumb in 1993, no copyright is claimed.
         * This code is in the public domain; do with it what you wish.
-  - score: '100.0'
+  - score: "100.0"
     start_line: 439
     end_line: 461
     matcher: 2-aho
     rule_length: 213
     matched_length: 213
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: bsd-new_68.RULE
     license_expression: bsd-new
@@ -295,13 +299,13 @@ matches:
         * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
         * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
         * SUCH DAMAGE.
-  - score: '88.0'
+  - score: "88.0"
     start_line: 469
     end_line: 470
     matcher: 2-aho
     rule_length: 16
     matched_length: 16
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 88
     identifier: gary-s-brown.LICENSE
     license_expression: gary-s-brown
@@ -313,13 +317,13 @@ matches:
     matched_text: |
       You may use this program, or
         *  code or tables extracted from it, as desired without restriction.
-  - score: '100.0'
+  - score: "100.0"
     start_line: 514
     end_line: 519
     matcher: 2-aho
     rule_length: 74
     matched_length: 74
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: other-permissive_105.RULE
     license_expression: other-permissive
@@ -335,13 +339,13 @@ matches:
           it I would appreciate an acknowledgement of its origin in the code or
           the product that results and I would also appreciate knowing a liitle
           about the use to which it is being put.
-  - score: '100.0'
+  - score: "100.0"
     start_line: 531
     end_line: 531
     matcher: 2-aho
     rule_length: 7
     matched_length: 7
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: public-domain_177.RULE
     license_expression: public-domain
@@ -351,13 +355,13 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: This code is in the public domain.
-  - score: '61.68'
+  - score: "61.68"
     start_line: 533
     end_line: 539
     matcher: 3-seq
     rule_length: 107
     matched_length: 66
-    match_coverage: '61.68'
+    match_coverage: "61.68"
     rule_relevance: 100
     identifier: isc_28.RULE
     license_expression: isc
@@ -374,13 +378,13 @@ matches:
         * USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
         * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
         * PERFORMANCE OF THIS SOFTWARE.
-  - score: '100.0'
+  - score: "100.0"
     start_line: 549
     end_line: 549
     matcher: 2-aho
     rule_length: 4
     matched_length: 4
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: public-domain_298.RULE
     license_expression: public-domain
@@ -390,13 +394,13 @@ matches:
     is_license_tag: no
     is_license_intro: no
     matched_text: IN THE PUBLIC DOMAIN
-  - score: '61.96'
+  - score: "61.96"
     start_line: 551
     end_line: 564
     matcher: 3-seq
     rule_length: 184
     matched_length: 114
-    match_coverage: '61.96'
+    match_coverage: "61.96"
     rule_relevance: 100
     identifier: bsd-unmodified_1.RULE
     license_expression: bsd-unmodified
@@ -420,13 +424,13 @@ matches:
         * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
         * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
         * SUCH DAMAGE.
-  - score: '100.0'
+  - score: "100.0"
     start_line: 580
     end_line: 587
     matcher: 2-aho
     rule_length: 50
     matched_length: 50
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: gpl-2.0_or_bsd-new_aes_1.RULE
     license_expression: gpl-2.0 OR bsd-new
@@ -444,13 +448,13 @@ matches:
         * license.
         *
         * See README and COPYING for more details.
-  - score: '100.0'
+  - score: "100.0"
     start_line: 594
     end_line: 601
     matcher: 2-aho
     rule_length: 50
     matched_length: 50
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: gpl-2.0_or_bsd-new_aes_1.RULE
     license_expression: gpl-2.0 OR bsd-new
@@ -468,13 +472,13 @@ matches:
         * license.
         *
         * See README and COPYING for more details.
-  - score: '99.06'
+  - score: "99.06"
     start_line: 613
     end_line: 635
     matcher: 3-seq
     rule_length: 213
     matched_length: 211
-    match_coverage: '99.06'
+    match_coverage: "99.06"
     rule_relevance: 100
     identifier: bsd-new_68.RULE
     license_expression: bsd-new
@@ -507,13 +511,13 @@ matches:
         * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
         * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
         * SUCH DAMAGE.
-  - score: '100.0'
+  - score: "100.0"
     start_line: 646
     end_line: 668
     matcher: 2-aho
     rule_length: 213
     matched_length: 213
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: bsd-new_68.RULE
     license_expression: bsd-new
@@ -546,13 +550,13 @@ matches:
        * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
        * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
        * SUCH DAMAGE.
-  - score: '100.0'
+  - score: "100.0"
     start_line: 677
     end_line: 697
     matcher: 2-aho
     rule_length: 200
     matched_length: 200
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: bsd-new_76.RULE
     license_expression: bsd-new
@@ -583,13 +587,13 @@ matches:
         * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
         * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
         * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  - score: '100.0'
+  - score: "100.0"
     start_line: 705
     end_line: 715
     matcher: 2-aho
     rule_length: 111
     matched_length: 111
-    match_coverage: '100.0'
+    match_coverage: "100.0"
     rule_relevance: 100
     identifier: isc_14.RULE
     license_expression: isc

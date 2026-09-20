@@ -17,11 +17,13 @@ declared_license:
   - BSD-3-Clause
 declared_license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
 declared_license_expression_spdx: GPL-2.0-only WITH x11vnc-openssl-exception
-other_license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0 AND gpl-2.0 WITH openssl-exception-gpl-2.0
+other_license_expression:
+  gpl-2.0 WITH openssl-exception-gpl-2.0 AND gpl-2.0 WITH openssl-exception-gpl-2.0
   AND (gpl-2.0 AND gpl-2.0) AND (gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
   (zlib AND (gpl-1.0-plus AND gpl-1.0-plus)) AND (gpl-1.0-plus AND zlib) AND ssleay-windows
   AND public-domain AND bsd-new AND mit-old-style-no-advert
-other_license_expression_spdx: GPL-2.0-only WITH x11vnc-openssl-exception AND GPL-2.0-only WITH
+other_license_expression_spdx:
+  GPL-2.0-only WITH x11vnc-openssl-exception AND GPL-2.0-only WITH
   x11vnc-openssl-exception AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only)
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (Zlib AND (GPL-1.0-or-later AND GPL-1.0-or-later))
   AND (GPL-1.0-or-later AND Zlib) AND SSLeay-standalone AND LicenseRef-scancode-public-domain
@@ -37,9 +39,9 @@ other_license_detections:
         start_line: 43
         end_line: 100
         matcher: 2-aho
-        score: '100.0'
+        score: "100.0"
         matched_length: 454
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: ssleay-windows_8.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ssleay-windows_8.RULE
@@ -98,7 +100,7 @@ other_license_detections:
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
 
-          The licence and distribution terms for any publically available version or
+          The licence and distribution terms for any publicly available version or
           derivative of this code cannot be changed.  i.e. this code cannot simply be
           copied and put under another distribution licence
           [including the GNU General Public Licence.]
@@ -112,9 +114,9 @@ other_license_detections:
         start_line: 105
         end_line: 105
         matcher: 2-aho
-        score: '100.0'
+        score: "100.0"
         matched_length: 3
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: public-domain_125.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_125.RULE
@@ -129,9 +131,9 @@ other_license_detections:
         start_line: 116
         end_line: 126
         matcher: 1-hash
-        score: '100.0'
+        score: "100.0"
         matched_length: 96
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: mit-old-style-no-advert_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_1.RULE
@@ -157,9 +159,9 @@ other_license_detections:
         start_line: 129
         end_line: 135
         matcher: 1-hash
-        score: '100.0'
+        score: "100.0"
         matched_length: 51
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: gpl-2.0_with_openssl-exception-gpl-2.0_9.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_with_openssl-exception-gpl-2.0_9.RULE
@@ -181,22 +183,22 @@ other_license_detections:
         start_line: 137
         end_line: 137
         matcher: 1-hash
-        score: '100.0'
+        score: "100.0"
         matched_length: 3
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: gpl-2.0_561.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
-        matched_text: 'License: gpl-2'
+        matched_text: "License: gpl-2"
       - license_expression: gpl-2.0
         license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 138
         end_line: 143
         matcher: 1-hash
-        score: '100.0'
+        score: "100.0"
         matched_length: 39
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: gpl-2.0_1151.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1151.RULE
@@ -217,22 +219,22 @@ other_license_detections:
         start_line: 145
         end_line: 145
         matcher: 1-hash
-        score: '100.0'
+        score: "100.0"
         matched_length: 3
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
-        matched_text: 'License: gpl-2+'
+        matched_text: "License: gpl-2+"
       - license_expression: gpl-2.0-plus
         license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 146
         end_line: 152
         matcher: 1-hash
-        score: '100.0'
+        score: "100.0"
         matched_length: 50
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_841.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_841.RULE
@@ -254,22 +256,22 @@ other_license_detections:
         start_line: 154
         end_line: 154
         matcher: 1-hash
-        score: '100.0'
+        score: "100.0"
         matched_length: 2
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: gpl_72.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_72.RULE
-        matched_text: 'License: gpl'
+        matched_text: "License: gpl"
       - license_expression: gpl-1.0-plus
         license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 155
         end_line: 159
         matcher: 1-hash
-        score: '100.0'
+        score: "100.0"
         matched_length: 39
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_465.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_465.RULE
@@ -289,9 +291,9 @@ other_license_detections:
         start_line: 163
         end_line: 179
         matcher: 1-hash
-        score: '100.0'
+        score: "100.0"
         matched_length: 132
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: zlib.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
@@ -323,9 +325,9 @@ other_license_detections:
         start_line: 182
         end_line: 207
         matcher: 1-hash
-        score: '100.0'
+        score: "100.0"
         matched_length: 213
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: bsd-new_66.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_66.RULE
@@ -366,9 +368,9 @@ other_license_detections:
         start_line: 35
         end_line: 36
         matcher: 2-aho
-        score: '100.0'
+        score: "100.0"
         matched_length: 12
-        match_coverage: '100.0'
+        match_coverage: "100.0"
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_and_zlib_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_and_zlib_1.RULE

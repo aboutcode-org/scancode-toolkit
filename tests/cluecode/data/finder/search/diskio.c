@@ -4,7 +4,7 @@
  */
 /*
  * Portions of this file are copyrighted by:
- * Copyright © 2003 Sun Microsystems, Inc. All rights reserved.
+ * Copyright ï¿½ 2003 Sun Microsystems, Inc. All rights reserved.
  * Use is subject to license terms specified in the COPYING file
  * distributed with the Net-SNMP package.
  */
@@ -405,12 +405,12 @@ var_diskio(struct variable * vp,
             (signed long) (dk[indx].dk_sectors * dk[indx].dk_secsize);
         return (u_char *) & long_ret;
     case DISKIO_NWRITTEN:
-        return NULL;            /* Sigh... BSD doesn't keep seperate track */
+        return NULL;            /* Sigh... BSD doesn't keep separate track */
     case DISKIO_READS:
         long_ret = (signed long) dk[indx].dk_xfers;
         return (u_char *) & long_ret;
     case DISKIO_WRITES:
-        return NULL;            /* Sigh... BSD doesn't keep seperate track */
+        return NULL;            /* Sigh... BSD doesn't keep separate track */
 
     default:
         ERROR_MSG("diskio.c: don't know how to handle this request.");
