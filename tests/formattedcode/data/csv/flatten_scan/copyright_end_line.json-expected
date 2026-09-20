@@ -1,0 +1,27 @@
+[
+    {
+        "path": "sample.c",
+        "type": "file",
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "scan_errors": ""
+    },
+    {
+        "path": "sample.c",
+        "copyright": "Copyright 2020-2023 Example Corp",
+        "start_line": 3,
+        "end_line": 5
+    },
+    {
+        "path": "sample.c",
+        "holder": "Example Corp",
+        "start_line": 3,
+        "end_line": 5
+    },
+    {
+        "path": "sample.c",
+        "author": "Jane Doe",
+        "start_line": 7,
+        "end_line": 8
+    }
+]
