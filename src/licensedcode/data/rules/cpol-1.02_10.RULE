@@ -2,8 +2,9 @@
 license_expression: cpol-1.02
 is_license_reference: yes
 relevance: 100
+source: ml_model
 ---
 
-Code Project
+{{Code Project
 Open License
-1.02
+1.02}}
