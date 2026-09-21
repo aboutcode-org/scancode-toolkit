@@ -10,6 +10,8 @@
 import os
 from unittest import TestCase as TestCaseClass
 
+import pytest
+
 from commoncode.testcase import FileBasedTesting
 
 from licensedcode import index
@@ -660,3 +662,39 @@ class TestGetKeyPhrases(TestCaseClass):
             raise Exception('Exception should be raised')
         except InvalidRuleRequiredPhrase:
             pass
+
+
+class TestLoadLicensesFailure(object):
+
+    def test_load_licenses_failure_mentions_licensedcode_data_for_builtin_dir(
+        self, tmp_path, monkeypatch
+    ):
+        # Point the built-in data dir at an empty tree, as it would be when the
+        # licensedcode-data package is not installed.
+        data_dir = tmp_path / 'data'
+        builtin_licenses_dir = data_dir / 'licenses'
+        builtin_licenses_dir.mkdir(parents=True)
+        monkeypatch.setattr(models, 'data_dir', str(data_dir))
+
+        with pytest.raises(models.InvalidLicense) as excinfo:
+            models.load_licenses(licenses_data_dir=str(builtin_licenses_dir))
+
+        message = str(excinfo.value)
+        assert 'No licenses were loaded' in message
+        assert 'licensedcode-data' in message
+
+    def test_load_licenses_failure_omits_package_hint_for_other_dirs(
+        self, tmp_path, monkeypatch
+    ):
+        # A caller-provided directory has nothing to do with the packaging of
+        # the built-in license data, so the hint must not be added there.
+        monkeypatch.setattr(models, 'data_dir', str(tmp_path / 'data'))
+        custom_licenses_dir = tmp_path / 'custom-licenses'
+        custom_licenses_dir.mkdir()
+
+        with pytest.raises(models.InvalidLicense) as excinfo:
+            models.load_licenses(licenses_data_dir=str(custom_licenses_dir))
+
+        message = str(excinfo.value)
+        assert 'No licenses were loaded' in message
+        assert 'licensedcode-data' not in message
