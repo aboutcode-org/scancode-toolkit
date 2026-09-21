@@ -1,0 +1,3 @@
+license_expressions:
+  - apache-2.0-notice
+notes: Regression for https://github.com/aboutcode-org/scancode-toolkit/issues/2708
