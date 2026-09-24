@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: Full Citation Example
+authors:
+  - family-names: Doe
+    given-names: John
+    email: john.doe@example.org
+version: 1.0​.0
+license: MIT
+keywords:
+  - software
+  - citation
+  - metadata
+url: "https://example.org/project"
+repository-code: "https://github.com/example/project"
+doi: "10.5281/zenodo.1234567"
+date-released: "2024-01-15"
+type: software
+abstract: "A full-featured example demonstrating all common CFF fields."
