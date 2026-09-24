@@ -15,10 +15,68 @@ from commoncode import text
 from commoncode.testcase import FileBasedTesting
 
 from packagedcode import rubygems
+from packagedcode import spec
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
+
+
+class TestGemspecVersionConstant(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def _check_version_constant_package(self, test_path, expected_name):
+        test_file = self.get_test_loc(test_path)
+        packages = list(rubygems.GemspecHandler.parse(test_file))
+        assert packages
+        pkg = packages[0]
+        assert pkg.name == expected_name
+        assert pkg.version is None
+        assert pkg.download_url is None
+        assert pkg.api_data_url == f'https://rubygems.org/api/v1/versions/{expected_name}.json'
+        return pkg
+
+    def test_version_constant_returns_none_for_elasticsearch(self):
+        pkg = self._check_version_constant_package(
+            test_path='rubygems/version-constant/elasticsearch-api.gemspec',
+            expected_name='elasticsearch-api',
+        )
+        assert 'Elasticsearch' not in str(pkg.version)
+
+    def test_version_constant_returns_none_for_excon(self):
+        self._check_version_constant_package(
+            test_path='rubygems/version-constant/excon.gemspec',
+            expected_name='excon',
+        )
+
+    def test_version_constant_returns_none_for_faraday(self):
+        self._check_version_constant_package(
+            test_path='rubygems/version-constant/faraday.gemspec',
+            expected_name='faraday',
+        )
+
+    def test_version_constant_returns_none_for_simple_constant(self):
+        self._check_version_constant_package(
+            test_path='rubygems/version-constant/simple-constant.gemspec',
+            expected_name='my-gem',
+        )
+
+    def test_real_version_is_preserved(self):
+        test_file = self.get_test_loc('rubygems/version-constant/simple-version.gemspec')
+        packages = list(rubygems.GemspecHandler.parse(test_file))
+        assert packages
+        pkg = packages[0]
+        assert pkg.name == 'my-gem'
+        assert pkg.version == '1.2.3'
+
+    def test_is_ruby_version_constant_function(self):
+        assert spec.is_ruby_version_constant('Elasticsearch::API::VERSION') is True
+        assert spec.is_ruby_version_constant('MyGem::VERSION') is True
+        assert spec.is_ruby_version_constant('Faraday::VERSION') is True
+        assert spec.is_ruby_version_constant('1.0.0') is False
+        assert spec.is_ruby_version_constant("'2.3.4'") is False
+        assert spec.is_ruby_version_constant(None) is False
+        assert spec.is_ruby_version_constant('') is False
 
 
 class TestGemSpec(PackageTester):

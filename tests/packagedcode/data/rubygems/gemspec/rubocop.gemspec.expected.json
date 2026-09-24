@@ -3,7 +3,7 @@
     "type": "gem",
     "namespace": null,
     "name": "rubocop",
-    "version": "RuboCop::Version::STRING",
+    "version": null,
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
@@ -41,7 +41,7 @@
     ],
     "keywords": [],
     "homepage_url": "https://github.com/rubocop-hq/rubocop",
-    "download_url": "https://rubygems.org/downloads/rubocop-RuboCop::Version::STRING.gem",
+    "download_url": null,
     "size": null,
     "sha1": null,
     "md5": null,
@@ -166,10 +166,10 @@
         "extra_data": {}
       }
     ],
-    "repository_homepage_url": "https://rubygems.org/gems/rubocop/versions/RuboCop::Version::STRING",
-    "repository_download_url": "https://rubygems.org/downloads/rubocop-RuboCop::Version::STRING.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/rubocop/versions/RuboCop::Version::STRING.json",
+    "repository_homepage_url": "https://rubygems.org/gems/rubocop",
+    "repository_download_url": null,
+    "api_data_url": "https://rubygems.org/api/v1/versions/rubocop.json",
     "datasource_id": "gemspec",
-    "purl": "pkg:gem/rubocop@RuboCop::Version::STRING"
+    "purl": "pkg:gem/rubocop"
   }
 ]
