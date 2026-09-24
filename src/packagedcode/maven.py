@@ -422,7 +422,11 @@ class MavenPom(pom.Pom):
         """
         Build a POM from a location or unicode text.
         """
-        assert (location or text) and (not (location and text))
+        if not ((location or text) and not (location and text)):
+    raise ValueError(
+        "Either location or text must be provided, but not both"
+    )
+
 
         if location:
             try:
