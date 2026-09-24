@@ -72,6 +72,46 @@ def test_paths_are_posix_in_html_format_output():
     assert '/copyright_acme_c-c.c' in results
     assert __version__ in results
 
+@pytest.mark.scanslow
+def test_html_output_includes_license_text():
+    test_file = test_env.get_test_loc('templated/simple-license.txt')
+    result_file = test_env.get_temp_file('html')
+    run_scan_click(['--license', '--license-text', test_file, '--html', result_file])
+    results = open(result_file).read()
+    assert 'matched text' in results.lower()
+    assert '<pre>' in results  # Check for formatted text display
+    assert __version__ in results
+
+@pytest.mark.scanslow
+def test_html_output_includes_license_text_diagnostics():
+    test_file = test_env.get_test_loc('templated/simple-license.txt')
+    result_file = test_env.get_temp_file('html')
+    run_scan_click(['--license', '--license-text', '--license-text-diagnostics', 
+                    test_file, '--html', result_file])
+    results = open(result_file).read()
+    assert 'diagnostics' in results.lower()
+    assert __version__ in results
+
+@pytest.mark.scanslow
+def test_html_output_includes_license_clarity_score():
+    test_dir = test_env.get_test_loc('templated/simple')
+    result_file = test_env.get_temp_file('html')
+    run_scan_click(['--license', '--classify', '--license-clarity-score', 
+                    test_dir, '--html', result_file])
+    results = open(result_file).read()
+    assert 'License Clarity Score' in results
+    assert 'score' in results.lower()
+    assert __version__ in results
+
+@pytest.mark.scanslow
+def test_html_output_includes_summary():
+    test_dir = test_env.get_test_loc('templated/simple')
+    result_file = test_env.get_temp_file('html')
+    run_scan_click(['--license', '--classify', '--summary', 
+                    test_dir, '--html', result_file])
+    results = open(result_file).read()
+    assert 'Scan Summary' in results
+    assert __version__ in results
 
 @pytest.mark.scanslow
 def test_scanned_path_is_present_in_html_app_output():
@@ -104,6 +144,7 @@ def test_scan_html_output_does_not_truncate_copyright_html():
           <td>1</td>
           <td>copyright</td>
             <td>Copyright \(c\) 2000 ACME, Inc\.</td>
+            <td></td>
         </tr>
     '''
 
