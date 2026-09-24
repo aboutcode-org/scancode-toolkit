@@ -17,6 +17,198 @@
   "vcs_url": null,
   "code_view_url": null,
   "extra_data": {
-    "documentation_url": "http://www.oracle.com"
-  }
+    "documentation_url": "http://www.oracle.com",
+    "import_package": "javax.security.sasl;resolution:=optional,com.sun.mail.util;version=\"[1.6,2)\",javax.activation,javax.crypto,javax.crypto.spec,javax.mail;version=\"[1.6,2)\",javax.mail.event;version=\"[1.6,2)\",javax.mail.internet;version=\"[1.6,2)\",javax.mail.search;version=\"[1.6,2)\",javax.mail.util;version=\"[1.6,2)\",javax.net,javax.net.ssl,javax.security.auth.callback,javax.security.auth.x500,javax.xml.transform,javax.xml.transform.stream,sun.security.util;resolution:=optional",
+    "export_package": "javax.mail;version=\"1.6\";uses:=\"javax.activation,javax.mail.event,javax.mail.search\",javax.mail.event;version=\"1.6\";uses:=\"javax.mail\",javax.mail.internet;version=\"1.6\";uses:=\"javax.activation,javax.mail\",javax.mail.search;version=\"1.6\";uses:=\"javax.mail\",javax.mail.util;version=\"1.6\";uses:=\"javax.activation,javax.mail.internet\",com.sun.mail.util;version=\"1.6.1\";uses:=\"javax.mail,javax.mail.internet,javax.net.ssl\",com.sun.mail.auth;version=\"1.6.1\";uses:=\"com.sun.mail.util,javax.security.auth.callback,javax.security.sasl\",com.sun.mail.handlers;version=\"1.6.1\";uses:=\"javax.activation\"",
+    "require_capability": "osgi.ee;filter:=\"(&(osgi.ee=JavaSE)(version=1.7))\""
+  },
+  "dependencies": [
+    {
+      "purl": "pkg:osgi/javax.security.sasl",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/com.sun.mail.util",
+      "extracted_requirement": "[1.6,2)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.activation",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.crypto",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.crypto.spec",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.mail",
+      "extracted_requirement": "[1.6,2)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.mail.event",
+      "extracted_requirement": "[1.6,2)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.mail.internet",
+      "extracted_requirement": "[1.6,2)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.mail.search",
+      "extracted_requirement": "[1.6,2)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.mail.util",
+      "extracted_requirement": "[1.6,2)",
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.net",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.net.ssl",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.security.auth.callback",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.security.auth.x500",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.xml.transform",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.xml.transform.stream",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/sun.security.util",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    }
+  ]
 }

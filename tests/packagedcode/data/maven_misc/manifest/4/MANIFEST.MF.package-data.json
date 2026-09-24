@@ -17,6 +17,373 @@
   "vcs_url": null,
   "code_view_url": null,
   "extra_data": {
-    "documentation_url": "http://logging.apache.org/log4j/1.2"
-  }
+    "documentation_url": "http://logging.apache.org/log4j/1.2",
+    "import_package": "com.ibm.uvm.tools;resolution:=optional,com.sun.jdmk.comm;resolution:=optional,com.sun.jdmk.comm;resolution:=optional,javax.jmdns,javax.jms;resolution:=optional,javax.mail;resolution:=optional,javax.mail.internet;resolution:=optional,javax.management;resolution:=optional,javax.naming;resolution:=optional,javax.swing;resolution:=optional,javax.swing.border;resolution:=optional,javax.swing.event;resolution:=optional,javax.swing.table;resolution:=optional,javax.swing.text;resolution:=optional,javax.swing.tree;resolution:=optional,javax.xml.parsers,org.apache.log4j,org.apache.log4j.config,org.apache.log4j.helpers,org.apache.log4j.jdbc,org.apache.log4j.jmx,org.apache.log4j.net,org.apache.log4j.nt,org.apache.log4j.or,org.apache.log4j.or.jms,org.apache.log4j.or.sax,org.apache.log4j.pattern,org.apache.log4j.spi,org.apache.log4j.varia,org.apache.log4j.xml,org.w3c.dom,org.xml.sax,org.xml.sax.helpers",
+    "export_package": "org.apache.log4j.net;uses:=\"org.apache.log4j,org.apache.log4j.spi,javax.naming,org.apache.log4j.helpers,javax.jms,org.apache.log4j.xml,javax.mail,javax.mail.internet,org.w3c.dom,javax.jmdns\",org.apache.log4j.jmx;uses:=\"org.apache.log4j,javax.management,com.sun.jdmk.comm,org.apache.log4j.helpers,org.apache.log4j.spi\",org.apache.log4j.jdbc;uses:=\"org.apache.log4j,org.apache.log4j.spi\",org.apache.log4j.config;uses:=\"org.apache.log4j.helpers,org.apache.log4j,org.apache.log4j.spi\",org.apache.log4j.helpers;uses:=\"org.apache.log4j,org.apache.log4j.spi,org.apache.log4j.pattern\",org.apache.log4j;uses:=\"org.apache.log4j.spi,org.apache.log4j.helpers,org.apache.log4j.pattern,org.apache.log4j.or,org.apache.log4j.config\",org.apache.log4j.or.jms;uses:=\"org.apache.log4j.helpers,javax.jms,org.apache.log4j.or\",org.apache.log4j.nt;uses:=\"org.apache.log4j.helpers,org.apache.log4j,org.apache.log4j.spi\",org.apache.log4j.or.sax;uses:=\"org.apache.log4j.or,org.xml.sax\",org.apache.log4j.pattern;uses:=\"org.apache.log4j.helpers,org.apache.log4j.spi,org.apache.log4j,org.apache.log4j.or\",org.apache.log4j.spi;uses:=\"org.apache.log4j,org.apache.log4j.helpers,com.ibm.uvm.tools,org.apache.log4j.or\",org.apache.log4j.or;uses:=\"org.apache.log4j.helpers,org.apache.log4j.spi,org.apache.log4j\",org.apache.log4j.xml;uses:=\"javax.xml.parsers,org.w3c.dom,org.xml.sax,org.apache.log4j.config,org.apache.log4j.helpers,org.apache.log4j,org.apache.log4j.spi,org.apache.log4j.or\",org.apache.log4j.varia;uses:=\"org.apache.log4j.spi,org.apache.log4j,org.apache.log4j.helpers\""
+  },
+  "dependencies": [
+    {
+      "purl": "pkg:osgi/com.ibm.uvm.tools",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/com.sun.jdmk.comm",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/com.sun.jdmk.comm",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.jmdns",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.jms",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.mail",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.mail.internet",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.management",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.naming",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.swing",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.swing.border",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.swing.event",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.swing.table",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.swing.text",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.swing.tree",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.xml.parsers",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.config",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.helpers",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.jdbc",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.jmx",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.net",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.nt",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.or",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.or.jms",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.or.sax",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.pattern",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.spi",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.varia",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.apache.log4j.xml",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.w3c.dom",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.xml.sax",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/org.xml.sax.helpers",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    }
+  ]
 }

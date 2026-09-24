@@ -62,6 +62,72 @@ def parse_section(section):
     return data
 
 
+def split_osgi_header(value, separator=','):
+    """
+    Split an OSGi header value by `separator` respecting double quotes.
+    """
+    if not value:
+        return []
+    results = []
+    current = []
+    in_quotes = False
+    for char in value:
+        if char == '"':
+            in_quotes = not in_quotes
+            current.append(char)
+        elif char == separator and not in_quotes:
+            results.append(''.join(current).strip())
+            current = []
+        else:
+            current.append(char)
+    if current:
+        results.append(''.join(current).strip())
+    return [r for r in results if r]
+
+
+def parse_osgi_dependencies(header_value, scope='import', is_runtime=True):
+    from packagedcode import models
+    from packageurl import PackageURL
+    dependencies = []
+    if not header_value:
+        return dependencies
+
+    parts = split_osgi_header(header_value, separator=',')
+    for part in parts:
+        segments = split_osgi_header(part, separator=';')
+        names = []
+        params = {}
+        for seg in segments:
+            if '=' in seg:
+                # This is a parameter
+                if ':=' in seg:
+                    key, _, val = seg.partition(':=')
+                else:
+                    key, _, val = seg.partition('=')
+                # strip quotes
+                val = val.strip().strip('"')
+                params[key.strip()] = val
+            else:
+                names.append(seg.strip())
+
+        for name in names:
+            is_optional = params.get('resolution') == 'optional'
+            version = params.get('bundle-version') or params.get('version')
+
+            purl = PackageURL(type='osgi', name=name).to_string()
+
+            dependencies.append(
+                models.DependentPackage(
+                    purl=purl,
+                    extracted_requirement=version,
+                    scope=scope,
+                    is_runtime=is_runtime,
+                    is_optional=is_optional,
+                )
+            )
+    return dependencies
+
+
 def get_normalized_java_manifest_data(manifest_mapping):
     """
     Return a mapping of package-like data normalized from a mapping of the
@@ -347,6 +413,36 @@ def get_normalized_java_manifest_data(manifest_mapping):
             package["extra_data"]['notes'] = comment
         if doc_url:
             package["extra_data"]['documentation_url'] = doc_url
+
+    dependencies = []
+    import_packages = dget('Import-Package')
+    if import_packages:
+        dependencies.extend(parse_osgi_dependencies(import_packages, scope='import', is_runtime=True))
+
+    require_bundle = dget('Require-Bundle')
+    if require_bundle:
+        dependencies.extend(parse_osgi_dependencies(require_bundle, scope='require', is_runtime=True))
+
+    if dependencies:
+        package['dependencies'] = [d.to_dict() for d in dependencies]
+
+    extra_data = package.get('extra_data', {})
+
+    export_packages = dget('Export-Package')
+    if export_packages:
+        extra_data['import_package'] = import_packages
+        extra_data['export_package'] = export_packages
+
+    provide_capability = dget('Provide-Capability')
+    if provide_capability:
+        extra_data['provide_capability'] = provide_capability
+
+    require_capability = dget('Require-Capability')
+    if require_capability:
+        extra_data['require_capability'] = require_capability
+
+    if extra_data:
+        package['extra_data'] = extra_data
 
     return package
 

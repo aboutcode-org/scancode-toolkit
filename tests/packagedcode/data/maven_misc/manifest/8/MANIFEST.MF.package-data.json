@@ -21,6 +21,43 @@
   "vcs_url": null,
   "code_view_url": null,
   "extra_data": {
-    "documentation_url": "http://jodd.org"
-  }
+    "documentation_url": "http://jodd.org",
+    "import_package": "javax.management,javax.management.remote,sun.misc",
+    "export_package": "jodd;version=\"3.5.2\";uses:=\"jodd.io,jodd.util.cl\",jodd.cache;version=\"3.5.2\",jodd.datetime;version=\"3.5.2\";uses:=\"jodd.datetime.format\",jodd.datetime.format;version=\"3.5.2\";uses:=\"jodd.datetime\",jodd.exception;version=\"3.5.2\",jodd.format;version=\"3.5.2\",jodd.io;version=\"3.5.2\",jodd.io.filter;version=\"3.5.2\",jodd.io.findfile;version=\"3.5.2\";uses:=\"jodd.exception,jodd.util,jodd.util.collection\",jodd.mutable;version=\"3.5.2\",jodd.typeconverter;version=\"3.5.2\";uses:=\"jodd.datetime,jodd.exception\",jodd.typeconverter.impl;version=\"3.5.2\";uses:=\"jodd.datetime,jodd.mutable,jodd.typeconverter\",jodd.util;version=\"3.5.2\";uses:=\"javax.management,javax.management.remote,sun.misc\",jodd.util.buffer;version=\"3.5.2\",jodd.util.cl;version=\"3.5.2\",jodd.util.collection;version=\"3.5.2\",jodd.util.sort;version=\"3.5.2\""
+  },
+  "dependencies": [
+    {
+      "purl": "pkg:osgi/javax.management",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/javax.management.remote",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    },
+    {
+      "purl": "pkg:osgi/sun.misc",
+      "extracted_requirement": null,
+      "scope": "import",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {}
+    }
+  ]
 }
