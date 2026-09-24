@@ -1,0 +1,36 @@
+[{
+  "datasource_id": "dockerfile_oci_labels",
+  "type": "docker",
+  "namespace": null,
+  "name": "Kanboard",
+  "version": null,
+  "qualifiers": null,
+  "subpath": null,
+  "extracted_license_statement": "MIT",
+  "declared_license_expression": "mit",
+  "declared_license_expression_spdx": "MIT",
+  "license_detections": [{
+    "license_expression": "mit",
+    "matches": [{
+      "license_expression": "mit",
+      "start_line": 1,
+      "end_line": 1,
+      "from_file": "tests/packagedcode/data/docker/test.dockerfile",
+      "score": 100.0,
+      "matched_text": "MIT"
+    }]
+  }],
+  "primary_language": null,
+  "extra_data": {
+    "labels": {
+      "org.opencontainers.image.source": "https://github.com/kanboard/kanboard",
+      "org.opencontainers.image.title": "Kanboard",
+      "org.opencontainers.image.description": "Kanboard is project management software that focuses on the Kanban methodology",
+      "org.opencontainers.image.vendor": "Kanboard",
+      "org.opencontainers.image.licenses": "MIT",
+      "org.opencontainers.image.url": "https://kanboard.org",
+      "org.opencontainers.image.documentation": "https://docs.kanboard.org"
+    }
+  },
+  "purl": "pkg:docker/Kanboard"
+}]

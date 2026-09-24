@@ -1,0 +1,17 @@
+[{
+  "datasource_id": "dockerfile_oci_labels",
+  "type": "docker",
+  "namespace": null,
+  "name": null,
+  "version": null,
+  "qualifiers": null,
+  "subpath": null,
+  "extracted_license_statement": "GPL-2.0-only,BSD-2-Clause",
+  "primary_language": null,
+  "extra_data": {
+    "labels": {
+      "org.opencontainers.image.source": "https://github.com/kubernetes-sigs/blixt",
+      "org.opencontainers.image.licenses": "GPL-2.0-only,BSD-2-Clause"
+    }
+  }
+}]
