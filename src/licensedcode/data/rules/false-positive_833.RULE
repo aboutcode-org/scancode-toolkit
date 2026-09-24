@@ -1,0 +1,5 @@
+---
+is_false_positive: yes
+notes: This is only a mention of GLPv2 and it is related to GCC
+---
+that is the last GPLv2 version of GCC,
