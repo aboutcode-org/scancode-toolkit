@@ -1518,8 +1518,33 @@ class DatafileHandler:
     def get_top_level_resources(cls, manifest_resource, codebase):
         """
         Yield Resources that are considered top-level for a Package type.
+
+        The default implementation yields the manifest resource itself
+        (which is authoritative package-level metadata and should always
+        participate in top-level classification) and sibling files that
+        are likely legal or readme files, using the same classification
+        heuristics as set_classification_flags().
+
+        Subclasses can override for ecosystem-specific layouts (e.g.,
+        Maven META-INF structures).
         """
-        pass
+        from summarycode.classify import check_resource_name_start_and_end
+        from summarycode.classify import LEGAL_STARTS_ENDS
+        from summarycode.classify import README_STARTS_ENDS
+
+        yield manifest_resource
+        if manifest_resource.has_parent():
+            parent = manifest_resource.parent(codebase)
+            if parent:
+                for sibling in parent.children(codebase):
+                    if not sibling.is_file:
+                        continue
+                    if sibling.path == manifest_resource.path:
+                        continue
+                    if check_resource_name_start_and_end(sibling, LEGAL_STARTS_ENDS):
+                        yield sibling
+                    elif check_resource_name_start_and_end(sibling, README_STARTS_ENDS):
+                        yield sibling
 
     @classmethod
     def validate(cls):
