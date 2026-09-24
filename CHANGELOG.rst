@@ -16,6 +16,8 @@ Next release
   have cached results for those already. If we do, we update our results with the
   cached data. If not, we add those scanners to a list of scanners to be run.
   After scanning, the cache is updated.
+- Improve author detection for dotted names such as ``Frankie.Chu``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4229
 
 v33.0.0rc1 - 2026-05-14
 ------------------------
