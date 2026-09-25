@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Juniper Networks, Inc.
     count: 1
+allrights:
+  - Copyright (c) 1996 Juniper Networks, Inc. All rights reserved.

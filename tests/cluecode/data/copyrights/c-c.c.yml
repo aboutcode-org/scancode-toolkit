@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: STMicroelectronics
     count: 1
+allrights:
+  - COPYRIGHT (c) STMicroelectronics 2005.

@@ -17,3 +17,7 @@ holders_summary:
     count: 1
   - value: SGI
     count: 1
+allrights:
+  - copyrighted by Mark Kilgard
+  - copyrighted by SGI
+  - Copyright (c) 1999-2007 Brian Paul All Rights Reserved.

@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Keith Whitwell
     count: 1
+allrights:
+  - (c) 1997, Keith Whitwell
+  - Copyright (c) 1999-2001 Brian Paul All Rights Reserved.

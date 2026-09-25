@@ -21,3 +21,8 @@ holders_summary:
     count: 1
   - value: Todd C. Miller
     count: 1
+allrights:
+  - Copyright (c) 2000 Andre Lucas. All rights reserved.
+  - Portions copyright (c) 1998 Todd C. Miller
+  - Portions copyright (c) 1996 Jason Downs
+  - Portions copyright (c) 1996 Theo de Raadt

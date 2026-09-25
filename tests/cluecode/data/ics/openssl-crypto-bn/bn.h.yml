@@ -21,3 +21,8 @@ holders_summary:
     count: 1
   - value: Tim Hudson
     count: 1
+allrights:
+  - Copyright (c) 1995-1997 Eric Young (eay@cryptsoft.com) All rights reserved.
+  - holder is Tim Hudson (tjh@cryptsoft.com).
+  - Copyright (c) 1998-2006 The OpenSSL Project. All rights reserved.
+  - Copyright 2002 Sun Microsystems, Inc. ALL RIGHTS RESERVED.

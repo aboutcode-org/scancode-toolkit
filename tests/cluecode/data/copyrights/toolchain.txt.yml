@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: lowRISC contributors
     count: 1
+allrights:
+  - Copyright lowRISC contributors.

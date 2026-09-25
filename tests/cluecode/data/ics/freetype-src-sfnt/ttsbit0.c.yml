@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: David Turner, Robert Wilhelm, and Werner Lemberg
     count: 1
+allrights:
+  - Copyright 2005, 2006, 2007, 2008, 2009 by David Turner, Robert Wilhelm, and Werner Lemberg.

@@ -6,16 +6,17 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
-from itertools import islice
-from os.path import getsize
 import logging
 import os
 import sys
+from itertools import islice
+from os.path import getsize
+
+from typecode.contenttype import get_type
 
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
 from scancode import ScancodeError
-from typecode.contenttype import get_type
 
 TRACE = os.environ.get('SCANCODE_DEBUG_API', False)
 
@@ -29,6 +30,7 @@ logger = logging.getLogger(__name__)
 if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
+
 
     def logger_debug(*args):
         return logger.debug(
@@ -46,9 +48,9 @@ Note: this API is unstable and still evolving.
 
 
 def get_copyrights(
-    location,
-    deadline=sys.maxsize,
-    **kwargs,
+        location,
+        deadline=sys.maxsize,
+        **kwargs,
 ):
     """
     Return a mapping with a single 'copyrights' key with a value that is a list
@@ -79,12 +81,45 @@ def get_copyrights(
     return results
 
 
+def allrights_scanner(
+        location,
+        deadline=sys.maxsize,
+        **kwargs,
+):
+    """Return a mapping with a single 'copyrights' key with a value that is a list
+    of mappings for copyright detected in the file at `location`.
+    Adapted copy of scancodes scancode.api.get_copyrights.
+    """
+    from cluecode.copyrights import detect_copyrights
+    from cluecode.copyrights import Detection
+
+    detections = detect_copyrights(
+        location,
+        include_copyrights=True,
+        include_holders=True,
+        include_authors=True,
+        include_copyright_years=True,
+        include_copyright_allrights=True,
+        deadline=deadline,
+    )
+
+    copyrights, holders, authors = Detection.split(detections, to_dict=True)
+
+    results = dict([
+        ('copyrights', copyrights),
+        ('holders', holders),
+        ('authors', authors),
+    ])
+
+    return results
+
+
 def get_emails(
-    location,
-    threshold=50,
-    test_slow_mode=False,
-    test_error_mode=False,
-    **kwargs,
+        location,
+        threshold=50,
+        test_slow_mode=False,
+        test_error_mode=False,
+        **kwargs,
 ):
     """
     Return a mapping with a single 'emails' key with a value that is a list of
@@ -148,14 +183,14 @@ SCANCODE_RULE_URL = f'{SCANCODE_DATA_BASE_URL}/rules/{{}}'
 
 
 def get_licenses(
-    location,
-    min_score=0,
-    include_text=False,
-    license_text_diagnostics=False,
-    license_diagnostics=False,
-    deadline=sys.maxsize,
-    unknown_licenses=False,
-    **kwargs,
+        location,
+        min_score=0,
+        include_text=False,
+        license_text_diagnostics=False,
+        license_diagnostics=False,
+        deadline=sys.maxsize,
+        unknown_licenses=False,
+        **kwargs,
 ):
     """
     Return a mapping or license_detections for licenses detected in the file at
@@ -257,12 +292,12 @@ SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 
 def _get_package_data(
-    location,
-    application=True,
-    system=False,
-    compiled=False,
-    package_only=False, 
-    **kwargs
+        location,
+        application=True,
+        system=False,
+        compiled=False,
+        package_only=False,
+        **kwargs
 ):
     """
     Return a mapping of package manifest information detected in the file at ``location``.
@@ -309,12 +344,12 @@ def get_package_info(location, **kwargs):
 
 
 def get_package_data(
-    location,
-    application=True,
-    system=False,
-    compiled=False,
-    package_only=False,
-    **kwargs
+        location,
+        application=True,
+        system=False,
+        compiled=False,
+        package_only=False,
+        **kwargs
 ):
     """
     Return a mapping of package manifest information detected in the file at

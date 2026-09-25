@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Paul Mackerras
     count: 1
+allrights:
+  - Copyright (c) 1999 Paul Mackerras. All rights reserved.

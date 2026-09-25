@@ -6,3 +6,5 @@ holders:
 holders_summary:
   - value: Jean Tourrilhes
     count: 1
+allrights:
+  - Copyright (c) 2004 Jean Tourrilhes <jt@hpl.hp.com>

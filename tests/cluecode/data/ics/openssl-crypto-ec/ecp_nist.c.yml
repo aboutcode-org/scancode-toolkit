@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: The OpenSSL Project
     count: 1
+allrights:
+  - Copyright (c) 1998-2003 The OpenSSL Project. All rights reserved.
+  - Copyright 2002 Sun Microsystems, Inc. ALL RIGHTS RESERVED.

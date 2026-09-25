@@ -10,3 +10,5 @@ holders:
 holders_summary:
   - value: MyCompanyName
     count: 1
+allrights:
+  - Copyright 2005 MyCompanyName . All rights reserved.

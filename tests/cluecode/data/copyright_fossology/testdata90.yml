@@ -13,3 +13,7 @@ holders:
 authors:
   - Barak Pearlmutter <bap@debian.org>
   - David Kreil <kreil@ebi.ac.uk>
+allrights:
+  - Copyright (c) 2002 Leon Bottou and Yann Le Cun.
+  - Copyright (c) 2001 AT&T
+  - Copyright (c) 1999-2001 LizardTech, Inc. All Rights Reserved.

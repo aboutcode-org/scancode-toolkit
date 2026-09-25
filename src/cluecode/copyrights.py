@@ -335,20 +335,25 @@ class CopyrightDetector(object):
             tree_node_label = tree_node.label
 
             if (include_copyrights or include_holders) and 'COPYRIGHT' in tree_node_label:
-                copyrght = build_detection_from_node(
+                if include_copyright_allrights:
+                    refiner = refine_allrights
+                else:
+                    refiner = refine_copyright
+
+                copyright = build_detection_from_node(
                     node=tree_node,
                     cls=CopyrightDetection,
                     ignored_labels=non_copyright_labels,
                     include_copyright_allrights=include_copyright_allrights,
-                    refiner=refine_copyright,
+                    refiner=refiner,
                 )
 
                 if TRACE or TRACE_DEEP:
-                    logger_debug(f'CopyrightDetector: final copyright: {copyrght}')
+                    logger_debug(f'CopyrightDetector: final copyright: {copyright}')
 
-                if copyrght:
+                if copyright:
                     if include_copyrights:
-                        yield copyrght
+                        yield copyright
 
                     if include_holders:
                         # By default we strip email and urls from holders ....
@@ -3617,6 +3622,31 @@ def refine_copyright(c):
     return c.strip()
 
 
+def refine_allrights(c):
+    """
+    Refine a detected copyright string.
+    FIXME: the grammar should not allow this to happen.
+    """
+    if not c:
+        return
+    c = ' '.join(c.split())
+    c = strip_some_punct(c)
+    c = strip_solo_quotes(c)
+    # this catches trailing slashes in URL for consistency
+    c = c.strip('/ ~')
+    c = strip_all_unbalanced_parens(c)
+    c = remove_some_extra_words_and_punct(c)
+    c = ' '.join(c.split())
+    c = remove_dupe_copyright_words(c)
+    c = strip_prefixes(c, prefixes=set(['by', 'c']))
+    c = c.strip()
+    c = c.strip('+')
+    c = strip_balanced_edge_parens(c)
+    c = strip_suffixes(c, suffixes=COPYRIGHTS_SUFFIXES)
+    c = c.strip("'")
+    return c.strip()
+
+
 def remove_dupe_holder(h):
     """
     Remove duplicated holders
@@ -4508,7 +4538,7 @@ fold_consecutive_quotes = re.compile(r"'\"{2,}").sub
 remove_weird_comment_markers = re.compile(r'^(rem|\@rem|dnl)\s+').sub
 
 # common comment line prefix in man pages
-remove_man_comment_markers = re.compile(r'\."').sub
+remove_man_comment_markers = re.compile(r'^\.\\"').sub
 
 
 def remove_code_comment_markers(s):

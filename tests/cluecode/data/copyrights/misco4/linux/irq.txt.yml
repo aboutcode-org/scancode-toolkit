@@ -12,3 +12,7 @@ holders:
   - Nokia Corporation
 authors:
   - Tony Lindgren <tony@atomide.com> and Tuukka Tikkanen <tuukka.tikkanen@elektrobit.com>
+allrights:
+  - Copyright (c) 1992 Linus Torvalds
+  - Copyright (c) 1995-2000 Russell King.
+  - Copyright (c) 2004-2005 Nokia Corporation.

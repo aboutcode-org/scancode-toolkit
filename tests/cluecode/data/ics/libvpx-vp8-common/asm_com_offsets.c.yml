@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: The WebM project authors
     count: 1
+allrights:
+  - Copyright (c) 2011 The WebM project authors. All Rights Reserved.

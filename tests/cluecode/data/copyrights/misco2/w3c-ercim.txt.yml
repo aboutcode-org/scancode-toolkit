@@ -10,3 +10,5 @@ holders:
 holders_summary:
   - value: W3C(r) (MIT, ERCIM, Keio, Beihang)
     count: 1
+allrights:
+  - Copyright (c) YEAR W3C(r) (MIT, ERCIM, Keio, Beihang).

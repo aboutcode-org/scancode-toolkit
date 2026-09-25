@@ -3,6 +3,8 @@ what:
   - holders
   - authors
 copyrights:
-  - Copyright (c) 2005 IBM echo Hex-dump
+  - Copyright (c) 2005 IBM. echo Hex-dump
 holders:
-  - IBM echo Hex-dump
+  - IBM. echo Hex-dump
+allrights:
+  - Copyright (c) 2005 IBM. echo Hex-dump

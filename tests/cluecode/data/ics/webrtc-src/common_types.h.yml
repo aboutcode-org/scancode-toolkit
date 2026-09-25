@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: The WebRTC project authors
     count: 1
+allrights:
+  - Copyright (c) 2011 The WebRTC project authors. All Rights Reserved.

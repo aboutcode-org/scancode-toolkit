@@ -8,3 +8,5 @@ holders:
   - Jason Gunthorpe and others
 authors:
   - APT Development Team <deity@lists.debian.org>
+allrights:
+  - copyright 1997, 1998, 1999 Jason Gunthorpe and others.

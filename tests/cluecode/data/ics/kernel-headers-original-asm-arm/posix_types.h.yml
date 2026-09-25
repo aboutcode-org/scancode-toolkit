@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Russell King
     count: 1
+allrights:
+  - Copyright (c) 1996-1998 Russell King.

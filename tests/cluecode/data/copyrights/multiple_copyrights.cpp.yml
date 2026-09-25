@@ -14,3 +14,7 @@ copyrights_summary:
     count: 2
   - value: Copyright (c) 2000-2001 Alias Ltd.
     count: 1
+allrights:
+  - Copyright (c) Microsoft. All rights reserved.
+  - Copyright (c) 2000-2001 Alias Ltd. All rights reserved.
+  - Copyright (c) Microsoft.

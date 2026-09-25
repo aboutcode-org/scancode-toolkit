@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Pierre Ossman
     count: 1
+allrights:
+  - Copyright (c) 2005-2007 Pierre Ossman, All Rights Reserved.

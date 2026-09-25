@@ -11,3 +11,6 @@ holders:
 holders_summary:
   - value: Jean-loup Gailly
     count: 2
+allrights:
+  - Copyright (c) 1995-2005 Jean-loup Gailly.
+  - Copyright 1995-2005 Jean-loup Gailly

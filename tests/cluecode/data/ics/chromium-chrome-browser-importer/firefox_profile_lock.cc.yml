@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: the Initial Developer
     count: 1
+allrights:
+  - Copyright (c) 2010 The Chromium Authors. All rights reserved.
+  - Portions created by the Initial Developer are Copyright (c) 2002 the Initial Developer. All Rights Reserved.

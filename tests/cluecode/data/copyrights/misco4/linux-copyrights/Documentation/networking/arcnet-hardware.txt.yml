@@ -20,4 +20,6 @@ authors:
 expected_failures:
   - copyrights
   - holders
-  - authors
+  - authorsallrights:
+  - (c) 1985 Waterloo Micro.
+  - (c) 1985

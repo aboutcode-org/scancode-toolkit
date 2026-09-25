@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: The NetBSD Foundation, Inc.
     count: 1
+allrights:
+  - (c) 1998 The NetBSD Foundation, Inc. All rights reserved.

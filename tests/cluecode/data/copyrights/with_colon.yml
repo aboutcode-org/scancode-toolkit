@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Armin Ronacher
     count: 1
+allrights:
+  - copyright (c) 2013 by Armin Ronacher.

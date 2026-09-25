@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Simon Perreault
     count: 1
+allrights:
+  - Copyright (c) 2000, Intel Corporation, all rights reserved.
+  - Copyright (c) 2006 Simon Perreault

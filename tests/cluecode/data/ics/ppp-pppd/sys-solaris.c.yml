@@ -17,3 +17,7 @@ holders_summary:
     count: 1
   - value: Sun Microsystems
     count: 1
+allrights:
+  - Copyright (c) 2000 by Sun Microsystems, Inc. All rights reserved.
+  - Copyright (c) 1995-2002 Paul Mackerras. All rights reserved.
+  - Copyright (c) 1984-2000 Carnegie Mellon University. All rights reserved.

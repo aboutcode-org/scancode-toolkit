@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Niels Provos
     count: 1
+allrights:
+  - Copyright 2000-2004 Niels Provos <provos@citi.umich.edu> All rights reserved.

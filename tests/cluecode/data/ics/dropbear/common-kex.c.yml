@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Mihnea Stoenescu
     count: 1
+allrights:
+  - Copyright (c) 2002-2004 Matt Johnston
+  - Portions Copyright (c) 2004 by Mihnea Stoenescu All rights reserved.

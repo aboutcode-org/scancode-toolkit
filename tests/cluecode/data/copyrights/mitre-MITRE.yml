@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: The MITRE Corporation
     count: 1
+allrights:
+  - Copyright (c) 1994-1999. The MITRE Corporation (http://www.mitre.org/). All Rights Reserved.

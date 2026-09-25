@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Vlad Roubtsov
     count: 1
+allrights:
+  - Copyright (c) 2003-2004 Vlad Roubtsov. All rights reserved.

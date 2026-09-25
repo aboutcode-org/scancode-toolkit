@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Mark Adler
     count: 1
+allrights:
+  - Copyright (c) 2004, 2008 Mark Adler, all rights reserved

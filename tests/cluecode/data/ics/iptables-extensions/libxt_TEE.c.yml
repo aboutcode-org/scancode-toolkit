@@ -16,3 +16,5 @@ expected_failures:
   - copyrights
   - holders
   - holders_summary
+allrights:
+  - Copyright (c) Sebastian Classen

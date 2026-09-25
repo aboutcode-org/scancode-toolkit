@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: The Chromium Authors
     count: 1
+allrights:
+  - Copyright (c) 2006-2009 The Chromium Authors. All rights reserved.
