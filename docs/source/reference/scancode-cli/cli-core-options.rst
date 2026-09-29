@@ -196,6 +196,32 @@ Comparing progress message options
 
 ----
 
+.. _cli-use-cached-results-option:
+
+``--use-cached-results``
+------------------------
+
+    When enabled, during scan time for a given Resource, we iterate through the
+    active scanners and see if we have cached results for those already. If we
+    do, we update our results with the cached data. If not, we add those
+    scanners to a list of scanners to be run. After scanning, the cache is
+    updated.
+
+    **Example**
+
+    .. code-block:: shell
+
+        scancode -clipeu --use-cached-results samples samples.json
+
+    On the first run, the cache will be created for the scanned Resources in
+    `samples`. Subsequent runs on `samples` will return cached results.
+
+    When run as a stand-alone release, the results cache is tied to specific
+    ScanCode toolkit versions. When run in development mode, the cache is stored
+    in the `scancode-toolkit/.cache` directory.
+
+----
+
 .. _glob-pattern-matching:
 
 Glob Pattern Matching

@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+copyrights:
+  - "(c) 2007 James Turnbull <james@lovedthanlost.net>"
+holders:
+  - "James Turnbull"
+notes: "ORT-derived fixture; see ORT test assets for provenance"

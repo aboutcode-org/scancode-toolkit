@@ -1,0 +1,62 @@
+--- !ruby/object:Gem::Specification
+name: json
+version: !ruby/object:Gem::Version
+  version: 3.0.2
+platform: java
+authors:
+- Daniel Luz
+bindir: bin
+cert_chain: []
+date: 2026-09-09 00:00:00.000000000 Z
+dependencies: []
+description: A JSON implementation as a JRuby extension.
+email: dev+ruby@mernen.com
+executables: []
+extensions: []
+extra_rdoc_files:
+- README.md
+files:
+- BSDL
+- CHANGES.md
+- COPYING
+- LEGAL
+- README.md
+- json.gemspec
+- lib/json.rb
+- lib/json/common.rb
+- lib/json/ext.rb
+- lib/json/ext/generator.jar
+- lib/json/ext/generator/state.rb
+- lib/json/truffle_ruby/generator.rb
+- lib/json/version.rb
+homepage: https://github.com/ruby/json
+licenses:
+- Ruby
+metadata:
+  bug_tracker_uri: https://github.com/ruby/json/issues
+  changelog_uri: https://github.com/ruby/json/blob/master/CHANGES.md
+  documentation_uri: https://docs.ruby-lang.org/en/master/JSON.html
+  homepage_uri: https://github.com/ruby/json
+  source_code_uri: https://github.com/ruby/json
+rdoc_options:
+- "--title"
+- JSON implementation for Ruby
+- "--main"
+- README.md
+require_paths:
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement
+  requirements:
+  - - ">="
+    - !ruby/object:Gem::Version
+      version: '2.7'
+required_rubygems_version: !ruby/object:Gem::Requirement
+  requirements:
+  - - ">="
+    - !ruby/object:Gem::Version
+      version: '0'
+requirements: []
+rubygems_version: 3.6.3
+specification_version: 4
+summary: JSON Implementation for Ruby
+test_files: []

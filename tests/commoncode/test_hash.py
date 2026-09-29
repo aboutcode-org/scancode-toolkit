@@ -11,9 +11,11 @@ import hashlib
 import os
 
 from commoncode.hash import b64sha1
+from commoncode.hash import binary_chunks
 from commoncode.hash import checksum
 from commoncode.hash import checksum_from_chunks
 from commoncode.hash import get_hasher
+from commoncode.hash import hasher_from_chunks
 from commoncode.hash import md5
 from commoncode.hash import multi_checksums
 from commoncode.hash import sha1
@@ -200,3 +202,10 @@ class TestHash(FileBasedTesting):
         test_file = self.get_test_loc("hash/empty")
         checksums = multi_checksums(location=test_file, checksum_names=("sha1",))
         assert checksums == {"sha1": None}
+
+    def test_hasher_from_chunks(self):
+        test_file = self.get_test_loc("hash/dir1/a.png")
+        chunks = binary_chunks(location=test_file)
+        hasher = hasher_from_chunks(chunks=chunks, name='sha256')
+        expected = "1b598db6fee8f1ec7bb919c0adf68956f3d20af8c9934a9cf2db52e1347efd35"
+        assert hasher.hexdigest() == expected

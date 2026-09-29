@@ -17,10 +17,8 @@ from commoncode.testcase import FileBasedTesting
 from packagedcode import rubygems
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
-
-# TODO: Add test with https://rubygems.org/gems/pbox2d/versions/1.0.3-java
-# this is a multiple personality package (Java  and Ruby)
-# see also https://rubygems.org/downloads/jaro_winkler-1.5.1-java.gem
+from scancode.cli_test_utils import run_scan_click
+from scancode.cli_test_utils import check_json_scan
 
 
 class TestGemSpec(PackageTester):
@@ -83,6 +81,24 @@ class TestGemSpec(PackageTester):
         expected_loc = self.get_test_loc('rubygems/gemspec/with_variables.gemspec.expected.json')
         packages = rubygems.GemspecHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_ruby_gem_scan(self):
+        test_file = self.get_test_loc('rubygems/package/m2r-2.1.0.gem')
+        expected_file = self.get_test_loc('rubygems/package/m2r-2.1.0.gem.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_ruby_extracted_gem_scan(self):
+        test_file = self.get_test_loc('rubygems/package/json-3.0.2-java.gem-extract')
+        expected_file = self.get_test_loc('rubygems/package/json-3.0.2-java.gem-extract.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
 
 
 class TestRubyGemMetadata(FileBasedTesting):
