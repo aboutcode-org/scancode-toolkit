@@ -202,6 +202,26 @@ def test_license_match_unknown_license_intro_with_long_gaps_between():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
+def test_license_match_unknown_license_intro_expat():
+    test_dir = test_env.get_test_loc('plugin_license/unknown_intro/scan-unknown-intro-expat/')
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc(
+        'plugin_license/unknown_intro/scan-unknown-intro-expat.expected.json'
+    )
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
 def test_license_match_unknown_license_with_license_ref_to_key_file_at_root():
     test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/unknown-ref-to-key-file-root')
     result_file = test_env.get_temp_file('json')
