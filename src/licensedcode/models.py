@@ -852,6 +852,13 @@ def load_licenses(
             'No licenses were loaded. Check to see if the license data files '
             f'are available at "{licenses_data_dir}".'
         )
+        if is_builtin:
+            msg += (
+                ' The builtin license data is provided by the separate '
+                '"licensedcode-data" package, which may not be installed. '
+                'Install it with "pip install licensedcode-data" or '
+                '"pip install scancode-toolkit[licenses]".'
+            )
         raise InvalidLicense(msg)
 
     return licenses
