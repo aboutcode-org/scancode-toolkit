@@ -99,9 +99,10 @@ dependencies = [
     "urlpy",
     "xmltodict >= 0.11.0",
     "zipp >= 3.0.0; python_version < \"3.9\"",
-    "typecode >= 30.0.1",
-    "typecode[full] >= 30.1.0",
-    "extractcode[full] >= 31.0.0",
+    "typecode[full] >= 30.2.0; platform_machine == 'x86_64'",
+    "typecode[system_provided] >= 30.2.0; platform_machine != 'x86_64'",
+    "extractcode[full] >= 31.1.0; platform_machine == 'x86_64'",
+    "extractcode[system_provided] >= 31.1.0; platform_machine != 'x86_64'",
 ]
 
 [project.urls]
@@ -115,8 +116,14 @@ licenses = [
 
 # no impact but added for symmetry with the other pyproject.toml
 full = [
-    "extractcode[full] >= 31.0.0",
-    "typecode[full] >= 30.1.0",
+    "extractcode[full] >= 31.1.0",
+    "typecode[full] >= 30.2.0",
+]
+
+# no impact but added for symmetry with the other pyproject.toml
+system_provided = [
+    "extractcode[system_provided] >= 31.1.0",
+    "typecode[system_provided] >= 30.2.0",
 ]
 
 # linux-only package handling
