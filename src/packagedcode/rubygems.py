@@ -97,7 +97,7 @@ class GemMetadataArchiveExtractedHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
-        yield from assemble_extracted_gem(cls, package_data, resource, codebase)
+        yield from assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
 
 
 class BaseGemProjectHandler(models.DatafileHandler):
