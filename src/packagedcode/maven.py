@@ -102,12 +102,11 @@ class MavenBasePackageHandler(models.DatafileHandler):
             if fnmatchcase(r.path, nested_pom_xml_path_pattern):
                 pom_xmls.append(r)
 
-        if len(pom_xmls) > 1:
+        if len(pom_xmls) > 1 and not manifests:
             yield from MavenPomXmlHandlerMixin.assemble(package_data, resource, codebase)
             return
 
-        if manifests and pom_xmls:
-            # raise Exception(resource.path, meta_inf_resource, datafile_name_patterns, package_adder)
+        elif manifests and pom_xmls:
             parent_resource = meta_inf_resource.parent(codebase)
             if not parent_resource:
                 parent_resource = meta_inf_resource
@@ -116,9 +115,10 @@ class MavenBasePackageHandler(models.DatafileHandler):
                     directory=meta_inf_resource,
                     codebase=codebase,
                     package_adder=package_adder,
-                    ignore_name_check=True,
+                    relaxed_purl_comparision=True,
                     parent_resource=parent_resource,
                 )
+
         elif manifests and not pom_xmls:
             yield from JavaJarManifestHandlerMixin.assemble(package_data, resource, codebase, package_adder)
         elif pom_xmls and not manifests:
@@ -1293,6 +1293,10 @@ def _parse(
         base_url=base_url,
     ))
 
+    extra_data = {}
+    if pname:
+        extra_data['pname'] = pname
+
     # FIXME: there are still other data to map in a PackageData
     package_data = dict(
         datasource_id=datasource_id,
@@ -1309,6 +1313,7 @@ def _parse(
         dependencies=get_dependencies(pom),
         source_packages=source_packages,
         bug_tracking_url=bug_tracking_url,
+        extra_data=extra_data,
         **urls,
     )
     return MavenPackageData.from_data(package_data, package_only)

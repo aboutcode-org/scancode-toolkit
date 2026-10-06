@@ -341,12 +341,14 @@ def get_normalized_java_manifest_data(manifest_mapping):
 
     comment = dget('Comment')
 
-    if comment or doc_url:
+    if comment or doc_url or i_title:
         package["extra_data"] = {}
         if comment:
             package["extra_data"]['notes'] = comment
         if doc_url:
             package["extra_data"]['documentation_url'] = doc_url
+        if i_title:
+            package["extra_data"]['pname'] = i_title
 
     return package
 
