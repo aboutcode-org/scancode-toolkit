@@ -2278,7 +2278,10 @@ def get_python_version_os(marker):
     requirement Marker or None.
     """
     platform_data = {}
-    python_version_operators = ['<', '>=', '==', '<=', '<']
+    # all comparison operators allowed for a marker in PEP 508
+    python_version_operators = [
+        '<', '<=', '!=', '==', '>=', '>', '~=', '===',
+    ]
 
     if not marker or not isinstance(marker, markers.Marker):
         return platform_data
