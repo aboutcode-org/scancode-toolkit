@@ -76,7 +76,8 @@
           "is_private": false,
           "is_virtual": false,
           "extra_data": {
-            "documentation_url": "http://johnzon.apache.org/"
+            "documentation_url": "http://johnzon.apache.org/",
+            "pname": "Johnzon :: JSON-B Implementation"
           },
           "dependencies": [],
           "repository_homepage_url": null,
@@ -211,7 +212,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "Johnzon :: JSON-B Implementation"
+          },
           "dependencies": [
             {
               "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.3_spec@1.1",

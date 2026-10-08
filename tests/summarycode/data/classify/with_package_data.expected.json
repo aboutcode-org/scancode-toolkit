@@ -10,7 +10,15 @@
       "primary_language": "Java",
       "description": "JBoss Logging 3\nThe JBoss Logging Framework",
       "release_date": null,
-      "parties": [],
+      "parties": [
+        {
+          "type": null,
+          "role": "vendor",
+          "name": "JBoss by Red Hat",
+          "email": null,
+          "url": null
+        }
+      ],
       "keywords": [],
       "homepage_url": "http://www.jboss.org",
       "download_url": null,
@@ -60,74 +68,22 @@
       ],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "JBoss Logging 3"
+      },
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final.pom",
       "package_uid": "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
-        "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml"
-      ],
-      "datasource_ids": [
-        "maven_pom"
-      ],
-      "purl": "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final"
-    },
-    {
-      "type": "jar",
-      "namespace": null,
-      "name": "JBoss Logging 3",
-      "version": "3.4.2.Final",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": null,
-      "description": null,
-      "release_date": null,
-      "parties": [
-        {
-          "type": null,
-          "role": "vendor",
-          "name": "JBoss by Red Hat",
-          "email": null,
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": "http://www.jboss.org",
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": "https://github.com/jboss-logging/jboss-logging",
-      "vcs_url": "https://github.com/jboss-logging/jboss-logging@8d42b4ed170fd961f32663fc4b4816ba4a44d93c",
-      "copyright": null,
-      "holder": null,
-      "declared_license_expression": null,
-      "declared_license_expression_spdx": null,
-      "license_detections": [],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": null,
-      "notice_text": null,
-      "source_packages": [],
-      "is_private": false,
-      "is_virtual": false,
-      "extra_data": {},
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null,
-      "package_uid": "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
+        "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
         "jar/META-INF/MANIFEST.MF"
       ],
       "datasource_ids": [
+        "maven_pom",
         "java_jar_manifest"
       ],
-      "purl": "pkg:jar/JBoss%20Logging%203@3.4.2.Final"
+      "purl": "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final"
     }
   ],
   "dependencies": [
@@ -296,7 +252,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 7,
       "dirs_count": 7,
@@ -331,7 +287,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 5,
       "dirs_count": 3,
@@ -366,7 +322,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -401,7 +357,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -476,7 +432,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "JBoss Logging 3"
+          },
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,
@@ -486,7 +444,7 @@
         }
       ],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -521,7 +479,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 2,
       "dirs_count": 2,
@@ -556,7 +514,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 2,
       "dirs_count": 1,
@@ -591,7 +549,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 2,
       "dirs_count": 0,
@@ -671,7 +629,7 @@
         }
       ],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -766,7 +724,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "JBoss Logging 3"
+          },
           "dependencies": [
             {
               "purl": "pkg:maven/org.junit/junit-bom@5.7.0",
@@ -876,7 +836,6 @@
         }
       ],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 0,
@@ -912,7 +871,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 2,
       "dirs_count": 2,
@@ -947,7 +906,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 2,
       "dirs_count": 1,
@@ -982,7 +941,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 2,
       "dirs_count": 0,
@@ -1017,7 +976,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 0,
       "dirs_count": 0,
@@ -1052,7 +1011,7 @@
       "is_community": false,
       "package_data": [],
       "for_packages": [
-        "pkg:jar/JBoss%20Logging%203@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "files_count": 0,
       "dirs_count": 0,

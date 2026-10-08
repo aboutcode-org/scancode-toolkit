@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "ASM Core"
+  },
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/asm/asm/3.0/",
   "repository_download_url": "https://repo1.maven.org/maven2/asm/asm/3.0/asm-3.0.jar",

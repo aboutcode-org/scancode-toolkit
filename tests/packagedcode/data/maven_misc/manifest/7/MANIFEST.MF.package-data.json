@@ -17,6 +17,7 @@
   "vcs_url": null,
   "code_view_url": null,
   "extra_data": {
-    "documentation_url": "http://fusesource.com/"
+    "documentation_url": "http://fusesource.com/",
+    "pname": "LevelDB JNI"
   }
 }

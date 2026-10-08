@@ -564,7 +564,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Lang"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/junit/junit@3.8.1",

@@ -110,7 +110,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "P6Spy"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/regexp/regexp@1.3",

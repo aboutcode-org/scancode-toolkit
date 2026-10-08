@@ -67,7 +67,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Spring Framework: Core"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/asm/asm@2.2.3",

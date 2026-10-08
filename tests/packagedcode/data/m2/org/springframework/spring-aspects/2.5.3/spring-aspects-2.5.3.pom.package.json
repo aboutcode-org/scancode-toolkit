@@ -67,7 +67,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Spring Framework: Aspects"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/aspectj/aspectjrt@1.5.4",

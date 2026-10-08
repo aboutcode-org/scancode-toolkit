@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Impl"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/javax.servlet/servlet-api@2.3",

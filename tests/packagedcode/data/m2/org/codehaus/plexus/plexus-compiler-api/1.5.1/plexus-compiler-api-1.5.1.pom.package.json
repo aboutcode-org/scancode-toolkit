@@ -121,7 +121,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Plexus Compiler Api"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils@1.0.4",

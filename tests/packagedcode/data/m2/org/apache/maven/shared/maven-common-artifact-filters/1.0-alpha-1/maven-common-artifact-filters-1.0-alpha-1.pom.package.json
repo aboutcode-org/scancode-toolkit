@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Maven Common Artifact Filters"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-artifact@2.0.2",

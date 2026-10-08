@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Eclipse Sequence Plugin"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/com.intel.gpe.clients/gpe-clients-all@2.0.4-SNAPSHOT",

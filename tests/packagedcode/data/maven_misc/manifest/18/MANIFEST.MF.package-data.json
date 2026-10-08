@@ -15,5 +15,8 @@
     }
   ],
   "vcs_url": "https://github.com/ReactiveX/RxKotlin.git@28db815",
-  "code_view_url": null
+  "code_view_url": null,
+  "extra_data": {
+    "pname": "io.reactivex.rxjava2#rxkotlin;2.0.2"
+  }
 }

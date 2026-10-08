@@ -67,7 +67,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Spring Framework: JDBC"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/c3p0/c3p0@0.9.1.2",

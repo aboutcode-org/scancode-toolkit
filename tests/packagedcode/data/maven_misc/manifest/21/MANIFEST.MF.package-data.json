@@ -15,5 +15,8 @@
     }
   ],
   "vcs_url": "https://github.com/micrometer-metrics/micrometer.git@3d0f1fd#implementations/micrometer-registry-graphite",
-  "code_view_url": null
+  "code_view_url": null,
+  "extra_data": {
+    "pname": "io.micrometer#micrometer-registry-graphite;1.0.3"
+  }
 }

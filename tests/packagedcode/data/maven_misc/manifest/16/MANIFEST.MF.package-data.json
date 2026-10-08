@@ -15,5 +15,8 @@
     }
   ],
   "vcs_url": "https://github.com/Netflix/conductor.git@e4af3a6#redis-persistence",
-  "code_view_url": null
+  "code_view_url": null,
+  "extra_data": {
+    "pname": "com.netflix.conductor#conductor-redis-persistence;1.8.9"
+  }
 }
