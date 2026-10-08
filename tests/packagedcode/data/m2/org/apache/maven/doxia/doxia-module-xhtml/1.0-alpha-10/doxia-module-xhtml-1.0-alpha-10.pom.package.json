@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Doxia :: XHTML Module"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-utils",

@@ -67,7 +67,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Spring Framework: Web MVC"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/commons-attributes/commons-attributes-api@2.2",

@@ -10,9 +10,17 @@
       "primary_language": "Java",
       "description": "Johnzon :: JSON-B Implementation",
       "release_date": null,
-      "parties": [],
+      "parties": [
+        {
+          "type": null,
+          "role": "vendor",
+          "name": "The Apache Software Foundation",
+          "email": null,
+          "url": null
+        }
+      ],
       "keywords": [],
-      "homepage_url": null,
+      "homepage_url": "http://johnzon.apache.org/johnzon-jsonb",
       "download_url": null,
       "size": null,
       "sha1": null,
@@ -50,28 +58,54 @@
             "from-package-file"
           ],
           "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "johnzon-jsonb-1.2.11/META-INF/MANIFEST.MF",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 9,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_42.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
+              "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            }
+          ],
+          "identifier": "apache_2_0-2e855fd2-d4e6-f202-a2a4-6953b9354518"
         }
       ],
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": null,
+      "extracted_license_statement": "http://www.apache.org/licenses/LICENSE-2.0.txt",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?classifier=sources"
       ],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "Johnzon :: JSON-B Implementation"
+      },
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/johnzon-jsonb-1.2.11.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/johnzon-jsonb-1.2.11.pom",
       "package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
-        "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml"
+        "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+        "johnzon-jsonb-1.2.11/META-INF/MANIFEST.MF"
       ],
       "datasource_ids": [
-        "maven_pom"
+        "maven_pom",
+        "java_jar_manifest"
       ],
       "purl": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11"
     }
@@ -245,12 +279,12 @@
   ],
   "license_detections": [
     {
-      "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de",
+      "identifier": "apache_2_0-377d4d9a-1f89-3c3b-5fae-46bd8ceb8ff5",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 2,
       "detection_log": [
-        "from-package-file"
+        "unknown-reference-to-local-file"
       ],
       "reference_matches": [
         {
@@ -266,6 +300,20 @@
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_2.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "johnzon-jsonb-1.2.11/META-INF/NOTICE",
+          "start_line": 5,
+          "end_line": 6,
+          "matcher": "2-aho",
+          "score": 95.0,
+          "matched_length": 14,
+          "match_coverage": 100.0,
+          "rule_relevance": 95,
+          "rule_identifier": "apache-2.0_product_includes_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
         }
       ]
     },
@@ -585,7 +633,8 @@
           "is_private": false,
           "is_virtual": false,
           "extra_data": {
-            "documentation_url": "http://johnzon.apache.org/"
+            "documentation_url": "http://johnzon.apache.org/",
+            "pname": "Johnzon :: JSON-B Implementation"
           },
           "dependencies": [],
           "repository_homepage_url": null,
@@ -814,12 +863,26 @@
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_2.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+                },
+                {
+                  "license_expression": "apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
+                  "from_file": "johnzon-jsonb-1.2.11/META-INF/NOTICE",
+                  "start_line": 5,
+                  "end_line": 6,
+                  "matcher": "2-aho",
+                  "score": 95.0,
+                  "matched_length": 14,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 95,
+                  "rule_identifier": "apache-2.0_product_includes_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
                 }
               ],
               "detection_log": [
-                "from-package-file"
+                "unknown-reference-to-local-file"
               ],
-              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+              "identifier": "apache_2_0-377d4d9a-1f89-3c3b-5fae-46bd8ceb8ff5"
             }
           ],
           "other_license_expression": null,
@@ -833,7 +896,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "Johnzon :: JSON-B Implementation"
+          },
           "dependencies": [
             {
               "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.3_spec@1.1",
@@ -987,12 +1052,26 @@
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_2.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "johnzon-jsonb-1.2.11/META-INF/NOTICE",
+              "start_line": 5,
+              "end_line": 6,
+              "matcher": "2-aho",
+              "score": 95.0,
+              "matched_length": 14,
+              "match_coverage": 100.0,
+              "rule_relevance": 95,
+              "rule_identifier": "apache-2.0_product_includes_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
             }
           ],
           "detection_log": [
-            "from-package-file"
+            "unknown-reference-to-local-file"
           ],
-          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+          "identifier": "apache_2_0-377d4d9a-1f89-3c3b-5fae-46bd8ceb8ff5"
         }
       ],
       "license_clues": [],

@@ -111,7 +111,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Ajax for Java Server faces core project"
+  },
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/master-1.1.1.jar",

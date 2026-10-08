@@ -39,7 +39,7 @@ from packagedcode.models import PackageData
 from packagedcode.models import PackageWithResources
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
-TRACE_ASSEMBLY = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
+TRACE_ASSEMBLY = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', True)
 TRACE_LICENSE = os.environ.get('SCANCODE_DEBUG_PACKAGE_LICENSE', False)
 
 

@@ -67,7 +67,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Hibernate"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/net.sf.ehcache/ehcache@1.2.3",

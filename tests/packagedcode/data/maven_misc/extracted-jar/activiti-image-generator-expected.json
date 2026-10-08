@@ -37,7 +37,9 @@
       ],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "Activiti :: Image Generator"
+      },
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/activiti-image-generator-7-201802-EA.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/activiti-image-generator-7-201802-EA.pom",
@@ -429,7 +431,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "Activiti :: Image Generator"
+          },
           "dependencies": [
             {
               "purl": "pkg:maven/org.activiti/activiti-bpmn-model",

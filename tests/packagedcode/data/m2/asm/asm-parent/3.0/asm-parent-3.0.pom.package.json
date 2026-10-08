@@ -58,7 +58,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "ASM"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/asm/asm@3.0",

@@ -67,7 +67,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Byte Buddy (parent)"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/com.google.code.findbugs/annotations@3.0.1u2",

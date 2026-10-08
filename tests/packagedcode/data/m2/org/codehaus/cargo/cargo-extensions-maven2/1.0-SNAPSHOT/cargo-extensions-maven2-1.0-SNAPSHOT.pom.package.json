@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Cargo Extensions - Maven 2"
+  },
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-extensions-maven2/1.0-SNAPSHOT/",
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-extensions-maven2/1.0-SNAPSHOT/cargo-extensions-maven2-1.0-SNAPSHOT.jar",

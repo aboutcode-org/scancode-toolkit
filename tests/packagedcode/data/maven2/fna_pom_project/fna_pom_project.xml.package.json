@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "com.adobe.ac.samples.bash bash bash_flex_app"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/com.adobe.ac.samples.bash/bash_blazeds_service_config@1.0",

@@ -65,7 +65,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "idegaWeb Contract Block"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/com.idega.block.platform/com.idega.core",

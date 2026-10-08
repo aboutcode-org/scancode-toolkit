@@ -67,7 +67,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Velocity"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/velocity/velocity-dep@1.4",

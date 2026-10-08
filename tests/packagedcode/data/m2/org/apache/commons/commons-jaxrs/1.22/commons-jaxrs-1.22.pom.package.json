@@ -117,7 +117,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Common JAXRS Libraries"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/javax.mail/javax.mail-api@1.4.5",

@@ -102,7 +102,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "EL"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/servletapi/servletapi@2.4-20040521",

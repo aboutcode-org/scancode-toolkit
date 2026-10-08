@@ -10,7 +10,15 @@
       "primary_language": "Java",
       "description": "JBoss Logging 3\nThe JBoss Logging Framework",
       "release_date": null,
-      "parties": [],
+      "parties": [
+        {
+          "type": null,
+          "role": "vendor",
+          "name": "JBoss by Red Hat",
+          "email": null,
+          "url": null
+        }
+      ],
       "keywords": [],
       "homepage_url": "http://www.jboss.org",
       "download_url": null,
@@ -60,16 +68,20 @@
       ],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "JBoss Logging 3"
+      },
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final.pom",
       "package_uid": "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
-        "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml"
+        "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
+        "jar/META-INF/MANIFEST.MF"
       ],
       "datasource_ids": [
-        "maven_pom"
+        "maven_pom",
+        "java_jar_manifest"
       ],
       "purl": "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final"
     }
@@ -420,7 +432,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "JBoss Logging 3"
+          },
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,
@@ -710,7 +724,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "JBoss Logging 3"
+          },
           "dependencies": [
             {
               "purl": "pkg:maven/org.junit/junit-bom@5.7.0",

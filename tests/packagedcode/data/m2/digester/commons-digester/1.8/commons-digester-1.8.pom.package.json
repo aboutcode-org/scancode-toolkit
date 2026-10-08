@@ -221,7 +221,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Digester"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0",

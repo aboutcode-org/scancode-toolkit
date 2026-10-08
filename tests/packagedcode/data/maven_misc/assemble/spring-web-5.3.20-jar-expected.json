@@ -58,7 +58,9 @@
       "source_packages": [],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "spring-web"
+      },
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
@@ -261,7 +263,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "spring-web"
+          },
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,

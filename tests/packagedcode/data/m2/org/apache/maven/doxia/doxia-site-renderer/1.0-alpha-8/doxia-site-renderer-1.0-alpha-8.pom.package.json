@@ -44,7 +44,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Doxia Site Renderer Component"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-core@1.0-alpha-8",

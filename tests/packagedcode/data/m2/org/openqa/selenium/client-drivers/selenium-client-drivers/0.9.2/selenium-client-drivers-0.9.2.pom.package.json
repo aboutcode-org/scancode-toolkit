@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Selenium RC Client Drivers"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.openqa.selenium.core/selenium-core",

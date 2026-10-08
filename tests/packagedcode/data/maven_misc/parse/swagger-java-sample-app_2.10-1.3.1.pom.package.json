@@ -38,7 +38,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "swagger-java-jaxrs-app"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/com.wordnik/swagger-jaxrs_2.10",
