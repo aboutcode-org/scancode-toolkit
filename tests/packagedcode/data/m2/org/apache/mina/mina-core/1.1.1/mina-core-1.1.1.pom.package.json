@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Apache MINA Core API"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.slf4j/slf4j-api@1.4.2",

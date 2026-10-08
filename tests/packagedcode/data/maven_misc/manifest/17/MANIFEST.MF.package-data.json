@@ -10,5 +10,8 @@
   "homepage_url": null,
   "parties": [],
   "vcs_url": "https://github.com/elastic/elasticsearch.git@a9861f4#server",
-  "code_view_url": null
+  "code_view_url": null,
+  "extra_data": {
+    "pname": "org.elasticsearch#server;6.6.0"
+  }
 }

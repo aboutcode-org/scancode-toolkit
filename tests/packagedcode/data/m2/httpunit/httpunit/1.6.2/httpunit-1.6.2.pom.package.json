@@ -74,7 +74,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "HttpUnit"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/xerces/xmlParserAPIs@2.2.1",

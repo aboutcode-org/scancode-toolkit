@@ -58,7 +58,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "no.knowit.seam : root : 2.2.0-SNAPSHOT"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.jboss.seam/jboss-seam@2.2.0.GA",

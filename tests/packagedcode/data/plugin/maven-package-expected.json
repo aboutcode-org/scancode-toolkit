@@ -75,7 +75,9 @@
       ],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "Apache Geronimo Bundles: axis-1.4"
+      },
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.pom",
@@ -187,7 +189,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "Apache Geronimo Bundles: axis-1.4"
+          },
           "dependencies": [
             {
               "purl": "pkg:maven/org.apache.axis/axis@1.4",

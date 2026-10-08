@@ -17,6 +17,7 @@
   "vcs_url": null,
   "code_view_url": null,
   "extra_data": {
-    "documentation_url": "http://www.hibernate.org/orm/5.3"
+    "documentation_url": "http://www.hibernate.org/orm/5.3",
+    "pname": "hibernate-core"
   }
 }
