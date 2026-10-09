@@ -17,6 +17,10 @@ Next release
   cached data. If not, we add those scanners to a list of scanners to be run.
   After scanning, the cache is updated.
 
+- Gracefully handle corrupt or invalid JSON files in ``results_cache`` by catching
+  ``json.JSONDecodeError`` in ``get_results_cache_data`` and returning an empty mapping.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5345
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 

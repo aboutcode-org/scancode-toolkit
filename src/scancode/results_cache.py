@@ -106,8 +106,11 @@ def get_results_cache_data(results_cache_index, plugin_name, results_cache_dir=r
         results_cache_dir=results_cache_dir,
     )
     if os.path.exists(results_cache_file_location):
-        with open(results_cache_file_location) as f:
-            return json.load(f)
+        try:
+            with open(results_cache_file_location) as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            return {}
     else:
         return {}
 
