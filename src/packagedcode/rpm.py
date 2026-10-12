@@ -15,6 +15,7 @@ import sys
 from collections import namedtuple
 from pathlib import Path
 
+from packageurl import PackageURL
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.licensing import RESOURCE_TO_PACKAGE_LICENSE_FIELDS
@@ -44,7 +45,6 @@ if TRACE:
 """
 Support for RPMs, installed databases and spec files.
 """
-# TODO: retrieve dependencies
 
 # TODO: parse spec files see:
 #  http://www.faqs.org/docs/artu/ch05s02.html#id2906931%29.)
@@ -125,7 +125,6 @@ class EVR(namedtuple('EVR', 'epoch version release')):
         return vr
 
 
-# TODO: add dependencies!!!
 class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
 
     @classmethod
@@ -135,6 +134,37 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
         loc_path = Path(location)
         rpmdb_loc = str(loc_path.parent)
 
+        rpm_tags = get_rpm_tags(location, include_desc=True)
+
+        if TRACE: logger_debug('recognize: rpm_tags', rpm_tags)
+        if not rpm_tags:
+            return
+
+        dependencies = []
+        name = rpm_tags.name
+        version = rpm_tags.version
+        is_pinned = version is not None and version != ""
+        
+        # Construct PackageURL without '@version' if version is missing
+        purl = PackageURL(
+            type="rpm",
+            namespace=None,  # RPMs typically don't use namespaces
+            name=name,
+            version=version if is_pinned else None
+        )
+
+        # Prepare the dependent package model
+        dependencies.append(
+            models.DependentPackage(
+                purl=purl.to_string(),
+                scope="dependencies",
+                is_runtime=True,
+                is_optional=False,
+                is_pinned=is_pinned,
+                extracted_requirement=version,
+            )
+        )
+
         # dump and parse the rpmdb to XMLish
         xmlish_loc = collect_installed_rpmdb_xmlish_from_rpmdb_loc(rpmdb_loc=rpmdb_loc)
         package_data = parse_rpm_xmlish(
@@ -142,6 +172,7 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
             package_only=package_only,
+            dependencies=dependencies,
         )
         # TODO: package_data.namespace = cls.default_package_namespace
         return package_data
@@ -225,7 +256,6 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
             yield resource
 
 
-# TODO: add dependencies!!!
 class RpmInstalledNdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     # used by recent Suse
     datasource_id = 'rpm_installed_database_ndb'
@@ -237,8 +267,48 @@ class RpmInstalledNdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     description = 'RPM installed package NDB database'
     documentation_url = 'https://fedoraproject.org/wiki/Changes/NewRpmDBFormat'
 
+    @classmethod
+    def parse(cls, location, package_only=False):
+        rpm_tags = get_rpm_tags(location, include_desc=True)
 
-# TODO: add dependencies!!!
+        if TRACE: logger_debug('recognize: rpm_tags', rpm_tags)
+        if not rpm_tags:
+            return
+
+        dependencies = []
+        name = rpm_tags.name
+        version = rpm_tags.version
+        is_pinned = version is not None and version != ""
+        
+        # Construct PackageURL without '@version' if version is missing
+        purl = PackageURL(
+            type="rpm",
+            namespace=None,  # RPMs typically don't use namespaces
+            name=name,
+            version=version if is_pinned else None
+        )
+
+        # Prepare the dependent package model
+        dependencies.append(
+            models.DependentPackage(
+                purl=purl.to_string(),
+                scope="dependencies",
+                is_runtime=True,
+                is_optional=False,
+                is_pinned=is_pinned,
+                extracted_requirement=version,
+            )
+        )
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            dependencies=dependencies,
+        )
+
+        yield models.PackageData.from_data(package_data, package_only)    
+
+
 class RpmInstalledSqliteDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     # used by newer RHEL/CentOS/Fedora/CoreOS
     # Filetype: SQLite 3.x database, ...
@@ -253,8 +323,48 @@ class RpmInstalledSqliteDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     description = 'RPM installed package SQLite database'
     documentation_url = 'https://fedoraproject.org/wiki/Changes/Sqlite_Rpmdb'
 
+    @classmethod
+    def parse(cls, location, package_only=False):
+        rpm_tags = get_rpm_tags(location, include_desc=True)
 
-# TODO: add dependencies!!!
+        if TRACE: logger_debug('recognize: rpm_tags', rpm_tags)
+        if not rpm_tags:
+            return
+
+        dependencies = []
+        name = rpm_tags.name
+        version = rpm_tags.version
+        is_pinned = version is not None and version != ""
+        
+        # Construct PackageURL without '@version' if version is missing
+        purl = PackageURL(
+            type="rpm",
+            namespace=None,  # RPMs typically don't use namespaces
+            name=name,
+            version=version if is_pinned else None
+        )
+
+        # Prepare the dependent package model
+        dependencies.append(
+            models.DependentPackage(
+                purl=purl.to_string(),
+                scope="dependencies",
+                is_runtime=True,
+                is_optional=False,
+                is_pinned=is_pinned,
+                extracted_requirement=version,
+            )
+        )
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            dependencies=dependencies,
+        )
+
+        yield models.PackageData.from_data(package_data, package_only)    
+
+
 class RpmInstalledBdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     # used by legacy RHEL/CentOS/Fedora/Suse
     datasource_id = 'rpm_installed_database_bdb'
@@ -267,6 +377,47 @@ class RpmInstalledBdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     description = 'RPM installed package BDB database'
     documentation_url = 'https://man7.org/linux/man-pages/man8/rpmdb.8.html'
 
+    @classmethod
+    def parse(cls, location, package_only=False):
+        rpm_tags = get_rpm_tags(location, include_desc=True)
+
+        if TRACE: logger_debug('recognize: rpm_tags', rpm_tags)
+        if not rpm_tags:
+            return
+
+        dependencies = []
+        name = rpm_tags.name
+        version = rpm_tags.version
+        is_pinned = version is not None and version != ""
+        
+        # Construct PackageURL without '@version' if version is missing
+        purl = PackageURL(
+            type="rpm",
+            namespace=None,  # RPMs typically don't use namespaces
+            name=name,
+            version=version if is_pinned else None
+        )
+
+        # Prepare the dependent package model
+        dependencies.append(
+            models.DependentPackage(
+                purl=purl.to_string(),
+                scope="dependencies",
+                is_runtime=True,
+                is_optional=False,
+                is_pinned=is_pinned,
+                extracted_requirement=version,
+            )
+        )
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            dependencies=dependencies,
+        )
+
+        yield models.PackageData.from_data(package_data, package_only)    
+
 
 # TODO: implement me!!@
 class RpmSpecfileHandler(models.NonAssemblableDatafileHandler):
@@ -278,7 +429,6 @@ class RpmSpecfileHandler(models.NonAssemblableDatafileHandler):
     documentation_url = 'https://en.wikipedia.org/wiki/RPM_Package_Manager'
 
 
-# TODO: add dependencies!!!
 class RpmArchiveHandler(models.DatafileHandler):
     datasource_id = 'rpm_archive'
     path_patterns = ('*.rpm', '*.src.rpm', '*.srpm', '*.mvl', '*.vip',)
@@ -354,6 +504,30 @@ class RpmArchiveHandler(models.DatafileHandler):
 
         description = build_description(summary=rpm_tags.summary, description=rpm_tags.description)
 
+        dependencies = []
+        name = rpm_tags.name
+        version = rpm_tags.version
+        is_pinned = version is not None and version != ""
+        
+        # Construct PackageURL without '@version' if version is missing
+        purl = PackageURL(
+            type="rpm",
+            namespace=None,  # RPMs typically don't use namespaces
+            name=name,
+            version=version if is_pinned else None
+        )
+
+        # Prepare the dependent package model
+        dependencies.append(
+            models.DependentPackage(
+                purl=purl.to_string(),
+                scope="dependencies",
+                is_runtime=True,
+                is_optional=False,
+                is_pinned=is_pinned,
+                extracted_requirement=version,
+            )
+        )
         if TRACE:
             data = dict(
                 name=name,
@@ -363,6 +537,7 @@ class RpmArchiveHandler(models.DatafileHandler):
                 parties=parties,
                 extracted_license_statement=rpm_tags.license or None,
                 source_packages=source_packages,
+                dependencies=dependencies,
             )
             logger_debug('recognize: data to create a package:\n', data)
 
@@ -377,6 +552,7 @@ class RpmArchiveHandler(models.DatafileHandler):
             parties=parties,
             extracted_license_statement=rpm_tags.license or None,
             source_packages=source_packages,
+            dependencies=dependencies,
         )
 
         if TRACE:
