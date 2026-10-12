@@ -1,0 +1,14 @@
+[buildpack]
+name = "Java"
+
+  [publish.Ignore]
+  files = [
+    "etc/",
+    "spec/",
+    "test/",
+    ".gitignore",
+    ".github/",
+    "hatchet.json",
+    "Gemfile",
+    "Gemfile.lock"
+  ]

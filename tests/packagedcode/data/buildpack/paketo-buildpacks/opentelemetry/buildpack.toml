@@ -1,0 +1,65 @@
+# Copyright 2018-2024 the original author or authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+api = "0.7"
+
+[buildpack]
+  description = "A Cloud Native Buildpack that contributes and configures the OpenTelemetry Agent"
+  homepage = "https://github.com/paketo-buildpacks/opentelemetry"
+  id = "paketo-buildpacks/opentelemetry"
+  keywords = ["java", "apm", "trace", "opentelemetry"]
+  name = "Paketo Buildpack for OpenTelemetry"
+  sbom-formats = ["application/vnd.cyclonedx+json", "application/vnd.syft+json"]
+  version = "{{.version}}"
+
+  [[buildpack.licenses]]
+    type = "Apache-2.0"
+    uri = "https://github.com/paketo-buildpacks/opentelemetry/blob/main/LICENSE"
+
+[metadata]
+  include-files = ["LICENSE", "NOTICE", "README.md", "linux/amd64/bin/build", "linux/amd64/bin/detect", "linux/amd64/bin/main", "linux/amd64/bin/helper", "linux/arm64/bin/build", "linux/arm64/bin/detect", "linux/arm64/bin/main", "linux/arm64/bin/helper", "buildpack.toml"]
+  pre-package = "scripts/build.sh"
+
+  [[metadata.configurations]]
+    build = true
+    default = "false"
+    description = "enable the OpenTelemetry Java Trace Agent"
+    name = "BP_OPENTELEMETRY_ENABLED"
+
+  [[metadata.dependencies]]
+    cpes = ["cpe:2.3:a:open-telemetry:opentelemetry-java-agent:2.10.0:*:*:*:*:*:*:*"]
+    id = "opentelemetry-java"
+    name = "OpenTelemetry Java Agent"
+    purl = "pkg:generic/opentelemetry-java@2.10.0"
+    sha256 = "d05f6e36fac8db629263a6aaec2841cc934d064d7b19bfe38425b604b8b54926"
+    source = "https://github.com/open-telemetry/opentelemetry-java-instrumentation/archive/refs/tags/v2.10.0.tar.gz"
+    source-sha256 = "3a921baa391e9fa3f3622bedf1770567bcfed2a13de07642a2273b8beeca934a"
+    stacks = ["*"]
+    uri = "https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v2.10.0/opentelemetry-javaagent.jar"
+    version = "2.10.0"
+
+    [[metadata.dependencies.licenses]]
+      type = "Apache-2.0"
+      uri = "https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/LICENSE"
+
+[[stacks]]
+  id = "*"
+
+[[targets]]
+  arch = "amd64"
+  os = "linux"
+
+[[targets]]
+  arch = "arm64"
+  os = "linux"
