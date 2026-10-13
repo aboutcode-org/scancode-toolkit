@@ -86,3 +86,27 @@ class TestPHPcomposer(PackageTester):
         expected_loc = self.get_test_loc('phpcomposer/composer.lock-expected.json')
         packages = phpcomposer.PhpComposerLockHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_is_manifest_php_symfony_lock(self):
+        test_file = self.get_test_loc('phpcomposer/symfony.lock')
+        assert phpcomposer.PhpSymfonyLockHandler.is_datafile(test_file)
+
+    def test_parse_symfony_lock(self):
+        test_file = self.get_test_loc('phpcomposer/symfony.lock')
+
+        package_data = list(
+            phpcomposer.PhpSymfonyLockHandler.parse(test_file)
+        )
+
+        assert len(package_data) == 1
+
+        dependencies = package_data[0].dependencies
+        actual_purls = {dependency.purl for dependency in dependencies}
+
+        expected_purls = {
+            'pkg:composer/composer/pcre@1.0.0',
+            'pkg:composer/symfony/console@5.4',
+            'pkg:composer/symfony/flex@1.20',
+        }
+
+        assert actual_purls == expected_purls
