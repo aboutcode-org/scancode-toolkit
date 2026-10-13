@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Preserve backslashes in POSIX file names when normalizing resource paths.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/5360
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
