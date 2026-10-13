@@ -44,7 +44,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "OSGi OBR Service API"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.felix/org.osgi.core@1.0.0",

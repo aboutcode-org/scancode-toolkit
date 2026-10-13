@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Plexus Common Utilities"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2",

@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Cargo Extensions"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.cargo/cargo-core-api-generic@1.0-SNAPSHOT",

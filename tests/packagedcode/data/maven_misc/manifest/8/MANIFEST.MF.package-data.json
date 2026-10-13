@@ -21,6 +21,7 @@
   "vcs_url": null,
   "code_view_url": null,
   "extra_data": {
-    "documentation_url": "http://jodd.org"
+    "documentation_url": "http://jodd.org",
+    "pname": "Jodd Core"
   }
 }

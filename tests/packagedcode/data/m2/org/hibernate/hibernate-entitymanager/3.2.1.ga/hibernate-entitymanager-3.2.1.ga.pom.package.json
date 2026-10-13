@@ -59,7 +59,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Hibernate EntityManager"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.hibernate/hibernate-annotations@3.2.1.ga",
