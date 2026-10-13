@@ -1,0 +1,450 @@
+---
+key: segv-1.1
+short_name: SEGV License 1.1
+name: SEGV License 1.1
+category: Free Restricted
+owner: Unspecified
+homepage_url: https://xn--gckvb8fzb.com/segv/
+notes: adapted from the Hippocratic License 3.0 with modified and additional terms, as stated
+    in its Appendix B. Not associated with or endorsed by the Organization for Ethical Source.
+spdx_license_key: LicenseRef-scancode-segv-1.1
+text_urls:
+    - https://raw.githubusercontent.com/mrusme/cloudcash/master/LICENSE
+other_urls:
+    - https://github.com/mrusme/cloudcash/blob/master/LICENSE
+ignorable_urls:
+    - https://firstdonoharm.dev/
+    - https://xn--gckvb8fzb.com/segv
+    - https://xn--gckvb8fzb.com/segv/
+---
+
+SEGV LICENSE
+
+Version 1.1, July 2026
+
+https://xn--gckvb8fzb.com/segv/
+
+TERMS AND CONDITIONS
+
+TERMS AND CONDITIONS FOR USE, COPY, MODIFICATION, PREPARATION OF DERIVATIVE
+WORK, REPRODUCTION, AND DISTRIBUTION:
+
+1. DEFINITIONS:
+
+This section defines certain terms used throughout this license agreement.
+
+1.1. “License” means the terms and conditions, as stated herein, for use, copy,
+modification, preparation of derivative work, reproduction, and distribution of
+Software (as defined below).
+
+1.2. “Licensor” means the copyright and/or patent owner or entity authorized by
+the copyright and/or patent owner that is granting the License.
+
+1.3. “Licensee” means the individual or entity exercising permissions granted by
+this License, including the use, copy, modification, preparation of derivative
+work, reproduction, and distribution of Software (as defined below).
+
+1.4. “Software” means any copyrighted work, including but not limited to
+software code, authored by Licensor and made available under this License.
+
+1.5. “Supply Chain” means the sequence of processes involved in the production
+and/or distribution of a commodity, good, or service offered by the Licensee,
+where the Software is used in, or in support of, any of those processes.
+
+1.6. “Supply Chain Impacted Party” or “Supply Chain Impacted Parties” means any
+person(s) directly impacted by any of Licensee’s Supply Chain, including the
+practices of all persons or entities within the Supply Chain prior to a good or
+service reaching the Licensee.
+
+1.7. “Duty of Care” is defined by its use in tort law, delict law, and/or
+similar bodies of law closely related to tort and/or delict law, including
+without limitation, a requirement to act with the watchfulness, attention,
+caution, and prudence that a reasonable person in the same or similar
+circumstances would use towards any Supply Chain Impacted Party.
+
+1.8. “Worker” is defined to include any and all permanent, temporary, and agency
+workers, as well as piece-rate, salaried, hourly paid, legal young (minors),
+part-time, night, and migrant workers.
+
+1.9. “Mass Surveillance” means the indiscriminate or bulk monitoring,
+interception, collection, retention, analysis, or dissemination of the
+communications, movements, behavior, or personal data of a general population
+or of a substantial segment of a population, as opposed to the surveillance of
+specific persons based on individualized suspicion and conducted under
+applicable legal authorization.
+
+1.10. “Military Activities” means the development, production, testing,
+procurement, stockpiling, deployment, or operational use of weapons, weapon
+systems, or armed forces, as well as direct participation in, or direct
+operational support of, armed conflict. Humanitarian demining, search and
+rescue, disaster relief, and the provision of medical care do not constitute
+Military Activities.
+
+1.11. “Multinational Corporation” means an entity that, together with its
+affiliates, maintains established business operations in more than one
+country.
+
+1.12. “Law Enforcement Agency” means any governmental agency or body, of any
+jurisdiction and at any level of government, whose functions include policing,
+criminal investigation, criminal detention, border enforcement, or immigration
+enforcement.
+
+1.13. “Ineligible Party” means any individual or entity described in Section
+2.3.
+
+2. INTELLECTUAL PROPERTY GRANTS:
+
+This section identifies intellectual property rights granted to a Licensee and
+the individuals and entities to which no rights are granted.
+
+2.1. Grant of Copyright License: Subject to the terms and conditions of this
+License, Licensor hereby grants to Licensee a worldwide, non-exclusive,
+no-charge, royalty-free copyright license, perpetual and irrevocable except as
+provided in Section 8, to use, copy, modify, prepare derivative work of,
+reproduce, and distribute the Software, modified versions of the Software
+authored by Licensor, and other work derived from the Software.
+
+2.2. Grant of Patent License: Subject to the terms and conditions of this
+License, Licensor hereby grants Licensee a worldwide, non-exclusive, no-charge,
+royalty-free patent license, perpetual and irrevocable except as provided in
+Section 8, to make, have made, use, offer to sell, sell, import, and otherwise
+transfer the Software, where such license applies only to those patent claims
+licensable by Licensor that are necessarily infringed by the Software as made
+available by Licensor.
+
+2.3. Eligibility: No rights are granted under this License to, and this License
+may not be accepted or exercised by, any individual or entity that is, or that
+is a representative, agent, affiliate, successor, or assign of:
+
+ * 2.3.1. Government Revenue Services: a government agency whose primary
+   function involves the collection, assessment, enforcement, or administration
+   of taxes, tariffs, fees, or other financial obligations, or that otherwise
+   operates as a government revenue service;
+
+ * 2.3.2. Mass Surveillance: a government agency or Multinational Corporation
+   which participates in Mass Surveillance;
+
+ * 2.3.3. Military Activities: an entity which conducts Military Activities;
+   or
+
+ * 2.3.4. Law Enforcement Suppliers: an individual or entity that provides
+   goods or services procured for use in, or in direct support of, the law
+   enforcement activities of any Law Enforcement Agency, or that otherwise
+   enters into commercial contracts in direct support of the law enforcement
+   activities of any Law Enforcement Agency.
+
+3. ETHICAL STANDARDS:
+
+This section lists conditions the Licensee must comply with in order to have
+rights under this License.
+
+The rights granted to the Licensee by this License are expressly made subject to
+the Licensee’s ongoing compliance with the following conditions:
+
+ * 3.1. The Licensee SHALL NOT, whether directly or indirectly, through agents
+   or assigns:
+
+   * 3.1.1. Infringe upon any person’s right to life or security of person,
+     engage in extrajudicial killings, or commit murder, without lawful cause
+     (See Article 3, United Nations Universal Declaration of Human Rights;
+     Article 6, International Covenant on Civil and Political Rights)
+
+   * 3.1.2. Hold any person in slavery, servitude, or forced labor (See Article
+     4, United Nations Universal Declaration of Human Rights; Article 8,
+     International Covenant on Civil and Political Rights);
+
+   * 3.1.3. Contribute to the institution of slavery, slave trading, forced
+     labor, or unlawful child labor (See Article 4, United Nations Universal
+     Declaration of Human Rights; Article 8, International Covenant on Civil and
+     Political Rights);
+
+   * 3.1.4. Torture or subject any person to cruel, inhumane, or degrading
+     treatment or punishment (See Article 5, United Nations Universal
+     Declaration of Human Rights; Article 7, International Covenant on Civil and
+     Political Rights);
+
+   * 3.1.5. Discriminate on the basis of sex, gender, sexual orientation, race,
+     ethnicity, nationality, religion, caste, age, medical disability or
+     impairment, and/or any other like circumstances (See Article 7, United
+     Nations Universal Declaration of Human Rights; Article 2, International
+     Covenant on Economic, Social and Cultural Rights; Article 26, International
+     Covenant on Civil and Political Rights);
+
+   * 3.1.6. Prevent any person from exercising their right to seek an effective
+     remedy by a competent court or national tribunal (including domestic
+     judicial systems, international courts, arbitration bodies, and other
+     adjudicating bodies) for actions violating the fundamental rights granted
+     to them by applicable constitutions, applicable laws, or by this License
+     (See Article 8, United Nations Universal Declaration of Human Rights;
+     Articles 9 and 14, International Covenant on Civil and Political Rights);
+
+   * 3.1.7. Subject any person to arbitrary arrest, detention, or exile (See
+     Article 9, United Nations Universal Declaration of Human Rights; Article 9,
+     International Covenant on Civil and Political Rights);
+
+   * 3.1.8. Subject any person to arbitrary interference with a person’s
+     privacy, family, home, or correspondence without the express written
+     consent of the person (See Article 12, United Nations Universal Declaration
+     of Human Rights; Article 17, International Covenant on Civil and Political
+     Rights);
+
+   * 3.1.9. Arbitrarily deprive any person of their property (See Article 17,
+     United Nations Universal Declaration of Human Rights);
+
+   * 3.1.10. Forcibly remove indigenous peoples from their lands or territories
+     or take any action with the aim or effect of dispossessing indigenous
+     peoples from their lands, territories, or resources, including without
+     limitation the intellectual property or traditional knowledge of indigenous
+     peoples, without the free, prior, and informed consent of indigenous
+     peoples concerned (See Articles 8 and 10, United Nations Declaration on the
+     Rights of Indigenous Peoples);
+
+   * 3.1.11. Interfere with Workers’ free exercise of the right to organize and
+     associate (See Article 20, United Nations Universal Declaration of Human
+     Rights; C087 - Freedom of Association and Protection of the Right to
+     Organise Convention, 1948 (No. 87), International Labour Organization;
+     Article 8, International Covenant on Economic, Social and Cultural Rights);
+     and
+
+   * 3.1.12. Harm the environment in a manner inconsistent with applicable
+     local, regional, national, or international law.
+
+4. SUPPLY CHAIN IMPACTED PARTIES:
+
+This section identifies additional individuals or entities that a Licensee
+could harm as a result of violating the Ethical Standards section, the
+diligence the Licensee must exercise over its Supply Chain, and the rights that
+those individuals or entities may enforce.
+
+4.1. In addition to the above Ethical Standards, Licensee voluntarily accepts a
+Duty of Care for Supply Chain Impacted Parties of this License, including
+individuals and communities impacted by violations of the Ethical Standards.
+Licensee shall exercise due diligence reasonably designed to ensure that no
+individual or entity within its Supply Chain violates the Ethical Standards.
+The Duty of Care is breached when a provision within the Ethical Standards
+section is violated by Licensee or one of its successors or assigns, or when
+Licensee fails to exercise such due diligence with respect to an individual or
+entity that exists within the Supply Chain prior to a good or service reaching
+the Licensee.
+
+4.2. Licensee’s acceptance of the Duty of Care is intended to constitute a
+voluntary undertaking towards Supply Chain Impacted Parties within the meaning
+of applicable tort law, delict law, and/or similar bodies of law closely
+related to tort and/or delict law. Any Supply Chain Impacted Party harmed by a
+breach of the Duty of Care may pursue any remedy available under such
+applicable law. Nothing in this section shall be interpreted to include acts
+committed by individuals outside of the scope of their employment.
+
+4.3. Third-Party Beneficiaries: Supply Chain Impacted Parties directly harmed
+by a violation of the Ethical Standards or by a breach of the Duty of Care are
+intended third-party beneficiaries of Sections 3 and 4 of this License and may
+enforce those sections against Licensee to the extent permitted by applicable
+law. This License creates no third-party rights other than those stated in
+this Section 4.3.
+
+5. NOTICE:
+
+This section explains when a Licensee must notify others of the License.
+
+5.1. Distribution of Notice: Licensee must ensure that everyone who receives a
+copy of or uses any part of Software from Licensee, with or without changes,
+also receives the License and the copyright notice and any patent, trademark,
+and attribution notices included with Software. Licensee must ensure that
+License is prominently displayed so that any individual or entity seeking to
+download, copy, use, or otherwise receive any part of Software from Licensee is
+notified of this License and its terms and conditions. Licensee must cause any
+modified versions of the Software to carry prominent notices stating that
+Licensee changed the Software.
+
+5.2. Modified Software: Licensee is free to create modifications of the Software
+and distribute only the modified portion created by Licensee, however, any
+derivative work stemming from the Software or its code must be distributed
+pursuant to this License, including this Notice provision.
+
+5.3. Recipients as Licensees: Any individual or entity that uses, copies,
+modifies, reproduces, distributes, or prepares derivative work based upon the
+Software, all or part of the Software’s code, or a derivative work developed by
+using the Software, including a portion of its code, is a Licensee as defined
+above and is subject to the terms and conditions of this License. Each time
+Licensee distributes the Software or derivative work, every recipient
+automatically receives a license from the original Licensor under this License.
+
+6. ACCEPTANCE:
+
+This section explains how a Licensee accepts this License.
+
+6.1. Licensee is not required to accept this License. However, nothing other
+than this License grants Licensee permission to use, copy, modify, prepare
+derivative work of, reproduce, or distribute the Software, and those actions
+infringe the copyright and patent rights in the Software if Licensee does not
+accept this License. Accordingly, by exercising any of the permissions granted
+by this License, Licensee indicates acceptance of this License and agrees to be
+bound by all of its terms and conditions.
+
+7. REPRESENTATIONS AND WARRANTIES:
+
+7.1. Disclaimer of Warranty: TO THE FULL EXTENT ALLOWED BY LAW, THIS SOFTWARE
+COMES “AS IS,” WITHOUT ANY WARRANTY, EXPRESS OR IMPLIED, AND LICENSOR SHALL NOT
+BE LIABLE TO ANY PERSON OR ENTITY FOR ANY DAMAGES OR OTHER LIABILITY ARISING
+FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THIS LICENSE, UNDER ANY
+LEGAL CLAIM.
+
+7.2. Limitation of Liability: TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE
+LAW, IN NO EVENT SHALL LICENSOR BE LIABLE TO LICENSEE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE, OR CONSEQUENTIAL DAMAGES (INCLUDING
+WITHOUT LIMITATION LOSS OF PROFITS, DATA, OR GOODWILL) ARISING OUT OF OR
+RELATING TO THE SOFTWARE OR THIS LICENSE, UNDER ANY LEGAL THEORY, WHETHER IN
+CONTRACT, TORT, DELICT, OR OTHERWISE, EVEN IF LICENSOR HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+7.3. Release: Licensee releases Licensor from, and covenants not to sue
+Licensor over, any and all claims, causes of action, demands, damages, losses,
+expenses, and costs arising out of or relating to Licensee’s use of the
+Software. This release is not, and shall not be interpreted as, an obligation
+of Licensee to indemnify Licensor, nor of Licensor to indemnify Licensee.
+
+7.4. Mandatory Liability: Nothing in this License excludes or limits any
+liability that cannot be excluded or limited under applicable law, including
+liability for intentional misconduct and, where it cannot be excluded, gross
+negligence.
+
+8. TERMINATION:
+
+8.1. Violations of Ethical Standards or Breaching Duty of Care: If Licensee
+violates the Ethical Standards section or breaches its Duty of Care to Supply
+Chain Impacted Parties, Licensee must remedy the violation or harm within 30
+days of being notified of the violation or harm. If Licensee fails to remedy
+the violation or harm within 30 days, or if the violation or harm is incapable
+of remedy, all rights granted to Licensee by this License terminate
+immediately.
+
+8.2. Ineligible Parties: If Licensee is or becomes an Ineligible Party, all
+rights granted to Licensee by this License terminate immediately. No rights are
+granted by this License, at any time, to an individual or entity that was an
+Ineligible Party at the time it first received the Software.
+
+8.3. Failure of Notice: If any person or entity notifies Licensee in writing
+that Licensee has not complied with the Notice section of this License, Licensee
+can keep this License by taking all practical steps to comply within 30 days
+after the notice of noncompliance. If Licensee does not do so, Licensee’s
+License (and all rights licensed hereunder) will terminate immediately.
+
+8.4. Judicial Findings: In the event Licensee is found by a civil, criminal,
+administrative, or other court of competent jurisdiction, or some other
+adjudicating body with legal authority, to have committed actions which are in
+violation of the Ethical Standards or Supply Chain Impacted Party sections of
+this License, all rights granted to Licensee by this License will terminate
+immediately.
+
+8.5. Patent Litigation: If Licensee institutes patent litigation against any
+entity (including a cross-claim or counterclaim in a suit) alleging that the
+Software, all or part of the Software’s code, or a derivative work developed
+using the Software, including a portion of its code, constitutes direct or
+contributory patent infringement, then any patent license, along with all other
+rights, granted to Licensee under this License will terminate as of the date
+such litigation is filed.
+
+8.6. Reinstatement: If Licensee fully remedies a violation or harm after
+termination under Section 8.1 or Section 8.3, and it is the first violation or
+harm of which Licensee has been notified, the License is reinstated
+prospectively as of the date of the remedy, unless Licensor notifies Licensee
+in writing that the termination is final.
+
+8.7. Effect of Termination: Termination of this License is prospective only:
+it does not render unlawful any exercise of the License permitted before the
+date of termination, and it does not limit any right or remedy of Licensor or
+of any Supply Chain Impacted Party accrued before termination. Termination in
+no way prevents Licensor or a Supply Chain Impacted Party from seeking
+appropriate remedies at law or in equity. Sections 1, 7, 8.7, and 9 survive
+termination of this License.
+
+9. MISCELLANEOUS:
+
+9.1. Conditions: Sections 3, 4.1, 5.1, 5.2, 8.1, 8.2, 8.3, 8.4, and 8.5 are
+conditions of the rights granted to Licensee in the License.
+
+9.2. Equitable Relief: Licensor and, with respect to Sections 3 and 4, any
+intended third-party beneficiary described in Section 4.3, shall be entitled to
+seek equitable relief, including injunctive relief or specific performance of
+the terms hereof, in addition to any other remedy to which they are entitled at
+law or in equity.
+
+9.3. Copyleft: Modified software, source code, or other derivative work must be
+licensed, in its entirety, under the exact same conditions as this License.
+
+9.4. Contributions: Unless the contributor explicitly states otherwise in
+writing, any work intentionally submitted to Licensor for inclusion in the
+Software is submitted under the terms and conditions of this License, without
+any additional terms or conditions, and the contributor grants Licensor and all
+recipients of the Software the rights stated in Section 2 with respect to that
+work.
+
+9.5. Trademarks: This License does not grant permission to use the trade names,
+trademarks, service marks, or product names of Licensor, except as required for
+reasonable and customary use in describing the origin of the Software and
+reproducing the notices described in Section 5.
+
+9.6. Governing Law and Forum: This License, and any dispute arising out of or
+relating to it or the Software, is governed by the law of the jurisdiction in
+which Licensor habitually resides or, if Licensor is an entity, has its
+principal place of business, excluding that jurisdiction’s conflict-of-law
+rules and the United Nations Convention on Contracts for the International Sale
+of Goods. The courts of that jurisdiction have exclusive jurisdiction over such
+disputes, provided that Licensor may seek injunctive relief and enforce its
+intellectual property rights in any jurisdiction in which the Software is used
+or infringed. Nothing in this section limits mandatory rights of Supply Chain
+Impacted Parties under the law otherwise applicable to them.
+
+9.7. Severability: If any term or provision of this License is determined to be
+invalid, illegal, or unenforceable by a court of competent jurisdiction, any
+such determination of invalidity, illegality, or unenforceability shall not
+affect any other term or provision of this License or invalidate or render
+unenforceable such term or provision in any other jurisdiction. If the
+determination of invalidity, illegality, or unenforceability by a court of
+competent jurisdiction pertains to the terms or provisions contained in the
+Ethical Standards section of this License, all rights granted to Licensee by
+this License shall terminate, as between Licensor and Licensee, as of the date
+of such determination.
+
+9.8. Section Titles: Section titles are solely written for organizational
+purposes and should not be used to interpret the language within each section.
+
+9.9. Citations: Citations are solely written to provide context for the source
+of the provisions in the Ethical Standards.
+
+9.10. Section Summaries: Some sections have a brief description which is
+provided for the sole purpose of briefly describing the section and should not
+be used to interpret the terms of the License.
+
+9.11. Entire License: This License constitutes the entire agreement between
+Licensor and Licensee with respect to the Software and supersedes all prior or
+contemporaneous understandings regarding the Software. This License cannot be
+modified or amended with respect to a Licensee except in a writing signed by
+Licensor and that Licensee.
+
+9.12. Successors and Assigns: This License shall be binding upon and inure to
+the benefit of the Licensor’s and Licensee’s respective heirs, successors, and
+assigns.
+
+APPENDIX A: HOW TO APPLY THIS LICENSE:
+
+To apply the SEGV License to your work, include the full text of this License
+in a file named LICENSE distributed with your work, and attach the following
+notice in a prominent location, such as a NOTICE or README file:
+
+   Copyright © <year> <name of copyright owner>
+
+   This work is licensed under the SEGV License, Version 1.1
+   (https://xn--gckvb8fzb.com/segv/). Use, copying, modification, and
+   distribution of this work are permitted only under the terms and
+   conditions of that License.
+
+This Appendix is not part of the terms and conditions of this License.
+
+APPENDIX B: PROVENANCE:
+
+The SEGV License is adapted from the Hippocratic License, Version 3.0
+(https://firstdonoharm.dev), published by the Organization for Ethical Source,
+with modified and additional terms. The SEGV License is not associated with or
+endorsed by the Organization for Ethical Source. This Appendix is not part of
+the terms and conditions of this License.
