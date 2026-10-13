@@ -14,12 +14,16 @@ from os.path import exists
 from os.path import join
 
 import attr
+import pytest
 
+from commoncode.fileutils import create_dir
 from commoncode.fileutils import parent_directory
 from commoncode.resource import Codebase
 from commoncode.resource import Resource
 from commoncode.resource import VirtualCodebase
+from commoncode.resource import clean_path
 from commoncode.resource import depth_walk
+from commoncode.system import on_windows
 from commoncode.testcase import FileBasedTesting
 from commoncode.testcase import check_against_expected_json_file
 
@@ -634,6 +638,23 @@ class TestCodebase(FileBasedTesting):
             ("level3_file4", True),
         ]
         assert [(r.name, r.is_file) for r in results] == expected
+
+    @pytest.mark.skipif(on_windows, reason="A backslash is a path separator on Windows.")
+    def test_codebase_remove_resource_with_backslash_in_file_name(self):
+        test_codebase = self.get_temp_dir()
+        create_dir(join(test_codebase, "dir"))
+        with open(join(test_codebase, "dir", "dm-back\\x2dslash.swap"), "w") as f:
+            f.write("a")
+        with open(join(test_codebase, "dir", "other"), "w") as f:
+            f.write("a")
+
+        codebase = Codebase(test_codebase)
+        resource = [r for r in codebase.walk() if "x2dslash" in r.name][0]
+        assert resource.name == "dm-back\\x2dslash.swap"
+        assert resource.parent(codebase).name == "dir"
+
+        codebase.remove_resource(resource)
+        assert sorted(r.name for r in codebase.walk() if r.is_file) == ["other"]
 
 
 class TestCodebaseWithPath(FileBasedTesting):
@@ -1555,3 +1576,29 @@ class TestResource(FileBasedTesting):
         ]
 
         assert results == expected
+
+
+class TestCleanPath:
+    @pytest.mark.parametrize(
+        "path, expected",
+        [
+            ("a/dm-back\\x2dslash.swap", "a/dm-back\\x2dslash.swap"),
+            ("a\\b", "a/b"),
+            ("C:\\a\\b", "C:/a/b"),
+        ],
+    )
+    def test_clean_path_on_posix(self, monkeypatch, path, expected):
+        monkeypatch.setattr("commoncode.resource.on_windows", False)
+        assert clean_path(path) == expected
+
+    @pytest.mark.parametrize(
+        "path, expected",
+        [
+            ("a/dm-back\\x2dslash.swap", "a/dm-back/x2dslash.swap"),
+            ("a\\b", "a/b"),
+            ("C:\\a\\b", "C:/a/b"),
+        ],
+    )
+    def test_clean_path_on_windows(self, monkeypatch, path, expected):
+        monkeypatch.setattr("commoncode.resource.on_windows", True)
+        assert clean_path(path) == expected
