@@ -14,7 +14,6 @@ import re
 import unicodedata
 
 import chardet
-import typecode
 
 from textcode import pdf
 from textcode import markup
@@ -86,6 +85,7 @@ def numbered_text_lines(
             logger_debug('numbered_text_lines:', 'plain_text')
         return enumerate(unicode_text_lines(location), start_line)
 
+    import typecode
     T = typecode.get_type(location)
 
     if TRACE:
@@ -184,6 +184,7 @@ def unicode_text_lines_from_binary(location):
     Return an iterable over unicode text lines extracted from a binary file at
     location.
     """
+    import typecode
     T = typecode.get_type(location)
     if T.contains_text:
         for line in strings.strings_from_file(location):
