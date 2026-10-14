@@ -1,0 +1,7 @@
+// From https://github.com/nicbell/material-lists/blob/4f66caf491fc001640e4472d091455a48e156dc0/listitem/build.gradle
+dependencies {
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+
+    testImplementation libs.junit
+}
