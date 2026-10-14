@@ -1,0 +1,16 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.example",
+    "module": "standalone",
+    "version": "2.0.0"
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {},
+      "dependencies": [],
+      "files": []
+    }
+  ]
+}

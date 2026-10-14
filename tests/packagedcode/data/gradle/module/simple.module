@@ -1,0 +1,9 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.example",
+    "module": "mylib",
+    "version": "1.0.0"
+  },
+  "variants": []
+}
