@@ -64,6 +64,77 @@ class TestClassify(FileDrivenTesting):
             set_classification_flags(res)
             assert res.is_manifest
 
+    def test_set_classification_flags_modern_manifests(self):
+        import posixpath
+
+        class MockResource:
+            def __init__(self, path, is_top_level=True):
+                self.path = path
+                self.name = posixpath.basename(path)
+                self.base_name = posixpath.splitext(self.name)[0]
+                self.is_top_level = is_top_level
+                self.package_data = []
+                self.is_legal = False
+                self.is_readme = False
+                self.is_community = False
+                self.is_manifest = False
+                self.is_key_file = False
+
+        modern_manifests = [
+            'Cargo.toml',
+            'Cargo.lock',
+            'poetry.lock',
+            'Pipfile.lock',
+            'package-lock.json',
+            'pnpm-lock.yaml',
+            'yarn.lock',
+            'go.mod',
+            'go.sum',
+            'pubspec.yaml',
+            'pubspec.lock',
+            'composer.lock',
+            'build.gradle.kts',
+            'Package.resolved',
+            'conanfile.py',
+            'uv.lock',
+        ]
+
+        for m in modern_manifests:
+            res = MockResource('project/' + m)
+            set_classification_flags(res)
+            assert res.is_manifest, f'Failed manifest classification for: {m}'
+
+    def test_archives_not_classified_as_manifest(self):
+        import posixpath
+
+        class MockResource:
+            def __init__(self, path, is_top_level=True):
+                self.path = path
+                self.name = posixpath.basename(path)
+                self.base_name = posixpath.splitext(self.name)[0]
+                self.is_top_level = is_top_level
+                self.package_data = []
+                self.is_legal = False
+                self.is_readme = False
+                self.is_community = False
+                self.is_manifest = False
+                self.is_key_file = False
+
+        archives = [
+            'pkg.whl',
+            'lib.jar',
+            'app.gem',
+            'binary.rpm',
+            'bundle.deb',
+            'archive.tar.gz',
+            'dist.zip',
+        ]
+
+        for a in archives:
+            res = MockResource('project/' + a)
+            set_classification_flags(res)
+            assert not res.is_manifest, f'Unexpected manifest classification for archive: {a}'
+
     def test_classify_cli_option(self):
         test_dir = self.get_test_loc('classify/cli')
         result_file = self.get_temp_file('json')
