@@ -2042,6 +2042,8 @@ PATTERNS = [
     ############################################################################
 
     # "authors" or "contributors" is interesting, and so a tag of its own
+    # Author:Frankie.Chu
+    (r'^[Aa]uthor:[A-Z][a-z]+\.[A-Z][a-z]+,?$', 'AUTH-DOTTED'),
     (r'^[Aa]uthors,$', 'AUTHDOT'),
     (r'^[Aa]uthor$', 'AUTH'),
     (r'^[Aa]uthor\.$', 'AUTHDOT'),
@@ -3527,6 +3529,9 @@ GRAMMAR = """
     # Author not attributable
     AUTHOR: {<AUTH>  <NN>  <NNP>} #not attributable
 
+    # Author:Frankie.Chu
+    AUTHOR: {<AUTH-DOTTED>}
+
     # author (Panagiotis Tsirigotis)
     AUTHOR: {<AUTH>  <NNP><NNP>+} #author Foo Bar
 
@@ -3675,6 +3680,8 @@ def refine_author(a):
     """
     if not a:
         return
+
+    a = re.sub(r'^[Aa]uthor:\s*', '', a)
     # FIXME: we could consider to split comma separated lists such as
     # gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
     a = remove_some_extra_words_and_punct(a)

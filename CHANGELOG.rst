@@ -16,6 +16,8 @@ Next release
   have cached results for those already. If we do, we update our results with the
   cached data. If not, we add those scanners to a list of scanners to be run.
   After scanning, the cache is updated.
+- Improve author detection for dotted names such as ``Frankie.Chu``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4229
 
 - Gracefully handle corrupt or invalid JSON files in ``results_cache`` by catching
   ``json.JSONDecodeError`` in ``get_results_cache_data`` and returning an empty mapping.

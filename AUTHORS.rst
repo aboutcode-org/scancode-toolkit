@@ -95,6 +95,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Thorsten Harter @ThorstenHarter
 - Till Jaeger @LeChasseur
 - Tobias Furuholm @furuholm
+- Topu Kumar Mondol @topukumar538
 - Tushar Goel @TG1999
 - Tushar Mittal @techytushar
 - Tushar Upadhyay @tushar912
