@@ -1,0 +1,19 @@
+---
+key: apache-2.0-notice
+short_name: Apache 2.0 NOTICE
+name: Apache License 2.0 NOTICE file
+category: Permissive
+owner: Apache Software Foundation
+homepage_url: http://www.apache.org/licenses/
+notes: |
+    Used to report Apache License 2.0 Section 4 NOTICE files and NOTICE
+    banners (for example "NOTICE file corresponding to section 4d of the
+    Apache License Version 2.0" or "NOTICE file for use with the Apache
+    License, Version 2.0") separately from a plain apache-2.0 detection.
+    See also https://github.com/aboutcode-org/scancode-toolkit/issues/2708
+spdx_license_key: LicenseRef-scancode-apache-2.0-notice
+other_urls:
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
+NOTICE file corresponding to section 4d of the Apache License Version 2.0
