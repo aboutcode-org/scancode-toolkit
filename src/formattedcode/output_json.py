@@ -40,14 +40,14 @@ if TRACE:
 
 
 @output_impl
-class JsonCompactOutput(OutputPlugin):
+class JsonOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--json', 'output_json',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             default=None,
-            help='Write scan output as compact JSON to FILE.',
+            help='Write scan output as JSON to FILE.',
             help_group=OUTPUT_GROUP,
             sort_order=10),
     ]
