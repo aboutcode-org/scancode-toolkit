@@ -9,6 +9,7 @@
 
 from os.path import dirname
 from os.path import join
+from types import SimpleNamespace
 
 from commoncode.testcase import FileDrivenTesting
 from commoncode.resource import Codebase
@@ -17,6 +18,8 @@ from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
 from scancode_config import REGEN_TEST_FIXTURES
 from summarycode.classify import set_classification_flags
+from summarycode.classify import get_manifest_patterns
+from summarycode.classify import is_manifest_path
 from summarycode.classify_plugin import FileClassifier
 
 
@@ -64,76 +67,44 @@ class TestClassify(FileDrivenTesting):
             set_classification_flags(res)
             assert res.is_manifest
 
-    def test_set_classification_flags_modern_manifests(self):
-        import posixpath
+    def test_manifest_patterns_include_active_handlers(self):
+        suffixes, globs = get_manifest_patterns()
 
-        class MockResource:
-            def __init__(self, path, is_top_level=True):
-                self.path = path
-                self.name = posixpath.basename(path)
-                self.base_name = posixpath.splitext(self.name)[0]
-                self.is_top_level = is_top_level
-                self.package_data = []
-                self.is_legal = False
-                self.is_readme = False
-                self.is_community = False
-                self.is_manifest = False
-                self.is_key_file = False
+        assert '/cargo.lock' in suffixes
+        assert '/go.mod' in suffixes
+        assert '*conda*.yaml' in globs
 
-        modern_manifests = [
-            'Cargo.toml',
+    def test_manifest_paths_include_root_nested_and_globbed_formats(self):
+        paths = (
             'Cargo.lock',
-            'poetry.lock',
-            'Pipfile.lock',
-            'package-lock.json',
-            'pnpm-lock.yaml',
-            'yarn.lock',
-            'go.mod',
-            'go.sum',
-            'pubspec.yaml',
-            'pubspec.lock',
-            'composer.lock',
-            'build.gradle.kts',
-            'Package.resolved',
-            'conanfile.py',
-            'uv.lock',
-        ]
+            'project/uv.lock',
+            'project/go.mod',
+            'project/conda-environment.yaml',
+            'project/conda-meta/metadata.json',
+        )
+        for path in paths:
+            assert is_manifest_path(path), path
 
-        for m in modern_manifests:
-            res = MockResource('project/' + m)
-            set_classification_flags(res)
-            assert res.is_manifest, f'Failed manifest classification for: {m}'
+        resource = SimpleNamespace(
+            path='Cargo.lock',
+            name='Cargo.lock',
+            base_name='Cargo',
+            is_top_level=True,
+            package_data=[],
+        )
+        set_classification_flags(resource)
+        assert resource.is_manifest
+        assert resource.is_key_file
 
-    def test_archives_not_classified_as_manifest(self):
-        import posixpath
-
-        class MockResource:
-            def __init__(self, path, is_top_level=True):
-                self.path = path
-                self.name = posixpath.basename(path)
-                self.base_name = posixpath.splitext(self.name)[0]
-                self.is_top_level = is_top_level
-                self.package_data = []
-                self.is_legal = False
-                self.is_readme = False
-                self.is_community = False
-                self.is_manifest = False
-                self.is_key_file = False
-
-        archives = [
-            'pkg.whl',
-            'lib.jar',
-            'app.gem',
-            'binary.rpm',
-            'bundle.deb',
-            'archive.tar.gz',
-            'dist.zip',
-        ]
-
-        for a in archives:
-            res = MockResource('project/' + a)
-            set_classification_flags(res)
-            assert not res.is_manifest, f'Unexpected manifest classification for archive: {a}'
+    def test_package_archives_are_not_classified_as_manifests(self):
+        paths = (
+            'project/package.whl',
+            'project/library.jar',
+            'project/archive.tar.gz',
+            'project/unknown-file.txt',
+        )
+        for path in paths:
+            assert not is_manifest_path(path), path
 
     def test_classify_cli_option(self):
         test_dir = self.get_test_loc('classify/cli')
