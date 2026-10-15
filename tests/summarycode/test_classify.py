@@ -101,6 +101,7 @@ class TestClassify(FileDrivenTesting):
             'project/package.whl',
             'project/library.jar',
             'project/archive.tar.gz',
+            'project/COPYRIGHT',
             'project/unknown-file.txt',
         )
         for path in paths:

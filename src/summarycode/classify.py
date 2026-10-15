@@ -116,6 +116,13 @@ def get_manifest_patterns():
     globs = set()
 
     for handler in APPLICATION_PACKAGE_DATAFILE_HANDLERS:
+        # Standalone Debian copyright files can have the generic name
+        # COPYRIGHT. Classifying every such legal file as a manifest would be
+        # a false positive; the specific debian/copyright path is covered by
+        # MANIFEST_ENDS above.
+        if getattr(handler, 'datasource_id', None) == 'debian_copyright_standalone':
+            continue
+
         filetypes = getattr(handler, 'filetypes', ())
         if filetypes and not all('xml' in filetype.lower() for filetype in filetypes):
             continue
