@@ -108,3 +108,5 @@ The following organizations or individuals have contributed to ScanCode:
 - Yash Sharma @yasharmaster
 - Yunus Rahbar @yns88
 - Stefano Zacchiroli @zacchiro
+- Temi Eyesan @teyesan
+- Tram Trinh @tram-tr
