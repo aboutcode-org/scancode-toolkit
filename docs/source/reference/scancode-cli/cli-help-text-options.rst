@@ -402,7 +402,7 @@ for ScanCode Version 32.0.0.
 
 
   --------------------------------------------
-  Plugin: scancode_output:json  class: formattedcode.output_json:JsonCompactOutput
+  Plugin: scancode_output:json  class: formattedcode.output_json:JsonOutput
     codebase_attributes:
     resource_attributes:
     sort_order: 100
