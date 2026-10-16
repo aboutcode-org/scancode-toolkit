@@ -15,7 +15,6 @@ import re
 from functools import partial
 from datetime import datetime
 from os import path
-from pathlib import Path
 
 import attr
 from license_expression import LicenseSymbolLike
@@ -91,10 +90,9 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
 
         cls.populate_license_fields(package)
 
-        root_path = Path(root_resource.path)
         # a file ref extends from the root of the filesystem
         file_references_by_path = {
-            str(root_path / ref.path): ref
+            posixpath.join(root_resource.path, ref.path): ref
             for ref in package.file_references
         }
 

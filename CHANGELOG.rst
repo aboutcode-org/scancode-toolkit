@@ -5,7 +5,8 @@ Next release
 --------------
 
 - Use the standard ``apk`` Package URL type for Alpine packages, their
-  dependencies, and source packages.
+  dependencies, and source packages. Match Alpine package file references with
+  resource paths on Windows.
   https://github.com/aboutcode-org/scancode-toolkit/issues/4964
 
 - Fix the optional ``licenses`` extra dependency typo to install
