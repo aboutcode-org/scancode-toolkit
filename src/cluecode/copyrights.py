@@ -325,8 +325,9 @@ class CopyrightDetector(object):
             'IS', 'HELD',
         ])
 
-        # then walk the parse parse_tree, collecting copyrights, years and authors
+        # walk parse tree
         for tree_node in parse_tree:
+
             if not isinstance(tree_node, Tree):
                 if TRACE:
                     logger_debug(f'CopyrightDetector: parse_tree node: {tree_node}')
@@ -335,6 +336,7 @@ class CopyrightDetector(object):
             tree_node_label = tree_node.label
 
             if (include_copyrights or include_holders) and 'COPYRIGHT' in tree_node_label:
+
                 copyrght = build_detection_from_node(
                     node=tree_node,
                     cls=CopyrightDetection,
@@ -343,40 +345,41 @@ class CopyrightDetector(object):
                     refiner=refine_copyright,
                 )
 
-                if TRACE or TRACE_DEEP:
-                    logger_debug(f'CopyrightDetector: final copyright: {copyrght}')
+                if not copyrght:
+                    continue
 
-                if copyrght:
-                    if include_copyrights:
-                        yield copyrght
+                holder = None
+                if include_holders:
+                    holder = build_detection_from_node(
+                        node=tree_node,
+                        cls=HolderDetection,
+                        ignored_labels=non_holder_labels,
+                        refiner=refine_holder,
+                    )
 
-                    if include_holders:
-                        # By default we strip email and urls from holders ....
+                    if not holder:
                         holder = build_detection_from_node(
                             node=tree_node,
                             cls=HolderDetection,
-                            ignored_labels=non_holder_labels,
+                            ignored_labels=non_holder_labels_mini,
                             refiner=refine_holder,
                         )
 
-                        if not holder:
-                            # ... but if we have no holder, we try again and
-                            # this time we keep email and URLs for holders using
-                            # "non_holder_labels_mini" as an "ignores" label set
-                            holder = build_detection_from_node(
-                                node=tree_node,
-                                cls=HolderDetection,
-                                ignored_labels=non_holder_labels_mini,
-                                refiner=refine_holder,
-                            )
+                if (
+                    copyrght.copyright
+                    and re.match(r'^Copyright\s+\d{4}$', copyrght.copyright.strip())
+                    and not holder
+                ):
+                    continue
 
-                        if holder:
-                            if TRACE:
-                                logger_debug(f'CopyrightDetector: holders: {holder}')
+                if include_copyrights:
+                    yield copyrght
 
-                            yield holder
+                if include_holders and holder:
+                    yield holder
 
             elif include_authors and tree_node_label == 'AUTHOR':
+
                 author = build_detection_from_node(
                     node=tree_node,
                     cls=AuthorDetection,
@@ -387,10 +390,9 @@ class CopyrightDetector(object):
                 if author:
                     if TRACE:
                         logger_debug(f'CopyrightDetector: detected authors: {author}')
-
                     yield author
 
-
+ 
 def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
     """
     Return an iterable of pygmars.Token built from a ``numbered_lines`` iterable
@@ -3614,6 +3616,7 @@ def refine_copyright(c):
     c = strip_suffixes(c, suffixes=COPYRIGHTS_SUFFIXES)
     c = strip_trailing_period(c)
     c = c.strip("'")
+    c = re.sub(r'\b(\d{4})-\$', r'\1', c)
     return c.strip()
 
 
@@ -3675,8 +3678,7 @@ def refine_author(a):
     """
     if not a:
         return
-    # FIXME: we could consider to split comma separated lists such as
-    # gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
+
     a = remove_some_extra_words_and_punct(a)
     a = refine_names(a, prefixes=AUTHORS_PREFIXES)
     a = a.strip()
@@ -3688,8 +3690,10 @@ def refine_author(a):
     a = refine_names(a, prefixes=AUTHORS_PREFIXES)
     a = a.strip()
     a = a.strip('+-')
+
     if a and a.lower() not in AUTHORS_JUNK and not a.startswith(AUTHORS_JUNK_PREFIX):
         return a
+
 
 
 def refine_names(s, prefixes):
