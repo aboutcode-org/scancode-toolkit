@@ -21,6 +21,11 @@ Next release
   ``json.JSONDecodeError`` in ``get_results_cache_data`` and returning an empty mapping.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5345
 
+- Cap ``pluggy`` below 1.7.0. pluggy 1.7.0 no longer accepts the class-based
+  hookspecs used by ``plugincode`` and scancode fails at import time with
+  ``ValueError: did not find any 'pre_scan' hooks``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5363
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 

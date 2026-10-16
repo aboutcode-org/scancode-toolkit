@@ -85,7 +85,7 @@ dependencies = [
     "pefile >= 2020.1.1",
     "pip-requirements-parser >= 32.0.1",
     "pkginfo2 >= 30.0.0",
-    "pluggy >= 1.0.0",
+    "pluggy >= 1.0.0, < 1.7.0",
     "plugincode >= 32.0.0",
     "publicsuffix2",
     "pyahocorasick >= 2.3.0",
