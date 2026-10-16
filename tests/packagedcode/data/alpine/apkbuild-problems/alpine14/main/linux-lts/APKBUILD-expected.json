@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "linux-lts",
   "version": "5.10.43-r0",
@@ -208,5 +208,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/linux-lts@5.10.43-r0"
+  "purl": "pkg:apk/linux-lts@5.10.43-r0"
 }

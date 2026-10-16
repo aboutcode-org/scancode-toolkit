@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "hunspell-de-de",
   "version": "20170112-r0",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/hunspell-de-de@20170112-r0"
+  "purl": "pkg:apk/hunspell-de-de@20170112-r0"
 }

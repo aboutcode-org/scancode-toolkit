@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "cmake",
   "version": "3.20.3-r0",
@@ -84,5 +84,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/cmake@3.20.3-r0"
+  "purl": "pkg:apk/cmake@3.20.3-r0"
 }
