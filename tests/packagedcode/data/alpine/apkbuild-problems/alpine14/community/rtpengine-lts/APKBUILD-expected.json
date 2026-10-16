@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "rtpengine-lts",
   "version": "5.10.43-r$((0",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/rtpengine-lts@5.10.43-r%24%28%280"
+  "purl": "pkg:apk/rtpengine-lts@5.10.43-r%24%28%280"
 }

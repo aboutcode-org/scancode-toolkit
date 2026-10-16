@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "vtk",
   "version": "9.0.1-r5",
@@ -100,5 +100,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/vtk@9.0.1-r5"
+  "purl": "pkg:apk/vtk@9.0.1-r5"
 }

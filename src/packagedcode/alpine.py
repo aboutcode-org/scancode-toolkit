@@ -37,7 +37,7 @@ class AlpineApkArchiveHandler(models.DatafileHandler):
     datasource_id = 'alpine_apk_archive'
     path_patterns = ('*.apk',)
     filetypes = ('gzip compressed data',)
-    default_package_type = 'alpine'
+    default_package_type = 'apk'
     description = 'Alpine Linux .apk package archive'
     documentation_url = 'https://wiki.alpinelinux.org/wiki/Alpine_package_format'
 
@@ -61,7 +61,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
     datasource_id = 'alpine_installed_db'
     datasource_type = 'sys'
     path_patterns = ('*lib/apk/db/installed',)
-    default_package_type = 'alpine'
+    default_package_type = 'apk'
     description = 'Alpine Linux installed package database'
 
     @classmethod
@@ -132,7 +132,7 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
 class AlpineApkbuildHandler(models.DatafileHandler):
     datasource_id = 'alpine_apkbuild'
     path_patterns = ('*APKBUILD',)
-    default_package_type = 'alpine'
+    default_package_type = 'apk'
     description = 'Alpine Linux APKBUILD package script'
     documentation_url = 'https://wiki.alpinelinux.org/wiki/APKBUILD_Reference'
 
@@ -1033,7 +1033,7 @@ def D_dependencies_handler(value, dependencies=None, **kwargs):
 
             requirement = operator + ver
 
-        purl = PackageURL(type='alpine', name=name, version=version).to_string()
+        purl = PackageURL(type='apk', name=name, version=version).to_string()
 
         # that the only scope we have for now
         scope = 'depend'
@@ -1057,7 +1057,7 @@ def o_source_package_handler(value, version=None, **kwargs):
     Return a source_packages list of Package URLs
     """
     # the version value will be that of the current package
-    origin = PackageURL(type='alpine', name=value, version=version).to_string()
+    origin = PackageURL(type='apk', name=value, version=version).to_string()
     return {'source_packages': [origin]}
 
 

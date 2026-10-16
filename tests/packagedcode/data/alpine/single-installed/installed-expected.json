@@ -1,6 +1,6 @@
 [
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "busybox",
     "version": "1.31.1-r9",
@@ -65,7 +65,7 @@
     "extracted_license_statement": "GPL-2.0-only",
     "notice_text": null,
     "source_packages": [
-      "pkg:alpine/busybox@1.31.1-r9"
+      "pkg:apk/busybox@1.31.1-r9"
     ],
     "file_references": [
       {
@@ -140,6 +140,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/busybox@1.31.1-r9?arch=x86_64"
+    "purl": "pkg:apk/busybox@1.31.1-r9?arch=x86_64"
   }
 ]

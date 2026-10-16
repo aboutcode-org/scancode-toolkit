@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "sddm-kcm",
   "version": "5.22.0-r0",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/sddm-kcm@5.22.0-r0"
+  "purl": "pkg:apk/sddm-kcm@5.22.0-r0"
 }
