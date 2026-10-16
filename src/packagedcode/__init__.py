@@ -35,6 +35,7 @@ from packagedcode import phpcomposer
 from packagedcode import pubspec
 from packagedcode import pypi
 from packagedcode import readme
+from packagedcode import rockspec
 from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import swift
@@ -203,6 +204,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     rubygems.GemspecInInstalledVendorBundleSpecificationsHandler,
     rubygems.GemspecInExtractedGemHandler,
     rubygems.GemspecHandler,
+
+    rockspec.RockspecHandler,
 
     swift.SwiftManifestJsonHandler,
     swift.SwiftPackageResolvedHandler,

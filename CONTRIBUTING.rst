@@ -85,7 +85,7 @@ template. Your help and contribution make ScanCode docs better, we love hearing 
 
 The ScanCode documentation is hosted at `scancode-toolkit.readthedocs.io <https://scancode-toolkit.readthedocs.io/en/latest/>`_.
 
-If you want to contribute to Scancode Documentation, you'll find `this guide here https://scancode-toolkit.readthedocs.io/en/latest/getting-started/contribute/contributing-docs.html`_ helpful.
+If you want to contribute to Scancode Documentation, you'll find `this guide here <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/contribute/contributing-docs.html>`_ helpful.
 
 Development
 ===========
@@ -123,7 +123,7 @@ To set up ScanCode for local development:
 
     git checkout -b name-of-your-bugfix-or-feature
 
-4. Check out the Contributing to Code Development `documentation <https://scancode-toolkit.readthedocs.io/en/stable/contribute/contrib_dev.html>`_, as it contains more in-depth guide for contributing code and documentation.
+4. Check out the Contributing to Code Development `documentation <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/contribute/contributing-docs.html>`_, as it contains more in-depth guide for contributing code and documentation.
 
 5. To configure your local environment for development, locate to the main
    directory of the local repository, and run the configure script.
