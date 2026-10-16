@@ -51,6 +51,11 @@ def test_can_call_json_output_from_regular_code_with_virtualcodebase():
     check_plugin(plug, 'reuse/vb.json')
 
 
+def test_can_call_json_output_from_regular_code_with_virtualcodebase():
+    from formattedcode.output_json import JsonCompactOutput as plug
+    check_plugin(plug, 'reuse/vb.json')
+
+
 def test_can_call_jsonpp_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_json import JsonPrettyOutput as plug
     check_plugin(plug, 'reuse/vb.json')
