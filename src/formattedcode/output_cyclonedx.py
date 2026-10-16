@@ -211,6 +211,19 @@ class CycloneDxExternalRef(ToDictMixin):
             comment = f'Information about ScanCode SPDX LicenseRef: {spdx_license_key}'
             yield CycloneDxExternalRef(url=url, type='license', comment=comment)
 
+    def to_dict(self):
+        """
+        Return a mapping representing this external reference, omitting fields
+        that have no value such as a null comment.
+        """
+        external_ref = {
+            'url': self.url,
+            'type': self.type,
+            'comment': self.comment,
+            'hashes': [h.to_dict() for h in self.hashes],
+        }
+        return {k: v for k, v in external_ref.items() if v is not None}
+
     def to_xml_element(self):
         """
         Return a new Element built from this external reference
@@ -270,9 +283,11 @@ class CycloneDxComponent:
 
     def to_dict(self):
         """
-        Return a mapping representing this component.
+        Return a mapping representing this component, omitting fields that
+        have no value. The CycloneDX schema types these fields as strings, so
+        a None value cannot be serialized as a JSON null.
         """
-        return {
+        component = {
             'name': self.name,
             'version': self.version,
             # note the kebab case
@@ -289,27 +304,21 @@ class CycloneDxComponent:
             'externalReferences': [e.to_dict() for e in self.externalReferences],
             'properties': [p.to_dict() for p in self.properties],
         }
+        return {k: v for k, v in component.items() if v is not None}
 
     @classmethod
     def from_package(cls, package):
         """
         Return a CycloneDxComponent built from a ``package`` mapping of ScanCode
-        package data.
+        package data, or None when the component cannot be created.
         """
         name = package.get('name')
         version = package.get('version')
 
-        # FIXME: if we don't have at least the required name and version we skip
-        # the component
-        properties = []
+        # The CycloneDX schema requires at least a name and version for a
+        # component: skip the package when either is missing.
         if not (name and version):
-            properties.append(
-                CycloneDxProperty(
-                    name='WARNING',
-                    value=f'WARNING: component skipped in CycloneDX output:'
-                    f' purl: {package["purl"]} at datafile_paths: {package["datafile_paths"]}'
-                )
-            )
+            return None
 
         purl = package.get('purl')
 
@@ -325,7 +334,6 @@ class CycloneDxComponent:
             hashes=list(CycloneDxHashObject.from_package(package)),
             licenses=list(CycloneDxLicenseExpression.from_package(package)),
             externalReferences=list(CycloneDxExternalRef.from_package(package)),
-            properties=properties,
         )
 
     @classmethod

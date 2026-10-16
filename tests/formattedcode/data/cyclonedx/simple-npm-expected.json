@@ -7,10 +7,8 @@
       "name": "cookie-signature",
       "version": "1.0.3",
       "bom-ref": "pkg:npm/cookie-signature@1.0.3",
-      "group": null,
       "type": "library",
       "scope": "required",
-      "copyright": null,
       "author": "TJ Holowaychuk",
       "description": "Sign and unsign cookies",
       "purl": "pkg:npm/cookie-signature@1.0.3",
@@ -24,37 +22,31 @@
         {
           "url": "https://registry.npmjs.org/cookie-signature/1.0.3",
           "type": "bom",
-          "comment": null,
           "hashes": []
         },
         {
           "url": "https://github.com/visionmedia/node-cookie-signature/issues",
           "type": "issue-tracker",
-          "comment": null,
           "hashes": []
         },
         {
           "url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
           "type": "distribution",
-          "comment": null,
           "hashes": []
         },
         {
           "url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
           "type": "distribution",
-          "comment": null,
           "hashes": []
         },
         {
           "url": "https://www.npmjs.com/package/cookie-signature",
           "type": "website",
-          "comment": null,
           "hashes": []
         },
         {
           "url": "git+https://github.com/visionmedia/node-cookie-signature.git",
           "type": "vcs",
-          "comment": null,
           "hashes": []
         }
       ],
