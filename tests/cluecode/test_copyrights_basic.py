@@ -279,6 +279,14 @@ class TestTextPreparation(FileBasedTesting):
 class TestCopyrightDetector(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+    def test_detect_author_before_project_urls(self):
+        location = self.get_test_loc('copyrights_basic/pkg-info-project-urls.txt')
+        expected = [
+            copyrights.AuthorDetection('Ansible Project', 5, 5),
+            copyrights.AuthorDetection('Michael DeHaan (https://github.com/mpdehaan)', 12, 12),
+        ]
+        assert list(copyrights.detect_copyrights(location)) == expected
+
     def test_detect(self):
         location = self.get_test_loc('copyrights_basic/essential_smoke-ibm_c.c')
         expected = [
