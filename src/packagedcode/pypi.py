@@ -82,6 +82,8 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
+def is_private_package(classifiers):
+    return any('Private ::' in classifier for classifier in classifiers if classifier)
 
 class PythonEggPkgInfoFile(models.DatafileHandler):
     datasource_id = 'pypi_egg_pkginfo'
@@ -483,7 +485,8 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
         description = project_data.get('description') or ''
         description = description.strip()
 
-        urls, extra_data = get_urls(metainfo=project_data, name=name, version=version)
+        is_private = is_private_package(project_data.get('classifiers', []))
+        urls, extra_data = get_urls(metainfo=project_data, name=name, version=version,is_private=is_private)
 
         extracted_license_statement, license_file = get_declared_license(project_data)
         if license_file:
@@ -514,11 +517,12 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
             keywords=get_keywords(project_data),
             parties=get_pyproject_toml_parties(project_data),
             dependencies=dependencies,
+            is_private=is_private,
             extra_data=extra_data,
             **urls,
+            download_url=urls.get('download'),
         )
         yield models.PackageData.from_data(package_data, package_only)
-
 
 def is_poetry_pyproject_toml(location):
     with open(location, 'r') as file:
@@ -709,6 +713,8 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
                 )
                 dependencies.append(dependency.to_dict())
 
+        is_private = is_private_package(poetry_data.get('classifiers', []))
+
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -720,6 +726,7 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
             keywords=get_keywords(poetry_data),
             parties=get_pyproject_toml_parties(poetry_data),
             extra_data=extra_data,
+            is_private=is_private,
             dependencies=dependencies,
             **urls,
         )
@@ -1281,6 +1288,9 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
     if license_file:
         extra_data['license_file'] = license_file
 
+    classifiers = get_attribute(meta, 'Classifier', multiple=True)
+    is_private = is_private_package(classifiers)
+
     # FIXME: We are getting dependencies from other sibling files, this is duplicated
     # data at the package_data level, is this necessary? We also have the entire dependency
     # relationships here at requires.txt present in ``.egg-info`` should we store these
@@ -1301,6 +1311,7 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
         dependencies=dependencies,
         file_references=file_references,
         extra_data=extra_data,
+        is_private=is_private,
         **urls,
     )
     return models.PackageData.from_data(package_data, package_only)
@@ -1466,7 +1477,9 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             # search for possible dunder versions here and elsewhere
             version = detect_version_attribute(location)
 
-        urls, extra_data = get_urls(metainfo=setup_args, name=name, version=version)
+        is_private = is_private_package(setup_args.get('classifiers', []))
+
+        urls, extra_data = get_urls(metainfo=setup_args, name=name, version=version,is_private=is_private)
 
         dependencies = get_setup_py_dependencies(setup_args)
         python_requires = get_setup_py_python_requires(setup_args)
@@ -1475,6 +1488,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
         extracted_license_statement, license_file = get_declared_license(metainfo=setup_args)
         if license_file:
             extra_data['license_file'] = license_file
+
 
         package_data = dict(
             datasource_id=cls.datasource_id,
@@ -1487,6 +1501,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             extracted_license_statement=extracted_license_statement,
             dependencies=dependencies,
             keywords=get_keywords(setup_args),
+            is_private=is_private,
             extra_data=extra_data,
             **urls,
         )
@@ -1605,6 +1620,9 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
                 extracted_license_statement = ''
             extracted_license_statement += f" license_files: {license_file_references}"
 
+        classifiers = parser.get('metadata', 'classifiers', fallback='').splitlines()
+        is_private = is_private_package(classifiers)
+
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -1614,6 +1632,7 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
             homepage_url=metadata.get('url'),
             primary_language=cls.default_primary_language,
             dependencies=dependent_packages,
+            is_private=is_private,
             extracted_license_statement=extracted_license_statement,
         )
         yield models.PackageData.from_data(package_data, package_only)
@@ -2551,7 +2570,7 @@ def get_pypi_urls(name, version, **kwargs):
     )
 
 
-def get_urls(metainfo, name, version, poetry=False):
+def get_urls(metainfo, name, version, is_private=False, poetry=False):
     """
     Return a mapping of standard URLs and a mapping of extra-data URls for URLs
     of this package:
@@ -2593,6 +2612,9 @@ def get_urls(metainfo, name, version, poetry=False):
     # Project-URL: Say Thanks!
 
     extra_data = {}
+    if is_private:
+        return {}, {}
+    
     urls = get_pypi_urls(name, version)
 
     def add_url(_url, _utype=None, _attribute=None):
