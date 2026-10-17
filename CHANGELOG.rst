@@ -26,6 +26,11 @@ Next release
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
+- Fix the CRAN ``DESCRIPTION`` parser to split ``Depends`` on every comma so
+  single-line entries are not dropped, and to no longer crash when the
+  ``Depends``, ``Author`` or ``Maintainer`` fields are missing.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5369
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 

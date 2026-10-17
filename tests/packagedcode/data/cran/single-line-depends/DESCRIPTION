@@ -1,0 +1,8 @@
+Package: tibble
+Title: Simple Data Frames
+Version: 3.2.1
+Authors@R: c(person("Kirill", "M\u00fcller", email = "kirill@cynkra.com", role = c("aut", "cre")))
+Description: Provides a data frame class.
+License: MIT + file LICENSE
+Depends: R (>= 3.4.0), methods, utils (>= 3.0)
+Encoding: UTF-8
