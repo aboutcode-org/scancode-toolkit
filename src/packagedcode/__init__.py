@@ -18,6 +18,7 @@ from packagedcode import chef
 from packagedcode import debian
 from packagedcode import debian_copyright
 from packagedcode import distro
+from packagedcode import dockerfile_ocilabels
 from packagedcode import conda
 from packagedcode import conan
 from packagedcode import cocoapods
@@ -96,6 +97,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     debian.DebianSourcePackageTarballHandler,
 
     distro.EtcOsReleaseHandler,
+    dockerfile_ocilabels.DockerOCILabelsHandler,
 
     freebsd.CompactManifestHandler,
 
