@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Fix detection of Expat license notices to avoid reporting an
+  unknown license reference.
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
