@@ -344,6 +344,15 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         ]
         check_full_detections(expected, test_file)
 
+    def test_copyright_lines_daniel_weber(self):
+        test_file = self.get_test_loc('copyrights_basic/daniel_weber-ecnumber.py')
+        expected = [
+            copyrights.CopyrightDetection('Copyright (c) 2023 Daniel Weber', 3, 3),
+            copyrights.HolderDetection('Daniel Weber', 3, 3),
+        ]
+        results = list(copyrights.detect_copyrights(test_file))
+        assert results == expected
+
     def test_copyright_lines_03e16f6c_0(self):
         test_file = self.get_test_loc('copyrights_basic/03e16f6c_0-e_f_c.0')
         expected = [
