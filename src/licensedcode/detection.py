@@ -15,6 +15,7 @@ import typing
 import uuid
 from enum import Enum
 from hashlib import sha1
+from fnmatch import fnmatchcase
 
 import attr
 from collections import defaultdict
@@ -1990,6 +1991,73 @@ def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
         return resource
 
 
+def find_referenced_resources(
+    referenced_filename,
+    resource,
+    codebase,
+    find_referenced_resource_func,
+):
+    """
+    Return a list of Resources matching ``referenced_filename`` for ``resource``
+    in ``codebase``. ``referenced_filename`` can be an exact path or a glob
+    pattern.
+
+    Exact paths use ``find_referenced_resource_func`` directly. Glob patterns
+    are matched one path segment at a time so that wildcards do not cross
+    directory boundaries. Each match is resolved again with
+    ``find_referenced_resource_func`` to retain its existing location rules.
+    """
+    if not (referenced_filename and resource):
+        return []
+
+    referenced_filename = clean_path(referenced_filename)
+    if not any(character in referenced_filename for character in '*?['):
+        referenced_resource = find_referenced_resource_func(
+            referenced_filename=referenced_filename,
+            resource=resource,
+            codebase=codebase,
+        )
+        return [referenced_resource] if referenced_resource else []
+
+    pattern_parts = referenced_filename.split('/')
+    referenced_resources = []
+    seen_paths = set()
+
+    for candidate in codebase.walk(skip_root=True):
+        candidate_path = as_posixpath(candidate.path)
+        candidate_parts = candidate_path.split('/')
+        if len(candidate_parts) < len(pattern_parts):
+            continue
+
+        candidate_reference_parts = candidate_parts[-len(pattern_parts):]
+        if not all(
+            fnmatchcase(candidate_part, pattern_part)
+            for candidate_part, pattern_part in zip(
+                candidate_reference_parts,
+                pattern_parts,
+            )
+        ):
+            continue
+
+        candidate_reference = '/'.join(candidate_reference_parts)
+        referenced_resource = find_referenced_resource_func(
+            referenced_filename=candidate_reference,
+            resource=resource,
+            codebase=codebase,
+        )
+        if not referenced_resource:
+            continue
+
+        referenced_path = as_posixpath(referenced_resource.path)
+        if referenced_path != candidate_path or referenced_path in seen_paths:
+            continue
+
+        seen_paths.add(referenced_path)
+        referenced_resources.append(referenced_resource)
+
+    return referenced_resources
+
+
 def update_expressions_from_license_detections(resource, codebase):
     """
     Set the `detected_license_expression` and `detected_license_expression_spdx`
@@ -2046,14 +2114,23 @@ def update_detection_from_referenced_files(
 
     referenced_detections = []
     referenced_resources = []
+    seen_referenced_resource_paths = set()
     for referenced_filename in referenced_filenames:
-        referenced_resource = find_referenced_resource_func(
+        resolved_resources = find_referenced_resources(
             referenced_filename=referenced_filename,
             resource=resource,
             codebase=codebase,
+            find_referenced_resource_func=find_referenced_resource_func,
         )
 
-        if referenced_resource and referenced_resource.license_detections:
+        for referenced_resource in resolved_resources:
+            if (
+                referenced_resource.path in seen_referenced_resource_paths
+                or not referenced_resource.license_detections
+            ):
+                continue
+
+            seen_referenced_resource_paths.add(referenced_resource.path)
             referenced_detections.extend(
                 referenced_resource.license_detections
             )

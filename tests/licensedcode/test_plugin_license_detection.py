@@ -11,6 +11,7 @@ import os
 
 from commoncode.testcase import FileDrivenTesting
 
+from licensedcode.detection import find_referenced_resources
 from licensedcode.plugin_license import find_referenced_resource
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
@@ -365,6 +366,28 @@ def test_find_referenced_resource_does_not_find_based_file_name_suffix():
     resource = codebase.get_resource(path='scan-ref-dupe-name-suffix/license-notice.txt')
     result = find_referenced_resource(referenced_filename='LICENSE', resource=resource, codebase=codebase)
     assert result.path == 'scan-ref-dupe-name-suffix/LICENSE'
+
+
+def test_find_referenced_resources_with_directory_glob():
+    test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-ref-glob')
+    scan_loc = test_env.get_temp_file('json')
+    args = ['--license', '--json', scan_loc, test_dir]
+    run_scan_click(args)
+
+    from commoncode.resource import VirtualCodebase
+    codebase = VirtualCodebase(scan_loc)
+    resource = codebase.get_resource(path='scan-ref-glob/license-notice.txt')
+    results = find_referenced_resources(
+        referenced_filename='licenses/*',
+        resource=resource,
+        codebase=codebase,
+        find_referenced_resource_func=find_referenced_resource,
+    )
+
+    assert [result.path for result in results] == [
+        'scan-ref-glob/licenses/COPYING',
+        'scan-ref-glob/licenses/LICENSE',
+    ]
 
 
 def test_match_reference_license():
