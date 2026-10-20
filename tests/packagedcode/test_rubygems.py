@@ -11,6 +11,9 @@ import io
 import json
 import os
 
+import ast
+from collections import Counter
+
 from commoncode import text
 from commoncode.testcase import FileBasedTesting
 
@@ -27,6 +30,28 @@ class TestGemSpec(PackageTester):
     def test_is_manifest_ruby_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/address_standardization.gemspec')
         assert rubygems.GemspecHandler.is_datafile(test_file)
+
+    def test_rubygems_licenses_mapping_has_no_duplicate_keys(self):
+        # A duplicate key in the LICENSES_MAPPING dict literal silently discards
+        # all but the last mapping, which is how a bare "LGPL" once resolved to a
+        # version-specific license it did not declare.
+        mapping_file = rubygems.__file__
+        with open(mapping_file, encoding='utf-8') as f:
+            tree = ast.parse(f.read(), filename=mapping_file)
+
+        duplicates = []
+        for node in ast.walk(tree):
+            if not isinstance(node, ast.Dict):
+                continue
+            keys = [
+                key.value for key in node.keys
+                if isinstance(key, ast.Constant) and isinstance(key.value, str)
+            ]
+            duplicates.extend(
+                key for key, count in Counter(keys).items() if count > 1
+            )
+
+        assert not duplicates, f"duplicate keys in {mapping_file}: {duplicates}"
 
     def test_rubygems_can_parse_gemspec_address_standardization_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/address_standardization.gemspec')
