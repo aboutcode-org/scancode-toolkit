@@ -17,7 +17,6 @@ from itertools import chain
 
 from intbitset import intbitset
 
-import typecode
 
 from commoncode.text import toascii
 from licensedcode.spans import Span
@@ -120,6 +119,7 @@ def build_query(
     Return a Query built from location or query string given an index.
     """
     if location:
+        import typecode
         T = typecode.get_type(location)
         # TODO: implement additional type-driven heuristics for query chunking.
         if not T.contains_text:
@@ -584,6 +584,7 @@ class Query(object):
         query_runs_append = self.query_runs.append
 
         if self.location:
+            import typecode
             ft = typecode.get_type(self.location)
             if ft.is_text_with_long_lines:
                 self.has_long_lines = True
