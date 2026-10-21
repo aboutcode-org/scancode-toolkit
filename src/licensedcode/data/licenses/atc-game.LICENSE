@@ -1,0 +1,15 @@
+---
+key: atc-game
+short_name: atc Game License
+name: atc Game License
+spdx_license_key: atc-game
+other_urls:
+    - https://github.com/vattam/BSDGames/blob/master/atc/extern.c#L36
+---
+
+Copyright (c) 1987 by Ed James, UC Berkeley.  All rights reserved.
+
+Copy permission is hereby granted provided that this notice is
+retained on all partial or complete copies.
+
+For more info on this and all of my stuff, mail edjames@berkeley.edu.

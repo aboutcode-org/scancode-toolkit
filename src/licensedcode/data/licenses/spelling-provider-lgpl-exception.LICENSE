@@ -1,0 +1,71 @@
+---
+key: spelling-provider-lgpl-exception
+short_name: Spelling Provider LGPL exception
+name: Spelling Provider LGPL exception
+notes: |
+    WARNING: review imperfect detections
+    license_expression: generic-exception AND spell-checker-exception-lgpl-2.1-plus
+    license_expression_spdx: LicenseRef-scancode-generic-exception AND LicenseRef-scancode-spell-exception-lgpl-2.1-plus
+    matches:
+      - license_expression: generic-exception
+        license_expression_spdx: LicenseRef-scancode-generic-exception
+        from_file:
+        start_line: 1
+        end_line: 1
+        matcher: 2-aho
+        score: '99.0'
+        matched_length: 3
+        match_coverage: '100.0'
+        rule_relevance: 99
+        rule_identifier: license-intro_8.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_8.RULE
+        matched_text: In addition, as a special exception, the copyright holders give
+        matched_text_diagnostics: as a special exception,
+      - license_expression: spell-checker-exception-lgpl-2.1-plus
+        license_expression_spdx: LicenseRef-scancode-spell-exception-lgpl-2.1-plus
+        from_file:
+        start_line: 2
+        end_line: 9
+        matcher: 3-seq
+        score: '91.67'
+        matched_length: 88
+        match_coverage: '91.67'
+        rule_relevance: 100
+        rule_identifier: spell-checker-exception-lgpl-2.1-plus.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/spell-checker-exception-lgpl-2.1-plus.LICENSE
+        matched_text: |
+          permission to link the code of this program with non-LGPL Spelling
+          Provider libraries (eg: a MSFT Office spell checker backend)
+          and distribute linked combinations including the two. You must
+          obey the GNU Lesser General Public License in all respects for
+          all of the code used other than said providers. If you modify
+          this file, you may extend this exception to your version of the
+          file, but you are not obligated to do so. If you do not wish
+          to do so, delete this exception statement from your version.
+        matched_text_diagnostics: |
+          permission to link the code of this program with non-LGPL Spelling
+          Provider libraries (eg: a MSFT Office spell checker backend)
+          and distribute linked combinations including the two. You must
+          obey the GNU Lesser General Public License in all respects for
+          all of the code used other than said providers. If you modify
+          this file, you may extend this exception to your version of the
+          file, but you are not obligated to do so. If you do not wish
+          to do so, delete this exception statement from your version.
+    detection_log:
+      - imperfect-match-coverage
+    identifier: generic_exception_and_spell_checker_exception_lgpl_2_1_plus-1809db91-005e-65a2-28cd-74b48c51ca6e
+is_exception: yes
+spdx_license_key: Spelling-Provider-LGPL-exception
+other_urls:
+    - https://github.com/rrthomas/enchant/blob/774ff6dc2e441ba2b9b786f8edbe00e014960408/lib/internal.vapi#L18
+---
+
+In addition, as a special exception, the copyright holders give
+permission to link the code of this program with non-LGPL Spelling
+Provider libraries (eg: a MSFT Office spell checker backend)
+and distribute linked combinations including the two. You must
+obey the GNU Lesser General Public License in all respects for
+all of the code used other than said providers. If you modify
+this file, you may extend this exception to your version of the
+file, but you are not obligated to do so. If you do not wish
+to do so, delete this exception statement from your version.

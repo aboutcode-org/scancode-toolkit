@@ -1,0 +1,206 @@
+---
+key: fdk-mpeg-h
+short_name: Fraunhofer FDK MPEG-H Software
+name: Fraunhofer FDK MPEG-H Software
+notes: |
+    Multiple licenses detected by scancode on this text
+    license_expression:
+    license_expression_spdx:
+    matches:
+      - license_expression: bsd-no-disclaimer-unmodified
+        license_expression_spdx: LicenseRef-scancode-bsd-no-disclaimer-unmodified
+        from_file:
+        start_line: 23
+        end_line: 27
+        matcher: 3-seq
+        score: '26.98'
+        matched_length: 17
+        match_coverage: '26.98'
+        rule_relevance: 100
+        rule_identifier: bsd-no-disclaimer-unmodified.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-no-disclaimer-unmodified.LICENSE
+        matched_text: |
+          Redistribution and use in source and binary forms, with or without modification,
+          are permitted without payment of copyright license fees provided that you
+          satisfy the following conditions:
+
+          * You must retain the complete text of this software license in redistributions
+        matched_text_diagnostics: |
+          Redistribution and use in source and binary forms, with or without modification,
+          are permitted [without] [payment] [of] [copyright] [license] [fees] [provided] [that] [you]
+          [satisfy] [the] [following] [conditions]:
+
+          * [You] must retain the
+    detection_log:
+      - low-quality-matches
+    identifier:
+    license_expression:
+    license_expression_spdx:
+    matches:
+      - license_expression: bsd-axis-nomod OR gpl-1.0-plus
+        license_expression_spdx: LicenseRef-scancode-bsd-axis-nomod OR GPL-1.0-or-later
+        from_file:
+        start_line: 38
+        end_line: 41
+        matcher: 3-seq
+        score: '18.29'
+        matched_length: 15
+        match_coverage: '18.29'
+        rule_relevance: 100
+        rule_identifier: bsd-axis-nomod_or_gpl2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-axis-nomod_or_gpl2.RULE
+        matched_text: |
+          * The name of Fraunhofer may not be used to endorse or promote products derived
+          from the Fraunhofer FDK MPEG-H Software without prior written permission.
+
+          * You may not charge copyright license fees for anyone to use, copy or
+        matched_text_diagnostics: |
+          may not be used to endorse or promote products derived
+          from [the] [Fraunhofer] [FDK] [MPEG]-[H] [Software] [without] prior written permission.
+
+          * [You] [may] [not] [charge] [copyright] license
+    detection_log:
+      - low-quality-matches
+    identifier:
+    license_expression: warranty-disclaimer
+    license_expression_spdx: LicenseRef-scancode-warranty-disclaimer
+    matches:
+      - license_expression: warranty-disclaimer
+        license_expression_spdx: LicenseRef-scancode-warranty-disclaimer
+        from_file:
+        start_line: 54
+        end_line: 54
+        matcher: 2-aho
+        score: '90.0'
+        matched_length: 2
+        match_coverage: '100.0'
+        rule_relevance: 90
+        rule_identifier: warranty-disclaimer_24.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_24.RULE
+        matched_text: Fraunhofer provides no warranty of patent non-infringement with respect to
+          this
+        matched_text_diagnostics: no warranty
+    detection_log: []
+    identifier: warranty_disclaimer-48391dcb-9e03-9def-3286-75d32c5d446b
+    license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
+    matches:
+      - license_expression: other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
+        from_file:
+        start_line: 62
+        end_line: 70
+        matcher: 3-seq
+        score: '72.87'
+        matched_length: 94
+        match_coverage: '72.87'
+        rule_relevance: 100
+        rule_identifier: other-permissive_17.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_17.RULE
+        matched_text: |
+          WARRANTIES, including but not limited to the implied warranties of
+          merchantability and fitness for a particular purpose. IN NO EVENT SHALL THE
+          COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE for any direct, indirect,
+          incidental, special, exemplary, or consequential damages, including but not
+          limited to procurement of substitute goods or services; loss of use, data, or
+          profits, or business interruption, however caused and on any theory of
+          liability, whether in contract, strict liability, or tort (including
+          negligence), arising in any way out of the use of this software, even if
+          advised of the possibility of such damage.
+        matched_text_diagnostics: |
+          WARRANTIES, including but not limited to the implied warranties of
+          merchantability and fitness for a particular purpose. IN NO EVENT SHALL THE
+          COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE for any direct, indirect,
+          incidental, special, exemplary, or consequential damages, including but not
+          limited to procurement of substitute goods or services; loss of use, data, or
+          profits, or business interruption, however caused and on any theory of
+          liability, whether in contract, strict liability, or tort (including
+          negligence), arising in any way out of the use of this software, even if
+          advised of the possibility of such damage.
+    detection_log:
+      - imperfect-match-coverage
+    identifier: other_permissive-7dfbf3e1-8fc8-ba19-3634-2327b747ef09
+spdx_license_key: FDK-MPEG-H
+other_urls:
+    - https://github.com/Fraunhofer-IIS/mpeghdec/blob/main/LICENSE.txt
+---
+
+Software License for The Fraunhofer FDK MPEG-H Software
+
+Copyright (c) 2021 - 2023 Fraunhofer-Gesellschaft zur Förderung der angewandten
+Forschung e.V. and Contributors
+All rights reserved.
+
+1. INTRODUCTION
+
+The "Fraunhofer FDK MPEG-H Software" is software that implements the ISO/MPEG
+MPEG-H 3D Audio standard for digital audio or related system features. Patent
+licenses for necessary patent claims for the Fraunhofer FDK MPEG-H Software
+(including those of Fraunhofer), for the use in commercial products and
+services, may be obtained from the respective patent owners individually and/or
+from Via LA (www.via-la.com).
+
+Fraunhofer supports the development of MPEG-H products and services by offering
+additional software, documentation, and technical advice. In addition, it
+operates the MPEG-H Trademark Program to ease interoperability testing of end-
+products. Please visit www.mpegh.com for more information.
+
+2. COPYRIGHT LICENSE
+
+Redistribution and use in source and binary forms, with or without modification,
+are permitted without payment of copyright license fees provided that you
+satisfy the following conditions:
+
+* You must retain the complete text of this software license in redistributions
+of the Fraunhofer FDK MPEG-H Software or your modifications thereto in source
+code form.
+
+* You must retain the complete text of this software license in the
+documentation and/or other materials provided with redistributions of
+the Fraunhofer FDK MPEG-H Software or your modifications thereto in binary form.
+You must make available free of charge copies of the complete source code of
+the Fraunhofer FDK MPEG-H Software and your modifications thereto to recipients
+of copies in binary form.
+
+* The name of Fraunhofer may not be used to endorse or promote products derived
+from the Fraunhofer FDK MPEG-H Software without prior written permission.
+
+* You may not charge copyright license fees for anyone to use, copy or
+distribute the Fraunhofer FDK MPEG-H Software or your modifications thereto.
+
+* Your modified versions of the Fraunhofer FDK MPEG-H Software must carry
+prominent notices stating that you changed the software and the date of any
+change. For modified versions of the Fraunhofer FDK MPEG-H Software, the term
+"Fraunhofer FDK MPEG-H Software" must be replaced by the term "Third-Party
+Modified Version of the Fraunhofer FDK MPEG-H Software".
+
+3. No PATENT LICENSE
+
+NO EXPRESS OR IMPLIED LICENSES TO ANY PATENT CLAIMS, including without
+limitation the patents of Fraunhofer, ARE GRANTED BY THIS SOFTWARE LICENSE.
+Fraunhofer provides no warranty of patent non-infringement with respect to this
+software. You may use this Fraunhofer FDK MPEG-H Software or modifications
+thereto only for purposes that are authorized by appropriate patent licenses.
+
+4. DISCLAIMER
+
+This Fraunhofer FDK MPEG-H Software is provided by Fraunhofer on behalf of the
+copyright holders and contributors "AS IS" and WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, including but not limited to the implied warranties of
+merchantability and fitness for a particular purpose. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE for any direct, indirect,
+incidental, special, exemplary, or consequential damages, including but not
+limited to procurement of substitute goods or services; loss of use, data, or
+profits, or business interruption, however caused and on any theory of
+liability, whether in contract, strict liability, or tort (including
+negligence), arising in any way out of the use of this software, even if
+advised of the possibility of such damage.
+
+5. CONTACT INFORMATION
+
+Fraunhofer Institute for Integrated Circuits IIS
+Attention: Division Audio and Media Technologies - MPEG-H FDK
+Am Wolfsmantel 33
+91058 Erlangen, Germany
+www.iis.fraunhofer.de/amm
+amm-info@iis.fraunhofer.de

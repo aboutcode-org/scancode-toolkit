@@ -1,0 +1,168 @@
+---
+key: bugroff
+short_name: Bugroff License
+name: Bugroff License
+notes: |
+    Multiple licenses detected by scancode on this text
+    license_expression: gpl-1.0-plus
+    license_expression_spdx: GPL-1.0-or-later
+    matches:
+      - license_expression: gpl-1.0-plus
+        license_expression_spdx: GPL-1.0-or-later
+        from_file:
+        start_line: 3
+        end_line: 3
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 6
+        match_coverage: '100.0'
+        rule_relevance: 100
+        rule_identifier: gpl_178.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_178.RULE
+        matched_text: Richard Stallman of the Free Software Foundation devised, in addition to some
+          marvelous software, the GNU General Public License (GPL for short). Or the CopyLeft it
+          is sometimes called.
+        matched_text_diagnostics: the GNU General Public License (GPL
+    detection_log: []
+    identifier: gpl_1_0_plus-32829990-d8b3-e2de-a325-2e176ecc8d2e
+    license_expression: lgpl-2.0-plus AND gpl-1.0-plus
+    license_expression_spdx: LGPL-2.0-or-later AND GPL-1.0-or-later
+    matches:
+      - license_expression: lgpl-2.0-plus
+        license_expression_spdx: LGPL-2.0-or-later
+        from_file:
+        start_line: 9
+        end_line: 9
+        matcher: 2-aho
+        score: '60.0'
+        matched_length: 1
+        match_coverage: '100.0'
+        rule_relevance: 60
+        rule_identifier: lgpl_bare_single_word.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE
+        matched_text: In fact, various inconveniences relating to this have resulted in modifications
+          such as the LGPL (Library General Public License) and more recently the NPL (Netscape
+          Public License)
+        matched_text_diagnostics: LGPL (
+      - license_expression: lgpl-2.0-plus
+        license_expression_spdx: LGPL-2.0-or-later
+        from_file:
+        start_line: 9
+        end_line: 9
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 4
+        match_coverage: '100.0'
+        rule_relevance: 100
+        rule_identifier: lgpl-2.0-plus_187.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_187.RULE
+        matched_text: In fact, various inconveniences relating to this have resulted in modifications
+          such as the LGPL (Library General Public License) and more recently the NPL (Netscape
+          Public License)
+        matched_text_diagnostics: Library General Public License)
+      - license_expression: gpl-1.0-plus
+        license_expression_spdx: GPL-1.0-or-later
+        from_file:
+        start_line: 11
+        end_line: 11
+        matcher: 2-aho
+        score: '85.0'
+        matched_length: 2
+        match_coverage: '100.0'
+        rule_relevance: 85
+        rule_identifier: gpl-1.0-plus_351.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE
+        matched_text: I call these matters mere inconveniences, the real damage will occur when
+          the Jackal's, (sorry, I mean lawyers), actually get to test the GPL in court for the first
+          time.
+        matched_text_diagnostics: the GPL
+    detection_log: []
+    identifier: lgpl_2_0_plus_and_gpl_1_0_plus-5da55cb2-db70-d91a-6016-220a9036e0f5
+    license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
+    matches:
+      - license_expression: other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
+        from_file:
+        start_line: 27
+        end_line: 27
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 11
+        match_coverage: '100.0'
+        rule_relevance: 100
+        rule_identifier: other-permissive_118.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_118.RULE
+        matched_text: Sure, No problem. Don't worry, be happy. Now bugger off.
+        matched_text_diagnostics: Sure, No problem. Don't worry, be happy. Now bugger off.
+    detection_log: []
+    identifier: other_permissive-1c246c07-511e-255f-6d2a-b883fcf106e1
+    license_expression: gpl-1.0-plus
+    license_expression_spdx: GPL-1.0-or-later
+    matches:
+      - license_expression: gpl-1.0-plus
+        license_expression_spdx: GPL-1.0-or-later
+        from_file:
+        start_line: 33
+        end_line: 33
+        matcher: 2-aho
+        score: '85.0'
+        matched_length: 2
+        match_coverage: '100.0'
+        rule_relevance: 85
+        rule_identifier: gpl-1.0-plus_351.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE
+        matched_text: '    Now bugger off. The only way to get rid of pushy Jackals is to ignore
+          them and not feed them. The GPL is just begging somebody to take it to court. Can''t you
+          just see it. Exactly the same thing that happened when some twit (not Linus) registered
+          Linux as his own personal trademark. People got upset, started a fund, and hired, off
+          all ruddy things, a Jackal to try and defend the chicken! Who really benefits from this
+          trademark / patent / copyright thing anyway? The lawyers. Who made it up in the first
+          place? The lawyers.'
+        matched_text_diagnostics: The GPL
+    detection_log: []
+    identifier: gpl_1_0_plus-0275ca3c-0d0c-8224-0676-9b6f2b7ff11c
+spdx_license_key: Bugroff
+other_urls:
+    - https://tunes.org/legalese/bugroff.html
+---
+
+The "No problem Bugroff" license.
+
+Richard Stallman of the Free Software Foundation devised, in addition to some marvelous software, the GNU General Public License (GPL for short). Or the CopyLeft it is sometimes called.
+
+It is quite a revolutionary document, using the "copyright" tool to to protect your right to use free software.
+
+Unfortunately using copyright to protect free software is a lot like using a Jackal to guard the hens.
+
+In fact, various inconveniences relating to this have resulted in modifications such as the LGPL (Library General Public License) and more recently the NPL (Netscape Public License)
+
+I call these matters mere inconveniences, the real damage will occur when the Jackal's, (sorry, I mean lawyers), actually get to test the GPL in court for the first time.
+
+Thus enter my version.
+
+Its very simple.
+
+Entirely consistent.
+
+Completely unrestrictive.
+
+Easy to apply.
+
+The "No problem Bugroff" license is as follows...
+
+The answer to any and every question relating to the copyright, patents, legal issues of Bugroff licensed software is....
+
+Sure, No problem. Don't worry, be happy. Now bugger off.
+
+All portions of this license are important..
+
+    "Sure, no problem." Gives you complete freedom. I mean it. Utterly complete. A bit of a joke really. You have complete freedom anyway.
+    "Don't worry, be happy." Apart from being good advice and a good song, it also says :- No matter what anyone else says or does, you still have complete freedom.
+    Now bugger off. The only way to get rid of pushy Jackals is to ignore them and not feed them. The GPL is just begging somebody to take it to court. Can't you just see it. Exactly the same thing that happened when some twit (not Linus) registered Linux as his own personal trademark. People got upset, started a fund, and hired, off all ruddy things, a Jackal to try and defend the chicken! Who really benefits from this trademark / patent / copyright thing anyway? The lawyers. Who made it up in the first place? The lawyers.
+
+OK so the last part of the license sounds a bit harsh, but seriously folks, if you are a :-
+
+    Lawyer asking these legalese questions... You should go off and learn an honest trade that will actually contribute to life instead of draining it.
+    Programmer asking these legalese questions... You have amazingly powerful tools in your hands and mind, use them to ask and answer the worthwhile questions of life, the universe and everything. Stop mucking about with such legal nonsense and get back to programming.
+    User/reader asking these question... Don't worry. Go off and be happy. Have fun. Enjoy what has been created for you.
