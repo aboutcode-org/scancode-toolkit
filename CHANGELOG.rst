@@ -26,6 +26,11 @@ Next release
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
+- Follow the referenced ``LICENSE.md`` file for the legacy npm
+  ``"license": "LicenseRef-LICENSE.md"`` convention, like it is done for
+  ``LicenseRef-LICENSE``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/2872
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 

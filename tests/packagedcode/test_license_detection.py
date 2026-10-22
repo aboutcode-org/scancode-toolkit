@@ -356,3 +356,41 @@ def test_license_reference_to_file_beside_package_manifest():
     run_scan_click(args)
     test_loc = test_env.get_test_loc('license_detection/reference-to-license-beside-manifest/beartype-0.17.2-expected.json')
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_reference_detection_in_npm_manifest_licenseref_license():
+    test_dir = test_env.get_test_loc('license_detection/reference-at-manifest/npm-licenseref-license/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/reference-at-manifest/npm-licenseref-license.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_reference_detection_in_npm_manifest_licenseref_license_md():
+    test_dir = test_env.get_test_loc('license_detection/reference-at-manifest/npm-licenseref-license-md/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/reference-at-manifest/npm-licenseref-license-md.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
