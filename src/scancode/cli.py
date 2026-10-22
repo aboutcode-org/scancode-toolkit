@@ -1340,7 +1340,7 @@ def scan_codebase(
     """
 
     # NOTE: we never scan directories
-    resources = ((r.location, r.path, r.name) for r in codebase.walk() if r.is_file)
+    resources = ((r.location, r.path) for r in codebase.walk() if r.is_file)
 
     use_threading = processes >= 0
     runner = partial(
@@ -1477,7 +1477,7 @@ def terminate_pool_with_backoff(pool, number_of_trials=3):
 
 
 def scan_resource(
-    location_path_name,
+    location_path,
     scanners,
     timeout=DEFAULT_TIMEOUT,
     with_timing=False,
@@ -1505,7 +1505,8 @@ def scan_resource(
     processing and threading works.
     """
     scan_time = time()
-    location, path, name = location_path_name
+    location, path = location_path
+    is_file = commoncode.filetype.is_file(location)
     results = {}
     scan_errors = []
     timings = {} if with_timing else None
@@ -1521,9 +1522,10 @@ def scan_resource(
     # as a gatekeeper for runaway processes.
 
     results_cache_index = ''
-    if use_cached_results:
+    if use_cached_results and is_file:
         # compute results_cache_index
-        results_cache_index = results_cache.compute_results_cache_index(location=location, filename=name)
+        filename = commoncode.fileutils.file_name(path)
+        results_cache_index = results_cache.compute_results_cache_index(location=location, filename=filename)
 
         # update `results` with cached data or add scanner to scanners_to_run if no
         # cache data is available
@@ -1560,7 +1562,7 @@ def scan_resource(
             # the return value of a scanner fun MUST be a mapping
             if values_mapping:
                 results.update(values_mapping)
-                if use_cached_results:
+                if use_cached_results and is_file:
                     results_cache.update_results_cache_data(
                         results_cache_index=results_cache_index,
                         plugin_name=scanner.name,
