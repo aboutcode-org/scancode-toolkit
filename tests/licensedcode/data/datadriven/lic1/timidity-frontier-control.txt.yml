@@ -1,0 +1,5 @@
+license_expressions:
+  - frontier-1.0
+notes: |
+  Regression test for https://github.com/aboutcode-org/scancode-toolkit/issues/5119
+  https://sourceforge.net/p/opencore-amr/code/ci/master/tree/opencore/NOTICE
