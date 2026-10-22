@@ -26,6 +26,10 @@ Next release
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
+- Add the ``wto-ap-3.0`` Web Template Output Additional Permission 3.0
+  exception to AGPL-3.0 and rules to detect it.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/2219
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
