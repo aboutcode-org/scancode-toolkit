@@ -5,14 +5,10 @@
 # See https://github.com/nexB/plugincode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 
+import importlib.metadata
 import logging
 import os
 import sys
-
-from pluggy import PluginManager as PluggyPluginManager
-
-from plugincode import HookimplMarker
-from plugincode import HookspecMarker
 
 """
 Support for plugins that provide one or more paths keys typically OS-specific
@@ -36,8 +32,19 @@ def logger_debug(*args):
 project_name = __name__
 entrypoint = "scancode_additional_license_location_provider"
 
-location_provider_spec = HookspecMarker(project_name=project_name)
-location_provider_impl = HookimplMarker(project_name=project_name)
+
+def location_provider_spec(cls):
+    """
+    No-op decorator kept for backwards compatibility.
+    """
+    return cls
+
+
+def location_provider_impl(cls):
+    """
+    No-op decorator kept for backwards compatibility.
+    """
+    return cls
 
 
 @location_provider_spec
@@ -74,10 +81,9 @@ class AdditionalLicensePluginManager(object):
         name `module_qname` with plugins loaded from the setuptools `entrypoint`
         that must subclass `plugin_base_class`.
         """
-        self.manager = PluggyPluginManager(project_name=project_name)
+        self.project_name = project_name
         self.entrypoint = entrypoint
         self.plugin_base_class = plugin_base_class
-        self.manager.add_hookspecs(sys.modules[project_name])
 
         # set to True once this manager is initialized by running its setup()
         self.initialized = False
@@ -97,11 +103,16 @@ class AdditionalLicensePluginManager(object):
         if self.initialized:
             return self.plugin_classes.values()
 
-        entrypoint = self.entrypoint
-        self.manager.load_setuptools_entrypoints(entrypoint)
-
         plugin_classes = []
-        for name, plugin_class in self.manager.list_name_plugin():
+        try:
+            entry_points = importlib.metadata.entry_points(group=self.entrypoint)
+        except TypeError:
+            eps = importlib.metadata.entry_points()
+            entry_points = eps.get(self.entrypoint, [])
+
+        for ep in entry_points:
+            name = ep.name
+            plugin_class = ep.load()
             if not issubclass(plugin_class, self.plugin_base_class):
                 plugin_base_class = self.plugin_base_class
                 raise Exception(
