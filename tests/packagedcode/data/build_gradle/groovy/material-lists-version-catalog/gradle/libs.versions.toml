@@ -1,0 +1,7 @@
+# From https://github.com/nicbell/material-lists/blob/4f66caf491fc001640e4472d091455a48e156dc0/gradle/libs.versions.toml
+[versions]
+
+[libraries]
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version = "2.2.1" }
+junit = { module = "junit:junit", version = "4.13.2" }
+material = { module = "com.google.android.material:material", version = "1.13.0" }
