@@ -34,6 +34,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Frank Viernau @fviernau
 - Gaurang Rao @Gaupeng
 - Hanif Ali @hanif-ali
+- Harsh @harshb16
 - Horie Issei @is2ei
 - James Ward @jamesward
 - Jelmer Vernooĳ @jelmer
