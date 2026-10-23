@@ -5,7 +5,11 @@ name: Google Patent License for WebM
 category: Patent License
 owner: Google
 homepage_url: https://www.webmproject.org/license/additional/
-spdx_license_key: LicenseRef-scancode-google-patent-license-webm
+spdx_license_key: Google-Patent-WebM
+other_spdx_license_keys:
+    - LicenseRef-scancode-google-patent-license-webm
+other_urls:
+    - https://www.webmproject.org/license/additional/
 ---
 
 Additional IP Rights Grant (Patents)
