@@ -54,7 +54,7 @@
 
 --todo                     Identify license and package detections which needs
                            review as there are potential issues with the detections.
-                           Lists all the unique ambigious detections with references
+                           Lists all the unique ambiguous detections with references
                            to the file path and line numbers, detection details and
                            review comments to help explain the detection issue.
 
