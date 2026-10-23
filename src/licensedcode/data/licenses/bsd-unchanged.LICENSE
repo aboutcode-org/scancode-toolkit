@@ -8,8 +8,15 @@ notes: |
     Contains this extra text "in this position and unchanged" when compared
     with a bsd-simplified. Found in the BSD codebase, for instance at
     http://web.mit.edu/freebsd/head/sys/sys/sbuf.h
-spdx_license_key: LicenseRef-scancode-bsd-unchanged
+spdx_license_key: BSD-2-Clause-pos-unchanged
+other_spdx_license_keys:
+   - LicenseRef-scancode-bsd-unchanged
 minimum_coverage: 98
+other_urls:
+    - https://scancode-licensedb.aboutcode.org/bsd-unchanged
+    - https://cgit.freebsd.org/src/tree/usr.bin/sockstat/sockstat.c
+    - https://github.com/libarchive/libarchive/blob/master/libarchive_fe/line_reader.c
+    - https://github.com/freebsd/pkg/blob/main/src/add.c
 ---
 
 Redistribution and use in source and binary forms, with or without

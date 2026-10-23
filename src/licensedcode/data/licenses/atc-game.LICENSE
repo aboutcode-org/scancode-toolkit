@@ -2,6 +2,8 @@
 key: atc-game
 short_name: atc Game License
 name: atc Game License
+category: Permissive
+owner: Ed James
 spdx_license_key: atc-game
 other_urls:
     - https://github.com/vattam/BSDGames/blob/master/atc/extern.c#L36

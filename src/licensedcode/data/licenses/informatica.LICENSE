@@ -2,6 +2,8 @@
 key: informatica
 short_name: Informatica License
 name: Informatica License
+category: Permissive
+owner: Informatica Inc.
 spdx_license_key: Informatica
 other_urls:
     - https://raw.githubusercontent.com/landtuna/open-mtools/6c04c2882eca7c4313ec267766ea53ac9bfe129b/msend.c
