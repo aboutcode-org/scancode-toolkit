@@ -1,0 +1,34 @@
+package = [
+  {
+    name = "click",
+    version = "8.0.4",
+    dependencies = [
+      "setuptools",
+    ],
+    hashes = [
+      "sha256:d826a4f4d2f8087796d859424c585c5c99141d6b052140a3f707011d17960d75",
+    ],
+    source = {
+      type = "url",
+      url = "https://files.pythonhosted.org/packages/source/c/click/click-8.0.4.tar.gz",
+      hashes = {
+        sha256 = "d826a4f4d2f8087796d859424c585c5c99141d6b052140a3f707011d17960d75",
+      },
+    },
+  },
+  {
+    name = "setuptools",
+    version = "60.5.0",
+    dependencies = [],
+    hashes = [
+      "sha256:8b030b7e28b8b42c4b8e7e1b5b8c9d0d3a5a7f9a1f3a9e3a3c2a8f8a1a1a1a1a",
+    ],
+    source = {
+      type = "url",
+      url = "https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-60.5.0.tar.gz",
+      hashes = {
+        sha256 = "8b030b7e28b8b42c4b8e7e1b5b8c9d0d3a5a7f9a1f3a9e3a3c2a8f8a1a1a1a1a",
+      },
+    },
+  },
+]
