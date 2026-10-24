@@ -170,6 +170,7 @@ class BaseExtractedPythonLayout(models.DatafileHandler):
         datafile_name_patterns = (
             PipfileHandler.path_patterns + PipfileLockHandler.path_patterns
             + PipRequirementsFileHandler.path_patterns + PyprojectTomlHandler.path_patterns
+            + PylockTomlHandler.path_patterns
         )
 
         is_datafile_pypi = any(fnmatchcase(resource.path, pat) for pat in datafile_name_patterns)
@@ -1126,6 +1127,358 @@ class UvLockHandler(BaseUvPythonLayout):
         yield models.PackageData.from_data(package_data, package_only)
 
 
+PYLOCK_FILENAME_PATTERN = re.compile(r"^pylock(\.[^.]+)?\.toml$", re.IGNORECASE)
+
+
+def is_pylock_toml_file_name(file_name):
+    """
+    Return True if ``file_name`` matches the PEP 751 pylock.toml file naming
+    convention (e.g., ``pylock.toml`` or ``pylock.<name>.toml``).
+    """
+    return bool(file_name and PYLOCK_FILENAME_PATTERN.match(file_name))
+
+
+def is_pylock_toml(location):
+    """
+    Return True if the file at ``location`` is a PEP 751 pylock.toml file.
+    """
+    filename = fileutils.file_name(location)
+    if not is_pylock_toml_file_name(filename):
+        return False
+    try:
+        with open(location, "rb") as fp:
+            data = tomllib.load(fp)
+        return "lock-version" in data and ("packages" in data or "package" in data)
+    except Exception:
+        return False
+
+
+class BasePylockPythonLayout(BaseExtractedPythonLayout):
+    """
+    Base class for PEP 751 pylock.toml lockfiles.
+    """
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder):
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(
+                package_data, resource, codebase, package_adder
+            )
+            return
+
+        package_resource = None
+        if resource.has_parent():
+            siblings = resource.siblings(codebase)
+            pyprojects = [
+                r for r in siblings if r.name == "pyproject.toml" and r.package_data
+            ]
+            if pyprojects:
+                package_resource = pyprojects[0]
+            else:
+                setups = [
+                    r
+                    for r in siblings
+                    if r.name in ("setup.py", "setup.cfg", "PKG-INFO")
+                    and r.package_data
+                ]
+                if setups:
+                    package_resource = setups[0]
+
+        if not package_resource:
+            yield from yield_dependencies_from_package_resource(resource)
+            return
+
+        assert len(package_resource.package_data) == 1, (
+            f"Invalid package data for {package_resource.path}"
+        )
+        pkg_data = package_resource.package_data[0]
+        pkg_data = models.PackageData.from_dict(pkg_data)
+
+        package_uid = None
+        if pkg_data.purl:
+            package = models.Package.from_package_data(
+                package_data=pkg_data,
+                datafile_path=package_resource.path,
+            )
+            package_uid = package.package_uid
+            package.populate_license_fields()
+            yield package
+
+            root = package_resource.parent(codebase)
+            if root:
+                for pypi_res in cls.walk_pypi(resource=root, codebase=codebase):
+                    if package_uid and package_uid not in pypi_res.for_packages:
+                        package_adder(package_uid, pypi_res, codebase)
+                    yield pypi_res
+
+            yield package_resource
+
+        yield from yield_dependencies_from_package_data(
+            pkg_data, package_resource.path, package_uid
+        )
+        yield package_resource
+
+        for lock_file in package_resource.siblings(codebase):
+            if is_pylock_toml_file_name(lock_file.name):
+                yield from yield_dependencies_from_package_resource(
+                    lock_file, package_uid
+                )
+                if package_uid and package_uid not in lock_file.for_packages:
+                    package_adder(package_uid, lock_file, codebase)
+                yield lock_file
+
+
+class PylockTomlHandler(BasePylockPythonLayout):
+    datasource_id = "pypi_pylock_toml"
+    path_patterns = (
+        "*pylock.toml",
+        "*pylock.*.toml",
+    )
+    default_package_type = "pypi"
+    default_primary_language = "Python"
+    description = "Python pylock.toml lockfile"
+    documentation_url = "https://peps.python.org/pep-0751/"
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple(), _bare_filename=False):
+        if _bare_filename:
+            filename = fileutils.file_name(location)
+            return is_pylock_toml_file_name(filename)
+        return super().is_datafile(
+            location, filetypes=filetypes
+        ) and is_pylock_toml(location)
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location, "rb") as fp:
+            toml_data = tomllib.load(fp)
+
+        packages = toml_data.get("packages")
+        if packages is None:
+            packages = toml_data.get("package")
+        if packages is None:
+            return
+
+        dependencies = []
+        for package in packages:
+            # Skip the root editable / local directory project entry: the local
+            # project (e.g. pyproject.toml) is parsed independently and resolved
+            # dependencies are surfaced as their own entries.
+            directory = package.get("directory") or {}
+            if directory.get("editable") or directory.get("path") in (".", "./"):
+                continue
+
+            name = package.get("name")
+            if not name:
+                continue
+
+            version = package.get("version")
+
+            dependencies_for_resolved = []
+            for dep in package.get("dependencies") or []:
+                dep_name = dep.get("name")
+                if not dep_name:
+                    continue
+                dep_purl = PackageURL(
+                    type=cls.default_package_type,
+                    name=dep_name,
+                )
+                dep_version = dep.get("version")
+                dep_marker = dep.get("marker")
+
+                extracted_requirement = None
+                if dep_version and dep_marker:
+                    extracted_requirement = f"=={dep_version}; {dep_marker}"
+                elif dep_version:
+                    extracted_requirement = f"=={dep_version}"
+                elif dep_marker:
+                    extracted_requirement = dep_marker
+
+                dependencies_for_resolved.append(
+                    models.DependentPackage(
+                        purl=dep_purl.to_string(),
+                        extracted_requirement=extracted_requirement,
+                        scope="dependencies",
+                        is_runtime=True,
+                        is_optional=False,
+                        is_direct=True,
+                        is_pinned=bool(dep_version),
+                    ).to_dict()
+                )
+
+            sha256 = None
+            md5 = None
+            sha1 = None
+            sha512 = None
+            download_url = None
+            file_name = None
+            size = None
+
+            sdist = package.get("sdist")
+            if isinstance(sdist, dict):
+                download_url = sdist.get("url")
+                file_name = sdist.get("name")
+                if not file_name and download_url:
+                    file_name = posixpath.basename(download_url) or None
+                size = sdist.get("size")
+                hashes = sdist.get("hashes") or {}
+                if isinstance(hashes, dict):
+                    sha256 = hashes.get("sha256")
+                    md5 = hashes.get("md5")
+                    sha1 = hashes.get("sha1")
+                    sha512 = hashes.get("sha512")
+
+            wheels = package.get("wheels")
+            wheel_entries = []
+            if isinstance(wheels, list):
+                wheel_entries = [w for w in wheels if isinstance(w, dict)]
+            elif isinstance(wheels, dict):
+                for w_name, w_info in wheels.items():
+                    if isinstance(w_info, dict):
+                        w_dict = dict(w_info)
+                        w_dict.setdefault("name", w_name)
+                        wheel_entries.append(w_dict)
+
+            if wheel_entries:
+                first_wheel = wheel_entries[0]
+                if not download_url:
+                    download_url = first_wheel.get("url")
+                if not file_name:
+                    file_name = first_wheel.get("name")
+                    if not file_name and download_url:
+                        file_name = posixpath.basename(download_url) or None
+                if size is None:
+                    size = first_wheel.get("size")
+                hashes = first_wheel.get("hashes") or {}
+                if isinstance(hashes, dict):
+                    if not sha256:
+                        sha256 = hashes.get("sha256")
+                    if not md5:
+                        md5 = hashes.get("md5")
+                    if not sha1:
+                        sha1 = hashes.get("sha1")
+                    if not sha512:
+                        sha512 = hashes.get("sha512")
+
+            archive = package.get("archive")
+            if isinstance(archive, dict):
+                if not download_url:
+                    download_url = archive.get("url")
+                if not file_name:
+                    file_name = archive.get("name")
+                    if not file_name and download_url:
+                        file_name = posixpath.basename(download_url) or None
+                if size is None:
+                    size = archive.get("size")
+                hashes = archive.get("hashes") or {}
+                if isinstance(hashes, dict):
+                    if not sha256:
+                        sha256 = hashes.get("sha256")
+                    if not md5:
+                        md5 = hashes.get("md5")
+                    if not sha1:
+                        sha1 = hashes.get("sha1")
+                    if not sha512:
+                        sha512 = hashes.get("sha512")
+
+            vcs_url = None
+            vcs = package.get("vcs")
+            if isinstance(vcs, dict):
+                vcs_type = vcs.get("type")
+                vcs_repo_url = vcs.get("url")
+                commit_id = vcs.get("commit-id")
+                if vcs_repo_url:
+                    if vcs_type and not vcs_repo_url.startswith(f"{vcs_type}+"):
+                        vcs_url = f"{vcs_type}+{vcs_repo_url}"
+                    else:
+                        vcs_url = vcs_repo_url
+                    if commit_id:
+                        vcs_url = f"{vcs_url}@{commit_id}"
+
+            urls = get_pypi_urls(name, version)
+            if download_url:
+                urls["repository_download_url"] = download_url
+            if vcs_url:
+                urls["vcs_url"] = vcs_url
+
+            qualifiers = {}
+            if file_name:
+                qualifiers["file_name"] = file_name
+            if vcs_url:
+                qualifiers["vcs_url"] = vcs_url
+
+            resolved_extra_data = {}
+            if package.get("marker"):
+                resolved_extra_data["marker"] = package["marker"]
+            if package.get("requires-python"):
+                resolved_extra_data["python_requires"] = package["requires-python"]
+            if package.get("index"):
+                resolved_extra_data["index"] = package["index"]
+
+            resolved_package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language="Python",
+                name=name,
+                version=version,
+                qualifiers=qualifiers,
+                md5=md5,
+                sha1=sha1,
+                sha256=sha256,
+                sha512=sha512,
+                size=size,
+                is_virtual=True,
+                dependencies=dependencies_for_resolved,
+                extra_data=resolved_extra_data,
+                **urls,
+            )
+            resolved_package = models.PackageData.from_data(
+                resolved_package_data, package_only
+            )
+
+            dependencies.append(
+                models.DependentPackage(
+                    purl=resolved_package.purl,
+                    extracted_requirement=None,
+                    scope=None,
+                    is_runtime=True,
+                    is_optional=False,
+                    is_direct=False,
+                    is_pinned=bool(version),
+                    resolved_package=resolved_package.to_dict(),
+                ).to_dict()
+            )
+
+        extra_data = {}
+        requires_python = toml_data.get("requires-python")
+        if requires_python:
+            extra_data["python_requires"] = requires_python
+        lock_version = toml_data.get("lock-version")
+        if lock_version is not None:
+            extra_data["lock_version"] = lock_version
+        created_by = toml_data.get("created-by")
+        if created_by:
+            extra_data["created_by"] = created_by
+        environments = toml_data.get("environments")
+        if environments:
+            extra_data["environments"] = environments
+        extras = toml_data.get("extras")
+        if extras:
+            extra_data["extras"] = extras
+        dependency_groups = toml_data.get("dependency-groups")
+        if dependency_groups:
+            extra_data["dependency_groups"] = dependency_groups
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language="Python",
+            extra_data=extra_data,
+            dependencies=dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
 class PipInspectDeplockHandler(models.DatafileHandler):
     datasource_id = 'pypi_inspect_deplock'
     path_patterns = ('*pip-inspect.deplock',)
@@ -1497,6 +1850,7 @@ class ResolvedPurl(NamedTuple):
     """
     A resolved PURL
     """
+
     purl: PackageURL
     is_pinned: bool
 
