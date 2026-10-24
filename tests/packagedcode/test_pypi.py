@@ -458,6 +458,47 @@ class TestUvHandler(PackageTester):
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
 
+class TestPylockHandler(PackageTester):
+    # The attrs/cattrs fixture is trimmed from the PEP 751 example lock file:
+    # https://peps.python.org/pep-0751/#example
+
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pylock_toml(self):
+        test_file = self.get_test_loc('pypi/pylock/attrs/pylock.toml')
+        assert pypi.PylockTomlHandler.is_datafile(test_file)
+
+    def test_is_pylock_toml_named_variant(self):
+        test_file = self.get_test_loc('pypi/pylock/sdist/pylock.dev.toml')
+        assert pypi.PylockTomlHandler.is_datafile(test_file)
+
+    def test_is_pylock_toml_rejects_unrelated_toml(self):
+        test_file = self.get_test_loc('pypi/uv/attrs/pyproject.toml')
+        assert not pypi.PylockTomlHandler.is_datafile(test_file)
+
+    def test_parse_pylock_toml_attrs(self):
+        test_file = self.get_test_loc('pypi/pylock/attrs/pylock.toml')
+        package = pypi.PylockTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/pylock/attrs-pylock.toml-expected.json',
+            must_exist=False,
+        )
+        self.check_packages_data(
+            package, expected_loc, must_exist=False, regen=REGEN_TEST_FIXTURES,
+        )
+
+    def test_parse_pylock_toml_sdist_and_vcs(self):
+        test_file = self.get_test_loc('pypi/pylock/sdist/pylock.dev.toml')
+        package = pypi.PylockTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/pylock/sdist-pylock.dev.toml-expected.json',
+            must_exist=False,
+        )
+        self.check_packages_data(
+            package, expected_loc, must_exist=False, regen=REGEN_TEST_FIXTURES,
+        )
+
+
 class TestPipInspectDeplockHandler(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 

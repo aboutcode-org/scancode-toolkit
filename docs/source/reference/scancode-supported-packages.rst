@@ -812,6 +812,14 @@ parsers in scancode-toolkit during documentation builds.
      - ``pypi_poetry_pyproject_toml``
      - Python
      - https://packaging.python.org/en/latest/specifications/pyproject-toml/
+   * - Python pylock.toml lockfile
+     - ``*pylock.toml``
+       ``*pylock.*.toml``
+     - ``pypi``
+     - ``linux``, ``win``, ``mac``
+     - ``pypi_pylock_toml``
+     - Python
+     - https://peps.python.org/pep-0751/
    * - Python pyproject.toml
      - ``*pyproject.toml``
      - ``pypi``

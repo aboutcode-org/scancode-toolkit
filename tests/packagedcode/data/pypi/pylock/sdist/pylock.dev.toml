@@ -1,0 +1,21 @@
+# Synthetic pylock.toml test fixture (not derived from a real project) used to
+# exercise the sdist and VCS-sourced package fields defined by PEP 751:
+# https://peps.python.org/pep-0751/
+# This also exercises the ``pylock.<name>.toml`` naming variant.
+lock-version = '1.0'
+requires-python = '>=3.10'
+created-by = 'pip'
+
+[[packages]]
+name = 'demo-sdist-pkg'
+version = '1.2.3'
+sdist = {name = 'demo-sdist-pkg-1.2.3.tar.gz', url = 'https://files.example.com/demo-sdist-pkg-1.2.3.tar.gz', size = 1234, hashes = {sha256 = 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}}
+
+[[packages]]
+name = 'demo-vcs-pkg'
+marker = "sys_platform == 'linux'"
+
+[packages.vcs]
+type = 'git'
+url = 'https://example.com/demo/demo-vcs-pkg.git'
+commit-id = '1234567890abcdef1234567890abcdef12345678'
