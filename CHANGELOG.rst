@@ -4,6 +4,11 @@ Changelog
 Next release
 --------------
 
+- Add support for PEP 751 ``pylock.toml`` lockfiles in ``packagedcode``,
+  including support for named lockfiles (such as ``pylock.<name>.toml``),
+  extracting resolved dependencies, hashes, wheels, sdist, VCS, and archive sources.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4638
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

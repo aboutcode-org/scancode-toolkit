@@ -1,0 +1,13 @@
+# Test pylock.toml with VCS and archive packages based on PEP 751
+# SPDX-License-Identifier: MIT
+lock-version = "1.0"
+requires-python = ">=3.10"
+
+[[packages]]
+name = "sample-git-pkg"
+vcs = { type = "git", url = "https://github.com/example/sample-git-pkg.git", commit-id = "0123456789abcdef0123456789abcdef01234567" }
+
+[[packages]]
+name = "sample-archive-pkg"
+version = "1.0.0"
+archive = { url = "https://example.com/sample-archive-pkg-1.0.0.zip", name = "sample-archive-pkg-1.0.0.zip", size = 1024, hashes = { sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" } }
