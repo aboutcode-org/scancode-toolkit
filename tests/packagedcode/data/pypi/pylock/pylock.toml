@@ -1,0 +1,22 @@
+lock-version = '1.0'
+environments = ["sys_platform == 'win32'", "sys_platform == 'linux'"]
+requires-python = '==3.12'
+created-by = 'mousebender'
+
+[[packages]]
+name = 'attrs'
+version = '25.1.0'
+requires-python = '>=3.8'
+
+[[packages]]
+name = 'cattrs'
+version = '24.1.2'
+requires-python = '>=3.8'
+dependencies = [
+    {name = 'attrs'},
+]
+
+[[packages]]
+name = 'numpy'
+version = '2.2.3'
+requires-python = '>=3.10'
