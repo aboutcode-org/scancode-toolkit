@@ -103,7 +103,7 @@ class Gibberish(object):
         self.persist_model()
 
     def detect_gibberish(self, text):
-        text = ''.join(self.normalize(text))
+        # avg_transition_prob() already normalizes text through ngram()
         return self.avg_transition_prob(text, self.mat) < self.thresh
 
     def percent_gibberish(self, text):

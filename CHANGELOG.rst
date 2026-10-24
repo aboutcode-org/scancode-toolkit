@@ -26,6 +26,11 @@ Next release
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
+- Speed up copyright detection: skip markup stripping on lines without markup,
+  run gibberish detection only on lines with a year or a copyright marker and
+  stop normalizing lines twice in gibberish detection. Results are unchanged.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5374
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
