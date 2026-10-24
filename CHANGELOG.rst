@@ -3,6 +3,7 @@ Changelog
 
 Next release
 --------------
+ - Fix python_version operator list in PyPI dependency marker parsing to include ``>``, ``!=``, and ``~=``.
 
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
