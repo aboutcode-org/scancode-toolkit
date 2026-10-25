@@ -15,5 +15,8 @@
     }
   ],
   "vcs_url": "https://github.com/undertow-io/undertow/undertow-websockets-jsr@521b30d7017994ce5d028d3fde2384c7913e9bb6",
-  "code_view_url": "https://github.com/undertow-io/undertow/undertow-websockets-jsr"
+  "code_view_url": "https://github.com/undertow-io/undertow/undertow-websockets-jsr",
+  "extra_data": {
+    "pname": "Undertow WebSockets JSR356 implementations"
+  }
 }

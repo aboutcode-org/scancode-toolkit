@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Maven Wagon Lightweight HTTP Provider"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven.wagon/wagon-http-shared@1.0-beta-2",

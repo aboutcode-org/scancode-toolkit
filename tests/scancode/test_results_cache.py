@@ -82,3 +82,23 @@ class TestResultsCache(FileDrivenTesting):
         with open(results_cache_file_location) as f:
             results_cache_data = json.load(f)
         assert results_cache_data == test_data
+
+    def test_get_results_cache_data_with_corrupt_cache_file(self):
+        import os
+        temp_dir = self.get_temp_dir()
+        cache_subdir = join(
+            temp_dir,
+            'b0', 'e3',
+            'dd13b9b5980bb1ca7aab89e5490cb136952374489a755947ac004309b035',
+        )
+        os.makedirs(cache_subdir)
+        corrupt_file = join(cache_subdir, 'licenses')
+        with open(corrupt_file, 'w') as f:
+            f.write('{broken_json')
+        result = results_cache.get_results_cache_data(
+            results_cache_index=self.test_results_cache_index,
+            plugin_name='licenses',
+            results_cache_dir=temp_dir,
+        )
+        assert result == {}
+

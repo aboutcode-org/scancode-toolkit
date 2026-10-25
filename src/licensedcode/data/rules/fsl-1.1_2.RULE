@@ -1,0 +1,10 @@
+---
+license_expression: fsl-1.1-apache-2.0
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+notes: Rule based on the manifest file of the liquidbase source jar. 
+---
+
+https://fsl.software/FSL-1.1-ALv2.template.md
