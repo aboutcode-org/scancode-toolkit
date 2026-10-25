@@ -185,7 +185,7 @@ def flatten_scan(scan, headers):
             inf = dict(path=path)
             inf['copyright'] = copyr['copyright']
             inf['start_line'] = copyr['start_line']
-            inf['end_line'] = copyr['start_line']
+            inf['end_line'] = copyr['end_line']
             collect_keys(inf, 'copyright')
             yield inf
 
@@ -193,7 +193,7 @@ def flatten_scan(scan, headers):
             inf = dict(path=path)
             inf['holder'] = copyr['holder']
             inf['start_line'] = copyr['start_line']
-            inf['end_line'] = copyr['start_line']
+            inf['end_line'] = copyr['end_line']
             collect_keys(inf, 'copyright')
             yield inf
 
@@ -201,7 +201,7 @@ def flatten_scan(scan, headers):
             inf = dict(path=path)
             inf['author'] = copyr['author']
             inf['start_line'] = copyr['start_line']
-            inf['end_line'] = copyr['start_line']
+            inf['end_line'] = copyr['end_line']
             collect_keys(inf, 'copyright')
             yield inf
 
