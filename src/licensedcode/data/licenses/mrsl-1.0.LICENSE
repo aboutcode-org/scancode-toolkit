@@ -5,15 +5,27 @@ name: MitsuoLabs Reciprocity and Stewardship License 1.0
 category: Copyleft
 owner: MitsuoLabs
 homepage_url: https://mitsuolabs.github.io/LegalFramework/mrsl-1.0.txt
+notes: |
+    Two-part license. Part I is a strong and network copyleft grant. Part II
+    (Stewardship Rider) is an optional covenant for opted-in Stewards.
+    The text contains placeholders such as [[YEAR]] and [[LICENSOR_NAME]].
 spdx_license_key: LicenseRef-scancode-mrsl-1.0
 text_urls:
     - https://mitsuolabs.github.io/LegalFramework/mrsl-1.0.txt
 other_urls:
     - https://github.com/MitsuoLabs/LegalFramework
-notes: |
-    Two-part license. Part I is a strong and network copyleft grant. Part II
-    (Stewardship Rider) is an optional covenant for opted-in Stewards.
-    The text contains placeholders such as [[YEAR]] and [[LICENSOR_NAME]].
+ignorable_copyrights:
+    - (c) 2026 Brazil as Jurisdiction and Stewardship
+    - Core Copyright Grant
+ignorable_holders:
+    - Brazil as Jurisdiction and Stewardship
+    - Core Grant
+ignorable_urls:
+    - https://github.com/MitsuoLabs/LegalFramework/mrsl-1.0.txt
+    - https://mitsuolabs.github.io/LegalFramework/mmpeula-1.0.txt
+    - https://orcid.org/0009-0006-6909-0990
+ignorable_emails:
+    - contact@mitsuolabs.com
 ---
 
 The MitsuoLabs™ Reciprocity and Stewardship License
