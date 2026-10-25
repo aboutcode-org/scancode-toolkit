@@ -97,6 +97,29 @@ def test_flatten_scan_minimal():
     check_json(result, expected_file, regen=REGEN_TEST_FIXTURES)
 
 
+@pytest.mark.parametrize('group,key', [
+    ('copyrights', 'copyright'),
+    ('holders', 'holder'),
+    ('authors', 'author'),
+])
+def test_flatten_scan_preserves_multiline_detection_ranges(group, key):
+    scan = [{
+        'path': 'example.py',
+        group: [{key: 'Example', 'start_line': 10, 'end_line': 13}],
+    }]
+    headers = {name: [] for name in ('info', 'license', 'copyright', 'email', 'url', 'package')}
+
+    rows = list(flatten_scan(scan, headers))
+
+    assert rows[1] == {
+        'path': 'example.py',
+        key: 'Example',
+        'start_line': 10,
+        'end_line': 13,
+    }
+    assert headers['copyright'] == [key, 'start_line', 'end_line']
+
+
 def test_flatten_scan_can_process_path_with_and_without_leading_slash():
     test_json = test_env.get_test_loc('csv/flatten_scan/path_with_and_without_leading_slash.json')
     scan = load_scan(test_json)
