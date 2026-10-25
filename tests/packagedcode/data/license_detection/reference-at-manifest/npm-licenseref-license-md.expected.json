@@ -1,0 +1,424 @@
+{
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "licenseref-license-md",
+      "version": "1.0.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/licenseref-license-md/-/licenseref-license-md-1.0.0.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "proprietary-license",
+              "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
+              "from_file": "npm-licenseref-license-md/package.json",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 80.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 80,
+              "rule_identifier": "proprietary-license_1064.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_1064.RULE",
+              "matched_text": "LicenseRef-LICENSE.md"
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "npm-licenseref-license-md/LICENSE.md",
+              "start_line": 4,
+              "end_line": 21,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 161,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+              "matched_text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+              "matched_text_diagnostics": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+            }
+          ],
+          "identifier": "mit-73c15105-e31a-dec0-2ba9-47f75217c0a6",
+          "detection_log": [
+            "package-unknown-reference-to-local-file"
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- LicenseRef-LICENSE.md\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/licenseref-license-md",
+      "repository_download_url": "https://registry.npmjs.org/licenseref-license-md/-/licenseref-license-md-1.0.0.tgz",
+      "api_data_url": "https://registry.npmjs.org/licenseref-license-md/1.0.0",
+      "package_uid": "pkg:npm/licenseref-license-md@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/licenseref-license-md@1.0.0"
+    }
+  ],
+  "dependencies": [],
+  "license_detections": [
+    {
+      "identifier": "mit-73c15105-e31a-dec0-2ba9-47f75217c0a6",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "detection_log": [
+        "package-unknown-reference-to-local-file"
+      ],
+      "reference_matches": [
+        {
+          "license_expression": "proprietary-license",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
+          "from_file": "npm-licenseref-license-md/package.json",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
+          "score": 80.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 80,
+          "rule_identifier": "proprietary-license_1064.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_1064.RULE",
+          "matched_text": "LicenseRef-LICENSE.md"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "npm-licenseref-license-md/LICENSE.md",
+          "start_line": 4,
+          "end_line": 21,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "matched_text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+          "matched_text_diagnostics": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+        }
+      ]
+    },
+    {
+      "identifier": "mit-a49ba196-b226-b629-384f-b03b0cd83741",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ],
+      "reference_matches": [
+        {
+          "license_expression": "proprietary-license",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
+          "from_file": "npm-licenseref-license-md/package.json",
+          "start_line": 2,
+          "end_line": 2,
+          "matcher": "2-aho",
+          "score": 80.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 80,
+          "rule_identifier": "proprietary-license_1064.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_1064.RULE",
+          "matched_text": "  \"name\": \"licenseref-license-md\",",
+          "matched_text_diagnostics": "licenseref-license-md\","
+        },
+        {
+          "license_expression": "proprietary-license",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
+          "from_file": "npm-licenseref-license-md/package.json",
+          "start_line": 4,
+          "end_line": 4,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "proprietary-license_718.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_718.RULE",
+          "matched_text": "  \"license\": \"LicenseRef-LICENSE.md\"",
+          "matched_text_diagnostics": "license\": \"LicenseRef-LICENSE.md\""
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "npm-licenseref-license-md/LICENSE.md",
+          "start_line": 4,
+          "end_line": 21,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "matched_text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+          "matched_text_diagnostics": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+        }
+      ]
+    },
+    {
+      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "npm-licenseref-license-md/LICENSE.md",
+          "start_line": 4,
+          "end_line": 21,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "matched_text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+          "matched_text_diagnostics": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/licenseref-license-md@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "npm-licenseref-license-md/LICENSE.md",
+              "start_line": 4,
+              "end_line": 21,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 161,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+              "matched_text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+              "matched_text_diagnostics": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+            }
+          ],
+          "detection_log": [],
+          "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 96.99,
+      "scan_errors": []
+    },
+    {
+      "path": "package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "licenseref-license-md",
+          "version": "1.0.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/licenseref-license-md/-/licenseref-license-md-1.0.0.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "proprietary-license",
+                  "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
+                  "from_file": "npm-licenseref-license-md/package.json",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 80.0,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 80,
+                  "rule_identifier": "proprietary-license_1064.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_1064.RULE",
+                  "matched_text": "LicenseRef-LICENSE.md"
+                },
+                {
+                  "license_expression": "mit",
+                  "license_expression_spdx": "MIT",
+                  "from_file": "npm-licenseref-license-md/LICENSE.md",
+                  "start_line": 4,
+                  "end_line": 21,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 161,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "mit.LICENSE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+                  "matched_text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+                  "matched_text_diagnostics": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+                }
+              ],
+              "identifier": "mit-73c15105-e31a-dec0-2ba9-47f75217c0a6",
+              "detection_log": [
+                "package-unknown-reference-to-local-file"
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- LicenseRef-LICENSE.md\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://www.npmjs.com/package/licenseref-license-md",
+          "repository_download_url": "https://registry.npmjs.org/licenseref-license-md/-/licenseref-license-md-1.0.0.tgz",
+          "api_data_url": "https://registry.npmjs.org/licenseref-license-md/1.0.0",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/licenseref-license-md@1.0.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/licenseref-license-md@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "proprietary-license",
+              "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
+              "from_file": "npm-licenseref-license-md/package.json",
+              "start_line": 2,
+              "end_line": 2,
+              "matcher": "2-aho",
+              "score": 80.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 80,
+              "rule_identifier": "proprietary-license_1064.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_1064.RULE",
+              "matched_text": "  \"name\": \"licenseref-license-md\",",
+              "matched_text_diagnostics": "licenseref-license-md\","
+            },
+            {
+              "license_expression": "proprietary-license",
+              "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
+              "from_file": "npm-licenseref-license-md/package.json",
+              "start_line": 4,
+              "end_line": 4,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "proprietary-license_718.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_718.RULE",
+              "matched_text": "  \"license\": \"LicenseRef-LICENSE.md\"",
+              "matched_text_diagnostics": "license\": \"LicenseRef-LICENSE.md\""
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "npm-licenseref-license-md/LICENSE.md",
+              "start_line": 4,
+              "end_line": 21,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 161,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+              "matched_text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+              "matched_text_diagnostics": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+            }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "identifier": "mit-a49ba196-b226-b629-384f-b03b0cd83741"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 58.33,
+      "scan_errors": []
+    }
+  ]
+}
