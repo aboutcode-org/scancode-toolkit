@@ -1,0 +1,53 @@
+---
+key: engram-quest-plugin-1.0
+short_name: Engram Quest Plugin License v1.0
+name: Engram Quest Plugin License v1.0
+category: Non-Commercial
+owner: bahfahh
+homepage_url: https://github.com/bahfahh/engram-quest/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-engram-quest-plugin-1.0
+ignorable_copyrights:
+    - Copyright 2026 powen
+ignorable_holders:
+    - powen
+---
+
+# Engram Quest Plugin License
+
+Version 1.0, April 2026
+
+This license ("License") governs the use, copying, modification, and distribution of the Engram Quest Obsidian plugin and its associated source code ("the Software").
+
+## 1. Permission and Usage
+
+Subject to the terms of this License, you are granted a worldwide, non-exclusive, no-charge, royalty-free license to:
+- Use the Software for personal or internal business purposes within the Obsidian application.
+- View, copy, and modify the source code for personal use or to contribute back to this project.
+- Redistribute the Software in its original or modified form, provided that all copies include this License.
+
+## 2. Non-Compete Restriction (CRITICAL)
+
+You may **NOT** use the Software, its source code, or any derivative works to create, develop, or distribute a competing Obsidian plugin. A "competing plugin" is defined as any Obsidian plugin that provides substantially similar core functionality, including but not limited to:
+- Interactive memory maps or quest-based visualizations of Obsidian vaults.
+- Gamified review systems or deck-based macro-review features.
+- Any tool designed to directly replace the Software's primary value proposition within the Obsidian ecosystem.
+
+## 3. Commercial Use
+
+- Individual and internal business use is permitted.
+- You may NOT sell the Software or any derivative works based on the Software.
+- Redistribution as part of a commercial service or paid collection requires explicit written permission from the author.
+
+## 4. No Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+## 5. Intellectual Property
+
+All trademarks, service marks, and trade names associated with the Software are the property of the author. Nothing in this License grants you any right to use the author's trademarks or trade names.
+
+## 6. Governing Terms
+
+If any provision of this License is found to be unenforceable, the remaining provisions will continue in full force and effect.
+
+Copyright 2026 powen. All rights reserved.

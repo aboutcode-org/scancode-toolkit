@@ -109,7 +109,7 @@ license_detections:
         end_line: 260
         matcher: 2-aho
         score: '100.0'
-        matched_length: '194'
+        matched_length: 194
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-2.0-plus_and_gpl-2.0-plus_7.RULE

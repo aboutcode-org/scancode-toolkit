@@ -216,7 +216,7 @@ other_license_detections:
         license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 188
-        end_line: '194'
+        end_line: 194
         matcher: 1-hash
         score: '100.0'
         matched_length: 36
@@ -239,7 +239,7 @@ other_license_detections:
       - license_expression: flex-2.5
         license_expression_spdx: BSD-3-Clause-flex
         from_file:
-        start_line: '197'
+        start_line: 197
         end_line: 209
         matcher: 1-hash
         score: '100.0'

@@ -2,7 +2,7 @@
 key: fsl-1.0-mit
 short_name: FSL-1.0-MIT
 name: Functional Source License, Version 1.0, MIT Change License
-category: Source-available
+category: Non-Commercial
 owner: Sentry
 homepage_url: https://github.com/getsentry/fsl.software/blob/main/FSL-1.0-MIT.template.md
 spdx_license_key: LicenseRef-scancode-fsl-1.0-mit

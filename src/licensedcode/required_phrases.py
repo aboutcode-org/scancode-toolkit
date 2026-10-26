@@ -729,7 +729,7 @@ def add_required_phrases(
     validate_and_reindex(validate, reindex, verbose)
 
 
-def validate_and_reindex(validate, reindex, verbose):
+def validate_and_reindex(validate=True, reindex=True, verbose=False):
     if validate:
         if verbose:
             click.echo('Validate all rules and licenses for all languages...')
@@ -907,13 +907,21 @@ def generate_new_required_phrase_rules(
         required_phrase_texts = []
         if rule.is_from_license:
             lic = licenses_by_key[license_expression]
-            required_phrase_texts = [
-                lic.name,
-                lic.short_name,
-                lic.spdx_license_key,
-            ] + list(lic.other_spdx_license_keys or [])
+            if not lic.is_exception:
+                if "license" in lic.name.lower():
+                    required_phrase_texts.append(lic.name)
+                if "license" in lic.short_name.lower() and lic.short_name != lic.name:
+                    required_phrase_texts.append(lic.short_name)
+                if not "LicenseRef-scancode" in lic.spdx_license_key:
+                    required_phrase_texts.append(lic.spdx_license_key)
+                for other_spdx_lic in lic.other_spdx_license_keys:
+                    if not "LicenseRef-scancode" in other_spdx_lic:
+                        required_phrase_texts.append(other_spdx_lic)
         else:
             required_phrase_texts = get_required_phrase_verbatim(rule.text)
+        
+        if verbose:
+            click.echo(f'Processing rule: {rule!r}: required phrases: {required_phrase_texts}')
 
         for required_phrase_text in required_phrase_texts:
             if verbose:

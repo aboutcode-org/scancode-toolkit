@@ -405,6 +405,59 @@ class TestPoetryHandler(PackageTester):
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
+class TestUvHandler(PackageTester):
+    # Test fixtures derived from python-attrs/attrs at release 26.1.0
+    # (MIT-licensed):
+    #   https://github.com/python-attrs/attrs/blob/26.1.0/pyproject.toml
+    #   https://github.com/python-attrs/attrs/blob/26.1.0/uv.lock
+
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pyproject_toml_uv(self):
+        test_file = self.get_test_loc('pypi/uv/attrs/pyproject.toml')
+        assert pypi.UvPyprojectTomlHandler.is_datafile(test_file)
+
+    def test_uv_pyproject_toml_excluded_from_standard_pyproject_handler(self):
+        test_file = self.get_test_loc('pypi/uv/attrs/pyproject.toml')
+        assert not pypi.PyprojectTomlHandler.is_datafile(test_file)
+
+    def test_parse_pyproject_toml_uv_attrs(self):
+        test_file = self.get_test_loc('pypi/uv/attrs/pyproject.toml')
+        package = pypi.UvPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/uv/attrs-pyproject.toml-expected.json',
+            must_exist=False,
+        )
+        self.check_packages_data(
+            package, expected_loc, must_exist=False, regen=REGEN_TEST_FIXTURES,
+        )
+
+    def test_is_uv_lock(self):
+        test_file = self.get_test_loc('pypi/uv/attrs/uv.lock')
+        assert pypi.UvLockHandler.is_datafile(test_file)
+
+    def test_parse_uv_lock_attrs(self):
+        test_file = self.get_test_loc('pypi/uv/attrs/uv.lock')
+        package = pypi.UvLockHandler.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/uv/attrs-uv.lock-expected.json',
+            must_exist=False,
+        )
+        self.check_packages_data(
+            package, expected_loc, must_exist=False, regen=REGEN_TEST_FIXTURES,
+        )
+
+    def test_package_scan_uv_end_to_end(self):
+        test_dir = self.get_test_loc('pypi/uv/attrs/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc(
+            'pypi/uv/attrs-package-assembly-expected.json',
+            must_exist=False,
+        )
+        run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+
 class TestPipInspectDeplockHandler(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 

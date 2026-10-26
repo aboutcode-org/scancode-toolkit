@@ -1,0 +1,68 @@
+---
+key: dotcms-aug-2025
+short_name: dotCMS Aditional Use Grant 2025
+name: dotCMS Aditional Use Grant 2025
+category: Proprietary Free
+owner: dotCMS
+homepage_url: https://github.com/dotCMS/core/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-dotcms-aug-2025
+other_urls:
+    - https://www.dotcms.com/pricing
+    - https://spdx.org/licenses/BUSL-1.1.html
+ignorable_copyrights:
+    - Copyright (c) 2025 dotCMS
+ignorable_holders:
+    - dotCMS
+ignorable_urls:
+    - https://www.dotcms.com/pricing
+---
+
+Licensor:             dotCMS LLC
+
+Licensed Work:        The Licensed Work is Copyright © 2025 dotCMS LCC.
+
+Additional Use Grant:
+
+You may use the Licensed Work in Production for your own company, organizational
+or personal use at no cost as long as your Total Finances do not exceed US
+$5,000,000 USD for the most recent 12-month period, provided that dotCMS LCC
+will not be liable to you in any way, including for any damages, including
+general, special, incidental or consequential damages, arising out of such use.
+
+Definitions:
+
+"Total Finances" means the largest of your aggregate gross revenues, entire
+budget, and/or funding (no matter the source); "you" and "your" include (without
+limitation) any individual or entity agreeing to these terms and any affiliates
+of such individual or entity.  Additionally, if you are a company or service
+provider building/hosting dotCMS for other organizations, including parent 
+organizations or 3rd party clients, then Total Finances also includes those of 
+any commerical beneficiary of the software.
+
+For example:
+   Individual developer creating a plugin or hobby project — No cost.
+   Small business with total finances under $5,000,000 USD — No cost.
+   Small agency building projects for small customers — No cost.
+   Large enterprise non-production use — No cost.
+   Large enterprise production use — Commercial license required.
+   Small agency building/hosting project for large enterprise - Commercial
+    license required.
+
+“Production” includes all instances that are set up in any step of an SDLC
+process whereby the output of the content/site/api are being delivered to public
+or private audiences, via dotCMS or 3rd party systems.
+
+For example:
+   Production: a dotCMS installation that publishes content or apis to
+    a 3rd party application, hosting provider or CDN.
+   Production: An instance set up that multiple people access for acceptance
+    and approvals.
+   Development: an instance that is set up for an internal evaluation.
+   Development: A local instance used to develop a new plugin or website.
+
+Change Date:     Four years from August 01, 2025
+
+Change License:  GNU General Public License (GPL) v3
+
+For information about alternative licensing arrangements, please visit
+https://www.dotcms.com/pricing

@@ -2,7 +2,7 @@
 key: zeebe-community-1.0
 short_name: Zeebe Community License v1.0
 name: Zeebe Community License v1.0
-category: Source-available
+category: Non-Commercial
 owner: Camunda Community Hub
 homepage_url: https://camunda.com/legal/terms/cloud-terms-and-conditions/zeebe-community-license-v1-0/
 spdx_license_key: LicenseRef-scancode-zeebe-community-1.0

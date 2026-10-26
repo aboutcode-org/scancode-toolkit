@@ -2,7 +2,7 @@
 key: snowplow-person-academic-1.0
 short_name: Snowplow Personal-Academic License 1.0
 name: Snowplow Personal & Academic License Agreement 1.0
-category: Proprietary Free
+category: Non-Commercial
 owner: Snowplow
 homepage_url: https://github.com/snowplow/dbt-snowplow-normalize/blob/main/LICENSE
 spdx_license_key: LicenseRef-scancode-snowplow-person-academic-1.0

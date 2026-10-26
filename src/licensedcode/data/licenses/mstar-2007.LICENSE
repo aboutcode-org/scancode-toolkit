@@ -1,0 +1,22 @@
+---
+key: mstar-2007
+short_name: MStar Proprietary License 2007
+name: MStar Proprietary License 2007
+category: Proprietary Free
+owner: MStar Semiconductor
+homepage_url: https://github.com/Benjamin-Dobell/kogan-tv-gpl/blob/master/Kernel_updated/mstar/mstar/ir/mdrv_ir.c
+spdx_license_key: LicenseRef-scancode-mstar-2007
+text_urls:
+    - https://github.com/GracieZhou/test/blob/master/CODE/android/vendor/mstar/supernova/projects/devices/demodulator/device_demodulator_msb1240.cpp
+---
+
+Unless otherwise stipulated in writing, any and all information contained
+herein regardless in any format shall remain the sole proprietary of
+MStar Semiconductor Inc. and be kept in strict confidence
+(MStar Confidential Information) by the recipient.
+
+Any unauthorized act including without limitation unauthorized disclosure,
+copying, use, reproduction, sale, distribution, modification, disassembling,
+reverse engineering and compiling of the contents of MStar Confidential
+Information is unlawful and strictly prohibited. MStar hereby reserves the
+rights to any and all damages, losses, costs and expenses resulting therefrom.

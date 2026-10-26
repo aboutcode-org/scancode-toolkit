@@ -1,0 +1,1 @@
+3. All patches / PRs are owned by their authors. There SHALL NOT be any copyright assignment process.

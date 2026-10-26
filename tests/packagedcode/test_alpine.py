@@ -59,7 +59,7 @@ class TestAlpineInstalledPackage(PackageTester):
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
     def test_can_scan_installed_system_package_in_alpine_container_layer(self):
-        test_dir = self.extract_test_tar('alpine/alpine-container-layer.tar.xz')
+        test_dir = self.extract_test_tar('alpine/alpine-container-layer.tar.xz', filter='fully_trusted')
         expected_file = self.get_test_loc('alpine/alpine-container-layer.tar.xz-scan-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
@@ -67,7 +67,7 @@ class TestAlpineInstalledPackage(PackageTester):
 
     def test_can_get_installed_system_packages_with_license_from_alpine_container_layer(self):
         from packagedcode.plugin_package import get_installed_packages
-        test_dir = self.extract_test_tar('alpine/alpine-container-layer.tar.xz')
+        test_dir = self.extract_test_tar('alpine/alpine-container-layer.tar.xz', filter='fully_trusted')
         expected_file = self.get_test_loc('alpine/alpine-container-layer.tar.xz-get-installed-expected.json')
         results = list(get_installed_packages(test_dir))
         self.check_packages_data(results, expected_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)

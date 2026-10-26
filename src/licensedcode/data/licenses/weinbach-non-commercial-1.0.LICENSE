@@ -1,0 +1,73 @@
+---
+key: weinbach-non-commercial-1.0
+short_name: Weinbach Forking Attribution Non-Commercial 1.0
+name: Weinbach Forking and Attribution License with Commercial Permission Requirement 1.0
+category: Non-Commercial
+owner: Max Weinbach
+homepage_url: https://github.com/mweinbach/agent-coworker/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-weinbach-non-commercial-1.0
+ignorable_copyrights:
+    - Copyright (c) 2026 Max Weinbach
+ignorable_holders:
+    - Max Weinbach
+---
+
+Forking and Attribution License with Commercial Permission Requirement 1.0
+
+Copyright (c) 2026 Max Weinbach
+
+Permission is granted to any person obtaining a copy of this software and any
+associated documentation files (the "Software") to use, copy, modify, fork,
+publish, and distribute the Software and derivative works, subject to the
+conditions below.
+
+1. Attribution and original project notice.
+
+If you publish, distribute, or otherwise make the Software or a derivative work
+available to others, you must:
+
+- keep this license text and all existing copyright notices;
+- clearly state that the work is based on the original project;
+- clearly identify the original project by name and, where reasonably practical,
+  include a link to the original repository or homepage;
+- clearly state any material changes you made; and
+- not state or imply that the original author or project endorses your fork,
+  product, or organization unless you have separate written permission.
+
+2. Selling products based on the Software requires permission first.
+
+You may not sell the Software or any derivative work, and you may not include
+the Software or any derivative work in a paid product, paid service,
+subscription, hosted offering, or other commercial offering, without the prior
+written permission of Max Weinbach.
+
+Commercial permission requests should be sent to Max Weinbach through the
+original project repository or another contact method that Max Weinbach makes
+available.
+
+For clarity, this restriction applies when access to the Software or a
+derivative work is sold, licensed for a fee, bundled into something sold for a
+fee, or offered as part of a paid product or service.
+
+Voluntary donations that are not required for access to the Software do not by
+themselves count as selling under this license.
+
+3. No trademark rights.
+
+This license does not grant any right to use the name, branding, logo, or marks
+of the original project except as needed for accurate attribution.
+
+4. Termination.
+
+If you violate this license, your rights under it terminate automatically. Those
+rights may be reinstated only by the written permission of Max Weinbach.
+
+5. No warranty.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM,
+OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

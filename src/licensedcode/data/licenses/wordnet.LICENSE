@@ -5,9 +5,13 @@ name: Wordnet License
 category: Permissive
 owner: Princeton University
 homepage_url: http://wordnetcode.princeton.edu
-spdx_license_key: LicenseRef-scancode-wordnet
+spdx_license_key: WordNet
+other_spdx_license_keys:
+    - LicenseRef-scancode-wordnet
 text_urls:
     - http://wordnetcode.princeton.edu/3.0/LICENSE
+other_urls:
+    - https://wordnet.princeton.edu/license-and-commercial-use
 ignorable_copyrights:
     - Copyright by Princeton University
 ignorable_holders:

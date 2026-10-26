@@ -1,0 +1,9 @@
+---
+license_expression: mit-proprietary
+is_license_notice: yes
+is_required_phrase: yes
+relevance: 90
+---
+
+Permission is not granted to use this software or any of the associated files
+as sample data for the purposes of building machine learning models.

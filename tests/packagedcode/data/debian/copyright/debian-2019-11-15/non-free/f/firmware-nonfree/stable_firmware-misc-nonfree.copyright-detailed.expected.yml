@@ -293,7 +293,7 @@ license_detections:
         license_expression_spdx: Linux-OpenIB
         from_file:
         start_line: 173
-        end_line: '193'
+        end_line: 193
         matcher: 2-aho
         score: '100.0'
         matched_length: 143
@@ -334,7 +334,7 @@ license_detections:
         end_line: 223
         matcher: 2-aho
         score: '100.0'
-        matched_length: '199'
+        matched_length: 199
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: proprietary-license_334.RULE

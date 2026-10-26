@@ -65,7 +65,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "classworlds"
+  },
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1/",
   "repository_download_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.jar",

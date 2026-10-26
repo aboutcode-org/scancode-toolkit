@@ -81,7 +81,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Cobertura Maven Plugin"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/net.sourceforge.cobertura/cobertura@1.9",

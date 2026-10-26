@@ -1,0 +1,19 @@
+{
+  "files": [
+    {
+      "path": "samples",
+      "type": "directory",
+      "scan_errors": []
+    },
+    {
+      "path": "samples/README",
+      "type": "file",
+      "scan_errors": []
+    },
+    {
+      "path": "samples/screenshot.png",
+      "type": "file",
+      "scan_errors": []
+    }
+  ]
+}

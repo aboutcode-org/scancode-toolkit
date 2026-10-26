@@ -30,7 +30,7 @@ license_detections:
       - license_expression: gfdl-1.3-plus
         license_expression_spdx: GFDL-1.3-or-later
         from_file:
-        start_line: '19'
+        start_line: 19
         end_line: 21
         matcher: 2-aho
         score: '96.97'

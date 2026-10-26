@@ -1,0 +1,12 @@
+NAME="GalliumOS"
+VERSION="2.1 (Xenon)"
+ID=galliumos
+ID_LIKE="ubuntu debian"
+PRETTY_NAME="GalliumOS 2.1"
+VERSION_ID="2.1"
+HOME_URL="https://galliumos.org/"
+SUPPORT_URL="https://galliumos.org/"
+BUG_REPORT_URL="https://github.com/GalliumOS/galliumos-distro/issues"
+VERSION_CODENAME=xenon
+UBUNTU_CODENAME=xenial
+

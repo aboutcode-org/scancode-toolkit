@@ -87,6 +87,7 @@ def run_scan_click(
     expected_rc=0,
     env=None,
     retry=True,
+    processes='-1',
 ):
     """
     Run a scan as a Click-controlled subprocess
@@ -103,6 +104,9 @@ def run_scan_click(
 
     if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
+
+    if processes and '-n' not in options and '--processes' not in options:
+        options.extend(['--processes', processes])
 
     if monkeypatch:
         monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)

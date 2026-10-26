@@ -1,0 +1,186 @@
+---
+key: ai-sweden-llm-ai-model-2023
+short_name: AI Sweden LLM AI Model License 2023
+name: AI Sweden LLM AI Model License Agreement 2023
+category: Proprietary Free
+owner: AI Sweden
+homepage_url: https://huggingface.co/AI-Sweden-Models/gpt-sw3-356m-instruct/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-ai-sweden-llm-ai-model-2023
+ignorable_urls:
+    - http://discord.gg/RgKVztg3xU
+ignorable_emails:
+    - nlu@ai.se
+---
+
+AI Sweden's LLM AI Model License Agreement
+
+1. Introduction
+
+This license governs the use of GPT-SW3 (the "Model"). By accessing or using the Model, you agree to adhere to these terms. This license aims to promote the open and responsible use of our AI while ensuring the security and respect of users' rights.
+
+2. Grant of License
+
+Lindholmen Science Park hereby grants you, under the terms and conditions stipulated in the AI Sweden’s LLM AI Model License Agreement, (the “Agreement”), a non-exclusive, transferable, worldwide, and royalty-free license to:
+* Use: Access and utilize the Model in accordance with the set limitations in section 7. Acceptable Use Policy and within the stipulated guidelines.
+* Modify: Adjust, adapt, and build upon the Model to better suit your individual or organizational needs, while still adhering to the principles and guidelines established herein.
+* Distribute: Share the Model and your derivative works with others, provided such distribution is in compliance with the terms of this license.
+
+Nature of the Grant
+* Non-exclusive: The license does not confer any form of exclusivity; Lindholmen Science Park reserves the right to grant similar licenses to other individuals or entities.
+* Transferable: You are permitted to sub-license, rent, lease, assign, or otherwise transfer your rights under this license to any third party.
+* Worldwide: This license permits the use, modification, and distribution of the Model anywhere globally, encouraging a collaborative, international approach to furthering the Model's development and application.
+* Royalty-free: You are not required to pay any form of royalties to Lindholmen Science Park for the rights granted under this license, fostering open and unrestricted access to the Model.
+
+Obligations of the Licensee
+* Compliance: You must comply with all the terms and conditions set forth in this license to maintain the rights granted herein.
+
+Reservation of Rights
+* Intellectual Property: This license does not transfer any ownership of the intellectual property associated with the Model. Lindholmen Science Park retains all intellectual property rights not expressly granted in this license.
+* Amendments: Lindholmen Science Park reserves the right to alter the terms of this license in the future, in response to changing technological and societal landscapes, ensuring a dynamic and adaptive licensing approach.
+
+3. Scope of Use
+
+Non-commercial Use
+* Education and Research: Licensees are encouraged to use the Model for educational and research purposes, fostering knowledge sharing and innovation.
+* Public Service: Licensees can leverage the Model to build applications and services aimed at community welfare and public good.
+
+Commercial Use
+* Business Ventures: Licensees are permitted to use the Model to create products, services, or applications that seek to generate profit, encouraging entrepreneurial initiatives.
+* Corporate Research: Licensees may employ the Model for corporate research, enhancing business strategies and solutions.
+
+4. Attribution Requirements
+
+Non-commercial Use
+* Acknowledgement: While it is encouraged, non-commercial users are not strictly required to attribute the Model; however, voluntary attribution is appreciated to acknowledge the efforts of the original creators.
+
+Commercial Use
+* Mandatory Attribution: Commercial users are mandated to provide clear and conspicuous attribution to the original creators of the Model, promoting transparency and credit where it's due. 
+
+Format of Attribution The original creators are AI Sweden, RISE and WASP. The attribution should be presented in a manner that is reasonable and customarily used in commercial products or services, which could include but is not limited to:
+* Documentation: Including attribution in the user manuals, installation guides, or on the official website where the product or service is detailed.
+* Application Interface: Incorporating attribution in a dedicated "About" or "Credits" section within the application or service interface.
+* Marketing Materials: Featuring attribution in marketing and promotional materials, highlighting the utilization of the Model in the commercial offering.
+
+5. Redistribution
+
+* Redistributor: A person or entity that shares the Model with a third party, either in its original form or with modifications.
+
+Authorization for Redistribution
+* Original Model: Licensees are permitted to redistribute the Model in its original form, provided that they comply with the terms and conditions outlined in this license.
+* Modified Model: Licensees are permitted to modify and redistribute the Model, inclusive of derivative works created through the modification of the original Model, aligning with the stipulations delineated in this license.
+
+Adherence to the License
+* Binding Effect on Derivative Works: Any derivative work based on the Model shall be governed by the terms and conditions of this license, ensuring a consistent ethical and legal framework for all adaptations of the Model.
+
+Transparency and Documentation
+* Modifications: Redistributors are required to clearly indicate the nature and extent of modifications undertaken, fostering transparency and informed use.
+
+No Misrepresentation
+* Original Endorsement: Redistributors must not convey or imply any endorsement by the original creators of the Model for the redistributed or derivative work, avoiding any misrepresentation or undue association.
+
+Safety and Ethical Considerations
+* Obligation to Maintain Standards: Redistributors must ensure that the Model, whether in its original or modified form, maintains a standard of safety, ethical utility, and respect for users’ rights, consistent with the objectives and principles embodied in this license.
+
+Regulatory Compliance
+* Legal Adherence: Redistributors are mandated to ensure compliance with applicable legal and regulatory norms, including data protection laws, while redistributing the Model or any derivative works.
+
+Feedback and Community Engagement
+* Feedback Channels: Redistributors are encouraged to establish feedback channels for users and stakeholders, facilitating a collaborative approach towards the continual improvement of the Model and derivative works.
+
+6. Third-party Integrations
+
+Compliance with License Terms: Third parties who integrate the Model into their own systems, products, or services ("Integrated Products") must ensure that such Integrated Products are in full compliance with the terms and conditions outlined in this license. This entails a commitment to uphold the ethical, responsible and lawful utilization of the Model.
+ 
+Notification and Transparency: Third parties are required to clearly notify users of Integrated Products about the incorporation of the Model and ensure that the terms of this license are made accessible to the users to foster transparency and informed usage.
+ 
+Liability: Third parties are responsible for any liabilities arising from their non-compliance with the terms of this license in relation to the use of the Model in Integrated Products. They are required to indemnify Lindholmen Science Park against claims, damages, and losses arising out of such non-compliance.
+ 
+Security and Privacy: Third parties must undertake necessary measures to ensure the security and privacy of the users’ data while using Integrated Products, including adherence to applicable data protection laws and regulations.
+ 
+Intellectual Property Rights: The integration of the Model into third-party systems must respect and preserve the intellectual property rights of Lindholmen Science Park concerning the Model, including trademarks, copyrights, and patents, as applicable.
+  
+Termination: In case of violation of any terms of this license by third parties, Lindholmen Science Park reserves the right to terminate the license granted to such third parties, requiring them to cease the use and integration of the Model in their systems immediately.
+ 
+Feedback and Cooperation: Third parties are encouraged to maintain a collaborative relationship with Lindholmen Science Park, providing feedback on the Model’s performance in Integrated Products and cooperating in efforts to enhance the Model's functionalities and rectify any issues.
+
+7. Acceptable Use Policy
+
+Definition of Guidelines and Use Policies: The "GPT-SW3 Model Guidelines and Use Policies" refer to the structured set of principles, rules, and parameters established by Lindholmen Science Park which govern the acceptable use of the Model. These policies are devised to foster safe, ethical, responsible and sustainable use of the Model that guarantees the shared objective of open and fair Ai application.
+
+ 
+Compliance Obligation: By accessing or utilizing the Model, you expressly agree to adhere to the GPT-SW3 Guidelines and Use Policies as laid down by Lindholmen Science Park. This entails using the Model responsibly, and lawfully, in accordance with the stipulated guidelines.
+ 
+Updates and Modifications: Lindholmen Science Park reserves the right to periodically review, amend, or update the GPT-SW3 Guidelines and Use Policies to adapt to technological advancements, legal developments, or societal changes. Users are responsible for keeping themselves abreast of the latest updates to ensure ongoing compliance.
+ 
+Feedback and Reporting Mechanism: Users are encouraged to actively engage with Lindholmen Science Park through designated channels to report any misuse, violations, or to suggest improvements regarding the Model's functioning, thus fostering a collaborative environment for the enhancement of the Model.
+ 
+Consequences of Violation: Non-compliance with the GPT-SW3 Guidelines and Use Policies may result in punitive actions, including but not limited to, the temporary or permanent revocation of access rights to the Model, legal actions, and/or public disclosure of the violation, as deemed appropriate by Lindholmen Science Park.
+ 
+Indemnification: Users agree to indemnify and hold harmless Lindholmen Science Park against any claims, damages, or liabilities arising out of the violation of the GPT-SW3 Guidelines and Use Policies.
+
+8. Feedback
+
+Commitment to Continuous Improvement: Lindholmen Science Park values the insights and perspectives of our users. We are committed to continuous improvement and encourage users to actively participate in the evolution of the Model through constructive feedback, reporting of issues, and suggestions for enhancements.
+ 
+Feedback Channels: Users may provide their feedback through the following channels:
+ 
+Email: Reach us at nlu@ai.se
+Community Forums: Join discussions and share your insights on our community forums at AI Nordics Discord - http://discord.gg/RgKVztg3xU
+
+Anonymous Feedback: We welcome anonymous feedback to allow users to share their perspectives freely. However, we encourage users to provide contact information to facilitate follow-up discussions and updates on the addressed issues.
+ 
+Responsiveness: While we endeavor to review and consider all feedback received, we cannot guarantee a response to every submission. We appreciate your understanding and patience as we work diligently to enhance the Model for all users.
+ 
+Intellectual Property: By submitting feedback, you grant Lindholmen Science Park a worldwide, non-exclusive, royalty-free, perpetual, irrevocable license to use, reproduce, modify, adapt, publish, distribute, and incorporate such feedback into our work and research, without acknowledgement or compensation to you.
+
+9. Warranty and Liability
+
+The model is provided "as is," and Lindholmen Science Park disclaims all warranties, express or implied.
+No Warranty: THE MODEL IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF PERFORMANCE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, OMISSIONS, COMPLETENESS, CURRENTNESS, AND DELAYS.
+ 
+Cap on Liability: TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, LINDHOLMEN SCIENCE PARK 'S CUMULATIVE LIABILITY TO YOU, FOR ANY AND ALL CLAIMS RELATED TO THE MODEL, SHALL NOT EXCEED AN AGGREGATE AMOUNT EQUAL TO THE LESSER OF (i) € 500 OR (ii) THE TOTAL AMOUNTS YOU PAID TO LINDHOLMEN SCIENCE PARK IN THE TWELVE (12) MONTHS IMMEDIATELY PRECEDING THE INCIDENT GIVING RISE TO THE LIABILITY.
+ 
+Exclusion of Certain Liabilities: LINDHOLMEN SCIENCE PARK SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE, CONSEQUENTIAL, OR ANY OTHER FORM OF DAMAGES, INCLUDING, BUT NOT LIMITED TO, LOSS OF PROFITS, DATA, GOODWILL, OR ANY OTHER INTANGIBLE LOSSES, ARISING OUT OF OR RELATED TO THIS AGREEMENT, THE USE OR THE INABILITY TO USE THE MODEL, EVEN IF LINDHOLMEN SCIENCE PARK HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+ 
+Essential Purpose: THE LIMITATIONS SPECIFIED IN THIS SECTION SHALL SURVIVE AND APPLY EVEN IF ANY LIMITED REMEDY SPECIFIED IN THIS AGREEMENT IS FOUND TO HAVE FAILED ITS ESSENTIAL PURPOSE.
+ 
+Basis of the Bargain: THE LIMITATIONS OF DAMAGES SET FORTH ABOVE ARE FUNDAMENTAL ELEMENTS OF THE BASIS OF THE BARGAIN BETWEEN LINDHOLMEN SCIENCE PARK AND YOU.
+ 
+Local Laws and Regulations: Nothing in this clause aims to limit or exclude any liability that cannot be limited or excluded under applicable laws. Users are encouraged to be aware of and adhere to local laws and regulations governing the use of AI models and services.
+
+10. Termination Clauses
+
+* Model Materials: Refers to the Model and all associated documentation, guidelines, and policies provided by Lindholmen Science Park.
+Commencement and Duration
+
+* This Agreement shall become effective upon your acceptance or when you commence access to or use of the Model Materials (“Effective Date”) and shall remain in full force and effect unless earlier terminated in accordance with this Agreement.
+Termination by Organization
+
+* Breach: Lindholmen Science Park reserves the right to terminate this Agreement unilaterally if you are found to be in breach of any term or condition stipulated in this Agreement.
+
+* Safety and Compliance: Lindholmen Science Park further reserves the right to terminate this Agreement to comply with any applicable law, regulation, or guideline, or to preserve the safety, integrity, and lawful operation of the Model and associated resources.
+Termination by You
+
+* You have the right to terminate this Agreement at any time by ceasing all use of the Model Materials and deleting all copies of the Materials in your possession or control.
+Consequences of Termination
+
+* Ceasing Use: Upon termination of this Agreement for any reason the license is also terminated. Therefore, if the Agreement is terminated you must cease all use of the Model Materials and promptly delete and destroy all copies, full or partial, of the Materials in your possession or control.
+
+* Survival of Rights and Obligations: The rights and obligations contained in Sections 6 and 8 of this Agreement shall survive the termination of this Agreement and shall continue to bind you and any permitted successors and assignees.
+
+* No Liability for Termination: Lindholmen Science Park will not be liable for any damages, losses, costs, or harms arising from the termination of this Agreement, and termination will not affect any liability accrued before the termination date.
+
+11. Jurisdiction and Governing Law
+
+Any dispute, controversy, or claim arising out of or in connection with this contract, or the breach, termination, or invalidity thereof, shall be finally settled by arbitration administered by the Stockholm Chamber of Commerce Arbitration Institute (the “SCC”).
+The Rules for Expedited Arbitrations shall apply, unless the SCC in its discretion determines, taking into account the complexity of the case, the amount in dispute and other circumstances, that the Arbitration Rules shall apply. In the latter case, the SCC shall also decide whether the Arbitral Tribunal shall be composed of one or three arbitrators. The seat of arbitration shall be Stockholm, Sweden. The language to be used in the arbitral proceedings shall be English. This contract shall be governed by the substantive law of Sweden.
+
+12. Updates and Revisions
+
+Commitment to Update: Lindholmen Science Park acknowledges the rapid pace of technological and societal advancements. We remain committed to periodically reviewing and updating the terms of this Agreement to remain in harmony with such developments, thereby safeguarding the interests of all stakeholders involved while promoting sustainable and responsible AI use.
+ 
+Right to Amend: Lindholmen Science Park  reserves the right, at its sole discretion, to amend, modify, or replace any part of this Agreement. It is your responsibility to check this Agreement periodically for changes. Your continued use of or access to the Model Materials following the posting of any changes to this Agreement constitutes acceptance of those changes.
+ 
+Grace Period: In the event of any substantial amendment to the terms of this Agreement, you will be provided with a notice period of 30 days from the date such amendments are posted for you to review through the distribution platform to review and adapt to the amended terms. Should you disagree with the amendments, you reserve the right to terminate this Agreement in accordance with the termination clause herein.
+ 
+Adherence to Future Norms: By agreeing to this Agreement, you commit to adhering to potential future norms, regulations, and guidelines that may be introduced in the jurisdiction pertaining to the use of AI technologies, even if they are introduced after your acceptance of this Agreement.

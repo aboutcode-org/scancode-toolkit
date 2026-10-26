@@ -130,7 +130,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Logging"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/log4j/log4j@1.2.6",

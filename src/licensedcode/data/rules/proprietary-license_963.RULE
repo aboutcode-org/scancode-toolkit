@@ -5,6 +5,9 @@ ignorable_authors:
     - the Computer Systems Laboratory at the University of Utah
 ignorable_emails:
     - csl-dist@cs.utah.edu
+is_deprecated: yes
+replaced_by:
+    - utah-csl
 ---
 
 Permission to use, copy, modify and distribute this software is hereby

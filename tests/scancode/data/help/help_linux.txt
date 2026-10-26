@@ -8,15 +8,19 @@ Usage: scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <input>...
 Options:
 
   primary scans:
-    -l, --license     Scan <input> for licenses.
-    -p, --package     Scan <input> for application package and dependency
-                      manifests, lockfiles and related data.
-    --system-package  Scan <input> for installed system package databases.
-    --package-only    Scan for system and application package data and skip
-                      license/copyright detection and top-level package creation.
-    -c, --copyright   Scan <input> for copyrights.
-    --go-symbol       Collect Go symbols.
-    --rust-symbol     Collect Rust symbols from rust binaries.
+    -l, --license          Scan <input> for licenses.
+    -p, --package          Scan <input> for application package and dependency
+                           manifests, lockfiles and related data.
+    --system-package       Scan <input> for installed system package databases.
+    --package-in-compiled  Scan <input> for package and dependency related data in
+                           compiled binaries. Currently supported compiled
+                           binaries: Go, Rust.
+    --package-only         Scan for system and application package data and skip
+                           license/copyright detection and top-level package
+                           creation.
+    -c, --copyright        Scan <input> for copyrights.
+    --go-symbol            Collect Go symbols.
+    --rust-symbol          Collect Rust symbols from rust binaries.
 
   other scans:
     -i, --info   Scan <input> for file information (size, checksums, etc).
@@ -90,8 +94,6 @@ Options:
                   such that all paths have a common root directory.
 
   pre-scan:
-    --ignore <pattern>         Ignore files matching <pattern>.
-    --include <pattern>        Include files matching <pattern>.
     --facet <facet>=<pattern>  Add the <facet> to files with a path matching
                                <pattern>.
 
@@ -136,16 +138,20 @@ Options:
                              which are todo items and needs manual review.
 
   core:
+    --ignore <pattern>       Ignore files matching <pattern>.
     --timeout <seconds>      Stop an unfinished file scan after a timeout in
                              seconds. [default: 120 seconds]
     -n, --processes INT      Set the number of parallel processes to use. Disable
                              parallel processing if 0. Also disable threading if
                              -1. [default: (number of CPUs)-1]
+    --config-file FILENAME   Path to the configuration file.
     -q, --quiet              Do not print summary or progress.
     -v, --verbose            Print progress as file-by-file path instead of a
                              progress bar. Print verbose scan counters.
     --from-json              Load codebase from one or more <input> JSON scan
                              file(s).
+    --use-cached-results     (EXPERIMENTAL) Enables the creation, update, and
+                             usage of cached results during scan time.
     --max-in-memory INTEGER  Maximum number of files and directories scan details
                              kept in memory during a scan. Additional files and
                              directories scan details above this number are cached

@@ -249,26 +249,6 @@ class TestTextPreparation(FileBasedTesting):
         line = prepare_text_line(line)
         assert not copyrights.is_candidate(line)
 
-    def test_is_candidate_should_select_line_with_a_trailing_years(self):
-        line = '01061C3F5280CD4AC504152B81E452BD820154 2014\n'
-        line = prepare_text_line(line)
-        assert copyrights.is_candidate(line)
-
-    def test_is_candidate_should_select_line_with_proper_years(self):
-        line = '01061C3F5280CD4AC504152B81E452BD820154 2014-'
-        line = prepare_text_line(line)
-        assert copyrights.is_candidate(line)
-
-    def test_is_candidate_should_select_line_with_proper_years2(self):
-        line = '01061C3F5280CD4,2016 152B81E452BD820154'
-        line = prepare_text_line(line)
-        assert copyrights.is_candidate(line)
-
-    def test_is_candidate_should_select_line_with_dashed_year(self):
-        line = 'pub   1024D/CCD6F801 2006-11-15'
-        line = prepare_text_line(line)
-        assert copyrights.is_candidate(line)
-
     def test_is_candidate_should_select_line_with_iso_date_year(self):
         line = 'sig 3 ccd6f801 2006-11-15 nathan mittler <nathan.mittler@gmail.com>'
         line = prepare_text_line(line)

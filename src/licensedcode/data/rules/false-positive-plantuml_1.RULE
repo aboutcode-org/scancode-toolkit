@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: False positive for PlantUML javadoc badge URL containing gplv2
+---
+
+[![javadoc](https://javadoc.io/badge2/net.sourceforge.plantuml/plantuml-gplv2/javadoc.svg)](https://javadoc.io/doc/net.sourceforge.plantuml/plantuml-gplv2)

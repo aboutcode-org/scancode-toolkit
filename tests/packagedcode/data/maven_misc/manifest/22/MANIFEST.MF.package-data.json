@@ -15,5 +15,8 @@
     }
   ],
   "vcs_url": "https://github.com/Netflix/eureka.git@5491428#eureka-client",
-  "code_view_url": null
+  "code_view_url": null,
+  "extra_data": {
+    "pname": "com.netflix.eureka#eureka-client;1.8.7"
+  }
 }

@@ -860,8 +860,8 @@ other_license_detections:
       - license_expression: free-unknown
         license_expression_spdx: LicenseRef-scancode-free-unknown
         from_file:
-        start_line: '194'
-        end_line: '197'
+        start_line: 194
+        end_line: 197
         matcher: 1-hash
         score: '100.0'
         matched_length: 44

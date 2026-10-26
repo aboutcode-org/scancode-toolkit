@@ -1,0 +1,1 @@
+Copyright (C) 2011 onwards by Yury V. Zaytsev <yury@shurup.com>.

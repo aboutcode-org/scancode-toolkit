@@ -2,7 +2,7 @@
 key: ofrak-community-1.0
 short_name: OFRAK Community License Agreement 1.0
 name: OFRAK Community License Agreement 1.0
-category: Free Restricted
+category: Non-Commercial
 owner: Red Balloon Security
 homepage_url: https://github.com/redballoonsecurity/ofrak/blob/master/LICENSE
 spdx_license_key: LicenseRef-scancode-ofrak-community-1.0

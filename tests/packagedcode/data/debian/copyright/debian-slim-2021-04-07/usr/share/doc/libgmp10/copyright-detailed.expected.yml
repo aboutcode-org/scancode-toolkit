@@ -12,11 +12,11 @@ license_detections:
       - license_expression: lgpl-3.0-plus OR gpl-2.0-plus
         license_expression_spdx: LGPL-3.0-or-later OR GPL-2.0-or-later
         from_file:
-        start_line: '19'
+        start_line: 19
         end_line: 46
         matcher: 2-aho
         score: '100.0'
-        matched_length: '198'
+        matched_length: 198
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: lgpl-3.0-plus_or_gpl-2.0-plus_27.RULE

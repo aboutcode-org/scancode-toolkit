@@ -2,7 +2,7 @@
 key: research-disclaimer
 short_name: Research Software Disclaimer
 name: Research Software Disclaimer
-category: Proprietary Free
+category: Non-Commercial
 owner: University of Wisconsin-Madison
 homepage_url: https://pages.cs.wisc.edu/~dbbook/openAccess/Minibase/minibase.notice.html
 spdx_license_key: LicenseRef-scancode-research-disclaimer

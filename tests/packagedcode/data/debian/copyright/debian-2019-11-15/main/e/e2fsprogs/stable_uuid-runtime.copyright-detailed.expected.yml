@@ -1,14 +1,14 @@
 declared_license:
-declared_license_expression: bsd-new
-declared_license_expression_spdx: BSD-3-Clause
+declared_license_expression: bsd-3-clause-tso
+declared_license_expression_spdx: BSD-3-Clause-Tso
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
-  - license_expression: bsd-new
-    license_expression_spdx: BSD-3-Clause
+  - license_expression: bsd-3-clause-tso
+    license_expression_spdx: BSD-3-Clause-Tso
     matches:
-      - license_expression: bsd-new
-        license_expression_spdx: BSD-3-Clause
+      - license_expression: bsd-3-clause-tso
+        license_expression_spdx: BSD-3-Clause-Tso
         from_file:
         start_line: 15
         end_line: 39
@@ -17,8 +17,8 @@ license_detections:
         matched_length: 210
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: bsd-new_117.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_117.RULE
+        rule_identifier: bsd-3-clause-tso_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-3-clause-tso_1.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -45,6 +45,6 @@ license_detections:
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
-    identifier: bsd_new-8b605be7-9b0c-5487-1aaa-28f49503ed87
+    identifier: bsd_3_clause_tso-a8057101-6364-347d-1bd1-b886480bbd33
 other_license_detections: []
 copyright: Copyright (c) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 by Theodore Ts'o

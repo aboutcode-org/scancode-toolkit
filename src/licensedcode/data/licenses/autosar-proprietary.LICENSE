@@ -2,7 +2,7 @@
 key: autosar-proprietary
 short_name: AUTOSAR Proprietary Notice
 name: AUTOSAR Proprietary Notice
-category: Proprietary Free
+category: Non-Commercial
 owner: AUTOSAR
 spdx_license_key: LicenseRef-scancode-autosar-proprietary
 text_urls:

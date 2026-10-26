@@ -83,13 +83,16 @@ class LicenseScanner(ScanPlugin):
     options = [
         PluggableCommandLineOption(('-l', '--license'),
             is_flag=True,
+            default=False,
             help='Scan <input> for licenses.',
             help_group=SCAN_GROUP,
             sort_order=10,
         ),
 
         PluggableCommandLineOption(('--license-score',),
-            type=int, default=0, show_default=True,
+            type=int,
+            default=0,
+            show_default=True,
             required_options=['license'],
             help='Do not return license matches with a score lower than this score. '
                  'A number between 0 and 100.',
@@ -98,6 +101,7 @@ class LicenseScanner(ScanPlugin):
 
         PluggableCommandLineOption(('--license-text',),
             is_flag=True,
+            default=False,
             required_options=['license'],
             help='Include the detected licenses matched text.',
             help_group=SCAN_OPTIONS_GROUP,
@@ -105,6 +109,7 @@ class LicenseScanner(ScanPlugin):
 
         PluggableCommandLineOption(('--license-text-diagnostics',),
             is_flag=True,
+            default=False,
             required_options=['license_text'],
             help='In the matched license text, include diagnostic highlights '
                  'surrounding with square brackets [] words that are not matched.',
@@ -113,6 +118,7 @@ class LicenseScanner(ScanPlugin):
 
         PluggableCommandLineOption(('--license-diagnostics',),
             is_flag=True,
+            default=False,
             required_options=['license'],
             help='In license detections, include diagnostic details to figure '
                  'out the license detection post processing steps applied.',
@@ -120,7 +126,8 @@ class LicenseScanner(ScanPlugin):
         ),
 
         PluggableCommandLineOption(('--license-url-template',),
-            default=SCANCODE_LICENSEDB_URL, show_default=True,
+            default=SCANCODE_LICENSEDB_URL,
+            show_default=True,
             required_options=['license'],
             help='Set the template URL used for the license reference URLs. '
                  'Curly braces ({}) are replaced by the license key.',
@@ -130,6 +137,7 @@ class LicenseScanner(ScanPlugin):
         PluggableCommandLineOption(
             ('--unknown-licenses',),
             is_flag=True,
+            default=False,
             required_options=['license'],
             help='[EXPERIMENTAL] Detect unknown licenses. ',
             help_group=SCAN_OPTIONS_GROUP,
@@ -144,6 +152,9 @@ class LicenseScanner(ScanPlugin):
         This is a cache warmup such that child process inherit from the
         loaded index.
         """
+        if kwargs.get("package_only"):
+            return
+
         from licensedcode.cache import populate_cache
         populate_cache()
 
@@ -199,7 +210,7 @@ class LicenseScanner(ScanPlugin):
         modified = False
         for resource in codebase.walk(topdown=False):
             # follow license references to other files
-            if TRACE:
+            if TRACE_REFERENCE:
                 license_expressions_before = resource.detected_license_expression
 
             try:
@@ -207,7 +218,7 @@ class LicenseScanner(ScanPlugin):
             except Exception as e:
                 raise Exception(f"Failed to process resource: {resource!r}") from e
 
-            if TRACE and modified:
+            if TRACE_REFERENCE and modified:
                 license_expressions_after = resource.detected_license_expression
                 logger_debug(
                     f'add_referenced_filenames_license_matches: Modified:',
@@ -279,6 +290,11 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
                     f'No references to resolve at license detection with expression: {license_detection.license_expression}',
                 )
             continue
+
+        if TRACE_REFERENCE:
+            logger_debug(
+                f'add_referenced_license_matches: referenced_filenames: {referenced_filenames}',
+            )
 
         is_modified = update_detection_from_referenced_files(
             referenced_filenames=referenced_filenames,

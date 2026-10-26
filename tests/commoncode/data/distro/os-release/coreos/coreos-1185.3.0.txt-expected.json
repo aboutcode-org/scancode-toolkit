@@ -1,0 +1,11 @@
+{
+  "NAME": "CoreOS",
+  "ID": "coreos",
+  "VERSION": "1185.3.0",
+  "VERSION_ID": "1185.3.0",
+  "BUILD_ID": "2016-11-01-0605",
+  "PRETTY_NAME": "CoreOS 1185.3.0 (MoreOS)",
+  "ANSI_COLOR": "1;32",
+  "HOME_URL": "https://coreos.com/",
+  "BUG_REPORT_URL": "https://github.com/coreos/bugs/issues"
+}

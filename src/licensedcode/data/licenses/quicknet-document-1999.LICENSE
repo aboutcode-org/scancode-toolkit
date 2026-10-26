@@ -1,0 +1,40 @@
+---
+key: quicknet-document-1999
+short_name: Quicknet Document License 1999
+name: Quicknet Document License 1999
+category: Proprietary Free
+owner: Quicknet
+spdx_license_key: LicenseRef-scancode-quicknet-document-1999
+other_urls:
+    - https://android.googlesource.com/kernel/common/+/e777d192ffb9f2929d547a2f8a5f65b7db7a9552%5E2..e777d192ffb9f2929d547a2f8a5f65b7db7a9552/
+    - https://people.redhat.com/agk/patches/linux/patches-3.7/git-update4.patch
+    - https://support.industry.siemens.com/cs/attachments/109768538/OSS_CM15425_86.pdf
+ignorable_copyrights:
+    - Copyright (c) 1999 Quicknet Technologies, Inc.
+ignorable_holders:
+    - Quicknet Technologies, Inc.
+ignorable_emails:
+    - linux@quicknet.net
+---
+
+Copyright (c) 1999 Quicknet Technologies, Inc.  Permission is granted
+to freely copy and distribute this document provided you preserve it
+in its original form. For corrections and minor changes contact the
+maintainer at linux@quicknet.net.
+
+Trademarks
+
+Internet PhoneJACK and Internet LineJACK are registered trademarks of
+Quicknet Technologies, Inc.
+
+Disclaimer
+
+Much of the info in this HOWTO is early information released by
+Quicknet Technologies, Inc. for the express purpose of allowing early
+testing and use of the Linux drivers developed for their products.
+While every attempt has been made to be thorough, complete and
+accurate, the information contained here may be unreliable and there
+are likely a number of errors in this document. Please let the
+maintainer know about them. Since this is free documentation, it
+should be obvious that neither I nor previous authors can be held
+legally responsible for any errors.

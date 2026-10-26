@@ -112,7 +112,7 @@ other_license_detections:
         license_expression_spdx: FSFULLRWD
         from_file:
         start_line: 184
-        end_line: '191'
+        end_line: 191
         matcher: 1-hash
         score: '100.0'
         matched_length: 63
@@ -136,7 +136,7 @@ other_license_detections:
       - license_expression: x11-xconsortium
         license_expression_spdx: X11
         from_file:
-        start_line: '194'
+        start_line: 194
         end_line: 214
         matcher: 2-aho
         score: '100.0'

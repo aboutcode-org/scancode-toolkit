@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Selenium RC Java Client Driver"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.openqa.selenium.server/selenium-server",

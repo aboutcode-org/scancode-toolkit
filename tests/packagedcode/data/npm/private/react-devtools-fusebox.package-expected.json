@@ -1,0 +1,158 @@
+[
+  {
+    "type": "npm",
+    "namespace": null,
+    "name": "react-devtools-fusebox",
+    "version": "0.0.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "JavaScript",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": "https://registry.npmjs.org/react-devtools-fusebox/-/react-devtools-fusebox-0.0.0.tgz",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_url": null,
+            "matched_text": "MIT"
+          }
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "- MIT\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": true,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:npm/buffer",
+        "extracted_requirement": "^6.0.3",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/cross-env",
+        "extracted_requirement": "^7.0.3",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/css-loader",
+        "extracted_requirement": "^6.9.1",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/mini-css-extract-plugin",
+        "extracted_requirement": "^2.7.7",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/process",
+        "extracted_requirement": "^0.11.10",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/webpack",
+        "extracted_requirement": "^5.82.1",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/webpack-cli",
+        "extracted_requirement": "^5.1.1",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/workerize-loader",
+        "extracted_requirement": "^2.0.2",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/react-devtools-fusebox@0.0.0"
+  }
+]

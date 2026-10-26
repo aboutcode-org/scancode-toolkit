@@ -703,7 +703,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:composer/mikey179/vfsStream",
+        "purl": "pkg:composer/mikey179/vfsstream",
         "extracted_requirement": "^1.6",
         "scope": "require-dev",
         "is_runtime": false,

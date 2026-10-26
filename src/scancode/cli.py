@@ -17,12 +17,14 @@ import json
 import logging
 import os
 import platform
+import saneyaml
 import sys
 import traceback
 
 from collections import defaultdict
 from functools import partial
 from multiprocessing import TimeoutError
+from pathlib import Path
 from time import sleep
 from time import time
 
@@ -65,6 +67,7 @@ from scancode import ScancodeCliUsageError
 from scancode import notice
 from scancode import print_about
 from scancode import Scanner
+from scancode import results_cache
 from scancode.help import epilog_text
 from scancode.help import examples_text
 from scancode.interrupt import DEFAULT_TIMEOUT
@@ -221,8 +224,28 @@ def default_processes():
     callback=validate_input_path,
     type=click.Path(exists=True, readable=True, path_type=str))
 
+@click.option('--ignore',
+    multiple=True,
+    default=None,
+    metavar='<pattern>',
+    help='Ignore files matching <pattern>.',
+    sort_order=10,
+    help_group=cliutils.CORE_GROUP,
+    cls=PluggableCommandLineOption,
+)
+
+@click.option('--config-file',
+    type=click.File('r'),
+    required=False,
+    help='Path to the configuration file.',
+    sort_order=11,
+    help_group=cliutils.CORE_GROUP,
+    cls=PluggableCommandLineOption,
+)
+
 @click.option('--strip-root',
     is_flag=True,
+    default=False,
     conflicting_options=['full_root'],
     help='Strip the root directory segment of all paths. The default is to '
          'always include the last directory segment of the scanned path such '
@@ -231,6 +254,7 @@ def default_processes():
 
 @click.option('--full-root',
     is_flag=True,
+    default=False,
     conflicting_options=['strip_root'],
     help='Report full, absolute paths.',
     help_group=cliutils.OUTPUT_CONTROL_GROUP, cls=PluggableCommandLineOption)
@@ -253,12 +277,14 @@ def default_processes():
 
 @click.option('-q', '--quiet',
     is_flag=True,
+    default=False,
     conflicting_options=['verbose'],
     help='Do not print summary or progress.',
     help_group=cliutils.CORE_GROUP, sort_order=20, cls=PluggableCommandLineOption)
 
 @click.option('-v', '--verbose',
     is_flag=True,
+    default=False,
     conflicting_options=['quiet'],
     help='Print progress as file-by-file path instead of a progress bar. '
          'Print verbose scan counters.',
@@ -266,17 +292,20 @@ def default_processes():
 
 @click.option('--from-json',
     is_flag=True,
+    default=False,
     help='Load codebase from one or more <input> JSON scan file(s).',
     help_group=cliutils.CORE_GROUP, sort_order=25, cls=PluggableCommandLineOption)
 
 @click.option('--timing',
     is_flag=True,
+    default=False,
     hidden=True,
     help='Collect scan timing for each scan/scanned file.',
     help_group=cliutils.CORE_GROUP, sort_order=250, cls=PluggableCommandLineOption)
 
 @click.option('--max-in-memory',
-    type=int, default=10000,
+    type=int,
+    default=10000,
     show_default=True,
     help='Maximum number of files and directories scan details kept in memory '
          'during a scan. Additional files and directories scan details above this '
@@ -300,6 +329,7 @@ def default_processes():
 
 @click.option('-A', '--about',
     is_flag=True,
+    default=False,
     is_eager=True,
     expose_value=False,
     callback=print_about,
@@ -308,6 +338,7 @@ def default_processes():
 
 @click.option('-V', '--version',
     is_flag=True,
+    default=False,
     is_eager=True,
     expose_value=False,
     callback=print_version,
@@ -316,6 +347,7 @@ def default_processes():
 
 @click.option('--examples',
     is_flag=True,
+    default=False,
     is_eager=True,
     expose_value=False,
     callback=print_examples,
@@ -325,6 +357,7 @@ def default_processes():
 @click.option('--plugins',
     is_flag=True,
     is_eager=True,
+    default=False,
     expose_value=False,
     callback=print_plugins,
     help='Show the list of available ScanCode plugins and exit.',
@@ -358,6 +391,7 @@ def default_processes():
 
 @click.option('--print-options',
     is_flag=True,
+    default=False,
     expose_value=False,
     callback=print_options,
     help='Show the list of selected options and exit.',
@@ -374,15 +408,23 @@ def default_processes():
     help_group=cliutils.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
 
 @click.option(
-    "--check-version/--no-check-version",
-    help="Whether to check for new versions. Defaults to true.",
+    '--check-version/--no-check-version',
+    help='Whether to check for new versions. Defaults to true.',
     default=True,
     # not yet supported in Click 6.7 but added in PluggableCommandLineOption
     hidden=True,
     help_group=cliutils.MISC_GROUP, sort_order=1000, cls=PluggableCommandLineOption)
+
+@click.option('--use-cached-results',
+    is_flag=True,
+    default=False,
+    help='(EXPERIMENTAL) Enables the creation, update, and usage of cached results during scan time.',
+    help_group=cliutils.CORE_GROUP, sort_order=250, cls=PluggableCommandLineOption)
 def scancode(
     ctx,
     input,  # NOQA
+    config_file,
+    ignore,
     strip_root,
     full_root,
     processes,
@@ -398,6 +440,7 @@ def scancode(
     test_error_mode,
     keep_temp_files,
     check_version,
+    use_cached_results,
     echo_func=echo_stderr,
     *args,
     **kwargs,
@@ -493,6 +536,8 @@ def scancode(
         # run proper
         success, _results = run_scan(
             input=input,
+            ignore=ignore,
+            config_file=config_file,
             from_json=from_json,
             strip_root=strip_root,
             full_root=full_root,
@@ -512,6 +557,7 @@ def scancode(
             return_results=False,
             echo_func=echo_func,
             outdated=outdated,
+            use_cached_results=use_cached_results,
             *args,
             **kwargs
         )
@@ -533,7 +579,9 @@ def scancode(
 
 
 def run_scan(
-    input,  # NOQA
+    input,  #
+    config_file=None,
+    ignore=[],
     from_json=False,
     strip_root=False,
     full_root=False,
@@ -555,6 +603,7 @@ def run_scan(
     pretty_params=None,
     plugin_options=plugin_options,
     outdated=None,
+    use_cached_results=False,
     *args,
     **kwargs
 ):
@@ -585,6 +634,9 @@ def run_scan(
         msg = 'At least one input path is required.'
         raise ScancodeError(msg)
 
+    # To support multiple path inputs
+    include = []
+
     if not isinstance(input, (list, tuple)):
         if not isinstance(input, str):
             msg = 'Unknown <input> format: "{}".'.format(repr(input))
@@ -599,8 +651,6 @@ def run_scan(
     # VirtualCodebase; otherwise we have to process `input` to make it a single
     # root with excludes.
     elif not from_json:
-        # FIXME: support the multiple root better. This is quirky at best
-
         # This is the case where we have a list of input path and the
         # `from_json` option is not selected: we can handle this IFF they share
         # a common root directory and none is an absolute path
@@ -612,33 +662,38 @@ def run_scan(
             )
             raise ScancodeError(msg)
 
+        abs_input = [os.path.abspath(i) for i in input]
+
         # find the common prefix directory (note that this is a pre string
         # operation hence it may return non-existing paths
-        common_prefix = os.path.commonprefix(input)
+        common_prefix = os.path.commonprefix(abs_input)
 
         if not common_prefix:
             # we have no common prefix, but all relative. therefore the
-            # parent/root is the current ddirectory
+            # parent/root is the current directory
             common_prefix = str('.')
+        elif not common_prefix.endswith("/"):
+            # common prefix has trailing incomplete dirname
+            # for example the common prefix of "/temp/scancode"
+            # and "/temp/scans" is "/temp/scan"
+            common_prefix, _, _ = common_prefix.rpartition("/")
 
         elif not os.path.isdir(common_prefix):
             msg = (
                 'Invalid inputs: all input paths must share a '
-                'common single parent directory.'
+                f'common single parent directory. common part: {common_prefix}'
             )
 
             raise ScancodeError(msg)
 
-        # and we craft a list of synthetic --include path pattern options from
-        # the input list of paths
-        included_paths = [as_posixpath(path).rstrip('/') for path in input]
-        # FIXME: this is a hack as this "include" is from an external plugin!!!
-        include = list(requested_options.get('include', []) or [])
-        include.extend(included_paths)
-        requested_options['include'] = include
-
-        # ... and use the common prefix as our new input
+        # and we craft a list of include paths where the codebase walks
+        # will start from, even though the root is the common prefix
+        include = [as_posixpath(path).rstrip('/') for path in abs_input]
         input = common_prefix  # NOQA
+
+    config_ignores = load_configuration_file(config_file)
+    if config_ignores:
+        ignore = ignore + tuple(config_ignores)
 
     # build mappings of all options to pass down to plugins
     standard_options = dict(
@@ -882,6 +937,8 @@ def run_scan(
         try:
             codebase = codebase_class(
                 location=input,
+                includes=include,
+                ignores=ignore,
                 resource_attributes=resource_attributes,
                 codebase_attributes=codebase_attributes,
                 full_root=full_root,
@@ -959,6 +1016,7 @@ def run_scan(
             verbose=verbose,
             kwargs=requested_options,
             echo_func=echo_func,
+            use_cached_results=use_cached_results,
         )
         success = success and scan_success
 
@@ -1079,6 +1137,34 @@ def run_scan(
     return success, results
 
 
+def load_configuration_file(path):
+    """
+    Load scancode configuration values from a file at `path`.
+
+    Currently only supports ignore path patterns specified with
+    "ignored_patterns". This should be compatible with scancode.io
+    configuration values whenever possible:
+    https://scancodeio.readthedocs.io/en/latest/project-configuration.html
+    """
+    ignores = []
+    if not path:
+        return ignores
+
+    click.echo(f"Loading env from {path}")
+    try:
+
+        config_values = saneyaml.load(path.read())
+        ignores = config_values.get("ignored_patterns", [])
+    except (saneyaml.YAMLError, Exception):
+        msg = (
+            f'Failed to load configuration from "{path}". '
+            f"The file format is invalid."
+        )
+        raise ScancodeError(msg + '\n' + traceback.format_exc())
+
+    return ignores
+
+
 def run_codebase_plugins(
     stage,
     plugins,
@@ -1151,6 +1237,7 @@ def run_scanners(
     verbose=False,
     kwargs=None,
     echo_func=echo_stderr,
+    use_cached_results=False,
 ):
     """
     Run the list of `stage` ScanPlugin `plugins` on `codebase`.
@@ -1192,7 +1279,8 @@ def run_scanners(
     # TODO: add CLI option to bypass cache entirely?
     scan_success = scan_codebase(
         codebase, scanners, processes, timeout,
-        with_timing=timing, progress_manager=progress_manager)
+        with_timing=timing, progress_manager=progress_manager,
+        use_cached_results=use_cached_results)
 
     # TODO: add progress indicator
     # run the process codebase of each scan plugin (most often a no-op)
@@ -1230,6 +1318,7 @@ def scan_codebase(
     with_timing=False,
     progress_manager=None,
     echo_func=echo_stderr,
+    use_cached_results=False,
 ):
     """
     Run the `scanners` Scanner objects on the `codebase` Codebase. Return True
@@ -1251,7 +1340,7 @@ def scan_codebase(
     """
 
     # NOTE: we never scan directories
-    resources = ((r.location, r.path) for r in codebase.walk() if r.is_file)
+    resources = ((r.location, r.path, r.name) for r in codebase.walk() if r.is_file)
 
     use_threading = processes >= 0
     runner = partial(
@@ -1259,7 +1348,8 @@ def scan_codebase(
         scanners=scanners,
         timeout=timeout,
         with_timing=with_timing,
-        with_threading=use_threading
+        with_threading=use_threading,
+        use_cached_results=use_cached_results,
     )
 
     if TRACE:
@@ -1387,11 +1477,12 @@ def terminate_pool_with_backoff(pool, number_of_trials=3):
 
 
 def scan_resource(
-    location_path,
+    location_path_name,
     scanners,
     timeout=DEFAULT_TIMEOUT,
     with_timing=False,
     with_threading=True,
+    use_cached_results=False,
 ):
     """
     Given a ``location_path`` tuple pf (location, path), return a tuple of:
@@ -1414,10 +1505,11 @@ def scan_resource(
     processing and threading works.
     """
     scan_time = time()
-    location, path = location_path
+    location, path, name = location_path_name
     results = {}
     scan_errors = []
     timings = {} if with_timing else None
+    scanners_to_run = []
 
     if not with_threading:
         interruptor = fake_interruptible
@@ -1428,8 +1520,28 @@ def scan_resource(
     # and start returning values. The kill timeout is otherwise there
     # as a gatekeeper for runaway processes.
 
+    results_cache_index = ''
+    if use_cached_results:
+        # compute results_cache_index
+        results_cache_index = results_cache.compute_results_cache_index(location=location, filename=name)
+
+        # update `results` with cached data or add scanner to scanners_to_run if no
+        # cache data is available
+        for scanner in scanners:
+            # get resource_cache_data
+            resource_cache_data = results_cache.get_results_cache_data(
+                results_cache_index=results_cache_index,
+                plugin_name=scanner.name
+            )
+            if resource_cache_data:
+                results.update(resource_cache_data)
+            else:
+                scanners_to_run.append(scanner)
+    else:
+        scanners_to_run = scanners
+
     # run each scanner in sequence in its own interruptible
-    for scanner in scanners:
+    for scanner in scanners_to_run:
         if with_timing:
             start = time()
 
@@ -1448,6 +1560,12 @@ def scan_resource(
             # the return value of a scanner fun MUST be a mapping
             if values_mapping:
                 results.update(values_mapping)
+                if use_cached_results:
+                    results_cache.update_results_cache_data(
+                        results_cache_index=results_cache_index,
+                        plugin_name=scanner.name,
+                        results=values_mapping,
+                    )
 
         except Exception:
             msg = 'ERROR: for scanner: ' + scanner.name + ':\n' + traceback.format_exc()

@@ -75,7 +75,7 @@ class LicensePolicy(PostScanPlugin):
 
     options = [
         PluggableCommandLineOption(('--license-policy',),
-            multiple=False,
+            default=None,
             callback=validate_policy_path,
             metavar='FILE',
             help='Load a License Policy file and apply it to the scan at the '

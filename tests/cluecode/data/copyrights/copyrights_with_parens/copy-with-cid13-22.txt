@@ -1,0 +1,4 @@
+Copyright c(cid:13) 1990 W. N. Venables
+Copyright c(cid:13) 1992 W. N. Venables & D. M. Smith
+Copyright c(cid:13) 1997 R. Gentleman & R. Ihaka
+Copyright c(cid:13) 1997, 1998 M. Maechler

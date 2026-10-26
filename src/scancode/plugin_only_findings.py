@@ -21,6 +21,7 @@ class OnlyFindings(OutputFilterPlugin):
 
     options = [
         PluggableCommandLineOption(('--only-findings',), is_flag=True,
+            default=False,
             help='Only return files or directories with findings for the '
                  'requested scans. Files and directories without findings are '
                  'omitted (file information is not treated as findings).',

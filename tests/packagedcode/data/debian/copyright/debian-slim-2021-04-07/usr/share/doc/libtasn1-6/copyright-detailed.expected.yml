@@ -72,7 +72,7 @@ license_detections:
         end_line: 79
         matcher: 3-seq
         score: '98.46'
-        matched_length: '192'
+        matched_length: 192
         match_coverage: '98.46'
         rule_relevance: 100
         rule_identifier: gpl-3.0-plus_and_gfdl-1.3-plus_1.RULE

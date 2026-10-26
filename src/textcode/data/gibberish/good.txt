@@ -1,0 +1,100 @@
+Copyright (c) All Rights Reserved. Hair Plus Trading Co., Inc.
+South Baylo University Copyright (c) All Right Reserved.
+Created by shazron on 11-06-15. Copyright 2011 . All rights reserved.
+Copyright (c) All Rights Reserved 2014-2019 New Avenue Foundation.
+'Copyright 2017 AllThingsTalk'
+Copyright (C) All Rights Are Reserved. Chungjungwon​. Iotacoffee.Com 2011
+copyright(c) All rights reserved localism,Inc.
+Crown Copyright C All rights reserved.
+copyright(c) All rights reserved istyle Inc.
+[assembly: AssemblyCopyright(""Copyright ©  2013"")]
+<span>Copyright (C) All Rights Reserved </span>   <span>2007-2020版权所有: 镇江日报社  </span>
+Copyright (c) - All Rights Reserved - PROAIM Medical.
+Copyright (c), ALL Consulting, 2008
+Created by Samvel Khalatyan, May 28, 2013 Copyright 2013, All rights reserved
+Iotacoffee.Com 2011 Copyright (C) All Rights Are Reserved.
+Copyright (C) All Rights Reserved, Lei Connection Inc.
+Copyright(c) All Saints Episcopal Church, Fort Worth, 2011, church based at 3290 Lackland Road,, Fort Worth, TX 76116
+*  Created by claudio beatrice on 2/21/10. Copyright 2010. All rights reserved.
+Copyright(c) All rights reserved by Minds, Japan Council for Quality Health Care.
+Copyright (C) All Rights Reserved by Leh. www.leh.jp
+Copyright (C) All rights Reserved by 株式会社　朝日住宅社
+/*  For iOS video I/O
+*  by Eduard Feicho on 29/07/12
+*  Copyright 2012. All rights reserved.
+// Copyright (c) 2002-2010, Industrial Light & Magic, a division of Lucas
+// Digital Ltd. LLC
+//
+// All rights reserved.
+Copyright (c) 2006, Industrial Light & Magic, a division of Lucasfilm
+Entertainment Company Ltd.  Portions contributed and copyright held by
+others as indicated.  All rights reserved.
+copyright__ = 'Copyright 2017 AllThingsTalk'
+Copyright EAVISE
+UCL are copyrighted software distributed
+Foursquare © 2019
+Copyright (C) 2019, by Djilani CARDINEAU.
+# Copyright michimani All rights reserved.
+Copyright(c) All Rights Reserved by Chinese Service Center for Scholarly Exchange
+Copyright(c) All right reserved SSC. Ltd.
+Third party copyrights are property of their respective owners.
+Copyright (c) All Rights Reserved by the District Export Council of Georgia.
+//COPYRIGHT
+//
+//All contributions by the University of California:
+//Copyright (c) 2014, The Regents of the University of California (Regents)
+//All rights reserved.
+//
+//All other contributions:
+//Copyright (c) 2014, the respective contributors
+//All rights reserved.
+//
+//Caffe uses a shared copyright model: each contributor holds copyright over
+//their contributions to Caffe. The project versioning records all such
+//contribution and copyright details. If a contributor wants to further mark
+//their specific copyright on a particular contribution, they should indicate
+//their copyright solely in the commit message of the change when it is
+//committed.
+//
+//LICENSE
+Copyright (C) 2013 Opensim Ltd.
+#COPYRIGHT
+#
+#All contributions by the University of California:
+#Copyright (c) 2014, 2015, The Regents of the University of California (Regents)
+#All rights reserved.
+#
+#All other contributions:
+#Copyright (c) 2014, 2015, the respective contributors
+#All rights reserved.
+LICENSE: Copyright 2016, All Rights Reserved
+(a)Download original face detection dataset -> (b)Convert annotation to the PASCAL VOC format -> (c)Create LMDB database with images + annotations for training
+(c) Copyright CNRI, All Rights Reserved. NO WARRANTY.
+Copyright (C), 2001-2011, Acme Tech. Co. Ltd.
+* libtiff/{tif_dirinfo.c, tif_dir.h, tif_dir.c, tif_print.c}: Make
+DocumentName, Artist, HostComputer, ImageDescription, Make, Model,
+Copyright, DateTime, PageName, TextureFormat, TextureWrapModes and
+TargetPrinter tags custom.
+COPYRIGHT (C) All About, Inc. All Rights Reserved.
+Copyright 2019, All Rights Reserved. # Author: Pine <cdtsgsz@gmail.com>
+*  For iOS video I/O
+*  by Eduard Feicho on 29/07/12
+*  by Alexander Shishkov on 17/07/13
+*  Copyright 2012. All rights reserved.
+COPYRIGHT(C) ALL JAPAN PRO-WRESTLING Co., Ltd.
+:copyright: Copyright (c) Joe Joyce and contributors, 2016-2019.
+Copyright 2014 uh-sem-blee, Co.
+Copyright (c) 2016 the Authors
+// Copyright (C) 2013, OpenCV Foundation, all rights reserved.
+// Third party copyrights are property of their respective owners.
+*  For iOS video I/O
+*  by Xiaochao Yang on 06/15/11 modified from
+*  cap_qtkit.mm for Nicholas Butko for Mac OS version.
+*  Copyright 2011. All rights reserved.
+Copyright (c) All the Raige Dog Salon. All Rights Reserved.
+[assembly: AssemblyCopyright(""Copyright ©  2014"")]
+<a href="http://www.enox.biz/">Copyright (C) All rights Reserved by 株式会社エノックス</a>
+2008 Nuance Communications
+Copyright 2008 TJ
+Scilab (c)INRIA-ENPC
+Copyright (c) 2006, FUJITA Yuji

@@ -1,0 +1,56 @@
+# Trimmed copy of https://github.com/python-attrs/attrs/blob/26.1.0/pyproject.toml
+# for testing UV package manager support. Original source is MIT-licensed.
+# SPDX-License-Identifier: MIT
+
+[build-system]
+requires = ["hatchling", "hatch-vcs", "hatch-fancy-pypi-readme>=23.2.0"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "attrs"
+authors = [{ name = "Hynek Schlawack", email = "hs@ox.cx" }]
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+description = "Classes Without Boilerplate"
+keywords = ["class", "attribute", "boilerplate"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Typing :: Typed",
+]
+dependencies = []
+dynamic = ["version", "readme"]
+
+[project.urls]
+Documentation = "https://www.attrs.org/"
+Changelog = "https://www.attrs.org/en/stable/changelog.html"
+GitHub = "https://github.com/python-attrs/attrs"
+Funding = "https://github.com/sponsors/hynek"
+
+
+[dependency-groups]
+tests = [
+  'cloudpickle; platform_python_implementation == "CPython"',
+  "hypothesis",
+  "pympler",
+  "pytest",
+  "pytest-xdist[psutil]",
+]
+docs = [
+  "cogapp",
+  "furo",
+  "myst-parser",
+  "sphinx",
+]
+dev = [{ include-group = "tests" }, "ruff"]
+
+
+[tool.uv]
+package = true

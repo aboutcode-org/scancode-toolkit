@@ -79,7 +79,7 @@ other_license_detections:
         license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 178
-        end_line: '199'
+        end_line: 199
         matcher: 1-hash
         score: '100.0'
         matched_length: 201
@@ -285,7 +285,7 @@ other_license_detections:
         end_line: 286
         matcher: 2-aho
         score: '100.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-2.0-plus_843.RULE

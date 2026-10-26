@@ -1,0 +1,74 @@
+---
+key: acki-nacki-node-2024-10-04
+short_name: Acki Nacki Node License 2024-10-04
+name: Acki Nacki Node License 2024-10-04
+category: Commercial
+owner: Acki Nacki
+homepage_url: https://github.com/ackinacki/ackinacki/blob/main/LICENSE.md
+spdx_license_key: LicenseRef-scancode-acki-nacki-node-2024-10-04
+ignorable_copyrights:
+    - (c) 2022-2024 GOSH Technology Ltd
+ignorable_holders:
+    - GOSH Technology Ltd
+ignorable_urls:
+    - https://www.gnu.org/licenses/agpl-3.0.html
+---
+
+# Acki Nacki Node License
+
+## BLOCKCHAIN SOURCE LICENSE AGREEMENT
+
+For good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, the Licensor grants the Licensee the rights to use the Licensed Work as outlined in this Agreement, contingent upon full payment of the applicable Node License Fee
+
+## General provisions
+
+* Acki Nacki Node License (“ANNL”, “Node License”) is an exclusive Blockchain Source License agreement  
+* The final number of licenses to be issued under set Terms will be determined as a result of the Acki Nacki Node Sale but won’t exceed 10,000 Block Keepers Node Licenses and 10,000 of Block Manager Node Licenses  
+* Node Licenses can be used to run Acki Nacki Nodes from the start of the Acki Nacki Network (zero state) without a need for initial stake  
+* The stake is required for the validation at a later date according to Minimum Stake Network Protocol Parameters  
+* The Licenses are transferable without restrictions  
+* Acki Nacki network is fully decentralized. Software modifications may be issued by anybody provided they are distributed under the Terms of this ANNL. There will be no mechanisms for developers to change any of the network or license parameters without Node Owners consensus agreement manifesting in running such software update.
+
+| Licensor: | GOSH TECHNOLOGY LTD. (“GOSH”) |
+| :---- | :---- |
+| Licensed Work: | The Licensed Work is (c) 2022-2024 GOSH Technology Ltd |
+| Use Grant: | You may make production use of the Licensed Work as part of the Acki Nacki Public Network as published by GOSH |
+| Other Use Grant Restriction: | You may make production use of the Licensed Work, provided Your use does not include offering the Licensed Work to third parties as a public, permissionless Blockchain Network |
+| Change Date: | Two years from the date the Licensed Work is published |
+| Change License: | [GNU AFFERO GENERAL PUBLIC LICENSE](https://www.gnu.org/licenses/agpl-3.0.html) |
+
+## Terms
+
+The Licensor hereby grants you the right to copy, modify, create derivative works, redistribute, and make non-production use of the Licensed Work. The Licensor may make an Additional Use Grant, above, permitting limited production use.
+
+Effective on the Change Date, or the second anniversary of the first publicly available distribution of a specific version of the Licensed Work under this License, whichever comes first, the Licensor hereby grants you rights under the terms of the Change License, and the rights granted in the paragraph above terminate.
+
+If your use of the Licensed Work does not comply with the requirements currently in effect as described in this License, you must purchase a commercial license from the Licensor, its affiliated entities, or authorized resellers, or you must refrain from using the Licensed Work.
+
+All copies of the original and modified Licensed Work, and derivative works of the Licensed Work, are subject to this License. This License applies separately for each version of the Licensed Work and the Change Date may vary for each version of the Licensed Work released by Licensor.
+
+You must conspicuously display this License on each original or modified copy of the Licensed Work. If you receive the Licensed Work in original or modified form from a third party, the terms and conditions set forth in this License apply to your use of that work.
+
+Any use of the Licensed Work in violation of this License will automatically terminate your rights under this License for the current and all other versions of the Licensed Work.
+
+This License does not grant you any right in any trademark or logo of Licensor or its affiliates (provided that you may use a trademark or logo of Licensor as expressly required by this License).
+
+Yes, if you do not want to include any indemnification obligations in the license, you can simply omit the "No Indemnification" section altogether.
+
+The revised disclaimer of warranties and limitation of liability sections provide sufficient legal protection by clarifying that:
+
+The Licensed Work is provided "as is."  
+No warranties are provided.  
+Your liability is limited to the amount paid for the license, without including any indemnification provisions.
+
+Final Revised Section:  
+Here’s how the relevant sections of your license should look after dropping the "No Indemnification" section and replacing the original disclaimer:
+
+Disclaimer of Warranties:  
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSED WORK IS PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED. THIS INCLUDES, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE.
+
+Limitation of Liability:  
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL THE LICENSOR BE LIABLE FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, OR EXEMPLARY DAMAGES ARISING OUT OF OR IN CONNECTION WITH THIS LICENSE OR THE USE OF THE LICENSED WORK, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, OR DATA, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE LICENSOR’S TOTAL LIABILITY TO THE LICENSEE FOR ALL CLAIMS ARISING OUT OF OR RELATED TO THIS LICENSE SHALL NOT EXCEED THE AMOUNT PAID BY THE LICENSEE TO THE LICENSOR FOR THE LICENSED WORK.
+
+Limited Grant of Rights:  
+The Licensee is granted the rights to use the Licensed Work solely in accordance with the terms of this License. Production use of the Licensed Work is permitted, provided that such use does not include offering the Licensed Work to third parties as a public, permissionless Blockchain Network. This License does not provide any warranties, support, or other protections beyond the right to use the software as specified.

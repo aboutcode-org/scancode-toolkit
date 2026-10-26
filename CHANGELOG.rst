@@ -1,50 +1,170 @@
 Changelog
 =========
 
-- We now support new package manifest formats:
+Next release
+--------------
 
-  - OpenWRT packages.
-  - Yocto/BitBake .bb recipes.
+- Fix the optional ``licenses`` extra dependency typo to install
+  ``licensedcode-data``.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/5056
+
+- Improve copyright detection for statements with parens or trailing "authors"
+
+- Add experimental option for using cached results during scan time. When the
+  ``--use-cached-results`` option is enabled in the ScanCode CLI, during scan
+  time for a given Resource, we iterate through the active scanners and see if we
+  have cached results for those already. If we do, we update our results with the
+  cached data. If not, we add those scanners to a list of scanners to be run.
+  After scanning, the cache is updated.
+
+- Gracefully handle corrupt or invalid JSON files in ``results_cache`` by catching
+  ``json.JSONDecodeError`` in ``get_results_cache_data`` and returning an empty mapping.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5345
+
+- Cap ``pluggy`` below 1.7.0. pluggy 1.7.0 no longer accepts the class-based
+  hookspecs used by ``plugincode`` and scancode fails at import time with
+  ``ValueError: did not find any 'pre_scan' hooks``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5363
+
+v33.0.0rc1 - 2026-05-14
+------------------------
+
+This is a major release candidate with major changes in packaging,
+with the licensedcode-data and licensedcode-index being published
+in two seperate wheels. Also adds linux/macos ARM support in
+release archives and pypi wheels.
+
+- Remove the licensedcode data and built license indexes from the
+  main scancode-toolkit built wheel, and release them as
+  seperate wheels which scancode-toolkit depends on.
+  This enables to release scancode licensedb data/index wheels
+  seperately whenever necessary and also reduces the scancode
+  wheel size greatly. For more details see:
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3459
+
+- Add macos ARM and linux arm support in release archives and
+  pypi wheels through ``scancode-toolkit-mini`` which uses
+  system provided libraries instead of bundled binaries.
+  Also use updated non pure-python dependencies supporting
+  linux/macos arm wheels. For more details see:
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3205
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3958
+
+- Add new and updates licenses, and license rules, including
+  support for the SPDX License List 3.28
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4956
+
+- Add support for the Python UV package manager. Two new package data
+  handlers parse ``pyproject.toml`` files containing a ``[tool.uv]`` table
+  and ``uv.lock`` lockfiles, including PEP 735 ``[dependency-groups]``,
+  and the package assembly walks both files together so that the project
+  metadata and the resolved transitive dependencies are reported as a
+  single Python package.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4501
 
 
-v33.0.0 (next next, roadmap)
-----------------------------
+v32.5.0 - 2026-01-15
+-------------------
 
-- Fallback packages for non-native dependencies of SCTK.
-- Dependencies for
-- Support for copyright detection objects.
+- Improve package scan performance by:
 
-- A new field in packages with the license category for the
-  detected license expression and also an API function to
-  compute license categories from license expressions.
-  See https://github.com/nexB/scancode-toolkit/issues/2897
+  - Skipping binary package detection steps by default,
+    and introducing a new CLI option ``--package-in-compiled``
+    to detect packages in compiled binaries like rust/go binaries
+    Note: previously these were detected in ``--package`` CLI
+    option directly but this is no longer the case, you've to
+    use the new ``--package-in-compiled`` to detect packages
+    from go/rust and other binaries
 
-- More support for tabular output formats: New command-line
-  options for XSLX output, and the old `--csv` command line
-  option is removed.
-  See https://github.com/nexB/scancode-toolkit/issues/830
+  - Creating cached regex patterns and multiregex pre-matchers,
+    for a fast package path detection filtering step
 
-- `--unknown-licenses` is removed and this is always enabled
-  and only used in case of improper detections automatically.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4606
 
-- File categorization support added, a post scan plugin tagging
-  files with priority levels for review, and also take advantage
-  of these in other summary plugins.
-  See https://github.com/nexB/scancode-toolkit/issues/1745
+- Add gibberish detection to copyright scanning. This is done using a
+  2-character Markov chain. A new CLI command,
+  ``scancode-train-gibberish-model``, has been added to regenerate the model
+  used by the detector.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4610
+  https://github.com/aboutcode-org/scancode-toolkit/issues/2402
 
-- Update Dockerfile and test container build.
-  See https://github.com/aboutcode-org/scancode-toolkit/issues/3955
+- Use a cython implementation of sequence matcher to improve
+  license detection performance
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4500
 
-- Update ABOUT files to adapt the ABOUT File Specification.
-  See https://github.com/aboutcode-org/scancode-toolkit/issues/4181
+- Add python3.14 support in scancode
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4595
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4541
 
-- Add licenses from SPDX License List 3.27
-  - Total Licenses: 21
-    - Old Licenses: 13
-      - From rules: 4
-      - From licenses: 9
-    - New licenses: 8
+- Always print license references table in html output
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4474
+
+- Enable License References table for HTML Output without requiring
+  `--license-references` by implementing a fallback license reference
+  collection based on the behavior of v32.0.0.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4474
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4101
+
+- Replace unmaintained ``toml`` library with ``tomllib`` / ``tomli``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4532
+
+- Pin fingerprints and normality to avoid pyicu
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4493
+
+- Fix click compatibility issues and failures
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4572
+
+- Remove deprecated ast module attributes
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4539
+
+- Fix cargo scanning failures
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4581
+
+- Reorg and improve docs user experience
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4629
+
+- Handle is_private strings in npm properly
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4635
+
+- Restructure README docs
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4667
+
+- Add new licenses, license rules and misc license detection
+  improvements
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4562
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4674
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4666
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4622
+
+v32.4.1 - 2025-07-23
+--------------------
+
+This is a patch release with bugfixes and improvements::
+
+- Fix broken scancode release archives and release scripts
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4469
+
+- Support licenses from SPDX License List 3.27
   https://github.com/aboutcode-org/scancode-toolkit/pull/4468
+
+- Add new licenses, license rules and license data updates
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4478
+
+- Use updated license-expression v30.4.4 with updated licenses
+  https://github.com/aboutcode-org/license-expression/releases/tag/v30.4.4
+
+- Use pygmars v1.0.0 with copyright detection performance
+  improvements by removing unnecessary regex substitutions.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4063
+
+- Fix misc scancode doumentation related issues
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4457
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4458
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4462
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4465
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4470
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4471
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4476
 
 
 v32.4.0 - 2025-06-26
@@ -114,6 +234,9 @@ These are the details for the most important changes introduced::
   because of a compatibility issue with Click
   https://github.com/aboutcode-org/scancode-toolkit/pull/4427
 
+- Update ABOUT files to adapt the ABOUT File Specification.
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/4181
+
 v32.3.3 - 2025-03-06
 --------------------
 
@@ -158,6 +281,9 @@ Bugfixes:
 
 - Fix npm package parsing bug for packages with workspaces.
   https://github.com/aboutcode-org/scancode.io/issues/1521
+
+- Update Dockerfile and test container build.
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/3955
 
 New features/licenses:
 
@@ -812,6 +938,8 @@ License detection:
 
   See https://github.com/nexB/scancode-toolkit/issues/3343
 
+- `--unknown-licenses` is removed and this is always enabled
+  and only used in case of improper detections automatically.
 
 v31.2.6 - 2023-04-25
 ----------------------------------

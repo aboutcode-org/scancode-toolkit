@@ -163,14 +163,14 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
                 args = {}
                 for kw in statement.value.keywords:
                     arg_name = kw.arg
-                    if isinstance(kw.value, ast.Str):
-                        args[arg_name] = kw.value.s
+                    if isinstance(kw.value, ast.Constant) and isinstance(kw.value.value, str):
+                        args[arg_name] = kw.value.value
 
                     if isinstance(kw.value, ast.List):
                         # We collect the elements of a list if the element is
                         # not a function call
                         args[arg_name] = [
-                            elt.s for elt in kw.value.elts
+                            elt.value for elt in kw.value.elts
                             if not isinstance(elt, ast.Call)
                         ]
                 if args:
@@ -351,17 +351,17 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                 statement_keys = statement.value.keys
                 statement_values = statement.value.values
                 for statement_k, statement_v in zip(statement_keys, statement_values):
-                    if isinstance(statement_k, ast.Str):
-                        key_name = statement_k.s
+                    if isinstance(statement_k, ast.Constant) and isinstance(statement_k.value, str):
+                        key_name = statement_k.value
                     # The list values in a `METADATA.bzl` file seem to only contain strings
                     if isinstance(statement_v, ast.List):
                         value = []
                         for e in statement_v.elts:
-                            if not isinstance(e, ast.Str):
+                            if not (isinstance(e, ast.Constant) and isinstance(e.value, str)):
                                 continue
-                            value.append(e.s)
-                    if isinstance(statement_v, (ast.Str, ast.Constant)):
-                        value = statement_v.s
+                            value.append(e.value)
+                    if isinstance(statement_v, ast.Constant):
+                        value = statement_v.value
                     metadata_fields[key_name] = value
 
         parties = []

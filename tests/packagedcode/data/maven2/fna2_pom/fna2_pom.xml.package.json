@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "com.adobe.ac.samples.lcds custom flex_app"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/info.flex-mojos/testing-support",

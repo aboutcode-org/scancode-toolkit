@@ -134,7 +134,7 @@ license_detections:
         license_expression_spdx: NCSA
         from_file:
         start_line: 167
-        end_line: '192'
+        end_line: 192
         matcher: 2-aho
         score: '100.0'
         matched_length: 224
@@ -172,7 +172,7 @@ license_detections:
       - license_expression: mit
         license_expression_spdx: MIT
         from_file:
-        start_line: '194'
+        start_line: 194
         end_line: 210
         matcher: 2-aho
         score: '100.0'

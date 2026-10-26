@@ -1,0 +1,232 @@
+---
+key: salesforce-au-external-2025
+short_name: Salesforce AU External-Facing Services Policy 2025
+name: Salesforce Acceptable Use and External-Facing Services Policy 2025
+category: Proprietary Free
+owner: Salesforce.com
+homepage_url: https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/policies/ExternalFacing_Services_Policy.pdf
+spdx_license_key: LicenseRef-scancode-salesforce-au-external-2025
+other_urls:
+    - https://github.com/search?q=org%3Asalesforce+Ethics+disclaimer+for+Salesforce+AI+models%2C+data%2C+code&type=code
+ignorable_urls:
+    - http://www.salesforce.com/
+    - https://www.salesforce.com/company/legal/agreements/
+---
+
+Salesforce Acceptable Use and External-Facing Services Policy
+
+1. Scope
+
+A. This Acceptable Use and External Facing Services Policy (“Policy”) applies to customers’ use of all
+services offered by Salesforce, Inc. or its affiliates (“Salesforce”). The terms of the Artificial Intelligence
+Acceptable Use Policy at https://www.salesforce.com/company/legal/agreements/ posted as of its
+effective date are hereby incorporated by reference. Capitalized terms used below but not defined in
+this policy have the meaning set forth in the Main Services Agreement (“MSA”).
+
+B. With respect to Slack Services, if we believe a customer or its users are engaging in or encouraging
+illegal activity, or deliberately or repeatedly presents a credible risk of harm, or encourages harm, to
+other users, the Services or any third parties, we may suspend or terminate your Slack access. Slack is
+not available for consumer purposes, as Slack is intended for use by businesses and organizations.
+
+2. Last Updated
+
+A. July 08, 2025
+
+3. Changes to Policy
+
+A. Salesforce may change this Policy by posting an updated version of the Policy at www.salesforce.com
+and such updates will be effective upon posting.
+
+4. Violations
+
+A. A customer’s violation of this Policy will be considered a material breach of the MSA and/or other
+agreement governing the customer’s use of the services.
+
+5. Prohibited Material
+
+A. Customers may not, and may not allow any third party, including its users, to use services to create,
+send, upload, display, store, process, or transmit, or permit use of services to create, send, upload,
+display, store, process, or transmit:
+
+I. Material that infringes or misappropriates a third party’s intellectual property or proprietary
+rights;
+
+II. Hate-related material, and/or material advocating discrimination against individuals or
+groups;
+
+III. Material advocating or advancing violent causes, including terrorism or violent extremism;
+
+IV. Obscene, excessively profane material or otherwise objectionable material;
+
+V. Material advocating or advancing criminal hacking, cracking, or phishing;
+
+VI. Material related to illegal drugs or paraphernalia;
+
+VII. Malicious material;
+
+VIII. Unlawful software;
+
+IX. Malicious code, such as viruses, worms, time bombs, Trojan horses, and other harmful or
+malicious files, scripts, agents, or programs; or
+Salesforce Acceptable Use and External-Facing Services Policy 2
+
+X. Material that violates, encourages, or furthers conduct that would violate any applicable laws,
+including any criminal laws, or any third-party rights, including publicity or privacy rights.
+
+6. Prohibited Actions
+
+A. Customers may not use a service to, nor allow its users or any third party to use a service to:
+
+I. Generate or facilitate unsolicited commercial email (spam). Such prohibited activity includes,
+but is not limited to:
+
+a. Sending communications or email in violation of the CAN-SPAM Act or any other
+applicable anti- spam law or regulation;
+
+b. Imitating or impersonating Salesforce, another person or his, her, or its email address,
+or creating false accounts for the purpose of sending spam;
+
+c. Mining data or harvesting any web property (including any External-Facing Service) to
+find email addresses or other user account information;
+
+d. Sending unauthorized mail via open, third-party servers;
+
+e. Sending email to users who have requested to be removed from a mailing list;
+
+f. Selling to, exchanging with, sharing with, or distributing to a third party personal
+information, including the email addresses of any person without such person’s
+knowing and continued consent to such disclosure; or
+
+g. Sending unsolicited emails to significant numbers of email addresses belonging to
+individuals and/or entities with whom you have no preexisting relationship;
+
+II. Create, send, upload, display, store, process, or transmit unlawful, defamatory, harassing,
+abusive, fraudulent, infringing, obscene, excessively profane, hateful, violent, or otherwise
+objectionable material nor use the services to send, display, or transmit sexually explicit
+material;
+
+III. Create, send, upload, display, store, process, or transmit highly deceptive manipulated or
+synthetic digital media that is fabricated or false but presented as authentic or fact based and
+intended to deliberately sway audiences towards a specific interest or agenda, including, but
+not limited to, deepfakes;
+
+IV. Promote, support, or facilitate unlawful, hateful, discriminatory, or violent causes, including
+terrorism or violent extremism;
+
+V. Intentionally distribute viruses, worms, defects, Trojan horses, corrupted files, hoaxes, or any
+other items of a destructive or deceptive nature;
+
+VI. Conduct or forward multi-level marketing, such as pyramid schemes and the like;
+
+VII. Generate or facilitate calls, SMS, MMS, other text messages push notifications, or other
+uninvited communications in violation of the Telephone Consumer Protection Act, the Do-
+Not-Call Implementation Act, or any other applicable law including anti- spam, telemarketing,
+robocalling, caller ID spoofing, or telephone consumer protection laws or regulations;
+
+VIII. Use the services in any manner that violates any applicable industry standards, third-party
+policies, or requirements that Salesforce may communicate to its users, including all of the
+applicable guidelines published by the CTIA, the Mobile Marketing Association, the Self-
+Regulatory Principles as directed by the Digital Advertising Alliance and the Network
+Advertising Initiative, or any other generally accepted industry associations, carrier
+guidelines, or other industry standards;
+Salesforce Acceptable Use and External-Facing Services Policy 3
+
+IX. Create, send, upload, display, store, process, or transmit material or otherwise use the
+Services in a way that may be harmful to minors including, but not limited to, for any purposes
+related to child exploitation or abuse, such as real or artificial Child Sexual Abuse Material
+(CSAM);
+
+X. Illegally send, upload, display, store, process, or transmit another’s intellectual property or
+other proprietary information without such owner’s or licensor’s permission;
+
+XI. Impersonate another person, entity, or Salesforce (via the use of an email address or
+otherwise) or otherwise misrepresent themselves or the source of any communication;
+
+XII. Facilitate or engage in coordinated inauthentic behavior for the purposes of manipulating
+public debate;
+
+XIII. Violate the rights (such as rights of privacy or publicity) of others;
+
+XIV. Promote, facilitate, or encourage illegal activity;
+
+XV. Intentionally or unintentionally interfere with the availability of the service for other users,
+including, but not limited to, engaging in usage practices prohibited by the Documentation;
+
+XVI. Mislead people about voting processes or census processes;
+
+XVII. Engage in activity in connection with illegal peer-to-peer file sharing;
+
+XVIII. Engage in or promote gambling, or run a gambling operation;
+
+XIX. “Mine” bitcoins and other cryptocurrencies;
+
+XX. Sell, distribute, or export illegal or prescription drugs or other controlled substances or
+paraphernalia;
+
+XXI. Operate an “open proxy” or any other form of Internet proxy service that is capable of
+forwarding requests to any end user or third-party-supplied Internet host;
+
+XXII. Perform significant load or security testing without first obtaining Salesforce’s written
+consent;
+
+XXIII. Remove any copyright, trademark, or other proprietary rights notices contained in or on the
+service or reformat or frame any portion of the web pages that are part of the service’s
+administration display;
+
+XXIV. Access a third-party web property for the purposes of web scraping, web crawling, web
+monitoring, or other similar activity through a web client that does not take commercially
+reasonable efforts to identify itself via a unique User Agent string describing the purpose of
+the web client and obey the robots exclusion standard (also known as the robots.txt
+standard), including the crawl-delay directive;
+
+XXV. Use a service in any manner that would disparage Salesforce;
+
+XXVI. Directly manage, as the primary operator, private, for-profit prison facilities or detention
+centers in the United States. For-profit prisons and detention centers refer to privately owned
+facilities in which persons are incarcerated or otherwise involuntarily confined for purposes
+of execution of a punitive sentence imposed by a court or detention pending a trial, hearing,
+or other judicial or administrative proceeding;
+
+XXVII. Engage in activity where the use or failure of a service may result in the death or serious bodily
+harm of a person, or in significant damage to property.
+
+B. Worldwide, customers may not use a service to commercially advertise or sell any of the following
+firearms and/or related accessories to private citizens. Firearms: automatic firearms; semi-automatic
+firearms that have the capacity to accept a detachable magazine and any of the following: thumbhole
+Salesforce Acceptable Use and External-Facing Services Policy
+stock, folding or telescoping stock, grenade launcher or flare launcher, flash or sound suppressor,
+forward pistol grip, pistol grip (in the case of a rifle) or second pistol grip (in the case of a pistol), barrel
+shroud; semi-automatic firearms with a fixed magazine that can accept more than 10 rounds; ghost
+guns; 3D printed guns; firearms without serial numbers; .50 BMG rifles; firearms that use .50 BMG
+ammunition. Firearm Parts: magazines capable of accepting more than 10 rounds; flash or sound
+suppressors; multi-burst trigger devices; grenade or rocket launchers; 80% or unfinished lower
+receivers; blueprints for ghost guns; blueprints for 3D printed guns; barrel shrouds; thumbhole stocks;
+threaded barrels capable of accepting a flash suppressor or sound suppressor.
+
+7. U.S. Digital Millennium Copyright Act or Similar Statutory Obligations
+
+A. To the extent a customer uses the services for hosting, advertising, sending electronic messages, or
+for the creation and hosting of, or for posting material on, websites, each customer must:
+
+I. Comply with any notices received under Title II of the Digital Millennium Copyright Act of 1998
+(Section 512 of the U.S. Copyright Act) or similar statute in other countries (the “DMCA”);
+
+II. Set up a process to expeditiously respond to notices of alleged infringement that comply with
+the DMCA and to implement a DMCA-compliant repeat infringers policy;
+
+III. Publicly display a description of its notice and takedown process under the DMCA on its
+instance of the services; and
+
+IV. Comply with such processes, policy(ies), and description.
+
+B. It is Salesforce’s policy to respond expeditiously to valid notices of claimed copyright infringement
+compliant with the DMCA. In appropriate circumstances, Salesforce will terminate the accounts of
+customers who Salesforce suspects to be repeatedly or blatantly infringing copyrights.
+
+C. If Salesforce receives a notice alleging that material on a customer’s instance of a service infringes
+another party’s intellectual property, Salesforce may disable that customer’s instance of the service
+or remove the allegedly infringing material. If Salesforce receives more than one such notice for the
+same customer, Salesforce reserves the right to immediately terminate such customer’s subscriptions
+to the services as deemed necessary by Salesforce to ensure continued protection under the safe
+harbor provisions under the DMCA or to prevent violations of other applicable laws or third parties’
+rights.

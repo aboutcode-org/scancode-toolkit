@@ -756,7 +756,7 @@ other_license_detections:
       - license_expression: cc-by-sa-3.0
         license_expression_spdx: CC-BY-SA-3.0
         from_file:
-        start_line: '19'
+        start_line: 19
         end_line: 21
         matcher: 2-aho
         score: '100.0'

@@ -1,0 +1,21 @@
+---
+key: snap-nc-2025
+short_name: Snap Non-Commercial License 2025
+name: Snap Non-Commercial License 2025
+category: Non-Commercial
+owner: Snap Inc.
+homepage_url: https://huggingface.co/datasets/Ericguo5513/SnapMoGen/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-snap-nc-2025
+---
+
+Snap Inc. Non-Commercial License
+
+This dataset is made available by Snap Inc. for non-commercial, research purposes only. 
+
+Non-commercial means not intended for or directed towards commercial advantage or monetary compensation. Research purposes mean solely for academic study, instruction, or non-commercial research, testing or validation. 
+
+No commercial license, whether implied or otherwise, is granted in or to this dataset, unless you have entered into a separate agreement with Snap Inc. for such rights.
+
+This dataset is provided as-is, without warranty of any kind, express or implied, including any warranties of merchantability, title, fitness for a particular purpose, non-infringement, or that the data is free of defects or errors. In no event will Snap Inc. be liable for any damages or losses of any kind arising from this dataset or your use thereof.
+
+Any redistribution of this dataset must retain or reproduce this license text including all copyright notices, conditions and disclaimers.

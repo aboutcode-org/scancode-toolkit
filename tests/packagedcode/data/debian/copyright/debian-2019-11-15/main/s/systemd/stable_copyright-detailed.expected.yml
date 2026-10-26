@@ -239,7 +239,7 @@ other_license_detections:
         license_expression_spdx: CC0-1.0
         from_file:
         start_line: 187
-        end_line: '195'
+        end_line: 195
         matcher: 1-hash
         score: '100.0'
         matched_length: 82

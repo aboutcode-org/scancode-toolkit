@@ -63,7 +63,7 @@
             {
               "license_expression": "mit",
               "license_expression_spdx": "MIT",
-              "from_file": "package/m2r-2.1.0.gem",
+              "from_file": "m2r-2.1.0.gem",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-spdx-id",
@@ -366,7 +366,7 @@
                 {
                   "license_expression": "mit",
                   "license_expression_spdx": "MIT",
-                  "from_file": "package/m2r-2.1.0.gem",
+                  "from_file": "m2r-2.1.0.gem",
                   "start_line": 1,
                   "end_line": 1,
                   "matcher": "1-spdx-id",
@@ -547,13 +547,6 @@
       "for_packages": [
         "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "scan_errors": []
-    },
-    {
-      "path": "m2r-2.1.0.gem.json",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [],
       "scan_errors": []
     }
   ]

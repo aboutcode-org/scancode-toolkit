@@ -1,0 +1,96 @@
+---
+key: xmos-public-1
+short_name: XMOS Public Licence v1
+name: XMOS Public Licence v1
+category: Proprietary Free
+owner: XMOS
+homepage_url: https://github.com/xmos/lib_mic_array/blob/develop/LICENSE.rst
+spdx_license_key: LicenseRef-scancode-xmos-public-1
+ignorable_emails:
+    - support@xmos.com
+---
+
+*******************************
+XMOS PUBLIC LICENCE: Version 1
+*******************************
+
+Subject to the conditions and limitations below, permission is hereby granted by XMOS LIMITED (“XMOS”), free of charge, to any person or entity obtaining a copy of the XMOS Software.
+
+**1. Definitions**
+
+**“Applicable Patent Rights”** means: (a) where XMOS is the grantor of the rights, (i) claims of patents that are now or in future owned by or assigned to XMOS and (ii) that cover subject matter contained in the Software, but only to the extent it is necessary to use, reproduce or distribute the Software without infringement; and (b) where you are the grantor of the rights, (i) claims of patents that are now or in future owned by or assigned to you and (ii) that cover the subject matter contained in your Derivatives, taken alone or in combination with the Software.
+
+**“Compiled Code”** means any compiled, binary, machine readable or executable version of the Source Code.
+
+**“Contributor”** means any person or entity that creates or contributes to the creation of Derivatives.
+
+**“Derivatives”** means any addition to, deletion from and/or change to the substance, structure of the Software, any previous Derivatives, the combination of the Derivatives and the Software and/or any respective portions thereof.
+
+**“Source Code”** means the human readable code that is suitable for making modifications but excluding any Compiled Code.
+
+**“Software”** means the software and associated documentation files which XMOS makes available and which contain a notice identifying the software as original XMOS software and referring to the software being subject to the terms of this XMOS Public Licence.
+
+This Licence refers to XMOS Software and does not relate to any XMOS hardware or devices which are protected by intellectual property rights (including patent and trade marks) which may be sold to you under a separate agreement.
+
+
+**2. Licence**
+
+**Permitted Uses, Conditions and Restrictions.**  Subject to the conditions below, XMOS grants you a worldwide, royalty free, non-exclusive licence, to the extent of any Patent Rights to do the following:
+
+2.1 **Unmodified Software.** You may use, copy, display, publish, distribute and make available unmodified copies of the Software:
+
+2.1.1 for personal or academic, non-commercial purposes; or
+
+2.1.2 for commercial purposes provided the Software is at all times used on a device designed, licensed or developed by XMOS and, provided that in each instance (2.1.1 and 2.1.2):
+
+(a) you must retain and reproduce in all copies of the Software the copyright and proprietary notices and disclaimers of XMOS as they appear in the Software, and keep intact all notices and disclaimers in the Software files that refer to this Licence; and
+
+(b) you must include a copy of this Licence with every copy of the Software and documentation you publish, distribute and make available and you may not offer or impose any terms on such Software that alter or restrict this Licence or the intent of such Licence, except as permitted below (Additional Terms).
+
+The licence above does not include any Compiled Code which XMOS may make available under a separate support and licence agreement.
+
+2.2 **Derivatives.** You may create and modify Derivatives and use, copy, display, publish, distribute and make available Derivatives:
+
+2.2.1 for personal or academic, non-commercial purposes; or
+
+2.2.2 for commercial purposes, provided the Derivatives are at all times used on a device designed, licensed or developed by XMOS and, provided that in each instance (2.2.1 and 2.2.2):
+
+(a) you must comply with the terms of clause 2.1 with respect to the Derivatives;
+
+(b) you must copy (to the extent it doesn’t already exist) the notice below in each file of the Derivatives, and ensure all the modified files carry prominent notices stating that you have changed the files and the date of any change; and
+
+(c) if you sublicence, distribute or otherwise make the Software and/or the Derivatives available for commercial purposes, you must provide that the Software and Derivatives are at all times used on a device designed, licensed or developed by XMOS.
+
+Without limitation to these terms and clause 3 below, the Source Code and Compiled Code to your Derivatives may at your discretion (but without obligation) be released, copied, displayed, published, distributed and made available; and if you elect to do so, it must be under the terms of this Licence including the terms of the licence at clauses 2.2.1, 2.2.2 and clause 3 below.
+
+2.3 **Distribution of Executable Versions.**  If you distribute or make available Derivatives, you must include a prominent notice in the code itself as well as in all related documentation, stating that the Source Code of the Software from which the Derivatives are based is available under the terms of this Licence, with information on how and where to obtain such Source Code.
+
+**3. Your Grant of Rights.**  In consideration and as a condition to this Licence, you grant to any person or entity receiving or distributing any Derivatives, a non-exclusive, royalty free, perpetual, irrevocable license under your Applicable Patent Rights and all other intellectual property rights owned or controlled by you, to use, copy, display, publish, distribute and make available your Derivatives of the same scope and extent as XMOS’s licence under clause 2.2 above.
+
+**4. Combined Products.**  You may create a combined product by combining Software, Derivatives and other code not covered by this Licence as a single application or product. In such instance, you must comply with the requirements of this Licence for any portion of the Software and/or Derivatives.
+
+**5. Additional Terms.**  You may choose to offer, and to charge a fee for, warranty, support, indemnity or liability obligations and/or other rights consistent with the term of this Licence (“Additional Terms”) to any legitimate recipients of the Software and/or Derivatives.  The terms on which you provide such Additional Terms are on your sole responsibility and you shall indemnify, defend and hold XMOS harmless against any claims asserted against XMOS.
+
+**6. New Versions.**  XMOS may publish revised and/or new versions of this Licence from time to time to accommodate changes to the Licence terms, new versions, updates and bug fixes of the Software.  Each version will be given a distinguishing version number.  Once Software has been published under a particular version of this Licence, you may continue to use it under the terms of that version.  You may also choose to use the latest version of the Software under any subsequent version published by XMOS.  Only XMOS shall have the right to modify these terms.
+
+**7. IPR and Ownership**
+Any rights, including all intellectual property rights and all trademarks not expressly granted herein are reserved in full by the authors or copyright holders. Any requests for additional permissions by XMOS including any rights to use XMOS trademarks, should be made (without obligation) to XMOS at **support@xmos.com**
+
+Nothing herein shall limit any rights that XMOS is otherwise entitled to under the doctrines of patent exhaustion, implied license, or legal estoppel.  Neither the name of the authors, the copyright holders or any contributors may be used to endorse or promote any Derivatives from this Software without specific written permission.  Any attempt to deal with the Software which does not comply with this Licence shall be void and shall automatically terminate any rights granted under this licence (including any licence of any intellectual property rights granted herein).
+Subject to the licences granted under this Licence any Contributor retains all rights, title and interest in and to any Derivatives made by Contributor subject to the underlying rights of XMOS in the Software.  XMOS shall retain all rights, title and interest in the Software and any Derivatives made by XMOS (“XMOS Derivatives”).  XMOS Derivatives will not automatically be subject to this Licence and XMOS shall be entitled to licence such rights on any terms (without obligation) as it sees fit.
+
+**8. Termination**
+
+8.1 This Licence will automatically terminate immediately, without notice to you, if:
+
+(a) you fail to comply with the terms of this Licence; and/or
+
+(b) you directly or indirectly commence any action for patent or intellectual property right infringement against XMOS, or any parent, group, affiliate or subsidiary of XMOS; provided XMOS did not first commence an action or patent infringement against you in that instance; and/or
+
+(c) the terms of this Licence are held by any court of competent jurisdiction to be unenforceable in whole or in part.
+
+**9. Critical Applications.**  Unless XMOS has agreed in writing with you an agreement specifically governing use of the Goods in military, aerospace, automotive or medically related functions (collectively and individually hereinafter referred to as "Special Use"), any permitted use of the Software excludes Special Use. Notwithstanding any agreement between XMOS and you for Special Use, Special Use shall be at your own risk, and you shall fully indemnify XMOS against any damages, losses, costs and claims (direct and indirect) arising out of any Special Use.
+
+**10. NO WARRANTY OR SUPPORT.**  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL XMOS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, WARRANTY, CIVIL TORT (INCLUDING NEGLIGENCE), PRODUCTS LIABILITY OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE INCLUDING GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND NOT WITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE.  IN SOME JURISDICTIONS PARTIES ARE UNABLE TO LIMIT LIABILTY IN THIS WAY, IF THIS APPLIES TO YOUR JURISDICTION THIS LIABILITY CLAUSE ABOVE MAY NOT APPLY.  NOTWITHSTANDING THE ABOVE, IN NO EVENT SHALL XMOS’s TOTAL LIABILITY TO YOU FOR ALL DAMAGES, LOSS OR OTHERWISE EXCEED $50.
+
+**11. Governing Law and Jurisdiction.**  This Licence constitutes the entire agreement between the parties with respect to the subject matter hereof. The Licence shall be governed by the laws of England and the conflict of laws and UN Convention on Contracts for the International Sale of Goods, shall not apply.

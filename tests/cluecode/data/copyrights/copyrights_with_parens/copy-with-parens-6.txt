@@ -1,0 +1,2 @@
+Copyright 2019 Dave Peterson (dave@dspeterson.com)
+Copyright 2014 if(we), Inc.

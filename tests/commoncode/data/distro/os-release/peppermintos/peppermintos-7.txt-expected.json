@@ -1,0 +1,11 @@
+{
+  "NAME": "Peppermint",
+  "VERSION": "Seven",
+  "ID": "peppermint",
+  "ID_LIKE": "debian",
+  "PRETTY_NAME": "Peppermint Seven",
+  "VERSION_ID": "7",
+  "HOME_URL": "http://peppermintos.com/",
+  "SUPPORT_URL": "http://forum.peppermintos.com/",
+  "BUG_REPORT_URL": "http://bugs.launchpad.net/~peppermintos/"
+}

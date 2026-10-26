@@ -1,171 +1,553 @@
-[
-  {
-    "type": "gem", 
-    "namespace": null, 
-    "name": "m2r", 
-    "version": "2.1.0", 
-    "qualifiers": {}, 
-    "subpath": null, 
-    "primary_language": "Ruby", 
-    "description": "Mongrel2 interface and handler library for Ruby.\nMongrel2 Rack handler and pure handler. Works with Rack, so it works with Rails!", 
-    "release_date": "2013-10-29", 
-    "parties": [
-      {
-        "type": null, 
-        "role": "author", 
-        "name": "Colin Curtin", 
-        "email": null, 
-        "url": null
-      }, 
-      {
-        "type": null, 
-        "role": "author", 
-        "name": "Pradeep Elankumaran", 
-        "email": null, 
-        "url": null
-      }, 
-      {
-        "type": null, 
-        "role": "author", 
-        "name": "Pawel Pacana", 
-        "email": null, 
-        "url": null
-      }, 
-      {
-        "type": null, 
-        "role": "author", 
-        "name": "Robert Pankowecki", 
-        "email": null, 
-        "url": null
-      }
-    ], 
-    "keywords": [], 
-    "homepage_url": "http://github.com/perplexes/m2r", 
-    "download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem", 
-    "size": null, 
-    "sha1": null, 
-    "md5": null, 
-    "sha256": null, 
-    "sha512": null, 
-    "bug_tracking_url": null, 
-    "code_view_url": null, 
-    "vcs_url": null, 
-    "copyright": null, 
-    "license_expression": "mit", 
-    "declared_license": [
-      "MIT"
-    ], 
-    "notice_text": null, 
-    "dependencies": [
-      {
-        "purl": "pkg:gem/ffi-rzmq", 
-        "requirement": ">= 1.0.1", 
-        "scope": "runtime", 
-        "is_runtime": true, 
-        "is_optional": false, 
-        "is_pinned": false
-      }, 
-      {
-        "purl": "pkg:gem/ffi", 
-        "requirement": ">= 1.0.0", 
-        "scope": "runtime", 
-        "is_runtime": true, 
-        "is_optional": false, 
-        "is_pinned": false
-      }, 
-      {
-        "purl": "pkg:gem/multi_json", 
-        "requirement": null, 
-        "scope": "runtime", 
-        "is_runtime": true, 
-        "is_optional": false, 
-        "is_pinned": false
-      }, 
-      {
-        "purl": "pkg:gem/tnetstring", 
-        "requirement": null, 
-        "scope": "runtime", 
-        "is_runtime": true, 
-        "is_optional": false, 
-        "is_pinned": false
-      }, 
-      {
-        "purl": "pkg:gem/rack", 
-        "requirement": null, 
-        "scope": "development", 
-        "is_runtime": false, 
-        "is_optional": true, 
-        "is_pinned": false
-      }, 
-      {
-        "purl": "pkg:gem/rake", 
-        "requirement": null, 
-        "scope": "development", 
-        "is_runtime": false, 
-        "is_optional": true, 
-        "is_pinned": false
-      }, 
-      {
-        "purl": "pkg:gem/minitest", 
-        "requirement": "= 3.2.0", 
-        "scope": "development", 
-        "is_runtime": false, 
-        "is_optional": true, 
-        "is_pinned": true
-      }, 
-      {
-        "purl": "pkg:gem/mocha", 
-        "requirement": ">= 0.14.0", 
-        "scope": "development", 
-        "is_runtime": false, 
-        "is_optional": true, 
-        "is_pinned": false
-      }, 
-      {
-        "purl": "pkg:gem/bbq", 
-        "requirement": "= 0.0.4", 
-        "scope": "development", 
-        "is_runtime": false, 
-        "is_optional": true, 
-        "is_pinned": true
-      }, 
-      {
-        "purl": "pkg:gem/capybara-mechanize", 
-        "requirement": "= 0.3.0", 
-        "scope": "development", 
-        "is_runtime": false, 
-        "is_optional": true, 
-        "is_pinned": true
-      }, 
-      {
-        "purl": "pkg:gem/activesupport", 
-        "requirement": "~> 3.2.7", 
-        "scope": "development", 
-        "is_runtime": false, 
-        "is_optional": true, 
-        "is_pinned": false
-      }, 
-      {
-        "purl": "pkg:gem/yard", 
-        "requirement": "~> 0.8.2", 
-        "scope": "development", 
-        "is_runtime": false, 
-        "is_optional": true, 
-        "is_pinned": false
-      }, 
-      {
-        "purl": "pkg:gem/kramdown", 
-        "requirement": "~> 0.13.7", 
-        "scope": "development", 
-        "is_runtime": false, 
-        "is_optional": true, 
-        "is_pinned": false
-      }
-    ], 
-    "source_packages": [], 
-    "purl": "pkg:gem/m2r@2.1.0", 
-    "repository_homepage_url": "https://rubygems.org/gems/m2r/versions/2.1.0", 
-    "repository_download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem", 
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json"
-  }
-]
+{
+  "packages": [
+    {
+      "type": "gem",
+      "namespace": null,
+      "name": "m2r",
+      "version": "2.1.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Ruby",
+      "description": "Mongrel2 interface and handler library for Ruby.\nMongrel2 Rack handler and pure handler. Works with Rack, so it works with Rails!",
+      "release_date": "2013-10-29",
+      "parties": [
+        {
+          "type": null,
+          "role": "author",
+          "name": "Colin Curtin",
+          "email": null,
+          "url": null
+        },
+        {
+          "type": null,
+          "role": "author",
+          "name": "Pradeep Elankumaran",
+          "email": null,
+          "url": null
+        },
+        {
+          "type": null,
+          "role": "author",
+          "name": "Pawel Pacana",
+          "email": null,
+          "url": null
+        },
+        {
+          "type": null,
+          "role": "author",
+          "name": "Robert Pankowecki",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "http://github.com/perplexes/m2r",
+      "download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "m2r-2.1.0.gem",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- MIT\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://rubygems.org/gems/m2r/versions/2.1.0",
+      "repository_download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem",
+      "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json",
+      "package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "m2r-2.1.0.gem"
+      ],
+      "datasource_ids": [
+        "gem_archive"
+      ],
+      "purl": "pkg:gem/m2r@2.1.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:gem/ffi-rzmq",
+      "extracted_requirement": ">= 1.0.1",
+      "scope": "runtime",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/ffi-rzmq?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/ffi",
+      "extracted_requirement": ">= 1.0.0",
+      "scope": "runtime",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/ffi?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/multi_json",
+      "extracted_requirement": null,
+      "scope": "runtime",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/multi_json?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/tnetstring",
+      "extracted_requirement": null,
+      "scope": "runtime",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/tnetstring?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/rack",
+      "extracted_requirement": null,
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/rack?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/rake",
+      "extracted_requirement": null,
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/rake?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/minitest",
+      "extracted_requirement": "= 3.2.0",
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": true,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/minitest?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/mocha",
+      "extracted_requirement": ">= 0.14.0",
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/mocha?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/bbq",
+      "extracted_requirement": "= 0.0.4",
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": true,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/bbq?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/capybara-mechanize",
+      "extracted_requirement": "= 0.3.0",
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": true,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/capybara-mechanize?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/activesupport",
+      "extracted_requirement": "~> 3.2.7",
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/activesupport?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/yard",
+      "extracted_requirement": "~> 0.8.2",
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/yard?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    },
+    {
+      "purl": "pkg:gem/kramdown",
+      "extracted_requirement": "~> 0.13.7",
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/kramdown?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "m2r-2.1.0.gem",
+      "datasource_id": "gem_archive"
+    }
+  ],
+  "files": [
+    {
+      "path": "m2r-2.1.0.gem",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "gem",
+          "namespace": null,
+          "name": "m2r",
+          "version": "2.1.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Ruby",
+          "description": "Mongrel2 interface and handler library for Ruby.\nMongrel2 Rack handler and pure handler. Works with Rack, so it works with Rails!",
+          "release_date": "2013-10-29",
+          "parties": [
+            {
+              "type": null,
+              "role": "author",
+              "name": "Colin Curtin",
+              "email": null,
+              "url": null
+            },
+            {
+              "type": null,
+              "role": "author",
+              "name": "Pradeep Elankumaran",
+              "email": null,
+              "url": null
+            },
+            {
+              "type": null,
+              "role": "author",
+              "name": "Pawel Pacana",
+              "email": null,
+              "url": null
+            },
+            {
+              "type": null,
+              "role": "author",
+              "name": "Robert Pankowecki",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "http://github.com/perplexes/m2r",
+          "download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "license_expression_spdx": "MIT",
+                  "from_file": "m2r-2.1.0.gem",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- MIT\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:gem/ffi-rzmq",
+              "extracted_requirement": ">= 1.0.1",
+              "scope": "runtime",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/ffi",
+              "extracted_requirement": ">= 1.0.0",
+              "scope": "runtime",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/multi_json",
+              "extracted_requirement": null,
+              "scope": "runtime",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/tnetstring",
+              "extracted_requirement": null,
+              "scope": "runtime",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/rack",
+              "extracted_requirement": null,
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/rake",
+              "extracted_requirement": null,
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/minitest",
+              "extracted_requirement": "= 3.2.0",
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": true,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/mocha",
+              "extracted_requirement": ">= 0.14.0",
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/bbq",
+              "extracted_requirement": "= 0.0.4",
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": true,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/capybara-mechanize",
+              "extracted_requirement": "= 0.3.0",
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": true,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/activesupport",
+              "extracted_requirement": "~> 3.2.7",
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/yard",
+              "extracted_requirement": "~> 0.8.2",
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/kramdown",
+              "extracted_requirement": "~> 0.13.7",
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://rubygems.org/gems/m2r/versions/2.1.0",
+          "repository_download_url": "https://rubygems.org/downloads/m2r-2.1.0.gem",
+          "api_data_url": "https://rubygems.org/api/v2/rubygems/m2r/versions/2.1.0.json",
+          "datasource_id": "gem_archive",
+          "purl": "pkg:gem/m2r@2.1.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:gem/m2r@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

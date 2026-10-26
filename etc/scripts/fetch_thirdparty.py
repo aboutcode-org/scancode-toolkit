@@ -30,6 +30,7 @@ TRACE_DEEP = False
     metavar="REQUIREMENT-FILE",
     multiple=True,
     required=False,
+    default=None,
     help="Path to pip requirements file(s) listing thirdparty packages.",
 )
 @click.option(
@@ -39,6 +40,7 @@ TRACE_DEEP = False
     type=str,
     metavar="SPECIFIER",
     multiple=True,
+    default=None,
     required=False,
     help="Thirdparty package name==version specification(s) as in django==1.2.3. "
     "With --latest-version a plain package name is also acceptable.",
@@ -64,12 +66,14 @@ TRACE_DEEP = False
     "-w",
     "--wheels",
     is_flag=True,
+    default=False,
     help="Download wheels.",
 )
 @click.option(
     "-s",
     "--sdists",
     is_flag=True,
+    default=False,
     help="Download source sdists tarballs.",
 )
 @click.option(
@@ -107,6 +111,7 @@ TRACE_DEEP = False
 @click.option(
     "--use-cached-index",
     is_flag=True,
+    default=False,
     help="Use on disk cached PyPI indexes list of packages and versions and "
     "do not refetch if present.",
 )

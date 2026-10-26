@@ -410,7 +410,7 @@ Package type:  gem
   documentation URL: https://bundler.io/man/gemfile.5.html
   primary language:  Ruby
   description:       RubyGems Bundler Gemfile
-  path_patterns:    '*/Gemfile', '*/*.gemfile', '*/Gemfile-*'
+  path_patterns:    '*/Gemfile', '*.gemfile', '*/Gemfile-*'
 --------------------------------------------
 Package type:  gem
   datasource_id:     gemfile_extracted
@@ -789,6 +789,20 @@ Package type:  pypi
   primary language:  Python
   description:       Python setup.py
   path_patterns:    '*setup.py'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_uv_lock
+  documentation URL: https://docs.astral.sh/uv/concepts/projects/sync/#the-uvlock-file
+  primary language:  Python
+  description:       Python UV lockfile
+  path_patterns:    '*uv.lock'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_uv_pyproject_toml
+  documentation URL: https://docs.astral.sh/uv/concepts/projects/
+  primary language:  Python
+  description:       Python UV pyproject.toml
+  path_patterns:    '*pyproject.toml'
 --------------------------------------------
 Package type:  pypi
   datasource_id:     pypi_wheel

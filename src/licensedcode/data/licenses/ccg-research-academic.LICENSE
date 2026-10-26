@@ -2,7 +2,7 @@
 key: ccg-research-academic
 short_name: CogComp Research and Academic Use License
 name: Cognitive Computation Group Research License
-category: Proprietary Free
+category: Non-Commercial
 owner: NCSA - University of Illinois
 homepage_url: https://raw.githubusercontent.com/CogComp/cogcomp-nlp/refs/heads/master/LICENSE
 spdx_license_key: LicenseRef-scancode-ccg-research-academic

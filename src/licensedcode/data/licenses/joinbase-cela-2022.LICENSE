@@ -1,0 +1,29 @@
+---
+key: joinbase-cela-2022
+short_name: JoinBase Community Edition License 2022
+name: JoinBase Community Edition License Agreement 2022
+category: Proprietary Free
+owner: JoinBase
+homepage_url: https://joinbase.io/community_license/
+spdx_license_key: LicenseRef-scancode-joinbase-cela-2022
+other_urls:
+    - https://github.com/open-joinbase/JoinBase/blob/main/README.md
+---
+
+JoinBase Community Edition License Agreement
+
+Please read these terms and conditions carefully before downloading or using the software accompanying this agreement. By downloading or using the software in any way, you agree to use the software solely in accordance with the following terms and conditions of this agreement.
+
+This JoinBase Software License Agreement (this "Agreement") is a legally binding contract between you and (hereinafter referred as JoinBase Developers) and governs your use of the JoinBase Software (as defined below). "JoinBase Software", means the software developed and provided by JoinBase Developers. "JoinBase Developers", means the people or organizations who develope the JoinBase Software and provide the JoinBase Software under this Agreement.
+
+You warrant that you are at least eighteen years old and that you have the legal capacity to enter into contracts. If you are entering into this agreement on behalf of a company, organization, other entity or their affiliates, then (a) “you” as used herein additionally refers to that company, organization, entity or their affiliates; (b) you represent and warrant that you have the authority to bind such company, organization, or entity to the terms and conditions set forth herein; (c) no authorization or approval from any third party is required in connection with your execution, delivery or performance of this agreement; and (d) the execution, delivery and performance of the agreement does not and will not violate the terms or conditions of any other agreement to which you are a party or by which it is otherwise bound, or any applicable law or regulation. If you do not agree to any terms of this agreement or if you do not have such authority to execute this agreement, you must immediately cease using the JoinBase Software and uninstall and delete all copies.
+
+    Application, Term and Termination of Agreement. By installing or otherwise using the JoinBase Software, you agree to the terms of this agreement and you agree to be bound by this agreement as of the date of downloading the JoinBase Software or the date of such installment or use of the JoinBase Software. This Agreement will continue to apply until (a) you terminate this Agreement at any time by uninstalling and deleting all copies of the JoinBase Software in your possession or control; or (b) JoinBase Developers terminates this Agreement. JoinBase Developers may terminate this Agreement at any time for any reason (including but not limited to your breach of this Agreement) by providing you with notice. If JoinBase Developers notify you of our termination, you must uninstall and delete all copies of the JoinBase Software in your possession or control.
+
+    License Grant.​ The JoinBase Software is licensed, not sold, to you. During the term of this Agreement and subject to your compliance with this Agreement, JoinBase Developers grant you a non-exclusive, non-transferable, non-assignable, non-sublicensable, revocable license to install and use the JoinBase Software at no charge for your internal business purposes and to develop or commercialize products that interact with the JoinBase Software, except the license as expressly stated herein, all related intellectual property rights with the JoinBase Software, will remain with JoinBase Developers.
+
+    Your Responsibilities. If the JoinBase Software includes any software in binary or any other formats than source codes, you may not, and you agree not to or enable others to, decompile, reverse engineer, disassemble, attempt to derive the source code of, decrypt, modify, or create derivative works of the JoinBase Software, or any part thereof. You shall comply with applicable laws in connection with your use of JoinBase Software, including any applicable U.S. export regulations and anti-corruption laws.
+
+    Disclaimer of Warranties.​ ​to the maximum extent permitted by applicable law: (a) use of any JoinBase Software is at your sole risk and the entire risk as to satisfactory quality, performance, accuracy and effort is with you; (b) the JoinBase Software is licensed to you on an “as is” and “as available” basis, with all faults and without warranty of any kind, and JoinBase Developers disclaim all warranties, either express, implied or statutory, including but not limited to implied warranties of merchantability, satisfactory quality, fitness for a particular purpose, accuracy, quiet enjoyment, availability and non-infringement; and (c) without limiting the foregoing, JoinBase Developers do not warrant that the software will meet your requirements, that its operation will be uninterrupted or error-free, or that defects will be corrected. no information or advice given by us will create any warranty​.
+
+    Limitation of Liability.​ ​To the maximum extent permitted by applicable law: in no event will JoinBase Developers be liable for any direct, incidental, special, indirect or consequential damages whatsoever, or damages for loss of profits, loss of data, loss of goodwill, business interruption or any other damages or losses, arising out of or related to your use or inability to use the JoinBase Software​.

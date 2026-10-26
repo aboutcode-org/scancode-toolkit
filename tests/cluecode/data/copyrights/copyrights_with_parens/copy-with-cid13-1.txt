@@ -1,0 +1,3 @@
+Portions of this article are derived from [31], [30] and [28].
+Copyright c(cid:13)1989 ITAA, formerly ADAPSO, and 1991, 1993 by Eugene H. Spafford. Used with permission.
+To appear in the JournalofArtificialLife, MIT Press, 1994.

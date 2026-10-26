@@ -63,7 +63,12 @@ def match_sequence(
         return []
 
     if not match_blocks:
-        from licensedcode.seq import match_blocks
+        try:
+            # Use Cython seq.py implementation
+            from cyseq import match_blocks
+        except ImportError:
+            # Use Python seq.py if it is not available
+            from licensedcode.seq import match_blocks
 
     rid = rule.rid
     itokens = idx.tids_by_rid[rid]

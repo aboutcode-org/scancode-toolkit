@@ -1,0 +1,9 @@
+{
+  "NAME": "Fedora",
+  "VERSION": "18 (Spherical Cow)",
+  "ID": "fedora",
+  "VERSION_ID": "18",
+  "PRETTY_NAME": "Fedora 18 (Spherical Cow)",
+  "ANSI_COLOR": "0;34",
+  "CPE_NAME": "cpe:/o:fedoraproject:fedora:18"
+}

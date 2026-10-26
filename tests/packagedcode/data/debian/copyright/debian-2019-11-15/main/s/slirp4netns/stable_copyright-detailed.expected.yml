@@ -274,7 +274,7 @@ other_license_detections:
         license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 176
-        end_line: '190'
+        end_line: 190
         matcher: 1-hash
         score: '100.0'
         matched_length: 133

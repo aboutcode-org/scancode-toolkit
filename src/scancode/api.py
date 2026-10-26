@@ -256,20 +256,28 @@ def get_licenses(
 SCANCODE_DEBUG_PACKAGE_API = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 
-def _get_package_data(location, application=True, system=False, package_only=False, **kwargs):
+def _get_package_data(
+    location,
+    application=True,
+    system=False,
+    compiled=False,
+    package_only=False, 
+    **kwargs
+):
     """
     Return a mapping of package manifest information detected in the file at ``location``.
     Include ``application`` packages (such as pypi) and/or ``system`` packages.
     Note that all exceptions are caught if there are any errors while parsing a
     package manifest.
     """
-    assert application or system or package_only
+    assert application or system or compiled or package_only
     from packagedcode.recognize import recognize_package_data
     try:
         return recognize_package_data(
             location=location,
             application=application,
             system=system,
+            compiled=compiled,
             package_only=package_only,
         ) or []
 
@@ -300,7 +308,14 @@ def get_package_info(location, **kwargs):
     return dict(packages=[p.to_dict() for p in packages])
 
 
-def get_package_data(location, application=True, system=False, package_only=False, **kwargs):
+def get_package_data(
+    location,
+    application=True,
+    system=False,
+    compiled=False,
+    package_only=False,
+    **kwargs
+):
     """
     Return a mapping of package manifest information detected in the file at
     `location`.
@@ -313,6 +328,7 @@ def get_package_data(location, application=True, system=False, package_only=Fals
         location=location,
         application=application,
         system=system,
+        compiled=compiled,
         package_only=package_only,
         **kwargs,
     ) or []

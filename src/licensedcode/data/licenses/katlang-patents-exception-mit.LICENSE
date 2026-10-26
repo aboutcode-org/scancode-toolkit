@@ -1,0 +1,100 @@
+---
+key: katlang-patents-exception-mit
+short_name: KatLang Patents Exception to MIT
+name: KatLang Patents Exception to MIT
+category: Patent License
+owner: KatLang
+homepage_url: https://github.com/katlangorg/katlangnet/blob/main/PATENTS
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-katlang-patents-exception-mit
+---
+
+PATENTS
+
+Licensor: Logics Research Centre SIA
+
+This software is released under the MIT License.
+In addition, the Licensor provides the following patent grant.
+
+------------------------------------------------------------
+SCOPE
+------------------------------------------------------------
+
+This patent grant applies solely to the KatLang project
+(the “Software”) as distributed by the Licensor and to
+derivative works based on that Software.
+
+No patent rights are granted for uses of the Licensor’s
+patents outside the scope of the Software.
+
+If you are interested in using the Licensor’s patents
+outside the scope of this Software, please contact
+Logics Research Centre SIA to discuss alternative
+licensing arrangements.
+
+------------------------------------------------------------
+INDEPENDENT IMPLEMENTATIONS
+------------------------------------------------------------
+
+The patent grant below also extends to any independent
+reimplementation of the KatLang language, provided that the
+implementation faithfully implements the KatLang language
+specification as defined by the authoritative KatLang.lean
+specification file distributed with this project.
+
+This means that if you are building a KatLang interpreter,
+compiler, or runtime in any programming language — without
+using any code from this project — you are still covered by
+this patent grant, as long as your implementation conforms
+to the KatLang specification.
+
+This extension does not cover use of the patented techniques
+in projects unrelated to the KatLang language.
+
+If you are unsure whether your project qualifies, you are
+welcome to reach out to Logics Research Centre SIA.
+
+------------------------------------------------------------
+PATENT GRANT
+------------------------------------------------------------
+
+This patent grant is provided solely in connection with the
+Software as licensed under the MIT License and applies only
+to recipients who comply with the terms of that license.
+
+Subject to the terms of the MIT License, the Licensor hereby grants
+to any person or entity obtaining a copy of the Software a perpetual,
+worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+patent license to make, have made, use, offer to sell, sell, import,
+and otherwise transfer the Software, where such license applies only
+to those patent claims owned or controlled by the Licensor that are
+necessarily infringed by the use of the Software as provided by the
+Licensor.
+
+------------------------------------------------------------
+PATENTS COVERED BY THIS GRANT
+------------------------------------------------------------
+
+The following patents are owned or controlled by the Licensor and
+may be practiced by implementations of this software:
+
+- US Patent No. 9,361,071  
+  “Implicit Parameters and Implicit Arguments in Programming Languages”
+
+- US Patent No. 9,417,850  
+  “Grace Operator for Changing Order and Scope of Implicit Parameters”
+
+- US Patent No. 11,947,932  
+  “Extension Property Calls”
+
+------------------------------------------------------------
+NO ADDITIONAL CONDITIONS
+------------------------------------------------------------
+
+This patent grant does not impose any obligation to agree with or
+endorse any belief, statement, or dedication expressed elsewhere
+in this project.
+
+------------------------------------------------------------
+END OF PATENTS
+------------------------------------------------------------

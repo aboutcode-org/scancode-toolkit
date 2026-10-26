@@ -2,7 +2,7 @@
 key: fcl-1.0-apache-2.0
 short_name: FCL-1.0-Apache-2.0
 name: Fair Core License, Version 1.0, Apache 2.0 Future License
-category: Source-available
+category: Non-Commercial
 owner: keygen
 homepage_url: https://github.com/keygen-sh/fcl.dev/blob/master/FCL-1.0-Apache-2.0.md
 spdx_license_key: LicenseRef-scancode-fcl-1.0-apache-2.0

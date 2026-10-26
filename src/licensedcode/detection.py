@@ -60,19 +60,19 @@ def logger_debug(*args):
 
 logger = logging.getLogger(__name__)
 
-if TRACE:
+if (
+    TRACE
+    or TRACE_ANALYSIS
+    or TRACE_REFERENCE
+    or TRACE_IS_FUNCTIONS
+):
 
-    if (
-        TRACE
-        or TRACE_ANALYSIS
-        or TRACE_IS_FUNCTIONS
-    ):
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
-        logging.basicConfig(stream=sys.stdout)
-        logger.setLevel(logging.DEBUG)
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-        def logger_debug(*args):
-            return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 MATCHER_UNDETECTED = '5-undetected'
 MATCHER_UNDETECTED_ORDER = 4
@@ -1455,6 +1455,12 @@ def use_referenced_license_expression(referenced_license_expression, license_det
     if same_license_keys and not same_expression:
         return False
 
+    # If all the license keys of the referenced license expression already
+    # present in the actual license expression
+    # note that this preserves AND/OR expressions in the original license
+    if referenced_license_keys.issubset(license_keys):
+        return False
+
     # when there are many license keys in an expression, and there are no
     # unknown or other cases, we cannot safely conclude that we should
     # follow the license in the referenced filenames. This is likely
@@ -2072,6 +2078,10 @@ def update_detection_from_referenced_files(
         relation='AND',
         licensing=get_cache().licensing,
     ))
+    if TRACE_REFERENCE:
+        logger_debug(
+            f'update_detection_from_referenced_files: referenced_license_expression: {referenced_license_expression}',
+        )
 
     if not use_referenced_license_expression(
         referenced_license_expression=referenced_license_expression,
@@ -2080,24 +2090,26 @@ def update_detection_from_referenced_files(
         if TRACE_REFERENCE and referenced_resources:
             paths = [
                 resource.path
-                for resource in referenced_resource
+                for resource in referenced_resources
             ]
             logger_debug(
                 f'use_referenced_license_expression: False for '
                 f'resources: {paths} and '
-                f'license_expression: {referenced_license_expression}',
+                f'referenced_license_expression: {referenced_license_expression}',
+                f'license_detection.expression: {license_detection.license_expression}',
             )
         return False
 
     if TRACE_REFERENCE and referenced_resources:
         paths = [
             resource.path
-            for resource in referenced_resource
+            for resource in referenced_resources
         ]
         logger_debug(
             f'use_referenced_license_expression: True for '
             f'resources: {paths} and '
-            f'license_expression: {referenced_license_expression}',
+            f'referenced_license_expression: {referenced_license_expression}',
+            f'license_detection.expression: {license_detection.license_expression}',
         )
 
     matches_to_extend = get_matches_from_detection_mappings(

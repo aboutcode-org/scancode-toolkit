@@ -98,6 +98,7 @@ FOSS_CATEGORIES = set([
 
 OTHER_CATEGORIES = set([
     'Commercial',
+    'Non-Commercial',
     'Proprietary Free',
     'Free Restricted',
     'Source-available',

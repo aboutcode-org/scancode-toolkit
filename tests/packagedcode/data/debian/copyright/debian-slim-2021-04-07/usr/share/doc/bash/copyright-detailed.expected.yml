@@ -291,7 +291,7 @@ license_detections:
         license_expression_spdx: BSD-4-Clause-UC
         from_file:
         start_line: 168
-        end_line: '194'
+        end_line: 194
         matcher: 2-aho
         score: '100.0'
         matched_length: 243
@@ -330,7 +330,7 @@ license_detections:
       - license_expression: historical
         license_expression_spdx: HPND
         from_file:
-        start_line: '198'
+        start_line: 198
         end_line: 212
         matcher: 2-aho
         score: '100.0'

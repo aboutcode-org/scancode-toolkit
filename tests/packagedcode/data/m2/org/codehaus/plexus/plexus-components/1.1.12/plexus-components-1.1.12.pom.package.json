@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Plexus Components Parent Project"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api@1.0-alpha-20",

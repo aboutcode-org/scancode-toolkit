@@ -1,0 +1,451 @@
+{
+  "packages": [
+    {
+      "type": "gem",
+      "namespace": null,
+      "name": "json",
+      "version": "version",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Ruby",
+      "description": "JSON Implementation for Ruby\nThis is a JSON implementation as a Ruby extension in C.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Florian Frank",
+          "email": null,
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": null,
+          "email": "flori@ping.de",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/ruby/json",
+      "download_url": "https://rubygems.org/downloads/json-version.gem",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://rubygems.org/gems/json/versions/version",
+      "repository_download_url": "https://rubygems.org/downloads/json-version.gem",
+      "api_data_url": "https://rubygems.org/api/v2/rubygems/json/versions/version.json",
+      "package_uid": "pkg:gem/json@version?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "json-3.0.2-java.gem-extract/data.tar.gz-extract/json.gemspec"
+      ],
+      "datasource_ids": [
+        "gemspec"
+      ],
+      "purl": "pkg:gem/json@version"
+    }
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "json-3.0.2-java.gem-extract",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/checksums.yaml.gz-extract",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/checksums.yaml.gz-extract/checksums.yaml.gz-extract",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/BSDL",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/COPYING",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/LEGAL",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/README.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/json.gemspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "gem",
+          "namespace": null,
+          "name": "json",
+          "version": "version",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Ruby",
+          "description": "JSON Implementation for Ruby\nThis is a JSON implementation as a Ruby extension in C.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Florian Frank",
+              "email": null,
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": null,
+              "email": "flori@ping.de",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/ruby/json",
+          "download_url": "https://rubygems.org/downloads/json-version.gem",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://rubygems.org/gems/json/versions/version",
+          "repository_download_url": "https://rubygems.org/downloads/json-version.gem",
+          "api_data_url": "https://rubygems.org/api/v2/rubygems/json/versions/version.json",
+          "datasource_id": "gemspec",
+          "purl": "pkg:gem/json@version"
+        }
+      ],
+      "for_packages": [
+        "pkg:gem/json@version?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json.rb",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/common.rb",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/ext",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/ext.rb",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/ext/generator",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/ext/generator.jar-extract",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/ext/generator.jar-extract/META-INF",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/ext/generator.jar-extract/META-INF/MANIFEST.MF",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "jar",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "java_jar_manifest",
+          "purl": null
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/ext/generator.jar-extract/json",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/ext/generator.jar-extract/json/ext",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/ext/generator.jar-extract/json/ext/Generator.class",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/ext/generator/state.rb",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/truffle_ruby",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/truffle_ruby/generator.rb",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/data.tar.gz-extract/lib/json/version.rb",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/metadata.gz-extract",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "json-3.0.2-java.gem-extract/metadata.gz-extract/metadata.gz-extract",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "gem",
+          "namespace": null,
+          "name": "json",
+          "version": "3.0.2",
+          "qualifiers": {
+            "platform": "java"
+          },
+          "subpath": null,
+          "primary_language": "Ruby",
+          "description": "JSON Implementation for Ruby\nA JSON implementation as a JRuby extension.",
+          "release_date": "2026-09-09",
+          "parties": [
+            {
+              "type": null,
+              "role": "author",
+              "name": "Daniel Luz",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/ruby/json",
+          "download_url": "https://rubygems.org/downloads/json-3.0.2-java.gem",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "https://github.com/ruby/json",
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "ruby",
+          "declared_license_expression_spdx": "Ruby",
+          "license_detections": [
+            {
+              "license_expression": "ruby",
+              "license_expression_spdx": "Ruby",
+              "matches": [
+                {
+                  "license_expression": "ruby",
+                  "license_expression_spdx": "Ruby",
+                  "from_file": "json-3.0.2-java.gem-extract/metadata.gz-extract/metadata.gz-extract",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-ruby-a13349454c4e6b2b906b10512a1b09cdf0400d7d",
+                  "rule_url": null,
+                  "matched_text": "Ruby"
+                }
+              ],
+              "identifier": "ruby-69064f70-573f-8fda-e447-1666ddbf8fcf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- Ruby\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://rubygems.org/gems/json/versions/3.0.2",
+          "repository_download_url": "https://rubygems.org/downloads/json-3.0.2-java.gem",
+          "api_data_url": "https://rubygems.org/api/v2/rubygems/json/versions/3.0.2.json",
+          "datasource_id": "gem_archive_extracted",
+          "purl": "pkg:gem/json@3.0.2?platform=java"
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}

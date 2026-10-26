@@ -28,22 +28,9 @@ mkdir -p $release_dir
 echo -n "$python_exe" > $release_dir/PYTHON_EXECUTABLE
 git describe --tags > $release_dir/SCANCODE_VERSION
 thirdparty_dir=$release_dir/thirdparty
-thirdparty_src_dir=$release_dir/thirdparty-src
 mkdir -p $thirdparty_dir
-mkdir -p $thirdparty_src_dir
 
 ./configure --dev
-
-venv/bin/python etc/scripts/fetch_thirdparty.py \
-  --requirements requirements-native.txt \
-  --wheel-only packagedcode-msitools \
-  --wheel-only rpm-inspector-rpm \
-  --wheel-only extractcode-7z \
-  --wheel-only extractcode-libarchive \
-  --wheel-only typecode-libmagic \
-  --dest $thirdparty_src_dir \
-  --sdists \
-  --use-cached-index
 
 venv/bin/python etc/scripts/fetch_thirdparty.py \
   --requirements requirements.txt \
@@ -53,16 +40,17 @@ venv/bin/python etc/scripts/fetch_thirdparty.py \
   --wheels \
   --use-cached-index
 
-mv $thirdparty_src_dir/* $thirdparty_dir/
-rm -rf $thirdparty_src_dir
-
 mkdir -p $release_dir/etc
 cp -r etc/thirdparty $release_dir/etc
 
-# Build the wheel
+# Build the app archive
 ./configure --dev
+
+venv/bin/scancode-reindex-package-patterns
+venv/bin/scancode-train-gibberish-model
 venv/bin/scancode-reindex-licenses
-venv/bin/python setup.py --quiet bdist_wheel --python-tag cp$python_version
+venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --wheel
+venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel
 
 cp -r \
   dist/scancode_*.whl \
@@ -71,6 +59,10 @@ cp -r \
   samples \
   *NOTICE *LICENSE *ABOUT \
   $release_dir
+
+cp -r \
+  dist/licensedcode_index*.whl \
+  $release_dir/thirdparty
 
 zipball=scancode-toolkit-$(git describe --tags)_py$python_dot_version-$operating_system.zip
 mkdir -p release

@@ -1,0 +1,57 @@
+---
+key: semaphore-ee-2025
+short_name: Semaphore EE License 2025
+name: Semaphore Enterprise Edition (EE) License 2025
+category: Proprietary Free
+owner: Semaphore
+homepage_url: https://github.com/semaphoreio/semaphore/blob/main/ee/LICENSE
+spdx_license_key: LicenseRef-scancode-semaphore-ee-2025
+other_urls:
+    - https://semaphoreci.com/tos
+ignorable_authors:
+    - agreement with Semaphore Technologies
+ignorable_urls:
+    - https://semaphoreci.com/tos
+---
+
+The Semaphore Enterprise Edition (EE) license (the "EE License")
+
+With regard to the Semaphore Software:
+
+This software and associated documentation files (the "Software") may only be
+used if you (and any entity that you represent) have:
+(1) agreed to, and are in compliance with, the Semaphore Terms of Service, available
+at https://semaphoreci.com/tos (the "Terms"), or other written
+agreement with Semaphore Technologies doo governing the use of the Software, and
+(2) have a valid Semaphore Enterprise Edition license for self-hosted deployments.
+
+Subject to the foregoing conditions, you are free to modify this Software and publish
+patches to the Software. You agree that Semaphore Technologies doo and/or its licensors
+(as applicable) retain all right, title and interest in and to all such
+modifications and/or patches, and all such modifications and/or patches may only
+be used, copied, modified, displayed, distributed, or otherwise exploited with a
+valid subscription or license as described above. Notwithstanding the foregoing,
+you may copy and modify the Software for development and testing purposes, without
+requiring a subscription or license. You agree that Semaphore Technologies doo and/or its
+licensors (as applicable) retain all right, title and interest in and to all such
+modifications. You are not granted any other rights beyond what is expressly
+stated herein. Subject to the foregoing, it is forbidden to copy, merge, publish,
+distribute, sublicense, and/or sell the Software.
+
+This EE License applies only to the part of this Software that is not
+distributed as part of Semaphore Community Edition (CE). Any part of this Software
+distributed as part of Semaphore CE is copyrighted under the Apache License,
+Version 2.0. The full text of this EE License shall be included in all copies or
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+For all third party components incorporated into the Semaphore Software, those
+components are licensed under the original license provided by the owner of the
+applicable component.

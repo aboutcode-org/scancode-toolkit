@@ -1,0 +1,43 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "31.0.0b4",
+      "options": {
+        "input": [
+          "samples/README"
+        ],
+        "--full-root": true,
+        "--info": true,
+        "--json-pp": "-"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "home/foobar/scancode-toolkit//samples/README",
+      "type": "file",
+      "name": "README",
+      "base_name": "README",
+      "extension": "",
+      "size": 236,
+      "date": "2022-03-11",
+      "sha1": "2e07e32c52d607204fad196052d70e3d18fb8636",
+      "md5": "effc6856ef85a9250fb1a470792b3f38",
+      "sha256": "165da86bfdf296cd5a0a3e20c1d1ee86d70ecb8a1fa579d6f8cadad8eee85878",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

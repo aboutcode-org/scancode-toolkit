@@ -45,7 +45,6 @@ LEGAL_STARTS_ENDS = (
 _MANIFEST_ENDS = {
     '.about': 'ABOUT file',
     '/bower.json': 'bower',
-    '/project.clj': 'clojure',
     '.podspec': 'cocoapod',
     '/composer.json': 'composer',
     '/description': 'cran',

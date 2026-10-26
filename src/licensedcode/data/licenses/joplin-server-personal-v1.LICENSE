@@ -2,7 +2,7 @@
 key: joplin-server-personal-v1
 short_name: Joplin Server Personal Use License v1
 name: Joplin Server Personal Use License v1
-category: Proprietary Free
+category: Non-Commercial
 owner: Laurent Cozic
 homepage_url: https://github.com/laurent22/joplin/blob/dev/packages/server/LICENSE.md
 spdx_license_key: LicenseRef-scancode-joplin-server-personal-v1

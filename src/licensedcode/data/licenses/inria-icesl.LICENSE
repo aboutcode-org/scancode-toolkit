@@ -2,7 +2,7 @@
 key: inria-icesl
 short_name: INRIA IceSL EULA
 name: INRIA End User License Agreement for IceSL Software
-category: Proprietary Free
+category: Non-Commercial
 owner: INRIA
 homepage_url: https://icesl.loria.fr/assets/pdf/EULA_IceSL_binary.pdf
 spdx_license_key: LicenseRef-scancode-inria-icesl

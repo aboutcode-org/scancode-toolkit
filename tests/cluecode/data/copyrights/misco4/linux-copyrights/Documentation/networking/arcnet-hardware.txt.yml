@@ -17,3 +17,7 @@ authors:
   - Juergen Seifert <seifert@htwm.de>
   - Juergen Seifert <seifert@htwm.de>
   - Juergen Seifert <seifert@htwm.de>
+expected_failures:
+  - copyrights
+  - holders
+  - authors

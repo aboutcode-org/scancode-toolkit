@@ -2,7 +2,7 @@
 key: activision-eula
 short_name: Activision EULA
 name: Activision EULA
-category: Proprietary Free
+category: Non-Commercial
 owner: Activision
 homepage_url: https://www.doomworld.com/eternity/activision_eula.txt
 spdx_license_key: LicenseRef-scancode-activision-eula

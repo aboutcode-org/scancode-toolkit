@@ -1,0 +1,6 @@
+NAME="Liri OS"
+ID=lirios
+PRETTY_NAME="Liri OS"
+ANSI_COLOR="0;36"
+HOME_URL="https://liri.io"
+BUG_REPORT_URL="https://github.com/lirios/lirios/issues"

@@ -1,0 +1,27 @@
+---
+key: cuffs-dataset-2024
+short_name: CUFFS Dataset License 2024
+name: CUFFS Dataset License 2024
+category: Non-Commercial
+owner: Naver Labs
+homepage_url: https://huggingface.co/datasets/naver/CUFFS/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-cuffs-dataset-2024
+ignorable_copyrights:
+    - Copyright (c) 2024 Naver Corporation
+ignorable_holders:
+    - Naver Corporation
+---
+
+CUFFS Dataset, Copyright (C) 2024 Naver Corporation
+
+Limited License to CUFFS Dataset (“Dataset”).
+
+BY EXERCISING ANY RIGHTS TO THE DATASET, YOU ACCEPT AND AGREE TO BE BOUND BY THE TERMS OF THIS LICENSE. TO THE EXTENT THIS LICENSE MAY BE CONSIDERED TO BE A CONTRACT, LICENSOR GRANTS YOU THE RIGHTS CONTAINED HERE IN CONSIDERATION OF YOUR ACCEPTANCE OF SUCH TERMS AND CONDITIONS.
+
+Subject to the terms and conditions of this License, You are granted a personal, royalty-free, non-exclusive, non-sublicensable, non-transferable, revocable license to use the Dataset subject to the following conditions:
+(1) You may use the Dataset solely for non-commercial research or academic purposes, including any work derived from or based upon the Dataset. The Dataset may not be redistributed in whole or in part.
+(2) You are solely responsible for determining the appropriateness of using the Dataset and assume any risks associated with Your exercise of permissions under this License, and if You do use the Dataset You agree to use the Dataset only in accordance with the terms of this License.
+(3) This License automatically terminates without notice if You fail to comply with its terms. You may terminate this License by ceasing to use the Dataset, including any work derived from or based upon the Dataset. Licensor reserves the right to modify or terminate this License at any time. Upon termination of this License You agree to delete any and all copies of the Dataset, including any work derived from or based upon the Dataset. 
+(4) ALL RIGHTS NOT EXPRESSLY GRANTED IN THIS LICENSE ARE RESERVED BY LICENSOR.
+(5) THE DATASET IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE DATASET OR THE USE OR OTHER DEALINGS IN THE DATASET.
+(6) You will retain the above copyright notice and license in all copies or substantial portions of the Dataset, including any work derived from or based upon the Dataset.
