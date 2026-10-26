@@ -10,6 +10,7 @@
 from commoncode.system import on_linux
 from packagedcode import about
 from packagedcode import alpine
+from packagedcode import android_metadata
 from packagedcode import bower
 from packagedcode import build
 from packagedcode import build_gradle
@@ -52,6 +53,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     alpine.AlpineApkArchiveHandler,
     alpine.AlpineApkbuildHandler,
+
+    android_metadata.AndroidMetadataHandler,
 
     bower.BowerJsonHandler,
 
