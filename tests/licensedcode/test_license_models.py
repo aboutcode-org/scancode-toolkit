@@ -165,6 +165,22 @@ class TestLicense(FileBasedTesting):
         except Exception as e:
             assert 'only deprecated, generic or unknown licenses can exist without text' in str(e)
 
+    def test_load_licenses_from_empty_builtin_dir_mentions_licensedcode_data(self):
+        test_dir = self.get_temp_dir()
+        with self.assertRaises(models.InvalidLicense) as cm:
+            models.load_licenses(licenses_data_dir=test_dir, is_builtin=True)
+        message = str(cm.exception)
+        assert 'No licenses were loaded' in message
+        assert 'licensedcode-data' in message
+
+    def test_load_licenses_from_empty_additional_dir_does_not_mention_licensedcode_data(self):
+        test_dir = self.get_temp_dir()
+        with self.assertRaises(models.InvalidLicense) as cm:
+            models.load_licenses(licenses_data_dir=test_dir, is_builtin=False)
+        message = str(cm.exception)
+        assert 'No licenses were loaded' in message
+        assert 'licensedcode-data' not in message
+
     def test_license_file_is_computed_correctly(self):
         licenses_data_dir = self.get_test_loc('models/data_text_files/licenses')
         licenses = models.load_licenses(licenses_data_dir)

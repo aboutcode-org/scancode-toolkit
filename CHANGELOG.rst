@@ -8,6 +8,10 @@ Next release
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
+- Report that the ``licensedcode-data`` package may be missing, and how to
+  install it, when no builtin licenses can be loaded.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5053
+
 - Improve copyright detection for statements with parens or trailing "authors"
 
 - Add experimental option for using cached results during scan time. When the
