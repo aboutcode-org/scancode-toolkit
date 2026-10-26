@@ -98,6 +98,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Tushar Goel @TG1999
 - Tushar Mittal @techytushar
 - Tushar Upadhyay @tushar912
+- Vaibhav Sharma @Vaibhav200303
 - Van Lindberg @VanL
 - Vibhu Agarwal @Vibhu-Agarwal
 - Viktor Tiulpin @tiulpin

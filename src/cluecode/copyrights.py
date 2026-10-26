@@ -377,6 +377,22 @@ class CopyrightDetector(object):
                             yield holder
 
             elif include_authors and tree_node_label == 'AUTHOR':
+                author_list_marker_lines = [
+                    token.start_line
+                    for token in filter_tokens(tree_node)
+                    if token.label in AUTHOR_LIST_MARKERS
+                ]
+                if len(author_list_marker_lines) == 1:
+                    author_list_detections = list(
+                        build_author_list_detections(
+                            tokens=lexed_text,
+                            marker_line=author_list_marker_lines[0],
+                        )
+                    )
+                    if author_list_detections:
+                        yield from author_list_detections
+                        continue
+
                 author = build_detection_from_node(
                     node=tree_node,
                     cls=AuthorDetection,
@@ -590,6 +606,76 @@ def build_detection_from_node(
         end_line = filtered[-1].start_line
 
         return cls(node_string, start_line=start_line, end_line=end_line)
+
+
+AUTHOR_LIST_MARKERS = frozenset([
+    'AUTHS',
+    'CONTRIBUTORS',
+])
+
+AUTHOR_LIST_NAME_LABELS = frozenset([
+    'CAPS',
+    'MIXEDCAP',
+    'NN',
+    'NNP',
+    'PN',
+])
+
+AUTHOR_LIST_CONTACT_LABELS = frozenset([
+    'EMAIL',
+    'URL',
+    'URL2',
+])
+
+AUTHOR_LIST_LABELS = AUTHOR_LIST_NAME_LABELS | AUTHOR_LIST_CONTACT_LABELS
+
+
+def build_author_list_detections(tokens, marker_line):
+    """
+    Yield one AuthorDetection for each line in an explicit multi-line author or
+    contributor list in ``tokens`` following ``marker_line``.
+
+    The copyright grammar normally combines consecutive names following an
+    author marker into one AUTHOR tree. Source line numbers are no longer
+    boundaries at that stage, so split only the narrow, unambiguous form where
+    at least two following lines each contain two name tokens and a URL or email.
+    """
+    tokens_by_line = {}
+    for token in tokens:
+        if token.start_line > marker_line:
+            tokens_by_line.setdefault(token.start_line, []).append(token)
+
+    line_numbers = sorted(tokens_by_line)
+    expected_line_numbers = range(
+        marker_line + 1,
+        marker_line + 1 + len(line_numbers),
+    )
+    if len(line_numbers) < 2 or line_numbers != list(expected_line_numbers):
+        return
+
+    for line_tokens in tokens_by_line.values():
+        labels = {token.label for token in line_tokens}
+        name_token_count = sum(
+            token.label in AUTHOR_LIST_NAME_LABELS
+            for token in line_tokens
+        )
+        if (
+            not labels <= AUTHOR_LIST_LABELS
+            or name_token_count < 2
+            or not labels & AUTHOR_LIST_CONTACT_LABELS
+        ):
+            return
+
+    for line_number in line_numbers:
+        line_tokens = tokens_by_line[line_number]
+        author = ' '.join(token.value for token in line_tokens)
+        author = refine_author(author)
+        if author and not is_junk_copyright(author):
+            yield AuthorDetection(
+                author=author,
+                start_line=line_number,
+                end_line=line_number,
+            )
 
 ################################################################################
 # LEXING AND PARSING
