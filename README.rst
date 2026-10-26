@@ -84,6 +84,18 @@ Benefits of ScanCode
   <https://scancode-toolkit.readthedocs.io/en/stable/reference/index.html>`_
   for the exhaustive list.
 
+Documentation
+=============
+
+The ScanCode documentation is hosted at
+`scancode-toolkit.readthedocs.io <https://scancode-toolkit.readthedocs.io/en/latest/>`_.
+
+See also https://aboutcode.org for related companion projects and tools.
+
+To cite this repository, visit the main page and click on the 'Cite this
+repository' button for APA or BibTeX citation formats.
+
+
 Support
 =======
 
@@ -208,7 +220,7 @@ Communications Networks, Content and Technology under grant agreement No 1010695
     :height: 40
     :alt: Europa logo
 
-.. |aboutcode| image:: https://aboutcode.org/wp-content/uploads/2023/10/AboutCode.svg
+.. |aboutcode| image:: https://aboutcode.org/img/AboutCode.svg
     :target: https://aboutcode.org/
     :height: 30
     :alt: AboutCode logo
