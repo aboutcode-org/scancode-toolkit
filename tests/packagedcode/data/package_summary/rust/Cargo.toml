@@ -1,0 +1,9 @@
+[workspace]
+
+members = [
+    "iron",
+    "logger",
+    "mount",
+    "persistent",
+    "router",
+]
