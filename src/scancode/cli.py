@@ -184,7 +184,7 @@ def validate_input_path(ctx, param, value):
     Validate a ``value`` list of inputs path strings
     """
     options = ctx.params
-    from_json = options.get("--from-json", False)
+    from_json = options.get("from_json", False)
     for inp in value:
         if not (is_file(location=inp, follow_symlinks=True) or is_dir(location=inp, follow_symlinks=True)):
             raise click.BadParameter(f"input: {inp!r} is not a regular file or a directory")
@@ -192,14 +192,15 @@ def validate_input_path(ctx, param, value):
         if not is_readable(location=inp):
             raise click.BadParameter(f"input: {inp!r} is not readable")
 
-        if from_json and not is_file(location=inp, follow_symlinks=True):
+        if from_json:
             # extra JSON validation
-            raise click.BadParameter(f"JSON input: {inp!r} is not a file")
+            if not is_file(location=inp, follow_symlinks=True):
+                raise click.BadParameter(f"JSON input: {inp!r} is not a file")
             if not inp.lower().endswith(".json"):
                 raise click.BadParameter(f"JSON input: {inp!r} is not a JSON file with a .json extension")
-            with open(inp) as js:
+            with open(inp, "rb") as js:
                 start = js.read(100).strip()
-            if not start.startswith("{"):
+            if not start.startswith(b"{"):
                 raise click.BadParameter(f"JSON input: {inp!r} is not a well formed JSON file")
 
     return value
