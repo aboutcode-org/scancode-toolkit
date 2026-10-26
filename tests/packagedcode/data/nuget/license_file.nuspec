@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>FileLicense</id>
+    <version>1.0.0</version>
+    <authors>Example Org</authors>
+    <owners>Example Org</owners>
+    <description>Sample package with file-based license reference.</description>
+    <license type="file">LICENSE.txt</license>
+  </metadata>
+</package>
