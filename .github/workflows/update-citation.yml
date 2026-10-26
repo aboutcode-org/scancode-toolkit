@@ -15,21 +15,23 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.13]
+        python-version: [3.14]
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: Install doi2cff
-        run:
+        run: #Running on a commit: https://github.com/citation-file-format/doi2cff/tree/79e7adcff66eaccf6f301523c302d589976e2b95
           pip install
-          git+https://github.com/citation-file-format/doi2cff
+          git+https://github.com/citation-file-format/doi2cff.git@79e7adcff66eaccf6f301523c302d589976e2b95
 
       - name: Fetch latest Zenodo DOI
         id: get-doi # Assign an ID to this step to reference its outputs
@@ -41,10 +43,12 @@ jobs:
 
       - name: Update CITATION.cff
         # Use the output from the 'get-doi' step as the argument for doi2cff
-        run: doi2cff update ${{ steps.get-doi.outputs.ZENODO_DOI }}
+        run: doi2cff update ${GENERATED_ZENODO_DOI}
+        env:
+          GENERATED_ZENODO_DOI: ${{ steps.get-doi.outputs.ZENODO_DOI }}
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+      - name: Create Pull Request #v8.1.1
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: develop
