@@ -265,3 +265,167 @@ class NugetPackagesLockHandler(models.DatafileHandler):
         )
         yield models.PackageData.from_data(package_data, package_only)
 
+
+class DotNetDepsJsonHandler(models.DatafileHandler):
+    datasource_id = 'nuget_deps_json'
+    path_patterns = ('*.deps.json',)
+    default_package_type = 'nuget'
+    description = 'NuGet .deps.json lockfile'
+    documentation_url = 'https://github.com/dotnet/sdk/blob/main/documentation/specs/runtime-configuration-file.md'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location) as loc:
+            parsed = json.load(loc)
+
+        if not parsed or not isinstance(parsed, dict):
+            return
+
+        libraries = parsed.get('libraries')
+        if not libraries or not isinstance(libraries, dict):
+            return
+
+        target_framework = None
+        runtime_target = parsed.get('runtimeTarget')
+        if runtime_target and isinstance(runtime_target, dict):
+            target_framework = runtime_target.get('name')
+
+        # Collect target sections to look up dependencies. We prefer the runtime
+        # target when available, but fall back to other targets to avoid missing
+        # dependencies in valid .deps.json files without runtimeTarget.
+        targets_dict = parsed.get('targets') or {}
+        if not isinstance(targets_dict, dict):
+            targets_dict = {}
+
+        available_targets = [
+            (target_name, target_obj)
+            for target_name, target_obj in targets_dict.items()
+            if isinstance(target_obj, dict)
+        ]
+
+        runtime_target_matched = False
+        if target_framework:
+            selected_targets = [
+                (target_name, target_obj)
+                for target_name, target_obj in available_targets
+                if target_name == target_framework
+            ]
+            runtime_target_matched = bool(selected_targets)
+        else:
+            selected_targets = []
+
+        if not selected_targets:
+            selected_targets = available_targets
+
+        packages = parse_deps_json_libraries(
+            libraries=libraries,
+            selected_targets=selected_targets,
+            runtime_target_matched=runtime_target_matched,
+            target_framework=target_framework,
+            datasource_id=cls.datasource_id,
+            default_package_type=cls.default_package_type,
+        )
+
+        for package_data in packages:
+            yield models.PackageData.from_data(package_data, package_only)
+
+
+def parse_deps_json_libraries(
+    libraries,
+    selected_targets,
+    runtime_target_matched,
+    target_framework,
+    datasource_id,
+    default_package_type,
+):
+    """
+    Parse the libraries and targets sections of a .deps.json file.
+    Returns a list of package dictionaries.
+    """
+    packages = []
+    if not selected_targets:
+        selected_targets = []
+
+    for lib_key, lib_info in libraries.items():
+        if not lib_key or '/' not in lib_key:
+            continue
+        if not isinstance(lib_info, dict):
+            continue
+
+        name, version = lib_key.split('/', 1)
+        package_type = lib_info.get('type')
+        dependencies = get_deps_json_dependencies(
+            lib_key=lib_key,
+            selected_targets=selected_targets,
+            default_package_type=default_package_type,
+        )
+
+        extra_data = {}
+        if runtime_target_matched:
+            extra_data['target_framework'] = target_framework
+        elif len(selected_targets) == 1:
+            extra_data['target_framework'] = selected_targets[0][0]
+        elif selected_targets:
+            extra_data['target_frameworks'] = [scope for scope, _target_obj in selected_targets]
+
+        if package_type:
+            extra_data['type'] = package_type
+
+        package_data = dict(
+            datasource_id=datasource_id,
+            type=default_package_type,
+            name=name,
+            version=version,
+            dependencies=dependencies,
+            extra_data=extra_data,
+        )
+        packages.append(package_data)
+
+    return packages
+
+
+def get_deps_json_dependencies(lib_key, selected_targets, default_package_type):
+    """
+    Return dependency mappings for ``lib_key`` gathered from all ``selected_targets``.
+    """
+    dependencies = []
+    seen_dependencies = set()
+
+    for scope, target_obj in selected_targets:
+        target_lib = target_obj.get(lib_key) or {}
+        if not isinstance(target_lib, dict):
+            continue
+
+        deps = target_lib.get('dependencies')
+        if not deps or not isinstance(deps, dict):
+            continue
+
+        for dep_name, dep_version in deps.items():
+            if not dep_name:
+                continue
+
+            dep_key = (dep_name, dep_version, scope)
+            if dep_key in seen_dependencies:
+                continue
+            seen_dependencies.add(dep_key)
+
+            purl = PackageURL(type=default_package_type, name=dep_name, version=dep_version)
+            resolved_package = models.PackageData(
+                type=purl.type,
+                name=dep_name,
+                version=dep_version,
+            ).to_dict()
+
+            dependency = models.DependentPackage(
+                purl=str(purl),
+                extracted_requirement=dep_version,
+                scope=scope,
+                is_runtime=True,
+                is_optional=False,
+                is_pinned=True,
+                is_direct=True,
+                resolved_package=resolved_package,
+            )
+            dependencies.append(dependency.to_dict())
+
+    return dependencies
