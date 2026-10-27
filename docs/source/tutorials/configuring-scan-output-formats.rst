@@ -15,6 +15,8 @@ The following commands will output scan results in a formatted json file:
 
 * ``scancode --json /path/to/output.json /path/to/target/dir``
 
+* ``scancode --compact-json /path/to/output.json /path/to/target/dir``
+
 * ``scancode --json-pp /path/to/output.json /path/to/target/dir``
 
 * ``scancode --json-lines /path/to/output.json /path/to/target/dir``

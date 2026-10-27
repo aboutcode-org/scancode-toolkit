@@ -80,7 +80,7 @@ class JsonCompactOutput(OutputPlugin):
         return output_compact_json
 
     def process_codebase(self, codebase, output_compact_json, **kwargs):
-        write_results(codebase, output_file=output_compact_json, pretty=False, compact=True, **kwargs)
+        write_results(codebase, output_file=output_compact_json, pretty=True, compact=True, **kwargs)
 
 
 @output_impl
