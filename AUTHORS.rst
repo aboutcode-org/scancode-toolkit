@@ -33,6 +33,7 @@ The following organizations or individuals have contributed to ScanCode:
 - François Granade @farialima
 - Frank Viernau @fviernau
 - Gaurang Rao @Gaupeng
+- Gracy @Gracy769
 - Hanif Ali @hanif-ali
 - Horie Issei @is2ei
 - James Ward @jamesward
