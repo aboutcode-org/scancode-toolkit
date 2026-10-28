@@ -6,7 +6,11 @@ category: Permissive
 owner: Unspecified
 notes: A rare variant that comes with a slightly different wording and no warranty disclaimer
     and the words "without modifications" applying to the license conditions
-spdx_license_key: LicenseRef-scancode-bsd-no-disclaimer-unmodified
+spdx_license_key: BSD-Source-Code-no-disclaimer
+other_spdx_license_keys:
+    - LicenseRef-scancode-bsd-no-disclaimer-unmodified
+other_urls:
+    - https://github.com/PicoEFI/PicoEFI/blob/2263ac1a2bc98e5534d64a4896d3cfbbae00745a/LICENSES/LicenseRef-scancode-bsd-no-disclaimer-unmodified.txt
 ---
 
  * Redistribution and use in source and binary forms, with or without
