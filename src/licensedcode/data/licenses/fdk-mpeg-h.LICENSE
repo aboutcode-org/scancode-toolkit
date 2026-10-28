@@ -3,10 +3,21 @@ key: fdk-mpeg-h
 short_name: Fraunhofer FDK MPEG-H Software
 name: Fraunhofer FDK MPEG-H Software
 category: Permissive
-owner: Fraunhofer Institute for Integrated Circuits 
+owner: Fraunhofer Institute for Integrated Circuits
 spdx_license_key: FDK-MPEG-H
 other_urls:
     - https://github.com/Fraunhofer-IIS/mpeghdec/blob/main/LICENSE.txt
+ignorable_copyrights:
+    - Copyright (c) 2021 - 2023 Fraunhofer-Gesellschaft zur Forderung der angewandten Forschung
+        e.V. and Contributors
+ignorable_holders:
+    - Fraunhofer-Gesellschaft zur Forderung der angewandten Forschung e.V. and Contributors
+ignorable_urls:
+    - http://www.iis.fraunhofer.de/amm
+    - http://www.mpegh.com/
+    - http://www.via-la.com/
+ignorable_emails:
+    - amm-info@iis.fraunhofer.de
 ---
 
 Software License for The Fraunhofer FDK MPEG-H Software

@@ -7,6 +7,12 @@ owner: Open WebUI Inc.
 spdx_license_key: BSD-3-Clause-OpenWebUI
 other_urls:
     - https://github.com/open-webui/open-webui/blob/main/LICENSE
+ignorable_copyrights:
+    - Copyright (c) 2023- Open WebUI Inc.
+ignorable_holders:
+    - Open WebUI Inc.
+ignorable_authors:
+    - Timothy Jaeryang Baek
 ---
 
 Open WebUI License

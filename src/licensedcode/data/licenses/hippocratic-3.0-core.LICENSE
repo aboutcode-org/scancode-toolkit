@@ -7,6 +7,8 @@ owner: Ethical Source
 spdx_license_key: Hippocratic-3.0-core
 other_urls:
     - https://firstdonoharm.dev/version/3/0/core.txt
+ignorable_urls:
+    - https://firstdonoharm.dev/version/3/0/core.txt
 ---
 
 HIPPOCRATIC LICENSE
