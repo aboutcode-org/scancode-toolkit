@@ -221,6 +221,89 @@ Quick reference
 
 ----
 
+.. _cli-compact-json-option:
+
+``--compact-json FILE``
+-----------------------
+
+    ``--compact-json`` is an output format option which outputs the resusts in the most
+    compact manner possible. To make the output results compact:
+
+    * duplicate data is removed so we only have unique detection results only once
+    * only the most important data attributes are kept and the rest is removed
+    * longer text fields are either removed or CLI options adding longer/diangostic text
+      fields are made incompatible with the compact option
+    * empty data attributes are removed
+
+    The following code performs a scan on the samples directory, and publishes the results in
+    ``compact-json`` format
+
+    .. code-block:: shell
+
+        scancode -clpieu --compact-json output.json samples
+
+    **Example**
+
+    .. code-block:: json
+
+        {
+          "path": "samples/JGroups/LICENSE",
+          "type": "file",
+          "size": 26430,
+          "date": "2022-04-20",
+          "sha1": "e60c2e780886f95df9c9ee36992b8edabec00bcc",
+          "md5": "7fbc338309ac38fefcd64b04bb903e34",
+          "sha256": "a190dc9c8043755d90f8b0a75fa66b9e42d4af4c980bf5ddc633f0124db3cee7",
+          "sha1_git": "b1e3f5a2638797271cbc9b91b856c05ed6942c8f",
+          "mime_type": "text/plain",
+          "file_type": "ASCII text",
+          "is_text": true,
+          "detected_license_expression_spdx": "LGPL-2.1-only",
+          "percentage_of_license_text": 100.0,
+          "copyrights": [
+            {
+              "copyright": "Copyright (c) 1991, 1999 Free Software Foundation, Inc.",
+              "start_line": 4,
+              "end_line": 4
+            },
+            {
+              "copyright": "copyrighted by the Free Software Foundation",
+              "start_line": 429,
+              "end_line": 429
+            }
+          ],
+          "holders": [
+            {
+              "holder": "Free Software Foundation, Inc.",
+              "start_line": 4,
+              "end_line": 4
+            },
+            {
+              "holder": "the Free Software Foundation",
+              "start_line": 429,
+              "end_line": 429
+            }
+          ],
+          "license_detections": [
+            {
+              "identifier": "lgpl_2_1-64dbac63-7b61-7151-023f-321235aeef62"
+            }
+          ]
+        },
+        {
+          "path": "samples/JGroups/licenses",
+          "type": "directory",
+          "files_count": 5,
+          "size_count": 54552
+        }
+
+
+    This is the recommended output option if you want the output filesize to be as minimal as possible
+    while retaining the most important information in ScanCode-Toolkit.
+
+
+---
+
 .. _cli-json-lines-option:
 
 ``--json-lines FILE``

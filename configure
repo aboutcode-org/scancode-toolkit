@@ -161,7 +161,7 @@ FLOT_REQUIREMENTS="etc/thirdparty/flot-0.7.3-py3-none-any.whl"
 VIRTUALENV_DIR=venv
 
 # Cleanable files and directories to delete with the --clean option
-CLEANABLE="build dist venv .cache .eggs *.egg-info docs/_build/ pip-selfcheck.json"
+CLEANABLE="build tmp dist venv .cache .eggs *.egg-info docs/_build/ pip-selfcheck.json .pytest_cache .ruff_cache src/scancode_toolkit.egg-info"
 
 
 # the URL to download virtualenv.pyz if needed

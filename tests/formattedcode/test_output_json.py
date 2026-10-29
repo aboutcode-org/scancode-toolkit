@@ -33,7 +33,7 @@ def test_json_pretty_print():
     check_json_scan(expected, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
 
-def test_json_compact():
+def test_json_output():
     test_dir = test_env.get_test_loc('json/simple')
     result_file = test_env.get_temp_file('json')
     run_scan_click(['-clip', test_dir, '--json', result_file])
@@ -81,3 +81,11 @@ def test_scan_output_for_timestamp():
     header = result_json['headers'][0]
     assert 'start_timestamp' in header
     assert 'end_timestamp' in header
+
+
+def test_compact_json_with_all_scan_options():
+    test_dir = test_env.get_test_loc('common/manifests')
+    result_file = test_env.get_temp_file('json')
+    run_scan_click(['-clipeu', test_dir, '--compact-json', result_file])
+    expected = test_env.get_test_loc('common/manifests-expected.compact.json')
+    check_json_scan(expected, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)

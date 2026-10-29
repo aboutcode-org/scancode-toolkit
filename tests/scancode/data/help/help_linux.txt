@@ -50,7 +50,8 @@ Options:
     --unknown-licenses           [EXPERIMENTAL] Detect unknown licenses.
 
   output formats:
-    --json FILE             Write scan output as compact JSON to FILE.
+    --compact-json FILE     Write scan output as compact JSON to FILE.
+    --json FILE             Write scan output as JSON to FILE.
     --json-pp FILE          Write scan output as pretty-printed JSON to FILE.
     --json-lines FILE       Write scan output as JSON Lines to FILE.
     --yaml FILE             Write scan output as YAML to FILE.
