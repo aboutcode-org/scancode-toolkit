@@ -1,0 +1,7 @@
+Package: hello
+Title: Say Hello
+Version: 0.1.0
+Author: Jane Doe
+Maintainer: Jane Doe <jane@example.org>
+Description: Says hello.
+License: MIT

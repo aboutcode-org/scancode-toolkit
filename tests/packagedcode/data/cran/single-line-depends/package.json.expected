@@ -1,0 +1,103 @@
+[
+  {
+    "type": "cran",
+    "namespace": null,
+    "name": "tibble",
+    "version": "3.2.1",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "Provides a data frame class.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "2-aho",
+            "score": 100.0,
+            "matched_length": 2,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "mit_30.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+            "matched_text": "license MIT + file LICENSE"
+          }
+        ],
+        "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "MIT + file LICENSE",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:cran/R",
+        "extracted_requirement": ">= 3.4.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cran/methods",
+        "extracted_requirement": null,
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cran/utils",
+        "extracted_requirement": ">= 3.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://cran.r-project.org/package=tibble",
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "cran_description",
+    "purl": "pkg:cran/tibble@3.2.1"
+  }
+]
