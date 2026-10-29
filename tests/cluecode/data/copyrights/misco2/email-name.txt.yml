@@ -10,3 +10,5 @@ holders:
 holders_summary:
   - value: Roy Marples
     count: 1
+allrights:
+  - Copyright (c) 2006-2010 Roy Marples <roy@marples.name> All rights reserved

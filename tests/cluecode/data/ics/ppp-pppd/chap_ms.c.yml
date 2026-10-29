@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Eric Rosenquist
     count: 1
+allrights:
+  - Copyright (c) 1995 Eric Rosenquist. All rights reserved.
+  - Copyright (c) 2002 The Android Open Source Project

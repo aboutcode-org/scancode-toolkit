@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Jon Doe
     count: 1
+allrights:
+  - Copyright 1999 Cornell University. All rights reserved.
+  - Copyright 2000 Jon Doe. All rights reserved.

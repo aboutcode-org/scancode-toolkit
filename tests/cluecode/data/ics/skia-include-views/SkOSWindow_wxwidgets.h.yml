@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: MyCompanyName
     count: 1
+allrights:
+  - Copyright (c) 2006 The Android Open Source Project
+  - Copyright 2005 MyCompanyName . All rights reserved.

@@ -17,3 +17,7 @@ holders_summary:
     count: 1
   - value: Todd C. Miller
     count: 1
+allrights:
+  - Copyright (c) 2002,2003 Matt Johnston All rights reserved.
+  - Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com> All rights reserved.
+  - Copyright (c) 1990, 1993 The Regents of the University of California. All rights reserved.

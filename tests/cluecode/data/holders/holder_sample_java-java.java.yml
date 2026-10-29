@@ -6,3 +6,5 @@ holders:
 holders_summary:
   - value: Sample ABC Inc.
     count: 1
+allrights:
+  - Copyright (c) 2000-2007, Sample ABC Inc.

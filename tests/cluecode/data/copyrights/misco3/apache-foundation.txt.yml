@@ -10,3 +10,5 @@ holders:
 holders_summary:
   - value: The Apache Software Foundation
     count: 1
+allrights:
+  - Copyright 2009 The Apache Software Foundation.

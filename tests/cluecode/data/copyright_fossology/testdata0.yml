@@ -14,3 +14,8 @@ holders:
   - Theo de Raadt
 authors:
   - Tatu Ylonen <ylo@cs.hut.fi>
+allrights:
+  - Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi> , Espoo, Finland All rights reserved
+  - Copyright (c) 1999,2000 Markus Friedl. All rights reserved.
+  - Copyright (c) 1999 Aaron Campbell. All rights reserved.
+  - Copyright (c) 1999 Theo de Raadt. All rights reserved.

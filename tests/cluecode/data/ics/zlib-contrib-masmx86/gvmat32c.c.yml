@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Jean-loup Gailly and Gilles Vollant
     count: 1
+allrights:
+  - Copyright (c) 1995-1996 Jean-loup Gailly and Gilles Vollant.

@@ -21,3 +21,8 @@ holders_summary:
     count: 1
   - value: Trolltech ASA.
     count: 1
+allrights:
+  - Copyright (c) 2009 Modestas Vainius <modestas@vainius.eu>
+  - Copyright (c) Trolltech ASA. All Rights Reserved.
+  - Copyright (c) Roberto Raggi <roberto@kdevelop.org>
+  - Copyright (c) Harald Fernengel <harry@kdevelop.org>

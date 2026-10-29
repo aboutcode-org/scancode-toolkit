@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Red Hat, Inc and others
     count: 1
+allrights:
+  - Copyright (c) 1996-2008 Red Hat, Inc and others.

@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Linus Torvalds and others
     count: 1
+allrights:
+  - copyrighted by Linus Torvalds and others.

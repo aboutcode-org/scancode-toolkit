@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Sam Leffler, Errno Consulting, Atheros Communications, Inc.
     count: 1
+allrights:
+  - Copyright (c) 2002-2006 Sam Leffler, Errno Consulting, Atheros Communications, Inc. All rights reserved.

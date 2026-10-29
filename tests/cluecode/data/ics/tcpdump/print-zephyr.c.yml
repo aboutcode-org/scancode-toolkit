@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Nickolai Zeldovich
     count: 1
+allrights:
+  - Copyright (c) 2001 Nickolai Zeldovich <kolya@MIT.EDU> All rights reserved.

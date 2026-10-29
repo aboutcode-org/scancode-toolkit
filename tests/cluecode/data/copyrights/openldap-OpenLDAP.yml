@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: The OpenLDAP Foundation, Redwood City, California, USA.
     count: 1
+allrights:
+  - Copyright 1999-2003 The OpenLDAP Foundation, Redwood City, California, USA. All Rights Reserved.

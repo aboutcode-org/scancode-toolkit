@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Sun Microsystems
     count: 1
+allrights:
+  - Copyright (c) 1998 Sun Microsystems, Inc. All Rights Reserved.

@@ -21,3 +21,8 @@ holders_summary:
     count: 1
   - value: The Regents of the University of California
     count: 1
+allrights:
+  - Copyright (c) 1997-2006 Sam Lantinga
+  - Copyright (c) 1995 The Regents of the University of California. All rights reserved.
+  - Copyright (c) 1995 Erik Corry All rights reserved.
+  - Copyright (c) 1995 Brown University. All rights reserved.

@@ -6,3 +6,5 @@ holders:
 holders_summary:
   - value: Rickard E. Faith
     count: 1
+allrights:
+  - Copyright 2003, 2004 Rickard E. Faith (faith@dict.org)

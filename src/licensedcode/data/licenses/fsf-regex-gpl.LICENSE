@@ -7,9 +7,9 @@ owner: Free Software Foundation (FSF)
 homepage_url: https://sources.debian.org/src/xxgdb/1.12-9.4potato/regex.h/
 spdx_license_key: LicenseRef-scancode-fsf-regex-gpl
 ignorable_copyrights:
-    - Copyright (c) 1985 Free Software Foundation, Inc
+    - Copyright (c) 1985 Free Software Foundation, Inc.
 ignorable_holders:
-    - Free Software Foundation, Inc
+    - Free Software Foundation, Inc.
 ---
 
 NO WARRANTY

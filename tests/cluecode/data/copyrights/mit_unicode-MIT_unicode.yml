@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Unicode, Inc.
     count: 1
+allrights:
+  - Copyright (c) 1991-2005 Unicode, Inc. All rights reserved.

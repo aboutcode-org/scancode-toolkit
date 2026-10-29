@@ -15,3 +15,7 @@ holders_summary:
   - value: John Robert LoVerso
     count: 1
 notes: the second statement is truncated and should start with Los Alamos National Laboratory
+allrights:
+  - Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997 John Robert LoVerso. All rights reserved.
+  - J. Schoenwaelder, Copyright (c) 1999.
+  - Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997

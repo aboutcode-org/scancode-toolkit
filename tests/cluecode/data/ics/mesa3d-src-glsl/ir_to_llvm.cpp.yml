@@ -21,3 +21,8 @@ holders_summary:
     count: 1
   - value: VMware, Inc.
     count: 1
+allrights:
+  - Copyright (c) 2005-2007 Brian Paul All Rights Reserved.
+  - Copyright (c) 2008 VMware, Inc. All Rights Reserved.
+  - Copyright (c) 2010 Intel Corporation
+  - Copyright (c) 2010 Luca Barbieri

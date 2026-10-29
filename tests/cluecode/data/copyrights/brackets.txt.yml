@@ -9,3 +9,5 @@ expected_failures:
   - copyrights
   - holders
 notes: we only get Copyright (c) <2010-2012> as a detection for now.
+allrights:
+  - Copyright (c) 2010-2012 Jessup

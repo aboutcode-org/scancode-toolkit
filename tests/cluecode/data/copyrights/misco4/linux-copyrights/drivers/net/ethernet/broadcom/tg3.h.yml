@@ -25,3 +25,10 @@ authors:
   - Transmit MAC.
   - Receive List Placement
   - Host Coalescing
+allrights:
+  - Copyright (c) 2001, 2002, 2003, 2004 David S. Miller (davem@redhat.com)
+  - Copyright (c) 2001 Jeff Garzik (jgarzik@pobox.com)
+  - Copyright (c) 2004 Sun Microsystems Inc.
+  - Copyright (c) 2007-2016 Broadcom Corporation.
+  - Copyright (c) 2016-2017 Broadcom Limited.
+  - Copyright (c) 2018 Broadcom. All Rights Reserved.

@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Rick Sladkey
     count: 1
+allrights:
+  - Copyright (c) 1993, 1994, 1995 Rick Sladkey <jrs@world.std.com> All rights reserved.
+  - Copyright (c) 1995, 1996 Michael Elizabeth Chastain <mec@duracef.shout.net> All rights reserved.

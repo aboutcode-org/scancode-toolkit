@@ -9,3 +9,5 @@ copyrights:
 expected_failures:
   - authors
 
+allrights:
+  - Copyright 2010. All rights reserved.
