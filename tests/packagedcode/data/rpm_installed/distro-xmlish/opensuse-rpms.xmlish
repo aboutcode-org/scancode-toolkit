@@ -2476,7 +2476,7 @@ This package contains a small dictionay file used by cracklib.</string>
 	<string>- update i18n</string>
 	<string>- add translations from Novell</string>
 	<string>- added cracklib-dict-small and splitted the full dictionary
-  into a seperate package. [#265733]
+  into a separate package. [#265733]
 - cracklib requires cracklib-dict</string>
 	<string>- update to version 2.8.10
   * better hanlding of cracklist dictionary paths in

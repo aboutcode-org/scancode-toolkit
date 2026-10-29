@@ -524,7 +524,7 @@ Internet-Draft      Interaction between DHCP and DNS          March 2000
    extending the length of a DNS RCODE to 12 bits. EDNS0 is specified
    in RFC2671[8]. Only the least-significant 8 bits of the RCODE from a
    Dynamic DNS Update will be carried in the Client FQDN DHCP Option.
-   This provides enough number space to accomodate the RCODEs defined
+   This provides enough number space to accommodate the RCODEs defined
    in the Dynamic DNS Update specification.
 
 5.3 The Domain Name Field

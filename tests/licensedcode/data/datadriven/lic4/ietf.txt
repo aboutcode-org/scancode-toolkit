@@ -76,7 +76,7 @@ RFC 2489               Defining New DCHP Options            January 1999
    about to be published as an RFC.
 
    Since the publication of RFC 2132, the option number space for
-   publically defined DHCP options (1-127) has almost been exhausted.
+   publicly defined DHCP options (1-127) has almost been exhausted.
    Many of the defined option numbers have not been followed up with
    Internet Drafts submitted to the DHC WG.  There has been a lack of
    specific guidance to IANA from the DHC WG as to the assignment of

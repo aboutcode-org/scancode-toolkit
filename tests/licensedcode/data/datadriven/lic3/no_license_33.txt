@@ -1259,7 +1259,7 @@ RFC 2131          Dynamic Host Configuration Protocol         March 1997
    that subnet, any such address may be used.  If the server has
    received a message through a DHCP relay agent, the server SHOULD
    choose an address from the interface on which the message was
-   recieved as the 'server identifier' (unless the server has other,
+   received as the 'server identifier' (unless the server has other,
    better information on which to make its choice).  DHCP clients MUST
    use the IP address provided in the 'server identifier' option for any
    unicast requests to the DHCP server.

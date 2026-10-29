@@ -1586,7 +1586,7 @@ class BasicRule:
             help='Flag set to True if this rule is deleted, '
             'and not to be used anymore in license detection. '
             'This happens usually when a rule is renamed/assigned '
-            'to a seperate license-expression, promoted to being a '
+            'to a separate license-expression, promoted to being a '
             'license text or just plain retired. This is used to '
             'preserve the link to the rule, and therefore make links '
             'to rules as permanent.')
