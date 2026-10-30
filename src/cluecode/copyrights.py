@@ -4344,12 +4344,10 @@ def is_candidate(prepared_line):
         return False
 
     # check for years and markers first: gibberish detection is much slower
-    lowered_line = prepared_line.lower()
-    if not (
-        copyrights_hint.years(prepared_line)
-        or any(marker in lowered_line for marker in copyrights_hint.statement_markers)
-    ):
-        return False
+    if not copyrights_hint.years(prepared_line):
+        lowered_line = prepared_line.lower()
+        if not any(marker in lowered_line for marker in copyrights_hint.statement_markers):
+            return False
 
     if gibberish_detector.detect_gibberish(prepared_line):
         if TRACE:
