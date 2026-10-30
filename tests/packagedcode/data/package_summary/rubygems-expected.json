@@ -83,7 +83,7 @@
           "matches": [
             {
               "license_expression": "unknown",
-              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
               "from_file": "rubygems/inspec-bin.gemspec",
               "start_line": 1,
               "end_line": 1,
@@ -178,7 +178,7 @@
           "matches": [
             {
               "license_expression": "unknown",
-              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
               "from_file": "rubygems/inspec-core-bin.gemspec",
               "start_line": 1,
               "end_line": 1,
@@ -233,7 +233,7 @@
       "scope": "development",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -248,7 +248,7 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -263,7 +263,7 @@
       "scope": "development",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -278,7 +278,7 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -388,13 +388,14 @@
     {
       "path": "Gemfile",
       "type": "file",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -408,13 +409,14 @@
     {
       "path": "LICENSE",
       "type": "file",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -424,7 +426,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "rubygems/LICENSE",
               "start_line": 3,
               "end_line": 13,
@@ -462,13 +464,14 @@
     {
       "path": "bin",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -482,13 +485,14 @@
     {
       "path": "bin/inspec",
       "type": "file",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -514,13 +518,14 @@
     {
       "path": "checksums.yaml",
       "type": "file",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -534,6 +539,12 @@
     {
       "path": "inspec-bin.gemspec",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "gem",
@@ -583,7 +594,7 @@
               "matches": [
                 {
                   "license_expression": "unknown",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown",
                   "from_file": "rubygems/inspec-bin.gemspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -617,7 +628,7 @@
               "scope": "development",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -628,7 +639,7 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -644,11 +655,6 @@
       "for_packages": [
         "pkg:gem/inspec-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "proprietary-license AND apache-2.0",
       "detected_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
       "license_detections": [
@@ -658,7 +664,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "rubygems/inspec-bin.gemspec",
               "start_line": 12,
               "end_line": 12,
@@ -672,7 +678,7 @@
             },
             {
               "license_expression": "proprietary-license",
-              "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
+              "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
               "from_file": "rubygems/inspec-bin.gemspec",
               "start_line": 14,
               "end_line": 14,
@@ -686,7 +692,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "rubygems/inspec-bin.gemspec",
               "start_line": 16,
               "end_line": 16,
@@ -712,6 +718,12 @@
     {
       "path": "inspec-core-bin.gemspec",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "gem",
@@ -761,7 +773,7 @@
               "matches": [
                 {
                   "license_expression": "unknown",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown",
                   "from_file": "rubygems/inspec-core-bin.gemspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -795,7 +807,7 @@
               "scope": "development",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -806,7 +818,7 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -822,11 +834,6 @@
       "for_packages": [
         "pkg:gem/inspec-core-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "proprietary-license AND apache-2.0",
       "detected_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
       "license_detections": [
@@ -836,7 +843,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "rubygems/inspec-core-bin.gemspec",
               "start_line": 15,
               "end_line": 15,
@@ -850,7 +857,7 @@
             },
             {
               "license_expression": "proprietary-license",
-              "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
+              "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
               "from_file": "rubygems/inspec-core-bin.gemspec",
               "start_line": 17,
               "end_line": 17,
@@ -864,7 +871,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "rubygems/inspec-core-bin.gemspec",
               "start_line": 19,
               "end_line": 19,
@@ -890,13 +897,14 @@
     {
       "path": "lib",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -910,13 +918,14 @@
     {
       "path": "lib/inspec-bin",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -930,13 +939,14 @@
     {
       "path": "lib/inspec-bin/version.rb",
       "type": "file",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -950,13 +960,14 @@
     {
       "path": "metadata",
       "type": "file",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": true,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "proprietary-license AND apache-2.0",
       "detected_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
       "license_detections": [
@@ -966,7 +977,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "rubygems/metadata",
               "start_line": 42,
               "end_line": 42,
@@ -980,7 +991,7 @@
             },
             {
               "license_expression": "proprietary-license",
-              "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
+              "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
               "from_file": "rubygems/metadata",
               "start_line": 44,
               "end_line": 44,
@@ -994,7 +1005,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "rubygems/metadata",
               "start_line": 46,
               "end_line": 46,

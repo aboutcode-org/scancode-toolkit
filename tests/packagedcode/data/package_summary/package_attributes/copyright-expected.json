@@ -33,7 +33,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "copyright/packages/pkg1/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -233,16 +233,17 @@
     {
       "path": "LICENSE",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -252,7 +253,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "copyright/LICENSE",
               "start_line": 3,
               "end_line": 13,
@@ -290,6 +291,12 @@
     {
       "path": "package.json",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -324,7 +331,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "copyright/LICENSE",
                   "start_line": 3,
                   "end_line": 13,
@@ -366,11 +373,6 @@
         "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -384,16 +386,17 @@
     {
       "path": "packages",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -407,15 +410,16 @@
     {
       "path": "packages/pkg1",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -429,15 +433,16 @@
     {
       "path": "packages/pkg1/file1.ts",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -463,6 +468,12 @@
     {
       "path": "packages/pkg1/package.json",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -497,7 +508,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "copyright/packages/pkg1/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -535,11 +546,6 @@
       "for_packages": [
         "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -549,7 +555,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "copyright/packages/pkg1/package.json",
               "start_line": 3,
               "end_line": 3,
@@ -575,15 +581,16 @@
     {
       "path": "packages/pkg2",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -597,15 +604,16 @@
     {
       "path": "packages/pkg2/file2.js",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -631,6 +639,12 @@
     {
       "path": "packages/pkg2/package.json",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -680,11 +694,6 @@
       "for_packages": [
         "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -698,16 +707,17 @@
     {
       "path": "test.js",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -717,7 +727,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "copyright/test.js",
               "start_line": 2,
               "end_line": 10,

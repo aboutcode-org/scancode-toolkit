@@ -75,16 +75,15 @@ class LicenseClarityScore(PostScanPlugin):
     def process_codebase(self, codebase, license_clarity_score, **kwargs):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
-        codebase_resources = get_codebase_resources(codebase)
-        scoring_elements,_, declared_license_expression = compute_license_score(resources= codebase_resources)
+        scoring_elements, declared_license_expression = compute_license_score(codebase)
         codebase.attributes.summary['declared_license_expression'] = declared_license_expression
         codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
 
 
-def compute_license_score(resources):
+def compute_license_score(codebase=None, resources=None):
     """
     Return a mapping of scoring elements and a license clarity score computed at
-    the codebase/package level.
+    the codebase level.
 
     The license clarity score is a value from 0-100 calculated by combining the
     weighted values determined for each of the scoring elements:
@@ -127,98 +126,37 @@ def compute_license_score(resources):
       such as copyleft and proprietary, have been detected in lower level code.
     - Scoring Weight = -20
     """
+    if resources is None:
+        if codebase is None:
+            raise ValueError("Either codebase or resources must be provided.")
+        resources = list(codebase.walk(topdown=True))
 
     scoring_elements = ScoringElements()
     license_detections = get_field_values_from_resources(
-        resources,
+        resources=resources,
         field_name='license_detections',
         key_files_only=True,
     )
     license_match_mappings = get_matches_from_detection_mappings(license_detections)
     license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
     declared_license_expressions = get_field_values_from_resources(
-        resources,
+        resources=resources,
         field_name='detected_license_expression',
-        key_files_only=True,
-        is_string=True,
-    )
-    declared_license_expressions_spdx=get_field_values_from_resources(
-        resources,
-        field_name='detected_license_expression_spdx',
         key_files_only=True,
         is_string=True,
     )
 
     unique_declared_license_expressions = unique(declared_license_expressions)
-    unique_declared_license_expressions_spdx= unique(declared_license_expressions_spdx)
     declared_license_categories = get_license_categories(license_matches)
 
     copyrights = get_field_values_from_resources(
-        resources,
+        resources=resources,
         field_name='copyrights',
         key_files_only=True,
     )
-    holders = get_field_values_from_resources(
-        resources,
-        field_name='holders',
-        key_files_only=True,
-    )
-    notice_texts = get_field_values_from_resources(
-        resources,
-        field_name='notice_text',
-        key_files_only=True,
-    )
-    other_license_expressions = get_field_values_from_resources(
-        resources,
-        field_name='detected_license_expression',
-        key_files_only=False,
-        is_string=True,
-    )
-    other_license_expressions_spdx= get_field_values_from_resources(
-        resources,
-        field_name='detected_license_expression_spdx',
-        key_files_only=False,
-        is_string=True,
-    )
-    
-    # Populating the Package Attributes 
-    copyright_values = [copyright.get('copyright') for copyright in copyrights if copyright.get('copyright')]
-    joined_copyrights = ", ".join(copyright_values) if copyright_values else None
-    
-    holder_values = [holder.get('holder') for holder in holders if holder.get('holder')]
-    joined_holders = ", ".join(holder_values) if holder_values else None
-    
-    notice_text_values = [notice_text.get('notice_text') for notice_text in notice_texts if notice_text.get('notice_text')]
-    joined_notice_text = ", ".join(notice_text_values) if notice_text_values else None
-    
-    unique_other_license_expressions = unique(other_license_expressions)
-    unique_other_license_expressions_spdx= unique(other_license_expressions_spdx)
-    other_license_expressions=[]
-    other_license_expressions_spdx=[]
-    for other_license_expression in unique_other_license_expressions:
-        if other_license_expression not in unique_declared_license_expressions:
-            other_license_expressions.append(other_license_expression)
-    
-    for other_license_expression_spdx in unique_other_license_expressions_spdx:
-        if other_license_expression_spdx not in unique_declared_license_expressions_spdx:
-            other_license_expressions_spdx.append(other_license_expression_spdx)
-            
-    joined_other_license_expressions = ", ".join(other_license_expressions) if other_license_expressions else None
-    joined_other_license_expressions_spdx = ", ".join(other_license_expressions_spdx) if other_license_expressions_spdx else None
-
-    if not joined_other_license_expressions:
-        joined_other_license_expressions = None
-    
-    packageAttrs= PackageSummaryAttributes(
-        copyright = joined_copyrights,
-        holder = joined_holders,
-        notice_text = joined_notice_text,
-        other_license_expression= joined_other_license_expressions,
-        other_license_expression_spdx= joined_other_license_expressions_spdx
-    )
 
     other_license_detections = get_field_values_from_resources(
-        resources,
+        resources=resources,
         field_name='license_detections',
         key_files_only=False,
     )
@@ -263,8 +201,8 @@ def compute_license_score(resources):
         scoring_elements.ambiguous_compound_licensing = True
         if scoring_elements.score > 0:
             scoring_elements.score -= 10
-            
-    return scoring_elements, packageAttrs, declared_license_expression or None
+
+    return scoring_elements, declared_license_expression or None
 
 
 def unique(objects):
@@ -301,16 +239,6 @@ class ScoringElements:
             'ambiguous_compound_licensing': self.ambiguous_compound_licensing,
         }
 
-@attr.s()
-class PackageSummaryAttributes:
-    copyright= attr.ib(default=None)
-    holder= attr.ib(default=None)
-    notice_text= attr.ib(default=None)
-    other_license_expression= attr.ib(default=None)
-    other_license_expression_spdx= attr.ib(default=None)
-    
-    def to_dict(self):
-        return attr.asdict(self, dict_factory=dict)
 
 # minimum score to consider a license detection as good.
 
@@ -384,6 +312,7 @@ def check_declared_licenses(license_match_objects):
     """
     return any(is_good_license(license_match_object) for license_match_object in license_match_objects)
 
+
 def get_field_values_from_resources(
     resources,
     field_name,
@@ -391,9 +320,8 @@ def get_field_values_from_resources(
     is_string=False,
 ):
     """
-    Return a list of values from the `field_name` field of the Resources from
-    the provided `resources`.
-    
+    Return a list of values from the `field_name` field of `resources`.
+
     If `key_files_only` is True, then we only return the field values from
     Resources classified as key files.
 
@@ -402,34 +330,45 @@ def get_field_values_from_resources(
     """
     values = []
     for resource in resources:
-        resource_dict = resource.to_dict()
-
+        is_key_file = getattr(resource, 'is_key_file', False)
         if key_files_only:
-            if not resource_dict.get('is_key_file', False):
+            if not is_key_file:
                 continue
         else:
-            if resource_dict.get('is_key_file', False):
+            if is_key_file:
                 continue
         if is_string:
-            value = resource_dict.get(field_name)
+            value = getattr(resource, field_name, None) or None
             if value:
                 values.append(value)
         else:
-            for value in resource_dict.get(field_name, []):
+            for value in getattr(resource, field_name, []) or []:
                 values.append(value)
-                    
     return values
 
 
-def get_codebase_resources(codebase):
+def get_field_values_from_codebase_resources(
+    codebase,
+    field_name,
+    key_files_only=False,
+    is_string=False,
+):
     """
-    Get resources for the codebase.
+    Return a list of values from the `field_name` field of the Resources from
+    `codebase`
+
+    If `key_files_only` is True, then we only return the field values from
+    Resources classified as key files.
+
+    If `key_files_only` is False, then we return the field values from Resources
+    that are not classified as key files.
     """
-    codebase_resources= []
-    for resource in codebase.walk(topdown=True):
-        codebase_resources.append(resource)
-        
-    return codebase_resources
+    return get_field_values_from_resources(
+        resources=codebase.walk(topdown=True),
+        field_name=field_name,
+        key_files_only=key_files_only,
+        is_string=is_string,
+    )
 
 
 def get_categories_from_match(license_match, licensing=Licensing()):

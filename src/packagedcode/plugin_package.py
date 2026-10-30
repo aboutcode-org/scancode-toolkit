@@ -13,36 +13,37 @@ import os
 
 import attr
 import click
-import copy
 
-from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import DOC_GROUP
-from commoncode.cliutils import SCAN_GROUP
 from commoncode.cliutils import POST_SCAN_GROUP
+from commoncode.cliutils import SCAN_GROUP
+from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.resource import Resource
 from commoncode.resource import strip_first_path_segment
-from plugincode.scan import scan_impl
+from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from plugincode.scan import ScanPlugin
-from plugincode.post_scan import PostScanPlugin
+from plugincode.scan import scan_impl
 
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
 from licensedcode.detection import DetectionRule
 from licensedcode.detection import populate_matches_with_path
 from packagedcode import get_package_handler
-from packagedcode.licensing import add_referenced_license_matches_for_package
+from packagedcode.licensing import add_license_from_sibling_file
 from packagedcode.licensing import add_referenced_license_detection_from_package
 from packagedcode.licensing import add_referenced_license_detection_from_package_manifest_siblings
-from packagedcode.licensing import add_license_from_sibling_file
+from packagedcode.licensing import add_referenced_license_matches_for_package
 from packagedcode.licensing import get_license_expression_from_detection_mappings
-from packagedcode.models import add_to_package
 from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import PackageData
 from packagedcode.models import PackageWithResources
+from packagedcode.models import add_to_package
 from packagedcode.models import get_files_for_packages
-from summarycode.score import  compute_license_score
+from summarycode.score import compute_license_score
+from summarycode.score import get_field_values_from_resources
+from summarycode.score import unique
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 TRACE_ASSEMBLY = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
@@ -238,7 +239,14 @@ class PackageScanner(ScanPlugin):
             package_only=package_only,
         )
 
-    def process_codebase(self, codebase, strip_root=False, package_only=False, package_summary=False, **kwargs):
+    def process_codebase(
+        self,
+        codebase,
+        strip_root=False,
+        package_only=False,
+        package_summary=False,
+        **kwargs
+    ):
         """
         Populate the ``codebase`` top level ``packages`` and ``dependencies``
         with package and dependency instances, assembling parsed package data
@@ -300,9 +308,9 @@ class PackageScanner(ScanPlugin):
         # Create codebase-level packages and dependencies
         create_package_and_deps(
             codebase,
-            strip_root=strip_root,
             package_summary=package_summary,
-            **kwargs,
+            strip_root=strip_root,
+            **kwargs
         )
 
         if has_licenses:
@@ -320,80 +328,7 @@ class PackageScanner(ScanPlugin):
                 if TRACE_LICENSE and modified:
                     logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_from_package: modified: {modified}')
 
-def get_package_resources(codebase):
-    """
-    Get resources for each package in the codebase.
-    """
-    resource_for_packages = list(get_files_for_packages(codebase))
-    package_resources = {}
 
-    for resource, package_uid in resource_for_packages:
-        if package_uid not in package_resources:
-            package_resources[package_uid] = []
-        package_resources[package_uid].append(resource)
-
-    return package_resources
-    
-@post_scan_impl
-class PackageSummary(PostScanPlugin):
-    """
-    Summary at the Package Level.
-    """
-    run_order = 11
-    sort_order = 11
-
-    options = [
-        PluggableCommandLineOption(('--package-summary',),
-        is_flag=True,
-        default=False,
-        help='Summarize scans by providing License Clarity Score ' 
-        'and populating other license/copyright attributes '
-        'for package instances from their key files and other files.',
-        required_options=['classify', 'package'],
-        help_group=POST_SCAN_GROUP)
-    ]
-
-    def is_enabled(self, package_summary, **kwargs):
-        return package_summary
-
-    def process_codebase(self, codebase, package_summary, **kwargs):
-        """
-        Process the codebase.
-        """
-        
-        packages = codebase.attributes.packages
-        package_resources = get_package_resources(codebase)
-        package_attributes_map = {}
-        attributes_to_update = [
-            'license_clarity_score', 
-            'copyright', 
-            'holder', 
-            'notice_text', 
-            'other_license_expression', 
-            'other_license_expression_spdx'
-            ]
-            
-        for package in packages:
-            package_uid = package['package_uid']
-            if package_uid in package_resources:
-                package_resource = [resource for resource in package_resources[package_uid]]
-                
-            scoring_elements, package_attrs, _= compute_license_score(resources=package_resource)
-            license_clarity_score= scoring_elements.to_dict()
-            package_attributes_map[package_uid] = {
-                'license_clarity_score': license_clarity_score,
-                'copyright': package_attrs.copyright,
-                'holder': package_attrs.holder,
-                'notice_text': package_attrs.notice_text,
-                'other_license_expression': package_attrs.other_license_expression,
-                'other_license_expression_spdx': package_attrs.other_license_expression_spdx
-            }
-            if package_uid in package_attributes_map:
-                package_attrs = package_attributes_map[package_uid]
-                for attribute in attributes_to_update:
-                    package[attribute] = package_attrs[attribute]
-                
-        
 def add_license_from_file(resource, codebase):
     """
     Given a Resource, check if the detected package_data doesn't have license detections
@@ -473,7 +408,13 @@ def get_installed_packages(root_dir, processes=2, **kwargs):
     yield from packages_by_uid.values()
 
 
-def create_package_and_deps(codebase, package_summary=False , package_adder=add_to_package, strip_root=False, **kwargs):
+def create_package_and_deps(
+    codebase,
+    package_summary=False,
+    package_adder=add_to_package,
+    strip_root=False,
+    **kwargs
+):
     """
     Create and save top-level Package and Dependency from the parsed
     package data present in the codebase.
@@ -484,9 +425,9 @@ def create_package_and_deps(codebase, package_summary=False , package_adder=add_
         strip_root=strip_root,
         **kwargs
     )
+
     codebase.attributes.packages.extend(
-        package.to_dict(package_summary= package_summary)
-        for package in packages
+        package.to_dict(package_summary=package_summary) for package in packages
     )
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies)
 
@@ -575,3 +516,170 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
                     raise Exception(msg) from e
 
     return packages, dependencies
+
+
+def get_package_resources(codebase):
+    """
+    Get resources for each package in the codebase.
+    """
+    resource_for_packages = list(get_files_for_packages(codebase))
+    package_resources = {}
+
+    for resource, package_uid in resource_for_packages:
+        if package_uid not in package_resources:
+            package_resources[package_uid] = []
+        package_resources[package_uid].append(resource)
+
+    for package in codebase.attributes.packages:
+        package_uid = package.get('package_uid')
+        if not package_uid:
+            continue
+        res_list = package_resources.setdefault(package_uid, [])
+        for df_path in package.get('datafile_paths', []):
+            df_res = codebase.get_resource(path=df_path)
+            if df_res and df_res not in res_list:
+                res_list.append(df_res)
+
+    return package_resources
+
+
+def compute_package_summary_attributes(resources):
+    """
+    Return a dictionary of summary attributes computed from package `resources`.
+    """
+    declared_license_expressions = get_field_values_from_resources(
+        resources,
+        field_name='detected_license_expression',
+        key_files_only=True,
+        is_string=True,
+    )
+    declared_license_expressions_spdx = get_field_values_from_resources(
+        resources,
+        field_name='detected_license_expression_spdx',
+        key_files_only=True,
+        is_string=True,
+    )
+    unique_declared_license_expressions = unique(declared_license_expressions)
+    unique_declared_license_expressions_spdx = unique(declared_license_expressions_spdx)
+
+    copyrights = get_field_values_from_resources(
+        resources,
+        field_name='copyrights',
+        key_files_only=True,
+    )
+    holders = get_field_values_from_resources(
+        resources,
+        field_name='holders',
+        key_files_only=True,
+    )
+    notice_texts = get_field_values_from_resources(
+        resources,
+        field_name='notice_text',
+        key_files_only=True,
+    )
+    other_license_expressions = get_field_values_from_resources(
+        resources,
+        field_name='detected_license_expression',
+        key_files_only=False,
+        is_string=True,
+    )
+    other_license_expressions_spdx = get_field_values_from_resources(
+        resources,
+        field_name='detected_license_expression_spdx',
+        key_files_only=False,
+        is_string=True,
+    )
+
+    copyright_values = [
+        c.get('copyright') for c in copyrights if isinstance(c, dict) and c.get('copyright')
+    ]
+    copyright_values = unique(copyright_values)
+    joined_copyrights = ", ".join(copyright_values) if copyright_values else None
+
+    holder_values = [
+        h.get('holder') for h in holders if isinstance(h, dict) and h.get('holder')
+    ]
+    holder_values = unique(holder_values)
+    joined_holders = ", ".join(holder_values) if holder_values else None
+
+    notice_text_values = [
+        n.get('notice_text') if isinstance(n, dict) else n
+        for n in notice_texts
+        if n
+    ]
+    notice_text_values = unique(notice_text_values)
+    joined_notice_text = ", ".join(notice_text_values) if notice_text_values else None
+
+    unique_other_license_expressions = unique(other_license_expressions)
+    unique_other_license_expressions_spdx = unique(other_license_expressions_spdx)
+
+    other_lic_exprs = [
+        expr
+        for expr in unique_other_license_expressions
+        if expr not in unique_declared_license_expressions
+    ]
+    other_lic_exprs_spdx = [
+        expr
+        for expr in unique_other_license_expressions_spdx
+        if expr not in unique_declared_license_expressions_spdx
+    ]
+
+    joined_other_license_expressions = (
+        ", ".join(other_lic_exprs) if other_lic_exprs else None
+    )
+    joined_other_license_expressions_spdx = (
+        ", ".join(other_lic_exprs_spdx) if other_lic_exprs_spdx else None
+    )
+
+    return {
+        'copyright': joined_copyrights,
+        'holder': joined_holders,
+        'notice_text': joined_notice_text,
+        'other_license_expression': joined_other_license_expressions,
+        'other_license_expression_spdx': joined_other_license_expressions_spdx,
+    }
+
+
+@post_scan_impl
+class PackageSummary(PostScanPlugin):
+    """
+    Summarize scans by providing License Clarity Score and populating other
+    license/copyright attributes for package instances from their key files and
+    other files.
+    """
+
+    run_order = 11
+    sort_order = 11
+
+    options = [
+        PluggableCommandLineOption(
+            ('--package-summary',),
+            is_flag=True,
+            default=False,
+            help='Summarize scans by providing License Clarity Score '
+            'and populating other license/copyright attributes '
+            'for package instances from their key files and other files.',
+            required_options=['classify', 'package'],
+            help_group=POST_SCAN_GROUP,
+        )
+    ]
+
+    def is_enabled(self, package_summary, **kwargs):
+        return package_summary
+
+    def process_codebase(self, codebase, package_summary, **kwargs):
+        """
+        Process the codebase.
+        """
+        packages = codebase.attributes.packages
+        package_resources = get_package_resources(codebase)
+
+        for package in packages:
+            package_uid = package.get('package_uid')
+            package_resource = package_resources.get(package_uid, [])
+            scoring_elements, _ = compute_license_score(resources=package_resource)
+            package['license_clarity_score'] = scoring_elements.to_dict()
+            package_attrs = compute_package_summary_attributes(package_resource)
+            for attr_name, attr_val in package_attrs.items():
+                if attr_val is not None or package.get(attr_name) is None:
+                    package[attr_name] = attr_val

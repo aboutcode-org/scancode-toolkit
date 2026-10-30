@@ -120,33 +120,41 @@
     {
       "path": "plugin_package_summary",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "scan_errors": []
     },
     {
       "path": "plugin_package_summary/LICENSE",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "plugin_package_summary/package.json",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -201,45 +209,48 @@
         "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "scan_errors": []
     },
     {
       "path": "plugin_package_summary/packages",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "plugin_package_summary/packages/pkg1",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "plugin_package_summary/packages/pkg1/package.json",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -289,30 +300,32 @@
       "for_packages": [
         "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "scan_errors": []
     },
     {
       "path": "plugin_package_summary/packages/pkg2",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "plugin_package_summary/packages/pkg2/package.json",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -362,26 +375,22 @@
       "for_packages": [
         "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "scan_errors": []
     },
     {
       "path": "plugin_package_summary/test.js",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/pkg1?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/pkg2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     }
   ]

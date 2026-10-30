@@ -72,7 +72,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "npm/codebase/packages/change-case/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -160,7 +160,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "npm/codebase/packages/sponge-case/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -248,7 +248,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "npm/codebase/packages/swap-case/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -336,7 +336,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "npm/codebase/packages/title-case/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -479,13 +479,14 @@
     {
       "path": "codebase",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -499,6 +500,12 @@
     {
       "path": "codebase/LICENSE",
       "type": "file",
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -506,11 +513,6 @@
         "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": true,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -520,7 +522,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "npm/codebase/LICENSE",
               "start_line": 1,
               "end_line": 1,
@@ -558,6 +560,12 @@
     {
       "path": "codebase/package.json",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -592,7 +600,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "npm/codebase/LICENSE",
                   "start_line": 1,
                   "end_line": 1,
@@ -636,11 +644,6 @@
         "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -654,6 +657,12 @@
     {
       "path": "codebase/packages",
       "type": "directory",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -661,11 +670,6 @@
         "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -679,15 +683,16 @@
     {
       "path": "codebase/packages/change-case",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -701,6 +706,12 @@
     {
       "path": "codebase/packages/change-case/package.json",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -743,7 +754,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "npm/codebase/packages/change-case/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -781,11 +792,6 @@
       "for_packages": [
         "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -795,7 +801,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "npm/codebase/packages/change-case/package.json",
               "start_line": 3,
               "end_line": 3,
@@ -827,15 +833,16 @@
     {
       "path": "codebase/packages/change-case/src",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -849,15 +856,16 @@
     {
       "path": "codebase/packages/change-case/src/index.js",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "gpl-3.0-plus",
       "detected_license_expression_spdx": "GPL-3.0-or-later",
       "license_detections": [
@@ -867,7 +875,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "npm/codebase/packages/change-case/src/index.js",
               "start_line": 1,
               "end_line": 12,
@@ -893,15 +901,16 @@
     {
       "path": "codebase/packages/sponge-case",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -915,6 +924,12 @@
     {
       "path": "codebase/packages/sponge-case/package.json",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -957,7 +972,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "npm/codebase/packages/sponge-case/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -995,11 +1010,6 @@
       "for_packages": [
         "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -1009,7 +1019,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "npm/codebase/packages/sponge-case/package.json",
               "start_line": 3,
               "end_line": 3,
@@ -1041,15 +1051,16 @@
     {
       "path": "codebase/packages/swap-case",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1063,6 +1074,12 @@
     {
       "path": "codebase/packages/swap-case/package.json",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -1105,7 +1122,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "npm/codebase/packages/swap-case/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1143,11 +1160,6 @@
       "for_packages": [
         "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -1157,7 +1169,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "npm/codebase/packages/swap-case/package.json",
               "start_line": 3,
               "end_line": 3,
@@ -1189,15 +1201,16 @@
     {
       "path": "codebase/packages/title-case",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1211,6 +1224,12 @@
     {
       "path": "codebase/packages/title-case/package.json",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -1253,7 +1272,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "npm/codebase/packages/title-case/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1291,11 +1310,6 @@
       "for_packages": [
         "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -1305,7 +1319,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "npm/codebase/packages/title-case/package.json",
               "start_line": 3,
               "end_line": 3,
@@ -1337,15 +1351,16 @@
     {
       "path": "codebase/packages/title-case/tsconfig.json",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
