@@ -249,6 +249,16 @@ class TestTextPreparation(FileBasedTesting):
         line = prepare_text_line(line)
         assert not copyrights.is_candidate(line)
 
+    def test_is_candidate_should_not_select_gibberish_line_with_year_and_marker(self):
+        line = 'Copyright 2012 kjhgqwkzxqjvbn qwxzjkvq'
+        line = prepare_text_line(line)
+        assert not copyrights.is_candidate(line)
+
+    def test_is_candidate_should_not_select_line_without_year_or_marker(self):
+        line = 'static void printBlockName(raw_ostream &OS, const BasicBlock *BB);'
+        line = prepare_text_line(line)
+        assert not copyrights.is_candidate(line)
+
     def test_is_candidate_should_select_line_with_iso_date_year(self):
         line = 'sig 3 ccd6f801 2006-11-15 nathan mittler <nathan.mittler@gmail.com>'
         line = prepare_text_line(line)
