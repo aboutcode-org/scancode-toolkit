@@ -4,6 +4,12 @@ Changelog
 Next release
 --------------
 
+- Add the ``--package-summary`` post-scan plugin to compute package-level summaries
+  including License Clarity Score, copyright, holder, notice text, and other detected
+  licenses for each package in a codebase from its key files and other files.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3802
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3287
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

@@ -281,6 +281,7 @@ generated = "summarycode.generated:GeneratedCodeDetector"
 # scan plugins and before the output plugins. See also plugincode.post_scan
 # module for details and doc.
 [project.entry-points.scancode_post_scan]
+package-summary = "packagedcode.plugin_package:PackageSummary"
 summary = "summarycode.summarizer:ScanSummary"
 tallies = "summarycode.tallies:Tallies"
 tallies-with-details = "summarycode.tallies:TalliesWithDetails"
