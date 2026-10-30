@@ -1,0 +1,28 @@
+# Trimmed copy for testing PEP 751 pylock.toml package support.
+# SPDX-License-Identifier: MIT
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "attrs"
+version = "25.1.0"
+authors = [{ name = "Hynek Schlawack", email = "hs@ox.cx" }]
+license = "MIT"
+requires-python = ">=3.9"
+description = "Classes Without Boilerplate"
+keywords = ["class", "attribute", "boilerplate"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Documentation = "https://www.attrs.org/"
+GitHub = "https://github.com/python-attrs/attrs"
