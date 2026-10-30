@@ -1,0 +1,26 @@
+---
+key: hp-linux-firmware
+short_name: HP Linux Firmware License
+name: HP Linux Firmware License
+category: Proprietary Free
+owner: HP Inc.
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/LICENCE.HP
+spdx_license_key: LicenseRef-scancode-hp-linux-firmware
+ignorable_copyrights:
+    - Copyright (c) 2025 HP Inc.
+ignorable_holders:
+    - HP Inc.
+---
+
+HP BIOS Firmware Binary License Agreement
+
+Copyright (c) 2025 HP Inc. ("HP")
+
+
+HP grants you ("Licensee") a royalty-free license to download, use, and redistribute this binary firmware ("Software") in its original, unmodified form for use on HP notebook computers. You may not modify, reverse engineer, or create derivative works of the Software. Redistributions must retain this notice and the terms below.
+
+
+The Software may include third-party components, which are provided "as is" and subject to their own licenses; nothing herein grants rights beyond those licenses nor imposes additional restrictions on them.
+
+
+THE SOFTWARE IS PROVIDED "AS IS." HP MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. HP WILL NOT BE LIABLE FOR ANY ERROR, OMISSION, DEFECT, DEFICIENCY, OR NONCONFORMITY IN THE SOFTWARE. HP WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, ARISING OUT OF OR RELATED TO USE OF THE SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
