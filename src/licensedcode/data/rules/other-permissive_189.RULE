@@ -1,8 +1,13 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
-relevance: 100
-notes: https://blitiri.com.ar/p/bola/ and https://github.com/albertito/libfiu/blob/20ea5e85ec63e3dedd6904e103fb2e56b46840cf/LICENSE
+is_deprecated: yes
+notes: |
+    https://blitiri.com.ar/p/bola/ and https://github.com/albertito/libfiu/blob/20ea5e85ec63e3dedd6904e103fb2e56b46840cf/LICENSE
+    Added in SPDX license list 3.28
+    Replaced by license: bola-1.1.LICENSE
+replaced_by:
+    - bola11
 ---
 
 I don't like licenses, because I don't like having to worry about all this

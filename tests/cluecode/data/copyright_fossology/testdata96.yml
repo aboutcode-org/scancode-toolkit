@@ -1,0 +1,66 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2006-2008 Frank Lichtenheld <djpig@debian.org>
+  - Copyright (c) 2006-2008 Guillem Jover <guillem@debian.org>
+  - Copyright (c) 2007-2008 Raphael Hertzog <hertzog@debian.org>
+  - Copyright (c) 2007 Colin Watson <cjwatson@debian.org>
+  - Copyright (c) 2004-2005 Scott James Remnant <scott@netsplit.com>
+  - Copyright (c) 2004-2005 Canonical Ltd.
+  - Copyright (c) 1999-2002 Wichert Akkerman <wakkerma@debian.org>
+  - Copyright (c) 1999-2001 Marcus Brinkmann <brinkmd@debian.org>
+  - Copyright (c) 2001,2007 Joey Hess <joeyh@debian.org>
+  - Copyright (c) 1994-1999 Ian Jackson <ian@chiark.greenend.org.uk>
+  - Copyright (c) 1999 Richard Kettlewell <rjk@sfere.greenend.org.uk>
+  - Copyright (c) 1999 Ben Collins <bcollins@debian.org>
+  - Copyright (c) 1999 Roderick Shertler <roderick@argon.org>
+  - Copyright (c) 1996-1998 Miquel van Smoorenburg <miquels@cistron.nl>
+  - Copyright (c) 1997-1998 Juho Vuori <javuori@cc.helsinki.fi>
+  - Copyright (c) 1997-1998 Charles Briscoe-Smith <cpbs@debian.org>
+  - Copyright (c) 1998 Nils Rennebarth <nils@debian.org>
+  - Copyright (c) 1998 Juan Cespedes <cespedes@debian.org>
+  - Copyright (c) 1998 Jim Van Zandt <jrv@vanzandt.mv.com>
+  - Copyright (c) 1998 Koichi Sekido <sekido@mbox.kyoto-inet.or.jp>
+  - Copyright (c) 1995-1996 Erick Branderhorst <branderhorst@heel.fgg.eur.nl>
+  - Copyright (c) 1996 Kim-Minh Kaplan <kkaplan@cdfhp3.in2p3.fr>
+  - Copyright (c) 1996 Klee Dienes <klee@debian.org>
+  - Copyright (c) 1996 Michael Shields <shields@crosslink.net>
+  - Copyright (c) 1995 Bruce Perens <bruce@pixar.com>
+  - Copyright (c) 1994 Carl Streeter <streeter@cae.wisc.edu>
+  - Copyright (c) 1994 Matt Welsh <mdw@sunsite.unc.edu>
+  - Copyright (c) 1994 Ian Murdock <imurdock@debian.org>
+  - Copyright (c) 1984-2002 Free Software Foundation, Inc.
+holders:
+  - Frank Lichtenheld
+  - Guillem Jover
+  - Raphael Hertzog
+  - Colin Watson
+  - Scott James Remnant
+  - Canonical Ltd.
+  - Wichert Akkerman
+  - Marcus Brinkmann
+  - Joey Hess
+  - Ian Jackson
+  - Richard Kettlewell
+  - Ben Collins
+  - Roderick Shertler
+  - Miquel van Smoorenburg
+  - Juho Vuori
+  - Charles Briscoe-Smith
+  - Nils Rennebarth
+  - Juan Cespedes
+  - Jim Van Zandt
+  - Koichi Sekido
+  - Erick Branderhorst
+  - Kim-Minh Kaplan
+  - Klee Dienes
+  - Michael Shields
+  - Bruce Perens
+  - Carl Streeter
+  - Matt Welsh
+  - Ian Murdock
+  - Free Software Foundation, Inc.
+authors:
+  - Colin Plumb

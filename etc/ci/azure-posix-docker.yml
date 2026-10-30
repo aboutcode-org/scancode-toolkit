@@ -1,0 +1,24 @@
+parameters:
+    job_name: ''
+    image_name: ''
+
+jobs:
+    - job: ${{ parameters.job_name }}
+
+      pool:
+          vmImage: ${{ parameters.image_name }}
+
+      steps:
+          - checkout: self
+            fetchDepth: 10
+
+          - task: Docker@2
+            inputs:
+                command: 'build'
+                Dockerfile: '**/Dockerfile'
+                arguments: '--tag scancode'
+            displayName: 'Build scancode-toolkit container'
+
+          - script: |
+                docker run scancode --help
+            displayName: 'Run scancode --help'

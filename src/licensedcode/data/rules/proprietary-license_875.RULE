@@ -10,7 +10,7 @@ Each individual document published by The Open Group on the World Wide Web may c
 
 Nothing contained herein shall be construed as conferring by implication, estoppel or otherwise any license or right under any patent or trademark of The Open Group or any third party. Except as expressly provided above nothing contained herein shall be construed as conferring any license or right under any copyright of The Open Group.
 
-Note that any product, process, or technology in this document may be the subject of other intellectual property rights reserved by The Open Group, and may not be licensed hereunder.
+Note that any product, process, or technology in this document may be the subject of other intellectual property rights reserved by The Open Group, and {{may not be}} licensed hereunder.
 
 This publication is provided "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusion may not apply to you.
 

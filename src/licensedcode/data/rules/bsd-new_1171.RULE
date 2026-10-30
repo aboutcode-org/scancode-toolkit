@@ -10,6 +10,6 @@ ignorable_holders:
     - Yann Collet
 ---
 
-Use of this source code is governed by a BSD-style
-license that can be found in the LICENSE file.
-Based on work Copyright (c) Yann Collet, released under BSD License.
+Use of this source code is {{governed by a BSD-style
+license}} that can be found in the LICENSE file.
+Based on work Copyright (c) Yann Collet, released under {{BSD License}}.

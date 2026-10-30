@@ -116,7 +116,8 @@ class TestIndexing(IndexTesting):
             'bsd',
             'lgpl'])
 
-        assert sorted([t for i, t in enumerate(idx.tokens_by_tid) if i >= idx.len_legalese]) == xtbi
+        tokens_by_tid = idx.tokens_by_tid
+        assert sorted([t for i, t in tokens_by_tid.items() if i >= idx.len_legalese]) == xtbi
 
     def test_index_structures_with__add_rules(self):
         base = self.get_test_loc('index/tokens_count')
@@ -160,7 +161,8 @@ class TestIndexing(IndexTesting):
             'yes'
         ])
 
-        assert sorted([t for i, t in enumerate(idx.tokens_by_tid) if i >= idx.len_legalese]) == xtbi
+        tokens_by_tid = idx.tokens_by_tid
+        assert sorted([t for i, t in tokens_by_tid.items() if i >= idx.len_legalese]) == xtbi
 
         expected_msets_by_rid = [
             {u'redistribution': 1},
@@ -188,7 +190,7 @@ class TestIndexing(IndexTesting):
              u'is': 1,
              u'redistribution': 1}]
 
-        htmset = [{idx.tokens_by_tid[tok]: freq for (tok, freq) in tids_mset.items()}
+        htmset = [{tokens_by_tid[tok]: freq for (tok, freq) in tids_mset.items()}
                   for tids_mset in idx.msets_by_rid]
 
         assert sorted([sorted(kv.items()) for kv in htmset]) == sorted([sorted(kv.items()) for kv in expected_msets_by_rid])
@@ -209,7 +211,7 @@ class TestIndexing(IndexTesting):
         index.LicenseIndex(rules)
 
     @pytest.mark.scanslow
-    def test_index_rules_with_key_phrases_and_without_are_duplicates(self):
+    def test_index_rules_with_required_phrases_and_without_are_duplicates(self):
         rules_dir = self.get_test_loc('index/duplicate-key-phrases/rules')
         lics_dir = self.get_test_loc('index/duplicate-key-phrases/licenses')
         rules = models.get_rules(licenses_data_dir=lics_dir, rules_data_dir=rules_dir)
@@ -564,7 +566,8 @@ No part of match        '''
         qry = Query(query_string=querys, idx=idx)
 
         # convert tid to actual token strings
-        tks_as_str = lambda tks: [None if tid is None else idx.tokens_by_tid[tid] for tid in tks]
+        tokens_by_tid = idx.tokens_by_tid
+        tks_as_str = lambda tks: [None if tid is None else tokens_by_tid[tid] for tid in tks]
 
         expected = [None, None, u'copyright', u'reserved', u'mit', u'is', u'license', u'is', None, u'copyright', u'reserved', u'mit', u'is', u'license', None]
         #              0     1            2            3       4      5           6      7      8            9           10      11     12          13     14

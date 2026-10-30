@@ -6,9 +6,9 @@ ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
 ---
 
-"licenses": [
+{{"licenses": [
    {
-     "type": "Apache-2.0",
+     "type": "Apache-2.0}}",
      "url": "http://www.apache.org/licenses/LICENSE-2.0"
    }
  ],

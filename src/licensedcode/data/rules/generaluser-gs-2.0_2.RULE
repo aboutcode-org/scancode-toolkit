@@ -1,0 +1,9 @@
+---
+license_expression: generaluser-gs-2.0
+is_license_tag: yes
+relevance: 100
+notes: Seen in https://github.com/macports/macports-ports/blob/master/audio/generaluser-soundfont/Portfile
+---
+
+#                   {{GeneralUser GS License v2.0}}
+license             Permissive

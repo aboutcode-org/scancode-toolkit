@@ -6,4 +6,4 @@ ignorable_urls:
     - https://www.gnu.org/licenses/gpl-2.0.htm
 ---
 
-Licensed under the GNU General Public License (GPL) Version 2, June 1991:https://www.gnu.org/licenses/gpl-2.0.htm
+Licensed under the {{GNU General Public License (GPL) Version 2}}, June 1991:https://www.gnu.org/licenses/gpl-2.0.htm

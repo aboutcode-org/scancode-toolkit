@@ -47,7 +47,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -69,7 +69,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -117,7 +117,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -143,7 +143,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -169,7 +169,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -195,7 +195,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -221,7 +221,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -247,7 +247,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -273,7 +273,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -299,7 +299,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -325,7 +325,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -351,7 +351,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -377,7 +377,7 @@
       "scope": "setup",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -392,7 +392,7 @@
       "scope": "setup",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -407,7 +407,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -433,7 +433,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -459,7 +459,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -485,7 +485,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -511,7 +511,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -537,7 +537,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -563,7 +563,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -589,7 +589,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -615,7 +615,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -641,7 +641,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -721,70 +721,13 @@
       ]
     },
     {
-      "identifier": "apache_2_0-8a372204-beb1-cb75-7598-6680ba430098",
-      "license_expression": "apache-2.0",
-      "license_expression_spdx": "Apache-2.0",
-      "detection_count": 2,
-      "detection_log": [
-        "unknown-reference-to-local-file"
-      ],
-      "reference_matches": [
-        {
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "from_file": "paddlenlp/README_en.md",
-          "start_line": 6,
-          "end_line": 8,
-          "matcher": "3-seq",
-          "score": 80.0,
-          "matched_length": 8,
-          "match_coverage": 80.0,
-          "rule_relevance": 100,
-          "rule_identifier": "apache-2.0_469.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_469.RULE",
-          "matched_text": "## License\n\nPaddleNLP is provided under the [Apache-2.0 License](./LICENSE).",
-          "matched_text_diagnostics": "License\n\n[PaddleNLP] [is] [provided] under the [Apache-2.0 License](./LICENSE)."
-        },
-        {
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "from_file": "paddlenlp/README_en.md",
-          "start_line": 8,
-          "end_line": 8,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 9,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "apache-2.0_83.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_83.RULE",
-          "matched_text": "PaddleNLP is provided under the [Apache-2.0 License](./LICENSE).",
-          "matched_text_diagnostics": "is provided under the [Apache-2.0 License](./LICENSE)."
-        },
-        {
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "from_file": "paddlenlp/LICENSE",
-          "start_line": 3,
-          "end_line": 5,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 12,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "apache-2.0_791.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE",
-          "matched_text": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/",
-          "matched_text_diagnostics": "Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/"
-        }
-      ]
-    },
-    {
       "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 2,
-      "detection_log": [],
+      "detection_log": [
+        "extra-words"
+      ],
       "reference_matches": [
         {
           "license_expression": "apache-2.0",
@@ -851,6 +794,49 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE",
           "matched_text": "# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.",
           "matched_text_diagnostics": "Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License."
+        }
+      ]
+    },
+    {
+      "identifier": "apache_2_0-dab3668b-f1a2-1e23-c126-6a837727ab11",
+      "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 2,
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ],
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "paddlenlp/README_en.md",
+          "start_line": 6,
+          "end_line": 8,
+          "matcher": "2-aho",
+          "score": 90.91,
+          "matched_length": 10,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_1374.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1374.RULE",
+          "matched_text": "## License\n\nPaddleNLP is provided under the [Apache-2.0 License](./LICENSE).",
+          "matched_text_diagnostics": "License\n\n[PaddleNLP] is provided under the [Apache-2.0 License](./LICENSE)."
+        },
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "paddlenlp/LICENSE",
+          "start_line": 3,
+          "end_line": 5,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_791.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE",
+          "matched_text": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/",
+          "matched_text_diagnostics": "Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/"
         }
       ]
     },
@@ -961,7 +947,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/LICENSE",
               "start_line": 3,
               "end_line": 5,
@@ -1000,7 +986,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/README.md",
               "start_line": 305,
               "end_line": 307,
@@ -1015,7 +1001,9 @@
               "matched_text_diagnostics": "License\n\n[PaddleNLP\u9075\u5faa][Apache-2.[0\u5f00\u6e90\u534f\u8bae]](./LICENSE)\u3002"
             }
           ],
-          "detection_log": [],
+          "detection_log": [
+            "extra-words"
+          ],
           "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80"
         }
       ],
@@ -1039,39 +1027,23 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/README_en.md",
               "start_line": 6,
               "end_line": 8,
-              "matcher": "3-seq",
-              "score": 80.0,
-              "matched_length": 8,
-              "match_coverage": 80.0,
-              "rule_relevance": 100,
-              "rule_identifier": "apache-2.0_469.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_469.RULE",
-              "matched_text": "## License\n\nPaddleNLP is provided under the [Apache-2.0 License](./LICENSE).",
-              "matched_text_diagnostics": "License\n\n[PaddleNLP] [is] [provided] under the [Apache-2.0 License](./LICENSE)."
-            },
-            {
-              "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
-              "from_file": "paddlenlp/README_en.md",
-              "start_line": 8,
-              "end_line": 8,
               "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 9,
+              "score": 90.91,
+              "matched_length": 10,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "apache-2.0_83.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_83.RULE",
-              "matched_text": "PaddleNLP is provided under the [Apache-2.0 License](./LICENSE).",
-              "matched_text_diagnostics": "is provided under the [Apache-2.0 License](./LICENSE)."
+              "rule_identifier": "apache-2.0_1374.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1374.RULE",
+              "matched_text": "## License\n\nPaddleNLP is provided under the [Apache-2.0 License](./LICENSE).",
+              "matched_text_diagnostics": "License\n\n[PaddleNLP] is provided under the [Apache-2.0 License](./LICENSE)."
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/LICENSE",
               "start_line": 3,
               "end_line": 5,
@@ -1089,7 +1061,7 @@
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
-          "identifier": "apache_2_0-8a372204-beb1-cb75-7598-6680ba430098"
+          "identifier": "apache_2_0-dab3668b-f1a2-1e23-c126-6a837727ab11"
         }
       ],
       "license_clues": [],
@@ -1160,7 +1132,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "paddlenlp/docs/locale/en/LC_MESSAGES/changelog.po",
               "start_line": 3,
               "end_line": 3,
@@ -1176,7 +1148,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -1191,7 +1163,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -1231,7 +1203,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "paddlenlp/docs/locale/en/LC_MESSAGES/data.po",
               "start_line": 3,
               "end_line": 3,
@@ -1247,7 +1219,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -1262,7 +1234,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -1334,7 +1306,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1356,7 +1328,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1378,7 +1350,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1400,7 +1372,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1422,7 +1394,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1444,7 +1416,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1466,7 +1438,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1516,7 +1488,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/hubconf.py",
               "start_line": 3,
               "end_line": 13,
@@ -1576,7 +1548,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/LICENSE",
                   "start_line": 3,
                   "end_line": 5,
@@ -1600,7 +1572,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/README.md",
                   "start_line": 305,
                   "end_line": 307,
@@ -1615,7 +1587,9 @@
                   "matched_text_diagnostics": "License\n\n[PaddleNLP\u9075\u5faa][Apache-2.[0\u5f00\u6e90\u534f\u8bae]](./LICENSE)\u3002"
                 }
               ],
-              "detection_log": [],
+              "detection_log": [
+                "extra-words"
+              ],
               "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80"
             },
             {
@@ -1624,39 +1598,23 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/README_en.md",
                   "start_line": 6,
                   "end_line": 8,
-                  "matcher": "3-seq",
-                  "score": 80.0,
-                  "matched_length": 8,
-                  "match_coverage": 80.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "apache-2.0_469.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_469.RULE",
-                  "matched_text": "## License\n\nPaddleNLP is provided under the [Apache-2.0 License](./LICENSE).",
-                  "matched_text_diagnostics": "License\n\n[PaddleNLP] [is] [provided] under the [Apache-2.0 License](./LICENSE)."
-                },
-                {
-                  "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
-                  "from_file": "paddlenlp/README_en.md",
-                  "start_line": 8,
-                  "end_line": 8,
                   "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 9,
+                  "score": 90.91,
+                  "matched_length": 10,
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
-                  "rule_identifier": "apache-2.0_83.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_83.RULE",
-                  "matched_text": "PaddleNLP is provided under the [Apache-2.0 License](./LICENSE).",
-                  "matched_text_diagnostics": "is provided under the [Apache-2.0 License](./LICENSE)."
+                  "rule_identifier": "apache-2.0_1374.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1374.RULE",
+                  "matched_text": "## License\n\nPaddleNLP is provided under the [Apache-2.0 License](./LICENSE).",
+                  "matched_text_diagnostics": "License\n\n[PaddleNLP] is provided under the [Apache-2.0 License](./LICENSE)."
                 },
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/LICENSE",
                   "start_line": 3,
                   "end_line": 5,
@@ -1674,7 +1632,7 @@
               "detection_log": [
                 "unknown-reference-to-local-file"
               ],
-              "identifier": "apache_2_0-8a372204-beb1-cb75-7598-6680ba430098"
+              "identifier": "apache_2_0-dab3668b-f1a2-1e23-c126-6a837727ab11"
             }
           ],
           "other_license_expression": null,
@@ -1694,7 +1652,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1716,7 +1674,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1738,7 +1696,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1760,7 +1718,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1782,7 +1740,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1804,7 +1762,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1826,7 +1784,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1848,7 +1806,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1870,7 +1828,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1892,7 +1850,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -1977,7 +1935,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -1999,7 +1957,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -2035,7 +1993,7 @@
               "scope": "setup",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2046,7 +2004,7 @@
               "scope": "setup",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2071,7 +2029,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 3,
               "end_line": 13,
@@ -2095,7 +2053,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 75,
               "end_line": 75,
@@ -2111,7 +2069,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 78,
               "end_line": 78,

@@ -1,7 +1,10 @@
 ---
 license_expression: x11
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - x11
 ---
 
 licenses.nuget.org/ICU

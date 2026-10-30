@@ -6,5 +6,5 @@ ignorable_urls:
     - http://en.wikipedia.org/wiki/Public_domain
 ---
 
-license: Public Domain
+license: {{Public Domain}}
     license link: http://en.wikipedia.org/wiki/Public_domain

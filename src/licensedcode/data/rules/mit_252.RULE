@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-// Use of this source code is governed by a MIT-license.
-// See http://.mit-license.org/license.txt for details.
+// Use of this source code is governed by a {{MIT-license}}.
+// See http://.{{mit-license}}.org/license.txt for details.

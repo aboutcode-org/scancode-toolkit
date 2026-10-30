@@ -5,4 +5,4 @@ relevance: 95
 notes: this notice is common with vsprintf and refers to a bsd-new
 ---
 
-This file is under the {old-style BSD license}[rdoc-label:label-Old-style+BSD+license].
+This file is under the {old-style {{BSD license}}}[rdoc-label:label-Old-style+BSD+license].

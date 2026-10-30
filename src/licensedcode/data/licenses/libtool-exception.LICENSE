@@ -1,14 +1,16 @@
 ---
 key: libtool-exception
+is_deprecated: yes
+replaced_by:
+    - libtool-exception-2.0
 short_name: Libtool Exception
 name: GNU Libtool Exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
+notes: replaced by libtool-exception-2.0
 is_exception: yes
-is_deprecated: yes
 other_urls:
     - http://git.savannah.gnu.org/cgit/libtool.git/tree/m4/libtool.m4
-notes: replaced by libtool-exception-2.0
 ---
 
 As a special exception to the GNU General Public License, if you

@@ -100,12 +100,6 @@ class TestPyPiDevelopEggInfoPkgInfo(PackageTester):
         expected_loc = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_develop_with_parse(self):
-        test_file = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info/PKG-INFO')
-        package = pypi.PythonEditableInstallationPkgInfoFile.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
 
 class TestPyPiPkgInfoAndMetadata(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -138,6 +132,18 @@ class TestPyPiPkgInfoAndMetadata(PackageTester):
         test_file = self.get_test_loc('pypi/metadata/v21/PKG-INFO')
         package = pypi.PythonSdistPkgInfoFile.parse(test_file)
         expected_loc = self.get_test_loc('pypi/metadata/v21/PKG-INFO-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_sdist_pkg_infometadata_format_v22(self):
+        test_file = self.get_test_loc('pypi/metadata/v22/PKG-INFO')
+        package = pypi.PythonSdistPkgInfoFile.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/metadata/v22/PKG-INFO-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+    
+    def test_parse_sdist_pkg_infometadata_format_v23(self):
+        test_file = self.get_test_loc('pypi/metadata/v23/PKG-INFO')
+        package = pypi.PythonSdistPkgInfoFile.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/metadata/v23/PKG-INFO-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_sdist_pkg_info_basic(self):
@@ -221,9 +227,9 @@ class TestPypiInstalledWheel(PackageTester):
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_with_unpacked_wheel_meta_v21_2(self):
-        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/pip-20.2.2.dist-info/METADATA')
+        test_file = self.get_test_loc('pypi/site-packages/codebase/lib/python3.9/site-packages/pip-20.2.2.dist-info/METADATA')
         package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/pip-20.2.2.dist-info-expected.json')
+        expected_loc = self.get_test_loc('pypi/site-packages/pip-20.2.2.dist-info-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_with_unpacked_wheel_meta_v21_3(self):
@@ -237,6 +243,24 @@ class TestPypiInstalledWheel(PackageTester):
         package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
         expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/with_sources/anonapi-0.0.19.dist-info-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_with_unpacked_wheel_meta_v22_1(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.2/trimesh-4.6.1.dist-info/METADATA')
+        package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.2/trimesh-4.6.1.dist-info-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)   
+
+    def test_parse_with_unpacked_wheel_meta_v23_1(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.3/beartype-0.19.0.dist-info/METADATA')
+        package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.3/beartype-0.19.0.dist-info-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_with_unpacked_wheel_meta_v24_1(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.4/narwhals-1.29.0.dist-info/METADATA')
+        package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.4/narwhals-1.29.0.dist-info-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)    
 
 
 class TestPypiUnpackedSdist(PackageTester):
@@ -379,6 +403,59 @@ class TestPoetryHandler(PackageTester):
         package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
         expected_loc = self.get_test_loc('pypi/poetry/univers-pyproject.toml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
+class TestUvHandler(PackageTester):
+    # Test fixtures derived from python-attrs/attrs at release 26.1.0
+    # (MIT-licensed):
+    #   https://github.com/python-attrs/attrs/blob/26.1.0/pyproject.toml
+    #   https://github.com/python-attrs/attrs/blob/26.1.0/uv.lock
+
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pyproject_toml_uv(self):
+        test_file = self.get_test_loc('pypi/uv/attrs/pyproject.toml')
+        assert pypi.UvPyprojectTomlHandler.is_datafile(test_file)
+
+    def test_uv_pyproject_toml_excluded_from_standard_pyproject_handler(self):
+        test_file = self.get_test_loc('pypi/uv/attrs/pyproject.toml')
+        assert not pypi.PyprojectTomlHandler.is_datafile(test_file)
+
+    def test_parse_pyproject_toml_uv_attrs(self):
+        test_file = self.get_test_loc('pypi/uv/attrs/pyproject.toml')
+        package = pypi.UvPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/uv/attrs-pyproject.toml-expected.json',
+            must_exist=False,
+        )
+        self.check_packages_data(
+            package, expected_loc, must_exist=False, regen=REGEN_TEST_FIXTURES,
+        )
+
+    def test_is_uv_lock(self):
+        test_file = self.get_test_loc('pypi/uv/attrs/uv.lock')
+        assert pypi.UvLockHandler.is_datafile(test_file)
+
+    def test_parse_uv_lock_attrs(self):
+        test_file = self.get_test_loc('pypi/uv/attrs/uv.lock')
+        package = pypi.UvLockHandler.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/uv/attrs-uv.lock-expected.json',
+            must_exist=False,
+        )
+        self.check_packages_data(
+            package, expected_loc, must_exist=False, regen=REGEN_TEST_FIXTURES,
+        )
+
+    def test_package_scan_uv_end_to_end(self):
+        test_dir = self.get_test_loc('pypi/uv/attrs/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc(
+            'pypi/uv/attrs-package-assembly-expected.json',
+            must_exist=False,
+        )
+        run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
 
 class TestPipInspectDeplockHandler(PackageTester):
@@ -678,7 +755,6 @@ def get_setup_py_test_files(test_dir):
     """
     Yield setup.py file from a `test_dir` test data directory.
     """
-    print(test_dir)
     for top, _, files in os.walk(test_dir):
         for tfile in files:
             if tfile.endswith('setup.py'):

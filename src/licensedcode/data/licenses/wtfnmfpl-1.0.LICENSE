@@ -14,9 +14,14 @@ notes: |
     encounter with or as a result of whatever's being licensed with it. This
     license was first published at Organised Adversary in October, 2013. The
     license is free to use by anyone as per the terms of itself.
-spdx_license_key: LicenseRef-scancode-wtfnmfpl-1.0
+spdx_license_key: WTFNMFPL
+other_spdx_license_keys:
+    - LicenseRef-scancode-wtfnmfpl-1.0
 text_urls:
     - https://github.com/adversary-org/wtfnmf/blob/master/COPYING.WTFNMFPL
+other_urls:
+    - https://github.com/adversary-org/wtfnmf/raw/refs/tags/1.0/COPYING.WTFNMFPL
+    - https://github.com/adversary-org/wtfnmf/raw/3f2cd8235a64350a57a51b9739715edaea63ec1a/COPYING.WTFNMFPL-utf8
 ignorable_copyrights:
     - Copyright (c) 2013 Ben McGinnes <ben@adversary.org>
 ignorable_holders:

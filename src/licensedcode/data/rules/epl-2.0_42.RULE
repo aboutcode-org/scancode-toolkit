@@ -1,7 +1,10 @@
 ---
 license_expression: epl-2.0
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - epl-2.0
 ---
 
 libraries are licenced under the Eclipse Public License, version 2.0:

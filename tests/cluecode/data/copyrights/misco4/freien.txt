@@ -1,0 +1,5 @@
+Developed and created by Axel Metzger and Till 
+Jaeger, Institut für Rechtsfragen der Freien und 
+Open Source Software (Institute for Legal Issues 
+On Free and Open Source Software), 
+<http://www.ifross.de>.

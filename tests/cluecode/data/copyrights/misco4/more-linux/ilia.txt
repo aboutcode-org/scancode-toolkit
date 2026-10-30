@@ -1,0 +1,4 @@
+Copyright (C) 2013-2018 by the following authors:
+- Rob Clark <robdclark@gmail.com> (robclark)
+- Ilia Mirkin <imirkin@alum.mit.edu> (imirkin)
+

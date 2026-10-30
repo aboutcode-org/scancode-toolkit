@@ -1,0 +1,14 @@
+---
+key: rockchip-proprietary-2019
+short_name: Rockchip Proprietary 2019
+name: Rockchip Proprietary 2019
+category: Proprietary Free
+owner: Rockchip
+homepage_url: https://github.com/BPI-SINOVOIP/BPI-Rockchip-Android11/blob/master/external/camera_engine_rkaiq/algos/amerge/rk_aiq_amerge_algo.cpp
+spdx_license_key: LicenseRef-scancode-rockchip-proprietary-2019
+---
+
+No part of this work may be reproduced, modified, distributed, transmitted,
+transcribed, or translated into any language or computer format, in any form
+or by any means without written permission of:
+Fuzhou Rockchip Electronics Co.Ltd .

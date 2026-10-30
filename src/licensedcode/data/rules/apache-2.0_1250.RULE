@@ -6,6 +6,6 @@ relevance: 100
 
 <xmpRights:UsageTerms>
    <rdf:Alt>
-    <rdf:li xml:lang='x-default'>Apache License Version 2.0</rdf:li>
+    <rdf:li xml:lang='x-default'>{{Apache License Version 2.0}}</rdf:li>
    </rdf:Alt>
   </xmpRights:UsageTerms>

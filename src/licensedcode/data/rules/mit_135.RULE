@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-[MIT]: mit-license.org/
+[MIT]: {{mit-license}}.org/

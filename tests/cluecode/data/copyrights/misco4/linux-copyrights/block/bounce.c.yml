@@ -1,0 +1,6 @@
+what:
+  - copyrights
+  - holders
+  - authors
+authors:
+  - bounce, so we can iterate its bvec

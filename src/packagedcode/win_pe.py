@@ -17,6 +17,8 @@ from commoncode import text
 from packagedcode import models
 from packagedcode.models import Party
 from packagedcode.models import party_org
+from cluecode.copyrights import detect_copyrights_from_lines
+from cluecode.copyrights import prepare_text_line
 from typecode import contenttype
 
 TRACE = False
@@ -237,6 +239,31 @@ def concat(mapping, *keys):
     return '\n'.join(values)
 
 
+
+def has_license_with_copyright(text):
+    """
+    Return True if the LegalCopyright `text` could have some license
+    declarations and should be a part of the extracted_license_statement.
+    """
+    copyrights = detect_copyrights_from_lines(
+        numbered_lines=[tuple([1, text])],
+        include_copyrights=True,
+        include_authors=False,
+        include_holders=False,
+        include_copyright_years=True,
+        include_copyright_allrights=True,
+    )
+    detections = [detection.to_dict() for detection in copyrights]
+    if text and not detections:
+        return True
+
+    if detections and "copyright" in detections[0]:
+        return False
+
+    return True
+
+
+
 class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
     datasource_id = 'windows_executable'
     default_package_type = 'winexe'
@@ -278,66 +305,70 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
     @classmethod
     def parse(cls, location, package_only=False):
         infos = pe_info(location)
+        yield get_package_data_from_pe_info(infos, package_only)
 
-        version = get_first(
-            infos,
-            'Full Version',
-            'ProductVersion',
-            'FileVersion',
-            'Assembly Version',
-        )
-        release_date = get_first(infos, 'BuildDate')
-        if release_date:
-            if len(release_date) >= 10:
-                release_date = release_date[:10]
-            release_date = release_date.replace('/', '-')
 
-        name = get_first(
-            infos,
-            'ProductName',
-            'OriginalFilename',
-            'InternalName',
-        )
-        copyr = get_first(infos, 'LegalCopyright')
+def get_package_data_from_pe_info(infos, package_only=False):
 
-        LegalCopyright = copyr,
+    version = get_first(
+        infos,
+        'Full Version',
+        'ProductVersion',
+        'FileVersion',
+        'Assembly Version',
+    )
+    release_date = get_first(infos, 'BuildDate')
+    if release_date:
+        if len(release_date) >= 10:
+            release_date = release_date[:10]
+        release_date = release_date.replace('/', '-')
 
-        LegalTrademarks = concat(
-            infos,
-            'LegalTrademarks',
-            'LegalTrademarks1',
-            'LegalTrademarks2',
-            'LegalTrademarks3')
+    name = get_first(
+        infos,
+        'ProductName',
+        'OriginalFilename',
+        'InternalName',
+    )
 
-        License = get_first(infos, 'License')
+    LegalCopyright = get_first(infos, 'LegalCopyright')
+    copyr_has_license = LegalCopyright and has_license_with_copyright(LegalCopyright)
+    LegalTrademarks = concat(
+        infos,
+        'LegalTrademarks',
+        'LegalTrademarks1',
+        'LegalTrademarks2',
+        'LegalTrademarks3')
+    License = get_first(infos, 'License')
 
+    extracted_license_statement = None
+    if copyr_has_license or LegalTrademarks or License:
         extracted_license_statement = {}
-        if LegalCopyright or LegalTrademarks or License:
-            extracted_license_statement = dict(
-                LegalCopyright=copyr,
-                LegalTrademarks=LegalTrademarks,
-                License=License
-            )
+        if copyr_has_license:
+            extracted_license_statement['LegalCopyright'] = LegalCopyright
+        if LegalTrademarks and LegalTrademarks != '':
+            extracted_license_statement['LegalTrademarks'] = LegalTrademarks
+        if License:
+            extracted_license_statement['License'] = License
 
-        description = concat(infos, 'FileDescription', 'Comments')
+    description = concat(infos, 'FileDescription', 'Comments')
 
-        parties = []
-        cname = get_first(infos, 'CompanyName', 'Company')
+    parties = []
+    cname = get_first(infos, 'CompanyName', 'Company')
 
-        if cname:
-            parties = [Party(type=party_org, role='author', name=cname)]
-        homepage_url = get_first(infos, 'URL', 'WWW')
+    if cname:
+        parties = [Party(type=party_org, role='author', name=cname)]
+    homepage_url = get_first(infos, 'URL', 'WWW')
 
-        package_data = dict(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            name=name,
-            version=version,
-            release_date=release_date,
-            copyright=copyr,
-            extracted_license_statement=extracted_license_statement,
-            description=description,
-            parties=parties,
-            homepage_url=homepage_url,
-        )
-        yield models.PackageData.from_data(package_data, package_only)
+    package_data = dict(
+        datasource_id=WindowsExecutableHandler.datasource_id,
+        type=WindowsExecutableHandler.default_package_type,
+        name=name,
+        version=version,
+        release_date=release_date,
+        copyright=LegalCopyright,
+        extracted_license_statement=extracted_license_statement,
+        description=description,
+        parties=parties,
+        homepage_url=homepage_url,
+    )
+    return models.PackageData.from_data(package_data, package_only)

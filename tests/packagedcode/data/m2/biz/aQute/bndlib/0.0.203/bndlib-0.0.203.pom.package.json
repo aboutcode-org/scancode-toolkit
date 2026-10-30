@@ -39,7 +39,7 @@
       "matches": [
         {
           "license_expression": "apache-2.0",
-          "spdx_license_expression": "Apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,
@@ -50,11 +50,11 @@
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_239.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_239.RULE",
-          "matched_text": "- name: This material is licensed under the Apache Software License, Version 2.0"
+          "matched_text": "name: This material is licensed under the Apache Software License, Version 2.0"
         },
         {
           "license_expression": "apache-2.0",
-          "spdx_license_expression": "Apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": null,
           "start_line": 2,
           "end_line": 2,
@@ -65,7 +65,7 @@
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_25.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_25.RULE",
-          "matched_text": "  url: http://www.apache.org/licenses/LICENSE-2.0"
+          "matched_text": "url: http://www.apache.org/licenses/LICENSE-2.0"
         }
       ],
       "identifier": "apache_2_0-831e58f5-7cf7-3074-9727-f830ee5eb8df"
@@ -74,7 +74,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: This material is licensed under the Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0\n",
+  "extracted_license_statement": "- license:\n    name: This material is licensed under the Apache Software License, Version 2.0\n    url: http://www.apache.org/licenses/LICENSE-2.0\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/biz.aQute/bndlib@0.0.203?classifier=sources"
@@ -82,7 +82,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "BND Library"
+  },
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/biz/aQute/bndlib/0.0.203/",
   "repository_download_url": "https://repo1.maven.org/maven2/biz/aQute/bndlib/0.0.203/bndlib-0.0.203.jar",

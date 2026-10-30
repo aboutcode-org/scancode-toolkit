@@ -1,12 +1,15 @@
 ---
-is_deprecated: yes
 key: etalab-2.0-fr
+is_deprecated: yes
+replaced_by:
+    - etalab-2.0
 language: fr
 short_name: Etalab Open License 2.0 French
 name: Etalab Open License 2.0 French
 category: Unstated License
 owner: DINUM
 homepage_url: https://raw.githubusercontent.com/DISIC/politique-de-contribution-open-source/master/LICENSE
+notes: Renamed to etalab-2.0
 text_urls:
     - https://github.com/etalab/licence-ouverte/blob/master/open-licence.md
 other_urls:
@@ -15,7 +18,6 @@ other_urls:
     - https://www.etalab.gouv.fr/wp-content/uploads/2018/11/open-licence.pdf
 ignorable_urls:
     - http://www.data.gouv.fr/fr/datasets/xxx
-notes: Renamed to etalab-2.0
 ---
 
 LICENCE OUVERTE / OPEN LICENCE

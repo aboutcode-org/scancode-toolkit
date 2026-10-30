@@ -45,7 +45,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
               "start_line": 1,
               "end_line": 1,
@@ -67,7 +67,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
               "start_line": 1,
               "end_line": 1,
@@ -115,7 +115,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -130,7 +130,7 @@
       "scope": "graphviz",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -145,7 +145,7 @@
       "scope": "ipycytoscape",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -160,7 +160,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -250,7 +250,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
                   "start_line": 1,
                   "end_line": 1,
@@ -272,7 +272,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
                   "start_line": 1,
                   "end_line": 1,
@@ -372,7 +372,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -383,7 +383,7 @@
               "scope": "graphviz",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -394,7 +394,7 @@
               "scope": "ipycytoscape",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -405,7 +405,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}

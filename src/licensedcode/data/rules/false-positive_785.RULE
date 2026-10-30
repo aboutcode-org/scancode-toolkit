@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: found in linux/include/linux/mfd/rn5t618.h
+---
+
+GPLED_FUNC

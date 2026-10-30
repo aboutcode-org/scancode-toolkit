@@ -1,0 +1,33 @@
+---
+key: eqvsl-1.0
+short_name: Eclipse QVSL 1.0
+name: Eclipse Foundation Quality Verification Suite License - V 1.0
+category: Proprietary Free
+owner: Eclipse Foundation
+homepage_url: https://www.eclipse.org/legal/eclipse-foundation-quality-verification-suite-license/
+spdx_license_key: LicenseRef-scancode-eqvsl-1.0
+other_urls:
+    - https://adoptium.net/qvs-policy
+ignorable_urls:
+    - https://adoptium.net/qvs-policy
+ignorable_emails:
+    - qvs@eclipse.org
+---
+
+Eclipse Foundation Quality Verification Suite License - V 1.0
+
+Redistribution and use of the Quality Verification Suite accompanying this license (the "QVS") in binary form is permitted subject to the following rules and conditions:
+
+    Use of the QVS and its documentation is permitted by Eclipse solely for the purpose of testing an implementation (the "Product") to determine if it meets the requirements of a quality verification suite (the "Suite") made available by Eclipse.
+    No modifications to the QVS in binary form are permitted, except as expressly permitted by the QVS and its documentation. The source code for the QVS accompanying this license is available from Eclipse under separate terms.
+    Redistribution of the QVS in binary form must be accompanied with, and be made pursuant to the terms of this Eclipse Foundation Quality Verification Suite License and must include the text of this License in whole, including the copyright notice above, this list of conditions and the following disclaimers in the documentation and/or other materials provided with the distribution.
+    A Product will be deemed to be "verified" by the QVS if it fully and completely meets and satisfies all requirements of the QVS.
+    Before any claim of quality verification (or any other claim suggesting quality verification) is made based on the QVS, the testing party must:
+        use the QVS to determine that the Product fully and completely meets and satisfies all requirements of the QVS; and
+        make QVS test results showing full and complete satisfaction of all requirements of the QVS publicly available on the testing party's website and send a link to such test results to Eclipse at qvs@eclipse.org.
+    The QVS test results must be continuously available on the testing party's website for at least as long as the testing party makes any representation or claim that the Product has been quality verified by the QVS.
+    The QVS may not be used as a basis for any statements of partial verification. The QVS may only be used as a basis for true, factual statements of full quality verification of Products that fully meet and satisfy all requirements of the QVS.
+    Nothing in this license is intended to grant any license to use any of the names, marks or logos associated with the QVS, Eclipse, or Eclipse's contributors or licensors. No such name, mark or logo may be used to endorse or promote products tested with the QVS, unless with the specific prior written permission of the rightholders. Nor may any such name, mark or logo be used in connection with any verification of a Product except as permitted in the QVS Guidelines (https://adoptium.net/qvs-policy). A determination that a Product has been quality verified by the QVS does not, in itself, give rise to the right to use any such name, mark or logo. Any use of any Eclipse Foundation names, marks, or logos must be in accordance with our Trademark Usage Policy.
+    Upon the request of Eclipse, any user of the QVS will remove and delete any statements of quality verification (or any other claim suggesting quality verification) which Eclipse reasonably determines to be false or misleading or in violation of the terms of this license.
+
+TO THE EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON- INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. TO THE EXTENT PERMITTED BY APPLICABLE LAW, NEITHER THE COPYRIGHT OWNER OR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.

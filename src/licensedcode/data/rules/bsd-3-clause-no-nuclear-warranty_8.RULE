@@ -1,7 +1,10 @@
 ---
 license_expression: bsd-3-clause-no-nuclear-warranty
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - bsd-3-clause-no-nuclear-warranty
 ---
 
 licenses.nuget.org/BSD-3-Clause-No-Nuclear-Warranty

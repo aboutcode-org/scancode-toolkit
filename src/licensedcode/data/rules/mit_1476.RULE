@@ -1,0 +1,11 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 60
+referenced_filenames:
+    - LICENSE
+---
+
+License
+This project is licensed under the {{MIT License}} - see the LICENSE file for more details.

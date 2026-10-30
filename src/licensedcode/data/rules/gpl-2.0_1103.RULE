@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-license="the GNU General Public License version 2",
+license="{{the GNU General Public License version 2}}",

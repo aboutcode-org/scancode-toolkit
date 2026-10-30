@@ -5,7 +5,7 @@ relevance: 100
 minimum_coverage: 10
 notes: license text as published by SPDX
 ignorable_copyrights:
-    - Copyright (c) 2009 Free Software Foundation, Inc. <http://fsf.org/>
+    - Copyright (c) 2009 Free Software Foundation, Inc. http://fsf.org
 ignorable_holders:
     - Free Software Foundation, Inc.
 ignorable_urls:

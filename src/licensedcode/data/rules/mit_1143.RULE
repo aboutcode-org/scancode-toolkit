@@ -5,5 +5,5 @@ relevance: 100
 ---
 
 <licenses>
-    <license>
-      <name>MIT License</name>
+    <{{license>
+      <name>MIT}} License</name>

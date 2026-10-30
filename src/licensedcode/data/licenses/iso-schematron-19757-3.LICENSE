@@ -1,0 +1,35 @@
+---
+key: iso-schematron-19757-3
+short_name: ISO/IEC 19757-3
+name: ISO/IEC Schematron 19757-3 License
+category: Permissive
+owner: ISO - International Organization for Standardization
+homepage_url: https://github.com/lxml/lxml/blob/lxml-6.0.2/src/lxml/isoschematron/resources/rng/iso-schematron.rng#L4-L26
+spdx_license_key: LicenseRef-scancode-iso-schematron-19757-3
+other_urls:
+    - https://www.iso.org/standard/85625.html
+---
+
+The following permission notice and disclaimer shall be included in all
+copies of this XML schema ("the Schema"), and derivations of the Schema:
+
+Permission is hereby granted, free of charge in perpetuity, to any
+person obtaining a copy of the Schema, to use, copy, modify, merge and
+distribute free of charge, copies of the Schema for the purposes of
+developing, implementing, installing and using software based on the
+Schema, and to permit persons to whom the Schema is furnished to do so,
+subject to the following conditions:
+
+THE SCHEMA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SCHEMA OR THE USE OR
+OTHER DEALINGS IN THE SCHEMA.
+
+In addition, any modified copy of the Schema shall include the following
+notice:
+
+"THIS SCHEMA HAS BEEN MODIFIED FROM THE SCHEMA DEFINED IN ISO/IEC 19757-3,
+AND SHOULD NOT BE INTERPRETED AS COMPLYING WITH THAT STANDARD".

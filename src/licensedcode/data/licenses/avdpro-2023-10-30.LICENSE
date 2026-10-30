@@ -1,0 +1,35 @@
+---
+key: avdpro-2023-10-30
+short_name: Avdpro License 2023-10-30
+name: Avdpro License 2023-10-30
+category: Proprietary Free
+owner: Avdpro
+homepage_url: https://github.com/Avdpro/ai2apps/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-avdpro-2023-10-30
+---
+
+Limited Open Source License
+
+This agreement aims to establish the terms and conditions for the use of the sotware and source code (of ai2apps.com and tab-os.com) obtained from here by the code recipient (referred to as "you"). Please carefully read and understand the content of this agreement before using. By accessing, using, or distributing this source code, you indicate that you have agreed to abide by the following terms and conditions.
+
+1. Conditions of Code Usage
+You are allowed to freely use, modify, and distribute the source code obtained from here, but you must adhere to the following conditions:
+
+a. You may not use this source code for commercial purposes that compete with ai2apps.com or tab-os.com. The definition of commercial purposes includes, but is not limited to, direct or indirect involvement in products, services, or projects that are the same as or similar to those of ai2apps.com or tab-os.com.
+
+b. All derivative works created from using this source code must retain the copyright notice, license statement, and disclaimer contained in this agreement.
+
+2. Duration of the Agreement
+This agreement comes into effect from the date of the release of this source code and remains valid for three years.
+
+3. Agreement Update
+After three years from the effective date of this agreement, which is the third anniversary of the source code's release date, the source code will automatically be subject to the MIT open-source license. You will no longer be bound by the terms of this agreement but will be governed by the provisions of the MIT open-source license.
+
+4. Disclaimer
+The source code is provided "as is," with no express or implied warranties or guarantees. ai2apps.com, and tab-os.com and its contributors are not liable for any direct or indirect damages resulting from the use of this source code. To the maximum extent permitted by applicable law, ai2apps.com, tab-os.com hereby declares that all liability and risks associated with this source code are assumed by you.
+
+5. Acceptance of Terms
+If you do not agree to any terms or conditions of this agreement, you may not use this software  and it's source code. By accessing, using, or distributing this sortware or it's source code, you indicate that you fully understand and agree to comply with all the terms of this agreement.
+
+ai2apps.com, tab-os.com
+Avdpro (Xin Pang) 2023-10-30

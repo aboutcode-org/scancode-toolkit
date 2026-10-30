@@ -1,0 +1,587 @@
+{
+  "summary": {
+    "declared_license_expression": "mit",
+    "license_clarity_score": {
+      "score": 0,
+      "declared_license": false,
+      "identification_precision": false,
+      "has_license_text": false,
+      "declared_copyrights": false,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": true
+    },
+    "declared_holder": "",
+    "primary_language": "JavaScript",
+    "other_license_expressions": [
+      {
+        "value": "unknown-license-reference",
+        "count": 1
+      }
+    ],
+    "other_holders": [],
+    "other_languages": []
+  },
+  "todo": [],
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "invariant",
+      "version": "2.2.4",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "invariant",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Andres Suarez",
+          "email": "zertosh@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "test",
+        "invariant"
+      ],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/zertosh/invariant",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "invariant-2.2.4/package/package.json",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- MIT\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/invariant",
+      "repository_download_url": "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz",
+      "api_data_url": "https://registry.npmjs.org/invariant/2.2.4",
+      "package_uid": "pkg:npm/invariant@2.2.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "invariant-2.2.4/package/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/invariant@2.2.4"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/loose-envify",
+      "extracted_requirement": "^1.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/loose-envify?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/invariant@2.2.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "invariant-2.2.4/package/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/browserify",
+      "extracted_requirement": "^11.0.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/browserify?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/invariant@2.2.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "invariant-2.2.4/package/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/flow-bin",
+      "extracted_requirement": "^0.67.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/flow-bin?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/invariant@2.2.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "invariant-2.2.4/package/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/tap",
+      "extracted_requirement": "^1.4.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/tap?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/invariant@2.2.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "invariant-2.2.4/package/package.json",
+      "datasource_id": "npm_package_json"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "invariant-2.2.4/package/package.json",
+          "start_line": 9,
+          "end_line": 9,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+          "matched_text": "  \"license\": \"MIT\",",
+          "matched_text_diagnostics": "license\": \"MIT\","
+        }
+      ]
+    },
+    {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "invariant-2.2.4/package/package.json",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+          "rule_url": null,
+          "matched_text": "MIT"
+        }
+      ]
+    },
+    {
+      "identifier": "unknown_license_reference-9cefceda-96e9-1ab2-26f9-944b64f7ad39",
+      "license_expression": "unknown-license-reference",
+      "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+      "detection_count": 1,
+      "detection_log": [
+        "unknown-match"
+      ],
+      "reference_matches": [
+        {
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "from_file": "invariant-2.2.4/package/CHANGELOG.md",
+          "start_line": 35,
+          "end_line": 37,
+          "matcher": "2-aho",
+          "score": 80.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 80,
+          "rule_identifier": "unknown-license-reference_335.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_335.RULE",
+          "matched_text": "  * Fix license.\n\n2.1.1 / 2015-09-20",
+          "matched_text_diagnostics": "license.\n\n2.1."
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "invariant-2.2.4",
+      "type": "directory",
+      "name": "invariant-2.2.4",
+      "base_name": "invariant-2.2.4",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha1_git": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "for_todo": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "files_count": 2,
+      "dirs_count": 1,
+      "size_count": 2009,
+      "scan_errors": []
+    },
+    {
+      "path": "invariant-2.2.4/package",
+      "type": "directory",
+      "name": "package",
+      "base_name": "package",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha1_git": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "for_todo": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "files_count": 2,
+      "dirs_count": 0,
+      "size_count": 2009,
+      "scan_errors": []
+    },
+    {
+      "path": "invariant-2.2.4/package/CHANGELOG.md",
+      "type": "file",
+      "name": "CHANGELOG.md",
+      "base_name": "CHANGELOG",
+      "extension": ".md",
+      "size": 1291,
+      "sha1": "f795e582196db7876232a93728d9708956437655",
+      "md5": "7999017ee9e378b7d1d93f8cbb603e18",
+      "sha256": "df73843bcaea3d526beebec59b8129800666556b7632f2340d4f00617c2f090f",
+      "sha1_git": "bc52f1c5cfc91f1958084badbec318e2f2fcab3f",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "for_todo": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_community": true,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/invariant@2.2.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "unknown-license-reference",
+      "detected_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+      "license_detections": [
+        {
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "matches": [
+            {
+              "license_expression": "unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "invariant-2.2.4/package/CHANGELOG.md",
+              "start_line": 35,
+              "end_line": 37,
+              "matcher": "2-aho",
+              "score": 80.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 80,
+              "rule_identifier": "unknown-license-reference_335.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_335.RULE",
+              "matched_text": "  * Fix license.\n\n2.1.1 / 2015-09-20",
+              "matched_text_diagnostics": "license.\n\n2.1."
+            }
+          ],
+          "detection_log": [
+            "unknown-match"
+          ],
+          "identifier": "unknown_license_reference-9cefceda-96e9-1ab2-26f9-944b64f7ad39"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.67,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "invariant-2.2.4/package/package.json",
+      "type": "file",
+      "name": "package.json",
+      "base_name": "package",
+      "extension": ".json",
+      "size": 718,
+      "sha1": "59f8a398ae23614df8c1d975429934fdf9bc1949",
+      "md5": "dac187567d428f65dcca40fdc47e9fba",
+      "sha256": "ef0c08d9f91029e247bb570a04903f3a9bd646c1f2128d29e69ee171794cd2a3",
+      "sha1_git": "bb1499fd6f9a82ff81d46df23de0c8920f11029e",
+      "mime_type": "application/json",
+      "file_type": "JSON data",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "for_todo": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "invariant",
+          "version": "2.2.4",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": "invariant",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Andres Suarez",
+              "email": "zertosh@gmail.com",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "test",
+            "invariant"
+          ],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/zertosh/invariant",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "license_expression_spdx": "MIT",
+                  "from_file": "invariant-2.2.4/package/package.json",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- MIT\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/loose-envify",
+              "extracted_requirement": "^1.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/browserify",
+              "extracted_requirement": "^11.0.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/flow-bin",
+              "extracted_requirement": "^0.67.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/tap",
+              "extracted_requirement": "^1.4.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/invariant",
+          "repository_download_url": "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz",
+          "api_data_url": "https://registry.npmjs.org/invariant/2.2.4",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/invariant@2.2.4"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/invariant@2.2.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "invariant-2.2.4/package/package.json",
+              "start_line": 9,
+              "end_line": 9,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+              "matched_text": "  \"license\": \"MIT\",",
+              "matched_text_diagnostics": "license\": \"MIT\","
+            }
+          ],
+          "detection_log": [],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.6,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

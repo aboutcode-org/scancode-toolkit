@@ -20,7 +20,7 @@ These AdColony SDK License and Publisher Terms (this “Agreement”) is made av
     “AdColony Platform” means AdColony’s advertising system or network, which supports advertisement insertion within mobile applications, and related advertisement reporting tools.
     “AdColony SDK” means the software development kit and any other software and documentation that may be provided by AdColony to Developer with the software development kit, including any updates thereto.
     “Personally Identifiable Information” or “PII” means information that specifically identifies or locates a particular person or entity such as name, postal address, telephone number, and email address.
-    “Pseudonymous Identifiers” means data that is linked or reasonably linkable to a particular computer or device resettable device identifiers such as Google Advertising ID, Apple Identifier for Advertisers, IP address, or other similar identifiers. Pseudoymous Identifiers may not be utilized to identify a particular person.
+    “Pseudonymous Identifiers” means data that is linked or reasonably linkable to a particular computer or device resettable device identifiers such as Google Advertising ID, Apple Identifier for Advertisers, IP address, or other similar identifiers. Pseudoymous Identifiers {{may not be}} utilized to identify a particular person.
 
 2. AdColony SDK License
 

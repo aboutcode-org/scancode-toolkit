@@ -8,4 +8,4 @@ ignorable_urls:
     - https://wordpress.org/about/gpl/
 ---
 
-@license https://wordpress.org/about/gpl/ GNU General Public License
+@license https://wordpress.org/about/gpl/ {{GNU General Public License}}

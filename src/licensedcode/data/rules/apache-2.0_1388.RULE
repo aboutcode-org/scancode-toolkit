@@ -1,0 +1,10 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 60
+referenced_filenames:
+    - LICENSE
+---
+
+Available under the {{Apache License, version 2.0.}} See the LICENSE file for details.

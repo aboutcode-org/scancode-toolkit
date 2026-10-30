@@ -1,13 +1,13 @@
 ---
-license_expression: gpl-2.0-plus
+license_expression: gpl-2.0-plus AND gpl-3.0-plus 
 is_license_notice: yes
-notes: Pychess german notice text
+notes: Pychess german notice text. Note the combo of 2 and 3 versions. Maybe a translation typo?
 ---
 
 PyChess is free software; you can redistribute it and/or modify 
-it under the terms of the GNU General Public License as published by 
-the Free Software Foundation; either version 2 of the License, or 
-(at your option) any later version.
+it under the terms of the {{GNU General Public License}} as published by 
+the Free Software Foundation; {{either version 2}} of the License, or 
+{{(at your option) any later version}}.
 
 PyChess is distributed in the hope that it will be useful, 
 but WITHOUT ANY WARRANTY; without even the implied warranty of 
@@ -22,7 +22,7 @@ PyChess ist freie Software. Sie können es unter den Bedingungen der GNU
 General 
 Public License, wie von der Free Software Foundation veröffentlicht, 
 weitergeben und/oder 
-modifizieren, entweder gemass Version 3 der Lizenz oder (nach Ihrer Option) 
+modifizieren, {{entweder gemass Version 3 der Lizenz}} oder {{(nach Ihrer Option)}} 
 jeder späteren 
 Version.
 

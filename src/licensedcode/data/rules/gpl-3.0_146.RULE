@@ -1,7 +1,8 @@
 ---
 license_expression: gpl-3.0
-is_license_tag: yes
+is_license_reference: yes
+is_required_phrase: yes
 relevance: 100
 ---
 
-gnu gpl 3.0
+GNU GPL 3.0

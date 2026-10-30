@@ -1,0 +1,13 @@
+NAME="elementary OS"
+VERSION="5.1.7 Hera"
+ID=elementary
+ID_LIKE=ubuntu
+PRETTY_NAME="elementary OS 5.1.7 Hera"
+LOGO=distributor-logo
+VERSION_ID="5.1.7"
+HOME_URL="https://elementary.io/"
+SUPPORT_URL="https://elementary.io/support"
+BUG_REPORT_URL="https://github.com/elementary/os/issues/new"
+PRIVACY_POLICY_URL="https://elementary.io/privacy-policy"
+VERSION_CODENAME=hera
+UBUNTU_CODENAME=bionic

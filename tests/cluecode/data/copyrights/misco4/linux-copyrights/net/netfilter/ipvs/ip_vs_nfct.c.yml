@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Portions Copyright (c) 2001-2002 Antefacto Ltd
+  - Portions Copyright (c) 2003-2010 Julian Anastasov
+holders:
+  - Antefacto Ltd
+  - Julian Anastasov
+authors:
+  - Ben North <ben@redfrontdoor.org> Julian Anastasov <ja@ssi.bg> Reorganize

@@ -1,7 +1,10 @@
 ---
 license_expression: vim
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - vim
 ---
 
 License:       Same licence as vim

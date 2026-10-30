@@ -7,7 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-FROM --platform=linux/amd64 python:3.8-slim-buster
+FROM --platform=linux/amd64 python:3.12-slim-bookworm
 
 # Python settings: Force unbuffered stdout and stderr (i.e. they are flushed to terminal immediately)
 ENV PYTHONUNBUFFERED 1
@@ -38,9 +38,13 @@ WORKDIR /scancode-toolkit
 COPY . /scancode-toolkit
 
 # Initial configuration using ./configure, scancode-reindex-licenses to build
-# the base license index
+# the base license index, scancode-reindex-package-patterns to build the package
+# patterns cache, and scancode-train-gibberish-model to train the Markov chain
+# model used for gibberish detection.
 RUN ./configure \
- && ./venv/bin/scancode-reindex-licenses
+ && ./venv/bin/scancode-reindex-licenses \
+ && ./venv/bin/scancode-reindex-package-patterns \
+ && ./venv/bin/scancode-train-gibberish-model
 
 # Add scancode to path
 ENV PATH=/scancode-toolkit:$PATH

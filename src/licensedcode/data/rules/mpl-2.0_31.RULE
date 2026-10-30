@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.txt
 ---
 
-is licensed under the MPL 2.0 (see LICENSE.txt)
+is {{licensed under the MPL 2.0}} (see LICENSE.txt)

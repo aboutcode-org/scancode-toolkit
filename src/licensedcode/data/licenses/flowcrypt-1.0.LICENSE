@@ -1,0 +1,40 @@
+---
+key: flowcrypt-1.0
+short_name: FlowCrypt Free License 1.0
+name: FlowCrypt Free License 1.0
+category: Proprietary Free
+owner: FlowCrypt
+homepage_url: https://flowcrypt.com/license
+spdx_license_key: LicenseRef-scancode-flowcrypt-1.0
+---
+
+FlowCrypt Free License 1.0
+
+Licensor: FlowCrypt a.s.
+
+Software: FlowCrypt PGP browser extension, FlowCrypt Android App, FlowCrypt iOS App.
+
+Use Limitation: This software is free to use with the following limitations:
+
+    Password-protected messages are stored for 90 days for both free users and Enterprise users who use Shared Tenant FES but Enterprise users who run their own server infrastructure can choose the expiration time.
+    Messages, attachments, or files can only be transferred through the used email provider or through services provided by the Licensor. Never through 3rd party or custom services.
+    A plain-text portion of password-protected messages must only include a link to a page on the flowcrypt.com domain. The recipient cannot be directed to any other place or means of decrypting password-protected messages.
+    Password-protected messages cannot link or lead to a web page where an encrypted reply is possible.
+    Cannot request attestation of secondary send-from email addresses (email aliases).
+    Limit one re-attestation (change of associated pubkey) per email address.
+    Cannot set up a custom email footer to be included in sent messages (encrypted or not).
+    Maximum 100 email addresses per domain, except for gmail.com, outlook.com, and other public email service provider domains.
+
+You are granted a limited license to the Software under this FlowCrypt Free License. Please read this FlowCrypt Free License carefully, particularly the Use Limitation outlined above.
+
+Subject to the Use Limitation, Licensor grants you a non-exclusive, worldwide (subject to applicable laws) license to copy, modify, display, use, create derivative works, and redistribute the Software. If your use of the Software exceeds or will exceed, the foregoing limitations you must obtain alternative licensing terms for the Software directly from Licensor, its affiliated entities, or authorized resellers. There are no Use Limitations for non-production purposes.
+
+All copies of original and modified Software, and derivative works of the Software, are subject to this FlowCrypt Free License. This FlowCrypt Free License applies separately to each version of the Software.
+
+You must conspicuously display this FlowCrypt Free License on each original or modified copy of the Software. If you receive the Software in original or modified form from a third party, the restrictions outlined in this FlowCrypt Free License apply to your use of such Software.
+
+Any use of the Software in violation of this FlowCrypt Free License will automatically terminate your rights under this FlowCrypt Free License for the current and all future versions of the Software.
+
+You may not use the marks or logos of the Licensor or its affiliates for commercial purposes without prior written consent from the Licensor.
+
+TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE AND ALL SERVICES PROVIDED BY LICENSOR OR ITS AFFILIATES UNDER OR IN CONNECTION WITH THIS FLOWCRYPT FREE LICENSE ARE PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS. YOU EXPRESSLY WAIVE ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING (WITHOUT LIMITATION) WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, TITLE, SYSTEM INTEGRATION, AND ACCURACY OF INFORMATIONAL CONTENT.

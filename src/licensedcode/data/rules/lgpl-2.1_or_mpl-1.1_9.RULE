@@ -1,0 +1,11 @@
+---
+license_expression: lgpl-2.1 OR mpl-1.1
+is_license_reference: yes
+---
+
+New license: LGPL/MPL
+
+The most significant news with this release is that the license of
+cairo has changed. It is now dual-licensed under the LGPL and the
+MPL. For details see the COPYING file as well as COPYING-LGPL-2.1 and
+COPYING-MPL-1.1.

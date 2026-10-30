@@ -1,0 +1,10 @@
+---
+license_expression: artistic-perl-1.0
+is_license_reference: yes
+is_required_phrase: yes
+relevance: 90
+ignorable_urls:
+    - http://opensource.org/licenses/Artistic-Perl-1.0
+---
+
+http://opensource.org/licenses/Artistic-Perl-1.0"

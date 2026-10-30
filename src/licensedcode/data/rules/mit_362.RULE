@@ -6,5 +6,5 @@ ignorable_urls:
     - https://jquery.org/license/
 ---
 
-MIT license
+{{MIT license}}
 https://jquery.org/license/

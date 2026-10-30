@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: SSPL-1.0
     matches:
       - license_expression: mongodb-sspl-1.0
-        spdx_license_expression: SSPL-1.0
+        license_expression_spdx: SSPL-1.0
         from_file:
         start_line: 18
         end_line: 23

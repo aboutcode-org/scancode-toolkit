@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1999-2005 Hewlett-Packard Co David Mosberger-Tang <davidm@hpl.hp.com>
+  - Copyright (c) 2006 Intel Co 2006-08-12 - IA64 Native Utrace
+holders:
+  - Hewlett-Packard Co David Mosberger-Tang
+  - Intel Co IA64 Native Utrace
+authors:
+  - Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>

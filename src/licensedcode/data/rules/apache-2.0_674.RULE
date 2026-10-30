@@ -6,7 +6,7 @@ minimum_coverage: 80
 notes: a fragment of Apache used as-is
 ---
 
-copyrighted software made available under Version 2.0 of the Apache License
+copyrighted software made available under Version 2.0 of the {{Apache License}}
 
 You must give any other recipients of the Work or Derivative Works a copy of
 this License. You must retain, in the Source form of any Derivative Works that

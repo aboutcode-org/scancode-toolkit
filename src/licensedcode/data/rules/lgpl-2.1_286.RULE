@@ -6,4 +6,4 @@ referenced_filenames:
     - COPYING.LGPLv2.1
 ---
 
-COPYING.LGPLv2.1: GNU Lesser General Public License version 2.1
+COPYING.LGPLv2.1: {{GNU Lesser General Public License version 2.1}}

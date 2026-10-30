@@ -1,0 +1,53 @@
+---
+key: samba-dc-1.0
+short_name: Samba DC 1.0
+name: Samba Developer's Declaration, Version 1.0
+category: CLA
+owner: Samba
+homepage_url: https://git.samba.org/samba.git/?p=samba.git;a=blob;f=README.contributing
+spdx_license_key: LicenseRef-scancode-samba-dc-1.0
+text_urls:
+    - https://git.samba.org/samba.git/?p=samba.git;a=blob;f=README.contributing
+    - https://github.com/samba-team/samba/blob/master/README.contributing
+    - https://gitlab.com/samba-team/samba/-/blob/master/README.contributing?ref_type=heads
+minimum_coverage: 80
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-3.0.html
+    - http://www.gnu.org/licenses/lgpl-3.0.html
+---
+
+Samba Developer's Declaration, Version 1.0
+
+By making a contribution to this project, I certify that:
+
+(a) The contribution was created in whole or in part by me and I
+    have the right to submit it under the appropriate
+    version of the GNU General Public License; or
+
+(b) The contribution is based upon previous work that, to the best
+    of my knowledge, is covered under an appropriate open source
+    license and I have the right under that license to submit that
+    work with modifications, whether created in whole or in part
+    by me, under the GNU General Public License, in the
+    appropriate version; or
+
+(c) The contribution was provided directly to me by some other
+    person who certified (a) or (b) and I have not modified
+    it.
+
+(d) I understand and agree that this project and the
+    contribution are public and that a record of the
+    contribution (including all metadata and personal
+    information I submit with it, including my sign-off) is
+    maintained indefinitely and may be redistributed
+    consistent with the Samba Team's policies and the
+    requirements of the GNU GPL where they are relevant.
+
+(e) I am granting this work to this project under the terms of both
+    the GNU General Public License and the GNU Lesser General Public
+    License as published by the Free Software Foundation; either version
+    3 of these Licenses, or (at the option of the project) any later
+    version.
+
+    http://www.gnu.org/licenses/gpl-3.0.html
+    http://www.gnu.org/licenses/lgpl-3.0.html

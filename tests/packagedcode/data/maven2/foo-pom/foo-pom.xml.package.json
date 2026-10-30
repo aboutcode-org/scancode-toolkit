@@ -39,7 +39,7 @@
       "matches": [
         {
           "license_expression": "epl-1.0",
-          "spdx_license_expression": "EPL-1.0",
+          "license_expression_spdx": "EPL-1.0",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,
@@ -50,11 +50,11 @@
           "rule_relevance": 100,
           "rule_identifier": "epl-1.0_4.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_4.RULE",
-          "matched_text": "- name: Eclipse Public License - v 1.0"
+          "matched_text": "name: Eclipse Public License - v 1.0"
         },
         {
           "license_expression": "epl-1.0",
-          "spdx_license_expression": "EPL-1.0",
+          "license_expression_spdx": "EPL-1.0",
           "from_file": null,
           "start_line": 2,
           "end_line": 2,
@@ -65,7 +65,7 @@
           "rule_relevance": 100,
           "rule_identifier": "epl-1.0.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0.RULE",
-          "matched_text": "  url: http://www.eclipse.org/legal/epl-v10.html"
+          "matched_text": "url: http://www.eclipse.org/legal/epl-v10.html"
         }
       ],
       "identifier": "epl_1_0-48d15cd3-0ccf-4f62-3d30-24dc9b7308e5"
@@ -74,7 +74,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: Eclipse Public License - v 1.0\n  url: http://www.eclipse.org/legal/epl-v10.html\n",
+  "extracted_license_statement": "- license:\n    name: Eclipse Public License - v 1.0\n    url: http://www.eclipse.org/legal/epl-v10.html\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
@@ -90,7 +90,7 @@
       "scope": "import",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -101,7 +101,7 @@
       "scope": "import",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -112,7 +112,7 @@
       "scope": "import",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -123,7 +123,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -134,7 +134,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -145,7 +145,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -156,7 +156,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -167,7 +167,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}

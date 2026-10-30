@@ -1,0 +1,13 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2009 Dialog Semiconductor
+  - Copyright (c) 2009 Renesas Solutions Corp. Cleanups
+holders:
+  - Dialog Semiconductor
+  - Renesas Solutions Corp. Cleanups
+authors:
+  - David Chen <Dajun.chen@diasemi.com>
+  - Kuninori Morimoto <morimoto.kuninori@renesas.com>

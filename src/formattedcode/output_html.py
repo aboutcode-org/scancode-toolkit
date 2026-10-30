@@ -68,6 +68,7 @@ class HtmlOutput(OutputPlugin):
         PluggableCommandLineOption(('--html',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
+            default=None,
             help='Write scan output as HTML to FILE.',
             help_group=OUTPUT_GROUP,
             sort_order=50),
@@ -100,6 +101,7 @@ class CustomTemplateOutput(OutputPlugin):
         PluggableCommandLineOption(('--custom-output',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             required_options=['custom_template'],
+            default=None,
             metavar='FILE',
             help='Write scan output to FILE formatted with '
                  'the custom Jinja template file.',
@@ -114,6 +116,7 @@ class CustomTemplateOutput(OutputPlugin):
                 readable=True,
                 path_type=str
             ),
+            default=None,
             required_options=['custom_output'],
             metavar='FILE',
             help='Use this Jinja template FILE as a custom template.',
@@ -188,9 +191,13 @@ def generate_output(results, license_references, version, template):
     """
     # FIXME: This code is highly coupled with actual scans and may not
     # support adding new scans at all
+
+    from licensedcode.cache import get_licenses_db
+
     converted = {}
     converted_infos = {}
     converted_packages = {}
+    licenses = {}
 
     LICENSES = 'license_detections'
     COPYRIGHTS = 'copyrights'
@@ -223,6 +230,11 @@ def generate_output(results, license_references, version, template):
                     'value': license_expression,
                 })
 
+                if not license_references and license_expression not in licenses:
+                    license_object = get_licenses_db().get(license_expression)
+                    if license_object != None:
+                        licenses[license_expression] = license_object
+
         if results:
             converted[path] = sorted(results, key=itemgetter('start'))
 
@@ -238,6 +250,10 @@ def generate_output(results, license_references, version, template):
 
         if PACKAGES in scanned_file:
             converted_packages[path] = scanned_file[PACKAGES]
+
+    if not license_references:
+        licenses = dict(sorted(licenses.items()))
+        license_references = list(licenses.values())
 
     files = {
         'license_copyright': converted,
@@ -257,6 +273,7 @@ class HtmlAppOutput(OutputPlugin):
         PluggableCommandLineOption(('--html-app',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
+            default=None,
             hidden=True,
             help='(DEPRECATED: use the ScanCode Workbench app instead) '
                   'Write scan output as a mini HTML application to FILE.',

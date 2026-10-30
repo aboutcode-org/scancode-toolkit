@@ -1,0 +1,7 @@
+what:
+  - copyrights
+  - holders
+  - authors
+authors:
+  - Guy Maor <maor@debian.org>
+  - Sean Shaleh Perry <shaleh@debian.org> , and Adrian Bunk <bunk@stusta.de>

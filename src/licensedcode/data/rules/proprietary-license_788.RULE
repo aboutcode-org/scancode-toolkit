@@ -342,7 +342,7 @@ MENTOR GRAPHICS IS WILLING TO LICENSE THE SOFTWARE ONLY UPON
     4. Beta Code.
          1. Portions or all of certain Products may contain code
             for experimental testing and evaluation ("Beta
-            Code"), which may not be used without Mentor
+            Code"), which {{may not be}} used without Mentor
             Graphics' explicit authorization. Upon Mentor
             Graphics' authorization, Mentor Graphics grants to
             Customer a temporary, nontransferable, nonexclusive

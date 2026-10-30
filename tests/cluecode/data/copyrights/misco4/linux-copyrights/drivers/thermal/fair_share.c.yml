@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2012 Intel Corp
+  - Copyright (c) 2012 Durgadoss R <durgadoss.r@intel.com>
+holders:
+  - Intel Corp
+  - Durgadoss R

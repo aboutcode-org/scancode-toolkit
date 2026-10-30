@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-plus-geoserver
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH geoserver-exception-2.0-plus
 short_name: GPL 2.0 or later with GeoServer exception
 name: GPL 2.0 or later with GeoServer exception
 category: Copyleft Limited

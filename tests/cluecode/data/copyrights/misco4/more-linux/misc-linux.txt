@@ -1,0 +1,112 @@
+   * Copyright (C) 2011 Instituto Nokia de Tecnologia
+   * Copyright (C) 2012-2013 Tieto Poland  
+   * Copyright (C) 2016 HALE electronic
+
+
+
+
+
+  *  Copyright (C) People who wrote linux/arch/i386/kernel/sys_i386.c
+
+
+
+
+
+  * Copyright (c) 2010 Alan Ott <alan@signal11.us>  
+  * Copyright (c) 2010 Signal 11 Software
+
+
+
+
+
+  * Copyright (c) 2010, Octasic semiconductor.
+
+
+
+
+
+  * Copyright 2016 Tom aan de Wiel  
+  * Copyright 2018 Cisco Systems, Inc. and/or its affiliates. All rights reserved.
+
+
+
+
+
+  * Intel 82443BX/GX (440BX/GX chipset) Memory Controller EDAC kernel  
+  * module (C) 2006 Tim Small
+
+
+
+
+
+  * This software is (C) by the respective authors, and licensed under the GPL  
+  * License.
+
+
+
+
+
+ /*  * Merged with mainline ieee80211.h in Aug 2004.  Original ieee802_11  
+  * remains copyright by the original authors
+
+
+
+
+
+     Copyright 1993 United States Government as represented by the
+     Director, National Security Agency.
+
+
+
+
+
+// Copyright 2010 Ben Dooks <ben-linux <at> fluff.org>
+
+
+
+
+
+ *Copyright (c) 2010 Dmitry Torokhov  
+ *Input handler conversion
+
+
+
+
+
+MODULE_AUTHOR("Igor M. Liplianin (c) liplianin@me.by");
+
+
+
+
+
+ *  started by Ingo Molnar, Copyright (C) 2001  
+ *  debugging by David Rientjes, Copyright (C) 2015
+
+
+
+
+
+** Waterloo Microsystems Inc. ?? ** 8-bit card (C) 1985
+-------------------
+- from Robert Michael Best <rmb117@cs.usask.ca> 
+
+
+
+
+
+  bpck.c  (c) 1996-8  Grant R. Guenther <grant@torque.net>
+
+
+
+
+
+ * (c) 1996     Grant R. Guenther  grant@torque.net  
+ *  David Campbell
+
+
+
+
+
+ Templated from msi-laptop.c and thinkpad_acpi.c which is copyright
+ by its respective authors.
+

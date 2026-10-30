@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-autoopts
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH autoopts-exception-2.0
 short_name: GPL 2.0 or later with AutoOpts exception
 name: GPL 2.0 or later with AutoOpts exception
 category: Copyleft Limited

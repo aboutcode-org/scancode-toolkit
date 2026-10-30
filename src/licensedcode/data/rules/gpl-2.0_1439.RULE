@@ -1,0 +1,11 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+ignorable_urls:
+    - https://gnu.org/licenses/gpl.html
+---
+
+License {{GPLv2}}: {{GNU GPL version 2 }}
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+https://gnu.org/licenses/gpl.html

@@ -1,0 +1,19 @@
+---
+license_expression: unrar
+is_license_notice: yes
+---
+
+{{  unRAR license restriction}}
+
+    The decompression engine for RAR archives was developed using source 
+    code of unRAR program.
+    All copyrights to original unRAR code are owned by Alexander Roshal.
+
+    The license for original unRAR code has the following restriction:
+
+{{    The unRAR sources cannot be used to re-create the RAR compression algorithm, 
+    which is proprietary. Distribution of modified unRAR sources in separate form 
+    or as a part of other software is permitted, provided that it is clearly
+    stated in the documentation and source comments that the code may
+    not be used to develop a RAR (WinRAR) compatible archiver.
+}}

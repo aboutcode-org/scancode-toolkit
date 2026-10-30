@@ -1,0 +1,9 @@
+---
+license_expression: mit
+relevance: 100
+is_license_reference: yes
+referenced_filenames:
+    - LICENSE
+---
+
+{{licensed under MIT}}, see ../LICENSE

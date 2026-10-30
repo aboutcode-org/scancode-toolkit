@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in pkg:npm/astring and others, the cc at the end causes issues
+---
+
+"author": "David Bonnet <david@bonnet.cc>",

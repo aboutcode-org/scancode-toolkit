@@ -6,5 +6,5 @@ ignorable_urls:
     - http://opensource.org/licenses/mit-license.html
 ---
 
-files are licensed under the MIT License:
+files are {{licensed under the MIT}} License:
 http://opensource.org/licenses/mit-license.html

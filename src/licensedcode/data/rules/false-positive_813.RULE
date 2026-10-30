@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: in vala
+---
+
+g_strdup ("GNU Lesser General Public License"), (license_name = (g_free (license_name)

@@ -1,7 +1,9 @@
 ---
 license_expression: proprietary-license
 is_license_reference: yes
+skip_for_required_phrase_generation: yes
+relevance: 100
 ---
 
-Any use in a commercial product must be notified to the author by email
+{{Any use in a commercial product must be notified }} to the author by email
 indicating company name and product name

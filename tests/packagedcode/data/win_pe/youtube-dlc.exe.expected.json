@@ -1,0 +1,23 @@
+{
+  "Full Version": null,
+  "ProductVersion": "2020.10.09-1 | git.io/JUGsM",
+  "FileVersion": "2020.10.09-1",
+  "Assembly Version": null,
+  "BuildDate": null,
+  "ProductName": "Youtube-dlc",
+  "OriginalFilename": "youtube-dlc.exe",
+  "InternalName": "youtube-dlc",
+  "License": null,
+  "LegalCopyright": "theidel@uni-bremen.de | UNLICENSE",
+  "LegalTrademarks": null,
+  "LegalTrademarks1": null,
+  "LegalTrademarks2": null,
+  "LegalTrademarks3": null,
+  "FileDescription": "Media Downloader",
+  "Comments": "Youtube-dlc Command Line Interface.",
+  "CompanyName": "theidel@uni-bremen.de",
+  "Company": null,
+  "URL": null,
+  "WWW": null,
+  "extra_data": {}
+}

@@ -1,6 +1,8 @@
 ---
 key: dual-bsd-gpl
 is_deprecated: yes
+replaced_by:
+    - bsd-new OR gpl-2.0
 short_name: Dual BSD-GPL
 name: Dual BSD-GPL
 category: Permissive

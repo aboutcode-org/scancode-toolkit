@@ -229,6 +229,8 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
 class RpmInstalledNdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     # used by recent Suse
     datasource_id = 'rpm_installed_database_ndb'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*usr/lib/sysimage/rpm/Packages.db',)
     default_package_type = 'rpm'
     default_package_namespace = 'TBD'
@@ -243,6 +245,8 @@ class RpmInstalledSqliteDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     # Mimetype: application/vnd.sqlite3
 
     datasource_id = 'rpm_installed_database_sqlite'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*rpm/rpmdb.sqlite',)
     default_package_type = 'rpm'
     default_package_namespace = 'TBD'
@@ -254,6 +258,8 @@ class RpmInstalledSqliteDatabaseHandler(BaseRpmInstalledDatabaseHandler):
 class RpmInstalledBdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     # used by legacy RHEL/CentOS/Fedora/Suse
     datasource_id = 'rpm_installed_database_bdb'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*var/lib/rpm/Packages',)
     filetypes = ('berkeley',)
     default_package_type = 'rpm'
@@ -381,6 +387,7 @@ class RpmArchiveHandler(models.DatafileHandler):
 
 class RpmMarinerContainerManifestHandler(models.DatafileHandler):
     datasource_id = 'rpm_mariner_manifest'
+    datasource_type = 'sys'
     # container-manifest-1 is more minimal and has the same data
     path_patterns = ('*var/lib/rpmmanifest/container-manifest-2',)
     default_package_type = 'rpm'
@@ -502,6 +509,7 @@ class RpmMarinerContainerManifestHandler(models.DatafileHandler):
 
 class RpmLicenseFilesHandler(models.NonAssemblableDatafileHandler):
     datasource_id = 'rpm_package_licenses'
+    datasource_type = 'sys'
     path_patterns = (
         '*usr/share/licenses/*/COPYING*',
         '*usr/share/licenses/*/LICENSE*',

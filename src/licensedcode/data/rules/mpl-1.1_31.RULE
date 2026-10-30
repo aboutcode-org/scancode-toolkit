@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.mozilla.org/MPL/MPL-1.1.html
 ---
 
-License: MPL 1.1  (http://www.mozilla.org/MPL/MPL-1.1.html
+{{License: MPL 1.1}}  (http://www.mozilla.org/MPL/MPL-1.1.html

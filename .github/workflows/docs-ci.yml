@@ -7,31 +7,31 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.9]
+        python-version: [3.14]
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          persist-credentials: false
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
         with:
           python-version: ${{ matrix.python-version }}
 
       - name: Install Dependencies
-        run:  pip install -e .[docs]
+        run:  ./configure --dev
 
-      - name: Check Sphinx Documentation build minimally
-        working-directory: ./docs
-        run: sphinx-build -E -W source build
+      - name: Check documentation and HTML for errors and dead links
+        run: make docs-check
 
-      - name: Check for documentation style errors
-        working-directory: ./docs
-        run: ./scripts/doc8_style_check.sh
+      - name: Check documentation for style errors
+        run: make doc8
 
 

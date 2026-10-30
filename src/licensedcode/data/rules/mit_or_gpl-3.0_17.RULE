@@ -6,4 +6,4 @@ referenced_filenames:
     - COPYING
 ---
 
-This source code is licensed under both the MIT license (found in the LICENSE file) and the GPLv3 (found in the COPYING file).
+This source code is licensed under {{both the MIT license}} (found in the LICENSE file) and the {{GPLv3}} (found in the COPYING file).

@@ -1,0 +1,86 @@
+Metadata-Version: 2.4
+Name: narwhals
+Version: 1.29.0
+Summary: Extremely lightweight compatibility layer between dataframe libraries
+Project-URL: Homepage, https://github.com/narwhals-dev/narwhals
+Project-URL: Documentation, https://narwhals-dev.github.io/narwhals/
+Project-URL: Repository, https://github.com/narwhals-dev/narwhals
+Project-URL: Bug Tracker, https://github.com/narwhals-dev/narwhals/issues
+Author-email: Marco Gorelli <33491632+MarcoGorelli@users.noreply.github.com>
+License-File: LICENSE.md
+Keywords: cudf,dask,dataframes,interoperability,modin,pandas,polars,pyarrow
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Provides-Extra: core
+Requires-Dist: duckdb; extra == 'core'
+Requires-Dist: pandas; extra == 'core'
+Requires-Dist: polars; extra == 'core'
+Requires-Dist: pyarrow; extra == 'core'
+Requires-Dist: pyarrow-stubs; extra == 'core'
+Provides-Extra: cudf
+Requires-Dist: cudf>=24.10.0; extra == 'cudf'
+Provides-Extra: dask
+Requires-Dist: dask[dataframe]>=2024.8; extra == 'dask'
+Provides-Extra: dev
+Requires-Dist: covdefaults; extra == 'dev'
+Requires-Dist: hypothesis; extra == 'dev'
+Requires-Dist: mypy~=1.15.0; extra == 'dev'
+Requires-Dist: pandas-stubs; extra == 'dev'
+Requires-Dist: pre-commit; extra == 'dev'
+Requires-Dist: pyright; extra == 'dev'
+Requires-Dist: pytest; extra == 'dev'
+Requires-Dist: pytest-cov; extra == 'dev'
+Requires-Dist: pytest-env; extra == 'dev'
+Requires-Dist: pytest-randomly; extra == 'dev'
+Requires-Dist: typing-extensions; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: black; extra == 'docs'
+Requires-Dist: duckdb; extra == 'docs'
+Requires-Dist: jinja2; extra == 'docs'
+Requires-Dist: markdown-exec[ansi]; extra == 'docs'
+Requires-Dist: mkdocs; extra == 'docs'
+Requires-Dist: mkdocs-autorefs; extra == 'docs'
+Requires-Dist: mkdocs-material; extra == 'docs'
+Requires-Dist: mkdocstrings-python>=1.16; extra == 'docs'
+Requires-Dist: mkdocstrings[python]; extra == 'docs'
+Requires-Dist: pandas; extra == 'docs'
+Requires-Dist: polars>=1.0.0; extra == 'docs'
+Requires-Dist: pyarrow; extra == 'docs'
+Provides-Extra: duckdb
+Requires-Dist: duckdb>=1.0; extra == 'duckdb'
+Provides-Extra: extra
+Requires-Dist: scikit-learn; extra == 'extra'
+Provides-Extra: ibis
+Requires-Dist: ibis-framework>=6.0.0; extra == 'ibis'
+Requires-Dist: packaging; extra == 'ibis'
+Requires-Dist: pyarrow-hotfix; extra == 'ibis'
+Requires-Dist: rich; extra == 'ibis'
+Provides-Extra: modin
+Requires-Dist: modin; extra == 'modin'
+Provides-Extra: pandas
+Requires-Dist: pandas>=0.25.3; extra == 'pandas'
+Provides-Extra: polars
+Requires-Dist: polars>=0.20.3; extra == 'polars'
+Provides-Extra: pyarrow
+Requires-Dist: pyarrow>=11.0.0; extra == 'pyarrow'
+Provides-Extra: pyspark
+Requires-Dist: pyspark>=3.5.0; extra == 'pyspark'
+Provides-Extra: sqlframe
+Requires-Dist: sqlframe>=3.22.0; extra == 'sqlframe'
+Provides-Extra: tests
+Requires-Dist: covdefaults; extra == 'tests'
+Requires-Dist: hypothesis; extra == 'tests'
+Requires-Dist: pytest; extra == 'tests'
+Requires-Dist: pytest-cov; extra == 'tests'
+Requires-Dist: pytest-env; extra == 'tests'
+Requires-Dist: pytest-randomly; extra == 'tests'
+Requires-Dist: typing-extensions; extra == 'tests'
+Provides-Extra: typing
+Requires-Dist: mypy~=1.15.0; extra == 'typing'
+Requires-Dist: pandas-stubs; extra == 'typing'
+Requires-Dist: pyright; extra == 'typing'
+Requires-Dist: typing-extensions; extra == 'typing'
+Description-Content-Type: text/markdown

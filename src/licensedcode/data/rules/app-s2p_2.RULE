@@ -1,7 +1,10 @@
 ---
 license_expression: app-s2p
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - app-s2p
 ---
 
 licenses.nuget.org/App-s2p

@@ -6,4 +6,4 @@ referenced_filenames:
     - COPYING.GPLv3
 ---
 
-COPYING.GPLv3: GNU General Public License version 3
+COPYING.GPLv3: {{GNU General Public License version 3}}

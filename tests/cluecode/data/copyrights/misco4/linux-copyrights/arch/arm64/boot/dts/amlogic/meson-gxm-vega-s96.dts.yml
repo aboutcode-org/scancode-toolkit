@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2017 BayLibre, SAS.
+  - Copyright (c) 2017 Oleg <balbes-150@yandex.ru>
+holders:
+  - BayLibre, SAS.
+  - Oleg
+authors:
+  - Neil Armstrong <narmstrong@baylibre.com>

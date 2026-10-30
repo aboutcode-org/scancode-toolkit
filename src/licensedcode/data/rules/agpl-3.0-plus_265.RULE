@@ -7,4 +7,4 @@ minimum_coverage: 100
 notes: Rule based on an SPDX license name and/or ID
 ---
 
-GNU Affero General Public License v3.0 or later AGPL-3.0+
+{{GNU Affero General Public License v3.0 or later}} {{AGPL-3.0+}}

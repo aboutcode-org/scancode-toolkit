@@ -11,7 +11,7 @@ other_license_detections:
     license_expression_spdx: GPL-3.0-or-later AND GPL-3.0-only
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 12
         end_line: 12
@@ -24,7 +24,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 13
         end_line: 24
@@ -33,8 +33,8 @@ other_license_detections:
         matched_length: 102
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-3.0-plus_290.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
+        rule_identifier: gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ other_license_detections:
           You should have received a copy of the GNU General Public License
           along with this program.  If not, see <http://www.gnu.org/licenses/>.
       - license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
+        license_expression_spdx: GPL-3.0-only
         from_file:
         start_line: 26
         end_line: 26
@@ -62,7 +62,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_378.RULE
         matched_text: the GNU General Public License version 3
       - license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
+        license_expression_spdx: GPL-3.0-only
         from_file:
         start_line: 27
         end_line: 27
@@ -74,7 +74,7 @@ other_license_detections:
         rule_identifier: gpl-3.0_93.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_93.RULE
         matched_text: usr/share/common-licenses/GPL-3.
-    identifier: gpl_3_0_plus_and_gpl_3_0-60967129-5b9c-1055-6b3f-a7dc475d5b0b
+    identifier: gpl_3_0_plus_and_gpl_3_0-5818ec8a-ece0-a138-4415-827baa31b8e7
 copyright: |
   2014-2019 Daniel Baumann <daniel.baumann@open-infrastructure.net>
   2016 Andreas Kreuzer <andreas.kreuzer@open-infrastructure.net>

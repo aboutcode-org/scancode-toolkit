@@ -1,0 +1,9 @@
+---
+is_false_positive: yes
+notes: seen in pkg:npm/validate-npm-package-license
+---
+
+'license should be ' +
+  'a valid SPDX license expression (without "LicenseRef"), ' +
+  '"UNLICENSED", or ' +
+  '"SEE LICENSE IN <filename>"'

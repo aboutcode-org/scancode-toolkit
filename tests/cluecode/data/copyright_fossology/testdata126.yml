@@ -1,0 +1,26 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1989-2000 Free Software Foundation, Inc.
+  - copyrighted by MIT
+  - Copyright 1991 Massachusetts Institute of Technology
+  - Copyright (c) 1994-2000, 2001, 2002 Free Software Foundation, Inc.
+  - Copyright (c) 2000 Free Software Foundation, Inc.
+  - Copyright (c) 1986 The Regents of the University of California
+holders:
+  - Free Software Foundation, Inc.
+  - MIT
+  - Massachusetts Institute of Technology
+  - Free Software Foundation, Inc.
+  - Free Software Foundation, Inc.
+  - The Regents of the University of California
+authors:
+  - James Clark <jjc@jclark.com>
+  - Ted Harding <ted.harding@nessie.mcc.ac.uk> and Werner Lemberg <wl@gnu.org>
+  - Fabrizio Polacco <fpolacco@debian.org>
+  - Colin Watson <cjwatson@debian.org>
+  - James Clark (jjc@jclark.com)
+  - Joergen Haegg (jh@axis.se)
+  - the University of California, Berkeley

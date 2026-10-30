@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-plus-gcc
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH gcc-linking-exception-2.0
 short_name: GPL 2.0 or later with GCC exception
 name: GPL 2.0 or later with GCC exception
 category: Copyleft Limited

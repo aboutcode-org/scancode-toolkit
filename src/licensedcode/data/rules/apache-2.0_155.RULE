@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-This software is licensed under the Apache License, Version 2.0 (the "Apache License")
+This software is {{licensed under the Apache License, Version 2.0}} (the "{{Apache License}}")

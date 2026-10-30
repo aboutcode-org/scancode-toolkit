@@ -18,13 +18,13 @@ Intel Performance Primitives library source code
     decoder/mp3-ipp.h
     decoder/mp3-ipp.c
 
-MIT license Statements for Fluendo's mp3 plug-in Source Code
+{{MIT license}} Statements for Fluendo's mp3 plug-in Source Code
 ------------------------------------------------------------
 
-Fluendo's mp3 software Source Code (the "Source Code") is licensed under the
-MIT license provisions.
+Fluendo's mp3 software Source Code (the "Source Code") is {{licensed under the
+MIT}} license provisions.
 
-The MIT license is an open source license that permits the User to operate and
+{{The MIT license}} is an open source license that permits the User to operate and
 use in many forms the Source Code, which would be governed under its
 regulations.
 
@@ -32,10 +32,10 @@ The purpose of this note is to clarify the intellectual property rights granted
 over the Source Code by Fluendo, as well as other legal issues that concern
 your use of it.
 
-MIT license contents and provisions
+{{MIT license}} contents and provisions
 -----------------------------------
 
-The MIT license allows you to do the following things with the Source Code:
+{{The MIT license}} allows you to do the following things with the Source Code:
 
 - Copy and use the Source Code alone or jointly with other code for any
   purposes.
@@ -45,27 +45,27 @@ The MIT license allows you to do the following things with the Source Code:
   limits.
 
 - Modifying the Source Code for developing the plug-in or for implementing the
-  plug-in in other applications for any purposes. The MIT License does not
+  plug-in in other applications for any purposes. {{The MIT License}} does not
   require you to share these modifications with anyone.
 
 - Publish, distribute, sublicense and sell copies of the Source Code to third
   parties.
 
 - Permit anyone to whom the Source Code is licensed to enjoy the rights above
-  subject to the MIT license provisions.
+  subject to {{the MIT license}} provisions.
 
-By licensing this Source Code under the MIT License, Fluendo is offering to the
+By licensing this Source Code {{under the MIT License}}, Fluendo is offering to the
 community the rights set out above without restriction and without any
 obligation for the User of the Source Code to release his/her modifications
 back to the community. Anyone operating with the Source Code released from
-Fluendo must grant the same MIT license rights to the community, except for any
+Fluendo must grant the same {{MIT license}} rights to the community, except for any
 modifications operated on the Source Code which can be granted under a
 different license (even a proprietary license).
 
 All these rights granted to the User for the Source Code hold a limitation
 which is to include MIT permission notice and the following copyright notice:
-"Copyright 2005  Fluendo, S.L.  This Source Code is licensed under MIT license
-and the explanations attached in MIT License Statements". These notices shall
+"Copyright 2005  Fluendo, S.L.  This Source Code is {{licensed under MIT}} license
+and the explanations attached in {{MIT License}} Statements". These notices shall
 be included in all copies of the Source Code or in substantial parts of the
 Source Code which may be released separately or with modifications.
 
@@ -89,13 +89,13 @@ The patent license granted to Fluendo only covers Fluendo's own Software and
 Source Code activities. In any case, this software license does not allow you
 to redistribute or copy complete, ready to use mp3 software decoder binaries
 made from the Source Code as made available by Fluendo. You can of course
-distribute binaries you make yourself under any terms allowed by the MIT
-license and whatever necessary rights you have or have acquired according to
+distribute binaries you make yourself under any terms allowed by {{the MIT
+license}} and whatever necessary rights you have or have acquired according to
 applicable patent regulations.
 
 As Fluendo can not assure that any of the activities you undertake do not
 infringe any patents or other industrial or intellectual property rights,
 Fluendo hereby disclaims any liability for any patent infringement that may be
 claimed to you or to any other person from any legitimate right's owner, as
-stated in MIT license. So it is your responsibility to get information and to
+stated in {{MIT license}}. So it is your responsibility to get information and to
 acquire the necessary patent licenses to undertake your activities legally.

@@ -6,6 +6,6 @@ ignorable_urls:
     - http://www.opensource.org/licenses/bsd-license.html
 ---
 
-| This file is distributed under the BSD License.
+| This file is distributed under {{the BSD License}}.
  | See http://snowball.tartarus.org/license.php
  | Also see http://www.opensource.org/licenses/bsd-license.html

@@ -6,4 +6,4 @@ ignorable_urls:
     - http://framework.zend.com/license/new-bsd
 ---
 
-license   http://framework.zend.com/license/new-bsd New BSD License
+license   http://framework.zend.com/license/new-bsd {{New BSD License}}

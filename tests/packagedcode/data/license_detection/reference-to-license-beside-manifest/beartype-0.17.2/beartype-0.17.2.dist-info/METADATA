@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: beartype
+Version: 0.17.2
+Summary: Unbearably fast runtime type checking in pure Python.
+Home-page: https://beartype.readthedocs.io
+Download-URL: https://github.com/beartype/beartype/archive/0.17.2.tar.gz
+Author: Cecil Curry, et al.
+Author-email: leycec@gmail.com
+Maintainer: Cecil Curry, et al.
+Maintainer-email: leycec@gmail.com
+License: MIT
+Project-URL: Documentation, https://beartype.readthedocs.io
+Project-URL: Source, https://github.com/beartype/beartype
+Project-URL: Issues, https://github.com/beartype/beartype/issues
+Project-URL: Forums, https://github.com/beartype/beartype/discussions
+Project-URL: Releases, https://github.com/beartype/beartype/releases
+Keywords: type checking,type hints
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8.0
+Description-Content-Type: text/x-rst; charset=UTF-8
+License-File: LICENSE
+Provides-Extra: all
+Requires-Dist: typing-extensions >=3.10.0.0 ; extra == 'all'
+Provides-Extra: dev
+Requires-Dist: coverage >=5.5 ; extra == 'dev'
+
+.. # ------------------( LICENSE                             )------------------
+.. # Copyright (c) 2014-2024 Beartype authors.
+.. # See "LICENSE" for further details.
+.. #
+
+**Beartype** is an open-source pure-Python PEP-compliant near-real-time
+hybrid runtime-static third-generation type checker emphasizing efficiency,
+usability, unsubstantiated jargon we just made up, and thrilling puns.

@@ -1,0 +1,19 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2009 Nokia Corporation
+  - Copyright (c) 2007 MontaVista Software, Inc.
+  - Copyright (c) 2005 Nokia Corporation
+  - Copyright (c) 2004-2009 Texas Instruments, Inc.
+  - Copyright (c) 2015 Texas Instruments Incorporated - http://www.ti.com
+holders:
+  - Nokia Corporation
+  - MontaVista Software, Inc.
+  - Nokia Corporation
+  - Texas Instruments, Inc.
+  - Texas Instruments Incorporated
+authors:
+  - Kevin Hilman, MontaVista Software, Inc. <source@mvista.com>
+  - Paul Mundt <paul.mundt@nokia.com> Juha Yrjola <juha.yrjola@nokia.com> OMAP Dual-mode

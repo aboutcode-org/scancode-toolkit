@@ -1,6 +1,9 @@
 ---
 key: lgpl-2.1-nokia-qt
 is_deprecated: yes
+replaced_by:
+    - lgpl-2.1-plus
+    - qt-lgpl-exception-1.1
 short_name: LGPL 2.1 with Nokia Qt Exception
 name: LGPL 2.1 with Nokia Qt Exception
 category: Copyleft Limited

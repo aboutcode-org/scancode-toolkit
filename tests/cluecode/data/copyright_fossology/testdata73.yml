@@ -1,0 +1,21 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 1988,1990,1993,1994 by Paul Vixie
+  - Copyright 1994 Ian Jackson
+  - Copyright (c) 1994 Ian Jackson
+  - Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004 Steve Greenland
+  - Copyright 2001 Sean M. Burke
+  - Copyright 2006 Javier Fernandez-Sanguino
+holders:
+  - Paul Vixie
+  - Ian Jackson
+  - Ian Jackson
+  - Steve Greenland
+  - Sean M. Burke
+  - Javier Fernandez-Sanguino
+authors:
+  - Sean M. Burke
+  - Javier Fernandez-Sanguino

@@ -6,10 +6,13 @@ category: Copyleft Limited
 owner: Qt Company
 notes: this is very similar to qt-lgpl-exception-1.1 but with a different text
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-qt-company-exception-lgpl-2.1
+spdx_license_key: Digia-Qt-LGPL-exception-1.1
+other_spdx_license_keys:
+    - LicenseRef-scancode-qt-company-exception-lgpl-2.1
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
     - https://www.keepassx.org/dev/projects/keepassx/repository/revisions/b8dfb9cc4d5133e0f09cd7533d15a4f1c19a40f2/entry/LICENSE.NOKIA-LGPL-EXCEPTION
+    - https://src.fedoraproject.org/rpms/qtlockedfile/blob/rawhide/f/LGPL_EXCEPTION
 standard_notice: |
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License as published by
@@ -32,10 +35,12 @@ standard_notice: |
     functions and templates.
 ---
 
-As a special exception to the GNU Lesser General Public License version 2.1, the
-object code form of a "work that uses the Library" may incorporate material from
-a header file that is part of the Library. You may distribute such object code
-under terms of your choice, provided that the incorporated material (i) does not
-exceed more than 5% of the total size of the Library; and (ii) is limited to
-numerical parameters, data structure layouts, accessors, macros, inline
-functions and templates.
+Digia Qt LGPL Exception version 1.1
+
+As a special exception to the GNU Lesser General Public License version 2.1,
+the object code form of a "work that uses the Library" may incorporate material
+from a header file that is part of the Library. You may distribute such object
+code under terms of your choice, provided that the incorporated material (i)
+does not exceed more than 5% of the total size of the Library; and (ii) is
+limited to numerical parameters, data structure layouts, accessors, macros,
+inline functions and templates.

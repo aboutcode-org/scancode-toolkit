@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Paul Mundt <lethal@linux-sh.org> (c) 2004
+  - Vladimir Oleynik <dzo@simtreas.ru> (c) 2001-2005
+holders:
+  - Paul Mundt <lethal@linux-sh.org>
+  - Vladimir Oleynik <dzo@simtreas.ru>

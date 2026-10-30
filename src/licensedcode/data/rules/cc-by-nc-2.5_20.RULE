@@ -1,0 +1,10 @@
+---
+license_expression: cc-by-nc-2.5
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://creativecommons.org/licenses/by-nc/2.5
+---
+
+subject to the license found at
+{{https://creativecommons.org/licenses/by-nc/2.5/}}

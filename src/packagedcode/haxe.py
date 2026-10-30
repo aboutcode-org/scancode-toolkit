@@ -80,13 +80,13 @@ class HaxelibJsonHandler(models.DatafileHandler):
 
         for dep_name, dep_version in json_data.get('dependencies', {}).items():
             dep_version = dep_version and dep_version.strip()
-            is_resolved = bool(dep_version)
+            is_pinned = bool(dep_version)
             dep_purl = PackageURL(
                 type=cls.default_package_type,
                 name=dep_name,
                 version=dep_version
             ).to_string()
-            dep = models.DependentPackage(purl=dep_purl, is_resolved=is_resolved,)
+            dep = models.DependentPackage(purl=dep_purl, is_pinned=is_pinned)
             package_data.dependencies.append(dep)
 
         return package_data

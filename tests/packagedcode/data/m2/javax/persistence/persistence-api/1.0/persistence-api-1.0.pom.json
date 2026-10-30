@@ -14,10 +14,12 @@
   "organization_url": null,
   "licenses": [
     {
-      "name": "Common Development and Distribution License (CDDL) v1.0",
-      "url": "http://www.sun.com/cddl/cddl.html",
-      "comments": null,
-      "distribution": "repo"
+      "license": {
+        "name": "Common Development and Distribution License (CDDL) v1.0",
+        "url": "http://www.sun.com/cddl/cddl.html",
+        "comments": null,
+        "distribution": "repo"
+      }
     }
   ],
   "developers": [],

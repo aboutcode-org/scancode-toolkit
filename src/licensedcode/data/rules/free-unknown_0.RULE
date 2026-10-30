@@ -1,8 +1,10 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_notice: yes
+is_deprecated: yes
 relevance: 99
+replaced_by:
+    - warranty-disclaimer
 ---
 
 license));

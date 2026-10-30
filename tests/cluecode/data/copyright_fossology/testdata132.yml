@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1999, Anthony Towns
+holders:
+  - Anthony Towns
+authors:
+  - Anthony Towns <ajt@debian.org>

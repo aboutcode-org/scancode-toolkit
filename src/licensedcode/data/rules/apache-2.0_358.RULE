@@ -1,15 +1,19 @@
 ---
 license_expression: apache-2.0
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
 minimum_coverage: 100
+replaced_by:
+    - apache-2.0
+    - apache-2.0
 ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
 ---
 
-SPDX-License-Identifier: Apache-2.0
+SPDX-License-Identifier: {{Apache-2.0}}
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may
+{{Licensed under the Apache License, Version 2.0 (the "License}}"); you may
 not use this file except in compliance with the License.
 You may obtain a copy of the License at
 

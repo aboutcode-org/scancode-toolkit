@@ -1,10 +1,13 @@
 ---
 license_expression: lgpl-2.1-plus
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - lgpl-2.1-plus
 ignorable_urls:
     - https://www.gnu.org/copyleft/lesser.html
 ---
 
-is available under the GNU Lesser General Public Licence (LGPL).
+is available under the {{GNU Lesser General Public Licence}} (LGPL).
 See https://www.gnu.org/copyleft/lesser.html for the license.

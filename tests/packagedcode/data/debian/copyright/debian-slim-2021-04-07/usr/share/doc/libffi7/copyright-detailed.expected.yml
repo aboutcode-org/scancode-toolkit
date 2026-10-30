@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: MIT AND GPL-2.0-or-later AND GPL-1.0-or-later
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 42
         end_line: 59
@@ -39,7 +39,7 @@ license_detections:
               TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
               SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 62
         end_line: 70
@@ -61,7 +61,7 @@ license_detections:
             Permission is granted to copy, distribute and/or modify this document
             under the terms of the GNU General Public License
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 69
         end_line: 76
@@ -82,7 +82,7 @@ license_detections:
             On Debian GNU/Linux systems, the complete text of the GNU General
             Public License is in `/usr/share/common-licenses/GPL'.
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 79
         end_line: 79

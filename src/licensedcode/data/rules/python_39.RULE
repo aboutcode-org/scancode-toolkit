@@ -9,8 +9,8 @@ ignorable_holders:
 ---
 
 license
-Python License, Version 2 (Python-2.0)
-PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
+{{Python License, Version 2}} ({{Python-2.0}})
+{{PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2}}
 
 1. This LICENSE AGREEMENT is between the Python Software Foundation
 ("PSF"), and the Individual or Organization ("Licensee") accessing and

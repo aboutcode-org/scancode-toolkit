@@ -1,0 +1,17 @@
+[
+  {
+    "path": "codebase",
+    "type": "directory",
+    "scan_errors": []
+  },
+  {
+    "path": "codebase/other dir",
+    "type": "directory",
+    "scan_errors": []
+  },
+  {
+    "path": "codebase/other dir/file",
+    "type": "file",
+    "scan_errors": []
+  }
+]

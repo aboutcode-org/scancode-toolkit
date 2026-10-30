@@ -1,7 +1,10 @@
 ---
 license_expression: i2p-gpl-java-exception
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - i2p-gpl-java-exception
 ---
 
 licenses.nuget.org/i2p-gpl-java-exception

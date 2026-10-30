@@ -6,7 +6,11 @@ category: Copyleft Limited
 owner: Malcolm Wallace
 homepage_url: http://hackage.haskell.org/package/HaXml-1.25.4/src/COPYRIGHT
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-clause-6-exception-lgpl-2.1
+spdx_license_key: polyparse-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-clause-6-exception-lgpl-2.1
+other_urls:
+    - https://hackage.haskell.org/package/polyparse-1.13/src/COPYRIGHT
 ---
 
 As a relaxation of clause 6 of the LGPL, the copyright holders of this

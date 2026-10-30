@@ -5,5 +5,5 @@ notes: BSD notice variant found on Debian notices
 ---
 
 may be redistributed under the terms
-of the  BSD license found on Debian systems in the file
-/usr/share/common-licenses/BSD
+of {{the  BSD license}} found on Debian systems in the file
+{{/usr/share/common-licenses/BSD}}

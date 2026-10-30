@@ -6,4 +6,4 @@ ignorable_urls:
     - https://spdx.org/licenses/ImageMagick
 ---
 
-LICENSE {{ImageMagick}} https://spdx.org/licenses/ImageMagick
+{{ LICENSE ImageMagick }} https://spdx.org/licenses/ImageMagick

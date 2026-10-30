@@ -7,4 +7,4 @@ minimum_coverage: 100
 notes: Rule based on an SPDX license name and/or ID
 ---
 
-license : AGPL-3.0+
+license : {{AGPL-3.0+}}

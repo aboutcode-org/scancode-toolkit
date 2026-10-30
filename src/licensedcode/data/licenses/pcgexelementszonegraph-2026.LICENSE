@@ -1,0 +1,97 @@
+---
+key: pcgexelementszonegraph-2026
+short_name: PCGExElementsZoneGraph SAL 2026
+name: PCGExElementsZoneGraph Source-Available License 2026
+category: Non-Commercial
+owner: PCGEx
+homepage_url: https://github.com/PCGEx/PCGExElementsZoneGraph/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-pcgexelementszonegraph-2026
+ignorable_copyrights:
+    - Copyright (c) 2026 Timothe Lapetite
+ignorable_holders:
+    - Timothe Lapetite
+---
+
+PCGExElementsZoneGraph - Source-Available License
+
+Copyright (c) 2026 Timothé Lapetite
+
+TERMS AND CONDITIONS
+
+1. DEFINITIONS
+
+   "Software" refers to PCGExElementsZoneGraph and all associated source code,
+   documentation, and assets contained in this repository.
+
+   "Personal Use" means use by an individual person for non-commercial purposes,
+   including learning, experimentation, hobby projects, and personal game
+   development that does not generate revenue.
+
+   "Studio/Professional Use" means any use by a company, studio, organization,
+   or individual for commercial purposes, including but not limited to:
+   development of commercial products, use within a revenue-generating entity,
+   or integration into products or services intended for sale or commercial
+   distribution.
+
+2. SOURCE AVAILABILITY
+
+   The source code of this Software is made publicly available for transparency,
+   review, and Personal Use. Public availability of the source code does NOT
+   constitute a grant of unrestricted rights. This is NOT an open-source license.
+
+3. PERSONAL USE
+
+   Permission is hereby granted, free of charge, to any individual obtaining a
+   copy of this Software, to use, copy, and modify the Software for Personal Use,
+   subject to the following conditions:
+
+   a. This license notice shall be included in all copies or substantial
+      portions of the Software.
+
+   b. You may not sublicense, sell, or redistribute the Software or derivative
+      works for commercial purposes.
+
+   c. You may not remove or alter any copyright notices, license texts, or
+      attribution information contained in the Software.
+
+4. STUDIO / PROFESSIONAL USE
+
+   Studio and professional use of this Software requires a paid license,
+   available through the FAB marketplace (fab.com) under the applicable
+   Professional pricing tier.
+
+   By acquiring the Software through FAB, your use is governed by the
+   Fab End User License Agreement (EULA) in addition to the terms stated herein.
+
+5. CUSTOM LICENSING
+
+   Alternative licensing arrangements are available and are not bound to the
+   FAB platform. If you require a license that differs from the Personal or
+   FAB Professional terms described above — including but not limited to
+   enterprise agreements, OEM licensing, or educational institution licenses —
+   please contact the author directly to discuss terms.
+
+6. CONTRIBUTIONS
+
+   By submitting a contribution (pull request, patch, or any other form) to this
+   repository, you agree that your contribution is provided under the same terms
+   as this license, and you grant the copyright holder a perpetual, irrevocable,
+   worldwide, royalty-free right to use, modify, and redistribute your
+   contribution as part of the Software under any license the copyright holder
+   sees fit.
+
+7. NO WARRANTY
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+
+8. TERMINATION
+
+   This license is automatically terminated if you fail to comply with any of its
+   terms. Upon termination, you must cease all use of the Software and destroy
+   all copies in your possession.

@@ -5,9 +5,9 @@ referenced_filenames:
     - /usr/share/common-licenses/GPL-2
 ---
 
-This program is released under the GNU General Public License (GPL),
+This program is released under the {{GNU General Public License}} (GPL),
  either version 2 of the License, or (at your option) any later
  version.
- On Debian GNU/Linux systems, the complete text of the GNU General
- Public License version 2 can be found in
+ On Debian GNU/Linux systems, the complete text of the {{GNU General
+ Public License version 2}} can be found in
  `/usr/share/common-licenses/GPL-2'.

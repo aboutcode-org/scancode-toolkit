@@ -2,7 +2,10 @@
 license_expression: x11-xconsortium
 is_license_reference: yes
 is_continuous: yes
+is_deprecated: yes
 relevance: 90
+replaced_by:
+    - x11-xconsortium
 ---
 
 x11 license

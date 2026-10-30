@@ -15,24 +15,19 @@ import attr
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_GROUP
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
-from license_expression import combine_expressions
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 
-from licensedcode.cache import build_spdx_license_expression, get_cache
 from licensedcode.detection import collect_license_detections
-from licensedcode.detection import populate_matches_with_path
-from licensedcode.detection import find_referenced_resource
-from licensedcode.detection import get_detected_license_expression
-from licensedcode.detection import get_matches_from_detection_mappings
-from licensedcode.detection import get_new_identifier_from_detections
 from licensedcode.detection import get_referenced_filenames
 from licensedcode.detection import DetectionCategory
 from licensedcode.detection import LicenseDetectionFromResult
 from licensedcode.detection import sort_unique_detections
 from licensedcode.detection import UniqueDetection
-from licensedcode.detection import use_referenced_license_expression
-from packagedcode.utils import combine_expressions
+from licensedcode.detection import update_detection_from_referenced_files
+from licensedcode.detection import update_expressions_from_license_detections
+from licensedcode.detection import find_referenced_resource
+from licensedcode.detection import has_resolved_referenced_file
 from scancode.api import SCANCODE_LICENSEDB_URL
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE', False)
@@ -83,18 +78,21 @@ class LicenseScanner(ScanPlugin):
     )
 
     run_order = 4
-    sort_order = 4
+    sort_order = 5
 
     options = [
         PluggableCommandLineOption(('-l', '--license'),
             is_flag=True,
+            default=False,
             help='Scan <input> for licenses.',
             help_group=SCAN_GROUP,
             sort_order=10,
         ),
 
         PluggableCommandLineOption(('--license-score',),
-            type=int, default=0, show_default=True,
+            type=int,
+            default=0,
+            show_default=True,
             required_options=['license'],
             help='Do not return license matches with a score lower than this score. '
                  'A number between 0 and 100.',
@@ -103,6 +101,7 @@ class LicenseScanner(ScanPlugin):
 
         PluggableCommandLineOption(('--license-text',),
             is_flag=True,
+            default=False,
             required_options=['license'],
             help='Include the detected licenses matched text.',
             help_group=SCAN_OPTIONS_GROUP,
@@ -110,6 +109,7 @@ class LicenseScanner(ScanPlugin):
 
         PluggableCommandLineOption(('--license-text-diagnostics',),
             is_flag=True,
+            default=False,
             required_options=['license_text'],
             help='In the matched license text, include diagnostic highlights '
                  'surrounding with square brackets [] words that are not matched.',
@@ -118,6 +118,7 @@ class LicenseScanner(ScanPlugin):
 
         PluggableCommandLineOption(('--license-diagnostics',),
             is_flag=True,
+            default=False,
             required_options=['license'],
             help='In license detections, include diagnostic details to figure '
                  'out the license detection post processing steps applied.',
@@ -125,7 +126,8 @@ class LicenseScanner(ScanPlugin):
         ),
 
         PluggableCommandLineOption(('--license-url-template',),
-            default=SCANCODE_LICENSEDB_URL, show_default=True,
+            default=SCANCODE_LICENSEDB_URL,
+            show_default=True,
             required_options=['license'],
             help='Set the template URL used for the license reference URLs. '
                  'Curly braces ({}) are replaced by the license key.',
@@ -135,6 +137,7 @@ class LicenseScanner(ScanPlugin):
         PluggableCommandLineOption(
             ('--unknown-licenses',),
             is_flag=True,
+            default=False,
             required_options=['license'],
             help='[EXPERIMENTAL] Detect unknown licenses. ',
             help_group=SCAN_OPTIONS_GROUP,
@@ -149,6 +152,9 @@ class LicenseScanner(ScanPlugin):
         This is a cache warmup such that child process inherit from the
         loaded index.
         """
+        if kwargs.get("package_only"):
+            return
+
         from licensedcode.cache import populate_cache
         populate_cache()
 
@@ -204,12 +210,15 @@ class LicenseScanner(ScanPlugin):
         modified = False
         for resource in codebase.walk(topdown=False):
             # follow license references to other files
-            if TRACE:
+            if TRACE_REFERENCE:
                 license_expressions_before = resource.detected_license_expression
 
-            modified = add_referenced_filenames_license_matches_for_detections(resource, codebase)
+            try:
+                modified = add_referenced_filenames_license_matches_for_detections(resource, codebase)
+            except Exception as e:
+                raise Exception(f"Failed to process resource: {resource!r}") from e
 
-            if TRACE and modified:
+            if TRACE_REFERENCE and modified:
                 license_expressions_after = resource.detected_license_expression
                 logger_debug(
                     f'add_referenced_filenames_license_matches: Modified:',
@@ -217,8 +226,6 @@ class LicenseScanner(ScanPlugin):
                     f'before: {license_expressions_before}\n'
                     f'after : {license_expressions_after}'
                 )
-        
-        #raise Exception()
 
         license_detections = collect_license_detections(
             codebase=codebase,
@@ -275,100 +282,34 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
             license_detection_mapping=license_detection_mapping,
             file_path=resource.path,
         )
-        license_match_mappings = license_detection_mapping["matches"]
         referenced_filenames = get_referenced_filenames(license_detection.matches)
 
-        if not referenced_filenames:
+        if not referenced_filenames or has_resolved_referenced_file(license_detection.matches):
             if TRACE_REFERENCE:
                 logger_debug(
-                    f'No references at license detection with expression: {license_detection.license_expression}',
-                )
-            continue
-
-        referenced_detections = []
-        for referenced_filename in referenced_filenames:
-            referenced_resource = find_referenced_resource(
-                referenced_filename=referenced_filename,
-                resource=resource,
-                codebase=codebase,
-            )
-
-            if referenced_resource and referenced_resource.license_detections:
-                referenced_detections.extend(
-                    referenced_resource.license_detections
-                )
-
-                for detection in referenced_resource.license_detections:
-                    populate_matches_with_path(
-                        matches=detection["matches"],
-                        path=referenced_resource.path
-                    )
-
-        referenced_license_expression = combine_expressions(
-            expressions=[
-                detection["license_expression"]
-                for detection in referenced_detections
-            ],
-        )
-        if not use_referenced_license_expression(
-            referenced_license_expression=referenced_license_expression,
-            license_detection=license_detection,
-        ):
-            if TRACE_REFERENCE:
-                logger_debug(
-                    f'use_referenced_license_expression: False for '
-                    f'resource: {referenced_resource.path} and '
-                    f'license_expression: {referenced_license_expression}',
+                    f'No references to resolve at license detection with expression: {license_detection.license_expression}',
                 )
             continue
 
         if TRACE_REFERENCE:
             logger_debug(
-                f'use_referenced_license_expression: True for '
-                f'resource: {referenced_resource.path} and '
-                f'license_expression: {referenced_license_expression}',
+                f'add_referenced_license_matches: referenced_filenames: {referenced_filenames}',
             )
 
-        modified = True
-        matches_to_extend = get_matches_from_detection_mappings(
-            license_detections=referenced_detections
-        )
-        license_match_mappings.extend(matches_to_extend)
-
-        detection_log, license_expression = get_detected_license_expression(
-            license_match_mappings=license_match_mappings,
+        is_modified = update_detection_from_referenced_files(
+            referenced_filenames=referenced_filenames,
+            license_detection_mapping=license_detection_mapping,
+            resource=resource,
+            codebase=codebase,
             analysis=DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value,
-            post_scan=True,
+            find_referenced_resource_func=find_referenced_resource,
         )
-
-        license_expression_spdx = build_spdx_license_expression(
-            license_expression=str(license_expression),
-            licensing=get_cache().licensing,
-        )
-        license_detection_mapping["license_expression"] = str(license_expression)
-        license_detection_mapping["license_expression_spdx"] = str(license_expression_spdx)
-        license_detection_mapping["detection_log"] = detection_log
-        license_detection_mapping["identifier"] = get_new_identifier_from_detections(
-            initial_detection=license_detection_mapping,
-            detections_added=referenced_detections,
-            license_expression=license_expression,
-        )
+        if is_modified:
+            modified = True
 
     if modified:
-        license_expressions = [
-            detection["license_expression"]
-            for detection in resource.license_detections
-        ]
-        resource.detected_license_expression = combine_expressions(
-            expressions=license_expressions,
-            relation='AND',
-            unique=True,
+        resource = update_expressions_from_license_detections(
+            resource=resource,
+            codebase=codebase,
         )
-
-        resource.detected_license_expression_spdx = str(build_spdx_license_expression(
-            license_expression=resource.detected_license_expression,
-            licensing=get_cache().licensing,
-        ))
-
-        codebase.save_resource(resource)
         return resource

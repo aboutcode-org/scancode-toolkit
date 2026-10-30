@@ -4,6 +4,19 @@ what:
   - holders_summary
   - authors
 copyrights:
+  - Copyright fa-copyright 2020 by the authors
   - Copyright 2022, LLC
+  - Copyright glyphicon-copyright-mark http://www.dalegroup.net
+  - Copyright glyphicon-copyright-mark 1998 - 2014 Rubix
 holders:
+  - fa-copyright by the authors
   - LLC
+  - glyphicon-copyright-mark
+  - glyphicon-copyright-mark Rubix
+holders_summary:
+  - value: fa-copyright by the authors
+    count: 1
+  - value: glyphicon-copyright-mark
+    count: 1
+  - value: glyphicon-copyright-mark Rubix
+    count: 1

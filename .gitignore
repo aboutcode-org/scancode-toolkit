@@ -114,3 +114,9 @@ selenium
 
 # Ignore extra rpmdb sqlite stuff
 rpmdb.sqlite-*
+/.ruff_cache/
+.env
+
+# Ignore gibberish detector model, this is trained on configure and build and
+# should not be committed
+gib_model.pki

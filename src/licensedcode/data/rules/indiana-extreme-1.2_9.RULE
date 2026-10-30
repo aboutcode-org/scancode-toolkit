@@ -1,7 +1,10 @@
 ---
 license_expression: indiana-extreme-1.2
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - indiana-extreme-1.2
 ---
 
 licenses.nuget.org/xpp

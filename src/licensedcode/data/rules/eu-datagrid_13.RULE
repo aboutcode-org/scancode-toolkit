@@ -1,7 +1,10 @@
 ---
 license_expression: eu-datagrid
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - eu-datagrid
 ---
 
 licenses.nuget.org/EUDatagrid

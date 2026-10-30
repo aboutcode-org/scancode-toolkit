@@ -345,7 +345,7 @@ class PodfileLockHandler(BasePodHandler):
             extracted_requirement=xreq,
             is_runtime=False,
             is_optional=True,
-            is_resolved=True,
+            is_pinned=True,
             is_direct=is_direct,
             resolved_package=resolved_package,
         )
@@ -377,7 +377,7 @@ class PodfileLockHandler(BasePodHandler):
                 extracted_requirement=dep_xreq,
                 is_runtime=False,
                 is_optional=True,
-                is_resolved=True,
+                is_pinned=True,
                 is_direct=True,
             ).to_dict()
             dependencies_for_resolved.append(dependency_for_resolved)

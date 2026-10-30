@@ -1,0 +1,14 @@
+---
+license_expression: lgpl-2.1 OR epl-1.0
+is_license_notice: yes
+---
+
+source code and binaries are dual-licensed under the EPL v1.0 and the LGPL 2.1, or more formally:
+
+This program and the accompanying materials are dual-licensed under either the terms of the Eclipse
+Public License v1.0 as published by the Eclipse Foundation
+
+  or (per the licensee's choosing)
+
+under the terms of the GNU Lesser General Public License version 2.1 as published by the Free
+Software Foundation.

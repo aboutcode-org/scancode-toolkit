@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2006-2007 Advanced Micro Devices, Inc.
+holders:
+  - Advanced Micro Devices, Inc.
+authors:
+  - DynamicClockGatingTable.ctb
+  - EnableDispPowerGatingTable.ctb
+  - EnableASIC_StaticPwrMgtTable.ctb

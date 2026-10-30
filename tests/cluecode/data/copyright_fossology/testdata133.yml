@@ -1,0 +1,29 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 1999-2004 ImageMagick Studio LLC
+  - copyright Pineapple USA Inc.
+  - Copyright 1999 E. I. du Pont de Nemours and Company
+  - Copyright (c) 2002 GraphicsMagick Group
+  - Copyright (c) 2000-2002, Ghostgum Software Pty Ltd.
+  - Copyright (c) 2000 Markus Friedl
+  - Copyright 1999 - 2003 Bob Friesenhahn
+  - Copyright (c) 1985-1988 by Supoj Sutanthavibul
+  - Parts Copyright (c) 1989-2000 by Brian V. Smith
+  - Parts Copyright (c) 1991 by Paul King
+holders:
+  - ImageMagick Studio LLC
+  - Pineapple USA Inc.
+  - E. I. du Pont de Nemours and Company
+  - GraphicsMagick Group
+  - Ghostgum Software Pty Ltd.
+  - Markus Friedl
+  - Bob Friesenhahn
+  - Supoj Sutanthavibul
+  - Brian V. Smith
+  - Paul King
+authors:
+  - Scott K. Ellis scott@debian.org
+  - John Cristy

@@ -1,6 +1,7 @@
 ---
 license_expression: cnri-jython
 is_license_reference: yes
+is_required_phrase: yes
 ---
 
 CNRI Jython License

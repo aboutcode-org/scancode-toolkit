@@ -1,0 +1,13 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2007 Patrick McHardy <kaber@trash.net>
+  - (c) Copyright 2001-2006 Alex Zeffertt, Cambridge Broadband Ltd, ajz@cambridgebroadband.com
+    Re-worked
+holders:
+  - Patrick McHardy
+  - Alex Zeffertt, Cambridge Broadband Ltd, Re-worked
+authors:
+  - Ben Greear <greearb@candelatech.com>

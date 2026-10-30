@@ -1,0 +1,10 @@
+---
+license_expression: geant4-sl-1.0
+is_license_reference: yes
+is_required_phrase: yes
+relevance: 99
+ignorable_urls:
+    - http://cern.ch/geant4/license
+---
+
+http://cern.ch/geant4/license

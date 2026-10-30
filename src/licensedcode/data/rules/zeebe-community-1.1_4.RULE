@@ -1,0 +1,17 @@
+---
+license_expression: zeebe-community-1.1
+is_license_tag: yes
+ignorable_urls:
+    - https://zeebe.io/legal/zeebe-community-license-1.1
+---
+
+<licenses>
+    <license>
+      <name>{{Zeebe Community License v1.1}}</name>
+      <url>https://zeebe.io/legal/zeebe-community-license-1.1</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <!-- {{Zeebe Community License v1.1}} header -->
+    <license.header>licenses/COPYING-HEADER.txt</license.header>

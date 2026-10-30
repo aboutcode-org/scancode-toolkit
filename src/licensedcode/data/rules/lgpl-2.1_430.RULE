@@ -5,4 +5,4 @@ ignorable_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.html
 ---
 
-License: GNU Lesser General Public License, Version 2.1  (http://www.gnu.org/licenses/lgpl-2.1.html)
+License: {{GNU Lesser General Public License, Version 2.1}}  (http://www.gnu.org/licenses/lgpl-2.1.html)

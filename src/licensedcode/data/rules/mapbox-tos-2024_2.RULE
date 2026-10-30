@@ -1,0 +1,15 @@
+---
+license_expression: mapbox-tos-2024
+is_license_notice: yes
+ignorable_copyrights:
+    - (c) 2018 Mapbox and its suppliers
+ignorable_holders:
+    - Mapbox and its suppliers
+ignorable_urls:
+    - https://www.mapbox.com/about/maps
+---
+
+attribution:
+    'NOTICE: © 2018 Mapbox and its suppliers. All rights reserved.
+    Use of this data is subject to the {{Mapbox Terms of Service}} (https://www.mapbox.com/about/maps/).
+    This response and the information it contains may not be retained. POI(s) provided by Foursquare.'

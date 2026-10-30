@@ -3,6 +3,9 @@ license_expression: isc AND free-unknown
 is_license_text: yes
 is_deprecated: yes
 minimum_coverage: 70
+replaced_by:
+    - free-unknown
+    - isc
 ---
 
 THIS IS FOR INFORMATION ONLY, CODE IS UNDER THE LICENCE AT THE TOP OF ITS FILE.

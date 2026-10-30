@@ -8,6 +8,7 @@ homepage_url: https://www.unicode.org/license.txt
 spdx_license_key: Unicode-3.0
 other_spdx_license_keys:
     - LicenseRef-scancode-unicode-v3
+osi_url: https://opensource.org/license/unicode-license-v3
 ---
 
 UNICODE LICENSE V3

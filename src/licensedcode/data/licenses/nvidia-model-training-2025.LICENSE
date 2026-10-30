@@ -1,0 +1,105 @@
+---
+key: nvidia-model-training-2025
+short_name: NVIDIA Data Agreement for Model Training 2025
+name: NVIDIA Data Agreement for Model Training 2025
+category: Proprietary Free
+owner: NVIDIA
+homepage_url: https://huggingface.co/datasets/nvidia/Nemotron-Pretraining-Dataset-sample/raw/main/LICENSE.md
+spdx_license_key: LicenseRef-scancode-nvidia-model-training-2025
+ignorable_urls:
+    - https://www.nvidia.com/en-us/agreements/trustworthy-ai/terms
+ignorable_emails:
+    - legalnotices@nvidia.com
+---
+
+# NVIDIA Data Agreement for Model Training
+
+This NVIDIA Data Agreement for Model Training (the “Agreement”) is a legal agreement between you, whether an individual or entity, (“you” or “Company”) and NVIDIA Corporation (“NVIDIA”) and governs the use of the NVIDIA Datasets that NVIDIA delivers to Company under this Agreement. NVIDIA and Company are each a “party” and collectively the “parties.”
+
+If you are an individual, you must be an adult of legal age of majority in your jurisdiction and have the legal authority to bind the Company you represent, if any. If you accept these Terms on behalf of a company or other entity, you represent that you have authority to do so. By using the Datasets, you are affirming that you have read and agree to this Agreement. If you don’t accept the terms and conditions below, do not use the Datasets.
+
+## 1. 	DEFINITIONS
+
+1.1 	“Affiliate” means an entity that now or hereafter owns or controls, is owned or controlled by, or is under common ownership or control with a party, where “control” is the possession, directly or indirectly, of the power to direct or cause the direction of the management and policies of an entity, whether through ownership of voting securities, by contract or otherwise.
+
+1.2 	“AI Solutions” means any artificial intelligence (“AI”) models, or machine learning algorithm and associated parameters and associated weights.
+
+1.3 	“Intellectual Property Rights” means all intellectual property rights that may apply, including all patents, trademarks, trade dress, copyrights, database rights, trade secrets, know-how, mask works, and any other similar protected rights in any country including all related applications for and registrations of these rights.
+
+1.4 	“Datasets” means certain datasets, or any portions thereof, that NVIDIA may share with Company under this Agreement.
+
+## 2. 	AVAILABILITY, RESTRICTIONS AND OWNERSHIP
+
+2.1 	Availability. Subject to the terms of this Agreement, NVIDIA makes the Datasets available to Company solely for the purpose of internal training of Company AI Solutions with facts and ideas, including patterns and correlations (“Purpose”).
+
+2.2 	Restrictions. Company may not:
+
+2.2.1 	Use, store or retain the Datasets for any other purpose than the Purpose.
+
+2.2.2 	Sell, rent, sublicense, transfer, distribute, sublicence, publicly display, publicly perform or otherwise make available to others the Datasets.
+
+2.2.3 	Use the Datasets in any manner that would cause them to become subject to an open-source license.
+
+2.2.4 	Use the Datasets in a manner that violates any third-party rights or applicable laws, or identify any individuals or personal data (if applicable).
+
+2.2.5 	Disclose any evaluation, test or benchmarking results regarding the Datasets without NVIDIA’s prior written consent documented as an amendment to this Agreement, except that this restriction does not apply to Company’s AI Solutions.
+
+2.3 	Ownership.
+
+2.3.1 	Third-Party Ownership. Company acknowledges that NVIDIA does not grant and does not purport to grant any rights to access or use any copyrighted material that may be contained within the Datasets. Company is solely responsible for ensuring its use of any such underlying copyrighted material is permitted by applicable law.
+
+2.3.2 	NVIDIA Ownership. As between the parties to this Agreement, to the extent NVIDIA holds any rights in the Datasets, including any Intellectual Property Rights that may apply, those rights are and will remain the sole and exclusive property of NVIDIA and its licensors (as applicable). Except as expressly granted in this Agreement, (a) NVIDIA reserves any rights, interests and remedies in connection with the Datasets, and (b) no other right is granted to Company by implication, estoppel or otherwise.
+
+2.3.3 	Company Ownership. Company’s AI Solutions, or outputs resulting from Company’s AI Solutions, developed by Company using the Datasets are and will remain the sole and exclusive property of Company. No other right is granted to NVIDIA by implication, estoppel or otherwise to Company’s AI Solutions.
+
+## 3. 	TERM AND TERMINATION
+
+3.1 	Term. This Agreement commences upon the date of the initial download of the Datasets, unless otherwise terminated earlier in accordance with Section 3.2 (Termination) below.
+
+3.2 	Termination.
+
+3.2.1 	Termination for Convenience. Either party may terminate this Agreement at any time with thirty (30) days’ advance written notice to the other party.
+
+3.2.2 	Termination for Cause. If Company commences or participates in any legal proceeding against NVIDIA with respect to the Datasets, or if Company breaches this Agreement, this Agreement will terminate immediately without notice.
+
+3.3 	Effect of Termination. Upon termination of this Agreement under Section 3.2.1 (Termination for Convenience), within fourteen (14) days, Company will stop using the Datasets and delete and destroy copies of Datasets, except Company may maintain copies for archival purposes solely as required to comply with applicable law. Upon termination of this Agreement under Section 3.2.2 (Termination for Cause), Company will immediately cease use of the Datasets, and delete and destroy all copies of the Datasets. Upon NVIDIA’s written request, Company will certify in writing its compliance with this Section 3.3.
+
+3.4 	Survival. Upon any termination of this Agreement, Sections 1 (Definitions), 2.3 (Ownership), 3.3 (Effect of Termination), 3.4 (Survival), 4 (Warranty Disclaimers and Limitations of Liability), 5 (Notices) and 6 (Miscellaneous) of this Agreement will survive and remain in full force and effect after any termination of this Agreement.
+
+## 4. 	WARRANTY DISCLAIMERS AND LIMITATIONS OF LIABILITY
+
+4.1 	WARRANTY DISCLAIMER. The DATASETS ARE PROVIDED “AS IS”. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, NVIDIA DISCLAIMS ALL WARRANTIES AND REPRESENTATIONS OF ANY KIND, WHETHER EXPRESS, IMPLIED OR STATUTORY, RELATING TO OR ARISING UNDER THIS AGREEMENT, INCLUDING, WITHOUT LIMITATION, THE WARRANTIES OF TITLE, NONINFRINGEMENT, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, USAGE OF TRADE AND COURSE OF DEALING.
+
+4.2 	LIMITATION OF LIABILITY. IN NO EVENT AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, UNLESS REQUIRED BY APPLICABLE LAW (SUCH AS DELIBERATE AND GROSSLY NEGLIGENT ACTS) OR AGREED TO IN WRITING, WILL NVIDIA BE LIABLE TO COMPANY FOR DAMAGES, INCLUDING ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER ARISING AS A RESULT OF THIS AGREEMENT OR OUT OF THE USE OR INABILITY TO USE THE DATASETS (INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES), EVEN IF NVIDIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+## 5. 	NOTICES
+
+5.1 	Please direct your legal notices or other correspondence to legalnotices@nvidia.com with a copy mailed to NVIDIA Corporation, 2788 San Tomas Expressway, Santa Clara, California 95051, United States of America, Attention: Legal Department. If NVIDIA needs to contact you, you consent to receive the notices by email and agree that such notices will satisfy any legal communication requirements.
+
+## 6. 	MISCELLANEOUS
+
+6.1 	Assignment. NVIDIA may assign, delegate or transfer its rights or obligations under this Agreement by any means or operation of law. Company may not, without NVIDIA’s prior written consent, assign, delegate or transfer any of its rights or obligations under this Agreement by any means or operation of law, and any attempt to do so is null and void.
+
+6.2 	No Third-Party Beneficiaries. No person or entity who is not a party to this Agreement will have the right to enforce any provision of this Agreement, except that users of AI Solutions are third-party beneficiaries of Section 3.1.
+
+6.3 	Indemnity. Company will indemnify and hold harmless NVIDIA from and against any claim by any third party arising out of or related to your use or distribution of the Datasets.
+
+6.4 	AI Ethics. Company’s use of the Datasets under the Agreement must be consistent with NVIDIA’s Trustworthy AI terms at https://www.nvidia.com/en-us/agreements/trustworthy-ai/terms/.
+
+6.5 	Feedback. NVIDIA appreciates Company’s feedback. Company agrees that NVIDIA may use it without restriction or compensation to Company.
+
+6.6 	Severability, Waiver and Construction. If a court of competent jurisdiction rules that a provision of this Agreement is unenforceable, that provision will be deemed modified to the extent necessary to make it enforceable and the remainder of this Agreement will continue in full force and effect. No failure or delay by a party to enforce any Agreement term or obligation will operate as a waiver by that party, nor prevent the enforcement of such term or obligation later. This parties and their respective counsel have assessed this Agreement, and it will be interpreted fairly in accordance with its terms and without any strict construction in favor of or against either party.
+
+6.7 	Governing Law and Jurisdiction. This Agreement will be governed in all respects by the laws of the United States and the laws of the State of Delaware, without regard to conflict of laws principles or the United Nations Convention on Contracts for the International Sale of Goods. The state and federal courts residing in Santa Clara County, California will have exclusive jurisdiction over any dispute or claim arising out of or related to this Agreement, and the parties irrevocably consent to personal jurisdiction and venue in those courts; except that, either party may apply for injunctive remedies or an equivalent type of urgent legal relief in any jurisdiction.
+
+6.8 	Trade Compliance. Company agrees to comply with all applicable export, import, trade and economic sanctions laws and regulations, including the Export Administration Regulations and Office of Foreign Assets Control regulations. These laws include restrictions on destinations, end-users and end-use.
+
+6.9 	Publicity. Neither party will issue public announcements about this Agreement without prior written approval of the other party.
+
+6.10 	Headings. The headings in this Agreement are included solely for convenience and are not intended to affect the meaning or interpretation of this Agreement.
+
+6.11 	Independent Contractors. The parties are independent contractors, and this Agreement does not create a joint venture, partnership, agency or other form of business association between the parties. Neither party will have the power to bind the other party or incur any obligation on its behalf without the other party’s prior written consent.
+
+6.12 	Entire Agreement. Regarding the subject matter of this Agreement, the parties agree that (a) this Agreement constitutes the entire and exclusive agreement between the parties and supersedes all prior and contemporaneous communications and (b) any additional or different terms or conditions, whether contained in purchase orders, order acknowledgments, invoices or otherwise, will not be binding on the receiving party and are null and void.
+
+(v. August 15, 2025)

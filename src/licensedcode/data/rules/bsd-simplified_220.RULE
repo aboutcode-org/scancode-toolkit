@@ -5,4 +5,4 @@ relevance: 100
 notes: https://github.com/linuxdeepin/qcef-chromium/tree/88adbf45a6885c6ad327d3235a04960cc3ee045f/src/third_party/yasm
 ---
 
-now licensed under the 2-clause BSD license, also known as the simplified BSD license.
+now licensed under the {{2-clause BSD license}}, also known as the {{simplified BSD license}}.

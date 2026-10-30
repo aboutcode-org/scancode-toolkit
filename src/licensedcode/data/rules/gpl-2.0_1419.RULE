@@ -6,5 +6,5 @@ ignorable_urls:
 ---
 
 <license>
-         <name>GNU General Public License
+         <name>{{GNU General Public License}}
          <url>http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt

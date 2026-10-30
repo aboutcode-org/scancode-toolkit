@@ -5,6 +5,6 @@ is_license_notice: yes
 
 GPL Ghostscript is free software;
  you can redistribute it and/or modify
- it under the terms the GNU Affero General Public License
+ it under the terms the {{GNU Affero General Public License
  as published by the Free Software Foundation,
- either version 3 of the License, or (at your option) any later version.
+ either version 3 of the License, or (at your option) any later version}}.

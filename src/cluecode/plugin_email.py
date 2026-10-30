@@ -30,12 +30,14 @@ class EmailScanner(ScanPlugin):
 
     options = [
         PluggableCommandLineOption(('-e', '--email',),
-            is_flag=True, default=False,
+            is_flag=True,
+            default=False,
             help='Scan <input> for emails.',
             help_group=OTHER_SCAN_GROUP),
 
         PluggableCommandLineOption(('--max-email',),
-            type=int, default=50,
+            type=int,
+            default=50,
             metavar='INT',
             show_default=True,
             required_options=['email'],

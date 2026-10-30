@@ -1,0 +1,16 @@
+---
+license_expression: zeebe-community-1.1
+is_license_notice: yes
+referenced_filenames:
+    - licenses/ZEEBE-COMMUNITY-LICENSE-1.1.txt
+    - licenses/APACHE-2.0.txt
+---
+
+## License
+
+Zeebe source files are made available under the [{{Zeebe Community License
+Version 1.1}}](/licenses/ZEEBE-COMMUNITY-LICENSE-1.1.txt) except for the parts listed
+below, which are made available under the [{{Apache License, Version
+2.0}}](/licenses/APACHE-2.0.txt).  See individual source files for details.
+
+Available under the [{{Apache License, Version 2.0}}](/licenses/APACHE-2.0.txt):

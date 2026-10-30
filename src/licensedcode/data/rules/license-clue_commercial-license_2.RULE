@@ -1,7 +1,10 @@
 ---
 license_expression: commercial-license
 is_license_clue: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - commercial-license
 ---
 
 Commercial licence

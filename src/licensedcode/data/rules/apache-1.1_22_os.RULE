@@ -11,9 +11,9 @@ ignorable_emails:
     - license@opensymphony.com
 ---
 
-The OpenSymphony Software License, Version 1.1
+The {{OpenSymphony Software License, Version 1.1}}
 
-(this license is derived and fully compatible with the Apache Software License -
+({{this license is derived and fully compatible with the Apache Software License}} -
 see http://www.apache.org/LICENSE.txt)
 
 

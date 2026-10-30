@@ -58,7 +58,7 @@ def test_scan_plugin_filter_clues_does_not_filter_incorrectly():
 
 # Regression on types tracked in https://github.com/nexB/typecode/issues/21
 def test_scan_plugin_filter_clues_for_license():
-    # this test fies is a copy of pcre.LICENSE that contains
+    # this test file is a copy of pcre.LICENSE that contains
     # several emails, authors, urls
     test_dir = test_env.get_test_loc('plugin_filter_clues/files/LICENSE3')
     result_file = test_env.get_temp_file('json')

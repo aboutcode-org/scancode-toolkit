@@ -2,7 +2,7 @@
 key: allen-institute-software-2018
 short_name: Allen Institute Software License 2018
 name: Allen Institute Software License 2018
-category: Free Restricted
+category: Non-Commercial
 owner: Allen Institute
 homepage_url: https://raw.githubusercontent.com/AllenInstitute/human_neuron_Ih/master/LICENSE.txt
 spdx_license_key: LicenseRef-scancode-allen-institute-software-2018

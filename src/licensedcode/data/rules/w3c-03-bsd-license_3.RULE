@@ -1,0 +1,12 @@
+---
+license_expression: w3c-03-bsd-license
+is_license_reference: yes
+is_required_phrase: yes
+relevance: 100
+ignorable_urls:
+    - http://www.w3.org/Consortium/Legal/2008/03-bsd-license.html
+---
+
+ W3C 3-clause BSD License
+
+http://www.w3.org/Consortium/Legal/2008/03-bsd-license.html

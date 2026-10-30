@@ -1,0 +1,18 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2001, 2002 Andy Grover <andrew.grover@intel.com>
+  - Copyright (c) 2001, 2002 Paul Diefenbaugh <paul.s.diefenbaugh@intel.com>
+  - Copyright (c) 2004, 2005 Dominik Brodowski <linux@brodo.de>
+  - Copyright (c) 2004 Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>
+  - Copyright (c) 2005 Venkatesh Pallipadi <venkatesh.pallipadi@intel.com>
+  - Power (c) State
+holders:
+  - Andy Grover
+  - Paul Diefenbaugh
+  - Dominik Brodowski
+  - Anil S Keshavamurthy
+  - Venkatesh Pallipadi
+  - Power State

@@ -1,7 +1,10 @@
 ---
 license_expression: cal-1.0-combined-work-exception
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - cal-1.0-combined-work-exception
 ---
 
 licenses.nuget.org/CAL-1.0-Combined-Work-Exception

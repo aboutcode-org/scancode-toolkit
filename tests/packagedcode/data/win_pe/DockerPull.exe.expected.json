@@ -1,0 +1,23 @@
+{
+  "Full Version": null,
+  "ProductVersion": "1.0.7.0",
+  "FileVersion": "1.0.7.0",
+  "Assembly Version": null,
+  "BuildDate": null,
+  "ProductName": "DockerPull",
+  "OriginalFilename": "DockerPull.exe",
+  "InternalName": "DockerPull",
+  "License": null,
+  "LegalCopyright": "MIT License | GitHub: https://github.com/topcss/docker-pull-tar",
+  "LegalTrademarks": null,
+  "LegalTrademarks1": null,
+  "LegalTrademarks2": null,
+  "LegalTrademarks3": null,
+  "FileDescription": "Docker Image Puller \u65e0\u9700\u5b89\u88c5 Docker \u6216 Python \u73af\u5883,\u76f4\u63a5\u4ece Docker \u4ed3\u5e93\u62c9\u53d6\u955c\u50cf,\u652f\u6301\u56fd\u5185\u955c\u50cf\u6e90\u52a0\u901f\u548c\u591a\u67b6\u6784\u652f\u6301\u3002\u9879\u76ee\u5730\u5740:https://github.com/topcss/docker-pull-tar",
+  "Comments": null,
+  "CompanyName": "topcss",
+  "Company": null,
+  "URL": null,
+  "WWW": null,
+  "extra_data": {}
+}

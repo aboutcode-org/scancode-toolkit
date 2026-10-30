@@ -1,0 +1,15 @@
+{
+  "files_count": 2,
+  "files": [
+    {
+      "path": "samples",
+      "type": "directory",
+      "summary": []
+    },
+    {
+      "path": "samples/NOTICE",
+      "type": "file",
+      "summary": []
+    }
+  ]
+}

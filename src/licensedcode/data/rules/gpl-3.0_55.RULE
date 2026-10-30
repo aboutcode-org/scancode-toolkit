@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-license 'GNU General Public Licence, version 3.0'
+license '{{GNU General Public Licence, version 3.0}}'

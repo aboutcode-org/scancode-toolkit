@@ -4,6 +4,6 @@ is_license_notice: yes
 relevance: 99
 ---
 
-distributed under a BSD-like license. This
+distributed under a {{BSD-like license}}. This
 does not restrict third parties from distributing independent implementations of  software
 under other licenses.

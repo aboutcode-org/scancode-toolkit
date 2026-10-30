@@ -9,7 +9,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-pcre
     matches:
       - license_expression: pcre
-        spdx_license_expression: LicenseRef-scancode-pcre
+        license_expression_spdx: LicenseRef-scancode-pcre
         from_file:
         start_line: 3
         end_line: 5
@@ -29,7 +29,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-public-domain
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 11
         end_line: 11
@@ -42,7 +42,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_398.RULE
         matched_text: distributed under the terms of the "BSD" licence,
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 14
         end_line: 14
@@ -59,7 +59,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 58
         end_line: 58
@@ -68,11 +68,11 @@ license_detections:
         matched_length: 3
         match_coverage: '100.0'
         rule_relevance: 99
-        rule_identifier: bsd-new_898.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_898.RULE
+        rule_identifier: bsd-new_145.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_145.RULE
         matched_text: THE "BSD" LICENCE
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 61
         end_line: 85
@@ -109,7 +109,7 @@ license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
-    identifier: bsd_new-53a70339-2b69-bfbc-e906-8125366aaaa4
+    identifier: bsd_new-19182c77-df98-5550-2b1e-367e6e6705c2
 other_license_detections: []
 copyright: |
   Copyright (c) 1997-2015 University of Cambridge

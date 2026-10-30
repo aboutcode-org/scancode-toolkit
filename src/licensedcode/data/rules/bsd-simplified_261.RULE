@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE-FOSS
 ---
 
-License: BSD 2-Clause; see file LICENSE-FOSS
+{{License: BSD 2}}-Clause; see file LICENSE-FOSS

@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-rrdtool-floss
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus AND rrdtool-floss-exception-2.0
 short_name: GPL 2.0 with RRDtool FLOSS Exception
 name: GPL 2.0 with RRDtool FLOSS Exception
 category: Copyleft Limited

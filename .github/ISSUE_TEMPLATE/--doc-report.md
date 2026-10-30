@@ -1,8 +1,8 @@
 ---
-name: "Documentation Improvement"
+name: Documentation Improvement
 about: Your suggestions for improving the scancode-toolkit Documentation.
 title: ''
-labels: 'documentation'
+labels: documentation
 assignees: ''
 
 ---

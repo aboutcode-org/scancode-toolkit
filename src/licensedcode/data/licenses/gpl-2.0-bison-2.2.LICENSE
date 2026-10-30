@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-bison-2.2
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH bison-exception-2.2
 short_name: GPL 2.0 or later with Bison 2.2 exception
 name: GPL 2.0 or later with Bison 2.2 exception
 category: Copyleft Limited

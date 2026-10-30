@@ -1,0 +1,14 @@
+---
+license_expression: efsl-2.0
+is_license_tag: yes
+ignorable_urls:
+    - https://www.eclipse.org/legal/efsl.php
+---
+
+<licenses>
+    <license>
+        <name>{{Eclipse Foundation Specification License – v1.0}}</name>
+        <url>{{https://www.eclipse.org/legal/efsl.php}}</url>
+        <distribution>repo</distribution>
+    </license>
+</licenses>

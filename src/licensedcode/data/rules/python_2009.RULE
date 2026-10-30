@@ -74,7 +74,7 @@ direction to make these releases possible.
 B. TERMS AND CONDITIONS FOR ACCESSING OR OTHERWISE USING PYTHON
 ===============================================================
 
-PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
+{{PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2}}
 --------------------------------------------
 
 1. This LICENSE AGREEMENT is between the Python Software Foundation
@@ -124,10 +124,10 @@ agrees to be bound by the terms and conditions of this License
 Agreement.
 
 
-BEOPEN.COM LICENSE AGREEMENT FOR PYTHON 2.0
+BEOPEN.COM {{LICENSE AGREEMENT FOR PYTHON 2.0}}
 -------------------------------------------
 
-BEOPEN PYTHON OPEN SOURCE LICENSE AGREEMENT VERSION 1
+BEOPEN {{PYTHON OPEN SOURCE LICENSE AGREEMENT VERSION 1}}
 
 1. This LICENSE AGREEMENT is between BeOpen.com ("BeOpen"), having an
 office at 160 Saratoga Avenue, Santa Clara, CA 95051, and the

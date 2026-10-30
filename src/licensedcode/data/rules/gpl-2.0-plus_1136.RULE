@@ -1,0 +1,10 @@
+---
+license_expression: gpl-2.0-plus
+is_license_notice: yes
+is_required_phrase: yes
+relevance: 100
+notes: See https://info.isl.ntt.co.jp/crypt/eng/camellia/specifications.html
+---
+
+  cipher has been been taken from the
+original NTT provided GPL source.

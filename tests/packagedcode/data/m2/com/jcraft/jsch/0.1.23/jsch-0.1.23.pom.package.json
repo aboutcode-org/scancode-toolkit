@@ -39,7 +39,7 @@
       "matches": [
         {
           "license_expression": "bsd-new",
-          "spdx_license_expression": "BSD-3-Clause",
+          "license_expression_spdx": "BSD-3-Clause",
           "from_file": null,
           "start_line": 2,
           "end_line": 2,
@@ -50,11 +50,11 @@
           "rule_relevance": 100,
           "rule_identifier": "bsd-new_jcraft_4.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_jcraft_4.RULE",
-          "matched_text": "  url: http://www.jcraft.com/jsch/LICENSE.txt"
+          "matched_text": "url: http://www.jcraft.com/jsch/LICENSE.txt"
         },
         {
           "license_expression": "bsd-new",
-          "spdx_license_expression": "BSD-3-Clause",
+          "license_expression_spdx": "BSD-3-Clause",
           "from_file": null,
           "start_line": 3,
           "end_line": 3,
@@ -65,7 +65,7 @@
           "rule_relevance": 100,
           "rule_identifier": "bsd-new_jcraft_3.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_jcraft_3.RULE",
-          "matched_text": "  comments: License information from http://www.jcraft.com/jsch"
+          "matched_text": "comments: License information from http://www.jcraft.com/jsch"
         }
       ],
       "identifier": "bsd_new-cb93014d-4035-1c17-df2b-272477a9ec37"
@@ -74,7 +74,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: BSD\n  url: http://www.jcraft.com/jsch/LICENSE.txt\n  comments: License information from http://www.jcraft.com/jsch\n",
+  "extracted_license_statement": "- license:\n    name: BSD\n    url: http://www.jcraft.com/jsch/LICENSE.txt\n    comments: License information from http://www.jcraft.com/jsch\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/com.jcraft/jsch@0.1.23?classifier=sources"
@@ -82,7 +82,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "jsch"
+  },
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.23/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.23/jsch-0.1.23.jar",

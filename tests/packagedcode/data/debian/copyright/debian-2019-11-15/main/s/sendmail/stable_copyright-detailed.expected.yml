@@ -12,9 +12,9 @@ other_license_detections:
     license_expression_spdx: Sendmail
     matches:
       - license_expression: sendmail
-        spdx_license_expression: Sendmail
+        license_expression_spdx: Sendmail
         from_file:
-        start_line: '19'
+        start_line: 19
         end_line: 99
         matcher: 3-seq
         score: '97.65'

@@ -1,7 +1,10 @@
 ---
 license_expression: ampas
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - ampas
 ---
 
 licenses.nuget.org/AMPAS

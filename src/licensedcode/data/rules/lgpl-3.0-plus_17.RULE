@@ -1,7 +1,8 @@
 ---
 license_expression: lgpl-3.0-plus
 is_license_reference: yes
+is_required_phrase: yes
 relevance: 100
 ---
 
-GNU Lesser General Public License, Version 3 or later
+GNU Lesser General Public License, version 3 or later

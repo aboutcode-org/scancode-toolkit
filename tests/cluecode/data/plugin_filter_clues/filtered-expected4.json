@@ -146,6 +146,7 @@
       "sha1": "8a2e40b4eb23cc05a0b78330d919a7ffacde7a9a",
       "md5": "d5d03e14130735213e0532277df33cab",
       "sha256": "e4bd79e88b577d66d351597c0d4114b9ee2e31f0544795e87a88ca1b0dd38383",
+      "sha1_git": "e7c0b65bcdb17888027d0b53a1f65ad61b238245",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -164,7 +165,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus OR artistic-1.0",
-              "spdx_license_expression": "GPL-1.0-or-later OR Artistic-1.0",
+              "license_expression_spdx": "GPL-1.0-or-later OR Artistic-1.0",
               "from_file": "LICENSE4",
               "start_line": 3,
               "end_line": 11,
@@ -178,7 +179,7 @@
             },
             {
               "license_expression": "gpl-1.0",
-              "spdx_license_expression": "GPL-1.0-only",
+              "license_expression_spdx": "GPL-1.0-only",
               "from_file": "LICENSE4",
               "start_line": 13,
               "end_line": 13,
@@ -192,7 +193,7 @@
             },
             {
               "license_expression": "gpl-1.0",
-              "spdx_license_expression": "GPL-1.0-only",
+              "license_expression_spdx": "GPL-1.0-only",
               "from_file": "LICENSE4",
               "start_line": 17,
               "end_line": 19,
@@ -206,7 +207,7 @@
             },
             {
               "license_expression": "gpl-1.0",
-              "spdx_license_expression": "GPL-1.0-only",
+              "license_expression_spdx": "GPL-1.0-only",
               "from_file": "LICENSE4",
               "start_line": 21,
               "end_line": 270,
@@ -220,7 +221,7 @@
             },
             {
               "license_expression": "artistic-1.0",
-              "spdx_license_expression": "Artistic-1.0",
+              "license_expression_spdx": "Artistic-1.0",
               "from_file": "LICENSE4",
               "start_line": 273,
               "end_line": 273,
@@ -234,7 +235,7 @@
             },
             {
               "license_expression": "artistic-1.0",
-              "spdx_license_expression": "Artistic-1.0",
+              "license_expression_spdx": "Artistic-1.0",
               "from_file": "LICENSE4",
               "start_line": 277,
               "end_line": 279,
@@ -248,7 +249,7 @@
             },
             {
               "license_expression": "artistic-1.0",
-              "spdx_license_expression": "Artistic-1.0",
+              "license_expression_spdx": "Artistic-1.0",
               "from_file": "LICENSE4",
               "start_line": 281,
               "end_line": 281,
@@ -262,7 +263,7 @@
             },
             {
               "license_expression": "artistic-1.0",
-              "spdx_license_expression": "Artistic-1.0",
+              "license_expression_spdx": "Artistic-1.0",
               "from_file": "LICENSE4",
               "start_line": 283,
               "end_line": 372,
@@ -276,7 +277,7 @@
             },
             {
               "license_expression": "warranty-disclaimer",
-              "spdx_license_expression": "LicenseRef-scancode-warranty-disclaimer",
+              "license_expression_spdx": "LicenseRef-scancode-warranty-disclaimer",
               "from_file": "LICENSE4",
               "start_line": 374,
               "end_line": 376,

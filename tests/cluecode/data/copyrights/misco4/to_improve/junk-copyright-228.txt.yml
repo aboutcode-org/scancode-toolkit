@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) HIPAA.Security-DynamoDBInBackupPlan (https://docs.aws.amazon.com/config/latest/developerguide/dynamodb-in-backup-plan.html)
+holders:
+  - HIPAA.Security-DynamoDBInBackupPlan

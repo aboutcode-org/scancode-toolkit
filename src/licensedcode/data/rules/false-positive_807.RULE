@@ -1,0 +1,17 @@
+---
+is_false_positive: yes
+notes: in vala
+---
+
+g_string_append_printf (s, " * This %s is free software: you can redistribute it and/or modify\n", program_type);
+	g_string_append_printf (s, " * it under the terms of the %s as published by\n", license_name);
+	g_string_append_printf (s, " * the Free Software Foundation, either version %s of the License, or\n", license_version);
+	g_string_append (s, " * (at your option) any later version.\n");
+	g_string_append (s, " *\n");
+	g_string_append_printf (s, " * This %s is distributed in the hope that it will be useful,\n", program_type);
+	g_string_append (s, " * but WITHOUT ANY WARRANTY; without even the implied warranty of\n");
+	g_string_append (s, " * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n");
+	g_string_append_printf (s, " * %s for more details.\n", license_name);
+	g_string_append (s, " *\n");
+	g_string_append_printf (s, " * You should have received a copy of the %s\n", license_name);
+	g_string_append_printf (s, " * along with this %s.  If not, see <http://www.gnu.org/licenses/>.\n", program_type);

@@ -249,7 +249,7 @@ class TestMavenMisc(BaseMavenCase):
         expected_file = self.get_test_loc('maven_misc/assemble/numbers-1.7.4-expected.json')
         run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
-    
+
     def test_maven_unknown_reference_to_license_in_manifest(self):
         test_dir = self.get_test_loc('maven_misc/assemble/jackson-dataformat-xml-2.13.5')
         result_file = self.get_temp_file('json')
@@ -257,11 +257,25 @@ class TestMavenMisc(BaseMavenCase):
         run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_maven_package_assembly_jar_manifest(self):
+        test_dir = self.get_test_loc('maven_misc/assemble/spring-web-5.3.20-jar')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/assemble/spring-web-5.3.20-jar-expected.json')
+        run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_maven_package_assembly_jar_with_sub_package(self):
+        test_dir = self.get_test_loc('maven_misc/assemble/htrace-core-4.0.0-incubating')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/assemble/htrace-core-4.0.0-incubating-expected.json')
+        run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
     def test_package_dependency_not_missing(self):
         test_file = self.get_test_loc('maven2/log4j/log4j-pom.xml')
         self.check_parse_to_package(test_file, regen=REGEN_TEST_FIXTURES)
 
-    def test_package_dependency_populate_is_resolved_field(self):
+    def test_package_dependency_populate_is_pinned_field(self):
         test_file = self.get_test_loc('maven_misc/parse/swagger-java-sample-app_2.10-1.3.1.pom')
         self.check_parse_to_package(test_file, regen=REGEN_TEST_FIXTURES)
 
@@ -422,19 +436,121 @@ class TestPomProperties(testcase.FileBasedTesting):
         assert pom.namespace == 'org.activiti'
 
 
-class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
+class TestMavenGetLicenseDetections(testcase.FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_get_license_detections_and_expression_two_names_only(self):
+        extracted_license_statement = [
+            {'license': {'name': 'apache-2.0'}},
+            {'license': {'name': 'mit'}}
+        ]
+        _detections, result = get_license_detections_and_expression(
+            extracted_license_statement=extracted_license_statement,
+            datasource_id=maven.MavenPackageData.datasource_id,
+        )
+        assert result == 'apache-2.0 AND mit'
+
+    def test_get_license_detections_and_expression_with_unknown_url(self):
+        extracted_license_statement = [
+            {'license': {'name': 'apache-2.0', 'url': 'unknown'}},
+            {'license': {'name': 'mit'}}
+        ]
+        _detections, result = get_license_detections_and_expression(
+            extracted_license_statement=extracted_license_statement,
+            datasource_id=maven.MavenPackageData.datasource_id,
+        )
+        assert result == 'apache-2.0 AND mit'
+
+    def test_get_license_detections_and_expression_with_unknown_url_known_comments(self):
+        extracted_license_statement = [
+            {'license': {'name': 'apache-2.0', 'url': 'unknown', 'comments': 'apache-2.0'}},
+            {'license': {'name': 'mit'}}
+        ]
+        _detections, result = get_license_detections_and_expression(
+            extracted_license_statement=extracted_license_statement,
+            datasource_id=maven.MavenPackageData.datasource_id,
+        )
+        assert result == 'apache-2.0 AND mit'
+
+    def test_get_license_detections_and_expression_with_unknown_url_unknown_comments(self):
+        extracted_license_statement = [
+            {'license': {'name': 'apache-2.0', 'url': 'unknown', 'comments': 'unknown'}},
+            {'license': {'name': 'mit'}}
+        ]
+        _detections, result = get_license_detections_and_expression(
+            extracted_license_statement=extracted_license_statement,
+            datasource_id=maven.MavenPackageData.datasource_id,
+        )
+        assert result == 'apache-2.0 AND mit'
+
+    def test_get_license_detections_and_expression_unknown_name(self):
+        extracted_license_statement = [
+            {'license': {'name': 'unknown', 'url': 'apache-2.0'}},
+            {'license': {'name': 'mit'}}
+        ]
+        _detections, result = get_license_detections_and_expression(
+            extracted_license_statement=extracted_license_statement,
+            datasource_id=maven.MavenPackageData.datasource_id,
+        )
+        assert result == 'apache-2.0 AND mit'
+
+    def test_get_license_detections_and_expression_same_name_and_url(self):
+        extracted_license_statement = [
+            {'license': {'name': 'apache-2.0', 'url': 'apache-2.0'}},
+            {'license': {'name': 'mit'}}
+        ]
+        _detections, result = get_license_detections_and_expression(
+            extracted_license_statement=extracted_license_statement,
+            datasource_id=maven.MavenPackageData.datasource_id,
+        )
+        assert result == 'apache-2.0 AND mit'
+
+    def test_get_license_detections_and_expression_same_name_url_comments(self):
+        extracted_license_statement = [
+            {'license': {'name': 'apache-2.0', 'url': 'apache-2.0', 'comments': 'apache-2.0'}},
+            {'license': {'name': 'mit'}}
+        ]
+        _detections, result = get_license_detections_and_expression(
+            extracted_license_statement=extracted_license_statement,
+            datasource_id=maven.MavenPackageData.datasource_id,
+        )
+        assert result == 'apache-2.0 AND mit'
+
+    def test_get_license_detections_and_expression_with_url_invalid(self):
+        extracted_license_statement = [
+            {'license': {'name': 'MIT', 'url': 'LICENSE.txt'}},
+        ]
+        _detections, result = get_license_detections_and_expression(
+            extracted_license_statement=extracted_license_statement,
+            datasource_id=maven.MavenPackageData.datasource_id,
+        )
+        assert result == 'mit'
+
+    def test_get_license_detections_and_expression_with_duplicated_license(self):
+        extracted_license_statement = [
+            {'license': {'name': 'LGPL'}},
+            {'license': {'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html'}},
+        ]
+        _detections, result = get_license_detections_and_expression(
+            extracted_license_statement=extracted_license_statement,
+            datasource_id=maven.MavenPackageData.datasource_id,
+        )
+        expected = 'lgpl-2.0-plus AND lgpl-2.1-plus'
+        assert result == expected
+
+
+class TestMavenLicenseDetectionInPOM(BaseMavenCase):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_package_dependency_not_missing(self):
+        test_file = self.get_test_loc('maven2/log4j/log4j-pom.xml')
+        self.check_parse_to_package(test_file, regen=REGEN_TEST_FIXTURES)
+
+
+class TestPlainGetLicenseDetections(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_get_license_detections_two_names_only(self):
-        declared_license = [
-            {'name': 'apache-2.0'},
-            {'name': 'mit'}
-        ]
-        _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'apache-2.0 AND mit'
-        assert result == expected
-
-    def test_get_license_detections_tree_nodes(self):
         declared_license = [
             {'name': 'apache-2.0'},
             {'name': 'mit'}
@@ -449,7 +565,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'mit'}
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'apache-2.0 AND mit'
+        expected = 'apache-2.0 AND unknown AND mit'
         assert result == expected
 
     def test_get_license_detections_with_unknown_url_known_comments(self):
@@ -458,7 +574,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'mit'}
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'apache-2.0 AND mit'
+        expected = 'apache-2.0 AND unknown AND mit'
         assert result == expected
 
     def test_get_license_detections_with_unknown_url_unknown_comments(self):
@@ -467,7 +583,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'mit'}
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'apache-2.0 AND mit'
+        expected = 'apache-2.0 AND unknown AND mit'
         assert result == expected
 
     def test_get_license_detections_unknown_name(self):
@@ -476,7 +592,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'mit'}
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'apache-2.0 AND mit'
+        expected = 'unknown AND apache-2.0 AND mit'
         assert result == expected
 
     def test_get_license_detections_same_name_and_url(self):
@@ -502,7 +618,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'MIT', 'url': 'LICENSE.txt'},
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'mit'
+        expected = 'mit AND unknown-license-reference'
         assert result == expected
 
     def test_get_license_detections_with_duplicated_license(self):
@@ -511,7 +627,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html'},
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'lgpl-2.0-plus'
+        expected = 'lgpl-2.0-plus AND lgpl-2.1-plus'
         assert result == expected
 
 

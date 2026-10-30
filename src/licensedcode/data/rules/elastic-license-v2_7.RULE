@@ -1,7 +1,10 @@
 ---
 license_expression: elastic-license-v2
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - elastic-license-v2
 ---
 
 licenses.nuget.org/Elastic-2.0

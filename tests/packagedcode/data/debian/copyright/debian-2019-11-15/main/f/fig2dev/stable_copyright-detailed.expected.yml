@@ -18,7 +18,7 @@ other_license_detections:
     license_expression_spdx: Xfig
     matches:
       - license_expression: mit-xfig
-        spdx_license_expression: Xfig
+        license_expression_spdx: Xfig
         from_file:
         start_line: 28
         end_line: 35
@@ -43,7 +43,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only)
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 53
         end_line: 53
@@ -56,7 +56,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0 OR gpl-3.0
-        spdx_license_expression: GPL-2.0-only OR GPL-3.0-only
+        license_expression_spdx: GPL-2.0-only OR GPL-3.0-only
         from_file:
         start_line: 54
         end_line: 69
@@ -89,7 +89,7 @@ other_license_detections:
     license_expression_spdx: NTP
     matches:
       - license_expression: mit-old-style-no-advert
-        spdx_license_expression: NTP
+        license_expression_spdx: NTP
         from_file:
         start_line: 75
         end_line: 83
@@ -115,7 +115,7 @@ other_license_detections:
     license_expression_spdx: GPL-3.0-only AND GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
+        license_expression_spdx: GPL-3.0-only
         from_file:
         start_line: 88
         end_line: 88
@@ -128,7 +128,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_rdesc_1.RULE
         matched_text: 'License: gpl-3'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 89
         end_line: 97
@@ -150,7 +150,7 @@ other_license_detections:
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
           GNU General Public License for more details.
       - license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
+        license_expression_spdx: GPL-3.0-only
         from_file:
         start_line: 99
         end_line: 101

@@ -4,8 +4,8 @@ is_license_reference: yes
 relevance: 90
 ---
 
-AGPL 3.0
-AGPL v3.0
+{{AGPL 3.0}}
+{{AGPL v3.0}}
 AGPL3
 AGPLv3
-AGPL 3.0
+{{AGPL 3.0}}

@@ -13,7 +13,7 @@ other_urls:
     - http://www.imatix.com
 ignorable_copyrights:
     - Copyright (c) 1991-2000 iMatix Corporation
-    - Copyright (c) 1991-2000 iMatix Corporation <http://www.imatix.com>
+    - Copyright (c) 1991-2000 iMatix Corporation http://www.imatix.com
     - Parts copyright (c) 1991-2000 iMatix Corporation
 ignorable_holders:
     - iMatix Corporation

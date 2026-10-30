@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE
 ---
 
-licensed under the [Apache License 2.0](LICENSE).
+licensed under the [{{Apache License 2.0}}](LICENSE).

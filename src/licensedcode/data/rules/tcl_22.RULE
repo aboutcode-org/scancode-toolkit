@@ -1,7 +1,10 @@
 ---
 license_expression: tcl
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - tcl
 ---
 
 licenses.nuget.org/TCL

@@ -1,0 +1,60 @@
+---
+key: slipnet-sal-2026
+short_name: SlipNet Source-Available License 2026
+name: SlipNet Source-Available License 2026
+category: Non-Commercial
+owner: anonvector
+homepage_url: https://github.com/anonvector/SlipNet/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-slipnet-sal-2026
+ignorable_copyrights:
+    - Copyright (c) 2026 The SlipNet Project
+ignorable_holders:
+    - The SlipNet Project
+---
+
+The SlipNet Source-Available License
+Copyright © 2026 The SlipNet Project. All Rights Reserved.
+
+1. Grant of License Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to access, download, and modify the source code, and to compile and execute the Software solely for personal, private, educational, or research use.
+
+2. Restrictions on Distribution You may NOT distribute, redistribute, or publish this Software, whether in source code or binary form, modified or unmodified. This explicitly prohibits:
+
+Hosting downloadable builds (APKs, IPAs, EXEs, etc.) on websites, file-sharing platforms, or mirrors.
+
+Distributing the source code to third parties (except as part of a Contribution to the original repository, see Section 5).
+
+Bundling this Software with other software packages.
+
+Making the Software available for public use on a server or via a network (e.g., "Software as a Service") without a separate commercial agreement.
+
+3. App Store and Marketplace Prohibition Publishing, distributing, or making this Software available through any application store, package manager, or marketplace is strictly prohibited. This includes, but is not limited to:
+
+Google Play Store
+
+Apple App Store
+
+F-Droid
+
+Amazon Appstore
+
+Any third-party APK hosting sites or repositories
+
+This prohibition applies regardless of whether the distribution is free or commercial.
+
+4. Intellectual Property and Branding The project name "SlipNet," its logo, and associated branding are reserved. You may not use the project name, logo, or branding in any derivative works, forked repositories, or published media without explicit written permission from the copyright holder.
+
+5. Contributions, Forks, and Commercial Rights You are permitted to fork this repository solely for the purpose of submitting Pull Requests to the original repository.
+
+By submitting a Pull Request, code snippet, or other contribution to the SlipNet project, you agree to the following terms:
+
+License Grant to Project Owner: You grant the repository owner (the "Maintainer") a perpetual, worldwide, non-exclusive, royalty-free, irrevocable license to use, reproduce, modify, distribute, and sublicense your contribution.
+
+Commercial Use: You explicitly grant the Maintainer the right to use your contribution for commercial purposes, including but not limited to proprietary closed-source builds, cloud-hosted editions (SaaS), and enterprise distributions, without any compensation or attribution requirements.
+
+Integration: Once merged, the contribution becomes part of the Software and is made available to the public under the terms of this License.
+
+6. Termination This License is effective until terminated. Your rights under this License will terminate automatically without notice if you fail to comply with any term(s) of this License. Upon termination, you must cease all use of the Software and destroy all copies, full or partial, of the Software.
+
+7. No Implied Rights No rights are granted beyond those explicitly stated in this License. All rights not expressly granted are reserved by the copyright holder.
+
+8. Disclaimer of Warranty THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

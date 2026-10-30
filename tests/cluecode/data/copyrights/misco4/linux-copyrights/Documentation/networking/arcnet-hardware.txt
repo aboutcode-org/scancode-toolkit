@@ -1,0 +1,46 @@
+Waterloo?	(C)1985 Waterloo Micro. 8
+	No Name		--			8/16
+	No Name		Taiwan R.O.C?		8
+
+
+  - PC110 settings were verified by Stephen A. Wood <saw@cebaf.gov>
+  - Also, the JP- and S-numbers probably don't match your card exactly.  Try
+    to find jumpers/switches with the same number of settings - it's
+
+
+This description has been written by Juergen Seifert <seifert@htwm.de>
+using information from the following Original SMC Manual 
+
+
+This description has been written by Juergen Seifert <seifert@htwm.de>
+using information from the following Original SMC Manual 
+
+
+This description has been written by Juergen Seifert <seifert@htwm.de>
+using information from the following Original CNet Manual 
+
+
+This description has been written by Juergen Seifert <seifert@htwm.de>
+using information from the following Original CNet Manual 
+
+
+8-bit card (C) 1985
+-------------------
+  - from Robert Michael Best <rmb117@cs.usask.ca>
+
+
+C2 -- "@Copyright
+       Waterloo Microsystems Inc.
+       1985"
+      In a chip Socket with info printed on a label covering a round window
+      showing the circuit inside. (The window indicates it is an EPROM chip.)
+
+
+This description has been written by Juergen Seifert <seifert@htwm.de>
+using information from the Original
+                    "ARCnet Installation Manual"
+
+
+This description has been written by Juergen Seifert <seifert@htwm.de>
+using information from the Original
+                    "ARCnet Installation Manual"

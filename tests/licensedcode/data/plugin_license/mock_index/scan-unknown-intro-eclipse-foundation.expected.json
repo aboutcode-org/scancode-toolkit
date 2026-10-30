@@ -5,7 +5,7 @@
     "matches": [
       {
         "license_expression": "unknown-license-reference",
-        "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+        "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
         "from_file": null,
         "start_line": 4,
         "end_line": 5,
@@ -20,7 +20,7 @@
       },
       {
         "license_expression": "epl-2.0",
-        "spdx_license_expression": "EPL-2.0",
+        "license_expression_spdx": "EPL-2.0",
         "from_file": null,
         "start_line": 5,
         "end_line": 5,
@@ -35,7 +35,7 @@
       },
       {
         "license_expression": "epl-2.0",
-        "spdx_license_expression": "EPL-2.0",
+        "license_expression_spdx": "EPL-2.0",
         "from_file": null,
         "start_line": 6,
         "end_line": 6,
@@ -50,13 +50,13 @@
       },
       {
         "license_expression": "epl-2.0",
-        "spdx_license_expression": "EPL-2.0",
+        "license_expression_spdx": "EPL-2.0",
         "from_file": null,
         "start_line": 8,
         "end_line": 8,
         "matcher": "1-spdx-id",
         "score": 100.0,
-        "matched_length": 5,
+        "matched_length": 6,
         "match_coverage": 100.0,
         "rule_relevance": 100,
         "rule_identifier": "spdx-license-identifier-epl_2_0-fc3580adf1834d6862422242a06d59e74eb62582",
@@ -64,6 +64,6 @@
         "matched_text": " * SPDX-License-Identifier: EPL-2.0"
       }
     ],
-    "identifier": "epl_2_0-16e050c0-576a-1003-b3c3-e5b5354b0fc2"
+    "identifier": "epl_2_0-034c1d66-824a-5186-d07a-a42d04dacf68"
   }
 ]

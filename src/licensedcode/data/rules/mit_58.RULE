@@ -8,6 +8,6 @@ ignorable_urls:
     - http://www.opensource.org/licenses/mit-license.php
 ---
 
-mit            MIT License
+mit            {{MIT License}}
                http://www.opensource.org/licenses/mit-license.php
 mpl10

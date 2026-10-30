@@ -1,0 +1,15 @@
+---
+key: unlicense-libtelnet
+short_name: Unlicense libtelnet variant
+name: Unlicense - libtelnet variant
+category: Public Domain
+owner: Sean Middleditch 
+notes: |
+    Added in SPDX license list 3.27
+    This was previously the license rule: public-domain_379.RULE
+spdx_license_key: Unlicense-libtelnet
+other_urls:
+    - https://github.com/seanmiddleditch/libtelnet/blob/develop/COPYING
+---
+
+The author or authors of this code dedicate any and all copyright interest in this code to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this code under copyright law.

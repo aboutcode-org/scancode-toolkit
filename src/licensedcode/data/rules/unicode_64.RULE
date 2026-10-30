@@ -9,7 +9,7 @@ ignorable_urls:
     - https://www.unicode.org/copyright.html
 ---
 
-UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
+{{UNICODE, INC. LICENSE AGREEMENT}} - DATA FILES AND SOFTWARE
 
 See Terms of Use <https://www.unicode.org/copyright.html>
 for definitions of Unicode Inc.’s Data Files and Software.

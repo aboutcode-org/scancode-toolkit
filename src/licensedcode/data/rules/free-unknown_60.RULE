@@ -1,8 +1,10 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_text: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - free-unknown
 ignorable_authors:
     - the WU-FTPD Development Group, the Washington University at Saint Louis, Berkeley Software
         Design, Inc.

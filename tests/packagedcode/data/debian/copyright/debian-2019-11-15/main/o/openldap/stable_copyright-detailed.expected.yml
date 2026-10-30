@@ -15,7 +15,7 @@ license_detections:
     license_expression_spdx: OLDAP-2.8
     matches:
       - license_expression: openldap-2.8
-        spdx_license_expression: OLDAP-2.8
+        license_expression_spdx: OLDAP-2.8
         from_file:
         start_line: 17
         end_line: 37
@@ -49,7 +49,7 @@ license_detections:
           Additional information about OpenLDAP can be obtained at
           <http://www.openldap.org/>.
       - license_expression: openldap-2.8
-        spdx_license_expression: OLDAP-2.8
+        license_expression_spdx: OLDAP-2.8
         from_file:
         start_line: 41
         end_line: 81
@@ -107,7 +107,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 91
         end_line: 107
@@ -141,7 +141,7 @@ license_detections:
     license_expression_spdx: FSFULLRWD
     matches:
       - license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
+        license_expression_spdx: FSFULLRWD
         from_file:
         start_line: 115
         end_line: 122
@@ -166,7 +166,7 @@ license_detections:
     license_expression_spdx: Spencer-94
     matches:
       - license_expression: hs-regexp
-        spdx_license_expression: Spencer-94
+        license_expression_spdx: Spencer-94
         from_file:
         start_line: 129
         end_line: 145
@@ -200,7 +200,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-ibm-dhcp
     matches:
       - license_expression: ibm-dhcp
-        spdx_license_expression: LicenseRef-scancode-ibm-dhcp
+        license_expression_spdx: LicenseRef-scancode-ibm-dhcp
         from_file:
         start_line: 154
         end_line: 173
@@ -237,7 +237,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-ietf
     matches:
       - license_expression: ietf
-        spdx_license_expression: LicenseRef-scancode-ietf
+        license_expression_spdx: LicenseRef-scancode-ietf
         from_file:
         start_line: 180
         end_line: 206
@@ -272,7 +272,7 @@ license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 227
         end_line: 238
@@ -301,7 +301,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 245
         end_line: 250
@@ -321,7 +321,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 277
         end_line: 283
@@ -342,7 +342,7 @@ license_detections:
     license_expression_spdx: NTP
     matches:
       - license_expression: mit-old-style-no-advert
-        spdx_license_expression: NTP
+        license_expression_spdx: NTP
         from_file:
         start_line: 311
         end_line: 319
@@ -368,7 +368,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 327
         end_line: 328
@@ -387,7 +387,7 @@ license_detections:
     license_expression_spdx: Spencer-94
     matches:
       - license_expression: hs-regexp
-        spdx_license_expression: Spencer-94
+        license_expression_spdx: Spencer-94
         from_file:
         start_line: 337
         end_line: 352
@@ -420,7 +420,7 @@ license_detections:
     license_expression_spdx: OLDAP-2.8
     matches:
       - license_expression: openldap-2.8
-        spdx_license_expression: OLDAP-2.8
+        license_expression_spdx: OLDAP-2.8
         from_file:
         start_line: 359
         end_line: 362
@@ -441,7 +441,7 @@ license_detections:
     license_expression_spdx: BSD-4.3TAHOE AND BSD-4-Clause-UC
     matches:
       - license_expression: bsla
-        spdx_license_expression: BSD-4.3TAHOE
+        license_expression_spdx: BSD-4.3TAHOE
         from_file:
         start_line: 368
         end_line: 378
@@ -465,7 +465,7 @@ license_detections:
            * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
            * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
       - license_expression: bsd-original-uc
-        spdx_license_expression: BSD-4-Clause-UC
+        license_expression_spdx: BSD-4-Clause-UC
         from_file:
         start_line: 380
         end_line: 381
@@ -484,7 +484,7 @@ license_detections:
     license_expression_spdx: BSD-4-Clause-UC
     matches:
       - license_expression: bsd-original-uc
-        spdx_license_expression: BSD-4-Clause-UC
+        license_expression_spdx: BSD-4-Clause-UC
         from_file:
         start_line: 388
         end_line: 414
@@ -524,7 +524,7 @@ license_detections:
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
       - license_expression: bsd-original-uc
-        spdx_license_expression: BSD-4-Clause-UC
+        license_expression_spdx: BSD-4-Clause-UC
         from_file:
         start_line: 416
         end_line: 419
@@ -545,7 +545,7 @@ license_detections:
     license_expression_spdx: BSD-4.3RENO
     matches:
       - license_expression: bsd-original-uc-1986
-        spdx_license_expression: BSD-4.3RENO
+        license_expression_spdx: BSD-4.3RENO
         from_file:
         start_line: 426
         end_line: 431

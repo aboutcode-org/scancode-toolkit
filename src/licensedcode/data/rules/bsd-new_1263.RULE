@@ -7,5 +7,5 @@ ignorable_urls:
 ---
 
 <license>
-<name> BSD License </name>
+<name> {{BSD License}} </name>
 <url> (http://opensource.org/licenses/BSD-3-Clause)</url>

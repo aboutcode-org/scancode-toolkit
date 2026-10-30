@@ -1,0 +1,12 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+is_continuous: yes
+is_deprecated: yes
+relevance: 99
+notes: https://github.com/reneoelke/Php53to54/blob/568c351c7e6f66d46267ca90ddd4cc153a1b93c3/LICENCE#L4
+replaced_by:
+    - bsd-new
+---
+
+{{BSD License Agreement}}

@@ -1,0 +1,42 @@
+---
+key: kvirc-openssl-exception
+short_name: kvirc OpenSSL Exception
+name: kvirc OpenSSL Exception
+category: Copyleft Limited
+owner: KVIrc.net
+is_exception: yes
+spdx_license_key: kvirc-openssl-exception
+other_urls:
+    - https://github.com/kvirc/KVIrc/blob/ba18690abb4f5ce77bb10164ee0835cc150f4a2a/doc/ABOUT-LICENSE#L34
+---
+
+_OpenSSL Exception_
+
+0. Definitions
+
+"KVIrc" means KVIrc software licensed under version 2 or any later
+version of the GNU General Public License (collectively, "GPL"), or a
+work based on such software and licensed under the GPL.
+
+"OpenSSL" means OpenSSL toolkit software distributed by the OpenSSL
+Project and licensed under the OpenSSL Licenses, or a work based on such
+software and licensed under the OpenSSL Licenses.
+
+"OpenSSL Licenses" means the OpenSSL License and Original SSLeay License
+under which the OpenSSL Project distributes the OpenSSL toolkit software,
+as those licenses appear in the file LICENSE-OPENSSL.
+
+1. Exception
+
+You have permission to copy, modify, propagate, and distribute a work
+formed by combining OpenSSL with KVIrc, or a work derivative of such a
+combination, even if such copying, modification, propagation, or
+distribution would otherwise violate the terms of the GPL. You must
+comply with the GPL in all respects for all of the code used other than
+OpenSSL.
+
+You may include this OpenSSL Exception and its grant of permissions when
+you distribute KVIrc. Inclusion of this notice with such a
+distribution constitutes a grant of such permission. If you do not wish
+to grant these permissions, remove this section entitled "OpenSSL
+Exception" from your distribution.

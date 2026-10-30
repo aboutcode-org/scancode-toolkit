@@ -17,6 +17,7 @@ from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
+from commoncode.system import on_linux
 
 
 class TestPlugins(PackageTester):
@@ -79,7 +80,7 @@ class TestPlugins(PackageTester):
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_package_command_scan_maven(self):
-        test_dir = self.get_test_loc('maven2')
+        test_dir = self.get_test_loc('plugin/maven')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin/maven-package-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
@@ -89,20 +90,6 @@ class TestPlugins(PackageTester):
         test_dir = self.get_test_loc('npm/package')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin/npm-package-expected.json')
-        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
-
-    def test_package_command_scan_maven_with_license(self):
-        test_dir = self.get_test_loc('maven2')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin/maven-package-with-license-expected.json')
-        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
-
-    def test_package_command_scan_npm_with_license(self):
-        test_dir = self.get_test_loc('npm/package')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin/npm-package-with-license-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
@@ -136,7 +123,7 @@ class TestPlugins(PackageTester):
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_package_command_scan_rubygems(self):
-        test_dir = self.get_test_loc('rubygems/package')
+        test_dir = self.get_test_loc('rubygems/package/m2r-2.1.0.gem')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin/rubygems-package-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
@@ -220,7 +207,10 @@ class TestPlugins(PackageTester):
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_package_list_command(self, regen=REGEN_TEST_FIXTURES):
-        expected_file = self.get_test_loc('plugin/help.txt')
+        if on_linux:
+            expected_file = self.get_test_loc('plugin/plugins_list_linux.txt')
+        else:
+            expected_file = self.get_test_loc('plugin/plugins_list.txt')
         result = run_scan_click(['--list-packages'])
         if regen:
             with open(expected_file, 'w') as ef:

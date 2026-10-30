@@ -8,7 +8,6 @@
 #
 
 import io
-import os
 from itertools import chain
 from os import path
 
@@ -20,9 +19,8 @@ from commoncode.testcase import FileDrivenTesting
 from commoncode.testcase import get_test_file_pairs
 from commoncode.text import python_safe_name
 
-from cluecode.copyrights import detect_copyrights
-from cluecode.copyrights import Detection
 from scancode_config import REGEN_TEST_FIXTURES
+
 
 """
 Data-driven Copyright test utilities.
@@ -126,57 +124,31 @@ class CopyrightTest(object):
             df.write(self.dumps())
 
 
+COPYRIGHT_TEST_TEMPLATE ="""what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - 
+holders:
+  - 
+"""
+
 def load_copyright_tests(test_dir=test_env.test_data_dir, generate_missing=False):
     """
     Yield an iterable of CopyrightTest loaded from test data files in `test_dir`.
-    If `generate_missing` is True, generate missing YAML data files with a default test template.
     """
-    test_dirs = [
-        path.join(test_dir, td)
-        for td in
-        ('copyrights', 'ics', 'holders', 'authors', 'years', 'generated')
-    ]
+    test_dirs = (path.join(test_dir, td) for td in
+        ('copyrights', 'ics', 'holders', 'authors', 'years', 'generated', 'copyright_fossology'))
 
-    if generate_missing:
-        for td in test_dirs:
-            create_missing_test_data_files(test_dir=td)
-
-    all_test_files = chain.from_iterable(get_test_file_pairs(td) for td in test_dirs)
+    gen_missing_temp = generate_missing and COPYRIGHT_TEST_TEMPLATE or None
+    all_test_files = chain.from_iterable(
+        get_test_file_pairs(td, template_to_generate_missing_yaml=gen_missing_temp)
+        for td in test_dirs
+    )
 
     for data_file, test_file in all_test_files:
         yield CopyrightTest(data_file, test_file)
-
-
-empty_data_file = """what:
-  - copyrights
-  - holders
-  - holders_summary
-  - authors
-"""
-
-
-def create_missing_test_data_files(test_dir):
-    """
-    Create missing copyright test data files in a `test_dir` directory.
-
-    Each test consist of a pair of files:
-    - a test file.
-    - a data file with the same name as a test file and a '.yml' extension added.
-    """
-    for top, _, files in os.walk(test_dir):
-        for tfile in files:
-            if tfile.endswith('~'):
-                continue
-            file_path = path.abspath(path.join(top, tfile))
-
-            if tfile.endswith('.yml'):
-                data_file_path = file_path
-            else:
-                data_file_path = file_path + '.yml'
-
-            if not path.exists(data_file_path):
-                with open(data_file_path, "w") as tfo:
-                    tfo.write(empty_data_file)
 
 
 def as_sorted_mapping(counter):
@@ -198,11 +170,6 @@ def as_sorted_mapping(counter):
     return summarized
 
 
-def get_detections(test_file):
-    detections = detect_copyrights(test_file)
-    return Detection.split_values(detections)
-
-
 def make_copyright_test_functions(
     test,
     index,
@@ -214,6 +181,9 @@ def make_copyright_test_functions(
     name. Create only a single function for multiple tests (e.g. copyrights and
     holders together).
     """
+    from cluecode.copyrights import detect_copyrights
+    from cluecode.copyrights import Detection
+
     from summarycode.copyright_tallies import tally_copyrights
     from summarycode.copyright_tallies import tally_persons
 

@@ -1,0 +1,83 @@
+--- 
+name: blankslate
+version: 
+  version: 3.1.3
+platform: ruby
+authors:
+- Jim Weirich
+- David Masover
+- Jack Danger Canty
+autorequire: 
+bindir: bin
+cert_chain: []
+date: 2014-06-18 00:00:00.000000000 Z
+dependencies:
+- 
+  name: rspec
+  requirement: 
+    requirements:
+    - - ! '>='
+      - 
+        version: '0'
+  type: :development
+  prerelease: false
+  version_requirements: 
+    requirements:
+    - - ! '>='
+      - 
+        version: '0'
+- 
+  name: bundler
+  requirement: 
+    requirements:
+    - - ! '>='
+      - 
+        version: '0'
+  type: :development
+  prerelease: false
+  version_requirements: 
+    requirements:
+    - - ! '>='
+      - 
+        version: '0'
+description: 
+email: rubygems@6brand.com
+executables: []
+extensions: []
+extra_rdoc_files: []
+files:
+- Gemfile
+- Gemfile.lock
+- MIT-LICENSE
+- README
+- Rakefile
+- VERSION
+- blankslate.gemspec
+- lib/blankslate.rb
+- spec/blankslate_spec.rb
+homepage: http://github.com/masover/blankslate
+licenses: []
+metadata: {}
+post_install_message: 
+rdoc_options: []
+require_paths:
+- lib
+required_ruby_version: 
+  requirements:
+  - - ! '>='
+    - 
+      version: '0'
+required_rubygems_version: 
+  requirements:
+  - - ! '>='
+    - 
+      version: '0'
+requirements: []
+rubyforge_project: 
+rubygems_version: 2.2.2
+signing_key: 
+specification_version: 4
+summary: BlankSlate extracted from Builder.
+test_files:
+- spec/blankslate_spec.rb
+has_rdoc: 

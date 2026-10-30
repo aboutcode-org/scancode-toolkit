@@ -359,5 +359,5 @@ def build_dep_package(package, scope, is_runtime, is_optional):
         scope=scope,
         is_runtime=is_runtime,
         is_optional=is_optional,
-        is_resolved=True,
+        is_pinned=True,
     )

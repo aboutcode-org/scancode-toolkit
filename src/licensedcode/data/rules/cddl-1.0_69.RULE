@@ -3,4 +3,4 @@ license_expression: cddl-1.0
 is_license_reference: yes
 ---
 
-CDDL-1.0  Common Development and Distribution License 1.0
+{{CDDL-1.0}}  {{Common Development and Distribution License 1.0}}

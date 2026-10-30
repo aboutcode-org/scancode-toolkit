@@ -7,5 +7,5 @@ ignorable_urls:
     - https://spdx.org/licenses/PublicDomain.html
 ---
 
-Public Domain
+{{Public Domain}}
 https://spdx.org/licenses/PublicDomain.html

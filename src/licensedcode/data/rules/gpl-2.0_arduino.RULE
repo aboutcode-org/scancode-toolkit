@@ -9,8 +9,8 @@ ignorable_holders:
     - the Free Software Foundation
 ---
 
-GNU GENERAL PUBLIC LICENSE
-                       Version 2, June 1991
+{{GNU GENERAL PUBLIC LICENSE
+                       Version 2}}, June 1991
 
 Copyright (C) 1989, 1991 Free Software Foundation, Inc.
 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
@@ -20,8 +20,8 @@ of this license document, but changing it is not allowed.
                             Preamble
 
   The licenses for most software are designed to take away your
-freedom to share and change it.  By contrast, the GNU General Public
-License is intended to guarantee your freedom to share and change free
+freedom to share and change it.  By contrast, the {{GNU General Public
+License}} is intended to guarantee your freedom to share and change free
 software--to make sure the software is free for all its users.  This
 General Public License applies to most of the Free Software
 Foundation's software and to any other program whose authors commit to
@@ -67,7 +67,7 @@ patent must be licensed for everyone's free use or not licensed at all.
   The precise terms and conditions for copying, distribution and
 modification follow.
 
-                    GNU GENERAL PUBLIC LICENSE
+                    {{GNU GENERAL PUBLIC LICENSE}}
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
   0. This License applies to any program or other work which contains

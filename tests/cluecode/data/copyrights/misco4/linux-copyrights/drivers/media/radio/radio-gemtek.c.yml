@@ -1,0 +1,17 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 1998 Jonas Munsin <jmunsin@iki.fi>
+  - (c) 1998 Ben Pfaff
+  - (c) 1997 M. Kirkwood Converted
+holders:
+  - Jonas Munsin
+  - Ben Pfaff
+  - M. Kirkwood Converted
+authors:
+  - Alan Cox <alan@lxorguk.ukuu.org.uk>
+  - Russell Kroll <rkroll@exploits.org>
+  - Hans Verkuil <hans.verkuil@cisco.com>
+  - Mauro Carvalho Chehab <mchehab@kernel.org>

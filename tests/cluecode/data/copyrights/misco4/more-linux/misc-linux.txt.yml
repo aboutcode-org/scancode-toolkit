@@ -1,0 +1,49 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2011 Instituto Nokia de Tecnologia
+  - Copyright (c) 2012-2013 Tieto Poland
+  - Copyright (c) 2016 HALE electronic
+  - Copyright (c) People
+  - Copyright (c) 2010 Alan Ott <alan@signal11.us>
+  - Copyright (c) 2010 Signal 11 Software
+  - Copyright (c) 2010, Octasic semiconductor
+  - Copyright 2016 Tom aan de Wiel
+  - Copyright 2018 Cisco Systems, Inc. and/or its affiliates
+  - (c) 2006 Tim Small
+  - (c) by the respective authors
+  - copyright by the original
+  - Copyright 1993 United States Government
+  - Copyright 2010 Ben Dooks ben-linux <at> fluff.org
+  - Copyright (c) 2010 Dmitry Torokhov
+  - (c) liplianin@me.by
+  - Ingo Molnar, Copyright (c) 2001
+  - David Rientjes, Copyright (c) 2015
+  - (c) 1985
+  - (c) 1996-8 Grant R. Guenther <grant@torque.net>
+  - (c) 1996 Grant R. Guenther grant@torque.net David Campbell
+  - copyright by its respective authors
+holders:
+  - Instituto Nokia de Tecnologia
+  - Tieto Poland
+  - HALE electronic
+  - People
+  - Alan Ott
+  - Signal 11 Software
+  - Octasic semiconductor
+  - Tom aan de Wiel
+  - Cisco Systems, Inc. and/or its affiliates
+  - Tim Small
+  - the respective authors
+  - the original
+  - United States Government
+  - Ben Dooks ben-linux <at> fluff.org
+  - Dmitry Torokhov
+  - liplianin@me.by
+  - Ingo Molnar
+  - David Rientjes
+  - Grant R. Guenther
+  - Grant R. Guenther David Campbell
+  - its respective authors

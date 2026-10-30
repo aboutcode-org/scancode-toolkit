@@ -6,4 +6,4 @@ referenced_filenames:
     - COPYING
 ---
 
-licensed under the ISC license. The license can be found in the COPYING file that should have accompanied this release.
+licensed under the {{ISC license}}. The license can be found in the COPYING file that should have accompanied this release.

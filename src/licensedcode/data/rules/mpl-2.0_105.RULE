@@ -6,4 +6,4 @@ ignorable_urls:
     - http://mozilla.org/MPL/2.0
 ---
 
-licensed under the MPL 2.0 (http://mozilla.org/MPL/2.0/)
+{{licensed under the MPL 2.0}} (http://mozilla.org/MPL/2.0/)

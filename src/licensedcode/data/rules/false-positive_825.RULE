@@ -1,0 +1,8 @@
+---
+is_false_positive: yes
+notes: seen in pkg:npm/validate-npm-package-license
+---
+
+assert.deepEqual(
+  valid('(GPL-3.0-only OR BSD-2-Clause)'),
+  validSPDXExpression

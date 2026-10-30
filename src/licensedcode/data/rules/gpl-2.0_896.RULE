@@ -6,12 +6,12 @@ ignorable_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
 ---
 
-GNU General Public License Version 2.0, June 1991
+{{GNU General Public License Version 2}}.0, June 1991
 
-The following applies to all products licensed under the GNU General
-Public License, Version 2.0: You may not use the identified files
-except in compliance with the GNU General Public License, Version
-2.0 (the "License.") You may obtain a copy of the License at
+The following applies to all products licensed under {{the GNU General
+Public License, Version 2}}.0: You may not use the identified files
+except in compliance with {{the GNU General Public License, Version
+2}}.0 (the "License.") You may obtain a copy of the License at
 http://www.gnu.org/licenses/gpl-2.0.txt. A copy of the license is
 also reproduced below. Unless required by applicable law or agreed
 to in writing, software distributed under the License is distributed

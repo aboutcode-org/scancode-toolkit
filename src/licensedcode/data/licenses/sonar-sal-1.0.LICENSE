@@ -1,0 +1,219 @@
+---
+key: sonar-sal-1.0
+short_name: Sonar Source-Available License v1.0
+name: Sonar Source-Available License v1.0
+category: Source-available
+owner: Sonar
+homepage_url: https://www.sonarsource.com/license/ssal/
+spdx_license_key: LicenseRef-scancode-sonar-sal-1.0
+text_urls:
+    - https://github.com/SonarSource/sonar-go/blob/master/LICENSE
+other_urls:
+    - https://github.com/SonarSource/sonar-go/blob/master/LICENSE_HEADER
+standard_notice: |
+    * SonarSource Go
+    * Copyright (C) 2018-$YEAR SonarSource SA
+    * mailto:info AT sonarsource DOT com
+    *
+    * This program is free software; you can redistribute it and/or
+    * modify it under the terms of the Sonar Source-Available License Version
+    1, as published by SonarSource SA.
+    *
+    * This program is distributed in the hope that it will be useful,
+    * but WITHOUT ANY WARRANTY; without even the implied warranty of
+    * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    * See the Sonar Source-Available License for more details.
+    *
+    * You should have received a copy of the Sonar Source-Available License
+    * along with this program; if not, see
+    https://sonarsource.com/license/ssal/
+ignorable_copyrights:
+    - (c) employing, using, or engaging artificial intelligence technology
+ignorable_holders:
+    - employing, using, or engaging artificial intelligence technology
+---
+
+SONAR Source-Available License v1.0
+Last Updated November 13, 2024
+
+1. DEFINITIONS
+
+"Agreement" means this Sonar Source-Available License v1.0
+
+"Competing" means marketing a product or service as a substitute for the
+functionality or value of SonarQube. A product or service may compete regardless
+of how it is designed or deployed. For example, a product or service may compete
+even if it provides its functionality via any kind of interface (including
+services, libraries, or plug-ins), even if it is ported to a different platform
+or programming language, and even if it is provided free of charge.
+
+"Contribution" means:
+
+  a) in the case of the initial Contributor, the initial content Distributed under
+this Agreement, and
+
+  b) in the case of each subsequent Contributor:
+    i) changes to the Program, and
+    ii) additions to the Program;
+
+where such changes and/or additions to the Program originate from and are
+Distributed by that particular Contributor. A Contribution "originates" from a
+Contributor if it was added to the Program by such Contributor itself or anyone
+acting on such Contributor's behalf. Contributions do not include changes or
+additions to the Program that are not Modified Works.
+
+"Contributor" means any person or entity that Distributes the Program.
+
+"Derivative Works" shall mean any work, whether in Source Code or other form,
+that is based on (or derived from) the Program and for which the editorial
+revisions, annotations, elaborations, or other modifications represent, as a
+whole, an original work of authorship.
+
+"Distribute" means the acts of a) distributing or b) making available in any
+manner that enables the transfer of a copy.
+
+"Licensed Patents" mean patent claims licensable by a Contributor that are
+necessarily infringed by the use or sale of its Contribution alone or when
+combined with the Program.
+
+"Modified Works" shall mean any work in Source Code or other form that results
+from an addition to, deletion from, or modification of the contents of the
+Program, including, for purposes of clarity, any new file in Source Code form
+that contains any contents of the Program. Modified Works shall not include
+works that contain only declarations, interfaces, types, classes, structures, or
+files of the Program solely in each case in order to link to, bind by name, or
+subclass the Program or Modified Works thereof.
+
+"Non-competitive Purpose" means any purpose except for (a) providing to others
+any product or service that includes or offers the same or substantially similar
+functionality as SonarQube, (b) Competing with SonarQube, and/or (c) employing,
+using, or engaging artificial intelligence technology that is not part of the
+Program to ingest, interpret, analyze, train on, or interact with the data
+provided by the Program, or to engage with the Program in any manner.
+
+"Notices" means any legal statements or attributions included with the Program,
+including, without limitation, statements concerning copyright, patent,
+trademark, disclaimers of warranty, or limitations of liability
+
+"Program" means the Contributions Distributed in accordance with this Agreement.
+
+"Recipient" means anyone who receives the Program under this Agreement,
+including Contributors.
+
+"SonarQube" means an open-source or commercial edition of software offered by
+SonarSource that is branded "SonarQube".
+
+"SonarSource" means SonarSource SA, a Swiss company registered in Switzerland
+under UID No. CHE-114.587.664.
+
+"Source Code" means the form of a Program preferred for making modifications,
+including but not limited to software source code, documentation source, and
+configuration files.
+
+2. GRANT OF RIGHTS
+
+  a) Subject to the terms of this Agreement, each Contributor hereby grants
+Recipient a non-exclusive, worldwide, royalty-free copyright license, for any
+Non-competitive Purpose, to reproduce, prepare Derivative Works of, publicly
+display, publicly perform, Distribute and sublicense the Contribution of such
+Contributor, if any, and such Derivative Works.
+
+  b) Subject to the terms of this Agreement, each Contributor hereby grants
+Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed
+Patents, for any Non-competitive Purpose, to make, use, sell, offer to sell,
+import, and otherwise transfer the Contribution of such Contributor, if any, in
+Source Code or other form. This patent license shall apply to the combination of
+the Contribution and the Program if, at the time the Contribution is added by
+the Contributor, such addition of the Contribution causes such combination to be
+covered by the Licensed Patents. The patent license shall not apply to any other
+combinations that include the Contribution.
+
+  c) Recipient understands that although each Contributor grants the licenses to
+its Contributions set forth herein, no assurances are provided by any
+Contributor that the Program does not infringe the patent or other intellectual
+property rights of any other entity. Each Contributor disclaims any liability to
+Recipient for claims brought by any other entity based on infringement of
+intellectual property rights or otherwise. As a condition to exercising the
+rights and licenses granted hereunder, each Recipient hereby assumes sole
+responsibility to secure any other intellectual property rights needed, if any.
+For example, if a third-party patent license is required to allow Recipient to
+Distribute the Program, it is Recipient's responsibility to acquire that license
+before distributing the Program.
+
+  d) Each Contributor represents that to its knowledge it has sufficient copyright
+rights in its Contribution, if any, to grant the copyright license set forth in
+this Agreement.
+
+3. REQUIREMENTS
+
+3.1 If a Contributor Distributes the Program in any form, then the Program must
+also be made available as Source Code, in accordance with section 3.2, and the
+Contributor must accompany the Program with a statement that the Source Code for
+the Program is available under this Agreement, and inform Recipients how to
+obtain it in a reasonable manner on or through a medium customarily used for
+software exchange; and
+
+3.2 When the Program is Distributed as Source Code:
+
+  a) it must be made available under this Agreement, and
+
+  b) a copy of this Agreement must be included with each copy of the Program.
+
+3.3 Contributors may not remove or alter any Notices contained within the
+Program from any copy of the Program which they Distribute, provided that
+Contributors may add their own appropriate Notices.
+
+4. NO WARRANTY
+
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY
+APPLICABLE LAW, THE PROGRAM IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES
+OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT
+LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT,
+MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely
+responsible for determining the appropriateness of using and distributing the
+Program and assumes all risks associated with its exercise of rights under this
+Agreement, including but not limited to the risks and costs of program errors,
+compliance with applicable laws, damage to or loss of data, programs or
+equipment, and unavailability or interruption of operations.
+
+5. DISCLAIMER OF LIABILITY
+
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY
+APPLICABLE LAW, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF
+THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGES.
+
+6. GENERAL
+
+If any provision of this Agreement is invalid or unenforceable under applicable
+law, it shall not affect the validity or enforceability of the remainder of the
+terms of this Agreement, and without further action by the parties hereto, such
+provision shall be reformed to the minimum extent necessary to make such
+provision valid and enforceable.
+
+If Recipient institutes patent litigation against any entity (including a
+cross-claim or counterclaim in a lawsuit) alleging that the Program itself
+(excluding combinations of the Program with other software or hardware)
+infringes such Recipient’s patent(s), then such Recipient’s rights granted under
+Section 2(b) shall terminate as of the date such litigation is filed.
+
+All Recipient’s rights under this Agreement shall terminate if it fails to
+comply with any of the material terms or conditions of this Agreement and does
+not cure such failure in a reasonable period of time after becoming aware of
+such noncompliance. If all Recipient’s rights under this Agreement terminate,
+Recipient agrees to cease use and distribution of the Program as soon as
+reasonably practicable. However, Recipient’s obligations under this Agreement
+and any licenses granted by Recipient relating to the Program shall continue and
+survive.
+
+Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives
+no rights or licenses to the intellectual property of any Contributor under this
+Agreement, whether expressly, by implication, estoppel, or otherwise. All rights
+in the Program not expressly granted under this Agreement are reserved. Nothing
+in this Agreement is intended to be enforceable by any entity that is not a
+Contributor or Recipient. No third-party beneficiary rights are created under
+this Agreement.

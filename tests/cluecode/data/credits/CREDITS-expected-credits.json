@@ -1,0 +1,67 @@
+[
+  {
+    "author": "Matt Mackal mpm@selenic.com",
+    "start_line": 12,
+    "end_line": 13
+  },
+  {
+    "author": "Werner Almesberger werner@almesberger.net http://www.almesberger.net/",
+    "start_line": 16,
+    "end_line": 18
+  },
+  {
+    "author": "Tim Alpaerts tim_alpaerts@toyota-motor-europe.com",
+    "start_line": 23,
+    "end_line": 24
+  },
+  {
+    "author": "Anton Altaparmakov aia21@cantab.net http://www-stu.christs.cam.ac.uk/~aia21/",
+    "start_line": 31,
+    "end_line": 33
+  },
+  {
+    "author": "C. Scott Ananian cananian@alumni.princeton.edu http://www.pdos.lcs.mit.edu/~cananian",
+    "start_line": 39,
+    "end_line": 41
+  },
+  {
+    "author": "Erik Andersen andersen@codepoet.org http://www.codepoet.org/",
+    "start_line": 50,
+    "end_line": 52
+  },
+  {
+    "author": "Michel Aubry giovanni <giovanni@sudfr.com>",
+    "start_line": 60,
+    "end_line": 61
+  },
+  {
+    "author": "Ralf Baechle ralf@gnu.org",
+    "start_line": 65,
+    "end_line": 66
+  },
+  {
+    "author": "Krishna Balasubramanian balasub@cis.ohio-state.edu",
+    "start_line": 74,
+    "end_line": 75
+  },
+  {
+    "author": "Chris Ball chris@printf.net",
+    "start_line": 78,
+    "end_line": 79
+  },
+  {
+    "author": "Dario Ballabio ballabio_dario@emc.com dario.ballabio@tiscalinet.it dario.ballabio@inwind.it",
+    "start_line": 82,
+    "end_line": 85
+  },
+  {
+    "author": "Paul Bame bame@debian.org bame@puffin.external.hp.com paul_bame@hp.com http://www.parisc-linux.org",
+    "start_line": 92,
+    "end_line": 96
+  },
+  {
+    "author": "Juan Jose Ciarlante jjciarla@raiz.uncu.edu.ar jjo@mendoza.gov.ar http://juanjox.kernelnotes.org/ http://juanjox.raiz.uncu.edu.ar/",
+    "start_line": 104,
+    "end_line": 114
+  }
+]

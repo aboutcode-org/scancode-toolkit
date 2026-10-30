@@ -8,4 +8,4 @@ notes: https://github.com/yasm/yasm/blob/009450c7ad4d425fa5a10ac4bd6efbd25248d82
 
 /* The C library at the core of this Perl module can additionally            */
 /* be used, modified and redistributed under the terms of the                */
-/* "GNU Library General Public License".                                     */
+/* "{{GNU Library General Public License}}".                                     */

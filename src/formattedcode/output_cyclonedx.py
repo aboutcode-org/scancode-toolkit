@@ -20,9 +20,9 @@ from pprint import pformat
 from typing import List
 
 import attr
+from lxml import etree
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
-from lxml import etree
 from plugincode.output import OutputPlugin
 from plugincode.output import output_impl
 
@@ -519,7 +519,7 @@ class CycloneDxDependency(ToDictMixin):
         for dependency in package.get('dependencies', []):
             dpurl = dependency['purl']
 
-            if dependency['is_resolved']:
+            if dependency['is_pinned']:
                 dependencies_by_dependent[purl].add(dpurl)
             else:
                 existing = components_by_purl.get(dpurl)
@@ -795,6 +795,7 @@ class CycloneDxJsonOutput(OutputPlugin):
                 'output_cyclonedx_json',
             ),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            default=None,
             metavar='FILE',
             help='Write scan output in CycloneDX JSON format to FILE.',
             help_group=OUTPUT_GROUP,
@@ -825,6 +826,7 @@ class CycloneDxXmlOutput(OutputPlugin):
                 'output_cyclonedx_xml',
             ),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            default=None,
             metavar='FILE',
             help='Write scan output in CycloneDX XML format to FILE.',
             help_group=OUTPUT_GROUP,

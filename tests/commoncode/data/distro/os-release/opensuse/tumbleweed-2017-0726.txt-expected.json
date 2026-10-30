@@ -1,0 +1,11 @@
+{
+  "NAME": "openSUSE Tumbleweed",
+  "ID": "opensuse",
+  "ID_LIKE": "suse",
+  "VERSION_ID": "20170726",
+  "PRETTY_NAME": "openSUSE Tumbleweed",
+  "ANSI_COLOR": "0;32",
+  "CPE_NAME": "cpe:/o:opensuse:tumbleweed:20170726",
+  "BUG_REPORT_URL": "https://bugs.opensuse.org",
+  "HOME_URL": "https://www.opensuse.org/"
+}

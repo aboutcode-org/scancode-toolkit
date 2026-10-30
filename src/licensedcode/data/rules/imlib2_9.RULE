@@ -1,7 +1,10 @@
 ---
 license_expression: imlib2
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - imlib2
 ---
 
 licenses.nuget.org/Imlib2

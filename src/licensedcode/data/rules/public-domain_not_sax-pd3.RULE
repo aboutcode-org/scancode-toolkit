@@ -4,5 +4,5 @@ is_license_text: yes
 relevance: 100
 ---
 
-This module, both source code and documentation, is in the
-Public Domain
+This module, both source code and documentation, is {{in the
+Public Domain}}

@@ -6,6 +6,8 @@ notes: |
     https://fedoraproject.org/wiki/Licensing/Threeparttable
     Added in SPDX license list 3.24
     Replaced by license: threeparttable.LICENSE
+replaced_by:
+    - threeparttable
 ---
 
 This file may be distributed, modified, and used in other works with just

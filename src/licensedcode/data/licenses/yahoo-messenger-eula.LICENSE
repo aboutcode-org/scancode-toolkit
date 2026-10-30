@@ -2,7 +2,7 @@
 key: yahoo-messenger-eula
 short_name: Yahoo Messenger EULA
 name: Yahoo Messenger EULA
-category: Proprietary Free
+category: Non-Commercial
 owner: Yahoo
 homepage_url: https://info.yahoo.com/legal/us/yahoo/messenger/messengertos/messengertos-279.html
 spdx_license_key: LicenseRef-scancode-yahoo-messenger-eula

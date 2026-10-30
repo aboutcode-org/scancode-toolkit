@@ -7,7 +7,7 @@ owner: Plural
 homepage_url: https://github.com/pluralsh/plural/blob/master/LICENSE
 spdx_license_key: LicenseRef-scancode-plural-20211124
 ignorable_copyrights:
-    - Copyright (c) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+    - Copyright (c) 2007 Free Software Foundation, Inc. http://fsf.org
     - Copyright (c) 2021 Plural Labs, Inc
 ignorable_holders:
     - Free Software Foundation, Inc.

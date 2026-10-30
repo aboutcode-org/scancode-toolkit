@@ -4,7 +4,7 @@ is_license_text: yes
 minimum_coverage: 90
 ---
 
-BSD 4-Clause License (a.k.a Original)
+{{BSD 4-Clause License}} (a.k.a Original)
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:

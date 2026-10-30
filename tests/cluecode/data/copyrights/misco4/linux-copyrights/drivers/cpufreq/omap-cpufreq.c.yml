@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2005 Nokia Corporation
+  - Copyright (c) 2001 Russell King
+  - Copyright (c) 2007-2011 Texas Instruments, Inc. - OMAP3/4
+holders:
+  - Nokia Corporation
+  - Russell King
+  - Texas Instruments, Inc. - OMAP3/4
+authors:
+  - Tony Lindgren <tony@atomide.com>

@@ -1,0 +1,9 @@
+NAME="Ubuntu"
+VERSION="15.04 (Vivid Vervet)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 15.04"
+VERSION_ID="15.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"

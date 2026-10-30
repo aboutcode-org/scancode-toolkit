@@ -5,6 +5,8 @@ is_deprecated: yes
 notes: |
     Added in SPDX license list 3.23
     Replaced by license: gtkbook
+replaced_by:
+    - gtkbook
 ---
 
 * This code is distributed without warranty. You are free to use this

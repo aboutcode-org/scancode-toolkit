@@ -1,0 +1,10 @@
+ Qua Jun 27 15:02:26 BRT 2001
+ * [27-JUN-2001] Arnaldo Carvalho de Melo <acme@conectiva.com.br> - cleanups
+ *
+ * Parts (C) 1999 David Airlie, airlied@linux.ie
+ * [07-SEP-99] Bugfixes
+ *
+ * [06-Jan-2002] Russell King <rmk@arm.linux.org.uk>
+ * Converted to new serial core
+ */
+

@@ -7,4 +7,4 @@ ignorable_urls:
 ---
 
 <![CDATA[Copyright &copy; ${project.inceptionYear}-{currentYear} <a href="http://redhat.com">Red Hat Inc.</a>  All Rights Reserved.
- Released under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache Software License 2.0</a>.]]>
+ Released under the <a href="http://www.apache.org/licenses/LICENSE-2.0">{{Apache Software License 2.0}}</a>.]]>

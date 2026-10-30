@@ -7,5 +7,5 @@ ignorable_urls:
 ---
 
 <license>
-<name> BSD </name>
+<{{name> BSD </name}}>
 <url> (http://www.linfo.org/bsdlicense.html)</url>

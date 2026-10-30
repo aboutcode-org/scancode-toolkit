@@ -1,0 +1,13 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) The Regents of the University of California
+holders:
+  - The Regents of the University of California
+authors:
+  - Austin Donnelly <and1000@debian.org>
+  - Ian Murdock <imurdock@gnu.ai.mit.edu>
+  - Charles Briscoe-Smith <cpbs@debian.org>
+  - Graham Wilson <bob@decoy.wox.org>

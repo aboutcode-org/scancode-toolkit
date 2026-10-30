@@ -1,0 +1,14 @@
+---
+license_expression: sonar-sal-1.0
+is_license_notice: yes
+minimum_coverage: 90
+---
+
+This software includes the sonar-csharp-enterprise-plugin, a proprietary plugin
+owned by SonarSource SA. This plugin is embedded within this software and is
+only licensed for use as an integrated part of this application.
+
+Users of this software are granted a non-transferable, non-sublicensable,
+limited license to use the aforementioned plugins solely as part of this
+application. Any use, reproduction, distribution, or modification of the plugin
+outside the scope of this application is strictly prohibited.

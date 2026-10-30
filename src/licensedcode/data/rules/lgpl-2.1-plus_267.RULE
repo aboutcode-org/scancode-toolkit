@@ -10,8 +10,8 @@ The upstream license clarifies pretty well that the sources of pulseaudio are
  effectively GPL since they rely on GPL libraries, quoting the upstream
  LICENSE:
 
-    """All PulseAudio source files are licensed under the GNU Lesser General
-    Public License. (see file LGPL for details)
+    """All PulseAudio source files are licensed under the {{GNU Lesser General
+    Public License}}. (see file LGPL for details)
 
     However, the server side links to the GPL-only library 'libsamplerate'
     which practically downgrades the license of the server part to GPL (see

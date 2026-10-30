@@ -6,4 +6,4 @@ ignorable_urls:
     - http://opensource.org/licenses/BSD-3-Clause
 ---
 
-BSD (3-clause): http://opensource.org/licenses/BSD-3-Clause
+{{BSD (3-clause}}): http://opensource.org/licenses/BSD-3-Clause

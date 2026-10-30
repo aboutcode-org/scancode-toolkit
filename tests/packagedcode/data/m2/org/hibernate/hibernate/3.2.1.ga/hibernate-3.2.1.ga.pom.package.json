@@ -39,7 +39,7 @@
       "matches": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "spdx_license_expression": "LGPL-2.1-or-later",
+          "license_expression_spdx": "LGPL-2.1-or-later",
           "from_file": null,
           "start_line": 1,
           "end_line": 2,
@@ -48,18 +48,18 @@
           "matched_length": 14,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "lgpl-2.1-plus_482.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_482.RULE",
-          "matched_text": "- name: GNU LESSER GENERAL PUBLIC LICENSE\n  url: http://www.gnu.org/licenses/lgpl.txt"
+          "rule_identifier": "lgpl-2.1-plus_478.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_478.RULE",
+          "matched_text": "name: GNU LESSER GENERAL PUBLIC LICENSE\nurl: http://www.gnu.org/licenses/lgpl.txt"
         }
       ],
-      "identifier": "lgpl_2_1_plus-ed8ae0aa-72f2-2724-7f62-9efe4de451aa"
+      "identifier": "lgpl_2_1_plus-5b207c2e-c8de-cf22-f50f-7f09e337559a"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: GNU LESSER GENERAL PUBLIC LICENSE\n  url: http://www.gnu.org/licenses/lgpl.txt\n",
+  "extracted_license_statement": "- license:\n    name: GNU LESSER GENERAL PUBLIC LICENSE\n    url: http://www.gnu.org/licenses/lgpl.txt\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.hibernate/hibernate@3.2.1.ga?classifier=sources"
@@ -67,7 +67,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Hibernate"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/net.sf.ehcache/ehcache@1.2.3",
@@ -75,7 +77,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -86,7 +88,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -97,7 +99,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -108,7 +110,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -119,7 +121,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -130,7 +132,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -141,7 +143,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -152,7 +154,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -163,7 +165,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -174,7 +176,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -185,7 +187,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -196,7 +198,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -207,7 +209,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -218,7 +220,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -229,7 +231,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -240,7 +242,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -251,7 +253,7 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}

@@ -1,0 +1,5 @@
+Copyright (C) 2006  Yuan Mu (Winbond),
+                    Rudolf Marek <r.marek@assembler.cz>
+                    David Hubbard <david.c.hubbard@gmail.com>
+                    Daniel J Blueman <daniel.blueman@gmail.com>
+

@@ -14,8 +14,8 @@ ignorable_emails:
 
 This code is taken from CRYPTOGAMs[1] and is included here using the option
 in the license to distribute the code under the GPL. Therefore this program
-is free software; you can redistribute it and/or modify it under the terms of
-the GNU General Public License version 2 as published by the Free Software
+is free software; you can redistribute it and/or modify it {{under the terms of
+the GNU General Public License version 2}} as published by the Free Software
 Foundation.
 
 [1] https://www.openssl.org/~appro/cryptogams/
@@ -39,8 +39,8 @@ are met:
         prior written permission.
 
 ALTERNATIVELY, provided that this notice is retained in full, this
-product may be distributed under the terms of the GNU General Public
-License (GPL), in which case the provisions of the GPL apply INSTEAD OF
+product may be distributed under the terms of the {{GNU General Public
+License (GPL}}), in which case the provisions of the GPL apply INSTEAD OF
 those given above.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS

@@ -1,6 +1,8 @@
 ---
 key: nunit-v2
 is_deprecated: yes
+replaced_by:
+    - zlib-acknowledgement
 short_name: NUnit v2 License
 name: NUnit v2 License
 category: Permissive

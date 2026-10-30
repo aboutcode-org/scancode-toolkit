@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-DIST_LICENSE = 'Apache-2.0
+DIST_{{LICENSE = 'Apache-2.0}}

@@ -1,8 +1,8 @@
 ---
 license_expression: gpl-2.0 WITH linux-syscall-exception-gpl OR mit
 is_license_reference: yes
-is_continuous: yes
+is_required_phrase: yes
 relevance: 100
 ---
 
-{{GPL-2.0 WITH Linux-syscall-note) OR MIT }}
+ GPL-2.0 WITH Linux-syscall-note) OR MIT

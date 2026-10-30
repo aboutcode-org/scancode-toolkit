@@ -1,0 +1,28 @@
+---
+key: erlang-otp-linking-exception
+short_name: Erlang/OTP Linking Exception
+name: Erlang/OTP Linking Exception
+category: Copyleft Limited
+owner: Erlang
+is_exception: yes
+spdx_license_key: erlang-otp-linking-exception
+other_urls:
+    - https://www.gnu.org/licenses/gpl-faq.en.html#GPLIncompatibleLibs
+    - https://erlang.org/pipermail/erlang-questions/2012-May/066355.html
+    - https://gitea.osmocom.org/erlang/osmo_ss7/src/commit/2286c1b8738d715950026650bf53f19a69d6ed0e/src/ss7_links.erl#L20
+ignorable_urls:
+    - https://www.erlang.org/
+    - https://www.erlang.org/EPLICENSE
+---
+
+If you modify this Program, or any covered work, by linking or
+combining it with runtime libraries of Erlang/OTP as released by
+Ericsson on https://www.erlang.org (or a modified version of these
+libraries), containing parts covered by the terms of the Erlang Public
+License (https://www.erlang.org/EPLICENSE), the licensors of this
+Program grant you additional permission to convey the resulting work
+without the need to license the runtime libraries of Erlang/OTP under
+the GNU Affero General Public License. Corresponding Source for a
+non-source form of such a combination shall include the source code
+for the parts of the runtime libraries of Erlang/OTP used as well as
+that of the covered work.

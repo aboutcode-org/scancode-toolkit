@@ -1,7 +1,9 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_notice: yes
+is_deprecated: yes
+replaced_by:
+    - socketxx-2003
 ---
 
 // Permission is granted to use at your own risk and distribute this software

@@ -1,0 +1,26 @@
+# cmd: conda build . -c auto-mech -c conda-forge
+package:
+    name: pippy
+    version: "0.1.0"
+
+source:
+    path: .
+
+requirements:
+    host:
+        - conda-forge::python=3.7
+    run:
+        - auto-mech::autoio-base
+        # - conda-forge::python=3.9
+        # - conda-forge::numpy=1.21.2
+        # - conda-forge::scipy=1.7.1
+        - conda-forge::python=3.7
+        - conda-forge::numpy=1.15.4
+        - conda-forge::scipy=1.5.0
+        - conda-forge::pyyaml
+        - conda-forge::mako
+        - conda-forge::pytest
+        - conda-forge::pytest-cov
+        - conda-forge::future
+        - conda-forge::flake8
+        - conda-forge::pylint

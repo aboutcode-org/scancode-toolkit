@@ -1,6 +1,8 @@
 ---
 key: ms-limited-public
 is_deprecated: yes
+replaced_by:
+    - ms-lpl
 short_name: MS Limited Public License
 name: Microsoft Limited Public License
 category: Permissive

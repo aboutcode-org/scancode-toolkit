@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-GNU-GPL-3.0-or-later
+GNU-{{GPL-3.0-or-later}}

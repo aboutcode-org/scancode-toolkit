@@ -5,7 +5,7 @@ is_license_notice: yes
 
 Copyright and license
 
- licensed under the terms of the GNU General Public License
+ licensed under the terms of the {{GNU General Public License}}
 (GPL), version 3 or later.
 
 While some individual source code files are licensed under the GPLv2+, and

@@ -1,0 +1,11 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - LICENSE.WEBKIT
+notes: See https://github.com/pulseaudio/pulseaudio/blob/84f5b742e39ba3e375bac9144e0243b7331f4019/src/pulsecore/filter/LICENSE.WEBKIT#L2
+---
+
+Use of this source code is {{governed by a BSD-style license that can be
+found in the LICENSE.WEBKIT}} file.

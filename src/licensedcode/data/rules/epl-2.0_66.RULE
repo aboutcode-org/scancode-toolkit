@@ -6,6 +6,6 @@ ignorable_urls:
     - http://www.eclipse.org/legal/epl-2.0
 ---
 
-<license>
-<name> EPL 2.0 </name>
+{{<license>
+<name> EPL 2.0}} </name>
 <url> (http://www.eclipse.org/legal/epl-2.0)</url>

@@ -1,6 +1,8 @@
 ---
 key: libcap
 is_deprecated: yes
+replaced_by:
+    - bsd-new OR gpl-2.0-plus
 short_name: libcap License
 name: libcap License
 category: Permissive

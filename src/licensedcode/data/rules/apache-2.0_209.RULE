@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-License: The Apache Software License, Version 2.0  (file://${basedir}/LICENSE
+License: {{The Apache Software License, Version 2.0}}  (file://${basedir}/LICENSE

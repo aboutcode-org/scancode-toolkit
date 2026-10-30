@@ -5,7 +5,9 @@ name: Inno Setup License
 category: Permissive
 owner: jrsoftware.org
 homepage_url: http://www.jrsoftware.org/files/is/license.txt
-spdx_license_key: LicenseRef-scancode-inno-setup
+spdx_license_key: InnoSetup
+other_spdx_license_keys:
+    - LicenseRef-scancode-inno-setup
 text_urls:
     - http://www.jrsoftware.org/files/is/license.txt
 ignorable_copyrights:

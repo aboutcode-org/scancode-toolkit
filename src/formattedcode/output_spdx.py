@@ -74,8 +74,11 @@ class SpdxTvOutput(OutputPlugin):
         PluggableCommandLineOption(('--spdx-tv',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
+            default=None,
             help='Write scan output as SPDX Tag/Value to FILE.',
-            help_group=OUTPUT_GROUP)
+            help_group=OUTPUT_GROUP,
+            sort_order=70,
+        )
     ]
 
     def is_enabled(self, spdx_tv, **kwargs):
@@ -99,8 +102,11 @@ class SpdxRdfOutput(OutputPlugin):
         PluggableCommandLineOption(('--spdx-rdf',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
+            default=None,
             help='Write scan output as SPDX RDF to FILE.',
-            help_group=OUTPUT_GROUP)
+            help_group=OUTPUT_GROUP,
+            sort_order=70,
+        )
     ]
 
     def is_enabled(self, spdx_rdf, **kwargs):

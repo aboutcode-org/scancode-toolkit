@@ -1,0 +1,2 @@
+*  Copyright (C) 1997-2002 Russell king
+

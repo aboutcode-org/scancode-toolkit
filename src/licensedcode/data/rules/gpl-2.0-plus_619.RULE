@@ -6,4 +6,4 @@ referenced_filenames:
     - ./LICENSE.md
 ---
 
-licensed under [GNU General Public License v2 (or later)](./LICENSE.md).
+licensed under [{{GNU General Public License}} v2 (or later)](./LICENSE.md).

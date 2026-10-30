@@ -1,0 +1,10 @@
+{
+  "NAME": "Endless",
+  "VERSION": "3.2.2",
+  "ID": "endless",
+  "ID_LIKE": "ubuntu debian",
+  "PRETTY_NAME": "Endless 3.2.2",
+  "VERSION_ID": "3.2.2",
+  "HOME_URL": "http://www.endlessm.com/",
+  "BUILD_ID": "170714-005624"
+}

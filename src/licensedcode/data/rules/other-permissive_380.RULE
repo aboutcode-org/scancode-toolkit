@@ -1,6 +1,9 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
+is_deprecated: yes
+replaced_by:
+    - other-permissive
 ---
 
 In lieu of a license:

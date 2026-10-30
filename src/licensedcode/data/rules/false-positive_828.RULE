@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: license in a TOC, in pkg:npm/common-tags
+---
+- [License](#license)
+- [Other ES2015 Template Tag Modules]

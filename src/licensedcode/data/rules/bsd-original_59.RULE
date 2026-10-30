@@ -1,7 +1,10 @@
 ---
 license_expression: bsd-original
 is_license_text: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - bsd-original
 ---
 
 Redistribution and use in source and binary forms, with or without

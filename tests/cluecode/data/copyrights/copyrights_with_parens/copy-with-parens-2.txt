@@ -1,0 +1,1 @@
+Copyright NVARCHAR(200) NULL, -- 版權所有

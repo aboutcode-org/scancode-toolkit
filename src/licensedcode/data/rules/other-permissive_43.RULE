@@ -6,6 +6,8 @@ notes: |
     seen in old Sun code
     Added in SPDX license list 3.23
     Replaced by license: sun-ppp
+replaced_by:
+    - sun-ppp
 ---
 
 Non-exclusive rights to redistribute, modify, translate, and use

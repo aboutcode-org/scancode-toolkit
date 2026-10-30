@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2011-2012 The OpenTSDB Authors
+holders:
+  - The OpenTSDB Authors

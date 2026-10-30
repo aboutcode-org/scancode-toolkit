@@ -1,0 +1,17 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1985-1995 Ian F. Darwin
+  - (c) 1994-2008 Christos Zoulas <christos@zoulas.com>
+  - Copyright (c) 1996 Ignatios Souvatzis
+  - Copyright (c) 2007-2008 Daniel Baumann <daniel@debian.org>
+holders:
+  - Ian F. Darwin
+  - Christos Zoulas
+  - Ignatios Souvatzis
+  - Daniel Baumann
+authors:
+  - Christos Zoulas <christos@zoulas.com>
+  - Ignatios Souvatzis for the NetBSD project

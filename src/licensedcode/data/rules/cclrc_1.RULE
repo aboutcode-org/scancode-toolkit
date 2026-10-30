@@ -1,0 +1,10 @@
+---
+license_expression: cclrc
+is_license_notice: yes
+referenced_filenames:
+    - External_License/CCLRC_CDAT_License.txt
+---
+
+*    This software may be distributed under the terms of the
+ *    {{CCLRC License}} for CCLRC Software
+ *    <CDATDIR>/External_License/CCLRC_CDAT_License.txt

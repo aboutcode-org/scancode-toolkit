@@ -6,4 +6,4 @@ ignorable_urls:
     - https://github.com/amplab/tachyon/blob/master/LICENSE
 ---
 
-License: Apache License  (https://github.com/amplab/tachyon/blob/master/LICENSE
+License: {{Apache License}}  (https://github.com/amplab/tachyon/blob/master/LICENSE

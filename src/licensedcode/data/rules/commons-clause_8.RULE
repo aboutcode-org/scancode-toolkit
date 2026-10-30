@@ -2,6 +2,7 @@
 license_expression: commons-clause
 is_license_reference: yes
 relevance: 100
+is_required_phrase: yes
 ---
 
 “Commons Clause” License Condition v1.0

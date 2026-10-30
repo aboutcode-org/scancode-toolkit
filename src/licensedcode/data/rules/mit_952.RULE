@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.rst
 ---
 
-Licensed under the MIT License (see file LICENSE.rst for details).
+{{Licensed under the MIT}} License (see file LICENSE.rst for details).

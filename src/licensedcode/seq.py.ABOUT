@@ -1,5 +1,5 @@
 about_resource: seq.py
-version: 3.5
+
 download_url: https://hg.python.org/cpython/raw-file/0a69b1e8b7fe/Lib/difflib.py
 
 name: Python difflib

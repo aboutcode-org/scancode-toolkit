@@ -1,0 +1,17 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1989-1994 The Regents of the University of California
+  - Copyright (c) 1997 Christos Zoulas
+  - Copyright (c) 1997-2005 Herbert Xu <herbert@gondor.apana.org.au>
+  - Copyright (c) 1992 Free Software Foundation, Inc.
+holders:
+  - The Regents of the University of California
+  - Christos Zoulas
+  - Herbert Xu
+  - Free Software Foundation, Inc.
+authors:
+  - Mark W. Eichin eichin@kitten.gen.ma.us
+  - Gerrit Pape <pape@smarden.org>

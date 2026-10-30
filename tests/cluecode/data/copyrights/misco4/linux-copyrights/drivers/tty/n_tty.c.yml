@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Theodore Ts'o, Copyright 1994
+  - Linus Torvalds, Copyright 1991, 1992, 1993
+  - Copyright 1994. Reduced
+holders:
+  - Theodore Ts'o
+  - Linus Torvalds
+  - Reduced
+authors:
+  - Andrew J. Kroll <ag784@freenet.buffalo.edu>

@@ -1,0 +1,7 @@
+---
+license_expression: apache-2.0 OR bsd-simplified OR bsd-new OR mit
+is_license_reference: yes
+relevance: 100
+---
+
+@default {{"(Apache-2.0 OR BSD-2-Clause OR BSD-3-Clause OR MIT)"}}

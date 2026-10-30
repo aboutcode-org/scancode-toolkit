@@ -95,7 +95,7 @@ if _SCANCODE_DEV_MODE:
     from subprocess import CalledProcessError
 
     # this may fail with exceptions
-    cmd = 'git', 'describe', '--tags',
+    cmd = 'git', 'describe', '--tags', '--match="v*"'
     try:
         output = check_output(cmd, stderr=STDOUT)
         __version__ = output.decode('utf-8').strip()
@@ -131,20 +131,23 @@ if not __version__:
 
 # 4. hardcoded This is the default, fallback version in case package is not installed or we
 # do not have a proper version otherwise.
+# See https://scancode-toolkit.readthedocs.io/en/latest/misc/versioning.html for
+# more information on versioning
 if not __version__:
-    __version__ = '32.2.1'
+    __version__ = '33.0.0rc1'
 
 #######################
 # used to warn user when the version is out of date
 # this is (year, month, day)
-__release_date__ = datetime.datetime(2024, 7, 2)
+__release_date__ = datetime.datetime(2026, 1, 15)
 
-# See https://github.com/nexB/scancode-toolkit/issues/2653 for more information
-# on the data format version
-__output_format_version__ = '3.2.0'
+# See https://scancode-toolkit.readthedocs.io/en/latest/misc/versioning.html
+# for more information on the data format version
+__output_format_version__ = '4.1.0'
 
-#
-spdx_license_list_version = '3.24'
+# see https://github.com/spdx/tools-python/issues/820
+# this is actually `3.27.0`
+spdx_license_list_version = '3.28'
 
 ################################################################################
 # USAGE MODE-, INSTALLATION- and IMPORT- and RUN-SPECIFIC DIRECTORIES
@@ -182,8 +185,19 @@ std_license_cache_dir = join(scancode_src_dir, 'licensedcode', 'data', 'cache')
 __env_license_cache_dir = os.getenv('SCANCODE_LICENSE_INDEX_CACHE')
 licensedcode_cache_dir = (__env_license_cache_dir or std_license_cache_dir)
 
+
+std_package_cache_dir = join(scancode_src_dir, 'packagedcode', 'data', 'cache')
+__env_package_cache_dir = os.getenv('SCANCODE_PACKAGE_INDEX_CACHE')
+packagedcode_cache_dir = (__env_package_cache_dir or std_package_cache_dir)
+
+std_results_cache_dir = join(scancode_cache_dir, 'results')
+__env_results_cache_dir = os.getenv('SCANCODE_RESULTS_CACHE')
+results_cache_dir = (__env_results_cache_dir or std_results_cache_dir)
+
 _create_dir(licensedcode_cache_dir)
+_create_dir(packagedcode_cache_dir)
 _create_dir(scancode_cache_dir)
+_create_dir(results_cache_dir)
 
 # - scancode_temp_dir: for short-lived temporary files which are import- or run-
 # specific that may live for the duration of a function call or for the duration
@@ -210,4 +224,4 @@ _prefix = 'scancode-tk-' + __version__ + '-'
 scancode_temp_dir = tempfile.mkdtemp(prefix=_prefix, dir=__scancode_temp_base_dir)
 
 # Used for tests to regenerate fixtures with regen=True
-REGEN_TEST_FIXTURES = os.getenv('SCANCODE_REGEN_TEST_FIXTURES', False)
+REGEN_TEST_FIXTURES = SCANCODE_REGEN_TEST_FIXTURES = os.getenv('SCANCODE_REGEN_TEST_FIXTURES', False)

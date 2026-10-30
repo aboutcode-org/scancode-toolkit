@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-is licensed under MIT.
+is {{licensed under MIT}}.

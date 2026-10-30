@@ -19,7 +19,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-stmicro-linux-firmware
     matches:
       - license_expression: stmicroelectronics-linux-firmware
-        spdx_license_expression: LicenseRef-scancode-stmicro-linux-firmware
+        license_expression_spdx: LicenseRef-scancode-stmicro-linux-firmware
         from_file:
         start_line: 12
         end_line: 46
@@ -73,7 +73,7 @@ license_detections:
       GPL-2.0-or-later WITH eCos-exception-2.0 AND MIT
     matches:
       - license_expression: clear-bsd
-        spdx_license_expression: BSD-3-Clause-Clear
+        license_expression_spdx: BSD-3-Clause-Clear
         from_file:
         start_line: 57
         end_line: 85
@@ -115,7 +115,7 @@ license_detections:
           OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
           IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 87
         end_line: 97
@@ -139,7 +139,7 @@ license_detections:
           ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
           OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
       - license_expression: bsd-no-mod
-        spdx_license_expression: LicenseRef-scancode-bsd-no-mod
+        license_expression_spdx: LicenseRef-scancode-bsd-no-mod
         from_file:
         start_line: 99
         end_line: 128
@@ -182,7 +182,7 @@ license_detections:
           OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGES.
       - license_expression: gpl-2.0-plus WITH ecos-exception-2.0
-        spdx_license_expression: GPL-2.0-or-later WITH eCos-exception-2.0
+        license_expression_spdx: GPL-2.0-or-later WITH eCos-exception-2.0
         from_file:
         start_line: 130
         end_line: 142
@@ -208,7 +208,7 @@ license_detections:
           This exception does not invalidate any other reasons why a work based on
           this file might be covered by the GNU General Public License.
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 144
         end_line: 161
@@ -243,7 +243,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-qca-linux-firmware
     matches:
       - license_expression: qca-linux-firmware
-        spdx_license_expression: LicenseRef-scancode-qca-linux-firmware
+        license_expression_spdx: LicenseRef-scancode-qca-linux-firmware
         from_file:
         start_line: 205
         end_line: 248

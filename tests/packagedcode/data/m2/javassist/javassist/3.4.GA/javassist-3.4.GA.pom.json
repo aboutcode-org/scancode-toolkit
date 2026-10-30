@@ -14,10 +14,12 @@
   "organization_url": null,
   "licenses": [
     {
-      "name": "lgpl",
-      "url": "http://repository.jboss.com/licenses/lgpl.txt",
-      "comments": null,
-      "distribution": null
+      "license": {
+        "name": "lgpl",
+        "url": "http://repository.jboss.com/licenses/lgpl.txt",
+        "comments": null,
+        "distribution": null
+      }
     }
   ],
   "developers": [],

@@ -4,6 +4,6 @@ is_license_notice: yes
 notes: GPL simple declaration
 ---
 
-* This file is subject to the terms and conditions of the GNU General Public
- * License.  See the file README.legal in the main directory of this archive
+* This file is subject to the terms and conditions of the {{GNU General Public
+ * License}}.  See the file README.legal in the main directory of this archive
  * for more details.

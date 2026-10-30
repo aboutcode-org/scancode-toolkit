@@ -455,7 +455,7 @@
                   }
                 ]
               }, 
-              "is_resolved": {
+              "is_pinned": {
                 "oneOf": [
                   {
                     "type": "boolean", 

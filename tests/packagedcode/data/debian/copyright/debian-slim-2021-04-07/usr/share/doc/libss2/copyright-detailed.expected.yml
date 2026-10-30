@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: NTP
     matches:
       - license_expression: mit-old-style-no-advert
-        spdx_license_expression: NTP
+        license_expression_spdx: NTP
         from_file:
         start_line: 15
         end_line: 25

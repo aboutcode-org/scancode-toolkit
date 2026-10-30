@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: Not a license
+---
+
+support ts-jest with an [open source license

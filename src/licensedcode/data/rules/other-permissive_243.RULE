@@ -4,6 +4,8 @@ is_license_text: yes
 is_deprecated: yes
 relevance: 100
 notes: Seen in mailprio, this is now mailprio_2.RULE
+replaced_by:
+    - mailprio
 ---
 
 Rights are hereby granted to download, use, modify, sell, copy, and

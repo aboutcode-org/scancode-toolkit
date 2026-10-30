@@ -2,105 +2,6 @@
   "packages": [
     {
       "type": "maven",
-      "namespace": "org.apache.htrace",
-      "name": "htrace-core",
-      "version": "4.0.0-incubating",
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": null,
-      "description": null,
-      "release_date": null,
-      "parties": [
-        {
-          "type": null,
-          "role": "vendor",
-          "name": "The Apache Software Foundation",
-          "email": null,
-          "url": null
-        }
-      ],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": null,
-      "holder": null,
-      "declared_license_expression": "apache-2.0",
-      "declared_license_expression_spdx": "Apache-2.0",
-      "license_detections": [
-        {
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "matches": [
-            {
-              "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
-              "from_file": "htrace-core-4.0.0-incubating/META-INF/LICENSE",
-              "start_line": 2,
-              "end_line": 4,
-              "matcher": "1-hash",
-              "score": 100.0,
-              "matched_length": 12,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "apache-2.0_791.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE"
-            }
-          ],
-          "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e"
-        },
-        {
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "matches": [
-            {
-              "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
-              "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
-              "start_line": 5,
-              "end_line": 6,
-              "matcher": "2-aho",
-              "score": 95.0,
-              "matched_length": 14,
-              "match_coverage": 100.0,
-              "rule_relevance": 95,
-              "rule_identifier": "apache-2.0_product_includes_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
-            }
-          ],
-          "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e"
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": null,
-      "notice_text": null,
-      "source_packages": [],
-      "is_private": false,
-      "is_virtual": false,
-      "extra_data": {},
-      "repository_homepage_url": null,
-      "repository_download_url": null,
-      "api_data_url": null,
-      "package_uid": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "htrace-core-4.0.0-incubating/META-INF/MANIFEST.MF"
-      ],
-      "datasource_ids": [
-        "java_jar_manifest"
-      ],
-      "purl": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating"
-    },
-    {
-      "type": "maven",
       "namespace": "com.fasterxml.jackson.core",
       "name": "jackson-annotations",
       "version": "2.4.0",
@@ -136,7 +37,9 @@
       ],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "Jackson-annotations"
+      },
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.pom",
@@ -186,7 +89,9 @@
       ],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "Jackson-core"
+      },
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/jackson-core-2.4.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/jackson-core-2.4.0.pom",
@@ -236,7 +141,9 @@
       ],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "jackson-databind"
+      },
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/jackson-databind-2.4.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/jackson-databind-2.4.0.pom",
@@ -282,7 +189,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
               "start_line": 2,
               "end_line": 15,
@@ -308,7 +215,9 @@
       ],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "Commons Logging"
+      },
       "repository_homepage_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/",
       "repository_download_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar",
       "api_data_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom",
@@ -331,7 +240,15 @@
       "primary_language": "Java",
       "description": "htrace-core",
       "release_date": null,
-      "parties": [],
+      "parties": [
+        {
+          "type": null,
+          "role": "vendor",
+          "name": "The Apache Software Foundation",
+          "email": null,
+          "url": null
+        }
+      ],
       "keywords": [],
       "homepage_url": "http://incubator.apache.org/projects/htrace.html",
       "download_url": null,
@@ -354,7 +271,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
               "start_line": 2,
               "end_line": 11,
@@ -368,6 +285,48 @@
             }
           ],
           "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "htrace-core-4.0.0-incubating/META-INF/LICENSE",
+              "start_line": 2,
+              "end_line": 4,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_791.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
+              "start_line": 5,
+              "end_line": 6,
+              "matcher": "2-aho",
+              "score": 95.0,
+              "matched_length": 14,
+              "match_coverage": 100.0,
+              "rule_relevance": 95,
+              "rule_identifier": "apache-2.0_product_includes_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e"
         }
       ],
       "other_license_expression": null,
@@ -380,16 +339,20 @@
       ],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "htrace-core"
+      },
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/htrace/htrace-core/4.0.0-incubating/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/htrace/htrace-core/4.0.0-incubating/htrace-core-4.0.0-incubating.jar",
       "api_data_url": "https://repo1.maven.org/maven2/org/apache/htrace/htrace-core/4.0.0-incubating/htrace-core-4.0.0-incubating.pom",
       "package_uid": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
-        "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml"
+        "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
+        "htrace-core-4.0.0-incubating/META-INF/MANIFEST.MF"
       ],
       "datasource_ids": [
-        "maven_pom"
+        "maven_pom",
+        "java_jar_manifest"
       ],
       "purl": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating"
     }
@@ -401,7 +364,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -416,7 +379,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -431,7 +394,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -446,7 +409,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -461,7 +424,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -476,7 +439,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -491,7 +454,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -506,7 +469,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -521,7 +484,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -536,7 +499,7 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -551,7 +514,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -566,7 +529,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -581,7 +544,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -596,7 +559,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -608,7 +571,7 @@
   ],
   "license_detections": [
     {
-      "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de",
+      "identifier": "apache_2_0-377d4d9a-1f89-3c3b-5fae-46bd8ceb8ff5",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 4,
@@ -626,6 +589,20 @@
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_2.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
+          "start_line": 5,
+          "end_line": 6,
+          "matcher": "2-aho",
+          "score": 95.0,
+          "matched_length": 14,
+          "match_coverage": 100.0,
+          "rule_relevance": 95,
+          "rule_identifier": "apache-2.0_product_includes_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
         }
       ]
     },
@@ -743,7 +720,9 @@
       "path": "htrace-core-4.0.0-incubating",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -781,7 +760,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
               "start_line": 11,
               "end_line": 11,
@@ -795,7 +774,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
               "start_line": 13,
               "end_line": 13,
@@ -809,7 +788,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
               "start_line": 15,
               "end_line": 15,
@@ -823,7 +802,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
               "start_line": 19,
               "end_line": 19,
@@ -859,7 +838,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/LICENSE",
               "start_line": 2,
               "end_line": 4,
@@ -921,7 +900,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "htrace-core-4.0.0-incubating/META-INF/LICENSE",
                   "start_line": 2,
                   "end_line": 4,
@@ -942,7 +921,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
                   "start_line": 5,
                   "end_line": 6,
@@ -967,7 +946,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "htrace-core"
+          },
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,
@@ -1002,7 +983,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
               "start_line": 5,
               "end_line": 6,
@@ -1106,7 +1087,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "Jackson-annotations"
+          },
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/",
           "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.jar",
@@ -1182,7 +1165,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "Jackson-core"
+          },
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/",
           "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/jackson-core-2.4.0.jar",
@@ -1258,7 +1243,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "jackson-databind"
+          },
           "dependencies": [
             {
               "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0",
@@ -1266,7 +1253,7 @@
               "scope": "compile",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1277,7 +1264,7 @@
               "scope": "compile",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1288,7 +1275,7 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1299,7 +1286,7 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1310,7 +1297,7 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1399,7 +1386,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
                   "start_line": 2,
                   "end_line": 15,
@@ -1410,9 +1397,26 @@
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_2.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+                },
+                {
+                  "license_expression": "apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
+                  "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
+                  "start_line": 5,
+                  "end_line": 6,
+                  "matcher": "2-aho",
+                  "score": 95.0,
+                  "matched_length": 14,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 95,
+                  "rule_identifier": "apache-2.0_product_includes_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
                 }
               ],
-              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+              "identifier": "apache_2_0-377d4d9a-1f89-3c3b-5fae-46bd8ceb8ff5",
+              "detection_log": [
+                "unknown-reference-to-local-file"
+              ]
             }
           ],
           "other_license_expression": null,
@@ -1426,7 +1430,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "Commons Logging"
+          },
           "dependencies": [
             {
               "purl": "pkg:maven/junit/junit@3.8.1",
@@ -1434,7 +1440,7 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1445,7 +1451,7 @@
               "scope": "compile",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1456,7 +1462,7 @@
               "scope": "compile",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1467,7 +1473,7 @@
               "scope": "compile",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1478,7 +1484,7 @@
               "scope": "provided",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1504,7 +1510,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
               "start_line": 2,
               "end_line": 15,
@@ -1515,9 +1521,26 @@
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_2.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
+              "start_line": 5,
+              "end_line": 6,
+              "matcher": "2-aho",
+              "score": 95.0,
+              "matched_length": 14,
+              "match_coverage": 100.0,
+              "rule_relevance": 95,
+              "rule_identifier": "apache-2.0_product_includes_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
             }
           ],
-          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+          "identifier": "apache_2_0-377d4d9a-1f89-3c3b-5fae-46bd8ceb8ff5",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
         }
       ],
       "license_clues": [],
@@ -1589,7 +1612,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
                   "start_line": 2,
                   "end_line": 11,
@@ -1600,9 +1623,26 @@
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_2.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+                },
+                {
+                  "license_expression": "apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
+                  "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
+                  "start_line": 5,
+                  "end_line": 6,
+                  "matcher": "2-aho",
+                  "score": 95.0,
+                  "matched_length": 14,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 95,
+                  "rule_identifier": "apache-2.0_product_includes_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
                 }
               ],
-              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+              "identifier": "apache_2_0-377d4d9a-1f89-3c3b-5fae-46bd8ceb8ff5",
+              "detection_log": [
+                "unknown-reference-to-local-file"
+              ]
             }
           ],
           "other_license_expression": null,
@@ -1616,7 +1656,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "htrace-core"
+          },
           "dependencies": [
             {
               "purl": "pkg:maven/junit/junit",
@@ -1624,7 +1666,7 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1635,7 +1677,7 @@
               "scope": "compile",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1646,7 +1688,7 @@
               "scope": "compile",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1657,7 +1699,7 @@
               "scope": "compile",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1671,7 +1713,6 @@
         }
       ],
       "for_packages": [
-        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "detected_license_expression": "apache-2.0",
@@ -1683,7 +1724,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
               "start_line": 2,
               "end_line": 11,
@@ -1694,9 +1735,26 @@
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_2.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
+              "start_line": 5,
+              "end_line": 6,
+              "matcher": "2-aho",
+              "score": 95.0,
+              "matched_length": 14,
+              "match_coverage": 100.0,
+              "rule_relevance": 95,
+              "rule_identifier": "apache-2.0_product_includes_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
             }
           ],
-          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+          "identifier": "apache_2_0-377d4d9a-1f89-3c3b-5fae-46bd8ceb8ff5",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
         }
       ],
       "license_clues": [],
@@ -1707,7 +1765,9 @@
       "path": "htrace-core-4.0.0-incubating/org",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1719,7 +1779,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1731,7 +1793,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1743,7 +1807,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/commons",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1755,7 +1821,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/commons/logging",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1767,7 +1835,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/commons/logging/LogSource.class",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1779,7 +1849,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/core",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1791,7 +1863,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/core/TraceScope.class",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1803,7 +1877,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1815,7 +1891,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1827,7 +1905,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/annotation",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1839,7 +1919,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/annotation/SimpleObjectIdResolver.class",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1851,7 +1933,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/core",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1863,7 +1947,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/core/JsonParser.class",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1875,7 +1961,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/databind",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1887,7 +1975,9 @@
       "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/databind/SerializationFeature.class",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],

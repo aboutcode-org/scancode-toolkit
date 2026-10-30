@@ -1,0 +1,8 @@
+---
+is_false_positive: yes
+notes: comments about licenses, not a license proper
+---
+
+Please provide all necessary license information for which the license require that this information is provided to the user. This especially
+includes the original license text (this is particularly relevant for license
+texts that include special information on copyright holders etc., like the BSD 3-clause license text) all relevant copyright notices that correlate with the respective license (including the names of the authors as well as the all additional information that needs to be provided according to the license (e.g. the text of the NOTICE file for Software under the Apache 2.0 License should such a file exist in the software)

@@ -1,0 +1,8 @@
+---
+license_expression: lgpl-2.1
+is_license_intro: yes
+is_continuous: yes
+notes: this is v2.1 as used in https://raw.githubusercontent.com/intel/ad-rss-lib/d8c736b68e7be7e826944a954f4571a0f2023608/LICENSE
+---
+
+{{This library is free software; you can redistribute it and/or modify it under the terms of the GNU Library General Public License as published by the Free Software Foundation – terms below.}}

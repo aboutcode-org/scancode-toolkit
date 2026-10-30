@@ -1,0 +1,38 @@
+Metadata-Version: 2.2
+Name: ForeTiS
+Version: 0.0.7
+Summary: state-of-the-art and easy-to-use time series forecasting
+Home-page: https://github.com/grimmlab/ForeTiS
+Author: Josef Eiglsperger, Florian Haselbeck; Dominik G. Grimm
+Author-email: josef.eiglsperger@tum.de
+License: MIT
+Project-URL: Documentation, https://ForeTiS.readthedocs.io/
+Project-URL: Source, https://github.com/grimmlab/ForeTiS
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=1.11.0
+Requires-Dist: xgboost>=1.5.2
+Requires-Dist: optuna>=2.10.0
+Requires-Dist: sqlalchemy==1.4.46
+Requires-Dist: joblib>=1.1.0
+Requires-Dist: numpy>=1.22.2
+Requires-Dist: pandas>=1.4.1
+Requires-Dist: scikit-learn>=1.0.2
+Requires-Dist: tensorflow>=2.8.0
+Requires-Dist: tensorflow-probability>=0.18
+Requires-Dist: statsmodels>=0.13.2
+Requires-Dist: scipy>=1.8.1
+Requires-Dist: pmdarima>=2.0.1
+Requires-Dist: gpflow>=2.5.2
+Requires-Dist: matplotlib>=3.3.0
+Requires-Dist: changefinder>=0.3
+Requires-Dist: bayesian_torch
+Requires-Dist: blitz-bayesian-pytorch
+Requires-Dist: tables>=3.7.0

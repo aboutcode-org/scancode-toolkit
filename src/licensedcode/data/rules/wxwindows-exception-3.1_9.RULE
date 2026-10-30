@@ -1,7 +1,10 @@
 ---
 license_expression: wxwindows-exception-3.1
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - wxwindows-exception-3.1
 ---
 
 licenses.nuget.org/WxWindows-exception-3.1

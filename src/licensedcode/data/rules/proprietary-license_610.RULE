@@ -4,7 +4,7 @@ is_license_text: yes
 notes: Based on the MIT with material and problematic changes. https://github.com/IcodeAditya/Snake-Game-Using-Python/blob/6f3b065723043f197fdc619d94b5845168799ee4/LICENSE#L5
 ---
 
-Permission is hereby not granted to any person obtaining a copy
+{{Permission is hereby not granted}} to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell

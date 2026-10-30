@@ -1,8 +1,11 @@
 ---
 license_expression: xfree86-1.1
 is_license_text: yes
+is_deprecated: yes
 minimum_coverage: 60
 notes: uses the english sublicence instead of the us subclicense
+replaced_by:
+    - xfree86-1.1
 ignorable_authors:
     - The XFree86 Project, Inc (http://www.xfree86.org/) and its contributors
 ignorable_urls:

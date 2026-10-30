@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE
 ---
 
-The application is made available under the [MIT License](LICENSE).
+The application is made available {{under the [MIT License}}](LICENSE).

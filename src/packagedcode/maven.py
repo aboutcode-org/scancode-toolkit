@@ -55,6 +55,7 @@ Third case: a maven repo layout: the jars are side-by-side with a .pom and
 there is no pom.properties check if there are side-by-side artifacts
 """
 
+
 class MavenBasePackageHandler(models.DatafileHandler):
 
     @classmethod
@@ -68,10 +69,13 @@ class MavenBasePackageHandler(models.DatafileHandler):
             yield from models.DatafileHandler.assemble(package_data, resource, codebase)
             return
 
+        if not package_data.purl:
+            return
+
         datafile_path = resource.path
 
         # This order is important as we want pom.xml to be used for package
-        # creation and then to update from MANIFEST later 
+        # creation and then to update from MANIFEST later
         manifest_path_pattern = '*/META-INF/MANIFEST.MF'
         nested_pom_xml_path_pattern = '*/META-INF/maven/**/pom.xml'
         datafile_name_patterns = (nested_pom_xml_path_pattern, manifest_path_pattern)
@@ -98,12 +102,11 @@ class MavenBasePackageHandler(models.DatafileHandler):
             if fnmatchcase(r.path, nested_pom_xml_path_pattern):
                 pom_xmls.append(r)
 
-        if len(pom_xmls) > 1:
+        if len(pom_xmls) > 1 and not manifests:
             yield from MavenPomXmlHandlerMixin.assemble(package_data, resource, codebase)
             return
 
-        if manifests and pom_xmls:
-            #raise Exception(resource.path, meta_inf_resource, datafile_name_patterns, package_adder)
+        elif manifests and pom_xmls:
             parent_resource = meta_inf_resource.parent(codebase)
             if not parent_resource:
                 parent_resource = meta_inf_resource
@@ -112,15 +115,16 @@ class MavenBasePackageHandler(models.DatafileHandler):
                     directory=meta_inf_resource,
                     codebase=codebase,
                     package_adder=package_adder,
-                    ignore_name_check=True,
+                    relaxed_purl_comparision=True,
                     parent_resource=parent_resource,
                 )
+
         elif manifests and not pom_xmls:
-            yield from JavaJarManifestHandlerMixin.assemble(package_data, resource, codebase)
+            yield from JavaJarManifestHandlerMixin.assemble(package_data, resource, codebase, package_adder)
         elif pom_xmls and not manifests:
-            yield from MavenPomXmlHandlerMixin.assemble(package_data, resource, codebase)
+            yield from MavenPomXmlHandlerMixin.assemble(package_data, resource, codebase, package_adder)
         else:
-            yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
 
 
 class JavaJarManifestHandler(MavenBasePackageHandler):
@@ -149,7 +153,7 @@ class JavaJarManifestHandlerMixin(models.DatafileHandler):
         # we want to root of the jar, two levels up
         parent = resource.parent(codebase)
         if parent:
-            parent = resource.parent(codebase)
+            parent = parent.parent(codebase)
         if parent:
             models.DatafileHandler.assign_package_to_resources(
                 package,
@@ -272,7 +276,7 @@ class MavenPomXmlHandlerMixin(models.DatafileHandler):
             for child in root.walk(codebase):
                 if 'pom.xml' in child.path:
                     number_poms += 1
-            
+
             if number_poms > 1:
                 root = resource
             else:
@@ -315,7 +319,7 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
             if TRACE:
                 logger.debug(f'MavenPomPropertiesHandler.parse: properties: {properties!r}')
             if properties:
-                yield from cls.parse_pom_properties(properties=properties, package_only=package_only) 
+                yield from cls.parse_pom_properties(properties=properties, package_only=package_only)
 
     @classmethod
     def parse_pom_properties(cls, properties, package_only=False):
@@ -762,13 +766,14 @@ class MavenPom(pom.Pom):
     def _find_licenses(self):
         """Return an iterable of license mappings."""
         for lic in self.pom_data.findall('licenses/license'):
-            yield dict([
-                ('name', self._get_attribute('name', lic)),
-                ('url', self._get_attribute('url', lic)),
-                ('comments', self._get_attribute('comments', lic)),
-                # arcane and seldom used
-                ('distribution', self._get_attribute('distribution', lic)),
-            ])
+            yield {"license": dict([
+                      ('name', self._get_attribute('name', lic)),
+                      ('url', self._get_attribute('url', lic)),
+                      ('comments', self._get_attribute('comments', lic)),
+                      # arcane and seldom used
+                      ('distribution', self._get_attribute('distribution', lic)),
+                ])
+            }
 
     def _find_parties(self, key='developers/developer'):
         """Return an iterable of party mappings for a given xpath."""
@@ -1053,7 +1058,7 @@ def get_dependencies(pom):
             if dversion == 'latest.release':
                 dversion = None
 
-            is_resolved = bool(dversion and not any(c in dversion for c in '$[,]'))
+            is_pinned = bool(dversion and not any(c in dversion for c in '$[,]'))
 
             dqualifiers = {}
             # FIXME: this is missing from the original Pom parser
@@ -1065,7 +1070,7 @@ def get_dependencies(pom):
             # if packaging and packaging != 'jar':
             #     qualifiers['packaging'] = packaging
 
-            if is_resolved:
+            if is_pinned:
                 dpurl = models.PackageURL(
                     type='maven',
                     namespace=dgroup_id,
@@ -1091,7 +1096,7 @@ def get_dependencies(pom):
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=is_resolved,
+                is_pinned=is_pinned,
             )
             dependencies.append(dep_pack)
 
@@ -1250,7 +1255,7 @@ def _parse(
             # complex defeinition in Maven
             qualifiers['type'] = extension
 
-    extracted_license_statement = pom.licenses
+    extracted_license_statement = clean_licenses(pom.licenses) or None
 
     group_id = pom.group_id
     artifact_id = pom.artifact_id
@@ -1288,6 +1293,10 @@ def _parse(
         base_url=base_url,
     ))
 
+    extra_data = {}
+    if pname:
+        extra_data['pname'] = pname
+
     # FIXME: there are still other data to map in a PackageData
     package_data = dict(
         datasource_id=datasource_id,
@@ -1304,66 +1313,139 @@ def _parse(
         dependencies=get_dependencies(pom),
         source_packages=source_packages,
         bug_tracking_url=bug_tracking_url,
+        extra_data=extra_data,
         **urls,
     )
     return MavenPackageData.from_data(package_data, package_only)
+
 
 class MavenPackageData(models.PackageData):
 
     datasource_id = 'maven_pom'
 
+    @classmethod
     def get_license_detections_for_extracted_license_statement(
+        cls,
         extracted_license,
         try_as_expression=True,
         approximate=True,
         expression_symbols=None,
     ):
+        """
+        Return license detections from a Maven POM license data structure.
+        This looks like this in XML, and some attributes are more important than others.
+        Which one exists and whether we can detect a proper license in each also determines which
+        attribute we need to consider.
+        The original XML has this shape:
+        <licenses>
+          <license>
+            <name>Apache-2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments> notes... </comments>
+          </license>
+        </licenses>
+        The data structure we keep has this shape:
+        [{"license":
+            {
+              "name": "Apache-2.0",
+               "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+               "comments": "notes...",
+            }
+        },
+        .... other license]
+        """
+
         from packagedcode.licensing import get_normalized_license_detections
         from packagedcode.licensing import get_license_detections_for_extracted_license_statement
 
-        if not MavenPackageData.check_extracted_license_statement_structure(extracted_license):
+        if not is_standard_maven_license_data_structure(licenses=extracted_license):
+            # use the generic detection
             return get_normalized_license_detections(
                 extracted_license=extracted_license,
                 try_as_expression=try_as_expression,
                 approximate=approximate,
                 expression_symbols=expression_symbols,
             )
-        
-        new_extracted_license = extracted_license.copy()
-        
-        for license_entry in new_extracted_license:
-            license_entry.pop("distribution")
-            if not license_entry.get("name"):
-                license_entry.pop("name")
-            if not license_entry.get("url"):
-                license_entry.pop("url")
-            if not license_entry.get("comments"):
-                license_entry.pop("comments")
+        extracted_license = clean_licenses(extracted_license)
+        extracted_license_statement = saneyaml.dump(extracted_license)
 
-        extracted_license_statement = saneyaml.dump(new_extracted_license)
-
-        return get_license_detections_for_extracted_license_statement(
+        detections = get_license_detections_for_extracted_license_statement(
             extracted_license_statement=extracted_license_statement,
             try_as_expression=try_as_expression,
             approximate=approximate,
             expression_symbols=expression_symbols,
         )
+        # TODO: if we have any unknown license, we need to try harder
+        # We can detect each license item individually and check if the unknown was detected
+        # in the name, URL or comment field.
+        # name, URL, comments
+        # name unknwon: keep that unknown in all cases
+        # URL or comments with unknown, but name not unknown: we want to combine the unknown
+        # matches with the correct name match
+
+        return detections
 
 
-    def check_extracted_license_statement_structure(extracted_license):
+def clean_licenses(licenses):
+    """
+    Return a modified, cleaned ``licenses`` list of POM license data cleaned from unwanted data
+    (some fields, empty entries, etc).
+    Each item in the list has this shape:
+        [
+            {"license": {"name": "Apache-2.0",  "url": "https://www... ", "comments": "..."} },
+            {"license": {other fields} },
+        ]
+    """
+    for licitem in (licenses or []):
+        if not isinstance(licitem, dict):
+            continue
 
-        is_list_of_mappings = False
-        if not isinstance(extracted_license, list):
-            return is_list_of_mappings
-        else:
-            is_list_of_mappings = True
+        license_attributes = licitem.get("license")
+        if not license_attributes or not len(licitem) == 1:
+            continue
 
-        for extracted_license_item in extracted_license:
-            if not isinstance(extracted_license_item, dict):
-                is_list_of_mappings = False
-                break
-        
-        return is_list_of_mappings
+        license_attributes.pop("distribution", None)
+        if not license_attributes.get("name"):
+            license_attributes.pop("name", None)
+        if not license_attributes.get("url"):
+            license_attributes.pop("url", None)
+        if not license_attributes.get("comments"):
+            license_attributes.pop("comments", None)
+
+    return licenses
+
+
+def is_standard_maven_license_data_structure(licenses):
+    """
+    Return True if ``licenses`` has the structure expected from a Maven POM license data. The data
+    is a list of dicts of dicts, each top dict with a single item as {"license" : {mapping of
+    attributes}. We expect the POM license data to be in that shape in most cases, except for legacy
+    non POM 4 data.
+    Each item in the list has this shape:
+        [
+            {"license": {"name": "Apache-2.0",  "url": "https://www... ", "comments": "..."} },
+            {"license": {other fields} },
+        ]
+
+    """
+    if not isinstance(licenses, list):
+        return False
+
+    fields = ("name", "url", "comment",)
+
+    for item in licenses:
+        if not isinstance(item, dict):
+            return False
+        if not len(item) == 1:
+            return False
+        litem = item.get('license') or {}
+        if not isinstance(litem, dict):
+            return False
+        if not any(field in item for field in fields):
+            return False
+
+    return True
 
 
 def build_vcs_and_code_view_urls(scm):

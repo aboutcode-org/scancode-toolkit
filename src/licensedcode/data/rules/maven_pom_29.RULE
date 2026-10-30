@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.adobe.com/devnet/xmp/library/eula-xmp-library-java.html
 ---
 
-License: The BSD License  (http://www.adobe.com/devnet/xmp/library/eula-xmp-library-java.html)
+License: {{The BSD License}}  (http://www.adobe.com/devnet/xmp/library/eula-xmp-library-java.html)

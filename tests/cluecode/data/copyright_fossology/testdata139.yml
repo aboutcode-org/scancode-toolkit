@@ -1,0 +1,30 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2001, 2002, 2003, 2004 Fernando Perez <fperez@colorado.edu>
+  - Copyright (c) 2001 Janko Hauser <jhauser@zscout.de> and Nathaniel Gray <n8gray@caltech.edu>
+  - Copyright (c) 2004 W.J. van der Laan <gnufnork@hetdigitalegat.nl>
+  - Copyright (c) 2004-2006 Fernando Perez <fperez@colorado.edu>
+  - Copyright Gael Varoquaux <gael.varoquaux@normalesup.org>
+  - Copyright (c) InQuant GmbH Stefan Eletzhofer <stefan.eletzhofer@inquant.de>
+  - Copyright (c) 2001 Bill Bumgarner <bbum@friday.com>
+  - Copyright (c) 2001 Python Software Foundation, www.python.org
+  - Copyright (c) 2005 Jorgen Stenarson <jorgen.stenarson@bostream.nu>
+  - Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Python Software Foundation
+holders:
+  - Fernando Perez
+  - Janko Hauser and Nathaniel Gray
+  - W.J. van der Laan
+  - Fernando Perez
+  - Gael Varoquaux
+  - InQuant GmbH Stefan Eletzhofer
+  - Bill Bumgarner
+  - Python Software Foundation, www.python.org
+  - Jorgen Stenarson
+  - Python Software Foundation
+authors:
+  - Jack Moffitt <jack@xiph.org>
+  - Fernando Perez <fperez@colorado.edu> , Janko Hauser <jhauser@zscout.de> , Nathaniel Gray
+    <n8gray@caltech.edu>

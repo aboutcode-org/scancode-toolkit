@@ -1,8 +1,9 @@
 ---
 license_expression: hazelcast-community-1.0
 is_license_reference: yes
+is_required_phrase: yes
 ignorable_urls:
-   - http://hazelcast.com/hazelcast-community-license
+    - http://hazelcast.com/hazelcast-community-license
 ---
 
-{{http://hazelcast.com/hazelcast-community-license}}
+ http://hazelcast.com/hazelcast-community-license

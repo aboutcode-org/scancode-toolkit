@@ -15,5 +15,8 @@
     }
   ],
   "vcs_url": "https://github.com/Netflix/Hystrix.git@a7b66ca#hystrix-contrib/hystrix-rx-netty-metrics-stream",
-  "code_view_url": null
+  "code_view_url": null,
+  "extra_data": {
+    "pname": "com.netflix.hystrix#hystrix-rx-netty-metrics-stream;1.5.12"
+  }
 }

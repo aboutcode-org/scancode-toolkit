@@ -31,12 +31,14 @@ class UrlScanner(ScanPlugin):
 
     options = [
         PluggableCommandLineOption(('-u', '--url',),
-            is_flag=True, default=False,
+            is_flag=True,
+            default=False,
             help='Scan <input> for urls.',
             help_group=OTHER_SCAN_GROUP),
 
         PluggableCommandLineOption(('--max-url',),
-            type=int, default=50,
+            type=int,
+            default=50,
             metavar='INT',
             required_options=['url'],
             show_default=True,

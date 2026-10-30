@@ -1,6 +1,6 @@
 {
   "summary": {
-    "declared_license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
+    "declared_license_expression": "mit OR apache-2.0",
     "license_clarity_score": {
       "score": 100,
       "declared_license": true,
@@ -65,7 +65,7 @@
           "matches": [
             {
               "license_expression": "mit OR apache-2.0",
-              "spdx_license_expression": "MIT OR Apache-2.0",
+              "license_expression_spdx": "MIT OR Apache-2.0",
               "from_file": "no_license_ambiguity/Cargo.toml",
               "start_line": 1,
               "end_line": 1,
@@ -122,7 +122,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -140,7 +140,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -157,7 +157,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -177,7 +177,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -196,7 +196,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -217,7 +217,7 @@
       "scope": "dev-dependencies",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {
@@ -235,7 +235,7 @@
       "scope": "dev-dependencies",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -265,92 +265,6 @@
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_875.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_875.RULE"
-        }
-      ]
-    },
-    {
-      "identifier": "apache_2_0_and__apache_2_0_or_mit-7ff6dd9d-b5e8-3fa4-dd61-c5a634c9b300",
-      "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
-      "license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
-      "detection_count": 1,
-      "reference_matches": [
-        {
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "from_file": "no_license_ambiguity/COPYRIGHT",
-          "start_line": 1,
-          "end_line": 7,
-          "matcher": "3-seq",
-          "score": 94.12,
-          "matched_length": 48,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "apache-2.0_1060.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1060.RULE"
-        },
-        {
-          "license_expression": "apache-2.0 OR mit",
-          "license_expression_spdx": "Apache-2.0 OR MIT",
-          "from_file": "no_license_ambiguity/COPYRIGHT",
-          "start_line": 6,
-          "end_line": 9,
-          "matcher": "3-seq",
-          "score": 97.83,
-          "matched_length": 45,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "apache-2.0_or_mit_47.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_47.RULE"
-        }
-      ]
-    },
-    {
-      "identifier": "mit-a9138d4e-bc0e-0a20-76fd-237047e6d41c",
-      "license_expression": "mit",
-      "license_expression_spdx": "MIT",
-      "detection_count": 1,
-      "reference_matches": [
-        {
-          "license_expression": "mit OR apache-2.0",
-          "license_expression_spdx": "MIT OR Apache-2.0",
-          "from_file": "no_license_ambiguity/README.md",
-          "start_line": 152,
-          "end_line": 157,
-          "matcher": "3-seq",
-          "score": 57.69,
-          "matched_length": 15,
-          "match_coverage": 57.69,
-          "rule_relevance": 100,
-          "rule_identifier": "mit_or_apache-2.0_9.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_9.RULE"
-        },
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "from_file": "no_license_ambiguity/README.md",
-          "start_line": 157,
-          "end_line": 157,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "mit_154.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_154.RULE"
-        },
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "from_file": "no_license_ambiguity/LICENSE-MIT",
-          "start_line": 4,
-          "end_line": 26,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 161,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "mit.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
         }
       ]
     },
@@ -419,6 +333,50 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_14.RULE"
         }
       ]
+    },
+    {
+      "identifier": "mit_or_apache_2_0-a43a1e15-1968-4de7-fe27-2129ebf57d54",
+      "license_expression": "mit OR apache-2.0",
+      "license_expression_spdx": "MIT OR Apache-2.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "mit OR apache-2.0",
+          "license_expression_spdx": "MIT OR Apache-2.0",
+          "from_file": "no_license_ambiguity/COPYRIGHT",
+          "start_line": 1,
+          "end_line": 12,
+          "matcher": "3-seq",
+          "score": 97.78,
+          "matched_length": 88,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_or_apache-2.0_38.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_38.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit_or_apache_2_0-d9d84ae7-113e-249f-5302-6054bdbcdadb",
+      "license_expression": "mit OR apache-2.0",
+      "license_expression_spdx": "MIT OR Apache-2.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "mit OR apache-2.0",
+          "license_expression_spdx": "MIT OR Apache-2.0",
+          "from_file": "no_license_ambiguity/README.md",
+          "start_line": 152,
+          "end_line": 158,
+          "matcher": "3-seq",
+          "score": 97.06,
+          "matched_length": 33,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_or_apache-2.0_33.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_33.RULE"
+        }
+      ]
     }
   ],
   "files": [
@@ -432,6 +390,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -441,13 +400,14 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -471,6 +431,7 @@
       "sha1": "75dd1de7e3572b2480378f4a47d99d4140f405a0",
       "md5": "e9d08921db4b1c78b3ea9d6d7f8bcd82",
       "sha256": "76b505678de234d2eef751593feec6d9debb76c20d45564a9f23c9e9783dbc63",
+      "sha1_git": "b0872af6d398436da28f2f8a9fa053d4d8fe7a02",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -480,13 +441,14 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": true,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -510,6 +472,7 @@
       "sha1": "f14afa20edce530124d39cd56312c7781c19b267",
       "md5": "86438b2332d07437f7ddc2fe9fe4edd2",
       "sha256": "90eb64f0279b0d9432accfa6023ff803bc4965212383697eee27a0f426d5f8d5",
+      "sha1_git": "468d907caf99fb0cc0dcbb3c322cbb69f740ffd1",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": "verilog",
@@ -519,54 +482,41 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
-      "detected_license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
-      "detected_license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": "mit OR apache-2.0",
+      "detected_license_expression_spdx": "MIT OR Apache-2.0",
       "license_detections": [
         {
-          "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
-          "license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
+          "license_expression": "mit OR apache-2.0",
+          "license_expression_spdx": "MIT OR Apache-2.0",
           "matches": [
             {
-              "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression": "mit OR apache-2.0",
+              "license_expression_spdx": "MIT OR Apache-2.0",
               "from_file": "no_license_ambiguity/COPYRIGHT",
               "start_line": 1,
-              "end_line": 7,
+              "end_line": 12,
               "matcher": "3-seq",
-              "score": 94.12,
-              "matched_length": 48,
+              "score": 97.78,
+              "matched_length": 88,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "apache-2.0_1060.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1060.RULE"
-            },
-            {
-              "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
-              "from_file": "no_license_ambiguity/COPYRIGHT",
-              "start_line": 6,
-              "end_line": 9,
-              "matcher": "3-seq",
-              "score": 97.83,
-              "matched_length": 45,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "apache-2.0_or_mit_47.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_47.RULE"
+              "rule_identifier": "mit_or_apache-2.0_38.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_38.RULE"
             }
           ],
-          "identifier": "apache_2_0_and__apache_2_0_or_mit-7ff6dd9d-b5e8-3fa4-dd61-c5a634c9b300"
+          "identifier": "mit_or_apache_2_0-a43a1e15-1968-4de7-fe27-2129ebf57d54"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 81.11,
+      "percentage_of_license_text": 97.78,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -585,6 +535,7 @@
       "sha1": "ddec880a9a8eb327d188032cb12236b7197a9db4",
       "md5": "12bc948aef936e0dc81ef8dc269c442f",
       "sha256": "a6138a417208be3f9a5adb3f84fb4cc4e25a8b29e3106c456e324f82a854654a",
+      "sha1_git": "98ba373c68f8be6a8a1327b61b510379f70d8c37",
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text",
       "programming_language": null,
@@ -594,6 +545,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "cargo",
@@ -648,7 +605,7 @@
               "matches": [
                 {
                   "license_expression": "mit OR apache-2.0",
-                  "spdx_license_expression": "MIT OR Apache-2.0",
+                  "license_expression_spdx": "MIT OR Apache-2.0",
                   "from_file": "no_license_ambiguity/Cargo.toml",
                   "start_line": 1,
                   "end_line": 1,
@@ -693,7 +650,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -707,7 +664,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -720,7 +677,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -736,7 +693,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -751,7 +708,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -768,7 +725,7 @@
               "scope": "dev-dependencies",
               "is_runtime": false,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {
@@ -782,7 +739,7 @@
               "scope": "dev-dependencies",
               "is_runtime": false,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -798,11 +755,6 @@
       "for_packages": [
         "pkg:cargo/rand@0.8.5?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit OR apache-2.0",
       "detected_license_expression_spdx": "MIT OR Apache-2.0",
       "license_detections": [
@@ -812,7 +764,7 @@
           "matches": [
             {
               "license_expression": "mit OR apache-2.0",
-              "spdx_license_expression": "MIT OR Apache-2.0",
+              "license_expression_spdx": "MIT OR Apache-2.0",
               "from_file": "no_license_ambiguity/Cargo.toml",
               "start_line": 5,
               "end_line": 5,
@@ -866,6 +818,7 @@
       "sha1": "4632a631b427f005d97734ea8c6a44090fec5cd9",
       "md5": "e7b6e9594d2e90bfdc5eac35ff6486fa",
       "sha256": "35242e7a83f69875e6edeff02291e688c97caafe2f8902e4e19b49d3e78b4cab",
+      "sha1_git": "494ad3bfdfe44d1a2a1e20553308ba59574fb969",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -875,13 +828,14 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -891,7 +845,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "no_license_ambiguity/LICENSE-APACHE",
               "start_line": 1,
               "end_line": 176,
@@ -927,6 +881,7 @@
       "sha1": "d74ad13f1402c35008f22bc588a6b8199ed164d3",
       "md5": "08cf50287469d314ddbee33f572260a7",
       "sha256": "209fbbe0ad52d9235e37badf9cadfe4dbdc87203179c0899e738b39ade42177b",
+      "sha1_git": "d93b5baf341d9813bb48a51f42a7e8e4af89ec52",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -936,13 +891,14 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -952,7 +908,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "no_license_ambiguity/LICENSE-MIT",
               "start_line": 4,
               "end_line": 26,
@@ -1010,6 +966,7 @@
       "sha1": "d81ebab9f6c8e3233abf01734beca5419fe353ac",
       "md5": "e73df191f1b77901adab1471b758a8bc",
       "sha256": "ddb5a1fa9442c6cab92a3510365937e729f839c94b97e75d3f0430bf3a4dd2bd",
+      "sha1_git": "44c2e4d518ed308e2ae69aa1e888c5dc0e7c0551",
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text",
       "programming_language": null,
@@ -1019,71 +976,41 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": "mit OR apache-2.0",
+      "detected_license_expression_spdx": "MIT OR Apache-2.0",
       "license_detections": [
         {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
+          "license_expression": "mit OR apache-2.0",
+          "license_expression_spdx": "MIT OR Apache-2.0",
           "matches": [
             {
               "license_expression": "mit OR apache-2.0",
-              "spdx_license_expression": "MIT OR Apache-2.0",
+              "license_expression_spdx": "MIT OR Apache-2.0",
               "from_file": "no_license_ambiguity/README.md",
               "start_line": 152,
-              "end_line": 157,
+              "end_line": 158,
               "matcher": "3-seq",
-              "score": 57.69,
-              "matched_length": 15,
-              "match_coverage": 57.69,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_or_apache-2.0_9.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_9.RULE"
-            },
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "no_license_ambiguity/README.md",
-              "start_line": 157,
-              "end_line": 157,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 4,
+              "score": 97.06,
+              "matched_length": 33,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "mit_154.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_154.RULE"
-            },
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "no_license_ambiguity/LICENSE-MIT",
-              "start_line": 4,
-              "end_line": 26,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 161,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+              "rule_identifier": "mit_or_apache-2.0_33.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_33.RULE"
             }
           ],
-          "identifier": "mit-a9138d4e-bc0e-0a20-76fd-237047e6d41c",
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ]
+          "identifier": "mit_or_apache_2_0-d9d84ae7-113e-249f-5302-6054bdbcdadb"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 1.69,
+      "percentage_of_license_text": 2.93,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1102,6 +1029,7 @@
       "sha1": "99b2240e1aadbc88a2fa2ca65e673b9c46bea285",
       "md5": "bd20c9d8351a8630c3d4e45afc638491",
       "sha256": "52e7a012004e078273ede84e6cb6778d6f98c3c69078edf625f4bae08306e74d",
+      "sha1_git": "a31b4e23fd32e404cfad0ddc96560db9d596e9db",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -1111,13 +1039,14 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": true,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1141,6 +1070,7 @@
       "sha1": "60527abf5f69306d1e5d5b339afdea200368e081",
       "md5": "a0a23df0aa695c6b43ea91942ac7df1d",
       "sha256": "a582a93dc6492d36daae52df7800e369887ba0984d68d98f70b99ca870fed268",
+      "sha1_git": "6a2d9d4821546564e1600864f929753f99461611",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -1150,13 +1080,14 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],

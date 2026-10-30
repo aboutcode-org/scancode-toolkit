@@ -1,6 +1,8 @@
 ---
 key: broadcom-dual
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0 OR commercial-license
 short_name: Broadcom Dual GPL-Commercial
 name: Broadcom Dual GPL-Commercial
 category: Copyleft

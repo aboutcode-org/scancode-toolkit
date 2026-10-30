@@ -1,8 +1,11 @@
 ---
 license_expression: us-govt-public-domain
 is_license_text: yes
+is_deprecated: yes
 relevance: 100
-notes: Seen in BLAST
+notes: Seen in BLAST, now ncbi license
+replaced_by:
+    - ncbi
 ---
 
 PUBLIC DOMAIN NOTICE

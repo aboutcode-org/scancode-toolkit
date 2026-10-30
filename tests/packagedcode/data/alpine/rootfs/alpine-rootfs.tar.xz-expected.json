@@ -31,7 +31,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "mit",
@@ -43,7 +43,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -126,7 +126,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "gpl-2.0",
@@ -138,7 +138,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -221,7 +221,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=dfa1379357a321e638feef1cd8d55ab03d020f45",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=dfa1379357a321e638feef1cd8d55ab03d020f45",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "gpl-2.0",
@@ -233,7 +233,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -343,7 +343,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=aab68f8c9ab434a46710de8e12fb3206e2930a59",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=aab68f8c9ab434a46710de8e12fb3206e2930a59",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "mit",
@@ -355,7 +355,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -600,7 +600,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=709b70bcb72738cfedc510bba08141b012038167",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=709b70bcb72738cfedc510bba08141b012038167",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "mpl-2.0 AND mit",
@@ -612,7 +612,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0 AND mit",
-              "spdx_license_expression": "MPL-2.0 AND MIT",
+              "license_expression_spdx": "MPL-2.0 AND MIT",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -695,7 +695,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "openssl-ssleay",
@@ -707,7 +707,7 @@
           "matches": [
             {
               "license_expression": "openssl-ssleay",
-              "spdx_license_expression": "OpenSSL",
+              "license_expression_spdx": "OpenSSL",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -817,7 +817,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "openssl-ssleay",
@@ -829,7 +829,7 @@
           "matches": [
             {
               "license_expression": "openssl-ssleay",
-              "spdx_license_expression": "OpenSSL",
+              "license_expression_spdx": "OpenSSL",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -912,7 +912,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=91c7a9f3aa296b6d462c5634e7658ebdbff65bb9",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=91c7a9f3aa296b6d462c5634e7658ebdbff65bb9",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "isc AND (bsd-new OR mit)",
@@ -924,7 +924,7 @@
           "matches": [
             {
               "license_expression": "isc AND (bsd-new OR mit)",
-              "spdx_license_expression": "ISC AND (BSD-3-Clause OR MIT)",
+              "license_expression_spdx": "ISC AND (BSD-3-Clause OR MIT)",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1007,7 +1007,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "gpl-2.0",
@@ -1019,7 +1019,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1090,7 +1090,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=74148808679f47ad96dc99e83ef73acfdeec1642",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=74148808679f47ad96dc99e83ef73acfdeec1642",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "zlib",
@@ -1102,7 +1102,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1185,7 +1185,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=1ac3c1bb29eeff083c621cf6b27ad12ab93cb73a",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=1ac3c1bb29eeff083c621cf6b27ad12ab93cb73a",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "gpl-2.0",
@@ -1197,7 +1197,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1268,7 +1268,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=86b3d4fbb0a760febf3476f9a58abf8d0f728d5c",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=86b3d4fbb0a760febf3476f9a58abf8d0f728d5c",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "gpl-2.0",
@@ -1280,7 +1280,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1351,7 +1351,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "mit AND bsd-new AND gpl-2.0-plus",
@@ -1363,7 +1363,7 @@
           "matches": [
             {
               "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-              "spdx_license_expression": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
+              "license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1434,7 +1434,7 @@
       "sha512": null,
       "bug_tracking_url": null,
       "code_view_url": null,
-      "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=60424133be2e79bbfeff3d58147a22886f817ce2",
+      "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=60424133be2e79bbfeff3d58147a22886f817ce2",
       "copyright": null,
       "holder": null,
       "declared_license_expression": "bsd-simplified AND bsd-new",
@@ -1446,7 +1446,7 @@
           "matches": [
             {
               "license_expression": "bsd-simplified AND bsd-new",
-              "spdx_license_expression": "BSD-2-Clause AND BSD-3-Clause",
+              "license_expression_spdx": "BSD-2-Clause AND BSD-3-Clause",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1494,7 +1494,7 @@
       "scope": "depend",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -1509,7 +1509,7 @@
       "scope": "depend",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -1524,7 +1524,7 @@
       "scope": "depend",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -1539,7 +1539,7 @@
       "scope": "depend",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -1554,7 +1554,7 @@
       "scope": "depend",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -2225,7 +2225,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "mit",
@@ -2237,7 +2237,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -2323,7 +2323,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "gpl-2.0",
@@ -2335,7 +2335,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -2466,7 +2466,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=dfa1379357a321e638feef1cd8d55ab03d020f45",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=dfa1379357a321e638feef1cd8d55ab03d020f45",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "gpl-2.0",
@@ -2478,7 +2478,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -2798,7 +2798,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=aab68f8c9ab434a46710de8e12fb3206e2930a59",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=aab68f8c9ab434a46710de8e12fb3206e2930a59",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "mit",
@@ -2810,7 +2810,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3247,7 +3247,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=709b70bcb72738cfedc510bba08141b012038167",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=709b70bcb72738cfedc510bba08141b012038167",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "mpl-2.0 AND mit",
@@ -3259,7 +3259,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0 AND mit",
-                  "spdx_license_expression": "MPL-2.0 AND MIT",
+                  "license_expression_spdx": "MPL-2.0 AND MIT",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3345,7 +3345,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "openssl-ssleay",
@@ -3357,7 +3357,7 @@
               "matches": [
                 {
                   "license_expression": "openssl-ssleay",
-                  "spdx_license_expression": "OpenSSL",
+                  "license_expression_spdx": "OpenSSL",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3524,7 +3524,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=455e966899a9358fc94f5bce633afe8a1942095c",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "openssl-ssleay",
@@ -3536,7 +3536,7 @@
               "matches": [
                 {
                   "license_expression": "openssl-ssleay",
-                  "spdx_license_expression": "OpenSSL",
+                  "license_expression_spdx": "OpenSSL",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3622,7 +3622,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=91c7a9f3aa296b6d462c5634e7658ebdbff65bb9",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=91c7a9f3aa296b6d462c5634e7658ebdbff65bb9",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "isc AND (bsd-new OR mit)",
@@ -3634,7 +3634,7 @@
               "matches": [
                 {
                   "license_expression": "isc AND (bsd-new OR mit)",
-                  "spdx_license_expression": "ISC AND (BSD-3-Clause OR MIT)",
+                  "license_expression_spdx": "ISC AND (BSD-3-Clause OR MIT)",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3689,7 +3689,7 @@
               "scope": "depend",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -3732,7 +3732,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=2745de7e1b09e663b477a8141b84f7d81a049963",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "gpl-2.0",
@@ -3744,7 +3744,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3821,7 +3821,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=74148808679f47ad96dc99e83ef73acfdeec1642",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=74148808679f47ad96dc99e83ef73acfdeec1642",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "zlib",
@@ -3833,7 +3833,7 @@
               "matches": [
                 {
                   "license_expression": "zlib",
-                  "spdx_license_expression": "Zlib",
+                  "license_expression_spdx": "Zlib",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3919,7 +3919,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=1ac3c1bb29eeff083c621cf6b27ad12ab93cb73a",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=1ac3c1bb29eeff083c621cf6b27ad12ab93cb73a",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "gpl-2.0",
@@ -3931,7 +3931,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3986,7 +3986,7 @@
               "scope": "depend",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -3997,7 +3997,7 @@
               "scope": "depend",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -4040,7 +4040,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=86b3d4fbb0a760febf3476f9a58abf8d0f728d5c",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=86b3d4fbb0a760febf3476f9a58abf8d0f728d5c",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "gpl-2.0",
@@ -4052,7 +4052,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -4129,7 +4129,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=bf5bbfdbf780092f387b7abe401fbfceda90c84d",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "mit AND bsd-new AND gpl-2.0-plus",
@@ -4141,7 +4141,7 @@
               "matches": [
                 {
                   "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-                  "spdx_license_expression": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
+                  "license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -4223,7 +4223,7 @@
               "scope": "depend",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -4266,7 +4266,7 @@
           "sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
-          "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=60424133be2e79bbfeff3d58147a22886f817ce2",
+          "vcs_url": "git+https://git.alpinelinux.org/aports/commit/?id=60424133be2e79bbfeff3d58147a22886f817ce2",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "bsd-simplified AND bsd-new",
@@ -4278,7 +4278,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-simplified AND bsd-new",
-                  "spdx_license_expression": "BSD-2-Clause AND BSD-3-Clause",
+                  "license_expression_spdx": "BSD-2-Clause AND BSD-3-Clause",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -4314,7 +4314,7 @@
               "scope": "depend",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}

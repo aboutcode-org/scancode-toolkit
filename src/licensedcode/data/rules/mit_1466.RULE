@@ -1,0 +1,10 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 60
+referenced_filenames:
+    - LICENSE.txt
+---
+
+licensed under the {{MIT License}} - see the LICENSE.md file  for more details

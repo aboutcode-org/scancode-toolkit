@@ -1,15 +1,17 @@
 ---
 key: gpl-2.0-autoconf
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH autoconf-simple-exception-2.0
 short_name: GPL 2.0 with Autoconf exception
 name: GPL 2.0 with Autoconf exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
+notes: replaced by autoconf-exception-2.0
 is_exception: yes
 spdx_license_key: GPL-2.0-with-autoconf-exception
 text_urls:
     - http://ac-archive.sourceforge.net/doc/copyright.html
-notes: replaced by autoconf-exception-2.0
 ---
 
 This library is free software; you can redistribute it and/or modify

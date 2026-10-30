@@ -33,7 +33,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/package/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -149,6 +149,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -186,6 +187,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -221,6 +223,7 @@
       "sha1": "a4a4a28858425dfb6795ff4eb7b397846f03fda9",
       "md5": "e10ff141105dc64fbde2dc77c61275db",
       "sha256": "96af7c1cf3144e8a70972e2fac9f34d6ff884ee01206066b1304f08c71053297",
+      "sha1_git": "a0ccac174b910557fa15fd0239bd3bb888a87f9a",
       "mime_type": "application/json",
       "file_type": "JSON data",
       "programming_language": null,
@@ -264,7 +267,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "package-files-not-counted-in-license-holders/package/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -311,7 +314,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/package/package.json",
               "start_line": 5,
               "end_line": 5,
@@ -362,6 +365,7 @@
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "sha256": "1596d61171cf27cbb8f42bec6864f2903497d31060272aaed933e5df0666c584",
+      "sha1_git": "429e8931814d2d2b09275a4982a20d55148f3ab6",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -384,7 +388,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/package/src1",
               "start_line": 2,
               "end_line": 2,
@@ -435,6 +439,7 @@
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "sha256": "1596d61171cf27cbb8f42bec6864f2903497d31060272aaed933e5df0666c584",
+      "sha1_git": "429e8931814d2d2b09275a4982a20d55148f3ab6",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -457,7 +462,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/package/src2",
               "start_line": 2,
               "end_line": 2,
@@ -508,6 +513,7 @@
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "sha256": "1596d61171cf27cbb8f42bec6864f2903497d31060272aaed933e5df0666c584",
+      "sha1_git": "429e8931814d2d2b09275a4982a20d55148f3ab6",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -530,7 +536,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/package/src3",
               "start_line": 2,
               "end_line": 2,
@@ -581,6 +587,7 @@
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "sha256": "1596d61171cf27cbb8f42bec6864f2903497d31060272aaed933e5df0666c584",
+      "sha1_git": "429e8931814d2d2b09275a4982a20d55148f3ab6",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -601,7 +608,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/src1",
               "start_line": 2,
               "end_line": 2,
@@ -652,6 +659,7 @@
       "sha1": "f3eae084a5690638fd1ada38e653a94179f14263",
       "md5": "7e0e8162de50e718e248ccd7a2d2cb65",
       "sha256": "1596d61171cf27cbb8f42bec6864f2903497d31060272aaed933e5df0666c584",
+      "sha1_git": "429e8931814d2d2b09275a4982a20d55148f3ab6",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -672,7 +680,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/src2",
               "start_line": 2,
               "end_line": 2,

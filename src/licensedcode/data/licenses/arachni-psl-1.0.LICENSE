@@ -2,7 +2,7 @@
 key: arachni-psl-1.0
 short_name: Arachni PSL v1.0
 name: Arachni Public Source License v1.0
-category: Proprietary Free
+category: Non-Commercial
 owner: Arachni
 homepage_url: https://www.arachni-scanner.com/license/
 spdx_license_key: LicenseRef-scancode-arachni-psl-1.0

@@ -4,7 +4,7 @@ is_license_notice: yes
 ---
 
 // This library is free software; you can redistribute it and/or modify it 
-// under the terms of the New BSD License, a copy of which should have 
+// under the terms of the {{New BSD License}}, a copy of which should have 
 // been delivered along with this distribution.
 //
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 

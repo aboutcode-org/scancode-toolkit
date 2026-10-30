@@ -9,6 +9,7 @@ ignorable_holders:
     - the University of Cambridge, England
 ignorable_authors:
     - Philip Hazel
+    - Philip Hazel <ph10@cam.ac.uk> University of Cambridge Computing Service, Cambridge, England
 ignorable_urls:
     - ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
 ignorable_emails:

@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-Copyright: NO COPYRIGHT (GNU General Public License)
+Copyright: NO COPYRIGHT ({{GNU General Public License}})

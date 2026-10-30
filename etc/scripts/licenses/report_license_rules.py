@@ -62,6 +62,8 @@ RULES_FIELDNAMES = [
     "is_license_reference",
     "is_license_intro",
     "is_license_clue",
+    "is_required_phrase",
+    "skip_for_required_phrase_generation",
     "is_deprecated",
     "has_unknown",
     "only_known_words",

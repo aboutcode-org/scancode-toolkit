@@ -6,7 +6,12 @@ category: Proprietary Free
 owner: Unspecified
 homepage_url: https://bdew.net/
 notes: From https://github.com/ErikMcClure/bad-licenses
-spdx_license_key: LicenseRef-scancode-minecraft-mod
+spdx_license_key: MMPL-1.0.1
+other_spdx_license_keys:
+    - LicenseRef-scancode-minecraft-mod
+other_urls:
+    - https://github.com/BuildCraft/BuildCraft/blob/623d323b1868712f29f4a8b0979a02e8d1835131/LICENSE
+    - https://mod-buildcraft.com/MMPL-1.0.txt
 ---
 
 Minecraft: Denotes a copy of the Minecraft game licensed by Mojang AB

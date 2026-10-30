@@ -5,5 +5,5 @@ referenced_filenames:
     - LICENSE
 ---
 
-available under the same style of BSD license as the Go language,
+available under the same style of {{BSD license}} as the Go language,
 which can be found in the LICENSE file.

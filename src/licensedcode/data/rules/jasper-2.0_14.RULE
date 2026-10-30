@@ -1,7 +1,10 @@
 ---
 license_expression: jasper-2.0
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - jasper-2.0
 ---
 
 licenses.nuget.org/JasPer-2.0

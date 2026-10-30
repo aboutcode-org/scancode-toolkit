@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2004-2007 by Internet Systems Consortium, Inc. 'ISC 1995-2003 by Internet Software
+    Consortium
+  - (c) 2008, Andrew Pollock <apollock@debian.org>
+holders:
+  - Internet Systems Consortium, Inc. 'ISC by Internet Software Consortium
+  - Andrew Pollock
+authors:
+  - Andrew Pollock <apollock@debian.org>
+  - Internet Systems Consortium

@@ -9,6 +9,9 @@ ignorable_urls:
     - https://greensock.com/licensing/
     - https://greensock.com/standard-license
     - https://greensock.com/why-license/
+is_deprecated: yes
+replaced_by:
+    - gsap-standard-no-charge-2025
 ---
 
 ### License

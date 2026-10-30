@@ -1,6 +1,8 @@
 ---
 key: bsd-original-uc-1990
 is_deprecated: yes
+replaced_by:
+    - bsla
 short_name: BSD-Original-UC-1990
 name: BSD-Original-UC-1990
 category: Permissive

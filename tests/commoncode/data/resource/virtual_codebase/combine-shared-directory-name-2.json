@@ -1,0 +1,45 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "31.0.0b4",
+      "options": {
+        "input": [
+          "/home/jono/Desktop/test2/codebase"
+        ],
+        "--json-pp": "/home/jono/Desktop/test2-i.json"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2022-05-14T012909.811079",
+      "end_timestamp": "2022-05-14T012909.816782",
+      "output_format_version": "2.0.0",
+      "duration": 0.0057103633880615234,
+      "message": null,
+      "errors": [],
+      "warnings": [],
+      "extra_data": {
+        "system_environment": {
+          "operating_system": "linux",
+          "cpu_architecture": "64",
+          "platform": "Linux-5.4.0-109-generic-x86_64-with-glibc2.27",
+          "platform_version": "#123~18.04.1-Ubuntu SMP Fri Apr 8 09:48:52 UTC 2022",
+          "python_version": "3.9.12 (main, Apr 16 2022, 19:31:36) \n[GCC 7.5.0]"
+        },
+        "spdx_license_list_version": "3.16",
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "codebase",
+      "type": "directory",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/test2.py",
+      "type": "file",
+      "scan_errors": []
+    }
+  ]
+}

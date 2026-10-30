@@ -6,7 +6,7 @@ ignorable_urls:
 ---
 
 <license>
-            <name>Mozilla Public License Version 2.0</name>
+            <name>{{Mozilla Public License Version 2.0}}</name>
             <url>http://www.mozilla.org/MPL/2.0/</url>
             <distribution>repo</distribution>
         </license>

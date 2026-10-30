@@ -7,7 +7,7 @@ ignorable_copyrights:
 ignorable_holders:
     - Jason Hunter & Brett McLaughlin
 ignorable_authors:
-    - Jason Hunter and Brett McLaughlin
+    - Jason Hunter jhunter AT jdom DOT org and Brett McLaughlin brett AT jdom DOT org
     - the JDOM Project (http://www.jdom.org/)
 ignorable_urls:
     - http://www.jdom.org/

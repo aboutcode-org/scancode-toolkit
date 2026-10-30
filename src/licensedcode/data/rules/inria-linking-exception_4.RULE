@@ -1,6 +1,9 @@
 ---
 license_expression: inria-linking-exception
 is_license_text: yes
+is_deprecated: yes
+replaced_by:
+    - inria-linking-exception
 ---
 
 As a special exception to the Q Public Licence, you may develop

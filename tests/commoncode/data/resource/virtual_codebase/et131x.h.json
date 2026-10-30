@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "path": "et131x.h",
+      "type": "file",
+      "name": "et131x.h",
+      "base_name": "et131x",
+      "extension": ".h",
+      "size": 2228,
+      "date": "2018-02-08",
+      "sha1": "3903b654c47ea95203567230d72093ad1c5c4b90",
+      "md5": "5746ea8172cbab86d986a1c659bb4ce8",
+      "mime_type": "text/plain",
+      "file_type": "UTF-8 Unicode text",
+      "programming_language": "C",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

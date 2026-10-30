@@ -1,7 +1,10 @@
 ---
 license_expression: bison-exception-2.2
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - bison-exception-2.2
 ---
 
 licenses.nuget.org/Bison-exception-2.2

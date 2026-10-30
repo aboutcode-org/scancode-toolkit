@@ -97,7 +97,7 @@ class GemMetadataArchiveExtractedHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
-        yield from assemble_extracted_gem(cls, package_data, resource, codebase)
+        yield from assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
 
 
 class BaseGemProjectHandler(models.DatafileHandler):
@@ -211,7 +211,7 @@ class GemspecInInstalledVendorBundleSpecificationsHandler(GemspecHandler):
 # TODO: https://stackoverflow.com/questions/41454333/meaning-of-new-block-git-sourcegithub-in-gemfile
 class GemfileHandler(GemspecHandler):
     datasource_id = 'gemfile'
-    path_patterns = ('*/Gemfile', '*/*.gemfile', '*/Gemfile-*')
+    path_patterns = ('*/Gemfile', '*.gemfile', '*/Gemfile-*')
     default_package_type = 'gem'
     default_primary_language = 'Ruby'
     description = 'RubyGems Bundler Gemfile'
@@ -256,7 +256,7 @@ class GemfileLockHandler(BaseGemProjectHandler):
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
-                    is_resolved=True,
+                    is_pinned=True,
                 ) for dep in all_gems if dep != primary_gem
             ]
             urls = get_urls(primary_gem.name, primary_gem.version)
@@ -284,7 +284,7 @@ class GemfileLockHandler(BaseGemProjectHandler):
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
-                    is_resolved=True,
+                    is_pinned=True,
                 ) for gem in all_gems
             ]
 
@@ -634,9 +634,9 @@ def get_dependencies(dependencies):
             constraints.append(version_constraint)
 
         # if we have only one version constraint and this is "=" then we are resolved
-        is_resolved = False
+        is_pinned = False
         if constraints and len(constraints) == 1:
-            is_resolved = constraint == '='
+            is_pinned = constraint == '='
 
         # FIXME: check this is correct and complies with vers.
         version_constraint = ', '.join(constraints)
@@ -647,7 +647,7 @@ def get_dependencies(dependencies):
             scope=scope,
             is_runtime=is_runtime,
             is_optional=is_optional,
-            is_resolved=is_resolved,
+            is_pinned=is_pinned,
         )
         deps.append(dep)
 

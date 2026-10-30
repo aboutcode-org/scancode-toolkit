@@ -1,15 +1,18 @@
-about_resource: fonts
-
+about_resource: bootstrap.min.css
 download_url: https://github.com/twbs/bootstrap/tree/v3.3.4/dist
 version: 3.3.4
 
 name: Bootstrap
-homepage_url: http://getbootstrap.com
-
+homepage_url: http://twitter.github.com/bootstrap/
+owner: Twitter, Inc.
+contact: https://twitter.com/about/contact
 license_expression: mit
 licenses:
--   file: mit.LICENSE
-    key: mit
+  - key: mit
     name: MIT License
-
+    file: mit.LICENSE
+    url: https://scancode-licensedb.aboutcode.org/mit.LICENSE
+    spdx_license_key: MIT
 copyright: Copyright (c) 2011-2015 Twitter, Inc
+notes: Bootstrap files are also included in /fonts directory.
+package_url: pkg:github/twbs/bootstrap@3.3.4

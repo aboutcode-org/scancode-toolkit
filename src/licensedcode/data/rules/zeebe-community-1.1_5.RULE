@@ -1,0 +1,8 @@
+---
+license_expression: zeebe-community-1.1
+is_license_tag: yes
+ignorable_urls:
+    - https://camunda.com/legal/terms/cloud-terms-and-conditions/zeebe-community-license-v1-1
+---
+
+License: [{{Zeebe Community License v1.1}}](https://camunda.com/legal/terms/cloud-terms-and-conditions/zeebe-community-license-v1-1/))

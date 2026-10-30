@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: in vala
+---
+
+g_strdup (PACKAGE_DATADIR "/licenses/lgpl-2.1.txt"

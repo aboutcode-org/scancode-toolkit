@@ -1,0 +1,10 @@
+---
+license_expression: pipedream-sal-1.0
+is_license_notice: yes
+ignorable_urls:
+    - https://github.com/PipedreamHQ/pipedream/blob/master/LICENSE
+---
+
+## License
+
+Pipedream Source Available License Version 1.0 - See https://github.com/PipedreamHQ/pipedream/blob/master/LICENSE

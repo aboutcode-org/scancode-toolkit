@@ -1,0 +1,75 @@
+{
+  "type": "winexe",
+  "namespace": null,
+  "name": "Youtube-dlc",
+  "version": "2020.10.09-1 | git.io/JUGsM",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Media Downloader\nYoutube-dlc Command Line Interface.",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "organization",
+      "role": "author",
+      "name": "theidel@uni-bremen.de",
+      "email": null,
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": "theidel@uni-bremen.de | UNLICENSE",
+  "holder": "theidel@uni-bremen.de",
+  "declared_license_expression": "unlicense",
+  "declared_license_expression_spdx": "Unlicense",
+  "license_detections": [
+    {
+      "license_expression": "unlicense",
+      "license_expression_spdx": "Unlicense",
+      "matches": [
+        {
+          "license_expression": "unlicense",
+          "license_expression_spdx": "Unlicense",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "2-aho",
+          "score": 50.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 50,
+          "rule_identifier": "spdx_license_id_unlicense_for_unlicense.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_unlicense_for_unlicense.RULE",
+          "matched_text": "theidel@uni-bremen.de | UNLICENSE"
+        }
+      ],
+      "identifier": "unlicense-0d6030cd-b503-421f-782c-df98d6b478a2"
+    }
+  ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
+  "extracted_license_statement": "LegalCopyright: theidel@uni-bremen.de | UNLICENSE\n",
+  "notice_text": null,
+  "source_packages": [],
+  "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
+  "extra_data": {},
+  "dependencies": [],
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null,
+  "datasource_id": "windows_executable",
+  "purl": "pkg:winexe/Youtube-dlc@2020.10.09-1%20%7C%20git.io/JUGsM"
+}

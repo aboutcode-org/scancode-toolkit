@@ -1,0 +1,16 @@
+---
+key: thirdeye
+short_name: ThirdEye License
+name: ThirdEye License
+category: Permissive
+owner: Third Eye Software
+spdx_license_key: ThirdEye
+other_urls:
+    - https://sourceware.org/cgit/binutils-gdb/tree/include/coff/symconst.h#n11
+---
+
+Third Eye Software, Inc. grants reproduction and use rights to
+all parties, PROVIDED that this comment is maintained in the copy.
+
+Third Eye makes no claims about the applicability of this
+symbol table to a particular use.

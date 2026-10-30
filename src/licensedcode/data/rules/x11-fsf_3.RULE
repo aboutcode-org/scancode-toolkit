@@ -1,8 +1,11 @@
 ---
 license_expression: x11-fsf
 is_license_tag: yes
+is_deprecated: yes
 relevance: 90
 notes: seen in http://invisible-island.net/ncurses/ncurses.html copyright file
+replaced_by:
+    - x11-xconsortium
 ---
 
 Licence: X11

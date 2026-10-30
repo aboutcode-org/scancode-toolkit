@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2005,2006 Option Wireless Sweden AB
+  - Copyright (c) 2006 Sphere Systems Ltd
+  - Copyright (c) 2006 Option Wireless n/v
+holders:
+  - Option Wireless Sweden AB
+  - Sphere Systems Ltd
+  - Option Wireless n/v
+authors:
+  - Paul Hardwick (p.hardwick@option.com)

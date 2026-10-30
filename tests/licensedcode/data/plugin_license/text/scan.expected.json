@@ -5,7 +5,9 @@
       "license_expression": "fsf-ap",
       "license_expression_spdx": "FSFAP",
       "detection_count": 1,
-      "detection_log": [],
+      "detection_log": [
+        "imperfect-match-coverage"
+      ],
       "reference_matches": [
         {
           "license_expression": "fsf-ap",
@@ -62,7 +64,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-              "spdx_license_expression": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
+              "license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
               "from_file": "scan/gpl-2.0_with_linux-syscall-note_or_linux-openib_SPDX.RULE",
               "start_line": 1,
               "end_line": 1,
@@ -96,7 +98,7 @@
           "matches": [
             {
               "license_expression": "fsf-ap",
-              "spdx_license_expression": "FSFAP",
+              "license_expression_spdx": "FSFAP",
               "from_file": "scan/short-license",
               "start_line": 1,
               "end_line": 3,
@@ -110,7 +112,9 @@
               "matched_text": "Reproduction and distribution of this file, with or without modification, are\npermitted in any medium without royalties provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any warranties."
             }
           ],
-          "detection_log": [],
+          "detection_log": [
+            "imperfect-match-coverage"
+          ],
           "identifier": "fsf_ap-49ad9aab-c91b-eeb7-e90f-dc3f959b1c36"
         }
       ],

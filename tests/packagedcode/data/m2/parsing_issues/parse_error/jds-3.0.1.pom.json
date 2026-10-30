@@ -14,10 +14,12 @@
   "organization_url": null,
   "licenses": [
     {
-      "name": "The 3-Clause BSD License",
-      "url": "https://opensource.org/licenses/BSD-3-Clause",
-      "comments": null,
-      "distribution": null
+      "license": {
+        "name": "The 3-Clause BSD License",
+        "url": "https://opensource.org/licenses/BSD-3-Clause",
+        "comments": null,
+        "distribution": null
+      }
     }
   ],
   "developers": [

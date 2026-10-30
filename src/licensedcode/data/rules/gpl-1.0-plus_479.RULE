@@ -5,5 +5,5 @@ referenced_filenames:
     - /usr/share/common-licenses/GPL
 ---
 
-On Debian GNU/Linux systems, the complete text of the GNU General
-  Public License is in `/usr/share/common-licenses/GPL'.
+On Debian GNU/Linux systems, the complete text of the {{GNU General
+  Public License}} is in `/usr/share/common-licenses/GPL'.

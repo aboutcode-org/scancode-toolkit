@@ -1,0 +1,9 @@
+---
+license_expression: gpl-2.0 OR commercial-license
+is_license_notice: yes
+notes: Seen in YAFFS2
+---
+
+available under the GPL and via alternative licensing
+arrangements with . If you're using  as a {{Linux kernel
+file system then it will be under the GPL.}}

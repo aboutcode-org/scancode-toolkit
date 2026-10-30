@@ -3,6 +3,8 @@ license_expression: unknown-license-reference
 is_license_reference: yes
 is_deprecated: yes
 notes: Seen in woodstox
+replaced_by:
+    - unknown-license-reference
 ---
 
 This product currently only contains code developed by authors of specific components, as identified by the source code files.

@@ -1,0 +1,11 @@
+---
+is_false_positive: yes
+notes: A list of license patterns in a bouncer YAML file, not a license
+---
+
+permit:
+  - BSD.*
+  - MIT.*
+  - Apache.*
+  - MPL.*
+  - CC0-1.0

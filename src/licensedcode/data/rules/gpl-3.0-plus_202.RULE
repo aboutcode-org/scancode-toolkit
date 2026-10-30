@@ -11,7 +11,7 @@ ignorable_urls:
 
 Unless otherwise noted, Styrene is free software
 which is distributed under the terms of
-the GNU [General Public License, version 3.0 or later][gpl3].
+the {{GNU [General Public License, version 3.0 or later}}][gpl3].
 See the file named COPYING that you got with Styrene
 for the full legal terms and conditions.
 The exceptions to this rule are as follows.

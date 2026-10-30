@@ -1,8 +1,10 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_notice: yes
+is_deprecated: yes
 minimum_coverage: 50
+replaced_by:
+    - other-permissive
 ---
 
 I hereby give permission, free of charge, to copy, modify, and

@@ -77,6 +77,10 @@ class FileClassifier(PostScanPlugin):
          Boolean(help='True if this file is "top-level" file and either a '
                       'legal, readme or manifest file.')),
 
+        ('is_community',
+         Boolean(help='True if this file is a community file generally used for'
+                      'maintainance or participation in the FOSS project community.')),
+
 #         ('is_doc',
 #          Boolean(help='True if this file is likely a documentation file.')),
 #

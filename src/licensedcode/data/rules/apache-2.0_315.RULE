@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-licenses = ["notice"],  # Apache 2.0
+licenses = ["notice"],  # {{Apache 2.0}}

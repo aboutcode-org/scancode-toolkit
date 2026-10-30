@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2014 Canonical
+holders:
+  - Canonical
+authors:
+  - Andreas Pokorny

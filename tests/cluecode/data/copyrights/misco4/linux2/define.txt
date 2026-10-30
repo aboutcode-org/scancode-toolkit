@@ -1,0 +1,2 @@
+#define COPYRIGHT       "Copyright (c) 1999-2008 LSI Corporation"
+#define MODULEAUTHOR    "LSI Corporation"

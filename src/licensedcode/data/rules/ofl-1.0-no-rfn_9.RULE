@@ -1,7 +1,10 @@
 ---
 license_expression: ofl-1.0-no-rfn
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - ofl-1.0-no-rfn
 ---
 
 licenses.nuget.org/OFL-1.0-no-RFN

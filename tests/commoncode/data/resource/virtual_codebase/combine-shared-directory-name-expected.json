@@ -1,0 +1,37 @@
+[
+  {
+    "path": "virtual_root",
+    "type": "directory",
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-1",
+    "type": "directory",
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-1/codebase",
+    "type": "directory",
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-1/codebase/test1.c",
+    "type": "file",
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-2",
+    "type": "directory",
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-2/codebase",
+    "type": "directory",
+    "scan_errors": []
+  },
+  {
+    "path": "virtual_root/codebase-2/codebase/test2.py",
+    "type": "file",
+    "scan_errors": []
+  }
+]

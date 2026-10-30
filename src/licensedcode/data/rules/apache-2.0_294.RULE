@@ -6,6 +6,6 @@ referenced_filenames:
     - LICENSE
 ---
 
-license: Apache Software
-  license_family: Apache
-  license_file: LICENSE
+license: {{Apache Software
+  license}}_family: {{Apache
+  license}}_file: LICENSE

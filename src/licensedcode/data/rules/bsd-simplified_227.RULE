@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.md
 ---
 
-license: BSD-2, see LICENSE.md for more details.
+{{license: BSD-2}}, see LICENSE.md for more details.

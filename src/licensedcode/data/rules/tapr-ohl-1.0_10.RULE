@@ -1,7 +1,10 @@
 ---
 license_expression: tapr-ohl-1.0
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - tapr-ohl-1.0
 ---
 
 licenses.nuget.org/TAPR-OHL-1.0

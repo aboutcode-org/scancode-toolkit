@@ -1,0 +1,10 @@
+---
+license_expression: mit
+is_license_tag: yes
+is_deprecated: yes
+relevance: 100
+replaced_by:
+    - mit
+---
+
+SPDX-Lincense-Identifier: MIT

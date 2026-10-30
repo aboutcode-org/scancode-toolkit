@@ -6,6 +6,6 @@ referenced_filenames:
     - COPYING
 ---
 
-## License
+## {{License
 
-MIT - see the **COPYING** file.
+MIT}} - see the **COPYING** file.

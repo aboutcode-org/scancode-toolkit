@@ -7,10 +7,10 @@ ignorable_urls:
     - https://www.apache.org/licenses/LICENSE-2.0
 ---
 
-Licensed to the Apache Software Foundation (ASF) under one or more
+{{Licensed to the Apache Software Foundation}} (ASF) under one or more
  contributor license agreements.  See the NOTICE file distributed with
  this work for additional information regarding copyright ownership.
- The ASF licenses this file to You under the Apache License, Version 2.0
+ The ASF licenses this file to You under the {{Apache License, Version 2.0}}
  (the "License"); you may not use this file except in compliance with
  the License.  You may obtain a copy of the License at
  .
@@ -22,5 +22,5 @@ Licensed to the Apache Software Foundation (ASF) under one or more
  See the License for the specific language governing permissions and
  limitations under the License.
  .
- On Debian systems, the full text of the Apache Software License version 2 can
+ On Debian systems, the full text of the {{Apache Software License version 2}} can
  be found in the file `/usr/share/common-licenses/Apache-2.0'.

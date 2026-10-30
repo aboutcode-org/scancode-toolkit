@@ -4,6 +4,8 @@ is_license_notice: yes
 is_deprecated: yes
 referenced_filenames:
     - LICENSE
+replaced_by:
+    - mit
 ---
 
 All the files in this distribution are covered under either the MIT

@@ -4,6 +4,6 @@ is_license_reference: yes
 relevance: 100
 ---
 
-Licensed under the GPL-2 or later.
+Licensed under the {{GPL-2 or later}}.
 
 Heavily borrowed from the following peoples GPL'ed software:

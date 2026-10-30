@@ -1,0 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://licenses.nuget.org/MIT
+---
+
+released as open source under the [MIT license](https://licenses.nuget.org/MIT)

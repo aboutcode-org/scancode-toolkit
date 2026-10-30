@@ -1,0 +1,10 @@
+---
+license_expression: bola11
+is_license_notice: yes
+notes: https://blitiri.com.ar/p/bola/
+ignorable_urls:
+    - http://geekbakery.net/archives/2012/08/buena-onda-license-agreement.geek
+---
+
+Licensed under the {{Buena Onda License Agreement (BOLA)}}.
+http://geekbakery.net/archives/2012/08/buena-onda-license-agreement.geek

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1992 Rick Sladkey
+  - Changes Copyright (c) 1994 by Florian La Roche
+holders:
+  - Rick Sladkey
+  - Changes by Florian La Roche
+authors:
+  - Wai S Kok elekokws@ee.nus.sg

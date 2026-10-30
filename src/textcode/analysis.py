@@ -76,8 +76,7 @@ def numbered_text_lines(
         return iter([])
 
     if not isinstance(location, str):
-        # not a path: wrap an iterator on location which should be a sequence
-        # of lines
+        # not a path: wrap an iterator on location which should be a sequence of lines
         if TRACE:
             logger_debug('numbered_text_lines:', 'location is not a file')
         return enumerate(iter(location), start_line)
@@ -94,8 +93,11 @@ def numbered_text_lines(
         logger_debug('numbered_text_lines: T.is_text_with_long_lines:', T.is_text_with_long_lines)
         logger_debug('numbered_text_lines: T.is_binary:', T.is_binary)
 
-    # TODO: we should have a command line to force digging inside binaries
-    if not T.contains_text:
+    # Some text-like files (notably source files misidentified by libmagic as
+    # image/data with a "text" payload) still contain extractable content even
+    # when `contains_text` is false. Allow text-classified files through to the
+    # normal extraction path instead of dropping them prematurely.
+    if not (T.contains_text or T.is_text):
         return iter([])
 
     # Should we read this as some markup, pdf office doc, text or binary?

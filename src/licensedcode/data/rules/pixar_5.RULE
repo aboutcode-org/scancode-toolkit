@@ -1,0 +1,10 @@
+---
+license_expression: pixar
+is_license_reference: yes
+relevance: 100
+minimum_coverage: 80
+ignorable_urls:
+    - https://github.com/PixarAnimationStudios/OpenUSD/blob/release/LICENSE.txt
+---
+
+https://github.com/PixarAnimationStudios/OpenUSD/blob/release/LICENSE.txt

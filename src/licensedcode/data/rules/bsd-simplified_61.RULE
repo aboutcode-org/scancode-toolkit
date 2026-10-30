@@ -6,5 +6,5 @@ referenced_filenames:
     - LICENSE
 ---
 
-// Licensed under the BSD 2-Clause License.
+// {{Licensed under the BSD 2-Clause License}}.
 // See LICENSE in the project root for license information.

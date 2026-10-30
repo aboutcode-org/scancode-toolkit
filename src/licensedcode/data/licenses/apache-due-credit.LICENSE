@@ -1,6 +1,8 @@
 ---
 key: apache-due-credit
 is_deprecated: yes
+replaced_by:
+    - dom4j
 short_name: Apache Due Credit Variant
 name: Apache Due Credit Variant
 category: Permissive

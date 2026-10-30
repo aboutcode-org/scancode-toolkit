@@ -1,0 +1,10 @@
+---
+license_expression: mapbox-tos-2024
+is_license_notice: yes
+relevance: 99
+ignorable_urls:
+    - http://mapbox.com/tos
+---
+
+*    Freely available for commercial and non-commercial use according to the
+ *    {{MapBox terms of service}}: {{http://mapbox.com/tos}}

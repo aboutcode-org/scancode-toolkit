@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.gnu.org/licenses/agpl.html
 ---
 
-license   http://www.gnu.org/licenses/agpl.html GNU AGPL v3.0
+license   http://www.gnu.org/licenses/agpl.html {{GNU AGPL v3.0}}

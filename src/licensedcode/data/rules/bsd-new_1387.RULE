@@ -1,0 +1,9 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+ignorable_urls:
+    - https://golang.org/LICENSE
+---
+
+This project bundles the following dependencies under the {{Go License}} (https://golang.org/LICENSE).
+See bundled license files for details.

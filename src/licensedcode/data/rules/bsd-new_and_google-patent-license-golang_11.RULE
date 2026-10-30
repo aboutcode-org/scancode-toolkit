@@ -1,0 +1,8 @@
+---
+license_expression: bsd-new AND google-patent-license-golang
+is_license_notice: yes
+relevance: 99
+notes: Go license also has the patent disclaimer often ignored by downstream re-users
+---
+
+licensed under the {{same conditions as the original Go code}}.

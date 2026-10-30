@@ -1,7 +1,10 @@
 ---
 license_expression: mit-no-false-attribs
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - mit-no-false-attribs
 ---
 
 licenses.nuget.org/MITNFA

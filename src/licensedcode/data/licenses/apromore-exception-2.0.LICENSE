@@ -1,0 +1,19 @@
+---
+key: apromore-exception-2.0
+short_name: Apromore Exception to GPL 2.0 or later
+name: Apromore Exception to GPL 2.0 or later
+category: Copyleft
+owner: TU/e
+homepage_url: https://promtools.org/prom-6-framework-license/
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-apromore-exception-2.0
+other_urls:
+    - https://promtools.org/wp-content/uploads/2022/12/prom_logo_50x20.png
+    - https://www.promtools.org.
+ignorable_urls:
+    - https://www.promtools.org/
+---
+
+Apromore License Exception
+
+As the copyright holder of this ProM software, TU/e explicitly allows the compilation and distribution of this ProM software with the Apromore software, provided that when and where (a part of) this ProM software is being executed in Apromore, the unscaled ProM logo: https://promtools.org/wp-content/uploads/2022/12/prom_logo_50x20.png must be fully visible in Apromore and not visually obscured by other elements, and must link back to https://www.promtools.org.

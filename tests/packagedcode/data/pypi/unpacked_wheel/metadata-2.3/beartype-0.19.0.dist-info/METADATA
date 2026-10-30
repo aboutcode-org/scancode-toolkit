@@ -1,0 +1,132 @@
+Metadata-Version: 2.3
+Name: beartype
+Version: 0.19.0
+Summary: Unbearably fast near-real-time hybrid runtime-static type-checking in pure Python.
+Project-URL: Docs, https://beartype.readthedocs.io
+Project-URL: GitHub, https://github.com/beartype/beartype
+Project-URL: Forums, https://github.com/beartype/beartype/discussions
+Project-URL: Issues, https://github.com/beartype/beartype/issues
+Project-URL: Releases, https://github.com/beartype/beartype/releases
+Author-email: Cecil Curry <leycec@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2014-2024 Beartype authors.
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Keywords: annotations,python,type checking,type hints
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Provides-Extra: dev
+Requires-Dist: autoapi>=0.9.0; extra == 'dev'
+Requires-Dist: coverage>=5.5; extra == 'dev'
+Requires-Dist: equinox; (sys_platform == 'linux') and extra == 'dev'
+Requires-Dist: jax[cpu]; (sys_platform == 'linux') and extra == 'dev'
+Requires-Dist: jaxtyping; (sys_platform == 'linux') and extra == 'dev'
+Requires-Dist: mypy>=0.800; (platform_python_implementation != 'PyPy') and extra == 'dev'
+Requires-Dist: numba; extra == 'dev'
+Requires-Dist: numpy; (sys_platform != 'darwin' and platform_python_implementation != 'PyPy') and extra == 'dev'
+Requires-Dist: pandera; extra == 'dev'
+Requires-Dist: pydata-sphinx-theme<=0.7.2; extra == 'dev'
+Requires-Dist: pygments; extra == 'dev'
+Requires-Dist: pyright>=1.1.370; extra == 'dev'
+Requires-Dist: pytest>=4.0.0; extra == 'dev'
+Requires-Dist: sphinx; (python_version >= '3.8.0') and extra == 'dev'
+Requires-Dist: sphinx<6.0.0,>=4.2.0; extra == 'dev'
+Requires-Dist: sphinxext-opengraph>=0.7.5; extra == 'dev'
+Requires-Dist: tox>=3.20.1; extra == 'dev'
+Requires-Dist: typing-extensions>=3.10.0.0; extra == 'dev'
+Provides-Extra: doc-rtd
+Requires-Dist: autoapi>=0.9.0; extra == 'doc-rtd'
+Requires-Dist: pydata-sphinx-theme<=0.7.2; extra == 'doc-rtd'
+Requires-Dist: sphinx<6.0.0,>=4.2.0; extra == 'doc-rtd'
+Requires-Dist: sphinxext-opengraph>=0.7.5; extra == 'doc-rtd'
+Provides-Extra: test
+Requires-Dist: coverage>=5.5; extra == 'test'
+Requires-Dist: equinox; (sys_platform == 'linux') and extra == 'test'
+Requires-Dist: jax[cpu]; (sys_platform == 'linux') and extra == 'test'
+Requires-Dist: jaxtyping; (sys_platform == 'linux') and extra == 'test'
+Requires-Dist: mypy>=0.800; (platform_python_implementation != 'PyPy') and extra == 'test'
+Requires-Dist: numba; extra == 'test'
+Requires-Dist: numpy; (sys_platform != 'darwin' and platform_python_implementation != 'PyPy') and extra == 'test'
+Requires-Dist: pandera; extra == 'test'
+Requires-Dist: pygments; extra == 'test'
+Requires-Dist: pyright>=1.1.370; extra == 'test'
+Requires-Dist: pytest>=4.0.0; extra == 'test'
+Requires-Dist: sphinx; (python_version >= '3.8.0') and extra == 'test'
+Requires-Dist: tox>=3.20.1; extra == 'test'
+Requires-Dist: typing-extensions>=3.10.0.0; extra == 'test'
+Provides-Extra: test-tox
+Requires-Dist: equinox; (sys_platform == 'linux') and extra == 'test-tox'
+Requires-Dist: jax[cpu]; (sys_platform == 'linux') and extra == 'test-tox'
+Requires-Dist: jaxtyping; (sys_platform == 'linux') and extra == 'test-tox'
+Requires-Dist: mypy>=0.800; (platform_python_implementation != 'PyPy') and extra == 'test-tox'
+Requires-Dist: numba; extra == 'test-tox'
+Requires-Dist: numpy; (sys_platform != 'darwin' and platform_python_implementation != 'PyPy') and extra == 'test-tox'
+Requires-Dist: pandera; extra == 'test-tox'
+Requires-Dist: pygments; extra == 'test-tox'
+Requires-Dist: pyright>=1.1.370; extra == 'test-tox'
+Requires-Dist: pytest>=4.0.0; extra == 'test-tox'
+Requires-Dist: sphinx; (python_version >= '3.8.0') and extra == 'test-tox'
+Requires-Dist: typing-extensions>=3.10.0.0; extra == 'test-tox'
+Provides-Extra: test-tox-coverage
+Requires-Dist: coverage>=5.5; extra == 'test-tox-coverage'
+Description-Content-Type: text/x-rst
+
+.. # ------------------( LICENSE                             )------------------
+.. # Copyright (c) 2014-2024 Beartype authors.
+.. # See "LICENSE" for further details.
+.. #
+.. # ------------------( SEO                                 )------------------
+.. # Metadata converted into HTML-specific meta tags parsed by search engines.
+.. # Note that:
+.. # * The "description" should be no more than 300 characters and ideally no
+.. #   more than 150 characters, as search engines may silently truncate this
+.. #   description to 150 characters in edge cases.
+
+.. meta::
+   :description lang=en:
+     Beartype is an open-source pure-Python PEP-compliant constant-time runtime
+     type checker emphasizing efficiency and portability.
+
+**Beartype** is an `open-source <beartype license_>`__ `pure-Python <beartype
+pure_>`__ `PEP-compliant <beartype PEPs_>`__ `near-real-time <beartype FAQ_>`__
+`hybrid runtime-static <beartype hybrid_>`__ `third-generation <beartype
+third_>`__ `type checker <beartype ELI5_>`__ emphasizing efficiency,
+usability, unsubstantiated jargon we just made up, and thrilling puns.
+
+.. #FIXME: Once we actually receive a sponsor at this tier, please remove this
+.. #placeholder as well as the icon links below. kthx
+.. #The `Bear Team <beartype organization_>`__ gratefully thanks `our family of
+.. #breathtaking GitHub Sponsors <beartype sponsorship_>`__:
+.. #
+.. #* **Your iconic URL here.** `Let us bestow you with eyeballs <beartype
+.. #  sponsorship_>`__.
+.. #FIXME: Once we actually receive a sponsor at this tier, please remove this
+.. #placeholder as well as the icon links below. kthx
+.. #    |icon-for-glorious-sponsor|

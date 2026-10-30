@@ -1,0 +1,93 @@
+Metadata-Version: 2.2
+Name: trimesh
+Version: 4.6.1
+Summary: Import, export, process, analyze and view triangular meshes.
+Author-email: Michael Dawson-Haggerty <mikedh@kerfed.com>
+License: The MIT License (MIT)
+        
+        Copyright (c) 2023 Michael Dawson-Haggerty
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: homepage, https://github.com/mikedh/trimesh
+Project-URL: documentation, https://trimesh.org
+Keywords: graphics,mesh,geometry,3D
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Natural Language :: English
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Topic :: Multimedia :: Graphics :: 3D Modeling
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: numpy>=1.20
+Provides-Extra: easy
+Requires-Dist: colorlog; extra == "easy"
+Requires-Dist: manifold3d>=2.3.0; extra == "easy"
+Requires-Dist: chardet; extra == "easy"
+Requires-Dist: lxml; extra == "easy"
+Requires-Dist: jsonschema; extra == "easy"
+Requires-Dist: networkx; extra == "easy"
+Requires-Dist: svg.path; extra == "easy"
+Requires-Dist: pycollada; extra == "easy"
+Requires-Dist: setuptools; extra == "easy"
+Requires-Dist: shapely; extra == "easy"
+Requires-Dist: xxhash; extra == "easy"
+Requires-Dist: rtree; extra == "easy"
+Requires-Dist: httpx; extra == "easy"
+Requires-Dist: scipy; extra == "easy"
+Requires-Dist: embreex; platform_machine == "x86_64" and extra == "easy"
+Requires-Dist: pillow; extra == "easy"
+Requires-Dist: xatlas; extra == "easy"
+Requires-Dist: vhacdx; python_version >= "3.9" and extra == "easy"
+Requires-Dist: mapbox_earcut>=1.0.2; python_version >= "3.9" and extra == "easy"
+Provides-Extra: recommend
+Requires-Dist: sympy; extra == "recommend"
+Requires-Dist: meshio; extra == "recommend"
+Requires-Dist: pyglet<2; extra == "recommend"
+Requires-Dist: psutil; extra == "recommend"
+Requires-Dist: scikit-image; extra == "recommend"
+Requires-Dist: fast-simplification; extra == "recommend"
+Requires-Dist: openctm; platform_machine == "x86_64" and extra == "recommend"
+Requires-Dist: cascadio; extra == "recommend"
+Provides-Extra: test
+Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pyinstrument; extra == "test"
+Requires-Dist: ruff; extra == "test"
+Provides-Extra: test-more
+Requires-Dist: coveralls; extra == "test-more"
+Requires-Dist: pyright; extra == "test-more"
+Requires-Dist: ezdxf; extra == "test-more"
+Requires-Dist: pytest-beartype; python_version >= "3.10" and extra == "test-more"
+Requires-Dist: matplotlib; extra == "test-more"
+Requires-Dist: pymeshlab; extra == "test-more"
+Requires-Dist: triangle; extra == "test-more"
+Requires-Dist: ipython; extra == "test-more"
+Provides-Extra: deprecated
+Requires-Dist: gmsh==4.12.2; extra == "deprecated"
+Provides-Extra: all
+Requires-Dist: trimesh[deprecated,easy,recommend,test,test_more]; extra == "all"

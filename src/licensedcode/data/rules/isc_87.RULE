@@ -6,4 +6,4 @@ ignorable_urls:
     - http://copyfree.org/
 ---
 
-licensed under the [copyfree](http://copyfree.org) ISC License.
+licensed under the [copyfree](http://copyfree.org) {{ISC License}}.

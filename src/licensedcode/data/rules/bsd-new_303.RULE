@@ -5,6 +5,6 @@ relevance: 100
 minimum_coverage: 95
 ---
 
-"License": "BSD 3-clause \"New\" or \"Revised\" License",
+"{{License": "BSD 3-clause}} \"New\" or \"Revised\" License",
 "LicenseFile": 
-"LicenseId": "BSD-3-Clause",
+"LicenseId": "{{BSD-3-Clause}}",

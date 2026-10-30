@@ -3,7 +3,7 @@ key: bigscience-open-rail-m
 short_name: BigScience Open RAIL-M License
 name: BigScience Open RAIL-M License
 category: Proprietary Free
-owner: BigScience
+owner: HuggingFace
 homepage_url: https://www.licenses.ai/blog/2022/8/26/bigscience-open-rail-m-license
 spdx_license_key: LicenseRef-scancode-bigscience-open-rail-m
 text_urls:

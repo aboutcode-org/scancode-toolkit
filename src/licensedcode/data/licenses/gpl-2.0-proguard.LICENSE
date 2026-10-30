@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-proguard
 is_deprecated: yes
+replaced_by:
+    - proguard-exception-2.0
 short_name: GPL 2.0 with ProGuard exception
 name: GPL 2.0 with ProGuard exception
 category: Copyleft Limited

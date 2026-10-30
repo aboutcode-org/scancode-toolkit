@@ -6,4 +6,4 @@ referenced_filenames:
     - COPYING.GPLv2
 ---
 
-COPYING.GPLv2: GNU General Public License version 2
+COPYING.GPLv2: {{GNU General Public License version 2}}

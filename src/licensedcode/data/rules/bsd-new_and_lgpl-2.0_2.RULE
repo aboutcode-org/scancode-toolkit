@@ -1,0 +1,6 @@
+---
+license_expression: bsd-new AND lgpl-2.0
+is_license_notice: yes
+---
+
+software is open source software with portions licensed under a BSD license (see Apple's example below) and portions licensed under the GNU Library General Public License Version 2. Please refer to the individual files to determine the license terms that apply to that file. You may obtain a complete machine-readable copy of the source code for the LGPL-licensed portions under the terms of LGPL, without charge except for the cost of media, shipping, and handling, upon written request to Apple. The WebKit software is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the LGPL for more details; a copy of the LGPL is included with this product.

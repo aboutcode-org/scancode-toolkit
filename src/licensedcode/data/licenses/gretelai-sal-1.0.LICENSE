@@ -1,0 +1,187 @@
+---
+key: gretelai-sal-1.0
+short_name: Gretel.AI SAL 1.0
+name: Gretel.AI Source Available License Agreement v1.0
+category: Source-available
+owner: Gretel
+homepage_url: https://gretel.ai/license/source-available-license
+spdx_license_key: LicenseRef-scancode-gretelai-sal-1.0
+text_urls:
+    - https://github.com/gretelai/gretel-synthetics/blob/master/LICENSE
+faq_url: https://gretel.ai/license
+standard_notice: |
+    Gretel utilizes a Source Available License. Unless one of the
+    exceptions or alternate license options below is in place,
+    the default license will be Gretel's Source Available License.
+    For more details and our FAQ please see our website:
+    https://gretel.ai/license
+    Exceptions to the Source Available License:
+    1. License directly present in the file
+    2. LICENSE file in the same directory as the work
+    3. First LICENSE found when exploring parent directories up to the project
+    top level directory
+    4. Defaults to the Gretel Source Available License
+ignorable_emails:
+    - hi@gretel.ai
+---
+
+GRETEL.AI SOURCE AVAILABLE LICENSE AGREEMENT
+Version 1.0 – August 2022
+
+THIS GRETEL.AI SOURCE AVAILABLE LICENSE AGREEMENT, VERSION 1.0 (THE “AGREEMENT”) SETS FORTH THE 
+TERMS AND CONDITIONS UNDER WHICH GRETEL LABS, INC. (“GRETEL.AI”) MAKES AVAILABLE CERTAIN OF ITS 
+PROPRIETARY SOFTWARE SOURCE CODE, AS INDICATED BY A COPYRIGHT NOTICE THAT GRETEL.AI INCLUDES IN 
+OR ATTACHES TO SPECIFIC VERSIONS OF SUCH SOFTWARE SOURCE CODE (THE “SOFTWARE”). PLEASE READ THE 
+FOLLOWING TERMS AND CONDITIONS CAREFULLY BEFORE DOWNLOADING, INSTALLING OR USING THE SOFTWARE, 
+AS THEY GOVERN USE OF THE SOFTWARE.
+
+Gretel.ai is willing to license the Software to the individual or entity that agrees to this 
+Agreement (“you”), only upon the condition that you accept all the terms contained in this Agreement. 
+By downloading, installing or using the Software, you indicate that you understand this Agreement 
+and accept all of its terms. If you are downloading, installing or using the Software on behalf 
+of a company or other legal entity, you represent that you have the authority to bind such entity 
+to this Agreement, in which case “you” or “your” shall refer to such entity. If you do not agree 
+to the terms of this Agreement, you may not download, install or use the Software. 
+
+Unless and until you have entered into a separate license agreement with Gretel.ai, this 
+Agreement constitutes the final, complete, and exclusive agreement between the parties 
+regarding the Software licensed hereunder, and supersedes all prior or contemporaneous 
+agreements, understandings, and communication, whether written or oral, with respect 
+to such Software.
+
+1) LICENSE.
+
+1.a) Grant of License. Conditioned on your compliance with the terms and conditions of 
+this Agreement, Gretel.ai grants you a non-exclusive, royalty-free, worldwide, 
+non-transferable, non-sublicensable license under Gretel.ai’s copyrights in the 
+Software and during the term of this Agreement to:
+
+(a) modify and prepare derivative works based on the Software (your “Modifications”);
+(b) compile, install and execute the Software and your Modifications; and, 
+(c) to copy the Software and your Modifications as reasonably necessary to exercise 
+the license rights granted above, including making a reasonable number of copies for 
+backup and archival purposes;
+
+in each case, (i) solely on servers and equipment owned or controlled by you, 
+(ii) solely for your internal business purposes or for your own non-commercial 
+academic, research or other personal use, and (iii) in all events, in accordance 
+with the obligations and restrictions set forth in this Agreement, including Sections 1.2 - 1.5.
+
+1.b) License Restrictions. The license granted to you in Section 1.1 does not include 
+the right to, and you will not, and you will not permit any other individual or entity to:
+
+(a) distribute, sell, sublicense or otherwise transfer or make available 
+the Software or your Modifications to third parties;
+
+(b) make the Software or your Modifications available to third parties on a service bureau, 
+time sharing, hosting or other computer services basis, or otherwise make the functionality 
+of the Software or your Modifications available to third parties, including by providing a 
+software-as-a-service, platform-as-a-service, infrastructure-as-a-service or other similar 
+online service (a “XaaS Service”); or
+
+(c) use the Software or your Modifications as part of a product or service, or to perform a 
+service, that is offered to third parties, including by providing a XaaS Service.
+
+1.c) Notices. You will reproduce all of Gretel.ai’s and its licensors’ copyright notices 
+and any other proprietary rights notices contained in the Software (and not remove or alter 
+any of the foregoing) in all copies of the Software and Modifications that you make.
+
+1.d) Limited Rights. Your rights in the Software are limited to those expressly granted in 
+Section 1.1. Gretel.ai and its licensors reserve all right, title and interest in and to 
+the Software and all intellectual property rights therein not expressly granted to you 
+in this Agreement. You agree to comply fully with all U.S. export laws and regulations 
+to ensure that neither the Software nor any technical data related thereto nor any direct 
+product thereof are exported or re-exported directly or indirectly in violation of, 
+or used for any purposes prohibited by, such laws and regulations.
+
+1.e) Open-Source Software. Gretel.ai may package or otherwise make the Software available 
+with software or other material that is distributed as “free software,” “open source software” 
+or under similar licensing or distribution models, including the GNU General Public License, 
+GNU Lesser General Public License, Mozilla Public License, BSD licenses, the MIT license, 
+the Apache License and other such licenses, whether or not recognized or approved by the 
+Free Software Foundation or the Open Source Initiative (“Open Source Software”), as noted in Gretel.ai’s 
+documentation for the Software. All such Open Source Software is licensed to you exclusively 
+under the terms of their applicable licenses, including all warranty disclaimers and 
+limitations on liability therein, and the usage limitations and restrictions set forth 
+in this Agreement do not apply to such Open Source Software.
+
+Notwithstanding the foregoing, the license granted to you in Section 1.1 does not include 
+the right to, and you will not, and you will not permit any other individual or entity to, 
+modify, combine, integrate or otherwise use the Software or your Modifications with 
+Open Source Software or any other software or materials in such a manner that requires, 
+or could require, the Software or your Modifications, in whole or part, to be (a) disclosed or 
+distributed to third parties in source code form, (b) licensed to third parties for the 
+purpose of making derivative works, or (c) redistributable by third parties at no charge, 
+including under the terms of the GNU General Public License version 3, the GNU Affero General Public License
+version 3, the GNU Lesser General Public License version 3, or any prior or successor 
+versions or equivalents of the foregoing.
+
+2) FEEDBACK. To the extent you provide Gretel.ai with suggestions, proposals, ideas, 
+recommendations or other feedback relating to the Software (“Feedback”), you hereby 
+grant to Gretel.ai a non-exclusive, perpetual, irrevocable, royalty-free, fully-paid, 
+sub-licensable, transferable, worldwide right and license to make, have made, use, 
+sell, offer for sale, import, export, rent, lease, reproduce, distribute, publicly 
+display, publicly perform, modify, create derivative works of, disclose and otherwise 
+exploit such Feedback in any manner without restriction (whether of confidentiality, compensation or otherwise).
+
+3) OWNERSHIP. As between you and Gretel.ai, you acknowledge and agree that Gretel.ai 
+owns all right, title, and interest in and to the Software, including all intellectual 
+property rights therein. Gretel.ai reserves all rights not expressly granted to you in 
+this Agreement, including with respect to its trademarks, service marks and brand features.
+
+4) WARRANTY DISCLAIMER. You acknowledge and agree that the Software is provided “AS IS.” 
+GRETEL.AI DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING 
+OR USAGE OF TRADE. For the avoidance of doubt, Gretel.ai has no obligation to provide maintenance, 
+support or any other services to you for the Software under this Agreement.
+
+5) LIMITATION ON LIABILITY. TO THE EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL GRETEL.AI
+BE LIABLE TO YOU OR TO ANY THIRD PARTY FOR DAMAGES OF ANY KIND, INCLUDING, WITHOUT LIMITATION,
+DIRECT, SPECIAL, INCIDENTAL, PUNITIVE OR CONSEQUENTIAL DAMAGES (INCLUDING LOSS OF USE, DATA, 
+BUSINESS OR PROFITS) ARISING OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THIS AGREEMENT, 
+WHETHER SUCH LIABILITY ARISES FROM ANY CLAIM BASED UPON CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE), 
+STRICT LIABILITY OR OTHERWISE, AND WHETHER OR NOT GRETEL.AI HAS BEEN ADVISED OF THE 
+POSSIBILITY OF SUCH LOSS OR DAMAGE. THE PARTIES HAVE AGREED THAT THESE LIMITATIONS 
+WILL SURVIVE AND APPLY EVEN IF ANY LIMITED REMEDY SPECIFIED IN THIS AGREEMENT IS 
+FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE. 
+  
+You expressly acknowledge that Gretel.ai has entered into this Agreement in reliance upon the 
+limitations of liability specified herein, which allocate the risk between Gretel.ai and you,
+and form a basis of the bargain between us.
+
+6) TERM AND TERMINATION. This Agreement is effective until terminated. You may terminate this Agreement 
+at any time by destroying all copies of the Software and your Modifications. 
+This Agreement will terminate immediately, without the requirement of written notice to you, 
+in the event that you breach the terms of this Agreement or infringe or otherwise violate Gretel.ai’s 
+intellectual property rights. Upon any termination of this Agreement, 
+the rights and licenses granted to you in this Agreement will automatically terminate 
+and you will, at your expense, destroy all copies of the Software and your Modifications. 
+Sections 2, 3, 4, 5, 6 and 7 will survive any termination of this Agreement. 
+
+7) GENERAL PROVISIONS. 
+
+7a) Assignment. You may not assign this Agreement, in whole or in part, by operation of 
+law or otherwise, without the prior written consent of Gretel.ai. Any attempted assignment 
+without such consent will be null and void. Gretel.ai may assign this Agreement without your consent. 
+Subject to the foregoing, this Agreement will bind and inure to the benefit of each 
+party's successors and permitted assigns.
+
+7b) Governing Law. This Agreement will be governed by and construed in accordance with the 
+laws of the State of California, USA (excluding its body of law controlling conflicts of law). 
+The parties expressly agree that the United Nations Convention on Contracts for the 
+International Sale of Goods will not apply. Any legal action or proceeding arising in 
+connection with this Agreement will be brought exclusively in the federal or state courts 
+located in the City and County of San Francisco, California and the parties hereby consent 
+to the personal jurisdiction and venue therein.
+
+7c) Entire Agreement. This Agreement and the attached exhibits constitute the entire and 
+exclusive agreement between the parties pertaining to the subject matter hereof, 
+and supersede any and all prior agreements, communications, and understandings (both written and oral) 
+regarding such subject matter. This Agreement may only be modified, and any rights under it waived, 
+by a written document executed by both parties. If for any reason a court of competent 
+jurisdiction finds any provision of this Agreement invalid or unenforceable, that provision 
+of the Agreement will be enforced to the maximum extent permissible and the other provisions 
+of this Agreement will remain in full force and effect. The failure to enforce any provision 
+of this Agreement will not constitute a waiver of future enforcement of that or any other provision.
+
+If you have any questions regarding this Agreement, you may contact Gretel.ai at hi@gretel.ai.

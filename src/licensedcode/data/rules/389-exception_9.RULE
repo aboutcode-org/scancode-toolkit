@@ -1,7 +1,10 @@
 ---
 license_expression: 389-exception
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - 389-exception
 ---
 
 licenses.nuget.org/389-exception

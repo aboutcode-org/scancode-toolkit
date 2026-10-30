@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-library
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0 WITH classpath-exception-2.0
 short_name: GPL 2.0 with Library exception
 name: GPL 2.0 with Library exception
 category: Copyleft Limited

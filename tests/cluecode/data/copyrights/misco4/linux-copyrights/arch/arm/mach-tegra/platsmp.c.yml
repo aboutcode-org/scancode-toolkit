@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2002 ARM Ltd.
+  - Copyright (c) 2009 Palm
+holders:
+  - ARM Ltd.
+  - Palm

@@ -33,6 +33,7 @@ from licensedcode.detection import populate_matches_with_path
 from packagedcode import get_package_handler
 from packagedcode.licensing import add_referenced_license_matches_for_package
 from packagedcode.licensing import add_referenced_license_detection_from_package
+from packagedcode.licensing import add_referenced_license_detection_from_package_manifest_siblings
 from packagedcode.licensing import add_license_from_sibling_file
 from packagedcode.licensing import get_license_expression_from_detection_mappings
 from packagedcode.models import add_to_package
@@ -95,6 +96,11 @@ def get_available_package_parsers(docs=False):
         if cls.datasource_id is None:
             raise Exception(cls)
 
+        if not cls.supported_oses:
+            supported_oses = ('linux', 'win', 'mac')
+        else:
+            supported_oses = cls.supported_oses
+
         data_packages = {}
         if docs:
             path_patterns = '\n       '.join(f"``{p}``" for p in cls.path_patterns)
@@ -103,11 +109,15 @@ def get_available_package_parsers(docs=False):
             else:
                 data_packages['package_type'] = cls.default_package_type
             data_packages['datasource_id'] = f"``{cls.datasource_id}``"
+            supported_oses = ', '.join(f"``{os_type}``" for os_type in supported_oses)
+            
         else:
             path_patterns = ', '.join(repr(p) for p in cls.path_patterns)
+            supported_oses = ', '.join(repr(os_type) for os_type in supported_oses)
             data_packages['package_type'] = cls.default_package_type
             data_packages['datasource_id'] = cls.datasource_id
 
+        data_packages['supported_oses'] = supported_oses
         data_packages['documentation_url'] = cls.documentation_url
         data_packages['default_primary_language'] = cls.default_primary_language
         data_packages['description'] = cls.description
@@ -142,7 +152,7 @@ class PackageScanner(ScanPlugin):
     required_plugins = ['scan:licenses']
 
     run_order = 3
-    sort_order = 3
+    sort_order = 4
 
     options = [
         PluggableCommandLineOption(
@@ -168,6 +178,19 @@ class PackageScanner(ScanPlugin):
         ),
         PluggableCommandLineOption(
             (
+                '--package-in-compiled',
+            ),
+            is_flag=True,
+            default=False,
+            help=(
+                'Scan <input> for package and dependency related data in compiled binaries. '
+                'Currently supported compiled binaries: Go, Rust.'
+            ),
+            help_group=SCAN_GROUP,
+            sort_order=22,
+        ),
+        PluggableCommandLineOption(
+            (
                 '--package-only',
             ),
             is_flag=True,
@@ -178,11 +201,12 @@ class PackageScanner(ScanPlugin):
                 'license/copyright detection and top-level package creation.'
             ),
             help_group=SCAN_GROUP,
-            sort_order=22,
+            sort_order=23,
         ),
         PluggableCommandLineOption(
             ('--list-packages',),
             is_flag=True,
+            default=False,
             is_eager=True,
             callback=print_packages,
             help='Show the list of supported package manifest parsers and exit.',
@@ -190,10 +214,17 @@ class PackageScanner(ScanPlugin):
         ),
     ]
 
-    def is_enabled(self, package, system_package, package_only, **kwargs):
-        return package or system_package or package_only
+    def is_enabled(self, package, system_package, package_in_compiled, package_only, **kwargs):
+        return package or system_package or package_in_compiled or package_only
 
-    def get_scanner(self, package=True, system_package=False, package_only=False, **kwargs):
+    def get_scanner(
+        self,
+        package=True,
+        system_package=False,
+        package_in_compiled=False,
+        package_only=False,
+        **kwargs
+    ):
         """
         Return a scanner callable to scan a file for package data.
         """
@@ -203,6 +234,7 @@ class PackageScanner(ScanPlugin):
             get_package_data,
             application=package,
             system=system_package,
+            compiled=package_in_compiled,
             package_only=package_only,
         )
 
@@ -266,12 +298,22 @@ class PackageScanner(ScanPlugin):
                 logger_debug(f'packagedcode: process_codebase: add_license_from_sibling_file: modified: {modified}')
 
         # Create codebase-level packages and dependencies
-        create_package_and_deps(codebase, package_summary, strip_root=strip_root, **kwargs)
-        #raise Exception()
+        create_package_and_deps(
+            codebase,
+            strip_root=strip_root,
+            package_summary=package_summary,
+            **kwargs,
+        )
 
         if has_licenses:
             # This step is dependent on top level packages
             for resource in codebase.walk(topdown=False):
+                # If there is an unresolved unknown reference to a file, in a file which is part of a package
+                # we check if the referenced file is present beside the package manifest for the package
+                modified = add_referenced_license_detection_from_package_manifest_siblings(resource, codebase)
+                if TRACE_LICENSE and modified:
+                    logger_debug(f'packagedcode: process_codebase: add_referenced_license_detection_from_package_manifest_siblings: modified: {modified}')
+
                 # If there is a unknown reference to a package we add the license
                 # from the package license detection
                 modified = list(add_referenced_license_detection_from_package(resource, codebase))
@@ -529,7 +571,7 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
                 resource.scan_errors.append(msg)
                 resource.save(codebase)
 
-                if TRACE:
+                if TRACE_ASSEMBLY:
                     raise Exception(msg) from e
 
     return packages, dependencies

@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: not a license, but some comment found in n8n
+---
+
+All third party components incorporated into the n8n Software are licensed under the original license
+                              provided by the owner of the applicable component.

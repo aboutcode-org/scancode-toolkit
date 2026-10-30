@@ -10,10 +10,10 @@ ignorable_urls:
 //The program users must agree to the following terms:
 //
 //Copyright notices
-//This program is free software: you can redistribute it and/or modify it under the terms of the GNU AGPL v3 License as published by the 
+//This program is free software: you can redistribute it and/or modify it under the terms of the {{GNU AGPL v3 License}} as published by the 
 //Free Software Foundation, version 3 of the License.
 //This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of 
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU AGPL v3 License for more details www.gnu.org.
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the {{GNU AGPL v3 License}} for more details www.gnu.org.
 //
 //Disclaimer of Warranty
 //There is no warranty for the program, to the extent permitted by applicable law; except when otherwise stated in writing the copyright 

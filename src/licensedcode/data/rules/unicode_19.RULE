@@ -8,6 +8,6 @@ ignorable_urls:
     - http://www.unicode.org/copyright.html#License
 ---
 
-The data  is licensed under the Unicode
-License Agreement
+The data  is {{licensed under the Unicode
+License Agreement}}
 ([LICENSE-UNICODE](http://www.unicode.org/copyright.html#License)).

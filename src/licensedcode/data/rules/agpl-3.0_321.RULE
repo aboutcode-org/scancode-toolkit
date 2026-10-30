@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE
 ---
 
-licensed under [AGPL-3.0](/LICENSE)
+{{licensed under [AGPL-3.0}}](/LICENSE)

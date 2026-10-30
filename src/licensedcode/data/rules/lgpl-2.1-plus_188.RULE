@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-under the GNU Lesser General Public License version 2.1
-or later (LGPL v2.1+).
+under the {{GNU Lesser General Public License version 2.1
+or later}} (LGPL v2.1+).

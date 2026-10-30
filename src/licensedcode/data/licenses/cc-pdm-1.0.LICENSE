@@ -5,8 +5,13 @@ name: Creative Commons Public Domain Mark 1.0
 category: Public Domain
 owner: Creative Commons
 homepage_url: https://creativecommons.org/publicdomain/mark/1.0/
-spdx_license_key: LicenseRef-scancode-cc-pdm-1.0
+spdx_license_key: CC-PDM-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-cc-pdm-1.0
 faq_url: https://wiki.creativecommons.org/wiki/PDM_FAQ
+other_urls:
+    - https://creativecommons.org/share-your-work/cclicenses/
+    - https://creativecommons.org/publicdomain/mark/1.0/
 ---
 
 Public Domain Mark 1.0

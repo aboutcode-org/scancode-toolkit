@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-info-zip-2009-01
     matches:
       - license_expression: info-zip-2009-01
-        spdx_license_expression: LicenseRef-scancode-info-zip-2009-01
+        license_expression_spdx: LicenseRef-scancode-info-zip-2009-01
         from_file:
         start_line: 15
         end_line: 76

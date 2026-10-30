@@ -5,5 +5,5 @@ ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
 ---
 
-libraries are under the Apache License 2.0
+libraries are under the {{Apache License 2.0}}
 (see @url{http://www.apache.org/licenses/LICENSE-2.0} for details)

@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.scala-lang.org/license.html
 ---
 
-License: BSD 3-Clause  (http://www.scala-lang.org/license.html)
+{{License: BSD 3-Clause}}  (http://www.scala-lang.org/license.html)

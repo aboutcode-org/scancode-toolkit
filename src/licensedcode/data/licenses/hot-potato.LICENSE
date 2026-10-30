@@ -1,6 +1,8 @@
 ---
 key: hot-potato
 is_deprecated: yes
+replaced_by:
+    - proprietary-license
 short_name: Hot Potato License
 name: Hot Potato
 category: Permissive

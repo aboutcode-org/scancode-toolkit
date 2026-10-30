@@ -1,7 +1,8 @@
 ---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
+is_required_phrase: yes
 relevance: 100
 ---
 
-Licensed under the GPLv2 or later.
+licensed under the GPLv2 or later

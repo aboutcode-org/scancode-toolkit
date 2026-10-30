@@ -1,0 +1,88 @@
+[
+  {
+    "type": "npm",
+    "namespace": "@tapjs",
+    "name": "tapjs",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "JavaScript",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": "https://github.com/tapjs/tapjs",
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "blueoak-1.0.0",
+    "declared_license_expression_spdx": "BlueOak-1.0.0",
+    "license_detections": [
+      {
+        "license_expression": "blueoak-1.0.0",
+        "license_expression_spdx": "BlueOak-1.0.0",
+        "matches": [
+          {
+            "license_expression": "blueoak-1.0.0",
+            "license_expression_spdx": "BlueOak-1.0.0",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-blueoak_1_0_0-a27d3d91aab5047de087c05901869c5f4a1f12e7",
+            "rule_url": null,
+            "matched_text": "BlueOak-1.0.0"
+          }
+        ],
+        "identifier": "blueoak_1_0_0-3c25fef0-5634-6497-b6c8-0c16ab8320b3"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "- BlueOak-1.0.0\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": true,
+    "is_virtual": false,
+    "extra_data": {
+      "workspaces": [
+        "src/*"
+      ],
+      "engines": {
+        "node": "20 || >=22"
+      }
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:npm/strip-ansi",
+        "extracted_requirement": "^6.0.1",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "npm_package_json",
+    "purl": "pkg:npm/%40tapjs/tapjs"
+  }
+]

@@ -4,7 +4,7 @@ is_license_text: yes
 minimum_coverage: 90
 ---
 
-is distributed under the GNU General Public License version 2
+is distributed under {{the GNU General Public License version 2}}
  and is also available under alternative licenses negotiated directly
  with . If you obtained under the GPL, then the GPL
  applies to all loadable modules used on your system as well,

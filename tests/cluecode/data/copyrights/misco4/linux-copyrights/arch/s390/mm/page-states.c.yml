@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright IBM Corp. 2008 Guest
+holders:
+  - IBM Corp. Guest
+authors:
+  - Martin Schwidefsky <schwidefsky@de.ibm.com>

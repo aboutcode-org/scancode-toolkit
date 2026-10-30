@@ -31,7 +31,7 @@
       "matches": [
         {
           "license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
-          "spdx_license_expression": "LicenseRef-scancode-kde-accepted-lgpl AND LicenseRef-scancode-kfqf-accepted-gpl",
+          "license_expression_spdx": "LicenseRef-scancode-kde-accepted-lgpl AND LicenseRef-scancode-kfqf-accepted-gpl",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,

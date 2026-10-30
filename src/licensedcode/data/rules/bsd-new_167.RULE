@@ -6,4 +6,4 @@ minimum_coverage: 90
 ---
 
 This product includes the ASM byte code manipulation library from
-INRIA (BSD Style License)
+INRIA ({{BSD Style License}})

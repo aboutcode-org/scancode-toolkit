@@ -1,0 +1,1 @@
+copyright year 69cbf7a (https://github.com/PrismJS/prism/commit/69cbf7a)

@@ -1,0 +1,24 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1996-2001 Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>
+  - Copyright (c) Stephen Hemminger <shemminger@osdl.org> and others
+  - Copyright (c) 2004 USAGI/WIDE Project
+  - Copyright (c) J Hadi Salim (hadi@cyberus.ca)
+  - Copyright (c) 1996 Tom Lees <tom@lpsg.demon.co.uk>
+  - Copyright (c) 1998 Christoph Lameter <christoph@lameter.com>
+  - Copyright (c) 1998-1999 Roberto Lumbreras <rover@debian.org>
+  - Copyright (c) 1999-2003 Juan Cespedes <cespedes@debian.org>
+  - Copyright (c) 2005- Alexander Wirt <formorer@debian.org>
+holders:
+  - Alexey Kuznetsov
+  - Stephen Hemminger and others
+  - USAGI/WIDE Project
+  - J Hadi Salim
+  - Tom Lees
+  - Christoph Lameter
+  - Roberto Lumbreras
+  - Juan Cespedes
+  - Alexander Wirt

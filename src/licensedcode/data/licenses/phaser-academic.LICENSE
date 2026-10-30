@@ -2,7 +2,7 @@
 key: phaser-academic
 short_name: Phaser Academic EULA
 name: Phaser Academic Non-Commercial EULA
-category: Proprietary Free
+category: Non-Commercial
 owner: University of Cambridge
 homepage_url: https://www.phaser.cimr.cam.ac.uk/index.php/Academic_Licence
 spdx_license_key: LicenseRef-scancode-phaser-academic

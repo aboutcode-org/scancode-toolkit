@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-plus-sane
 is_deprecated: yes
+replaced_by:
+    - sane-exception-2.0-plus
 short_name: GPL 2.0 or later with SANE exception
 name: GPL 2.0 or later with SANE exception
 category: Copyleft Limited

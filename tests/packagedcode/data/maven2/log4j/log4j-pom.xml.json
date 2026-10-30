@@ -14,10 +14,12 @@
   "organization_url": "http://www.apache.org",
   "licenses": [
     {
-      "name": "The Apache Software License, Version 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
-      "comments": null,
-      "distribution": "repo"
+      "license": {
+        "name": "The Apache Software License, Version 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+        "comments": null,
+        "distribution": "repo"
+      }
     }
   ],
   "developers": [],

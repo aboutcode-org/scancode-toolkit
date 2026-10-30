@@ -20,10 +20,12 @@
   "organization_url": "http://www.codehaus.org",
   "licenses": [
     {
-      "name": "MIT",
-      "url": "LICENSE.txt",
-      "comments": null,
-      "distribution": "repo"
+      "license": {
+        "name": "MIT",
+        "url": "LICENSE.txt",
+        "comments": null,
+        "distribution": "repo"
+      }
     }
   ],
   "developers": [

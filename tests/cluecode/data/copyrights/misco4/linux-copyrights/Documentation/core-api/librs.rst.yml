@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2002, Phil Karn, KA9Q
+holders:
+  - Phil Karn, KA9Q
+authors:
+  - Phil Karn
+  - Thomas Gleixner

@@ -1,7 +1,10 @@
 ---
 license_expression: henry-spencer-1999
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - henry-spencer-1999
 ---
 
 licenses.nuget.org/Spencer-99

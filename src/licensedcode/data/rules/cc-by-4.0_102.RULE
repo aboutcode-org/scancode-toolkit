@@ -7,4 +7,4 @@ minimum_coverage: 100
 notes: Rule based on an SPDX license identifier and name
 ---
 
-name: Creative Commons Attribution 4.0 International
+name: {{Creative Commons Attribution 4.0 International}}

@@ -1,0 +1,12 @@
+NAME="Zorin OS"
+VERSION="12"
+ID=Zorin OS
+ID_LIKE=ubuntu
+PRETTY_NAME="Zorin OS 12"
+VERSION_ID="12"
+HOME_URL="http://www.zorinos.com/"
+SUPPORT_URL="http://www.zorinos.com/help"
+BUG_REPORT_URL="https://bugs.launchpad.net/zorin-os/+filebug"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+

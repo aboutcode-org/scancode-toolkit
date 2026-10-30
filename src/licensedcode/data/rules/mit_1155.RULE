@@ -2,6 +2,7 @@
 license_expression: mit
 is_license_notice: yes
 relevance: 100
+is_required_phrase: yes
 ---
 
-For license terms see {{SLF4J}}
+{{ For license terms see SLF4J }}

@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) by Jaroslav Kysela <perex@perex.cz>
+  - Copyright (c) 2009 by Krzysztof Helt Routines
+holders:
+  - Jaroslav Kysela
+  - Krzysztof Helt Routines

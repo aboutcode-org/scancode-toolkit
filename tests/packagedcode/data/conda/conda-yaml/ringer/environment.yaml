@@ -1,0 +1,27 @@
+# https://raw.githubusercontent.com/Genentech/ringer/refs/heads/main/environment.yaml
+name: ringer
+channels:
+  - pytorch
+  - conda-forge
+  - huggingface
+dependencies:
+  - python=3.8
+  - pip
+  - pytorch::pytorch=1.12
+  - huggingface::transformers=4.11.3
+  - conda-forge::pytorch-lightning=1.6.4
+  - conda-forge::numpy
+  - conda-forge::scipy
+  - conda-forge::pandas
+  - conda-forge::matplotlib
+  - conda-forge::seaborn
+  - conda-forge::astropy
+  - conda-forge::rdkit>=2022.09.5
+  - conda-forge::pre-commit
+  - conda-forge::pytest
+  - conda-forge::rich
+  - conda-forge::shellingham
+  - conda-forge::typer
+  - conda-forge::wandb
+  - pip:
+    - ray

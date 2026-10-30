@@ -1,0 +1,1 @@
+Copyright (C) 2010-2012  The Async HBase Authors.  All rights reserved.

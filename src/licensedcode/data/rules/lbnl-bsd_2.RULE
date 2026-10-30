@@ -3,6 +3,8 @@ license_expression: lbnl-bsd
 is_license_text: yes
 is_deprecated: yes
 relevance: 100
+replaced_by:
+    - lbnl-bsd
 ---
 
 Redistribution and use in source and binary forms, with or without modification,

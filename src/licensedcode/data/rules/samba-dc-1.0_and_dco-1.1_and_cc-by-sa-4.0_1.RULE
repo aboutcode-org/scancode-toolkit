@@ -1,0 +1,23 @@
+---
+license_expression: samba-dc-1.0 AND dco-1.1 AND cc-by-sa-4.0
+is_license_notice: yes
+notes: this is a license of license, hence we treat it as a mere clue
+ignorable_copyrights:
+    - (c) 2005 Open Source Development Labs, Inc.
+    - (c) 2011 Software Freedom Conservancy, Inc.
+ignorable_holders:
+    - Open Source Development Labs, Inc.
+    - Software Freedom Conservancy, Inc.
+ignorable_urls:
+    - http://web.archive.org/web/20070306195036/http:/osdlab.org/newsroom/press_releases/2004/2004_05_24_dco.html
+    - https://creativecommons.org/licenses/by-sa/4.0/legalcode
+---
+
+The "Samba Developer's Declaration, Version 1.0" is:
+  (C) 2011 Software Freedom Conservancy, Inc.
+  (C) 2005 Open Source Development Labs, Inc.
+
+licensed under Creative Commons Attribution-ShareAlike 4.0 License as found
+at https://creativecommons.org/licenses/by-sa/4.0/legalcode and based on
+"Developer's Certificate of Origin 1.1" as found at
+http://web.archive.org/web/20070306195036/http://osdlab.org/newsroom/press_releases/2004/2004_05_24_dco.html

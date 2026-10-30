@@ -7,6 +7,6 @@ referenced_filenames:
 ---
 
 <license>
-      <name>The Apache Software License, Version 2.0</name>
+      <name>{{The Apache Software License, Version 2.0}}</name>
       <url>/LICENSE.txt</url>
     </license>

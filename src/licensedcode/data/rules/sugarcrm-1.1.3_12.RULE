@@ -1,7 +1,10 @@
 ---
 license_expression: sugarcrm-1.1.3
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - sugarcrm-1.1.3
 ---
 
 licenses.nuget.org/SugarCRM-1.1.3

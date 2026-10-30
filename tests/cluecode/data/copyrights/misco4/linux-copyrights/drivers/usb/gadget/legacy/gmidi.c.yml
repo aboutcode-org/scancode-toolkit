@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2006 Thumtronics Pty Ltd.
+  - Copyright (c) 2003-2004 David Brownell. USB Audio
+  - Copyright (c) 2002 by Takashi Iwai. USB
+  - Copyright (c) 2002-2005 Clemens Ladisch
+holders:
+  - Thumtronics Pty Ltd.
+  - David Brownell. USB Audio
+  - Takashi Iwai. USB
+  - Clemens Ladisch
+authors:
+  - Grey Innovation Ben Williamson <ben.williamson@greyinnovation.com>

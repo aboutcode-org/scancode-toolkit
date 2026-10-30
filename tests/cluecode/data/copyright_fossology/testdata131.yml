@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1999 GMRS Software GmbH
+holders:
+  - GMRS Software GmbH
+authors:
+  - Adrian Bridgett <bridgett@debian.org>
+  - Arno Unkrig (arno.unkrig@gmrs.de)
+  - GMRS Software GmbH.

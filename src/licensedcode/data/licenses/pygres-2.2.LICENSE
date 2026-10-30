@@ -7,6 +7,8 @@ owner: Unspecified
 spdx_license_key: LicenseRef-scancode-pygres-2.2
 text_urls:
     - http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431
+ignorable_authors:
+    - Pascal Andre, andre@chimay.via.ecp.fr
 ignorable_copyrights:
     - Copyright (c) 1995, Pascal Andre (andre@via.ecp.fr)
     - copyright 1997, 1998, 1999 by D'Arcy J.M. Cain (darcy@druid.net)

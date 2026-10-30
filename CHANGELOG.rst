@@ -1,39 +1,380 @@
 Changelog
 =========
 
-v33.0.0 (next next, roadmap)
-----------------------------
+Next release
+--------------
 
-- We now support new package manifest formats:
+- Fix the optional ``licenses`` extra dependency typo to install
+  ``licensedcode-data``.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
-  - OpenWRT packages.
-  - Yocto/BitBake .bb recipes.
+- Improve copyright detection for statements with parens or trailing "authors"
 
-- Fallback packages for non-native dependencies of SCTK.
-- Dependencies for
-- Support for copyright detection objects.
+- Add experimental option for using cached results during scan time. When the
+  ``--use-cached-results`` option is enabled in the ScanCode CLI, during scan
+  time for a given Resource, we iterate through the active scanners and see if we
+  have cached results for those already. If we do, we update our results with the
+  cached data. If not, we add those scanners to a list of scanners to be run.
+  After scanning, the cache is updated.
 
-- A new field in packages with the license category for the
-  detected license expression and also an API function to
-  compute license categories from license expressions.
-  See https://github.com/nexB/scancode-toolkit/issues/2897
+- Gracefully handle corrupt or invalid JSON files in ``results_cache`` by catching
+  ``json.JSONDecodeError`` in ``get_results_cache_data`` and returning an empty mapping.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5345
 
-- More support for tabular output formats: New command-line
-  options for XSLX output, and the old `--csv` command line
-  option is removed.
-  See https://github.com/nexB/scancode-toolkit/issues/830
+- Cap ``pluggy`` below 1.7.0. pluggy 1.7.0 no longer accepts the class-based
+  hookspecs used by ``plugincode`` and scancode fails at import time with
+  ``ValueError: did not find any 'pre_scan' hooks``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
-- `--unknown-licenses` is removed and this is always enabled
-  and only used in case of improper detections automatically.
-  Also tag all license rules with required phrases to improve
-  license detection and reduce false positives.
-  See https://github.com/nexB/scancode-toolkit/issues/3300
+v33.0.0rc1 - 2026-05-14
+------------------------
 
-- File categorization support added, a post scan plugin tagging
-  files with priority levels for review, and also take advantage
-  of these in other summary plugins.
-  See https://github.com/nexB/scancode-toolkit/issues/1745
+This is a major release candidate with major changes in packaging,
+with the licensedcode-data and licensedcode-index being published
+in two seperate wheels. Also adds linux/macos ARM support in
+release archives and pypi wheels.
 
+- Remove the licensedcode data and built license indexes from the
+  main scancode-toolkit built wheel, and release them as
+  seperate wheels which scancode-toolkit depends on.
+  This enables to release scancode licensedb data/index wheels
+  seperately whenever necessary and also reduces the scancode
+  wheel size greatly. For more details see:
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3459
+
+- Add macos ARM and linux arm support in release archives and
+  pypi wheels through ``scancode-toolkit-mini`` which uses
+  system provided libraries instead of bundled binaries.
+  Also use updated non pure-python dependencies supporting
+  linux/macos arm wheels. For more details see:
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3205
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3958
+
+- Add new and updates licenses, and license rules, including
+  support for the SPDX License List 3.28
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4956
+
+- Add support for the Python UV package manager. Two new package data
+  handlers parse ``pyproject.toml`` files containing a ``[tool.uv]`` table
+  and ``uv.lock`` lockfiles, including PEP 735 ``[dependency-groups]``,
+  and the package assembly walks both files together so that the project
+  metadata and the resolved transitive dependencies are reported as a
+  single Python package.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4501
+
+
+v32.5.0 - 2026-01-15
+-------------------
+
+- Improve package scan performance by:
+
+  - Skipping binary package detection steps by default,
+    and introducing a new CLI option ``--package-in-compiled``
+    to detect packages in compiled binaries like rust/go binaries
+    Note: previously these were detected in ``--package`` CLI
+    option directly but this is no longer the case, you've to
+    use the new ``--package-in-compiled`` to detect packages
+    from go/rust and other binaries
+
+  - Creating cached regex patterns and multiregex pre-matchers,
+    for a fast package path detection filtering step
+
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4606
+
+- Add gibberish detection to copyright scanning. This is done using a
+  2-character Markov chain. A new CLI command,
+  ``scancode-train-gibberish-model``, has been added to regenerate the model
+  used by the detector.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4610
+  https://github.com/aboutcode-org/scancode-toolkit/issues/2402
+
+- Use a cython implementation of sequence matcher to improve
+  license detection performance
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4500
+
+- Add python3.14 support in scancode
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4595
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4541
+
+- Always print license references table in html output
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4474
+
+- Enable License References table for HTML Output without requiring
+  `--license-references` by implementing a fallback license reference
+  collection based on the behavior of v32.0.0.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4474
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4101
+
+- Replace unmaintained ``toml`` library with ``tomllib`` / ``tomli``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4532
+
+- Pin fingerprints and normality to avoid pyicu
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4493
+
+- Fix click compatibility issues and failures
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4572
+
+- Remove deprecated ast module attributes
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4539
+
+- Fix cargo scanning failures
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4581
+
+- Reorg and improve docs user experience
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4629
+
+- Handle is_private strings in npm properly
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4635
+
+- Restructure README docs
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4667
+
+- Add new licenses, license rules and misc license detection
+  improvements
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4562
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4674
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4666
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4622
+
+v32.4.1 - 2025-07-23
+--------------------
+
+This is a patch release with bugfixes and improvements::
+
+- Fix broken scancode release archives and release scripts
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4469
+
+- Support licenses from SPDX License List 3.27
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4468
+
+- Add new licenses, license rules and license data updates
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4478
+
+- Use updated license-expression v30.4.4 with updated licenses
+  https://github.com/aboutcode-org/license-expression/releases/tag/v30.4.4
+
+- Use pygmars v1.0.0 with copyright detection performance
+  improvements by removing unnecessary regex substitutions.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4063
+
+- Fix misc scancode doumentation related issues
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4457
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4458
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4462
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4465
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4470
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4471
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4476
+
+
+v32.4.0 - 2025-06-26
+--------------------
+
+This is a feature release with::
+
+  - python 3.13 support
+  - support added for adding required phrases to rules automatically
+  - misc license and package detection improvements
+  - new and updated license detection rules and new licenses
+  - misc bugfixes, dependency and documentation updates
+
+There are new data attributes, and we have a output format version bump
+from ``4.0.0`` to ``4.1.0``. The changes in Output Data Structure are:
+
+  - A new resource level attribute ``sha1_git`` is added, which has
+    the corresponding checksum value for files, and is empty for
+    directories. This is returned optionally with the ``--info`` plugin.
+
+  - A new resource level attribute ``is_community`` is added, which is
+    True from commonly used files used for community/project maintainence.
+    This is returned optionally with the ``--classify`` plugin.
+
+These are the details for the most important changes introduced::
+
+- Add support for adding required phrases in rules automatically using
+  some console scripts and CLI options using already marked required
+  phrases for the same license-expression and license field attributes
+  The new console scripts are:
+    - `add-required-phrases` to add required phrases from other rules or
+      license attributes
+    - `gen-new-required-phrases-rules` to add required phrase rules for
+      marked required phrase in rules
+  This improves detection accuracy and reduces false positives.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3924
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4237
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4241
+
+- Default value of processes used for scancode scans is changed from
+  1 to `N-1`, where N is the number of CPU processes available in the
+  system. https://github.com/aboutcode-org/scancode-toolkit/pull/4104
+
+- Also return sha1_git checksums for each files with ``--info`` plugin.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/624
+
+- Equivalent words like license and licence, as well as plurals are
+  now treated as the same in license detection. With this,
+  many redundant rules have been deprecated.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4215
+
+- Support running scancode with python3.13
+  Update and use latest native dependencies with py3.13 support,
+  update and test py3.13 usage in CI and other scripts, and
+  update other third-party dependencies, use latest skeleton
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4430
+
+- Misc license detection improvements, new licenses and license
+  detection rules.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4261
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4412
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4405
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4278
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4093
+
+- Fix an issues where `pip install scancode-toolkit` was failing
+  because of a compatibility issue with Click
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4427
+
+- Update ABOUT files to adapt the ABOUT File Specification.
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/4181
+
+v32.3.3 - 2025-03-06
+--------------------
+
+This is a patch release with license and package detection
+improvements, bugfixes and with new and updated license detection rules
+and new licenses added.
+
+- Add new and updated licenses and license rules
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4165
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3819
+
+- Bump commoncode to v32.2.1 and pin bs4 to fix copyright scan issues
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4149
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4176
+
+- Refactor and fix package assembly for pypi installed wheels
+  and fix pypi manifest parsing
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4171
+
+
+v32.3.2 - 2025-01-20
+--------------------
+
+This is a patch release with license and package detection
+improvements, bugfixes and with new and updated license detection rules
+and new licenses added.
+
+Bugfixes:
+
+- Fix package resource assignment for JAVA jars in scancode.io
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3983
+
+- Fix missing spdx license expression in license detections
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4015
+
+- Enforce --path as a required parameter for scancode-license-data
+  console script.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4024
+
+- Fix conda environment.yaml parsing errors.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4078
+
+- Fix npm package parsing bug for packages with workspaces.
+  https://github.com/aboutcode-org/scancode.io/issues/1521
+
+- Update Dockerfile and test container build.
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/3955
+
+New features/licenses:
+
+- Adds support for pnpm lock YAML v9
+  https://github.com/pnpm/spec/blob/master/lockfile/9.0.md
+
+- Add licenses from SPDX License List 3.26
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4045
+
+- Add assembly and identification of conda package files in
+  root filesystem installations
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4083
+
+v32.3.1 - 2024-01-06
+--------------------
+
+This is a patch release with license and package detection
+improvements, bugfixes and with new and updated license detection rules
+and new licenses added.
+
+- We can now collect packages from a Rust binary using rust-inspector
+  for rust binaries built with `cargo-auditable`(Linux-only)
+  Also adds a plugin for colelcting rust symbols with the option
+  ``--rust-symbol``. See the initial release for more info:
+  https://github.com/aboutcode-org/rust-inspector/releases/tag/v0.1.0
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4043
+
+- Improves and adds bugfixes for package detection in the following ecosystems:
+  conda, npm, rust, go.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4073
+
+- Updates go-inspector to v0.5.0 . GoReSym is now built from source and has
+  been updated to v3.0.1. https://github.com/aboutcode-org/scancode-toolkit/pull/3972
+
+- Adds new and updated licenses, license detection rules.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3963
+
+- Adds the latest license-expression with an updated licenseDB.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3960
+
+v32.3.0 - 2024-10-21
+--------------------
+
+Major API/other changes:
+
+- Output Format Version updated to 4.0.0 (major version bump)
+- Dependency attribute rename: ``is_resolved`` renamed to ``is_pinned``
+  See https://github.com/nexB/scancode-toolkit/pull/3888 for more details.
+- License Match attribute rename: ``spdx_license_expression`` is renamed to
+  ``license_expression_spdx``.
+
+Changes in Output Data Structure:
+
+- The data structure of the JSON output has changed for:
+  - dependencies at file level package_data, and at top-level.
+  - license matches at file level or unique codebase level license detections
+  Note that the change is a modification to the JSON output,
+  so we have a major version bump ``3.2.0`` to ``4.0.0``:
+
+  - Dependency attribute ``is_resolved`` renamed to ``is_pinned``
+  - LicenseMatch attribute ``spdx_license_expression`` renamed to
+    ``license_expression_spdx``
+
+- Update link references of ownership from nexB to aboutcode-org
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/3885
+
+- New and updated licenses, including support for newly released
+  SPDX license list versions:
+  - SPDX License List 3.25.0:
+    This release of the SPDX license list had 9 new licenses
+    and exceptions, and out of them 5 were present as licenses
+    and 2 were present as rules already. There were 2 new
+    license/exception texts added, and also 1 license was deprecated.
+    For more details see https://github.com/aboutcode-org/scancode-toolkit/pull/3897
+
+- New and improved copyright detection with many false positive removed
+  and refined detection added.
+
+- Fix Python ``SyntaxWarning`` in textcode module.
+
+- Improve python, npm, yarn, go package detections:
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3857
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3869
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3943
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3894
+
+- Drop python 3.8 support as this is end of life. Please use older releases if you
+  are using python 3.8 but this is not recommended.
+
+- We can now collect packages from a Go binary using go-inspector (Linux-only)
+  See https://github.com/aboutcode-org/scancode-toolkit/pull/3894
 
 v32.2.1 - 2024-07-02
 ---------------------
@@ -155,7 +496,7 @@ Changes in Output Data Structure:
       file-level ``package_data``
     * ``license_detections`` and  ``other_license_detections`` in
       codebase level ``packages``
-  
+
   - On using the CLI option ``--license-text-diagnostics`` there is
     now a new license match attribute ``matched_text_diagnostics``
     with the matched text and highlighted diagnostics, instead of
@@ -164,7 +505,7 @@ Changes in Output Data Structure:
   - A new ``reference_matches`` attribute is added to codebase-level
     ``license_detections`` which is same as the ``matches`` attribute
     in other license detections.
-  
+
   - We now have SPDX license expressions everywhere we have
     ScanCode license expressions for ease of use and adopting
     SPDX everywhere. A new attribute ``license_expression_spdx``
@@ -212,7 +553,7 @@ Changes in Output Data Structure:
   and https://github.com/nexB/scancode-toolkit/issues/3443
   Also improve debian manifests parsing and purl parsing from
   filenames. Support for https://github.com/nexB/purldb/issues/245
-  Bumps debian-inspector to v31.1.0 
+  Bumps debian-inspector to v31.1.0
 
 - Bump commoncode to v31.0.3
 
@@ -597,6 +938,8 @@ License detection:
 
   See https://github.com/nexB/scancode-toolkit/issues/3343
 
+- `--unknown-licenses` is removed and this is always enabled
+  and only used in case of improper detections automatically.
 
 v31.2.6 - 2023-04-25
 ----------------------------------
@@ -869,6 +1212,8 @@ Package detection:
     There is a new `extra_data` to collect extra data as needed.
 
 - For Pypi packages, python_requires is treated as a package dependency.
+
+- Update JavaScript package handlers to handle aliases in npm and yarn manifests.
 
 
 License Clarity Scoring Update:
@@ -1638,14 +1983,16 @@ v3.2.0rc1 (2020-09-08)
  - Add new license rules for "bad" licenses #1899 @viragumathe5
  - Improve copyright detection @WizardOhio24
  - Improve tests @hanif-ali
- - Add and improve support for package manifest for #2080 Go, Ruby gem gemspec, Cocoapod podspec, opam, Python PKG-INFO - Rohit Potter @rpotter12
- - Add and improve support for package lockfiles for Pipfile.lock, requirements.tx, Cargo.lock - Rohit Potter @rpotter12
+ - Add and improve support for package manifest for #2080 Go, Ruby gem gemspec,
+   Cocoapod podspec, opam, Python PKG-INFO - Rohit Potter @rpotter12
+ - Add and improve support for package lockfiles for Pipfile.lock,
+   requirements.tx, Cargo.lock - Rohit Potter @rpotter12
  - Add new --max-depth option to limit sca depth - Hanif Ali @hanif-ali
  - Add initial Debian packaging - @aj4ayushjain
  - Add new documentation web site and documentation generation system
  - The "headers" attribute in JSON outputs now contains a 'duration' field. #1942
  - Rework packaging and third-party support handling: Create new scripts and
-   process to provision, install and manage third-party dependencies - Abhishek Kumar @Abhishek-Dev09
+   process to provision, install and manage third-party dependencies @Abhishek-Dev09
  - Improve CSV output and fix manifest path bug #1718 Aditya Viki8
  - Add new documentation, as well as tools and process. Ayan Sinha Mahapatra
  - Add new license detection rules - Ayan Sinha Mahapatra
@@ -1673,9 +2020,12 @@ v3.2.0rc1 (2020-09-08)
  - Improve Documentation - Michael Herzog
  - Add new checksum type for sha256 - Nitish @nitish81299
  - Improve documentation - Philippe Ombredanne
- - Add new license detection rules and improve detection #1777 #1720 #1734 #1486 #1757 #1749 #1283 #1795 #2214 #1978
- - Add new license detection rules and improve detection #2187 #2188 #2189 #1904 #2207 #1905 #419 #2190 #1910 #1911
- - Add new license detection rules and improve detection #1841 #1913 #1795 #2124 #2145 #1800 #2200 #2206 #2186
+ - Add new license detection rules and improve detection
+   #1777 #1720 #1734 #1486 #1757 #1749 #1283 #1795 #2214 #1978
+ - Add new license detection rules and improve detection
+   #2187 #2188 #2189 #1904 #2207 #1905 #419 #2190 #1910 #1911
+ - Add new license detection rules and improve detection
+   #1841 #1913 #1795 #2124 #2145 #1800 #2200 #2206 #2186
  - Allow to call "run_scan" as a function #1780
  - Update license data to SPDX 3.7 #1789
  - Collect matched license text correctly including with Turkish diacritics #1872
@@ -1716,7 +2066,8 @@ Major new feature:
 
 New features:
 
- - Improve package manifest support for #1643 RPMs, #1628 Cran, Python #1600, Maven #1649 Chef #1600 @licodeli @JonoYang
+ - Improve package manifest support for #1643 RPMs, #1628 Cran, Python #1600,
+   Maven #1649 Chef #1600 @licodeli @JonoYang
  - Add plugin to collect ELF and LKM clues #1685 @licodeli
  - Add runtime support for FreeBSD #1695  @knobix
  - Add support to extract lzip archives #245 #989
@@ -1793,15 +2144,18 @@ Other:
 v2.9.9 (2018-12-12)
 -------------------
 
-This is the penultimate pre-release of what will come up for 3.0 with some API change for packages.
+This is the penultimate pre-release of what will come up for 3.0
+with some API change for packages.
 
 API changes:
- - Streamline Package models #1226 #1324 and #1327. In particular the way checksums are managed has changed
+ - Streamline Package models #1226 #1324 and #1327.
+   In particular the way checksums are managed has changed
 
 Other changes:
  - Copyright detection improvements #1305 by @JonoYang
  - Correct CC-BY V3.0 and V4.0 license texts by correct one by @sschuberth #1320
- - Add new and improved licenses and license detection rules including the latest SPDX list 3.4 and #1322 #1324
+ - Add new and improved licenses and license detection rules including
+   the latest SPDX list 3.4 and #1322 #1324
  - Rename proprietary license key to proprietary-license
  - Rename commercial license key to commercial-license
  - Improve npm package.json handling #1308 and #1314 by @majurg
@@ -1814,14 +2168,16 @@ This is a close-to-final pre-release of what will come up for 3.0 with some API 
 
 API changes:
  - In Package models, rename normalized_license to license_expression and
-   add license detection on the declared_license to populate the license_expression #1092 #1268 #1278
+   add license detection on the declared_license to populate
+   the license_expression #1092 #1268 #1278
 
 Outputs:
  - Do not open output files until the command lines are validated as correct #1266
  - The html-app output is marked as DEPRECATED. Use the AboutCode manager app instead #
  - Ensure HTML outputs can deal with non-ASCII file paths without crashsing #1292
  - JSON outputs now use a "headers" attributes for top-level scan headers #
- - SPDX output is now possible even without "--info" SHA1 checksums. This creates a partially valid document
+ - SPDX output is now possible even without "--info" SHA1 checksums.
+   This creates a partially valid document
  - LicenseRef for non-SPDX ScanCode licenses are named as "LicenseRef-scancode-<scancode key>" #
  - license_expression are correctly included in the CSV output #1238
  - do not crash with multiple outputs  #1199
@@ -1833,7 +2189,8 @@ License detection:
  - An optional  "relevance" attribute has been added to the license YAML
    attributes. This is to store the relevance to e matched .LICENSE text when used
    as a rule.
- - Licenses have been synchronized with the latest v3.3 SPDX license list and the latest DejaCode licenses #1242
+ - Licenses have been synchronized with the latest v3.3 SPDX license list
+   and the latest DejaCode licenses #1242
  - Duplicated SPDX keys have been fixed #1264
  - Add new and improved license detection rules #1313 #1306 #1302 #1298 #1293
    #1291 #1289 #1270 #1269 #1192 #1186 #1170 #1164 #1128 #1124 #1112 #1110 #1108
@@ -1843,7 +2200,8 @@ Packages:
  - Add support for haxe "haxelib" package manifests #1227
  - Remove code_type attribute from Package models
  - In Package models, rename normalized_license  to license_expression and
-   add license detection on the declared_license to populate the license_expression #1092 #1268 #1278
+   add license detection on the declared_license to populate the
+   license_expression #1092 #1268 #1278
  - Improve data returned for PHP Composer packages
  - Add PackageURL to top level output for packages
  - Report nuget as proper packages #1088
@@ -1969,7 +2327,8 @@ API change:
  - The returned copyright data structure has changed and is now simpler and less nested
 
 Licenses:
- - Add new license and rules and improve licene rules #1186 #1108 #1124 #1171 #1173 #1039 #1098 #1111
+ - Add new license and rules and improve licene rules
+   #1186 #1108 #1124 #1171 #1173 #1039 #1098 #1111
  - Add new license clarity scoring #1180
    This is also for use in the ClearlyDefined project
  - Add is_exception to license scan results #1159

@@ -1,7 +1,10 @@
 ---
 license_expression: apple-runtime-library-exception
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - apple-runtime-library-exception
 ---
 
 licenses.nuget.org/Swift-exception

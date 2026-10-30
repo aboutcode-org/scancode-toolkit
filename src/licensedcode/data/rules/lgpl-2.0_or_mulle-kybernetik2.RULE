@@ -1,6 +1,9 @@
 ---
 license_expression: lgpl-2.0 OR mulle-kybernetik
 is_license_notice: yes
+is_deprecated: yes
+replaced_by:
+    - lgpl-2.0 OR mulle-kybernetik
 ---
 
 This code is distributed "AS IS" without warranty of any kind under

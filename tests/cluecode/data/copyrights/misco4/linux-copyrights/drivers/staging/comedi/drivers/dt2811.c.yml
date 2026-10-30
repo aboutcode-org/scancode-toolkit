@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) David A. Schleef <ds@schleef.org>
+holders:
+  - David A. Schleef
+authors:
+  - ds Devices Data Translation

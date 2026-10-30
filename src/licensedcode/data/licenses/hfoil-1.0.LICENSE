@@ -3,7 +3,7 @@ key: hfoil-1.0
 short_name: HFOILv1.0
 name: Hugging Face Optimized Inference License 1.0
 category: Source-available
-owner: BigScience
+owner: HuggingFace
 homepage_url: https://github.com/huggingface/text-generation-inference/blob/bde25e62b33b05113519e5dbf75abda06a03328e/LICENSE
 spdx_license_key: LicenseRef-scancode-hfoil-1.0
 ---

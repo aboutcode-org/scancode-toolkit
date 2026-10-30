@@ -1,15 +1,18 @@
 ---
 key: mini-xml
 is_deprecated: yes
+replaced_by:
+    - lgpl-2.0-plus
+    - mini-xml-exception-lgpl-2.0
 short_name: LGPL 2.0 with Mini-XML exception
 name: LGPL 2.0 with Mini-XML exception
 category: Copyleft Limited
 owner: Mini-XML
 homepage_url: http://www.minixml.org/documentation.php/license.html
+notes: replaced by mini-xml-exception-lgpl-2.0
 is_exception: yes
 text_urls:
     - http://www.minixml.org/documentation.php/license.html
-notes: replaced by mini-xml-exception-lgpl-2.0
 ---
 
 This library is free software; you can redistribute it and/or modify it under the terms of the GNU Library General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.

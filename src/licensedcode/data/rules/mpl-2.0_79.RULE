@@ -6,7 +6,7 @@ ignorable_urls:
     - http://mozilla.org/MPL/2.0
 ---
 
-The license for this file is MPL/2.0.  
+The license for this file is {{MPL/2.0}}.  
 The header of that file reads as follows:
 
   // This Source Code Form is subject to the terms of the Mozilla Public

@@ -79,7 +79,7 @@ standard_notice: |
     that third-party software is unaffected by the copyleft requirements of the
     license of GCC.
 ignorable_copyrights:
-    - Copyright (c) 2009 Free Software Foundation, Inc. <http://fsf.org/>
+    - Copyright (c) 2009 Free Software Foundation, Inc. http://fsf.org
 ignorable_holders:
     - Free Software Foundation, Inc.
 ignorable_urls:

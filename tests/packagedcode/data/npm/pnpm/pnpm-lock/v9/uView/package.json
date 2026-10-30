@@ -1,0 +1,21 @@
+{
+    "name": "uview1.0",
+    "version": "1.0.0",
+    "main": "main.js",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/YanxinNet/uView.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/YanxinNet/uView/issues"
+    },
+    "homepage": "https://github.com/YanxinNet/uView#readme",
+    "dependencies": {
+      "vue-i18n": "^8.20.0",
+      "anve-upload-upyun": "^1.0.8"
+    }
+  }
+  

@@ -1,7 +1,10 @@
 ---
 license_expression: can-ogl-2.0-en
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - can-ogl-2.0-en
 ---
 
 licenses.nuget.org/OGL-Canada-2.0

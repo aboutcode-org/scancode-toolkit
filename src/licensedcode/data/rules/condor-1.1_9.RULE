@@ -1,7 +1,10 @@
 ---
 license_expression: condor-1.1
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - condor-1.1
 ---
 
 licenses.nuget.org/Condor-1.1

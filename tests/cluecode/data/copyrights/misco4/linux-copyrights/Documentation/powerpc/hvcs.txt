@@ -1,0 +1,12 @@
+Copyright (C) 2004 IBM Corporation
+
+===========================================================================
+
+
+	       Author(s) :  Ryan S. Arnold <rsa@us.ibm.com>
+		       Date Created: March, 02, 2004
+		       Last Changed: August, 24, 2004
+
+
+address that is created by firmware.  An example vty-server sysfs entry
+looks like the following:

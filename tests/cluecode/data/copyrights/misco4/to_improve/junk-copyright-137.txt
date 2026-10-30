@@ -1,0 +1,1 @@
+(c) (c) More tests from http://mathiasbynens.be/demo/html5-id

@@ -6,4 +6,4 @@ ignorable_urls:
     - http://gomakethings.com/mit/
 ---
 
-Licensed under MIT: http://gomakethings.com/mit/
+{{Licensed under MIT}}: http://gomakethings.com/mit/

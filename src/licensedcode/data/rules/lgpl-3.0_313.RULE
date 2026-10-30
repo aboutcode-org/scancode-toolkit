@@ -3,6 +3,8 @@ license_expression: lgpl-3.0
 is_license_notice: yes
 is_continuous: yes
 is_deprecated: yes
+replaced_by:
+    - lgpl-2.1-plus
 ---
 
 {{GNU Lesser General Public Licence}}

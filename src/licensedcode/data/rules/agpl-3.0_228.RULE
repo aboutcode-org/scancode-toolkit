@@ -7,6 +7,6 @@ referenced_filenames:
     - AGPL-3.0.txt
 ---
 
-This project is licensed under the GNU AGPL v3
+This project is {{licensed under the GNU AGPL v3}}
 
 For full details, please see LICENSE.txt and AGPL-3.0.txt.

@@ -1,7 +1,8 @@
 ---
 license_expression: bsd-new
 is_license_reference: yes
-relevance: 90
+is_required_phrase: yes
+relevance: 100
 ---
 
-revised BSD license
+Revised BSD License

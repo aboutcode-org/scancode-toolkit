@@ -1,0 +1,1 @@
+(c) cw-loggroup-retention-period-check (https://docs.aws.amazon.com/config/latest/developerguide/cw-loggroup-retention-period-check.html) CloudWatch LogGroup

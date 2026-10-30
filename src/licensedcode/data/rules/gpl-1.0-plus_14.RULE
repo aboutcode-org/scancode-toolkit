@@ -4,5 +4,5 @@ is_license_reference: yes
 relevance: 100
 ---
 
-is protected by the GNU
-General Public License.
+is protected by the {{GNU
+General Public License}}.

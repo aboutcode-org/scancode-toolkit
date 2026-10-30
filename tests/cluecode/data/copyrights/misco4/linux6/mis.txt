@@ -1,0 +1,11 @@
+Missing data:
+ *  Copyright (C) 2005-2012  Jean Delvare <jdelvare@suse.de>
+ *  Copyright (C) 2006  Yuan Mu (Winbond),
+ *                      Rudolf Marek <r.marek@assembler.cz>
+ *                      David Hubbard <david.c.hubbard@gmail.com>
+ *                      Daniel J Blueman <daniel.blueman@gmail.com>
+ *  Copyright (C) 2010  Sheng-Yuan Huang (Nuvoton) (PS00)
+ *
+ *  Shamelessly ripped from the w83627hf driver
+ *  Copyright (C) 2003  Mark Studebaker
+

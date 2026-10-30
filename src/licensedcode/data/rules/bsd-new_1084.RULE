@@ -7,4 +7,4 @@ minimum_coverage: 100
 notes: Rule based on an SPDX license identifier and name
 ---
 
-name: BSD 3-Clause "New" or "Revised" License
+name: {{BSD 3-Clause}} "New" or "Revised" License

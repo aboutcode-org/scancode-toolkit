@@ -10,11 +10,12 @@
           "--info": true,
           "--json-lines": "<file>",
           "--license": true,
+          "--processes": "-1",
           "--tallies": true,
           "--tallies-key-files": true
         },
         "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-        "output_format_version": "3.0.0",
+        "output_format_version": "4.1.0",
         "message": null,
         "errors": [],
         "warnings": [],
@@ -22,11 +23,11 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-5.15.0-89-generic-x86_64-with-glibc2.29",
-            "platform_version": "#99~20.04.1-Ubuntu SMP Thu Nov 2 15:16:47 UTC 2023",
-            "python_version": "3.8.10 (default, Nov 22 2023, 10:22:35) \n[GCC 9.4.0]"
+            "platform": "Linux-5.15.0-171-generic-x86_64-with-glibc2.35",
+            "platform_version": "#181-Ubuntu SMP Fri Feb 6 22:44:50 UTC 2026",
+            "python_version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]"
           },
-          "spdx_license_list_version": "3.22",
+          "spdx_license_list_version": "3.28",
           "files_count": 26
         }
       }
@@ -169,12 +170,12 @@
       {
         "identifier": "mit_old_style-578ee504-a9b5-6c26-1bb4-fd7b80a664f0",
         "license_expression": "mit-old-style",
-        "license_expression_spdx": "LicenseRef-scancode-mit-old-style",
+        "license_expression_spdx": "Advanced-Cryptics-Dictionary",
         "detection_count": 1,
         "reference_matches": [
           {
             "license_expression": "mit-old-style",
-            "license_expression_spdx": "LicenseRef-scancode-mit-old-style",
+            "license_expression_spdx": "Advanced-Cryptics-Dictionary",
             "from_file": "scan/zlib/iostream2/zstream.h",
             "start_line": 9,
             "end_line": 15,
@@ -509,6 +510,7 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
+        "sha1_git": null,
         "mime_type": null,
         "file_type": null,
         "programming_language": null,
@@ -523,6 +525,7 @@
         "is_readme": false,
         "is_top_level": true,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -550,6 +553,7 @@
         "sha1": "172444e7c137eb5cd3cae530aca0879c90f7fada",
         "md5": "57f047ea87f405486a94bc5a56ba7fcf",
         "sha256": "963aabe87f6a51ca9c237669034a9fdecd71df7350eaf30bdf0718f63c5a94f8",
+        "sha1_git": "d9dde3ce8624b573d44ed2245ce9b22df978bea5",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": null,
@@ -564,6 +568,7 @@
         "is_readme": false,
         "is_top_level": true,
         "is_key_file": true,
+        "is_community": false,
         "detected_license_expression": "cc0-1.0",
         "detected_license_expression_spdx": "CC0-1.0",
         "license_detections": [
@@ -573,7 +578,7 @@
             "matches": [
               {
                 "license_expression": "cc0-1.0",
-                "spdx_license_expression": "CC0-1.0",
+                "license_expression_spdx": "CC0-1.0",
                 "from_file": "scan/cc0-1.0.LICENSE",
                 "start_line": 1,
                 "end_line": 98,
@@ -613,6 +618,7 @@
         "sha1": "dfc6c1274bd31b47d5cc482af0c0dad9d30eccaa",
         "md5": "62b51527599b11b32361699c75b05683",
         "sha256": "8b54b0b90570e4b0d5b8c8520e4b5a8258ae15849ec1919f57da093f5df84f38",
+        "sha1_git": "28ce1718edf320e7f1fb5343bdad69cf5dfcb7b5",
         "mime_type": "application/json",
         "file_type": "JSON data",
         "programming_language": null,
@@ -627,6 +633,7 @@
         "is_readme": false,
         "is_top_level": true,
         "is_key_file": true,
+        "is_community": false,
         "detected_license_expression": "artistic-2.0",
         "detected_license_expression_spdx": "Artistic-2.0",
         "license_detections": [
@@ -636,7 +643,7 @@
             "matches": [
               {
                 "license_expression": "artistic-2.0",
-                "spdx_license_expression": "Artistic-2.0",
+                "license_expression_spdx": "Artistic-2.0",
                 "from_file": "scan/package.json",
                 "start_line": 198,
                 "end_line": 198,
@@ -682,6 +689,7 @@
         "sha1": "2e07e32c52d607204fad196052d70e3d18fb8636",
         "md5": "effc6856ef85a9250fb1a470792b3f38",
         "sha256": "165da86bfdf296cd5a0a3e20c1d1ee86d70ecb8a1fa579d6f8cadad8eee85878",
+        "sha1_git": "1d61df81ffb14fd19f1ac10344a51755e8719282",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": null,
@@ -696,6 +704,7 @@
         "is_readme": true,
         "is_top_level": true,
         "is_key_file": true,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -723,6 +732,7 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
+        "sha1_git": null,
         "mime_type": null,
         "file_type": null,
         "programming_language": null,
@@ -737,6 +747,7 @@
         "is_readme": false,
         "is_top_level": true,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -764,6 +775,7 @@
         "sha1": "a7ee5ea54da88a6390e72ff018dd471045d8bbf1",
         "md5": "92011414f344e34f711e77bac40e4bc4",
         "sha256": "e533accabdc7434f3905ced32c4fba755f707929ad73df6e07172cd5a786e023",
+        "sha1_git": "99bd88552be01741ea15b57d9abde4f7a12938e1",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -778,6 +790,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -787,7 +800,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/arch/adler32.c",
                 "start_line": 3,
                 "end_line": 3,
@@ -801,7 +814,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/arch/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -856,6 +869,7 @@
         "sha1": "26610e5eab2a17e0fa9ef6ac791f25f77af145af",
         "md5": "4ed53ac605f16247ab7d571670f2351d",
         "sha256": "b09e2a43e9960d3d28d37d24f10dfbc462a4cb376da54ba571ac9a8874911ed5",
+        "sha1_git": "36568396a1e657f72c524b60c17b27e1f810bc58",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -870,6 +884,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -879,7 +894,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/arch/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -931,6 +946,7 @@
         "sha1": "830fca8d60bd0d0d91f6354d83ec8bf118a20e64",
         "md5": "807b91d2bf5e18de555e56de37e487d1",
         "sha256": "3980fa5633b16f944641bf2fba3f49b8b9b9de6ffea7be1e142792393bf1a867",
+        "sha1_git": "d85c1f24ea89d8a4ce9dd1fde3cf20ab80c8c852",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -945,6 +961,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -954,7 +971,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/arch/zutil.h",
                 "start_line": 3,
                 "end_line": 3,
@@ -968,7 +985,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/arch/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -1023,6 +1040,7 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
+        "sha1_git": null,
         "mime_type": null,
         "file_type": null,
         "programming_language": null,
@@ -1037,6 +1055,7 @@
         "is_readme": false,
         "is_top_level": true,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -1064,6 +1083,7 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
+        "sha1_git": null,
         "mime_type": null,
         "file_type": null,
         "programming_language": null,
@@ -1078,6 +1098,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -1105,6 +1126,7 @@
         "sha1": "d0d55d2ae0842afee96695bcc8be939e763704ec",
         "md5": "301dfe021b3b4076b9f8d49577205b44",
         "sha256": "ff6dfac01c9b7ad9fcb5e646db83b482f5f720d981f0ca6c68828c5aa4ec784b",
+        "sha1_git": "b9f2abd00888b689c26a71bc4092b56c548643a3",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "Java",
@@ -1119,6 +1141,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "lgpl-2.1-plus",
         "detected_license_expression_spdx": "LGPL-2.1-or-later",
         "license_detections": [
@@ -1128,7 +1151,7 @@
             "matches": [
               {
                 "license_expression": "lgpl-2.1-plus",
-                "spdx_license_expression": "LGPL-2.1-or-later",
+                "license_expression_spdx": "LGPL-2.1-or-later",
                 "from_file": "scan/JGroups/src/FixedMembershipToken.java",
                 "start_line": 7,
                 "end_line": 20,
@@ -1180,6 +1203,7 @@
         "sha1": "21ec75514ce72011c4e86c977505c024832c1b63",
         "md5": "5165fdeefda7a55c13e44c5e56cac920",
         "sha256": "8553411bf58f4ac35fc9e7d6142f11fc2fbef33e50a77f514a253135807afd44",
+        "sha1_git": "991606291da8799b39f94905365c13259ae04fc5",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "Java",
@@ -1194,6 +1218,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "cc-by-2.5",
         "detected_license_expression_spdx": "CC-BY-2.5",
         "license_detections": [
@@ -1203,7 +1228,7 @@
             "matches": [
               {
                 "license_expression": "cc-by-2.5",
-                "spdx_license_expression": "CC-BY-2.5",
+                "license_expression_spdx": "CC-BY-2.5",
                 "from_file": "scan/JGroups/src/GuardedBy.java",
                 "start_line": 4,
                 "end_line": 5,
@@ -1261,6 +1286,7 @@
         "sha1": "aee1bb33424e7c1264f85c9aad40d43c3738f871",
         "md5": "53a91ff66fdc4d812d7656b4e807bfd2",
         "sha256": "ec1427fc2f7e322e6a4d5d99f8119310d6586aaaf5b30b2904b4ccd27966e120",
+        "sha1_git": "9c3c08df13f0e67e8f5bb2f0e6a66d246bbbef03",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "Java",
@@ -1275,6 +1301,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "lgpl-2.1-plus",
         "detected_license_expression_spdx": "LGPL-2.1-or-later",
         "license_detections": [
@@ -1284,7 +1311,7 @@
             "matches": [
               {
                 "license_expression": "lgpl-2.1-plus",
-                "spdx_license_expression": "LGPL-2.1-or-later",
+                "license_expression_spdx": "LGPL-2.1-or-later",
                 "from_file": "scan/JGroups/src/ImmutableReference.java",
                 "start_line": 7,
                 "end_line": 20,
@@ -1336,6 +1363,7 @@
         "sha1": "8da19aa25da421608fbe9f4f5eeb122ab35fd01e",
         "md5": "52540f80f5c22d8d13627c57b76d44f4",
         "sha256": "c3bcefbbb2706f65410b4bb91d531e2ec461fa4586135becc8865adeca3385c8",
+        "sha1_git": "b4071b2728aff78d02cbaae63bfc1f2109331b07",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "Java",
@@ -1350,6 +1378,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -1383,6 +1412,7 @@
         "sha1": "c1baa345449b4b91e61886dadea8f1bbea034eb4",
         "md5": "a0b4e3f4d679a98d11d75e7e27e894af",
         "sha256": "5c0f94fc518daca08e74fd117fef09d6dd090b0fd623a47edde451be3aed28c7",
+        "sha1_git": "c1941b54e7b0d44567b8a2eee0b8cc8add21e68f",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "Java",
@@ -1397,6 +1427,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -1430,6 +1461,7 @@
         "sha1": "a51c5bbb738c1c1cd1f58c79060fa5ea4d0dd753",
         "md5": "cae07c80e6f79864de002700bf9ab02f",
         "sha256": "fe96061d23b37c98913379d54c5388cffdc99239807c2caf8c96d7d10321d085",
+        "sha1_git": "188435705b6648e2f6a94d82509365a11a7b224f",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "Java",
@@ -1444,6 +1476,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "lgpl-2.1-plus",
         "detected_license_expression_spdx": "LGPL-2.1-or-later",
         "license_detections": [
@@ -1453,7 +1486,7 @@
             "matches": [
               {
                 "license_expression": "lgpl-2.1-plus",
-                "spdx_license_expression": "LGPL-2.1-or-later",
+                "license_expression_spdx": "LGPL-2.1-or-later",
                 "from_file": "scan/JGroups/src/RouterStubManager.java",
                 "start_line": 7,
                 "end_line": 20,
@@ -1505,6 +1538,7 @@
         "sha1": "a7a9763832eb31e1f7f7927d6288df284b70c6e5",
         "md5": "ffb481f2a0c6262d0f7d1e9a4681a6ca",
         "sha256": "5470e41b0bfba6adb43649215df756f1a4a5173ceed6127af1b38801651efde2",
+        "sha1_git": "b79361f193e4fc5adfe64a35e7e84d1ae4f49a4b",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "Java",
@@ -1519,6 +1553,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -1552,6 +1587,7 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
+        "sha1_git": null,
         "mime_type": null,
         "file_type": null,
         "programming_language": null,
@@ -1566,6 +1602,7 @@
         "is_readme": false,
         "is_top_level": true,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -1593,6 +1630,7 @@
         "sha1": "f98c6c82a570ac852801b46157c1540070d55358",
         "md5": "48c4037f16b4670795fdf72e88cc278c",
         "sha256": "fc1682e787ccc8d9eb83eb0b1f5acb59d22aa6ce1bff7c749a9dc315237b2240",
+        "sha1_git": "d28e903933651219ad37d02dc80a58daf198f707",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -1607,6 +1645,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -1616,7 +1655,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/adler32.c",
                 "start_line": 3,
                 "end_line": 3,
@@ -1630,7 +1669,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -1685,6 +1724,7 @@
         "sha1": "4b4696c59e245cef0bad7334fdb63725ccfa218c",
         "md5": "f11ed826baf25f2bfa9c610313460036",
         "sha256": "ef7bf500e1accf7e91352788c92b5c6663bab52e2cd6c42284496518e4a5f054",
+        "sha1_git": "4524875c9ff79f6478d18e3eb66c39f50c4f7a96",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -1699,6 +1739,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -1708,7 +1749,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/deflate.c",
                 "start_line": 3,
                 "end_line": 3,
@@ -1722,7 +1763,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -1777,6 +1818,7 @@
         "sha1": "a99a71ff971faf49a52ed6f7d3075fdffae8054b",
         "md5": "d8821cd288e2be7fd83cdcac22a427ce",
         "sha256": "a3c2fa63c7e730bdd008bc07b7d3865dc76781082b77a03d52a918ce1c7d3459",
+        "sha1_git": "0b360ce6c169766d4dd9d81993f4ae21aebcfbc9",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -1791,6 +1833,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -1800,7 +1843,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/deflate.h",
                 "start_line": 3,
                 "end_line": 3,
@@ -1814,7 +1857,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -1869,6 +1912,7 @@
         "sha1": "85c65180242c560a4df66e9882119bf70eaefd02",
         "md5": "07497e2688dad9406386f0534a0bbfca",
         "sha256": "64fef1f0a7cd69eae744ad2fa754ee8568a5715588e38b7a3fa6e11eaeaec97e",
+        "sha1_git": "a5942194eea562896392979306b4f05cc6042d6a",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -1883,6 +1927,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -1892,7 +1937,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -1944,6 +1989,7 @@
         "sha1": "2e846ef84cfb16e0e8b92c62a850a607a709d7b2",
         "md5": "2a0ea6a99e31fb0989209a027476038d",
         "sha256": "dc7224c7f079d237acf510ff40282cf6d50352c851d4e2957d227e2a3b57eb4d",
+        "sha1_git": "1aac612ec3066c101f6fbd6ce1e426fb8e182b1f",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -1958,6 +2004,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -1967,7 +2014,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zutil.c",
                 "start_line": 3,
                 "end_line": 3,
@@ -1981,7 +2028,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -2036,6 +2083,7 @@
         "sha1": "830fca8d60bd0d0d91f6354d83ec8bf118a20e64",
         "md5": "807b91d2bf5e18de555e56de37e487d1",
         "sha256": "3980fa5633b16f944641bf2fba3f49b8b9b9de6ffea7be1e142792393bf1a867",
+        "sha1_git": "d85c1f24ea89d8a4ce9dd1fde3cf20ab80c8c852",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -2050,6 +2098,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -2059,7 +2108,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zutil.h",
                 "start_line": 3,
                 "end_line": 3,
@@ -2073,7 +2122,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -2128,6 +2177,7 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
+        "sha1_git": null,
         "mime_type": null,
         "file_type": null,
         "programming_language": null,
@@ -2142,6 +2192,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -2169,6 +2220,7 @@
         "sha1": "93b3e6e5822c350a9c12e69a2848e29767777002",
         "md5": "4e58eb393ad904c1de81a9ca5b9e392c",
         "sha256": "8e6da5a880c0547bac5b71f0f123164511ae17e3c7d7f424e4ec5b44e1cae731",
+        "sha1_git": "c814a2df733d77a1f2338090dfa74720f6202ca6",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": null,
@@ -2183,6 +2235,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
         "detected_license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
         "license_detections": [
@@ -2192,7 +2245,7 @@
             "matches": [
               {
                 "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-                "spdx_license_expression": "GPL-2.0-or-later WITH GNAT-exception",
+                "license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
                 "from_file": "scan/zlib/ada/zlib.ads",
                 "start_line": 6,
                 "end_line": 25,
@@ -2244,6 +2297,7 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
+        "sha1_git": null,
         "mime_type": null,
         "file_type": null,
         "programming_language": null,
@@ -2258,6 +2312,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -2285,6 +2340,7 @@
         "sha1": "cc7fcb4d721a7efe9eefa6bd2d9d0105d33203a8",
         "md5": "dbd621f76cb27e2fd8b8e2d9d985ffcf",
         "sha256": "8b257a625c537736ee3ac2321b4ef56ba8a6fa4f922a35b1a0e992f9327d39e9",
+        "sha1_git": "23da9b437db7ce129df56d1c8d297906c0bbf962",
         "mime_type": "text/plain",
         "file_type": "ASCII text, with CRLF line terminators",
         "programming_language": "C#",
@@ -2299,6 +2355,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -2338,6 +2395,7 @@
         "sha1": "3043848212232cdde81eb3e20fca7f2447d944be",
         "md5": "661652a0568e25d12fc9bfad2fdabfb2",
         "sha256": "f3144ba734429b825e22c2f9048412e78c907e0142f2cdc629879b3a0fa63c89",
+        "sha1_git": "65ea66cb943a7a8b4b87d7b5beccb660214f1b57",
         "mime_type": "text/plain",
         "file_type": "UTF-8 Unicode text, with CRLF line terminators",
         "programming_language": "C#",
@@ -2352,6 +2410,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "boost-1.0",
         "detected_license_expression_spdx": "BSL-1.0",
         "license_detections": [
@@ -2361,7 +2420,7 @@
             "matches": [
               {
                 "license_expression": "boost-1.0",
-                "spdx_license_expression": "BSL-1.0",
+                "license_expression_spdx": "BSL-1.0",
                 "from_file": "scan/zlib/dotzlib/ChecksumImpl.cs",
                 "start_line": 4,
                 "end_line": 5,
@@ -2413,6 +2472,7 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
+        "sha1_git": null,
         "mime_type": null,
         "file_type": null,
         "programming_language": null,
@@ -2427,6 +2487,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -2454,6 +2515,7 @@
         "sha1": "8dff93e95ccef023a871fb438784635b5df1d541",
         "md5": "4f0d2f55d43d9466750350f8b27f0302",
         "sha256": "1551b8fb1c2f1f3cc92c8e4f31730ebdde0c766caeca6d670a7758b55e3804f3",
+        "sha1_git": "3fc192371e46e14835e4b42c8decb9b3a6cdc1f5",
         "mime_type": "text/plain",
         "file_type": "ASCII text, with CRLF line terminators",
         "programming_language": "GAS",
@@ -2468,6 +2530,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -2477,7 +2540,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/gcc_gvmat64/gvmat64.S",
                 "start_line": 17,
                 "end_line": 31,
@@ -2535,6 +2598,7 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
+        "sha1_git": null,
         "mime_type": null,
         "file_type": null,
         "programming_language": null,
@@ -2549,6 +2613,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -2576,6 +2641,7 @@
         "sha1": "299f7a056cf0e0ed7d5bd687c53f3247d809cab2",
         "md5": "d570bd029ee2362f2a0927c87999773b",
         "sha256": "03fb435669b57aa90fe00c4dbc12d8492ef87b6243427d1e1831006994ee1f80",
+        "sha1_git": "3d9f3c93d7ffe4abbfd1f87c0189d6015350600d",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -2590,6 +2656,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -2599,7 +2666,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/infback9/infback9.c",
                 "start_line": 3,
                 "end_line": 3,
@@ -2651,6 +2718,7 @@
         "sha1": "c849edb4691d23e0db97d3f5da1cc5b396929449",
         "md5": "2913c8ea7fb43a0f469bb2797c820a95",
         "sha256": "4f8db049a7156b8a4616a6c9df0b5ee09571f0ac2eb253e111f2fb727fb033ea",
+        "sha1_git": "e7be4800317bce312679806c0d99770300bfca72",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -2665,6 +2733,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "zlib",
         "detected_license_expression_spdx": "Zlib",
         "license_detections": [
@@ -2674,7 +2743,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/infback9/infback9.h",
                 "start_line": 3,
                 "end_line": 3,
@@ -2726,6 +2795,7 @@
         "sha1": null,
         "md5": null,
         "sha256": null,
+        "sha1_git": null,
         "mime_type": null,
         "file_type": null,
         "programming_language": null,
@@ -2740,6 +2810,7 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": null,
         "detected_license_expression_spdx": null,
         "license_detections": [],
@@ -2767,6 +2838,7 @@
         "sha1": "b7fe15df27e601b88cde6b6a63dad184ccbce572",
         "md5": "8b897171ea0767232e586086bc94518c",
         "sha256": "ee2eef602cba7c4ba350617f4154de50cb4cbf274c7dd773130aca0775d5d9cd",
+        "sha1_git": "c62dc6d1f15a532a644302d533421fb967bb2278",
         "mime_type": "text/plain",
         "file_type": "ASCII text",
         "programming_language": "C",
@@ -2781,16 +2853,17 @@
         "is_readme": false,
         "is_top_level": false,
         "is_key_file": false,
+        "is_community": false,
         "detected_license_expression": "mit-old-style",
-        "detected_license_expression_spdx": "LicenseRef-scancode-mit-old-style",
+        "detected_license_expression_spdx": "Advanced-Cryptics-Dictionary",
         "license_detections": [
           {
             "license_expression": "mit-old-style",
-            "license_expression_spdx": "LicenseRef-scancode-mit-old-style",
+            "license_expression_spdx": "Advanced-Cryptics-Dictionary",
             "matches": [
               {
                 "license_expression": "mit-old-style",
-                "spdx_license_expression": "LicenseRef-scancode-mit-old-style",
+                "license_expression_spdx": "Advanced-Cryptics-Dictionary",
                 "from_file": "scan/zlib/iostream2/zstream.h",
                 "start_line": 9,
                 "end_line": 15,

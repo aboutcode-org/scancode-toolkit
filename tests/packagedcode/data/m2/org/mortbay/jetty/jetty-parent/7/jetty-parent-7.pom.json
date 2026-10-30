@@ -14,10 +14,12 @@
   "organization_url": "http://www.mortbay.com",
   "licenses": [
     {
-      "name": "Apache License Version 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0",
-      "comments": null,
-      "distribution": null
+      "license": {
+        "name": "Apache License Version 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0",
+        "comments": null,
+        "distribution": null
+      }
     }
   ],
   "developers": [

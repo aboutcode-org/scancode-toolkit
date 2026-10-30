@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) Copyright IBM Deutschland Entwicklung GmbH 2005 PMI (Platform Management Interrupt)
+holders:
+  - IBM Deutschland Entwicklung GmbH PMI (Platform Management Interrupt)
+authors:
+  - Christian Krafft <krafft@de.ibm.com>

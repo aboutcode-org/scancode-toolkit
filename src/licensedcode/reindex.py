@@ -16,6 +16,7 @@ from licensedcode.models import load_dump_licenses
 @click.option(
     '--all-languages',
     is_flag=True,
+    default=False,
     help='[EXPERIMENTAL] Rebuild the license index including texts all '
             'languages (and not only English) and exit.',
     cls=PluggableCommandLineOption,
@@ -23,6 +24,7 @@ from licensedcode.models import load_dump_licenses
 @click.option(
     '--only-builtin',
     is_flag=True,
+    default=False,
     help='Rebuild the license index excluding any additional '
          'license directory or additional license plugins which '
          'were added previously, i.e. with only builtin scancode '
@@ -33,6 +35,7 @@ from licensedcode.models import load_dump_licenses
 @click.option(
     '--load-dump',
     is_flag=True,
+    default=False,
     help='Load all the license objects from file and then dump '
          'them back to their respective license files.',
     cls=PluggableCommandLineOption,
@@ -40,6 +43,7 @@ from licensedcode.models import load_dump_licenses
 @click.option(
     '--additional-directory',
     type=click.Path(exists=True, readable=True, file_okay=False, resolve_path=True, path_type=str),
+    default=None,
     metavar='DIR',
     help='Include this directory with additional custom licenses and license rules '
             'in the license detection index.',

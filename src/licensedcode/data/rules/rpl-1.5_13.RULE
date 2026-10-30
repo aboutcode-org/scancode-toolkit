@@ -1,7 +1,10 @@
 ---
 license_expression: rpl-1.5
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - rpl-1.5
 ---
 
 licenses.nuget.org/RPL-1.5

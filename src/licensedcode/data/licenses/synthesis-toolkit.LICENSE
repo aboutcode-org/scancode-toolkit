@@ -5,7 +5,11 @@ name: Synthesis Toolkit License
 category: Permissive
 owner: Stanford University
 homepage_url: https://ccrma.stanford.edu/software/stk/faq.html#license
-spdx_license_key: LicenseRef-scancode-synthesis-toolkit
+spdx_license_key: MIT-STK
+other_spdx_license_keys:
+    - LicenseRef-scancode-synthesis-toolkit
+other_urls:
+    - https://github.com/thestk/stk/blob/6aacd357d76250bb7da2b1ddf675651828784bbc/LICENSE
 minimum_coverage: 70
 standard_notice: |
     The Synthesis ToolKit in C++ (STK)

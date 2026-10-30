@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2009 VIA Technologies, Inc.
+  - Copyright (c) 2010 One Laptop
+holders:
+  - VIA Technologies, Inc.
+  - One Laptop
+authors:
+  - Harald Welte <HaraldWelte@viatech.com>

@@ -119,15 +119,9 @@ def node_to_value(node, body):
     """
     if node is None:
         return
-    if hasattr(ast, 'Constant'):
-        if isinstance(node, ast.Constant):
-            return node.value
 
-    if isinstance(node, ast.Str):
-        return node.s
-
-    if isinstance(node, ast.Num):
-        return node.n
+    if isinstance(node, ast.Constant):
+        return node.value
 
     if isinstance(node, (ast.List, ast.Tuple, ast.Set,)):
         return [node_to_value(subnode, body) for subnode in node.elts]

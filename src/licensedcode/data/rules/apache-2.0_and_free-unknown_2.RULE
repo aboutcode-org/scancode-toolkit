@@ -1,10 +1,13 @@
 ---
 license_expression: apache-2.0 AND free-unknown
-is_deprecated: yes
 is_license_notice: yes
+is_deprecated: yes
 minimum_coverage: 80
 referenced_filenames:
     - docs/THIRDPARTY
+replaced_by:
+    - apache-2.0
+    - free-unknown
 ignorable_urls:
     - https://www.apache.org/licenses/LICENSE-2.0
 ---

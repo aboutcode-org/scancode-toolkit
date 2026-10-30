@@ -10,6 +10,8 @@ notes: |
     See https://raw.githubusercontent.com/PixarAnimationStudios/ruby-jss/master/LICENSE.txt
     When compared with the Apache-2.0 license text, section 6. Trademarks  has been modified
     to narrow the original exception of TM usage "as required for reasonable and customary use"...
+replaced_by:
+    - pixar
 ---
 
 Modified Apache 2.0 License

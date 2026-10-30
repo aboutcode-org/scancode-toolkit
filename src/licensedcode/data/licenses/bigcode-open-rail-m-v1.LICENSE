@@ -3,7 +3,7 @@ key: bigcode-open-rail-m-v1
 short_name: BigCode Open RAIL-M v1 License Agreement
 name: BigCode Open RAIL-M v1 License Agreement
 category: Proprietary Free
-owner: BigScience
+owner: HuggingFace
 homepage_url: https://huggingface.co/spaces/bigcode/bigcode-model-license-agreement
 spdx_license_key: LicenseRef-scancode-bigcode-open-rail-m-v1
 ---

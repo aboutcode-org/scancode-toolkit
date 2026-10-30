@@ -1,7 +1,10 @@
 ---
 license_expression: acdl-1.0
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - acdl-1.0
 ---
 
 licenses.nuget.org/CDL-1.0

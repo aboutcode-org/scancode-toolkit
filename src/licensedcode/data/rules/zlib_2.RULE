@@ -8,7 +8,7 @@ ignorable_urls:
     - http://www.opensource.org/licenses/zlib-license.php
 ---
 
-Based on "The zlib/libpng License": 
+Based on "The {{zlib/libpng License}}": 
 http://www.opensource.org/licenses/zlib-license.php
 
  

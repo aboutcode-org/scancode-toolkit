@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-Created from templates made available by Stagehand under a BSD-style
-[license]
+Created from templates made available by Stagehand under a {{BSD-style
+[license}}]

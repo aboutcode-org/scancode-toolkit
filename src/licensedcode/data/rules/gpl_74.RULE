@@ -3,6 +3,6 @@ license_expression: gpl-1.0-plus
 is_license_notice: yes
 ---
 
-A. gpl (GNU General Public License)
+A. {{gpl (GNU General Public License}})
 
-The full text of the GPL is given in /usr/share/common-licenses/GPL.
+The full text of the GPL is given in {{/usr/share/common-licenses/GPL}}.

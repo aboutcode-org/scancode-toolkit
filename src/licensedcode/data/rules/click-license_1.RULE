@@ -1,0 +1,10 @@
+---
+license_expression: click-license
+is_license_notice: yes
+---
+
+Portions of this software are subject to the license below.  The relevant
+source files are clearly marked; they refer to this file using the phrase
+"the {{Click LICENSE}} file". This license is an MIT license, plus a clause
+(taken from the W3C license) requiring prior written permission to use our
+names in publicity.

@@ -7,10 +7,10 @@ ignorable_urls:
     - https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ---
 
-is licensed under the GNU General Public License, version 2<
+is licensed under {{the GNU General Public License, version 2}}<
 
 is licensed under https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-the GNU General Public License version 2</a>, which is often abbreviated as GPLv2.
+{{the GNU General Public License version 2}}</a>, which is often abbreviated as GPLv2.
 (This is the same license the Linux kernel is under, so you may be somewhat
 familiar with it by now.)
 

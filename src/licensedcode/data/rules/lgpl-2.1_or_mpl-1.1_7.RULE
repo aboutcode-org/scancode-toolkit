@@ -1,0 +1,11 @@
+---
+license_expression: lgpl-2.1 OR mpl-1.1
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
+Cairo is released under the terms of either the {{GNU Lesser General Public
+License version 2.1}}, or the terms of the {{Mozilla Public License version 1.1}}.
+
+See the [`COPYING`](./COPYING) document for more information.

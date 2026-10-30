@@ -7,4 +7,4 @@ referenced_filenames:
     - license/third_party/testdata/eclipse_license.txt
 ---
 
-License: Eclipse Public License v1.0 ([license/third_party/testdata/eclipse_license.txt][eclipse])
+License: {{Eclipse Public License v1.0}} ([license/third_party/testdata/eclipse_license.txt][eclipse])

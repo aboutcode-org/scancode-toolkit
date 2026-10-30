@@ -64,7 +64,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-              "spdx_license_expression": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
+              "license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
               "from_file": "scan/gpl-2.0_with_linux-syscall-note_or_linux-openib_SPDX.RULE",
               "start_line": 1,
               "end_line": 1,
@@ -99,7 +99,7 @@
           "matches": [
             {
               "license_expression": "unlicense",
-              "spdx_license_expression": "Unlicense",
+              "license_expression_spdx": "Unlicense",
               "from_file": "scan/tocbot.js",
               "start_line": 89,
               "end_line": 89,

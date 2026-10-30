@@ -6,6 +6,6 @@ ignorable_urls:
     - http://scripts.sil.org/OFL
 ---
 
-licensed under the SIL Open Font License, Version 1.1.
+licensed under the {{SIL Open Font License, Version 1.1}}.
 This license available with a FAQ at:
 http://scripts.sil.org/OFL

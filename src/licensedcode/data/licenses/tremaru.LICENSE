@@ -1,0 +1,28 @@
+---
+key: tremaru
+language: ru
+short_name: Trema.ru License
+name: Trema.ru License
+category: Permissive
+owner: Trema.ru
+homepage_url: https://github.com/tremaru/iarduino_VpH/blob/main/License.txt
+spdx_license_key: LicenseRef-scancode-tremaru
+other_urls:
+    - https://blog.adafruit.com/2025/03/05/from-russia-with-code-the-2024-arduino-open-source-report/
+ignorable_urls:
+    - http://iarduino.ru/
+---
+
+Данная лицензия разрешает лицам, получившим копию данного программного обеспечения и сопутствующей документации (в дальнейшем именуемыми «Программное Обеспечение»), безвозмездно использовать Программное Обеспечение без ограничений, включая неограниченное право на использование, копирование, изменение, слияние, публикацию и распространение, при соблюдении следующих условий:
+- Указанное выше уведомление об авторском праве и данные условия должны быть включены во все копии или значимые части данного Программного Обеспечения.
+- При публикации устройств или скетчей с использованием данного Программного Обеспечения, как целиком, так и его частей, в том числе и в некоммерческих целях, необходимо опубликовать ссылку на сайт разработкика Программного Обеспечения: http://iarduino.ru
+- Запрещается сублицензирование и/или продажа копий Программного Обеспечения.
+
+ДАННОЕ ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЯЕТСЯ «КАК ЕСТЬ», БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ЯВНО ВЫРАЖЕННЫХ ИЛИ ПОДРАЗУМЕВАЕМЫХ, ВКЛЮЧАЯ ГАРАНТИИ ТОВАРНОЙ ПРИГОДНОСТИ, СООТВЕТСТВИЯ ПО ЕГО КОНКРЕТНОМУ НАЗНАЧЕНИЮ И ОТСУТСТВИЯ НАРУШЕНИЙ, НО НЕ ОГРАНИЧИВАЯСЬ ИМИ. НИ В КАКОМ СЛУЧАЕ АВТОРЫ ИЛИ ПРАВООБЛАДАТЕЛИ НЕ НЕСУТ ОТВЕТСТВЕННОСТИ ПО КАКИМ-ЛИБО ИСКАМ, ЗА УЩЕРБ ИЛИ ПО ИНЫМ ТРЕБОВАНИЯМ, В ТОМ ЧИСЛЕ, ПРИ ДЕЙСТВИИ КОНТРАКТА, ДЕЛИКТЕ ИЛИ ИНОЙ СИТУАЦИИ, ВОЗНИКШИМ ИЗ-ЗА ИСПОЛЬЗОВАНИЯ ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ ИЛИ ИНЫХ ДЕЙСТВИЙ С ПРОГРАММНЫМ ОБЕСПЕЧЕНИЕМ. 
+
+This license permits persons who obtain a copy of the software and accompanying documentation (hereinafter referred to as the “Software”) to use the Software without restriction, including without limitation the unrestricted right to use, copy, modify, merge, publish, and distribute, subject to the following conditions: :
+- The above copyright notice and these terms and conditions must be included in all copies or significant portions of this Software.
+- When publishing devices or sketches using this Software, both in whole and in parts, including for non-commercial purposes, you must publish a link to the Software development site: http://iarduino.ru
+- Sublicensing and/or selling copies of the Software is prohibited.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGE OR OTHER CLAIM, INCLUDING WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING OUT OF THE USE OF THE SOFTWARE OR OTHER ACTION WITH SOFTWARE.

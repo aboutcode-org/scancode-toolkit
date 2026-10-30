@@ -1,0 +1,10 @@
+---
+license_expression: artistic-perl-1.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - /usr/share/common-licenses/Artistic
+---
+
+On Debian GNU/Linux systems, the complete text of the {{Artistic License}} can
+be found in {{`/usr/share/common-licenses/Artistic'.}}

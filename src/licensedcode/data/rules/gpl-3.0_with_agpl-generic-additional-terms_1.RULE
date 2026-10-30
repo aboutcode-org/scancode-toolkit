@@ -1,0 +1,9 @@
+---
+license_expression: gpl-3.0 WITH agpl-generic-additional-terms
+is_license_tag: yes
+is_continuous: yes
+relevance: 100
+notes: Seen in https://github.com/ca4ti/chiaki/
+---
+
+{{SPDX-License-Identifier: LicenseRef-GPL-3.0-OpenSSL }}

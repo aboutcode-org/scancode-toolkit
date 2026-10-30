@@ -7,5 +7,5 @@ ignorable_urls:
 ---
 
 |license
- :alt: BSD License
+ :alt: {{BSD License}}
  :target: https://opensource.org/licenses/BSD-3-Clause

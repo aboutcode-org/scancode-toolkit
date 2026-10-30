@@ -1,0 +1,1 @@
+(c) assert.equal c.domain, www.foonet.net

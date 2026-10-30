@@ -7,18 +7,18 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import logging
 import os
 import uuid
-from fnmatch import fnmatchcase
-import logging
 import sys
 
+from fnmatch import fnmatchcase
+
 import attr
-from packageurl import normalize_qualifiers
-from packageurl import PackageURL
 import saneyaml
 
 from commoncode import filetype
+from commoncode.fileutils import as_posixpath
 from commoncode.datautils import choices
 from commoncode.datautils import Boolean
 from commoncode.datautils import Date
@@ -26,10 +26,11 @@ from commoncode.datautils import Integer
 from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
-from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
 from license_expression import combine_expressions
 from license_expression import Licensing
+from packageurl import normalize_qualifiers
+from packageurl import PackageURL
 
 try:
     from typecode import contenttype
@@ -41,6 +42,7 @@ try:
 except ImportError:
     licensing = None
 
+# FIXME: what if licensing is not importable?
 from packagedcode.licensing import get_declared_license_expression_spdx
 
 """
@@ -364,11 +366,11 @@ class DependentPackage(ModelMixin):
         label='is optional flag',
         help='True if this dependency is an optional dependency')
 
-    is_resolved = Boolean(
+    is_pinned = Boolean(
         default=False,
-        label='is resolved flag',
+        label='is pinned flag',
         help='True if this dependency version requirement has '
-             'been resolved and this dependency url points to an '
+             'been pinned and this dependency points to an '
              'exact version.')
 
     is_direct = Boolean(
@@ -963,7 +965,7 @@ class PackageData(IdentifiablePackageData):
             return [], None
 
         if self.datasource_id:
-            default_relation_license=get_default_relation_license(
+            default_relation_license = get_default_relation_license(
                 datasource_id=self.datasource_id,
             )
         else:
@@ -1020,12 +1022,11 @@ def add_to_package(package_uid, resource, codebase):
 
 class DatafileHandler:
     """
-    A base handler class to handle any package manifests, lockfiles and data
-    files. Each subclass handles a package datafile format to parse datafiles
-    and assemble Package and Depdencies from these:
+    A base handler class to handle any package manifest, lockfile, package database
+    and related data files. Each subclass handles a package datafile format to parse
+    datafiles and assemble Package and Dependencies from these:
 
     - parses a datafile format and yields package data.
-
     - assembles this datafile package data in top-level packages and dependencies
     - assigns package files to their package
     """
@@ -1035,6 +1036,16 @@ class DatafileHandler:
     # case). Must be a valid Python identifier: must start with an ASCII letter,
     # can only contain ASCII letters, digits and underscore. Must be lowercase
     datasource_id = None
+
+    # style of package data processed by this handler, either app for application package like npm,
+    # sys for system packages like rpm, or info for informational data file that provides hints but
+    # is not a package manifest, like with a README file
+    # possible values are app, sys and info
+    datasource_type = 'app'
+
+    # tuple of operating systems where getting package data using this DatafileHandler is supported.
+    # If None or empty, all platforms are supported, possible values are win, mac, linux, freebsd
+    supported_oses = None
 
     # Sequence of known fnmatch-style case-insensitive glob patterns (e.g., Unix
     # shell style patterns) that apply on the whole POSIX path for package
@@ -1056,7 +1067,7 @@ class DatafileHandler:
     # Informational: Default primary language for this parser.
     default_primary_language = None
 
-    # If the datafilehandler contains only resolved dependencies
+    # If the handler is for a lockfile that contains locked/pinned, pre-resolved dependencies
     is_lockfile = False
 
     # Informational: Description of this parser
@@ -1065,7 +1076,9 @@ class DatafileHandler:
     # Informational: URL that documents this file format
     documentation_url = None
 
-    # Default Relation between license elements detected in an `extracted_license_statement`
+    # Default license expression relation between the license detected in an
+    # `extracted_license_statement` for this data file.
+    # This may vary for each data file based on conventions and specifications.
     default_relation_license = None
 
     @classmethod
@@ -1087,7 +1100,16 @@ class DatafileHandler:
         """
         if filetype.is_file(location) or _bare_filename:
             loc = as_posixpath(location)
-            if any(fnmatchcase(loc, pat) for pat in cls.path_patterns):
+
+            # Some extension strings are used interchangebly
+            extension_aliases = {"yaml": "yml"}
+            path_patterns = list(cls.path_patterns)
+            for pattern in cls.path_patterns:
+                for extension, extension_alias in extension_aliases.items():
+                    new_pattern = pattern.replace(extension, extension_alias)
+                    path_patterns.append(new_pattern)
+
+            if any(fnmatchcase(loc, pat) for pat in path_patterns):
                 filetypes = filetypes or cls.filetypes
                 if not filetypes:
                     return True
@@ -1199,6 +1221,11 @@ class DatafileHandler:
         # NOTE: we do not attach files to the Package level. Instead we
         # update `for_packages` of a codebase resource.
         package_uid = package.package_uid
+        if resource.path.endswith("-extract"):
+            archive_resource = resource.extracted_from(codebase)
+            if archive_resource:
+                package_adder(package_uid, archive_resource, codebase)
+
         if resource and package_uid:
             package_adder(package_uid, resource, codebase)
             for res in resource.walk(codebase):
@@ -1227,7 +1254,7 @@ class DatafileHandler:
         pkgdata_resources,
         codebase,
         package_adder=add_to_package,
-        ignore_name_check=False,
+        relaxed_purl_comparision=False,
         parent_resource=None,
     ):
         """
@@ -1260,34 +1287,40 @@ class DatafileHandler:
             base_resource = parent_resource
 
         # process each package in sequence. The first item creates a package and
-        # the other only update
+        # thereafter we create new packages to update the old packages
         # We are saving the Packages, Dependencies, and Resources in lists until
         # after we go through `pkgdata_resources` for all Package data, then we
         # yield Packages, then Dependencies, then Resources.
         dependencies = []
         resources = []
         resources_from_package = []
+        packages_by_purl = {}
+
         for package_data, resource in pkgdata_resources:
             if not base_resource:
                 base_resource = resource
 
-            if not package:
-                # create package from the first item first package_data
-                if package_data.purl:
-                    package = Package.from_package_data(
-                        package_data=package_data,
-                        datafile_path=resource.path,
-                    )
-                    package_uid = package.package_uid
-            else:
-                # FIXME: What is the package_data is NOT for the same package as package?
-                # FIXME: What if the update did not do anything? (it does return True or False)
-                # FIXME: There we would be missing out packges AND/OR errors
+            compatible_package = get_compatible_package(
+                package_data=package_data,
+                packages_by_purl=packages_by_purl,
+                relaxed_purl_comparision=True,
+            )
+            if package_data.purl and not compatible_package:
+                package = Package.from_package_data(
+                    package_data=package_data,
+                    datafile_path=resource.path,
+                )
+                package_uid = package.package_uid
+                packages_by_purl[package.purl] = package
+
+            elif compatible_package:
+                package = compatible_package
                 package.update(
                     package_data=package_data,
                     datafile_path=resource.path,
-                    ignore_name_check=ignore_name_check,
+                    relaxed_purl_comparision=relaxed_purl_comparision,
                 )
+                package_uid = package.package_uid
 
             if package_uid:
                 resources_from_package.append((package_uid, resource,))
@@ -1307,7 +1340,7 @@ class DatafileHandler:
             resources.append(resource)
 
         # Yield Packages, Dependencies, and Resources
-        if package:
+        for package in packages_by_purl.values():
             package.populate_license_fields()
             yield package
         yield from dependencies
@@ -1392,7 +1425,7 @@ class DatafileHandler:
         directory,
         codebase,
         package_adder=add_to_package,
-        ignore_name_check=False,
+        relaxed_purl_comparision=False,
         parent_resource=None,
     ):
         """
@@ -1413,7 +1446,7 @@ class DatafileHandler:
         multiple PackageData for unrelated Packages.
         """
         if TRACE:
-            logger_debug(f'assemble_from_many_datafiles: datafile_name_patterns: {datafile_name_patterns!r}')
+            logger_debug(f'assemble_from_many_datafiles: directory: {directory} datafile_name_patterns: {datafile_name_patterns!r}')
 
         if not codebase.has_single_resource:
             resources = [
@@ -1444,7 +1477,7 @@ class DatafileHandler:
                 pkgdata_resources=pkgdata_resources,
                 codebase=codebase,
                 package_adder=package_adder,
-                ignore_name_check=ignore_name_check,
+                relaxed_purl_comparision=relaxed_purl_comparision,
                 parent_resource=parent_resource,
             )
 
@@ -1494,11 +1527,44 @@ class DatafileHandler:
         """
         pass
 
+    @classmethod
+    def validate(cls):
+        """
+        Validate this class.
+        Raise ImproperlyConfiguredDatafileHandler exception on errors.
+        """
+
+        did = cls.datasource_id
+        if not did:
+            raise ImproperlyConfiguredDatafileHandler(
+                f'The handler {cls!r} has an empty datasource_id {did!r}.')
+
+        DATASOURCE_TYPES = 'app', 'sys', 'info',
+        dfs = cls.datasource_type
+        if dfs not in DATASOURCE_TYPES:
+            raise ImproperlyConfiguredDatafileHandler(
+                f'The handler {did!r} : {cls!r} has an invalid '
+                f'datasource_type: {dfs!r}: must be one of {DATASOURCE_TYPES!r}.'
+            )
+
+        oses = 'linux', 'win', 'max', 'freebsd',
+        soses = cls.supported_oses
+        if soses and not all(s in oses for s in soses):
+            raise ImproperlyConfiguredDatafileHandler(
+                f'The handler {cls.datasource_id!r} : {cls!r} has invalid '
+                f'supported_oses: {soses!r}: must be empty or among {oses!r}'
+            )
+
+
+class ImproperlyConfiguredDatafileHandler(Exception):
+    """ScanCode Package Datafile Handler is not properly configured"""
+    pass
+
 
 class NonAssemblableDatafileHandler(DatafileHandler):
     """
-    A handler that has no default implmentation for the assemble method, e.g.,
-    it will not alone trigger the creation of a top-level Pacakge.
+    A handler with a default implementation of an assemble method doing nothing, e.g.,
+    it will not alone trigger the creation of a top-level Package.
     """
 
     @classmethod
@@ -1531,8 +1597,8 @@ def build_purl(mapping):
     subpath = mapping.get('subpath')
     return PackageURL(
         type=ptype,
-        name=name,
         namespace=namespace,
+        name=name,
         version=version,
         qualifiers=qualifiers,
         subpath=subpath,
@@ -1658,7 +1724,7 @@ class Package(PackageData):
         include_version=True,
         include_qualifiers=False,
         include_subpath=False,
-        ignore_name_check=False,
+        relaxed_purl_comparision=False,
         default_relation='AND',
         licensing=Licensing(),
     ):
@@ -1693,7 +1759,8 @@ class Package(PackageData):
             include_version=include_version,
             include_qualifiers=include_qualifiers,
             include_subpath=include_subpath,
-            ignore_name_check=ignore_name_check,
+            relaxed_purl_comparision=relaxed_purl_comparision,
+            pname_match=does_pname_match(self, package_data),
         ):
             if TRACE_UPDATE:
                 logger_debug(f'update: skipping: {self.purl} is not compatible with: {package_data.purl}')
@@ -1774,7 +1841,7 @@ class Package(PackageData):
             self.declared_license_expression_spdx = get_declared_license_expression_spdx(
                 declared_license_expression=self.declared_license_expression,
             )
-        
+
         if self.other_license_detections:
             self.other_license_expression = str(combine_expressions(
                 expressions=[
@@ -1798,18 +1865,27 @@ class Package(PackageData):
                     yield resource
 
 
+# In certain cases package manifests should be assembled even if
+# the PURLs are slightly different
+compatible_types = {
+    "maven": "jar",
+    "jar": "maven",
+}
+
+
 def is_compatible(
     purl1,
     purl2,
     include_version=True,
     include_qualifiers=True,
     include_subpath=True,
-    ignore_name_check=False,
+    relaxed_purl_comparision=False,
+    pname_match=False,
 ):
     """
     Return True if the ``purl1`` PackageURL-like object is compatible with
     the ``purl2`` PackageURL-like object, e.g. it is about the same package.
-    PackageData objectys are PackageURL-like.
+    PackageData objects are PackageURL-like.
 
     For example::
     >>> p1 = PackageURL.from_string('pkg:deb/libncurses5@6.1-1ubuntu1.18.04?arch=arm64')
@@ -1832,17 +1908,23 @@ def is_compatible(
     >>> is_compatible(p1, p5, include_subpath=False)
     True
     """
-    if ignore_name_check:
+    is_compatible_purl = (
+        purl1.type == purl2.type
+        and purl1.namespace == purl2.namespace
+        and purl1.name == purl2.name
+    )
+    if relaxed_purl_comparision:
+        is_compatible_type = (
+            purl1.type in compatible_types
+            and purl2.type == compatible_types.get(purl1.type)
+        )
         is_compatible = (
-            purl1.type == purl2.type
-            and purl1.namespace == purl2.namespace
+            is_compatible_purl or (is_compatible_type and pname_match) or
+            (is_compatible_type and purl1.type != purl2.type and purl1.namespace == purl2.namespace)
         )
     else:
-        is_compatible = (
-            purl1.type == purl2.type
-            and purl1.namespace == purl2.namespace
-            and purl1.name == purl2.name
-        )
+        is_compatible = is_compatible_purl
+
     if include_version:
         is_compatible = is_compatible and (purl1.version == purl2.version)
 
@@ -1854,6 +1936,38 @@ def is_compatible(
 
     return is_compatible
 
+
+def get_compatible_package(
+    package_data,
+    packages_by_purl,
+    include_version=True,
+    include_qualifiers=True,
+    include_subpath=True,
+    relaxed_purl_comparision=False,
+):
+    if not package_data.purl:
+        return
+
+    for purl_to_compare, package in packages_by_purl.items():
+        if is_compatible(
+            purl1=PackageURL.from_string(purl_to_compare),
+            purl2=PackageURL.from_string(package_data.purl),
+            include_version=include_version,
+            include_qualifiers=include_qualifiers,
+            include_subpath=include_subpath,
+            relaxed_purl_comparision=relaxed_purl_comparision,
+            pname_match=does_pname_match(package, package_data),
+        ):
+            return package
+
+
+def does_pname_match(package1, package2):
+    pname1 = package1.extra_data.get("pname")
+    pname2 = package2.extra_data.get("pname")
+    if pname1 and pname2 and pname1 == pname2:
+        return True
+
+    return False
 
 @attr.attributes(slots=True)
 class PackageWithResources(Package):

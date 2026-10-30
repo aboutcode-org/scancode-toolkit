@@ -1,0 +1,5 @@
+* Copyright (c) 2011 onwards by WeaveBytes InfoTech Pvt. Ltd.
+ 
+ 
+All Kleosis code in this folder is Copyright (c) 2010 onwards by 
+Ken DeVellis and/or the original authors.

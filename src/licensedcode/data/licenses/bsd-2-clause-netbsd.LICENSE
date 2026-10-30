@@ -1,6 +1,8 @@
 ---
 key: bsd-2-clause-netbsd
 is_deprecated: yes
+replaced_by:
+    - bsd-simplified
 short_name: BSD-2-Clause-NetBSD
 name: BSD-2-Clause-NetBSD License
 category: Permissive

@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-licensed under 3-Clause BSD License - "New BSD License" or "Modified BSD License".
+licensed under {{3-Clause BSD License}} - "{{New BSD License}}" or "{{Modified BSD License}}".

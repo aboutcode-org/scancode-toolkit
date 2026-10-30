@@ -5,6 +5,6 @@ referenced_filenames:
     - /usr/share/common-licenses/GPL-3
 ---
 
-On Debian GNU/Linux systems, the complete text of the GNU General
-Public License is in `/usr/share/common-licenses/GPL', version 3 of this
+On Debian GNU/Linux systems, the complete text of the {{GNU General
+Public License}} is in `/usr/share/common-licenses/GPL', version 3 of this
 license in `/usr/share/common-licenses/GPL-3'.

@@ -1,15 +1,17 @@
 ---
 key: lgpl-2.1-plus-unlimited-linking
 is_deprecated: yes
+replaced_by:
+    - lgpl-2.1-plus WITH unlimited-linking-exception-lgpl
 short_name: LGPL 2.1 or later with Unlimited linking exception
 name: LGPL 2.1 or later with Unlimited linking exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.eglibc.org/cgi-bin/viewvc.cgi/branches/eglibc-2_18/libc/io/stat64.c?revision=23787&view=markup
+notes: replaced by unlimited-linking-exception-lgpl
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.html
-notes: replaced by unlimited-linking-exception-lgpl
 ---
 
 The GNU C Library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.

@@ -209,7 +209,9 @@ def scancode_license_data(path):
 @click.option(
     '--path',
     type=click.Path(exists=False, writable=True, file_okay=False, resolve_path=True, path_type=str),
+    default=None,
     metavar='DIR',
+    required=True,
     help='Dump the license data in this directory in the LicenseDB format and exit. '
             'Creates the directory if it does not exist. ',
     help_group=MISC_GROUP,

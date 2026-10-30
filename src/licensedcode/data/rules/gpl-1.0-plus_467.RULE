@@ -6,9 +6,9 @@ referenced_filenames:
 ---
 
 License: GPL
- This program is released under the GNU General Public License (GPL).
+ This program is released under the {{GNU General Public License (GPL}}).
  .
  On Debian GNU/Linux systems, the complete text of the latest version
- of the GNU General Public License version can be found in
+ of the {{GNU General Public License}} version can be found in
  `/usr/share/common-licenses/GPL'.
 Comment: No explicit version of the GPL has been specified.

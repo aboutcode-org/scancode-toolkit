@@ -6,4 +6,4 @@ ignorable_urls:
     - http://jodd.org/license.html
 ---
 
-License: The New BSD License  (http://jodd.org/license.html
+License: The {{New BSD License}}  (http://jodd.org/license.html

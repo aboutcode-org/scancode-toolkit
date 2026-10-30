@@ -2,7 +2,7 @@
 key: tsl-2018
 short_name: TSL Agreement
 name: Timescale License Agreement
-category: Source-available
+category: Non-Commercial
 owner: Timescale
 homepage_url: https://github.com/timescale/timescaledb/blob/master/tsl/LICENSE-TIMESCALE
 spdx_license_key: LicenseRef-scancode-tsl-2018

@@ -21,7 +21,7 @@ other_license_detections:
     license_expression_spdx: Zlib
     matches:
       - license_expression: zlib
-        spdx_license_expression: Zlib
+        license_expression_spdx: Zlib
         from_file:
         start_line: 30
         end_line: 44
@@ -30,8 +30,8 @@ other_license_detections:
         matched_length: 132
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: zlib_81.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_81.RULE
+        rule_identifier: zlib.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
         matched_text: |
           This software is provided 'as-is', without any express or implied
           warranty. In no event will the authors be held liable for any damages
@@ -48,12 +48,12 @@ other_license_detections:
           2. Altered source versions must be plainly marked as such, and must not be
              misrepresented as being the original software.
           3. This notice may not be removed or altered from any source distribution.
-    identifier: zlib-9a572338-50f0-922a-4ff5-942f61bbd11b
+    identifier: zlib-d0d19c8a-d320-af07-cc84-513d4283c0bc
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 59
         end_line: 77
@@ -89,7 +89,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 79
         end_line: 79
@@ -102,7 +102,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 80
         end_line: 94
@@ -134,7 +134,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 97
         end_line: 117

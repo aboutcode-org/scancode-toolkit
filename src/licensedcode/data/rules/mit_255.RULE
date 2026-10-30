@@ -6,6 +6,6 @@ referenced_filenames:
     - LICENSE.txt
 ---
 
-Released under the [MIT License].
+Released {{under the [MIT License}}].
 
-[MIT License]: LICENSE.txt
+[{{MIT License}}]: LICENSE.txt

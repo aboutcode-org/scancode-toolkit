@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-distributed under the zlib license
+distributed under the {{zlib license}}

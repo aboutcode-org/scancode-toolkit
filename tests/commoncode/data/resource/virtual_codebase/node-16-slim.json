@@ -1,0 +1,26 @@
+{
+"headers": [],
+"files": [
+{
+  "for_packages": [
+    "pkg:deb/debian/bash@5.0-4?arch=amd64"
+  ],
+  "compliance_alert": "",
+  "path": "/node_16_slim.tar-extract/02c055ef67f5904019f43a41ea5f099996d8e7633749b6e606c400526b2c4b33/bin/bash",
+  "size": 1168776,
+  "type": "file",
+  "name": "bash",
+  "extension": ""
+},
+{
+  "for_packages": [
+    "pkg:deb/debian/gzip@1.9-3?arch=amd64"
+  ],
+  "compliance_alert": "",
+  "path": "/node_16_slim.tar-extract/02c055ef67f5904019f43a41ea5f099996d8e7633749b6e606c400526b2c4b33/bin/uncompress",
+  "size": null,
+  "type": "file",
+  "name": "uncompress",
+  "extension": ""
+}]
+}

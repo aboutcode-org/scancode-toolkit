@@ -6,5 +6,5 @@ ignorable_urls:
     - http://www.opensource.org/licenses/mit-license.php
 ---
 
-You are free to use this code under the MIT license: 
+You are free to use this code {{under the MIT license}}: 
 http://www.opensource.org/licenses/mit-license.php

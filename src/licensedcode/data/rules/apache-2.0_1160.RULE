@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.opensource.org/licenses/apachepl.php
 ---
 
-http://www.opensource.org/licenses/apachepl.php Apache Software License
+http://www.opensource.org/licenses/apachepl.php {{Apache Software License}}

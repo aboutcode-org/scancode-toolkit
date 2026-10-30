@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2004 - 2005 Nokia Corporation
+  - Copyright (c) 2000 RidgeRun, Inc.
+holders:
+  - Nokia Corporation
+  - RidgeRun, Inc.
+authors:
+  - Greg Lonnon <glonnon@ridgerun.com>

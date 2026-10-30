@@ -1,0 +1,6 @@
+---
+license_expression: gpl-2.0-plus
+is_license_tag: yes
+---
+
+MODULE_LICENSE("GPL"); /* Actually dual-licensed, but it doesn't matter for */

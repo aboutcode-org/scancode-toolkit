@@ -6,5 +6,5 @@ ignorable_urls:
     - http://en.m.wikipedia.org/wiki/MIT_License
 ---
 
-The library is made available under the MIT license. 
+The library is made available {{under the MIT license}}. 
 http://en.m.wikipedia.org/wiki/MIT_License

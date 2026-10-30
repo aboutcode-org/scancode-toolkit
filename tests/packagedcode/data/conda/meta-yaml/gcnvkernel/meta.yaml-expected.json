@@ -1,0 +1,364 @@
+[
+  {
+    "type": "conda",
+    "namespace": null,
+    "name": "gcnvkernel",
+    "version": "0.9",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "Python package to support GATK gCNV calling.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "https://www.broadinstitute.org/gatk/",
+    "download_url": "https://github.com/broadinstitute/gatk/releases/download/4.6.1.0/gatk-4.6.1.0.zip",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": "ac7015c3f0ef1852745ca0ef647adbf8ddef5db63ab485b00bc1ffe654814155",
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": "https://github.com/broadinstitute/gatk",
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "bsd-new",
+    "declared_license_expression_spdx": "BSD-3-Clause",
+    "license_detections": [
+      {
+        "license_expression": "bsd-new",
+        "license_expression_spdx": "BSD-3-Clause",
+        "matches": [
+          {
+            "license_expression": "bsd-new",
+            "license_expression_spdx": "BSD-3-Clause",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "bsd-new_10.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_10.RULE",
+            "matched_text": "BSD-3-Clause"
+          }
+        ],
+        "identifier": "bsd_new-50fa5753-f24d-ec04-33a1-36bb8ac0492c"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "BSD-3-Clause",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "build": [
+        "conda-forge::python =3.10.13"
+      ],
+      "run": [
+        "conda-forge::python =3.10.13",
+        "conda-forge::pip =23.3.1"
+      ]
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:conda/unzip",
+        "extracted_requirement": "",
+        "scope": "build",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge:blas",
+        "extracted_requirement": "=1.0=mkl",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/numpy",
+        "extracted_requirement": "=1.26.2",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/pymc",
+        "extracted_requirement": "=5.10.1",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/pytensor",
+        "extracted_requirement": "=2.18.3",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/scipy",
+        "extracted_requirement": "=1.11.4",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/h5py",
+        "extracted_requirement": "=3.10.0",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/pytorch",
+        "extracted_requirement": "=2.1.0=*mkl*100",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/pytorch-lightning",
+        "extracted_requirement": "=2.4.0",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/scikit-learn",
+        "extracted_requirement": "=1.3.2",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/matplotlib",
+        "extracted_requirement": "=3.8.2",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/pandas",
+        "extracted_requirement": "=2.1.3",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/tqdm",
+        "extracted_requirement": "=4.66.1",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/dill",
+        "extracted_requirement": "=0.3.7",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/biopython",
+        "extracted_requirement": "=1.84",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/r-base",
+        "extracted_requirement": "=4.3.1",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/r-data.table",
+        "extracted_requirement": "=1.14.8",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/r-dplyr",
+        "extracted_requirement": "=1.1.3",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/r-getopt",
+        "extracted_requirement": "=1.20.4",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/r-ggplot2",
+        "extracted_requirement": "=3.4.4",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/r-gplots",
+        "extracted_requirement": "=3.1.3",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/r-gsalib",
+        "extracted_requirement": "=2.2.1",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/r-optparse",
+        "extracted_requirement": "=1.7.3",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/r-backports",
+        "extracted_requirement": "=1.4.1",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/bioconda/pysam",
+        "extracted_requirement": "=0.22.0",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/conda-forge/pyvcf",
+        "extracted_requirement": "=0.6.8",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "conda_meta_yaml",
+    "purl": "pkg:conda/gcnvkernel@0.9"
+  }
+]

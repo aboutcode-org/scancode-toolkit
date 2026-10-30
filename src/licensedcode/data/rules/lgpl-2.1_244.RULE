@@ -7,7 +7,7 @@ ignorable_urls:
     - http://wiki.netbeans.org/DevFaqLgpl3rdPartySources
 ---
 
-========================= LGPL-2.1 =========================
+========================= {{LGPL-2.1}} =========================
 
 ------------------------------------------------------------
 You are receiving a copy of the code in the source available at

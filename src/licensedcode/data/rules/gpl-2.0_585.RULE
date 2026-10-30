@@ -5,4 +5,4 @@ relevance: 99
 notes: typo in Lincense
 ---
 
-SPDX-Lincense-Identifier: GPL 2.0
+SPDX-Lincense-Identifier: {{GPL 2.0}}

@@ -1,6 +1,8 @@
 ---
 key: bsd-2-clause-freebsd
 is_deprecated: yes
+replaced_by:
+    - bsd-2-clause-views
 short_name: BSD-2-Clause-FreeBSD
 name: BSD-2-Clause-FreeBSD License
 category: Permissive

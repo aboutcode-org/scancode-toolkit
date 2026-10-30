@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: (BSD-3-Clause OR LGPL-2.0-or-later) AND GPL-1.0-or-later
     matches:
       - license_expression: bsd-new OR lgpl-2.0-plus
-        spdx_license_expression: BSD-3-Clause OR LGPL-2.0-or-later
+        license_expression_spdx: BSD-3-Clause OR LGPL-2.0-or-later
         from_file:
         start_line: 25
         end_line: 63
@@ -60,7 +60,7 @@ license_detections:
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 66
         end_line: 67

@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: BSD-Source-Code
     matches:
       - license_expression: bsd-source-code
-        spdx_license_expression: BSD-Source-Code
+        license_expression_spdx: BSD-Source-Code
         from_file:
         start_line: 7
         end_line: 27

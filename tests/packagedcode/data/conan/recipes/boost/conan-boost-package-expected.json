@@ -36,7 +36,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -112,7 +112,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -188,7 +188,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -264,7 +264,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -340,7 +340,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -416,7 +416,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -492,7 +492,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -568,7 +568,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -644,7 +644,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -720,7 +720,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -796,7 +796,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -872,7 +872,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -948,7 +948,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -1024,7 +1024,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -1100,7 +1100,7 @@
           "matches": [
             {
               "license_expression": "boost-1.0",
-              "spdx_license_expression": "BSL-1.0",
+              "license_expression_spdx": "BSL-1.0",
               "from_file": "manifest/conanfile.py",
               "start_line": 1,
               "end_line": 1,
@@ -1146,7 +1146,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -1161,7 +1161,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -1176,7 +1176,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -1191,7 +1191,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -1206,7 +1206,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -1221,7 +1221,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -1236,7 +1236,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -1926,7 +1926,7 @@
               "matches": [
                 {
                   "license_expression": "boost-1.0",
-                  "spdx_license_expression": "BSL-1.0",
+                  "license_expression_spdx": "BSL-1.0",
                   "from_file": "manifest/conanfile.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -1960,7 +1960,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1971,7 +1971,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1982,7 +1982,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1993,7 +1993,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2004,7 +2004,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2015,7 +2015,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2026,7 +2026,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}

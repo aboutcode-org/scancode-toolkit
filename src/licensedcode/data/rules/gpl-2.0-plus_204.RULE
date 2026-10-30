@@ -1,8 +1,11 @@
 ---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
+is_deprecated: yes
 referenced_filenames:
     - COPYING
+replaced_by:
+    - gpl-2.0-plus
 ---
 
 GNU CC is free software; you can redistribute it and/or modify

@@ -1,0 +1,26 @@
+{
+    "files": [
+      {
+        "path": "apache_to_all_notable_lic_new",
+        "type": "directory",
+        "sha1": null,
+        "md5": null,
+        "scan_errors": []
+      },
+      {
+        "path": "apache_to_all_notable_lic_new/a1.py",
+        "type": "file",
+        "sha1": "535b9966048ad50a9d5eb2f167c0a3013ee5cc6f",
+        "md5": "e5658fe520bbebaf6f3d4be2e2525ab6",
+        "fingerprint": "e30cf09443e7878dfed3288886e97542",
+        "scan_errors": []
+      },
+      {
+        "path": "apache_to_all_notable_lic_new/a2.py",
+        "type": "file",
+        "sha1": "310797523e47db8481aeb06f1634317285115091",
+        "md5": "19efdad483f68bc9997a5c1f7ba41b26",
+        "scan_errors": []
+      }
+    ]
+  }

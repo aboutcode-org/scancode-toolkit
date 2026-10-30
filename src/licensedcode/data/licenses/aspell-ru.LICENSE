@@ -1,0 +1,15 @@
+---
+key: aspell-ru
+short_name: Aspell Russian License
+name: Aspell Russian License
+category: Permissive
+owner: GNU Aspell Project
+spdx_license_key: Aspell-RU
+other_urls:
+    - https://ftp.gnu.org/gnu/aspell/dict/ru/aspell6-ru-0.99f7-1.tar.bz2
+---
+
+Permission to use, copy, redistribute is granted.
+Permission to redistribute modifications in patch form is granted.
+Permission to redistribute binaries made of modified sources is granted.
+All other rights reserved.

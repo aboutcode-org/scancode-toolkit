@@ -4,5 +4,5 @@ is_license_tag: yes
 relevance: 100
 ---
 
-<license>
-<name> Apache-2.0 </name>
+<{{license>
+<name> Apache-2}}.0 </name>

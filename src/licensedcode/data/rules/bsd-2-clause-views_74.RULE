@@ -1,7 +1,10 @@
 ---
 license_expression: bsd-2-clause-views
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - bsd-2-clause-views
 ---
 
-licenses.nuget.org/BSD-2-Clause-Views
+licenses.nuget.org/{{BSD-2-Clause-Views}}

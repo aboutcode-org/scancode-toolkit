@@ -6,4 +6,4 @@ ignorable_urls:
     - http://opensource.org/licenses/bsd-license.php
 ---
 
-Licensed under The BSD 2-Clause License:http://opensource.org/licenses/bsd-license.php
+{{Licensed under The BSD 2-Clause License}}:http://opensource.org/licenses/bsd-license.php

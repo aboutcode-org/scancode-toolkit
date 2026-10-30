@@ -24,11 +24,12 @@ license_expressions:
   - mpich
   - freetts
   - other-permissive
-  - warranty-disclaimer
+  - other-permissive
   - mozilla-gc
   - adobe-glyph
   - mit-xfig
   - x11-tiff
+  - unknown-license-reference
   - other-permissive
   - x11 AND other-permissive
   - widget-workshop

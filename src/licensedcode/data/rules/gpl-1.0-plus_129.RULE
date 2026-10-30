@@ -1,11 +1,14 @@
 ---
 license_expression: gpl-1.0-plus
 is_license_tag: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - gpl-1.0-plus
 ignorable_copyrights:
     - Copyright GNU General
 ignorable_holders:
     - GNU General
 ---
 
-Copyright: GNU General Public Licence / copyleft ('GNU GPL copyright').
+Copyright: GNU General Public Licence / {{copyleft ('GNU GPL}} copyright').

@@ -3,6 +3,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Abhigyan Kumar Singh @Abhigyankrsingh
 - Abhishek Kumar @Abhishek-Dev09
 - Aditya Viki @adityaviki
+- Adrian Braemer @abraemer
 - Agni Bhattacharyya @PyAgni
 - Akanksha Garg @akugarg
 - Alex Blekhman @a-tinsmith
@@ -14,6 +15,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Aryan Kenchappagol @aryanxk02
 - Avi Aryan @aviaryan
 - Aviral Verma @avirlrma
+- Ayush @macayu17
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
 - Ayush Jain @aj4ayushjain
 - Bruno Oliveira @nicoddemus
@@ -21,6 +23,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Chaitya Shah @Chaitya62
 - Chin-Yeung Li @chinyeungli
 - Clement Poulain @FOSS117
+- Conley Owens @cco3
 - Daniel Eder @daniel-eder
 - Dan Kegel @dankegel
 - Dennis Clark @DennisClark
@@ -34,6 +37,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Horie Issei @is2ei
 - James Ward @jamesward
 - Jelmer Vernooĳ @jelmer
+- Jens Keim @pepper-jk
 - Kunal Chhabra @kunalchhabra37
 - Jillian Daguil @jdaguil
 - Jiri Popelka @jpopelka
@@ -47,7 +51,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Mankaran Singh @MankaranSingh
 - Marc-Etienne Vargenau @vargenau
 - Martin Petkov @MartinPetkov
-- Maximilian Huber @maxhbr 
+- Maximilian Huber @maxhbr
 - Michael Herzog @mjherzog
 - Michael Rupprecht @michaelrup
 - Mike Rombout @mrombout
@@ -85,10 +89,11 @@ The following organizations or individuals have contributed to ScanCode:
 - Shivam Sandbhor @sbs2001
 - Steven Esser @majurg
 - Sushant Gupta @susg
+- Theodore Aptekarev @piiq
 - Thomas Druez @tdruez
 - Thomas Steenbergen @tsteenbe
 - Thorsten Harter @ThorstenHarter
-- Till Jaeger @LeChasseur 
+- Till Jaeger @LeChasseur
 - Tobias Furuholm @furuholm
 - Tushar Goel @TG1999
 - Tushar Mittal @techytushar
@@ -96,7 +101,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Van Lindberg @VanL
 - Vibhu Agarwal @Vibhu-Agarwal
 - Viktor Tiulpin @tiulpin
-- Vinay Kumar Singh @Vinay0001 
+- Vinay Kumar Singh @Vinay0001
 - Virag Umathe @viragumathe5
 - Yash D. Saraf @yashdsaraf
 - Yash Nisar @yash-nisar

@@ -1,7 +1,6 @@
 about_resource: pypi.py
 name: pyserial
 namespace: pyserial
-package_url: pkg:github/pyserial/pyserial@d867871e6aa33301#setup.py
 attribute: yes
 copyright: Copyright (c) 2001-2020 Chris Liechti <cliechti@gmx.net>
 download_url: https://github.com/pyserial/pyserial/blob/d867871e6aa333014a77498b4ac96fdd1d3bf1d8/setup.py#L34

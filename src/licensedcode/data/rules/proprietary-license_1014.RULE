@@ -44,14 +44,14 @@ underneath the first comment section of each file.
 notice, this list of conditions and the following disclaimer in the
 documentation and/or other materials provided with the distribution.
  
-• The name of the Copyright Holder may not be used to endorse or promote
+• The name of the Copyright Holder {{may not be}} used to endorse or promote
 products derived from this Package without specific prior written
 permission from the Copyright Holder. 
 • The names "" and ""
 must not be used to endorse or promote products derived from this
 Package without specific prior written permission from the Copyright
 Holder. 
-• Products derived from this Package may not be called "" --
+• Products derived from this Package {{may not be}} called "" --
 nor may "" appear in their name -- without prior written
 permission from the Copyright Holder. You may indicate that your
 software works in conjunction with  by saying "Product for

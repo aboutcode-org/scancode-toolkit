@@ -70,7 +70,7 @@ class AmbiguousDetectionsToDoPlugin(PostScanPlugin):
     """
     Summarize a scan by compiling review items of ambiguous detections.
     """
-    sort_order = 10
+    sort_order = 3
 
     resource_attributes = dict(for_todo=attr.ib(default=attr.Factory(list)))
     codebase_attributes = dict(todo=attr.ib(default=attr.Factory(list)))
@@ -105,7 +105,7 @@ class AmbiguousDetectionsToDoPlugin(PostScanPlugin):
             license_text_diagnostics = kwargs.get("license_text_diagnostics")
             if not license_diagnostics or not license_text or not license_text_diagnostics:
                 usage_suggestion_message = (
-                    "The --todo option, whe paired with --license option should be used with the folowing "
+                    "The --todo option, when paired with --license option should be used with the folowing "
                     "additional CLI options for maximum benifit: [`--license-text`, `--license-text-diagnostics`,"
                     "--license-diagnostics`] as these show additional diagnostic information to help review the issues."
                 )
@@ -188,6 +188,13 @@ def get_ambiguous_package_detections(codebase):
         package_data = getattr(resource, 'package_data', []) or []
         for package in package_data:
             detection_type = None
+
+            # Top-level packages are not created for private packages so
+            # these should not be consider for package detection issues
+            is_private = package.get("is_private", False)
+            if is_private:
+                continue
+
             if not package["purl"]:
                 if resource.path not in deps_datafile_paths and not resource.for_packages:
                     detection_type=PackageDetectionCategory.CANNOT_CREATE_PURL.value
@@ -310,9 +317,11 @@ class AmbiguousDetection:
         license_diagnostics = False
         if detection_object.detection_log != None:
             license_diagnostics = True
+            license_text_diagnostics = True
         detection_mapping = detection_object.to_dict(
             include_text=True,
             license_diagnostics=license_diagnostics,
+            license_text_diagnostics=license_text_diagnostics,
         )
         return cls(
             detection_type='license',

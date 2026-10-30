@@ -3,5 +3,5 @@ license_expression: gpl-2.0
 is_license_notice: yes
 ---
 
-* This file is part of the Genode OS framework, which is distributed
- * under the terms of the GNU General Public License version 2.
+* This file is part of the Genode OS framework, which is {{distributed
+ * under the terms of the GNU General Public License version 2}}.

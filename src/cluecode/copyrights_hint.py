@@ -48,6 +48,8 @@ years = re.compile(years).findall
 statement_markers = (
     '©',
     '(c)',
+    # C sign in Restructured Text:
+    '|copy|',
     '&#169',
     '&#xa9',
     '169',
@@ -69,6 +71,8 @@ statement_markers = (
     '</s>',
     '<s/>',
     'by ',  # note the trailing space
+    # common for emails
+    '@',
 )
 
 '''
@@ -155,4 +159,6 @@ tm
 univ
 upstream
 write
+cid:13
+cid:2
 '''.split()

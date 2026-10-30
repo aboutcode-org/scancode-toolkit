@@ -5,5 +5,5 @@ referenced_filenames:
     - /usr/share/common-licenses/Apache-2.0
 ---
 
-On Debian systems, a copy of the Apache license is available in
+{{On Debian systems, a copy of the Apache license is available}} in
 /usr/share/common-licenses/Apache-2.0

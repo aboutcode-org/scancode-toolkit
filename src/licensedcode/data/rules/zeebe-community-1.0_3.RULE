@@ -1,0 +1,18 @@
+---
+license_expression: zeebe-community-1.0
+is_license_tag: yes
+ignorable_urls:
+    - https://zeebe.io/legal/zeebe-community-license-1.0
+---
+
+<licenses>
+    <license>
+      <name>{{Zeebe Community License v1.0}}</name>
+      <url>https://zeebe.io/legal/zeebe-community-license-1.0</url>
+    </license>
+  </licenses>
+
+  <properties>
+
+    <!-- {{Zeebe Community License v1.0}} header -->
+    <license.header>${maven.multiModuleProjectDirectory}/parent/COPYING-HEADER.txt</license.header>

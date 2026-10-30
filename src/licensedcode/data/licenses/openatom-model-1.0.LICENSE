@@ -1,0 +1,139 @@
+---
+key: openatom-model-1.0
+language: zh-hans
+short_name: OpenAtom Model License 1.0
+name: OpenAtom Model License Version 1.0
+category: Permissive
+owner: HuggingFace
+homepage_url: https://huggingface.co/vivo-ai/BlueLM-7B-Chat-32K/blob/651a2bd18a9bf28bc08cf45025afbe90b3775037/OpenAtom%20Model%20License.pdf
+spdx_license_key: LicenseRef-scancode-openatom-model-1.0
+text_urls:
+    - https://atomgit.com/OpenAtomFoundation/ModelLicense
+other_urls:
+    - https://openatom.cn/law/translate
+---
+
+开放原子模型许可证 第一版
+OpenAtom Model License, Version 1.0
+
+Section I Definitions
+
+1.1 本许可证:是指本开放原子模型许可证第一版。任何人均可在不对本许可证 进行修改的前提下对其进行复制、分发和使用。本许可证的管理人是开放原子开 源基金会，开放原子开源基金会保留对本许可证进行修订和发布新版本的权利。
+1.1 “License” means this OpenAtom Model License, Version 1.0. Anyone is permitted to copy, distribute and use this License in its unmodified form only. The steward of the License is the OpenAtom Foundation, which reserves rights to modify and release new version(s) of this License.
+
+1.2 模型:是指随附的所有基于机器学习技术的参数，包括但不限于权重、偏置 及训练关键中间阶段的检查点及最终优化器状态(如适用)。
+1.2 “Model” means any accompanying machine-learning based parameters, including but not limited to weights, biases and checkpoints from key intermediate stages of training as well as the final optimizer state where applicable.
+
+1.3 衍生模型:是指对本“模型”进行的修改，基于本“模型”的模型，或通过 将本“模型”的参数、激活、操作或输出内容的模式迁移到其他模型而创建或初 始化的其他任何同类机器学习模型，包括但不限于模型微调、模型量化和使用中 间数据表示的模型蒸馏方法。
+1.3 “Derivatives of the Model” means all modifications to the Model, model based on the Model, or any other machine learning models which is created or initialized by transfer of patterns of the parameters, activations, operations or Output of the Model, to the other model in order to cause the other model to perform similarly to the Model,
+including but not limited to fine-tuning, quantization and distillation methods that use intermediate data representations.
+
+1.4 补充材料:是指通过本许可证进行许可的与“模型”“衍生模型”结合使用 的任何随附的补充材料(如有)，例如随附的用于定义、运行(包含模型推理)、 加载、基准测试或评估、修改本“模型”的代码和脚本(如有);随附的用于准 备训练数据或评估数据的相关代码和脚本(如有);随附的数据(如有);及随 附的模型结构说明、文档、教程、示例等(如有)。
+1.4 “Complementary Material” means any accompanying materials that are made available under this License used in conjunction with the Model and Derivative of the Model, if any, such as the accompanying source code and scripts used to define, run (model inference included), load, benchmark or evaluate and modify the Model, if any, and the source code and scripts used to prepare data for training or evaluation, if any; the accompanying Data, if any; and the accompanying model architecture description, documentation, tutorials, examples, etc., if any.
+
+1.5 数据:是指为训练、预训练或评估本“模型”而从与本“模型”一起使用的 数据集(包括用于训练、预训练或以其他方式评估本“模型”的数据集)中提取 的信息、内容的集合。
+1.5 “Data” means a collection of information and content extracted from the dataset used with the Model, including to train, pretrain, or otherwise evaluate the Model.
+1.6 许可方:基于本许可证将其就本“模型”“补充材料”所拥有的知识产权进 行许可的知识产权权利人或由其授权进行前述许可的自然人或法人实体。
+
+1.6 “Licensor” means the intellectual property right owner(s) of the Model and the Complementary Material as well as any individuals or legal entities authorized by such intellectual property right owner(s) that is granting this License.
+
+1.7 贡献:是指知识产权权利人或被其授权的自然人或法人实体自愿向许可方提 交的包括本“模型”“补充材料”的初始版本及对本“模型”“衍生模型”“补 充材料”的所有修改或增补在内的任何原创作品。就此定义而言，“提交”是指
+以电子、口头或书面等任意形式向许可方或其代表发送的通信内容，包括但不限 于为讨论和改进本“模型”目的，在由许可方或代表许可方管理的电子邮件列表、 源代码控制系统以及问题跟踪系统上进行的通信内容，但知识产权权利人明确标 记或以其他形式书面指定为“非贡献”的除外。
+1.7 “Contribution” means any work of authorship, including the original version of the Model and the Complementary Material, and any modifications or additions to that Model, Derivatives of the Model or the Complementary Material, that is intentionally submitted to Licensor by the intellectual property right owner, or by an individual or legal entity authorized to submit on behalf of such intellectual property right owner. For the purposes of this definition, “submitted” means any forms of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Model, but excluding communication that is conspicuously marked or otherwise designated in writing by the intellectual property right owner as “Not a Contribution”.
+
+1.8 贡献者:是指许可方及许可方代表接收其贡献并随后合入本“模型”“补充 材料”的自然人或法人实体。
+1.8 “Contributor” means Licensor and any individuals or legal entities on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Model and the Complementary Material.
+
+1.9 您(或您的):是指实施本许可证授予的许可的自然人或法人实体。
+1.9 “You” (or “Your”) means an individual or legal entity exercising permissions
+granted by this License.
+
+1.10 关联主体:是指控制行为主体、由行为主体控制或受行为主体共同控制的 所有其他主体。就本定义而言，“控制”是指(i)通过合同或其他方式直接或 间接领导或管理该主体的权力;或(ii)拥有该主体至少 50%流通股份;或(iii)
+拥有该主体的实益所有权。
+1.10 “Affiliated Entity” means all entities that control, are controlled by, or are under common control with the acting entity. For the purposes of this definition, “control” means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.
+
+1.11 分发:是指通过任何媒介向第三方传输、发布或以其他方式共享本“模型” “衍生模型”或“补充材料”的行为，包括但不限于将本“模型”或其“衍生模 型”“补充材料”或其功能通过 API、网络访问或任何其他电子或远程方式向用 户提供服务的行为(“托管服务”)。
+1.11 “Distribution” or “Distribute” means any transmission, publication or other sharing of the Model, Derivatives of the Model or the Complementary Material to a third party in any medium, including but not limited to by providing or making the Model, Derivatives of the Model or the Complementary Material or functionality thereof available as a service via API, web access, or any other electronic or remote means (“Hosted Service”).
+
+1.12 使用:包括通过本“模型”“衍生模型”创建任何输出内容，或微调、更 新、运行、训练、评估本“模型”“衍生模型”，或重新标定本“模型”“衍生 模型”的参数。
+1.12 “Use” includes creating any Output with, or fine-tuning, updating, running, training, evaluating or reparametrizing the Model and Derivatives of the Model.
+
+1.13 输出内容:是指通过操作或使用本“模型”或“衍生模型”(含托管服务) 得到的包括但不限于文本、代码、图片、视频等各种形式的输出结果。特此明确， 输出内容不属于本许可证中“衍生模型”的范围。
+1.13 “Output” means the informational results in any forms (including but not limited to texts, codes, images, videos, etc.) generated from operating or using the Model or Derivatives of the Model, including via a Hosted Service. For clarity, the
+Output is not included in Derivatives of the Model under this License.
+
+二、知识产权
+
+Section II Intellectual Property Rights
+
+2.1 著作权许可:每个贡献者根据本许可证授予您永久的、全球范围的、免费的、 非排他的、不可撤销的(根据第 2.2 款规定撤销许可的特定
+情形除外)著作权许 可，以使用、复制、创作“衍生模型”、公开展示、公开运行、再许可、分发本 “模型”及前述“衍生模型”“补充材料”及其修改。
+2.1 Grant of Copyright License
+Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, no-charge, royalty-free, non-exclusive and irrevocable (except as stated in Section 2.2 of this section where the license is revoked) copyright license to use, reproduce, create derivatives of, publicly display, publicly perform, sublicense, and distribute the Model and such Derivatives of the Model, the Complementary Material and modification thereof.
+
+2.2 专利许可:每个贡献者根据本许可证授予您永久的、全球范围的、免费的、 非排他的、不可撤销的(根据本款规定撤销许可的特定情形除外)专利许可，以 制造、委托制造、使用、销售、许诺销售、进口或以其他方式转移本“模型”“衍 生模型”“补充材料”及其修改。前述专利许可仅限于贡献者现在或将来拥有或 控制的其贡献本身或其贡献与其提交该贡献时本“模型”或“补充材料”的结合 而将必然会侵犯的专利权利要求。如果您或您的关联主体对任何人发起专利侵权 诉讼(包括诉讼中的反诉或交叉诉讼)或其他专利维权行动，主张本“模型”“补 充材料”或其中所含的贡献构成直接或间接专利侵权，则贡献者根据本许可证授 予您的知识产权许可自您或您的关联主体提起该诉讼或发起该维权行动之日终 止。
+2.2 Grant of Patent License
+Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, no-charge, royalty-free, non-exclusive, and irrevocable
+(except as stated in this section where the license is revoked) patent license to make, have made, use, sell, offer to sell, import, or otherwise transfer the Model, the Derivatives of the Model, the Complementary Material and modification thereof, where such license applies only to those patent claims owned or controlled now or in the future by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Model or the Complementary Material to which such Contribution(s) was submitted. If You or Your Affiliated Entities institute patent litigation (including a cross-claim or counterclaim in a lawsuit) or otherwise seek for enforcement of patent right, alleging that the Model, the Complementary Material or a Contribution therein constitutes direct or contributory patent infringement, then any licenses of intellectual property right granted to You under this License shall terminate as of the date such litigation is instituted or such enforcement is sought by You or Your Affiliated Entities.
+
+2.3 其他知识产权许可:除以上著作权、专利许可外，每个贡献者根据本许可证 对于您在使用、复制、创作“衍生模型”、公开展示、公开运行、再许可、分发 本“模型”及前述“衍生模型”“补充材料”及其修改时将必然会侵犯的其就本 “模型”“衍生模型”“补充材料”及其修改所拥有或控制的其他知识产权(本 许可证明确不授予的商标权利除外)授予您永久的、全球范围的、免费的、非排 他的、不可撤销的(根据第 2.2 款撤销许可的特定情形除外)许可。
+2.3 Grant of Other Intellectual Property Rights License
+In addition to the copyright and patent granted above, subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, no-charge, royalty-free, non-exclusive and irrevocable (except as stated in Section 2.2 where the license is revoked) license regarding other intellectual property rights on the Model, the Derivatives of the Model, the Complementary Material and modification thereof (except trademark right as explicitly excluded from this License) owned or controlled by such Contributor that are necessarily infringed when You use, reproduce, create derivatives of, publicly display, publicly perform, sublicense, and distribute the Model and such Derivatives of the Model, the Complementary Material
+and modification thereof.
+
+三、分发条件
+
+Section III CONDITIONS OF DISTRIBUTION
+
+3.1 分发条件:在满足以下条件的前提下，您可以在任何媒介中复制、分发本“模 型”副本或其“衍生模型”“补充材料”及其修改(不论修改与否):
+1) 您必须向本“模型”“衍生模型”“补充材料”的接收者提供本许可证副 本;
+2) 您必须保留本“模型”“衍生模型”“补充材料”中的所有著作权、专利、 商标及归属声明，但与本“模型”“衍生模型”“补充材料”任何部分均无关 的除外;
+3) 您必须以显著方式向本“模型”“衍生模型”“补充材料”的接收者提供 对您所修改的所有文件的修改说明，并说明您的修改方式;
+4) 您应自行负责遵守适用的法律法规和程序，且不得将本“模型”及其“衍 生模型”“补充材料”用于任何适用法律所规定的非法目的。
+特别地，当您基于本“模型”“衍生模型”“补充材料”向用户提供托管服 务时，不适用本款第 1)、3)项所规定的条件，但您仍需遵守本款第 2)、 4) 项所规定的条件。
+3.1 Conditions of Distribution
+You may reproduce and distribute copies of the Model or Derivatives of the Model in any medium, the Complementary Material and modification thereof, with or without modifications, provided that You meet the following conditions:
+1) You must provide any recipients of the Model, Derivatives of the Model or the Complementary Material with a copy of this License;
+2) You must retain all copyright, patent, trademark, and attribution notices contained in the Model, Derivatives of the Model and the Complementary Material, excluding those not pertaining to any parts of the Model, Derivatives of the Model or the Complementary Material;
+3) You must provide recipients of the Model, Derivatives of the Model or the Complementary Material with prominent notices stating that You modified the files and how You modified them;
+4) You shall be solely responsible for compliance with applicable law, regulation, and procedure and shall not use the Model, Derivatives of the Model and the Complementary Material for any unlawful purposes under the applicable law.
+Particularly, when you provide users with Hosted Service based on the Model, Derivatives of the Model and the Complementary Material, conditions set forth in Item (1) and (3) in this section shall not apply, while those in Item (2) and (4) in this section still apply.
+
+3.2 知识产权声明及附加许可:在符合第 3.1 款条件的前提下，您可以在您的修 改中添加知识产权(包括但不限于著作权)声明，并可以为您的修改或该等“衍 生模型”整体的复制和分发提供附加的或不同的许可条款和条件。
+3.2 Intellectual Property Right Notice and Additional License
+Subject to the conditions set forth in Section 3.1, You may add Your own intellectual property right notice (including but not limited to copyright notice) to Your modifications and may provide additional or different license terms and conditions for reproduction and distribution of Your modifications, or for such Derivatives of the Model as a whole.
+
+四.其他
+
+Section IV Miscellaneous
+
+4.1 无商标许可:本许可证不提供对贡献者商标(包括但不限于服务标志、商号、 产品名称或图形标识)的许可，但您为描述本“模型”“衍生模型”“补充材料” 及其修改或为满足第 3.1 款规定的声明条件而必须使用的情形除外。
+4.1 No Trademark License
+This License does not grant license to use any trademarks of the Contributor, including but not limited to service marks, trade names, product names or logos, except for use in indicating the origin of the Model, Derivatives of the Model, the
+Complementary Material and modification thereof, or in complying with conditions on notices as set forth in Section 3.1.
+
+4.2 输出内容:除非适用的法律另有规定或另有协议约定外，许可方对您使用本 “模型”或“衍生模型”生成的输出内容不主张任何权利。您使用本“模型”生 成的输出内容时，自行承担由此产生的相关责任及风险。使用输出内容不得违反 本许可证规定的任何条款。
+4.2 Output
+Except as otherwise provided in applicable law or agreements, Licensor claims no rights in the Output You generate using the Model or Derivatives of the Model. You are solely responsible for any liabilities or risks arising out of or related to Your Output. No use of the Output can contravene any provisions as stated in this License.
+
+4.3 无担保声明:除非根据适用的法律要求或经事先书面同意，许可方按“原样” 提供本“模型”“补充材料”(每个贡献方按“原样”提供其贡献)和输出内容， 不提供任何明示或默示的担保，包括但不限于任何所有权、不侵权、适销性、 特定用途适用性的担保。应自行对您使用、复制、创作“衍生模型”、公开展 示、公开运行、再许可、分发本“模型”“衍生模型”“补充材料”及其修改 或输出内容的适当性进行判断，并自行承担与之相关的所有风险，以及行使本 许可证授予您的权利相关的其他所有风险。
+4.3 Disclaimer of Warranty
+UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING IN ADVANCE, THE MODEL, THE COMPLEMENTARY MATERIAL, CONTRIBUTIONS THEREOF AND OUTPUTS ARE PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. YOU ARE SOLELY RESPONSIBLE FOR DETERMINING THE APPROPRIATENESS OF USING, REPRODUCING, CREATING DERIVATIVES OF, PUBLICLY
+DISPLAYING, PUBLICLY PERFORMING, SUBLICENSING, AND DISTRIBUTING THE MODEL, DERIVATIVES OF THE MODEL, THE COMPLEMENTARY MATERIAL AND MODIFICATION THEREOF OR OUTPUTS AND ASSUME ANY OTHER RISKS ASSOCIATED THEREWITH AND YOUR EXERCISE OF PERMISSIONS UNDER THIS LICENSE.
+
+4.4 责任限制:除非根据适用的法律要求或经事先书面同意，否则在任何情况下， 无论基于任何法律依据，任何贡献者(即使其曾被建议有损害发生的可能性) 均 不对您因使用、复制、创作“衍生模型”、公开展示、公开运行、再许可、分 发本“模型”“衍生模型”“补充材料”及其修改或其中的贡献，以及输出内 容而引发的任何损害(包括但不限于直接的、间接的、附带的、特殊的、继发 性、惩罚性的损害或任何类型的利益损失)承担任何责任。
+4.4 Limitation of Liability
+IN NO EVENT AND UNDER NO LEGAL THEORY, UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING IN ADVANCE, SHALL ANY CONTRIBUTORS BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, OR LOST PROFITS OF ANY KIND ARISING OUT OF YOUR USING, REPRODUCING, CREATING DERIVATIVES OF, PUBLICLY DISPLAYING, PUBLICLY PERFORMING, SUBLICENSING, AND DISTRIBUTING THE MODEL, DERIVATIVES OF THE MODEL, THE COMPLEMENTARY MATERIAL AND MODIFICATION THEREOF, CONTRIBUTIONS THEREIN OR OUTPUTS, EVEN IF SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+4.5 承担担保或其他责任:在分发本“模型”“衍生模型”“补充材料”或其修 改时，您可以选择提供与本许可证不相冲突的支持、保障、担保以及承担其他责 任、义务及权利，并就此收取费用。但在此情况下，您仅代表您自己(而不能代 表任何其他贡献者)并独自承担责任，且您必须同意为每个贡献者进行抗辩、提 供赔偿，以确保其不会因您提供此类支持、保障、担保或承担其他责任、义务而
+受到任何损失或被追究任何责任。
+4.5 Accepting Warranty or Additional Liability
+While distributing the Model, Derivatives of the Model, the Complementary Material or modification thereof, You may choose to offer, and charge a fee for, acceptance of support, indemnity, warranty or other liability, obligations and rights consistent with this License. However, by acceptance You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributors, and You shall agree to defend, indemnify, and hold each Contributor harmless for any liabilities incurred by, or claims asserted against, such Contributor by reason of Your accepting any such support, indemnity, warranty or additional liabilities and obligations.
+
+4.6 终止:如果您违反本许可证，则您基于本许可证获得的所有权利将自动终止， 您应立即删除并停止使用本“模型”“衍生模型”“补充材料”及其修改。本许 可证终止后，第 4.2、4.3、4.4、4.5 款继续有效。如果您系首次违反本许可证并 且在您首次收到本许可证任何知识产权权利人的合理书面通知之日起 30 天内停 止所有违约行为，则该权利人授予您的权利将自您停止所有违约行为之时自动恢 复。如您基于本许可证所获得的许可终止的，您的下游的接收者仍可根据本许可 证享有相关授权。
+4.6 Termination
+Your violation of this License will automatically terminate Your rights under this License and You shall promptly delete and cease use of the Model, Derivatives of the Model, the Complementary Material and any modifications thereof. Section 4.2, 4.3, 4.4 and 4.5 shall survive the termination of this License. However, if you cease all violation of this License in 30 days after receiving for the first time a reasonable written notice by any intellectual property right holders of this License, then Your license from such right holders is reinstated when You cease all violation. Termination of your rights under this section does not terminate the licenses of parties who have received copies or rights from you under this License.
+
+4.7 语言:本许可证以中英双语拟制，中英文本均具有同等法律效力。当本许可 证适用中国法律(包括港澳台地区法律)解释时，须以中文文本为准。
+4.7 Language
+This License is written in both Chinese and English, and the Chinese version and English version shall have the same legal effect. The Chinese version shall prevail, provided that the laws of China (including the laws of Hong Kong, Macao and Taiwan) apply to the interpretation of this License.

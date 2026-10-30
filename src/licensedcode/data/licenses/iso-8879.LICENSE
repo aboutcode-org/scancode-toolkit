@@ -4,7 +4,12 @@ short_name: ISO 8879
 name: ISO 8879
 category: Permissive
 owner: ISO - International Organization for Standardization
-spdx_license_key: LicenseRef-scancode-iso-8879
+spdx_license_key: ISO-permission
+other_spdx_license_keys:
+    - LicenseRef-scancode-iso-8879
+other_urls:
+    - https://gitlab.com/agmartin/linuxdoc-tools/-/blob/master/iso-entities/COPYING?ref_type=heads
+    - https://www.itu.int/ITU-T/formal-language/itu-t/t/t173/1997/ISOMHEG-sir.html
 ---
 
 Permission to copy in any form is granted for use with

@@ -1,7 +1,10 @@
 ---
 license_expression: dsdp
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - dsdp
 ---
 
 licenses.nuget.org/DSDP

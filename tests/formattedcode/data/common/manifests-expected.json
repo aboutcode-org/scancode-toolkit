@@ -33,49 +33,36 @@
           "matches": [
             {
               "license_expression": "cddl-1.0",
-              "spdx_license_expression": "CDDL-1.0",
+              "license_expression_spdx": "CDDL-1.0",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
               "start_line": 1,
-              "end_line": 1,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 8,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "cddl-1.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE",
-              "matched_text": "- name: Common Development and Distribution License (CDDL) v1.0"
-            },
-            {
-              "license_expression": "cddl-1.0",
-              "spdx_license_expression": "CDDL-1.0",
-              "from_file": "manifests/maven/persistence-api-1.0.pom",
-              "start_line": 2,
               "end_line": 2,
-              "matcher": "2-aho",
+              "matcher": "1-hash",
               "score": 100.0,
-              "matched_length": 7,
+              "matched_length": 17,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "cddl-1.0_4.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE",
-              "matched_text": "  url: http://www.sun.com/cddl/cddl.html"
+              "rule_identifier": "cddl-1.0_98.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_98.RULE",
+              "matched_text": "name: Common Development and Distribution License (CDDL) v1.0\nurl: http://www.sun.com/cddl/cddl.html"
             }
           ],
-          "identifier": "cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880"
+          "identifier": "cddl_1_0-b17acf03-1e4f-20e6-cbb8-1b6945ee4c4c"
         }
       ],
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "- name: Common Development and Distribution License (CDDL) v1.0\n  url: http://www.sun.com/cddl/cddl.html\n",
+      "extracted_license_statement": "- license:\n    name: Common Development and Distribution License (CDDL) v1.0\n    url: http://www.sun.com/cddl/cddl.html\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
       ],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "pname": "Enterprise JavaBeans (EJB) 3.0"
+      },
       "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar",
       "api_data_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.pom",
@@ -131,7 +118,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -153,7 +140,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -236,7 +223,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "manifests/npm-license-string/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -325,7 +312,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "manifests/pypi/bluepyopt_setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -347,7 +334,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "manifests/pypi/bluepyopt_setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -393,7 +380,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -408,7 +395,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -423,7 +410,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -438,7 +425,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -453,7 +440,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -468,7 +455,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -483,7 +470,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -498,7 +485,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -513,7 +500,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -528,7 +515,7 @@
       "scope": "peerDependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -543,7 +530,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -558,7 +545,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -573,7 +560,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -588,7 +575,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -603,7 +590,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -618,7 +605,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -633,7 +620,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -648,7 +635,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -663,7 +650,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -678,7 +665,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -693,7 +680,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -708,7 +695,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -723,7 +710,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -738,7 +725,7 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -753,7 +740,7 @@
       "scope": "all",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -768,7 +755,7 @@
       "scope": "scoop",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -783,21 +770,43 @@
       "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
-      "detection_count": 3,
+      "detection_count": 2,
       "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
           "from_file": "manifests/npm-license-mapping/package.json",
-          "start_line": 20,
-          "end_line": 20,
-          "matcher": "2-aho",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
           "score": 100.0,
           "matched_length": 3,
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "apache_2_0-0d7a2023-aae9-2989-7f00-27b713b809bb",
+      "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "manifests/npm-license-mapping/package.json",
+          "start_line": 18,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_required_phrase_7.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_required_phrase_7.RULE"
         }
       ]
     },
@@ -824,43 +833,29 @@
       ]
     },
     {
-      "identifier": "cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6",
+      "identifier": "cddl_1_0-0507fc0c-7fd5-3ecd-8c7b-5ea542059d4f",
       "license_expression": "cddl-1.0",
       "license_expression_spdx": "CDDL-1.0",
       "detection_count": 1,
       "reference_matches": [
         {
-          "license_expression": "unknown-license-reference",
-          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
-          "from_file": "manifests/maven/persistence-api-1.0.pom",
-          "start_line": 17,
-          "end_line": 19,
-          "matcher": "2-aho",
-          "score": 16.0,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "rule_relevance": 16,
-          "rule_identifier": "license-intro_72.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE"
-        },
-        {
           "license_expression": "cddl-1.0",
           "license_expression_spdx": "CDDL-1.0",
           "from_file": "manifests/maven/persistence-api-1.0.pom",
-          "start_line": 18,
+          "start_line": 17,
           "end_line": 20,
-          "matcher": "3-seq",
-          "score": 82.35,
-          "matched_length": 14,
-          "match_coverage": 82.35,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 21,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "cddl-1.0_32.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_32.RULE"
+          "rule_identifier": "cddl-1.0_95.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_95.RULE"
         }
       ]
     },
     {
-      "identifier": "cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880",
+      "identifier": "cddl_1_0-b17acf03-1e4f-20e6-cbb8-1b6945ee4c4c",
       "license_expression": "cddl-1.0",
       "license_expression_spdx": "CDDL-1.0",
       "detection_count": 1,
@@ -870,28 +865,14 @@
           "license_expression_spdx": "CDDL-1.0",
           "from_file": "manifests/maven/persistence-api-1.0.pom",
           "start_line": 1,
-          "end_line": 1,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 8,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "cddl-1.0.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE"
-        },
-        {
-          "license_expression": "cddl-1.0",
-          "license_expression_spdx": "CDDL-1.0",
-          "from_file": "manifests/maven/persistence-api-1.0.pom",
-          "start_line": 2,
           "end_line": 2,
-          "matcher": "2-aho",
+          "matcher": "1-hash",
           "score": 100.0,
-          "matched_length": 7,
+          "matched_length": 17,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "cddl-1.0_4.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE"
+          "rule_identifier": "cddl-1.0_98.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_98.RULE"
         }
       ]
     },
@@ -1039,6 +1020,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -1073,6 +1055,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -1109,6 +1092,7 @@
       "sha1": "82107f6781df8da9aa7cb60abc649208256af5cb",
       "md5": "e79938fe4e630b02e3526c0195292cc6",
       "sha256": "f94648bd92ddf2464e62c56c3833b36927fa8b9803e8ebf3e4cfa7f2d797f3ad",
+      "sha1_git": "614191600be349e61331a3a0eb2b883493f0db0f",
       "mime_type": "text/xml",
       "file_type": "XML 1.0 document, ASCII text",
       "programming_language": null,
@@ -1152,42 +1136,27 @@
               "matches": [
                 {
                   "license_expression": "cddl-1.0",
-                  "spdx_license_expression": "CDDL-1.0",
+                  "license_expression_spdx": "CDDL-1.0",
                   "from_file": "manifests/maven/persistence-api-1.0.pom",
                   "start_line": 1,
-                  "end_line": 1,
-                  "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 8,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "cddl-1.0.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE",
-                  "matched_text": "- name: Common Development and Distribution License (CDDL) v1.0"
-                },
-                {
-                  "license_expression": "cddl-1.0",
-                  "spdx_license_expression": "CDDL-1.0",
-                  "from_file": "manifests/maven/persistence-api-1.0.pom",
-                  "start_line": 2,
                   "end_line": 2,
-                  "matcher": "2-aho",
+                  "matcher": "1-hash",
                   "score": 100.0,
-                  "matched_length": 7,
+                  "matched_length": 17,
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
-                  "rule_identifier": "cddl-1.0_4.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE",
-                  "matched_text": "  url: http://www.sun.com/cddl/cddl.html"
+                  "rule_identifier": "cddl-1.0_98.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_98.RULE",
+                  "matched_text": "name: Common Development and Distribution License (CDDL) v1.0\nurl: http://www.sun.com/cddl/cddl.html"
                 }
               ],
-              "identifier": "cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880"
+              "identifier": "cddl_1_0-b17acf03-1e4f-20e6-cbb8-1b6945ee4c4c"
             }
           ],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "- name: Common Development and Distribution License (CDDL) v1.0\n  url: http://www.sun.com/cddl/cddl.html\n",
+          "extracted_license_statement": "- license:\n    name: Common Development and Distribution License (CDDL) v1.0\n    url: http://www.sun.com/cddl/cddl.html\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
@@ -1195,7 +1164,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "pname": "Enterprise JavaBeans (EJB) 3.0"
+          },
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
           "repository_download_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar",
@@ -1215,39 +1186,25 @@
           "license_expression_spdx": "CDDL-1.0",
           "matches": [
             {
-              "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression": "cddl-1.0",
+              "license_expression_spdx": "CDDL-1.0",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
               "start_line": 17,
-              "end_line": 19,
-              "matcher": "2-aho",
-              "score": 16.0,
-              "matched_length": 3,
-              "match_coverage": 100.0,
-              "rule_relevance": 16,
-              "rule_identifier": "license-intro_72.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE"
-            },
-            {
-              "license_expression": "cddl-1.0",
-              "spdx_license_expression": "CDDL-1.0",
-              "from_file": "manifests/maven/persistence-api-1.0.pom",
-              "start_line": 18,
               "end_line": 20,
-              "matcher": "3-seq",
-              "score": 82.35,
-              "matched_length": 14,
-              "match_coverage": 82.35,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 21,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "cddl-1.0_32.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_32.RULE"
+              "rule_identifier": "cddl-1.0_95.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_95.RULE"
             }
           ],
-          "identifier": "cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6"
+          "identifier": "cddl_1_0-0507fc0c-7fd5-3ecd-8c7b-5ea542059d4f"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 9.25,
+      "percentage_of_license_text": 12.14,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1266,6 +1223,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -1300,6 +1258,7 @@
       "sha1": "0ed61bf6912407a143ce96c95bea56ad13463f5b",
       "md5": "427e6d3b579b128fed50328ac65b698e",
       "sha256": "d292aa647dc82e007ba319c878ec182d6f235f0a923cfe012ffc0ae8b7fa23be",
+      "sha1_git": "fee016dc24204e079cb9e0217d4439d73e1398ac",
       "mime_type": "application/json",
       "file_type": "JSON data",
       "programming_language": null,
@@ -1353,7 +1312,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "manifests/npm-license-mapping/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1375,7 +1334,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "manifests/npm-license-mapping/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1413,7 +1372,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1424,7 +1383,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1435,7 +1394,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1446,7 +1405,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1457,7 +1416,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1468,7 +1427,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1479,7 +1438,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1490,7 +1449,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1501,7 +1460,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1512,7 +1471,7 @@
               "scope": "peerDependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1537,7 +1496,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
               "start_line": 6,
               "end_line": 6,
@@ -1558,24 +1517,24 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
-              "start_line": 20,
+              "start_line": 18,
               "end_line": 20,
               "matcher": "2-aho",
               "score": 100.0,
-              "matched_length": 3,
+              "matched_length": 5,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+              "rule_identifier": "apache-2.0_required_phrase_7.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_required_phrase_7.RULE"
             }
           ],
-          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+          "identifier": "apache_2_0-0d7a2023-aae9-2989-7f00-27b713b809bb"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 5.51,
+      "percentage_of_license_text": 7.09,
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -1600,6 +1559,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -1634,6 +1594,7 @@
       "sha1": "e6acddf907b7089d197d9d46879cd18ffb8f5198",
       "md5": "5ba816691af915c02567f459ae26ebd6",
       "sha256": "11129bc3bbf44b2567307ad13a31bc231f08416919e36bbdeabb9195b3e6ad58",
+      "sha1_git": "99128a9e08f5a23c650d83af5dcf40c3b976753d",
       "mime_type": "application/json",
       "file_type": "JSON data",
       "programming_language": null,
@@ -1685,7 +1646,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "manifests/npm-license-string/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1719,7 +1680,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1730,7 +1691,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1741,7 +1702,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1752,7 +1713,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1763,7 +1724,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1788,7 +1749,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "manifests/npm-license-string/package.json",
               "start_line": 4,
               "end_line": 4,
@@ -1824,6 +1785,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -1858,6 +1820,7 @@
       "sha1": "5507192502255517e006c531d07dd84dc2325be8",
       "md5": "6795bed0c9c6b6cb915bfa959a2d1d4a",
       "sha256": "4378d297df9fcb4f65fdcd1299e17eef7db86883baf149bc41b0335f943cf006",
+      "sha1_git": "887bd3bfe3bdba0c8f737a69df38454b3d489ac1",
       "mime_type": "text/x-script.python",
       "file_type": "Python script, ASCII text executable",
       "programming_language": "Python",
@@ -1919,7 +1882,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "manifests/pypi/bluepyopt_setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -1941,7 +1904,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "manifests/pypi/bluepyopt_setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -1975,7 +1938,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1986,7 +1949,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1997,7 +1960,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2008,7 +1971,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2019,7 +1982,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2030,7 +1993,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2041,7 +2004,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2052,7 +2015,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2063,7 +2026,7 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2074,7 +2037,7 @@
               "scope": "all",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2085,7 +2048,7 @@
               "scope": "scoop",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -2110,7 +2073,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "manifests/pypi/bluepyopt_setup.py",
               "start_line": 9,
               "end_line": 20,
@@ -2131,7 +2094,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "manifests/pypi/bluepyopt_setup.py",
               "start_line": 65,
               "end_line": 65,
@@ -2152,7 +2115,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "manifests/pypi/bluepyopt_setup.py",
               "start_line": 74,
               "end_line": 75,

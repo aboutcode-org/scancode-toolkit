@@ -6,5 +6,5 @@ ignorable_urls:
 ---
 
 <license>
-      <name>GNU Library General Public License v2.1 or later
+      <name>{{GNU Library General Public License v2.1 or later}}
       <url>http://www.opensource.org/licenses/LGPL-2.1

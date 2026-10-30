@@ -1,0 +1,10 @@
+---
+license_expression: lgpl-2.1-plus AND unrar
+is_license_notice: yes
+referenced_filenames:
+    - License.txt
+---
+
+7-Zip is free software distributed under the {{GNU LGPL}} 
+{{(except for unRar code).}}
+read License.txt for more infomation about license.

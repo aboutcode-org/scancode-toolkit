@@ -1,8 +1,10 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_notice: yes
+is_deprecated: yes
 minimum_coverage: 80
+replaced_by:
+    - proprietary-license
 ---
 
 as an unpublished work. This notice does not imply unrestricted or

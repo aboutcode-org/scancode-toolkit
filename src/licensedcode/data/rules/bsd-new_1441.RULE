@@ -1,0 +1,12 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+minimum_coverage: 90
+---
+
+This library is available under the terms of the modified {{BSD license}}. No external contributions
+are allowed under licenses which are fundamentally incompatible with the BSD license that this library is distributed under.
+
+The text of the BSD license is reproduced below.
+
+The {{"New" BSD License}}:

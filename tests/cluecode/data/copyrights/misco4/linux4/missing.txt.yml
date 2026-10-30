@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) SGI 2006, Christoph Lameter
+holders:
+  - SGI Christoph Lameter

@@ -1,0 +1,2 @@
+ Copyright (c) 2001 <span class="firstname">Karl</span> <span class="surname">Garrison</span>
+<code class="email">(karl AT indy.rr.com)</code>

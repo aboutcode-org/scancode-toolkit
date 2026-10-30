@@ -113,6 +113,7 @@ class AddFacet(PreScanPlugin):
     options = [
         PluggableCommandLineOption(('--facet',),
            multiple=True,
+           default=None,
            metavar='<facet>=<pattern>',
            callback=validate_facets,
            help='Add the <facet> to files with a path matching <pattern>.',

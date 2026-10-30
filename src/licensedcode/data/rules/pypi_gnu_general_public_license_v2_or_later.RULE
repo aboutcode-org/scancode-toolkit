@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
+License :: OSI Approved :: {{GNU General Public License v2 or later}} (GPLv2+)

@@ -5,7 +5,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/skeleton for support or download.
+# See https://github.com/aboutcode-org/skeleton for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 import email
@@ -115,14 +115,14 @@ TRACE_DEEP = False
 TRACE_ULTRA_DEEP = False
 
 # Supported environments
-PYTHON_VERSIONS = "38", "39", "310", "311", "312"
+PYTHON_VERSIONS = "310", "311", "312", "313", "314"
 
 PYTHON_DOT_VERSIONS_BY_VER = {
-    "38": "3.8",
-    "39": "3.9",
     "310": "3.10",
     "311": "3.11",
     "312": "3.12",
+    "313": "3.13",
+    "314": "3.14",
 }
 
 
@@ -134,11 +134,12 @@ def get_python_dot_version(version):
 
 
 ABIS_BY_PYTHON_VERSION = {
-    "38": ["cp38", "cp38m", "abi3"],
     "39": ["cp39", "cp39m", "abi3"],
     "310": ["cp310", "cp310m", "abi3"],
     "311": ["cp311", "cp311m", "abi3"],
     "312": ["cp312", "cp312m", "abi3"],
+    "313": ["cp313", "cp313m", "abi3"],
+    "314": ["cp314", "cp314m", "cp314t", "abi3"],
 }
 
 PLATFORMS_BY_OS = {
@@ -147,6 +148,16 @@ PLATFORMS_BY_OS = {
         "manylinux1_x86_64",
         "manylinux2010_x86_64",
         "manylinux2014_x86_64",
+        "manylinux_2_17_x86_64",
+        "linux_aarch64",
+        "manylinux1_aarch64",
+        "manylinux2010_aarch64",
+        "manylinux2014_aarch64",
+        "manylinux_2_17_aarch64",
+        "manylinux_2_26_aarch64",
+        "manylinux_2_28_aarch64",
+        "musllinux_1_2_x86_64",
+        "musllinux_1_2_aarch64",
     ],
     "macos": [
         "macosx_10_6_intel",
@@ -177,7 +188,7 @@ PLATFORMS_BY_OS = {
         "macosx_10_14_universal2",
         "macosx_10_15_universal2",
         "macosx_11_0_universal2",
-        # 'macosx_11_0_arm64',
+        "macosx_11_0_arm64",
     ],
     "windows": [
         "win_amd64",
@@ -357,7 +368,6 @@ class NameVer:
 
 @attr.attributes
 class Distribution(NameVer):
-
     # field names that can be updated from another Distribution or mapping
     updatable_fields = [
         "license_expression",
@@ -1093,7 +1103,6 @@ def get_sdist_name_ver_ext(filename):
 
 @attr.attributes
 class Sdist(Distribution):
-
     extension = attr.ib(
         repr=False,
         type=str,
@@ -1131,7 +1140,6 @@ class Sdist(Distribution):
 
 @attr.attributes
 class Wheel(Distribution):
-
     """
     Represents a wheel file.
 
@@ -2139,7 +2147,6 @@ def call(args, verbose=TRACE):
     with subprocess.Popen(
         args, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding="utf-8"
     ) as process:
-
         stdouts = []
         while True:
             line = process.stdout.readline()

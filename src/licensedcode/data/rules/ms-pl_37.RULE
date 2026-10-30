@@ -1,9 +1,8 @@
 ---
 license_expression: ms-pl
-is_license_clue: yes
-is_continuous: yes
+is_license_reference: yes
+is_required_phrase: yes
 relevance: 80
-minimum_coverage: 100
 ---
 
 MS-PL

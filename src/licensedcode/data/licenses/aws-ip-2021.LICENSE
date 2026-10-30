@@ -1,0 +1,36 @@
+---
+key: aws-ip-2021
+short_name: AWS IP License 2021
+name: AWS Intellectual Property License 2021
+category: Proprietary Free
+owner: Amazon Web Services
+homepage_url: https://aws.amazon.com/legal/aws-ip-license-terms/
+spdx_license_key: LicenseRef-scancode-aws-ip-2021
+other_urls:
+    - https://github.com/aws/aws-rfdk/blob/fc499424d2cc32c7a2a4096a3638974df9fec6dd/examples/deadline/Local-Zone/python/README.md?plain=1#L38
+    - https://github.com/FX-Wizard/blog/blob/e6504715f42c33cd0ae4c73e38ff1153febd08c9/content/posts/deadline-linux-server.md?plain=1#L196
+    - https://aws.amazon.com/agreement/
+standard_notice: |
+    The AWS Customer Agreement mentioned in the license text is at
+    https://aws.amazon.com/agreement/
+---
+
+AWS Intellectual Property License
+Last Updated: September 17, 2021
+
+This Intellectual Property License (“License”) governs your use of AWS Content and the Services. Capitalized terms used but not defined in this License are defined in the AWS Customer Agreement or other agreement with us governing your use of the Services (the “Agreement”).
+
+1. AWS Licensor
+If the geographic location associated with your AWS account is any country within Europe, the Middle East, or Africa (“ EMEA ”), then Amazon Web Services EMEA SARL (“ AWS Europe ”) grants this License.  If the geographic location associated with your AWS account is any country outside of EMEA, then Amazon Web Services, Inc. (“ AWS, Inc .”) grants this License.  “AWS Europe” and “AWS, Inc.” are individually referred to herein as an “ AWS Licensor ”.  
+
+2. No Agency
+
+This License forms a separate agreement between you and the AWS Licensor without any further action required by the parties.  AWS Licensor grants this License in its own capacity and no other party is acting as agent of AWS Licensor or has capacity to bind AWS Licensor.
+
+3. License
+
+AWS Licensor or its licensors own all right, title, and interest in and to the Services, AWS Content, and all related technology and intellectual property rights.  Subject to the terms of this License and the Agreement, AWS Licensor grants you a limited, royalty-free, revocable, non-exclusive, non-sublicensable, non-transferrable license to copy and use the AWS Content solely in connection with your permitted use of the Services during the Term. Solely to the extent that applicable law requires the exercise of intellectual property rights owned by AWS Licensor or its licensors for you to access or use any Service, AWS Licensor grants you a limited, royalty-free, revocable, non-exclusive, non-sublicensable and non-transferrable license to exercise such intellectual property rights during the Term and subject to the terms of this License and the Agreement.  No other entity is entitled to or purports to grant or procure the grant of this License.  Except as expressly provided in this Section 3, you obtain no other rights under the Agreement or this License from AWS Licensor, its affiliates or suppliers to the Services and AWS Content, including any related intellectual property rights.  Some AWS Content and Third-Party Content may be provided to you under a separate license, such as the Apache License, Version 2.0, or other open source license.  In the event of a conflict between this License and any separate license, the separate license will prevail with respect to the AWS Content or Third-Party Content that is the subject of such separate license.
+
+4. License Restrictions
+
+Neither you nor any End User will use the Services or AWS Content in any manner or for any purpose other than as expressly permitted by this License and the Agreement.  Neither you nor any End User will, or will attempt to (a) modify, distribute, alter, tamper with, repair, or otherwise create derivative works of any Content included in the Services or AWS Content (except to the extent such Content is provided to you under a separate license that expressly permits the creation of derivative works), or (b) sublicense the Services or AWS Content.  These license restrictions will continue to apply following the termination of this License.

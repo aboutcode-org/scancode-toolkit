@@ -1,0 +1,9 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2013-2018 by the following authors - Rob Clark <robdclark@gmail.com> (robclark)
+    - Ilia Mirkin <imirkin@alum.mit.edu> (imirkin)
+holders:
+  - the following authors - Rob Clark (robclark) - Ilia Mirkin (imirkin)

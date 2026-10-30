@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi> , Espoo, Finland
+  - Copyright (c) 1999,2000 Markus Friedl
+  - Copyright (c) 1999 Aaron Campbell
+  - Copyright (c) 1999 Theo de Raadt
+holders:
+  - Tatu Ylonen , Espoo, Finland
+  - Markus Friedl
+  - Aaron Campbell
+  - Theo de Raadt
+authors:
+  - Tatu Ylonen <ylo@cs.hut.fi>

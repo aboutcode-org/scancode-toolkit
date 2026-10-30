@@ -1,0 +1,13 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2001 convergence integrated media GmbH
+  - Copyright (c) 2004 convergence GmbH
+holders:
+  - convergence integrated media GmbH
+  - convergence GmbH
+authors:
+  - Ralph Metzler Overhauled
+  - Michael Hunold <hunold@convergence.de>

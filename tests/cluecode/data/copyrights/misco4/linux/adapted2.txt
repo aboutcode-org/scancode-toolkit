@@ -1,0 +1,2 @@
+(c) 2004 MontaVista Software, Inc.
+ *  - Adapted from gdb/sim/arm/thumbemu.c

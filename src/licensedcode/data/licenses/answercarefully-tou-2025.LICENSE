@@ -1,0 +1,18 @@
+---
+key: answercarefully-tou-2025
+short_name: AnswerCarefully Dataset ToU 2025
+name: AnswerCarefully Dataset Terms of Use 2025
+category: Proprietary Free
+owner: LLM-jp
+homepage_url: https://huggingface.co/datasets/llm-jp/AnswerCarefully/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-answercarefully-tou-2025
+---
+
+AnswerCarefully Dataset Terms of Use
+  - Terms of Use
+    - This dataset is made publicly available for the purpose of improving the safety of LLMs in Japanese and other languages, including for commercial use.
+    - Users agree not to use this dataset for any purpose other than improving the safety of LLMs. In particular, it is strictly prohibited to use it to circumvent the safety measures of LLMs.
+    - Redistribution of this dataset is not allowed. However, we allow the creation and distribution of any derivative data created from it (including translations, similar data, or synthetic prompts) on the condition that (1) the derivative data does not contain the original data in this dataset; (2) an attribution is given to this dataset. In addition, there is no restriction on sharing this dataset or any derivative work among multiple users who have consented on this license agreement.
+    - Due to the nature of this dataset, it contains expressions that may be considered inappropriate, unsafe or offensive. Please use it with caution for the purpose of improving LLM safety. 
+  - Disclaimer
+    - The creator of this data shall not be responsible for any damage to the user or a third party. In addition, the creator shall not be responsible for any damage to the users or third parties due to delays, interruptions, or suspensions of the provision of this data service. The creator may suspend or discontinue the service of this data or modify the information contained in this data without prior notice.

@@ -1,6 +1,8 @@
 ---
 key: broadcom-unpublished-source
 is_deprecated: yes
+replaced_by:
+    - unpublished-source
 short_name: Broadcom Unpublished Source License
 name: Broadcom Unpublished Source License
 category: Commercial

@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright IBM Corp. 2018 Auxtrace support for s390 CPU-Measurement Sampling Facility
+holders:
+  - IBM Corp. Auxtrace support for s390 CPU-Measurement Sampling Facility
+authors:
+  - Thomas Richter <tmricht@linux.ibm.com>

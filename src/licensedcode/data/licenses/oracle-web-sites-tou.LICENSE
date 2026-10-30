@@ -2,7 +2,7 @@
 key: oracle-web-sites-tou
 short_name: Oracle Web Sites TOU
 name: Oracle Web Sites Terms of Use
-category: Proprietary Free
+category: Non-Commercial
 owner: Oracle Corporation
 homepage_url: http://www.oracle.com/html/terms.html
 spdx_license_key: LicenseRef-scancode-oracle-web-sites-tou

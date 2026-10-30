@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1996-2001 Internet Software Consortium
+holders:
+  - Internet Software Consortium
+authors:
+  - Bdale Garbee <bdale@gag.com>
+  - Internet Software Consortium

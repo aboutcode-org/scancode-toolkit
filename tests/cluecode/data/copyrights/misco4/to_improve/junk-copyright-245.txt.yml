@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c), SC-13 NIST.800.53.R4-RedshiftClusterPublicAccess (https://docs.aws.amazon.com/config/latest/developerguide/redshift-cluster-public-access-check.html)
+holders:
+  - SC-13 NIST.800.53.R4-RedshiftClusterPublicAccess

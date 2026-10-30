@@ -1,0 +1,91 @@
+---
+key: plamo-cla-2024
+short_name: PLaMo Community License Agreement 2024
+name: PLaMo Community License Agreement 2024
+category: Source-available
+owner: Preferred Networks
+homepage_url: https://plamo.preferredai.jp/info/plamo-community-license-en
+spdx_license_key: LicenseRef-scancode-plamo-cla-2024
+other_urls:
+    - https://forms.gle/mTL8tBLrMYXKNZD56
+ignorable_urls:
+    - https://forms.gle/mTL8tBLrMYXKNZD56
+---
+
+PLaMo Community License Agreement
+
+The PLaMo Community License Agreement outlines the terms and conditions for utilizing the large-scale language foundation model PLaMo and its derivatives provided by Preferred Networks, Inc., as well as any obligations the USER must observe. The USER's access to the PLaMo model and its derivatives is subject to this AGREEMENT. By agreeing to or utilizing this MODEL, the USER shall be bound by the terms of this AGREEMENT.
+
+    Article 1 (Definitions)
+        "AGREEMENT" refers to the PLaMo Community License Agreement.
+        "PFN" refers to Preferred Networks, Inc.
+        "MODEL" denotes the model weights, model code, tokenizer, training scripts, and other supplementary materials provided by PFN under the name "PLaMo" as separately specified.
+        "USER" means an individual or legal entity utilizing the MODEL.
+        "DERIVED MODEL" refers to models created through modification or use of the MODEL, including their model weights, code, and other associated materials.
+        "OUTPUT" means the results produced by the MODEL or DERIVED MODEL.
+        "MODEL MATERIALS" collectively refers to the MODEL, DERIVED MODEL, and OUTPUT.
+        "LICENSE" means PFN's authorization to grant the USER permission to use the MODEL MATERIALS under this AGREEMENT.
+        "COMMERCIAL PURPOSE" means any use beyond personal or academic use, including business applications or commercial purposes. Notably, COMMERCIAL PURPOSE also includes usage for developing, modifying, or providing products, services, or business operations (including through hosting services or APIs), and usage within the USER's organizational frameworks.
+
+    Article 2 (User Requirements)
+    The USER must be 18 years of age or older, or have reached the age of legal capacity in the USER's country of residence, unless the USER's legal guardian or legal representative has consented to this AGREEMENT on the USER's behalf.
+
+    Article 3 (This License)
+        PFN grants the USER permission to use the MODEL MATERIALS under the terms and conditions and scope specified in this AGREEMENT, provided that the USER agrees to and comply with this AGREEMENT.
+        This LICENSE is non-exclusive, worldwide, non-transferable, and royalty-free.
+        The USER may utilize the MODEL MATERIALS for COMMERCIAL PURPOSE only if the USER satisfies all of the following conditions. If the USER fails to meet any of these conditions, the USER may no longer use the MODEL MATERIALS for COMMERCIAL PURPOSE and must obtain a new commercial license from PFN if the USER wishes to use the MODEL MATERIALS for COMMERCIAL PURPOSE.
+            Prior registration on PFN's official registration page (https://forms.gle/mTL8tBLrMYXKNZD56).
+            The USER's or the USER's affiliated company's annual revenue or sales must not exceed 1 billion yen (converted to the local currency of the USER's jurisdiction).
+
+    Article 4 (Redistribution and Attribution Requirements)
+        When providing the MODEL MATERIALS to third parties, the USER must meet the following requirements:
+            Provide a copy of this AGREEMENT and ensure the recipients comply with its terms.
+            Explicitly indicate "Built with PLaMo" in related websites, user interfaces, blog posts, product information pages, or product documentation.
+            Include "PLaMo" in the names of AI models created using the MODEL MATERIALS.
+            If other licenses apply to any components of the MODEL, ensure compliance with those license terms as well.
+
+    Article 5 (Usage of Outputs)
+        The USER may publicly distribute the OUTPUT provided that the USER clearly indicates that it is the output of the MODEL or DERIVED MODEL.
+        If models are trained using the OUTPUT, those models shall be treated as DERIVED MODEL subject to this AGREEMENT's terms, and may only be used, distributed, and commercialized under the same license conditions.
+
+    Article 6 (Additional Usage Terms)
+    The USER must not engage in any of the following activities regarding the use of the MODEL MATERIALS:
+        Actions violating laws or public order and morals
+        Criminal activities or any actions that threaten, participate in, or facilitate such activities
+        Actions infringing upon the rights or interests of PFN or third parties
+        Actions that damage the reputation or credibility of PFN or third parties
+        Dissemination of information that could create the false impression that the OUTPUT represents PFN's official views, etc.
+        Dissemination of false information
+        Acts that violate this AGREEMENT
+        If other licenses apply to any components of the MODEL, acts that violate the terms of any other licenses.
+        Any other actions that PFN reasonably determines to be inappropriate
+
+    Article 7 (Warranty Disclaimer)
+        The MODEL and the OUTPUT are provided "as is" without any warranties from PFN regarding accuracy, truthfulness, merchantability, quality, performance, fitness for specific purposes, non-infringement, or any other matter.
+        The USER must not use the OUTPUT as the sole evidence, evaluation, or opinion regarding legal matters, medical diagnoses, financial decisions, or important personal assessments.
+        The USER assumes all responsibility for the use of the MODEL MATERIALS and any consequences arising therefrom.
+
+    Article 8 (Limitation of Liability)
+        Regardless of whether liability arises from contract, tort, product liability, or other legal grounds, PFN's maximum liability to the USER regarding this AGREEMENT and the MODEL MATERIALS is limited to direct and ordinary damages only (including loss of profits, special damages, indirect damages, and other damages, regardless of foreseeability). The maximum liability amount shall be 500 yen. This limitation does not apply if PFN is found to have acted with intent or gross negligence.
+        Notwithstanding the preceding paragraph, if the USER utilizes the MODEL MATERIALS for business purposes, PFN shall assume no liability whatsoever, including any damages or other obligations, regarding this AGREEMENT and the MODEL MATERIALS.
+
+    Article 9 (User Responsibility)
+        The USER shall comply with all applicable laws and regulations (including those related to import/export and trade) and this AGREEMENT regarding the acquisition and use of the MODEL MATERIALS.
+        If the USER causes PFN any damages due to breach of this AGREEMENT or use of the MODEL MATERIALS, the USER must compensate PFN for those damages.
+        If PFN receives any claims for damages or other demands from third parties due to USER's use of the MODEL MATERIALS, the USER shall indemnify PFN against such claims and ensure PFN is not harmed.
+
+    Article 10 (Ownership Rights)
+        All rights to the MODEL belong to PFN or any third party licensed by PFN to license the MODEL.
+        For DERIVED MODEL, rights pertaining to the portions modified by the USER belong to the USER, while all other rights belong to PFN.
+        All rights to the OUTPUT belong to the USER.
+
+    Article 11 (Contract Term and Termination)
+        This AGREEMENT shall be effective from the time the USER agrees to this AGREEMENT or access the MODEL MATERIALS and continue until termination.
+        If the USER violates any terms of this AGREEMENT, PFN may immediately terminate this AGREEMENT, and the USER must delete all copies of the MODEL MATERIALS and cease usage immediately.
+
+    Article 12 (Contract Modification)
+    PFN may modify this AGREEMENT (including rules and regulations related to the MODEL MATERIALS; the same applies hereinafter). When modifying this AGREEMENT, PFN shall notify the USER of the modification details and the effective date of the change through the method specified by PFN by the effective date.
+
+    Article 13 (Governing Law and Jurisdiction)
+        The laws of Japan shall govern this AGREEMENT.
+        Any disputes arising from the MODEL MATERIALS or AGREEMENT shall be subject to the exclusive jurisdiction of the Tokyo District Court.

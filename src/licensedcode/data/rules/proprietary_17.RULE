@@ -3,11 +3,11 @@ license_expression: proprietary-license
 is_license_notice: yes
 ---
 
-The Software or any portion thereof may not be reproduced in any form
+The Software or any portion thereof {{may not be}} reproduced in any form
 whatsoever except as provided by license, without the written consent of
 Company.
 
-THIS NOTICE MAY NOT BE REMOVED FROM THE SOFTWARE BY ANY USER THEREOF.
+THIS NOTICE {{MAY NOT BE}} REMOVED FROM THE SOFTWARE BY ANY USER THEREOF.
 NEITHER COMPANY NOR ANY PERSON OR ORGANIZATION ACTING ON BEHALF OF THEM:
 
 1. MAKES ANY WARRANTY OR REPRESENTATION WHATSOEVER, EXPRESS OR IMPLIED,

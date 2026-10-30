@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) NIST.800.53.R4-EC2InstanceNoPublicIp (https://docs.aws.amazon.com/config/latest/developerguide/ec2-instance-no-public-ip.html)
+holders:
+  - NIST.800.53.R4-EC2InstanceNoPublicIp

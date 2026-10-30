@@ -8,5 +8,5 @@ referenced_filenames:
 notes: linux referenced explain why we return a GPLv2
 ---
 
-It is hereby placed under the terms of the GNU general public license.
+It is hereby placed under the terms of the {{GNU general public license}}.
 (See linux/COPYING).

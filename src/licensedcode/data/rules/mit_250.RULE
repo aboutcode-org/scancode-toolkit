@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 99
 ---
 
-license: MIT/expat
+{{license: MIT}}/expat

@@ -4,6 +4,6 @@ is_license_tag: yes
 relevance: 100
 ---
 
-SPDX-License-Identifier:     GPL-2.0+
+SPDX-License-Identifier:     {{GPL-2.0+}}
 
 Heavily borrowed from the following peoples GPL'ed software:

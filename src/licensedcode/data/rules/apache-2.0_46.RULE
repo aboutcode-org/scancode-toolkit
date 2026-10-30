@@ -5,5 +5,5 @@ ignorable_urls:
     - http://www.opensource.org/licenses/apache2.0.php
 ---
 
-//      The Apache License v2.0 is available at
+//      The {{Apache License v2.0}} is available at
 //      http://www.opensource.org/licenses/apache2.0.php

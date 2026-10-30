@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1997-8 David A. Schleef <ds@schleef.org>
+holders:
+  - David A. Schleef
+authors:
+  - ds, John Hallen, Frank Mori Hess, Rolf Mueller, Herbert Peremans, Herman Bruyninckx, Terry
+    Barnaby Status

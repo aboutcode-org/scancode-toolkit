@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-cavium-linux-firmware
     matches:
       - license_expression: cavium-linux-firmware
-        spdx_license_expression: LicenseRef-scancode-cavium-linux-firmware
+        license_expression_spdx: LicenseRef-scancode-cavium-linux-firmware
         from_file:
         start_line: 6
         end_line: 62

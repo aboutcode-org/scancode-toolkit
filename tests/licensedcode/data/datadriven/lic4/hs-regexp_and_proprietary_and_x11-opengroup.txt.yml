@@ -1,6 +1,6 @@
 license_expressions:
   - x11-opengroup
-  - x11-xconsortium
+  - x11-no-permit-persons
   - historical
   - x11-keith-packard
   - x11-dec1

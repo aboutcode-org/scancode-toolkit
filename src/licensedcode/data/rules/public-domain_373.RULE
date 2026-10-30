@@ -5,14 +5,14 @@ relevance: 100
 notes: Seen in https://altushost-swe.dl.sourceforge.net/project/wordlist/speller/2020.12.07/hunspell-en_US-2020.12.07.zip
 ---
 
-package was explicitly placed in the public domain:
+package was explicitly placed {{in the public domain}}:
 
     The Moby lexicon project is complete and has
-    been place into the public domain. Use, sell,
+    been place into the {{public domain}}. Use, sell,
     rework, excerpt and use in any way on any platform.
 
     Placing this material on internal or public servers is
     also encouraged. The compiler is not aware of any
     export restrictions so freely distribute world-wide.
 
-    You can verify the public domain status by contacting
+    You can verify the {{public domain}} status by contacting

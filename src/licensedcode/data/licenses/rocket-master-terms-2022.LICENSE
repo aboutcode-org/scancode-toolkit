@@ -1,0 +1,773 @@
+---
+key: rocket-master-terms-2022
+short_name: Rocket Software Master Terms 2022
+name: Rocket Software Master Terms and Conditions 2022
+category: Commercial
+owner: Rocket Software
+homepage_url: https://github.com/RocketSoftware/jcl-projcl-vscode-ext/blob/master/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-rocket-master-terms-2022
+ignorable_copyrights:
+    - (c) Assumption of Defense
+    - (c) Force Majeure
+ignorable_holders:
+    - Assumption of Defense
+    - Force Majeure
+---
+
+Rocket Software
+
+Master Terms and Conditions
+
+Rocket Software, Inc. or its subsidiary designated on an Order Form ("Rocket")
+provides software Products and related Services according to these Software
+License and Services Terms ("Terms"). By executing an Order Form dated on or
+after the date of these Terms, Customer agrees, for itself and its majority
+owned subsidiaries, these Terms apply to the first Order Form Customer executes
+(together, the "Agreement") each Order Form thereafter, Customer's rights and
+obligations, and previously purchased Products and Services. Each Order Form is
+a separate contract incorporating these Terms and are the entire terms governing
+Customer's purchase of Products and/or Services. The parties agree that they may
+do business electronically, including contract formation, order placement and
+acceptance. An order Customer places and Rocket accepts on any Rocket website
+will create fully enforceable obligations subject to these Terms.
+
+A. GENERAL TERMS
+
+1. INTELLECTUAL PROPERTY OWNERSHIP
+
+Rocket, its affiliates or licensors own and retain all right, title and interest
+in all Intellectual Property in Products, Services, Deliverables, Documentation,
+(except as otherwise specified herein), developments, research data, designs,
+layout, methodologies, processes and procedures, models, formulae, documents,
+drawings, plans, specifications and other Rocket information, proprietary
+materials and all derivative works. To the extent that any right, title or
+interest in or to any Rocket's Intellectual Property may not automatically vest
+in Rocket by operation of law, Customer irrevocably transfers, assigns and
+conveys all right, title, and interest therein to Rocket. At Rocket's request
+and expense Customer will promptly take any action and execute any documents
+necessary to vest full title in Rocket or its licensor.
+
+2. CONFIDENTIALITY
+
+(a) Confidential Information. Whether or not disclosed orally or marked as
+confidential, Confidential Information includes the Agreement; Order Forms,
+Products, Deliverables, and Services; either party's non-public data or
+personally identifiable information regarding employees or customer(s) residing
+on the party's computer systems; Intellectual Property, and Rocket's proposals,
+specifications, manuals, product roadmaps, financial data, pricing, and results
+of benchmark tests. Confidential Information does not include information that
+is (i) publicly available without breach of the Agreement; (ii) reasonably shown
+to Disclosing Party's satisfaction to have been known by Receiving Party prior
+to disclosure or independently developed by Receiving Party subsequent to
+disclosure without breach of these Terms; or (iii) obtained by Receiving Party
+from a third party without confidentiality obligation. Products are not deemed
+to be placed in the public domain by Rocket. Receiving Party will promptly
+notify Disclosing Party if it is compelled by a court or legal process to
+disclose Confidential Information and will take any reasonable action requested
+by Disclosing Party to maintain the confidentiality of the Confidential
+Information.
+
+(b) Non-disclosure. Customer will use best efforts to prevent disclosure to
+Rocket of any personally identifiable information (PII) regarding Customer's
+employees or customer(s). Customer is solely responsible for complying with any
+requirements regarding PII disclosed to Rocket, other than Rocket's
+confidentiality obligations hereunder. Receiving Party will use Disclosing
+Party's Confidential Information solely to perform its obligations under the
+Agreement. Receiving Party will take commercially reasonable steps to safeguard
+Disclosing Party's Confidential Information, including no less than the steps
+taken to protect its own Confidential Information. Receiving Party must not
+disclose Disclosing Party's Confidential Information except to its employees
+bound by written confidentiality obligations, or Affiliates under a duty of
+confidentiality, no less restrictive than these Terms. Receiving Party must
+promptly notify Disclosing Party in writing of unauthorized use or disclosure of
+Confidential Information. Receiving Party, at its expense, must take all
+reasonable action to recover Confidential Information and prevent further
+unauthorized use or disclosure, including action for seizure and injunctive
+relief. If Receiving Party fails to do so in a timely manner, Disclosing Party
+may take reasonable action to do so at Receiving Party's expense, and Receiving
+Party must reasonably cooperate.
+
+3. INTELLECTUAL PROPERTY INDEMNIFICATION
+
+(a) By Rocket.
+
+(i) Rocket will defend, at its expense, a third party legal action, suit or
+proceeding against Customer ("Claim") to the extent that a Product, or a
+Deliverable that is a Product proprietary derivative work, as delivered by
+Rocket to Customer ("Indemnified Product") directly infringes a valid U.S.
+patent or copyright. Rocket will indemnify Customer for any judgment finally
+awarded against Customer or settlement agreed by Rocket for such Claim to the
+extent of the Indemnified Product's infringement, provided (1) Customer notifies
+Rocket promptly in writing of the Claim, (2) Rocket has sole control over the
+defense or settlement, and (3) Customer fully cooperates with Rocket, providing
+all documents and information in Customer's possession relevant to the Claim,
+and Customer makes personnel available to testify or consult with Rocket.
+
+(ii) If an Indemnified Product becomes, or in Rocket's opinion is likely to
+become subject to a Claim, Rocket may, at its option and expense, (1) acquire
+the right for Customer to continue using the Indemnified Product, (2) replace or
+modify the Indemnified Product or create a workaround so that the Indemnified
+Product is functionally equivalent and non-infringing, or (3) terminate the
+License for the Indemnified Product and give Customer a credit for the Product
+Fee paid by Customer for the infringing part of the Indemnified Product, less a
+reasonable allowance for the time Customer used the Indemnified Product.
+
+(iii) Rocket is not obligated or liable for a Claim due to: (1) use of an
+Indemnified Product not according to the Agreement and Documentation, (2)
+modification of an Indemnified Product made by anyone other than Rocket, or
+modification made by Rocket for non-standard features or functionality for
+Customer or according to Customer's directions, (3) any products, equipment,
+software, or data not supplied by Rocket, (4) use of an Indemnified Product
+combined with any other products, equipment, software, or data not supplied by
+Rocket if infringement would not occur without  the combination, (5) a release
+of Indemnified Product other than the most current release available or
+Customer's failure to install a revision, update or release that would have
+eliminated the infringement, (6) Customer's designs, instructions, plans or
+specifications, or (7) use of an Indemnified Product combined with a Customer or
+third party use, process or method if infringement would not occur without the
+combination.
+
+(b) By Customer.
+
+(i) Customer will defend, at its expense, a third party claim against Rocket (1)
+that any product, information, data or material provided by Customer infringes
+another party's intellectual property rights, other than a Claim for which
+Rocket is responsible according to Section A3(a) above, or (2) arising from
+Customer's or its Affiliates' failure to comply with the License or
+Confidentiality terms of the Agreement.
+
+(ii) Customer will indemnify Rocket for any damages, or amounts agreed as
+settlement, for the claim, provided (1) Rocket notifies Customer promptly in
+writing of the claim, (2) Customer has sole control over the defense or
+settlement, and (3) Rocket cooperates with Customer, providing all documents and
+information in Rocket's possession relevant to the claim, and Rocket makes
+personnel available to testify or consult with Customer as reasonably needed.
+
+(c) Assumption of Defense. If a party fails to defend or settle a claim
+according to this Section A3 in a timely manner, the other party may assume
+defense of the claim at the indemnifying party's expense, and the indemnifying
+party will reasonably cooperate. Neither party may make an admission of fault on
+behalf of the other party, or agree to the settlement of a claim binding the
+other party that does not contain a full release of liability for the other
+party, without written consent. (d) Limitation. THIS SECTION A3 DESCRIBES EACH
+PARTY'S SOLE LIABILITY AND THE OTHER PARTY'S SOLE REMEDY FOR INTELLECTUAL
+PROPERTY INFRINGEMENT INDEMNIFICATION.
+
+(d) Professional Services Indemnity.  Each party will defend, at their expense,
+any action brought against the other party for bodily injury, death, or tangible
+property damage to the extent caused by the gross negligence or willful
+misconduct of the defending party relating to a Professional Services
+engagement. The defending party will indemnify the other party for and pay
+damages finally awarded in such action, or agreed as a settlement by the
+indemnifying party, if (a) the other party promptly notifies the indemnifying
+party in writing of the claim, (b) the indemnifying party has sole control over
+the defense or settlement, and (c) the other party cooperates in the
+indemnifying party's defense or settlement. If a party with an indemnification
+obligation fails to defend or settle a claim in a timely manner, the other party
+may assume the defense at the obligated party's expense, and the obligated party
+will reasonably cooperate. Neither party may, without the other party's written
+consent, agree to a settlement that: (a) binds the other party, (b) does not
+contain a full release of the other party, or (c) admits fault on behalf of the
+other party. THIS SECTION A3(d) DESCRIBES EACH PARTY'S SOLE LIABILITY AND THE
+OTHER PARTY'S SOLE REMEDY FOR PROFESSIONAL SERVICES INDEMNIFICATION.
+
+4. LIMITATION OF LIABILITY
+
+(a) ROCKET, ITS AFFILIATES AND LICENSORS WILL NOT BE LIABLE FOR (i) ANY
+CONSEQUENTIAL, INDIRECT, SPECIAL, PUNITIVE OR INCIDENTAL DAMAGES, (ii) ANY
+INTERRUPTION OF BUSINESS OR OPERATIONS, COST OF COVER, GOODWILL, TOLL FRAUD, OR
+LOSS OF DATA, PROFITS, OR REVENUE, OR FAILURE OF A REMEDY TO ACHIEVE ITS
+ESSENTIAL PURPOSE.
+
+(b) EXCEPT FOR A CLAIM FOR INFRINGEMENT UNDER SECTION A3, DEATH OR BODILY INJURY
+CLAIMS, TANGIBLE PROPERTY DAMAGE, WILLFUL MISCONDUCT, OR FRAUD, ROCKET, ITS
+AFFILIATES AND LICENSORS WILL NOT BE LIABLE FOR ANY DAMAGES THAT EXCEED THE
+AMOUNT CUSTOMER PAID IN THE PRECEDING 12 MONTHS FOR THE PRODUCT OR SERVICE THAT
+GAVE RISE TO THE CLAIM.
+
+(c) THE LIMITATIONS IN THIS SECTION A4 WILL APPLY TO ANY DAMAGES, HOWEVER
+CAUSED, UNDER ANY THEORY OF LIABLITY, WHETHER FOR BREACH OF CONTRACT, TORT,
+MISREPRESENTATION, NEGLIGENCE, THE USE OR PERFORMANCE OF A PRODUCT OR SERVICE,
+OR OTHERWISE, AND REGARDLESS OF WHETHER THE DAMAGES WERE FORESEEABLE OR
+UNFORSEEABLE. ROCKET WILL NOT BE LIABLE FOR ANY CLAIM BROUGHT MORE THAN 12
+MONTHS AFTER CUSTOMER BECAME AWARE OF THE ISSUE GIVING RISE TO THE CLAIM.
+ROCKET'S FAILURE TO EXERCISE A RIGHT OR REMEDY IS NOT A WAIVER.
+
+5. DISPUTE RESOLUTION
+
+The parties will attempt in good faith to resolve any controversy or claim
+promptly through business discussions and will, upon written request, escalate a
+dispute to executive management for resolution.  If the parties fail to resolve
+the dispute within 30 days of written request, or any longer period agreed in
+writing, the parties may pursue the remedies to which they are entitled. This
+clause will not restrict either party's right to seek injunctive relief.
+
+6. INJUNCTIVE RELIEF
+
+Customer's failure to comply with the License or Confidentiality terms of the
+Agreement would result in irreparable harm to Rocket that may be intangible but
+real and is incapable of complete remedy by award of damages. Customer agrees
+(a) Rocket has the right to an injunction or other court order and may proceed
+directly to court to specifically enforce Customer's obligations, (b) no finding
+of irreparable harm or other condition to injunctive relief is required, (c) an
+order may be entered to compel Customer to act or refrain from acting or
+threatened action, and (d) if an injunction is granted, Customer will pay
+Rocket's reasonable expenses and attorney fees, in addition to any other relief
+granted. Rocket shall have the right to pursue all remedies at law and in equity
+for such a breach.
+
+7. MISCELLANEOUS
+
+(a) Agreement. The Agreement supersedes all other oral or written terms,
+proposals or representations in effect between the parties regarding Rocket
+Products and Services. Any terms in a subsequent or contemporaneous Order Form
+that are inconsistent with these Terms will control for that Order Form only,
+and the General Terms may only be modified by a written amendment signed by both
+parties. Inconsistent terms of Customer's purchase order are excluded regardless
+of Rocket accepting the purchase order for payment purposes. If any Agreement
+term is illegal, invalid, or unenforceable, the other terms remain in full force
+and effect and any term that is intended to survive the Agreement termination
+will survive.
+
+(b) Assignment. Customer may not assign the Agreement, an Order Form, or any of
+its obligations, rights or remedies, in whole or in part, without Rocket's prior
+written approval in its sole discretion.
+
+(c) Force Majeure. Neither party is liable for delay or failing to perform its
+obligations due to a cause beyond its reasonable control and without fault or
+negligence, except Customer's failure to perform its payment obligations.
+
+(d) Governing Law, Jurisdiction and Region-Specific Terms Massachusetts laws
+govern the Agreement, the parties' performance, rights and obligations,
+excluding conflict of law principles that would apply the law of any other
+jurisdiction. Each party waives the right to jury trial for a claim in law or
+equity. The United Nations Convention on Contracts for the International Sale of
+Goods and the Uniform Computer Information Transaction Act, as adopted, do not
+apply. US, North and South America, and Rest of World. For customers located in
+the United States, North and South America, and any other jurisdiction not
+covered by the region-specific terms below (Rest of World), the following terms
+apply: Governing Law; This Agreement is governed by the laws of the Commonwealth
+of Massachusetts and the United States, without regard to choice or conflict of
+law rules thereof.  U.S. Government Use. The Rocket Services are based upon
+commercial computer software. If the user or licensee of an Rocket Service is an
+agency, department or other entity of the United States Government, the use,
+duplication, reproduction, release, modification, disclosure or transfer of the
+Rocket Service, or any related documentation of any kind, including technical
+data and manuals, is restricted by a license agreement or by this Agreement in
+accordance with Federal Acquisition Regulations 12.211 (Technical Data) and
+12.212 (Computer Software) for civilian purposes and Defense Federal Acquisition
+Regulation Supplement 227.7202-3 (Rights in Commercial Computer Software or
+Computer Software Documentation). The Rocket Services were developed fully at
+private expense. All other use is prohibited. If greater rights are needed, a
+mutually acceptable written amendment specifically conveying these rights must
+be included as part of this Agreement.  General. The Uniform Computer
+Information Transactions Act (UCITA) do not apply to this Agreement regardless
+of when or where adopted.
+
+UK, IE, Middle East, Africa, Russia, and India. For customers located in the
+Republic of Ireland, the United Kingdom, British Crown Dependencies, British
+Overseas Territories, Middle East, Africa, Russia, and India the following terms
+apply: Governing Law; Jurisdiction and Venue. This Agreement is governed by the
+laws of England and Wales and the parties submit to the exclusive jurisdiction
+and venue of courts located in England.
+
+Germany, Austria, and Switzerland ("DACH"). For customers located in DACH, the
+following terms apply: Governing Law; Jurisdiction and Venue. This Agreement is
+governed by the laws of Germany and the parties submit to the exclusive
+jurisdiction and venue of courts located in Germany.  Clarification on Liability
+Cap under Section A.4(Limitation of Liability). THE PARTIES AGREE THAT THE
+LIABILITY CAP AT SECTION A.4 APPLIES FOR SLIGHTLY NEGLIGENT INFRINGEMENT OF A
+MATERIAL CONTRACTUAL OBLIGATION, WHOSE FULFILLMENT IS ESSENTIAL IN ACCOMPLISHING
+THE CONTRACT AND ON WHOSE FULFILLMENT THE OTHER PARTY CAN REGULARLY DEPEND
+("CARDINAL DUTY"/ "KARDINALPFLICHT"). THE PARTIES SPECIFICALLY AGREE THAT THE
+TYPICAL FORESEEABLE DAMAGE AND BREACHES OF A CARDINAL DUTY WILL NOT EXCEED IN
+AGGREGATE THE LIABILITY CAP SET OUT IN SECTION A.4.  Additional Exceptions on
+Liability under Section A.4 NONE OF THE LIMITATIONS IN SECTION A.4 EXCLUDES
+EITHER PARTY'S LIABILITY FOR DAMAGES DIRECTLY RESULTING FROM: (I) INTENT; (II)
+GROSS NEGLIGENCE; (III) CULPABLE INJURY TO LIFE, BODY AND HEALTH; (IV) IN CASE
+OF A BREACH OF GUARANTEE, WHICH MUST BE EXPLICITLY NAMED A "GUARANTEE"; OR (V)
+MANDATORY LIABILITIES UNDER THE PRODUCT LIABILITY ACT.
+
+Netherlands and Rest of Europe. For customers located in the Netherlands and
+European countries not covered by other region-specific terms above, the
+following terms apply: Governing Law; Jurisdiction and Venue. This Agreement is
+governed by the laws of the Netherlands and the parties submit to the exclusive
+jurisdiction and venue of court located in Rotterdam. Any court proceedings will
+be conducted in English, to the extent available.  Additional Exceptions on
+Liability under Section A.4(Limitation on Liability). NONE OF THE LIMITATIONS IN
+SECTION A.4 EXCLUDES EITHER PARTY'S LIABILITY FOR EITHER PARTY'S LIABILITY FOR
+INTENT OR GROSS NEGLIGENCE (OPZET OF BEWUSTE ROEKELOOSHEID) OF THAT PARTY OR ITS
+MANAGERIAL STAFF.
+
+Australia, Zealand And Asia Pacific. For customers located in Australia and New
+Zealand and Asia Pacific the following terms apply: Governing Law; Jurisdiction
+and Venue. This Agreement is governed by the laws of Australia and New South
+Wales and the parties submit to the exclusive jurisdiction and venue of courts
+located in Sydney.
+
+(e) Compliance with Laws; Export. Customer will comply with U.S., foreign, and
+international laws and regulations, including without limitation the U.S.
+Foreign Corrupt Practices Act, U.K. Bribery Act, other anti-corruption laws,
+U.S. Export Administration and Treasury Department's Office of Foreign Assets
+Control regulations, and other anti-boycott and import regulations.  Customer
+agrees: (i) that the export, re-export, transfer, re-transfer, sale, supply,
+access to, or use of the Products, Deliverables or Services to or in a country
+other than the country in which the Product , Deliverables or  Services were
+first provided to Customer, or to, by, or for a different end user or end use
+may require a U.S. or other government license or other authorization; and (ii)
+not to, directly or indirectly, export, re-export, transfer, re-transfer, sell,
+supply, or allow access to or use of the Products, Deliverables or Services to,
+in, by, or for sanctioned, embargoed, or prohibited countries, persons, or end
+uses under U.S. or other applicable law (collectively, "Prohibited Uses").
+Customer is responsible for screening for Prohibited Uses and obtaining any
+required licenses or other authorizations and shall indemnify Rocket for any
+violation by Customer of any applicable export controls and/or economic
+sanctions laws and regulations. Rocket may terminate the Agreement and Licenses
+immediately if Rocket determines, in its sole discretion, that Customer has
+breached, intends to breach, or insists upon breaching any of the provisions in
+this clause.
+
+(f) Language. The parties agree that the Agreement and all related documents are
+in English.
+
+(g) No Agency.  Each party is an independent contractor and may not commit the
+other party without written authorization. The Agreement does not create an
+employment, joint venture, partner, or agency relationship.
+
+(h) Non-Solicitation. For the Agreement term and 1 year after the termination
+date, without Rocket's written consent, Customer will not, directly or
+indirectly, hire or solicit any Rocket employee, former employee, or contractor
+(except as a result of a generally advertised recruiting solicitation), or
+attempt to or interfere with Rocket's business.
+
+(i) Notice. Notice or approval must be in writing signed by a party's authorized
+representative, sent to the address on the Order Form or otherwise specified in
+writing by a party. Notice must be sent by mail or overnight courier with return
+receipt, and is effective 1 business day after being sent by overnight courier
+or 3 business days after being sent by mail.
+
+(j) Publicity. Rocket may use Customer's name in press releases, product
+brochures, and other marketing materials to indicate they are Rocket's customer.
+Rocket will use Customer's trademarks, service marks, logos or branding,
+according to Customer's branding guidelines, which Customer will make available
+to Rocket.
+
+(k) Taxes. Product and Service Fees do not include taxes. Customer will pay all
+sales, use, property, customs, excise, value added and other taxes ("Tax")
+imposed upon the purchase, sale, license, or use of Products and/or Services,
+regardless whether the Tax is included in the invoice Rocket sends to Customer,
+except taxes on Rocket's net income. Fees payable by Customer will not be
+reduced by any Tax and Customer will pay invoiced Fees and Tax, or Customer will
+provide a tax exemption certificate or tax payment receipt prior to Rocket's
+Delivery of Products or performance of Services, or proof of payment for Tax
+within 30 days from invoice date.
+
+(l) Payment. Unless specified otherwise by Rocket in writing, Customer's payment
+is due within 30 days from date of invoice. Late payment is a material breach of
+Customer's obligation, upon which Rocket may suspend Product Delivery and
+Service performance. Customer will pay to Rocket all reasonable costs and
+expenses for collection of overdue amounts, including legal fees. Rocket may
+review Customer's financial condition, payment and credit history and notify
+Customer of any additional payment or credit requirements. Customer must notify
+Rocket in writing of any disputed invoice within 15 days of invoice receipt or
+its right to dispute the invoice will be deemed waived. Customer will pay Fees
+as invoiced regardless of any warranty claim.
+
+9. DEFINITIONS
+
+(a) Affiliate means a legal entity that is controlled by Customer through
+ownership of 51% or more of its outstanding equity that may order Products and
+Services by executing an Order Form as a customer under these Terms, subject to
+Rocket's written approval.
+
+(b) Concurrent User means a User authorized to use a Product or Service
+concurrently with other Concurrent Users, limited by a maximum number of
+Concurrent Users at any one time.
+
+(c) Confidential Information means any material, data, or information, in any
+form or media, that is proprietary or confidential to a party and is marked as
+confidential, or not marked but by its nature or treatment by its owner should
+reasonably be considered to be confidential.
+
+(d) Customer means the legal entity executing the initial Order Form.
+
+(e) Day means calendar day unless specified as business day.
+
+(f) Deliverable means materials or work product specified as a "deliverable" in
+an Order Form that Rocket provides or creates with Professional Services,
+including without limitation software programming, application program
+interfaces, information, documents, reports, technical and non-technical data,
+specifications and other material, including derivative works. Deliverables do
+not include Products.
+
+(g) Deliver(y) means Rocket has provided, and Customer is deemed to have
+accepted, a Product through electronic access.
+
+(h) Disclosing Party means a party whose Confidential Information is disclosed
+to the other party.
+
+(i) Documentation means Rocket's user manuals and training materials provided to
+Customer electronically or physically.
+
+(j) Enterprise License means a Measured License limited to the use required
+within a certain business unit or corporate entity specified in the Order Form
+measured as of the Order Form date.
+
+(k) Fee means Rocket's price for a Product or Service specified in an Order
+Form.
+
+(l) Intellectual Property means all intellectual property, including without
+limitation, inventions, patents, copyrights, trademarks, service marks, trade
+names, trade secrets, know-how, moral rights, licenses, and any other intangible
+proprietary or property rights, registered or not, under statute and/or common
+law.
+
+(m) License means Customer's non-exclusive, non-transferable right to use the
+licensed Products, Services, Deliverables or materials for its own internal
+business operations, according to the Documentation, and subject to the
+Agreement's restrictions.
+
+(n) Measured License means a License for the time period, number and type of
+Users, transactions, copies, seats, instructions per second (MIPS) or other
+quantity or measure specified for each Product listed in an Order Form.
+
+(o) Named User means an individual identified User authorized to use a Product
+or Service. A new Named User may replace a prior Named User.
+
+(p) Order Form means a quote, SOW, or registration form provided by Rocket to
+Customer that includes the Products, Services, Fees and a unique Rocket
+reference number for each Order Form.
+
+(q) Products means Rocket proprietary software products.
+
+(r) Product Warranty means Rocket's limited warranty for Products.
+
+(s) Professional Services means the professional consulting services, standard
+installation, integration and configuration services, and time and materials
+services Rocket provides as an independent contractor.
+
+(t) Receiving Party means a party receiving the other party's Confidential
+Information.
+
+(u) Service(s) means Support Services and/or Professional Services.
+
+(v) Service Warranty means Rocket's limited warranty specified for Support
+Services or Professional Services.
+
+(w) SOW means a statement of work that documents materials and services for a
+project that Rocket provides, generally for Professional Services engagements,
+including a project plan, resources and actions provided by each party and a
+payment schedule.
+
+(x) Support Period means a time period defined in an Order Form during which
+Rocket will provide Support Services.
+
+(y) Support Service(s) means Rocket's current standard maintenance and support
+services, policies and procedures for Products.
+
+(z) User means a Named User or Concurrent User employed by and authorized by
+Customer to use a Product or Service for Customer's internal business purposes.
+
+B. PRODUCT PURCHASE/LICENSE/MAINTENANCE SUPPORT TERMS
+
+1. ORDERS
+
+Rocket will provide an Order Form to Customer that includes the Products,
+Support Services, Fees, other Services, and Rocket reference number for each
+order. Customer will place a binding order, subject to Rocket's acceptance, by
+sending Rocket a signed Order Form.
+
+2. LICENSE
+
+(a) Grant. Rocket grants to Customer a Measured License for each Product listed
+in the Order Form, in object code form, and related Documentation. Customer may
+make one copy of the Product for non-production backup purposes. Customer's
+right to use the Product as an Enterprise License or a type of Measured License
+is specified in the Order Form. Customer's actual use will not decrease (but may
+increase) the scope of the License granted and the Fees due.
+
+(b) Restrictions. Customer will not:
+(i) Rent, lease, or sublicense a Product, or use a Product as a service bureau
+or for hosting as an application service provider;
+(ii) Permit any third party to access or use a Product or Documentation, except
+for Customer's Affiliates using a Product or Documentation for Customer's
+internal business operations, provided Customer (a) ensures its Affiliates
+comply with the terms of the Agreement and (b) is liable for their acts and
+omissions;
+(iii) Transfer or use a Product or Documentation to or in a country other than
+that to which Rocket first provides it;
+(iv) Use a Product except as specified in the Documentation;
+(v) Translate, modify or make derivative works of a Product or Documentation;
+(vi) Reverse engineer, , decompile or disassemble a Product, except as permitted
+by law after Customer has disclosed its intended activities in writing to
+Rocket;
+(vii) Exceed the time period for the License, or use a Product in excess of the
+Measured License or Enterprise License, which Customer purchased;
+(viii) Use a Product in production if provided under a testing, evaluation,
+development or other non-production License;
+(ix) Alter a Product's copyright or other intellectual property rights notices;
+(x) Infringe or misappropriate Rocket's or its licensors' Intellectual Property.
+
+(c) Verification. Customer will keep accurate records measuring its use of the
+Products according to its License. Rocket has the right to audit Customer's
+records and operations to verify Customer's Product use according to the License
+and the Agreement. Audits will be scheduled at a mutually agreed date and time
+during Customer's usual business hours. If Rocket determines that Customer's
+Product use exceeds the License Customer purchased, Customer will immediately
+pay Rocket the current Fees for the additional Product use, including reasonably
+estimated arrears for Support Service Fees, and reimburse Rocket's reasonable
+expenses to perform the audit. THE LIMITATION OF LIABILITY SET FORTH IN SECTION
+A4 DOES NOT APPLY TO CUSTOMER'S PRODUCT USE EXCEEDING ITS LICENSE OR
+MISAPPROPRIATION OF A PRODUCT.
+
+(d) Termination. Rocket may terminate a License by written notice (i)
+immediately, if Customer infringes or misappropriates Rocket's or its licensors'
+Intellectual Property or fails to comply with the License Terms; (ii) as
+specified in the Warranty Terms; and (iii) if Customer materially breaches the
+Agreement, subject to any specified cure period. Upon termination Customer will
+immediately return or destroy all Product and, upon Rocket's request, provide
+written certification of such destruction.
+
+(e) Excluded Components. The provisions of this paragraph do not apply to the
+extent they are held to be invalid or unenforceable under the law that  governs
+this Agreement. Notwithstanding any of the terms in this Agreement or any other
+agreement Licensee may have with Rocket (a) the third party suppliers of such
+Excluded Components, as described in the Notices file included with the included
+with the Software, (the "Suppliers") provide the components WITHOUT WARRANTIES
+OF ANY KIND and, such Suppliers DISCLAIM ANY AND ALL EXPRESS AND IMPLIED
+WARRANTIES AND CONDITIONS INCLUDING, BUT NOT LIMITED TO, THE WARRANTY OF TITLE,
+NON-INFRINGEMENT OR INTERFERENCE AND THE IMPLIED WARRANTIES AND CONDITIONS OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, WITH RESPECT TO THE
+EXCLUDED COMPONENTS; (b)  the Suppliers shall not be liable for any direct,
+indirect, incidental, special, exemplary, punitive or consequential damages,
+including but not limited to lost data, lost savings, and lost profits, with
+respect to the Excluded Components; and, (c) neither Rocket nor the Suppliers
+shall be liable to Licensee for any claims arising directly or indirectly from
+or related to the Excluded Components. Notices with respect to the Excluded
+Components, including instructions for obtaining source code (as applicable) for
+certain Excluded Components, may be found in the NOTICES file(s) that
+accompanies the Software.
+
+3. SUPPORT SERVICES
+
+(a) Support Services. Rocket will provide Support Services purchased by Customer
+according to Rocket's current standard policies and procedures as revised from
+time to time. Rocket's standard Support Services generally include (i)
+commercially reasonable efforts to resolve problems or bugs in the Product which
+substantially impair the functionality described in Rocket's published technical
+specifications; (ii) revisions and updates for Products containing code fixes,
+improvements or enhancements to existing functionality as available; (iii)
+access to online problem reporting, tracking, and self-help tools; and (iv)
+telephone support for trained Customer personnel during purchased support hours.
+Support Services do not include onsite support which may be purchased if
+available.
+
+(b) Support Period; Termination. Support Service is available for a minimum 12
+month Support Period, unless a longer period is specified in an Order Form, and
+the initial Support Period begins on the Product Delivery date. The Support
+Period will renew automatically for subsequent Support Periods equal to the
+initial Support Period unless either party provides written notice of
+termination at least 60 days prior to the end of the current Support Period.
+Rocket may suspend or terminate Support Service upon written notice if Customer
+breaches its obligations including timely payment for any Support Period. Upon
+termination Customer will, at Rocket's direction, return or destroy any Rocket
+materials, Confidential Information and Documentation, and Customer will
+immediately pay Rocket all fees due for the remainder of the Support Period and
+any other fees accrued as of the termination date.
+
+4. PRODUCT DELIVERY
+
+All Products provided to Customer by Rocket are subject to these Terms. Risk of
+loss for Products passes to Customer upon Delivery. Customer is responsible for
+customs clearance, documents, and paying any customs duties and import fees.
+
+5. FEES AND PAYMENT
+
+(a) Product Fees. Customer will pay to Rocket the Product Fees according to an
+Order Form, along with shipping, handling, taxes and any similar fees.
+
+(b) Support Service Fees. Support Service Fees for the initial Support Period
+are included in the Product Order Form. Rocket will provide an Order Form or
+invoice for each renewal Support Period at Rocket's current list price, and
+Customer will pay the Support Service Fees when due, according to the Order Form
+or invoice. Rocket may not provide renewal Support Services if Customer does not
+pay the renewal Fees to Rocket prior to the end of the current Support Period.
+If Customer's Support Services lapse at any time, renewal will be subject to
+Rocket's re-instatement policies and fees. Payment that is invoiced in arrears
+for any Support Period is due and payable on invoice date.
+
+6. WARRANTIES
+
+(a) Products. Rocket warrants that Product will perform substantially according
+to Rocket's current published technical specifications on the Product Delivery
+date, when used according to the Documentation. Customer must provide a written
+Product Warranty claim to Rocket within 90 days of the Delivery date. Customer
+must provide remote or local access to the Product if required by Rocket to
+perform Product Warranty service. Rocket will repair or replace a Product not
+conforming to the Product Warranty, or, at its option, refund the part of the
+Product Fees paid for the Product that does not conform, and the Product License
+terminates. Upon License termination, Customer will cease using and destroy the
+Product.
+
+(b) Support Services. Rocket warrants that Support Services will be performed in
+a commercially reasonable manner consistent with general industry standards that
+apply to similar services. Customer must provide a written Service Warranty
+claim to Rocket within 15 days after the date Rocket provided the Service.
+Rocket, at its option, will re-perform Service not complying with the Service
+Warranty at no additional charge, or refund the part of the Fee, if paid, for
+the Service which does not comply with the Service Warranty.
+
+(c) Disclaimer. Product Warranty or Support Service Warranty does not cover
+problems caused by (i) abuse, misuse, alteration, neglect, accident,
+unauthorized repair or installation, or acts or omissions of any party other
+than Rocket; (ii) electrical systems, fire or water damage, Customer's hardware,
+software, networks, or systems; or (iii) Customer not using Product according to
+Rocket's current published technical specifications. EXCEPT AS SET FORTH IN
+SECTIONS 6(a) AND (b) ABOVE, ROCKET, ITS AFFILIATES AND LICENSORS DISCLAIM ALL
+OTHER WARRANTIES, REPRESENTATIONS AND GUARANTEES, EXPRESS OR IMPLIED, ORAL OR
+WRITTEN, FOR PRODUCTS OR SERVICES, THEIR USE, SUFFICIENCY, ACCURACY,
+RELIABILITY, TIMELINESS, QUALITY, SUITABILITY, AVAILABILITY, OR COMPLETENESS,
+STATUTORY OR OTHERWISE, INCLUDING WITHOUT LIMITATION, (i) MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT, OR (ii) THAT SUPPORT
+SERVICES OR OPERATION OF PRODUCTS WILL BE UNINTERRUPTED OR ERROR FREE, OR
+OPERATE IN COMBINATION WITH ANY OTHER HARDWARE, SOFTWARE, SYSTEM, OR DATA; (iii)
+ERRORS OR DEFECTS WILL BE CORRECTED. THIS SECTION B6 DESCRIBES ROCKET'S SOLE
+LIABILITY AND CUSTOMER'S SOLE REMEDY FOR A PRODUCT OR SUPPORT SERVICE WARRANTY
+CLAIM.
+
+C. PROFESSIONAL SERVICES
+
+1. PROFESSIONAL SERVICES ORDER Customer will order the Professional Services it
+requires as specified in Section B(1) above, which Rocket may perform remotely
+or on site as appropriate. The Order Form will describe the Professional
+Services and any of the following that apply: project plan, resources and
+actions provided by each party, Deliverables, Fees, expenses, and payment
+schedule.
+
+2. PROFESSIONAL SERVICES FEES AND PAYMENT
+
+Customer will pay to Rocket, according to each Order Form:  (a) Fees for time
+and Deliverables; (b) Rocket's expenses incurred with the Professional Services;
+and (c) any additional fees and expenses incurred by Rocket due to changes in
+the scope of Services to be provided, Customer's failure to fulfill its
+obligations in a timely manner, or reassignment of personnel or rescheduling
+without Rocket's fault. Professional Services Fees are due and invoiced as
+Services are performed. Customer will pay Fees and expenses for all Professional
+Services and Deliverables provided until the end of each Service engagement.
+Rocket will itemize invoices for expenses and provide receipts if Customer
+requests. All Professional Services Rocket provides are billable, regardless of
+whether the Professional Services are requested by Customer to assist with a
+warranty or maintenance issue, which will be addressed by Rocket's Support
+Services organization. Support for third party products is provided by the third
+party supplier.
+
+3. DELIVERABLES
+
+(a) Ownership.
+
+(i) Rocket may designate in writing Deliverables as "Type I Deliverables," "Type
+II Deliverables," or otherwise as agreed. If not specified in writing,
+Deliverables are Type II Deliverables. Customer's data and Confidential
+Information are Customer's exclusive property in which Customer retains all
+right, title and interest, and are not Deliverables even if included with
+Deliverables provided by Rocket, such as in a report or dashboard. Rocket
+Products are governed by separate license terms.
+(ii)                Type I Deliverables are Deliverables created solely for
+Customer during the Professional Service performance period in which Customer
+will have all right, title, and interest, including copyright. Rocket will
+retain a copy of Type I Deliverables. Rocket's Intellectual Property and
+Confidential Information, in which Rocket retains all right, title and interest,
+are excluded from Type I Deliverables.
+(iii) Type II Deliverables are Deliverables provided or created during the
+Professional Services performance period, including without limitation all
+preexisting materials, in which Rocket or its affiliates have all right, title,
+and interest, including copyright. Rocket will provide one copy of Type II
+Deliverables to Customer.
+
+(b) License and Use.
+
+(i) Rocket grants Customer a License to use and reproduce a reasonable number of
+copies, and distribute internally, Type II Deliverables' object code for its own
+internal business operations only, according to the Order Form. Customer will
+not reverse engineer, sell, rent, sublicense or permit a third party to use or
+access Type II Deliverables. Customer's ownership of Type I Deliverables and
+License for Type II Deliverables are contingent upon full payment of all fees
+and expenses for Professional Services.
+(ii)   Customer grants Rocket (1) a nonexclusive, worldwide, royalty-free right
+to use and copy Customer systems, Confidential Information and data, and use any
+Customer proprietary and third party products, services and materials under
+Customer's license, as necessary to provide the Professional Services, and (2)
+an irrevocable, nonexclusive, royalty-free right to use, reproduce, create
+derivative works, sublicense and distribute, internally and to other parties,
+Type I Deliverables, excluding Customer Confidential Information and Customer
+data, which is Customer's exclusive property. Customer represents and warrants
+that Customer information, data and third party products, services and materials
+provided to Rocket will not violate any law or third party rights.
+(iii)  Each party will reproduce the copyright notice or other legend on any
+copies made under the license and use rights granted.
+
+(c) Support. Rocket does not provide Support Services for Deliverables unless
+Rocket, at its option, has incorporated the Deliverables in a generally
+available Product, or Rocket agrees to provide Support Services for the
+Deliverable in the SOW, and Customer pays fees for the Support Services.
+
+(d)  Termination. Rocket may terminate a License by written notice (i)
+immediately, if Customer infringes Rocket's or its licensors' Intellectual
+Property or fails to comply with the License Terms; or (ii) if Customer
+materially breaches the Agreement, subject to any specified cure period. Upon
+License termination Customer must immediately destroy licensed Deliverables and,
+upon Rocket's request, and so certify in writing.
+
+4.  PERSONNEL
+
+On Customer premises, Rocket personnel will comply with Customer's reasonable
+rules and policies provided to Rocket in writing for such matters as working
+hours, holidays and Customer security measures. Rocket will determine its
+personnel to perform Professional Services in its sole discretion. The parties
+will resolve any Professional Services issues in good faith.  If the resolution
+involves reassigning personnel, Rocket will do so as soon as practical and
+commercially reasonable, according to local law.  Customer agrees that
+reassignment may delay Professional Services or allow Rocket to terminate
+Professional Services without Rocket liability.
+
+5. PROFESSIONAL SERVICES WARRANTY
+
+(a) Warranty. Rocket warrants that Professional Services will be performed in a
+commercially reasonable manner consistent with industry standards. Customer must
+provide a written Professional Services Warranty claim to Rocket within 15 days
+after the date Rocket performs Professional Services. Rocket, at its option,
+will re-perform Professional Services that do not comply with the Professional
+Services Warranty at no additional charge, or if not practical and solely at
+Rocket's option, credit the part of the Professional Services Fee, if paid, for
+the Professional Services that do not comply with the Professional Services
+Warranty.
+
+(b) Disclaimer. This Professional Services Warranty does not cover problems
+caused by (i) abuse, misuse, alteration, enhancements, neglect, accident,
+unauthorized repair or installation, or acts or omissions of, or delay by, any
+party other than Rocket; or (ii) electrical systems, fire or water damage,
+Customer's hardware, software, networks, or systems. DELIVERABLES ARE PROVIDED
+ON AN "AS-IS" BASIS, WITHOUT WARRANTY OF ANY KIND. ROCKET, ITS AFFILIATES AND
+LICENSORS DISCLAIM ALL OTHER WARRANTIES, REPRESENTATIONS AND GUARANTEES, EXPRESS
+OR IMPLIED, ORAL OR WRITTEN, FOR PROFESSIONAL SERVICES AND DELIVERABLES, THEIR
+USE, SUFFICIENCY, OR ACCURACY, INCLUDING WITHOUT LIMITATION, IMPLIED WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT, OR
+THAT PROFESSIONAL SERVICES OR DELIVERABLES WILL BE UNINTERRUPTED OR ERROR FREE.
+
+(c) Limitation. THE WARRANTY DESCRIBED IN THIS SECTION C5 IS ROCKET'S SOLE
+LIABILITY AND CUSTOMER'S EXCLUSIVE REMEDY FOR A PROFESSIONAL SERVICES OR
+DELIVERABLES CLAIM.
+
+
+6. TERMINATION
+
+Either party may terminate a Professional Services engagement, in whole or in
+part, with 30 days prior written notice, effective on the date specified in the
+notice, however, these Terms apply for all Services and Deliverables provided
+regardless of the termination date, including any Services provided for
+transition or termination assistance.  Rocket is not responsible for the
+resulting condition of Services or Deliverables upon early termination. These
+Terms govern all Order Forms until Professional Services are terminated or
+completed.
+
+Rev January 2022

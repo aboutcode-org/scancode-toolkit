@@ -5,7 +5,7 @@ is_license_tag: yes
 
 <licenses>
     <license>
-        <name>BSD-license</name>
+        {{<name>BSD-license}}</name>
         <comments> {{Revised 2-clause BSD license}} </comments>
     </license>
 </licenses>

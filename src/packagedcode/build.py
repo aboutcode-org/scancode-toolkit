@@ -13,6 +13,7 @@ import ast
 from collections import defaultdict
 
 from commoncode import fileutils
+from packageurl import PackageURL
 
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
@@ -162,14 +163,14 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
                 args = {}
                 for kw in statement.value.keywords:
                     arg_name = kw.arg
-                    if isinstance(kw.value, ast.Str):
-                        args[arg_name] = kw.value.s
+                    if isinstance(kw.value, ast.Constant) and isinstance(kw.value.value, str):
+                        args[arg_name] = kw.value.value
 
                     if isinstance(kw.value, ast.List):
                         # We collect the elements of a list if the element is
                         # not a function call
                         args[arg_name] = [
-                            elt.s for elt in kw.value.elts
+                            elt.value for elt in kw.value.elts
                             if not isinstance(elt, ast.Call)
                         ]
                 if args:
@@ -350,17 +351,17 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                 statement_keys = statement.value.keys
                 statement_values = statement.value.values
                 for statement_k, statement_v in zip(statement_keys, statement_values):
-                    if isinstance(statement_k, ast.Str):
-                        key_name = statement_k.s
+                    if isinstance(statement_k, ast.Constant) and isinstance(statement_k.value, str):
+                        key_name = statement_k.value
                     # The list values in a `METADATA.bzl` file seem to only contain strings
                     if isinstance(statement_v, ast.List):
                         value = []
                         for e in statement_v.elts:
-                            if not isinstance(e, ast.Str):
+                            if not (isinstance(e, ast.Constant) and isinstance(e.value, str)):
                                 continue
-                            value.append(e.s)
-                    if isinstance(statement_v, (ast.Str, ast.Constant)):
-                        value = statement_v.s
+                            value.append(e.value)
+                    if isinstance(statement_v, ast.Constant):
+                        value = statement_v.value
                     metadata_fields[key_name] = value
 
         parties = []
@@ -374,54 +375,51 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                 )
             )
 
-        if (
-            'upstream_type'
-            and 'name'
-            and 'version'
-            and 'licenses'
-            and 'upstream_address'
-            in metadata_fields
-        ):
-            # TODO: Create function that determines package type from download URL,
-            # then create a package of that package type from the metadata info
-            package_data = dict(
-                datasource_id=cls.datasource_id,
-                type=metadata_fields.get('upstream_type', cls.default_package_type),
-                name=metadata_fields.get('name'),
-                version=metadata_fields.get('version'),
-                extracted_license_statement=metadata_fields.get('licenses', []),
-                parties=parties,
-                homepage_url=metadata_fields.get('upstream_address', ''),
-                # TODO: Store 'upstream_hash` somewhere
-            )
-            yield models.PackageData.from_data(package_data, package_only=True)
+        # TODO: Create function that determines package type from download URL,
+        # then create a package of that package type from the metadata info
+        
+        if 'upstream_type' in metadata_fields:
+            package_type = metadata_fields['upstream_type']
+        elif 'package_type' in metadata_fields:
+            package_type = metadata_fields['package_type']
+        else:
+            package_type = cls.default_package_type
 
-        if (
-            'package_type'
-            and 'name'
-            and 'version'
-            and 'license_expression'
-            and 'homepage_url'
-            and 'download_url'
-            and 'vcs_url'
-            and 'download_archive_sha1'
-            and 'vcs_commit_hash'
-            in metadata_fields
-        ):
-            package_data = dict(
-                datasource_id=cls.datasource_id,
-                type=metadata_fields.get('package_type', cls.default_package_type),
-                name=metadata_fields.get('name'),
-                version=metadata_fields.get('version'),
-                extracted_license_statement=metadata_fields.get('license_expression', ''),
-                parties=parties,
-                homepage_url=metadata_fields.get('homepage_url', ''),
-                download_url=metadata_fields.get('download_url', ''),
-                vcs_url=metadata_fields.get('vcs_url', ''),
-                sha1=metadata_fields.get('download_archive_sha1', ''),
-                extra_data=dict(vcs_commit_hash=metadata_fields.get('vcs_commit_hash', ''))
-            )
-            yield models.PackageData.from_data(package_data, package_only=True)
+        if 'licenses' in metadata_fields:
+            extracted_license_statement = metadata_fields['licenses']
+        else:
+            extracted_license_statement = metadata_fields.get('license_expression')
+
+        if 'upstream_address' in metadata_fields:
+            homepage_url = metadata_fields['upstream_address']
+        else:
+            homepage_url = metadata_fields.get('homepage_url')
+        
+
+        extra_data = {}
+        if 'vcs_commit_hash' in metadata_fields:
+            extra_data['vcs_commit_hash'] = metadata_fields['vcs_commit_hash']
+        if 'upstream_hash' in metadata_fields:
+            extra_data['upstream_hash'] = metadata_fields['upstream_hash']
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=package_type,
+            name=metadata_fields.get('name'),
+            version=metadata_fields.get('version'),
+            extracted_license_statement=extracted_license_statement,
+            parties=parties,
+            homepage_url=homepage_url,
+            download_url=metadata_fields.get('download_url'),
+            vcs_url=metadata_fields.get('vcs_url'),
+            sha1=metadata_fields.get('download_archive_sha1'),
+            extra_data=extra_data
+        )
+        if 'package_url' in metadata_fields:
+            package_data.update(PackageURL.from_string(metadata_fields['package_url']).to_dict())
+        
+        yield models.PackageData.from_data(package_data, package_only=True)
+
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):

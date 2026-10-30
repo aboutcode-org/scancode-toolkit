@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-licensed under the terms of version 2.1 of the GNU Lesser General Public License
+licensed under the terms of {{version 2.1 of the GNU Lesser General Public License}}

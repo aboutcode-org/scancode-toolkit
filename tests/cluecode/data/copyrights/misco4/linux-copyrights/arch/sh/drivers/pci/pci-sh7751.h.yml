@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) 2001 Paul Mundt (lethal@linux-sh.org)
+  - (c) 2003 May be copied or
+holders:
+  - Paul Mundt
+  - May be copied

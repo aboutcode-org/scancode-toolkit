@@ -1,7 +1,10 @@
 ---
 license_expression: mpl-1.0
 is_license_reference: yes
-relevance: 100
+skip_for_required_phrase_generation: yes
+relevance: 99
+notes: this could be MPL 1.1 or 2.0. The 1.0 and up allow upgrade to newer versions So 1.0 this
+    is always correct
 ---
 
-Mozilla Public License
+{{ Mozilla Public License }}

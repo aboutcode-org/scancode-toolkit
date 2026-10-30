@@ -1,0 +1,38 @@
+---
+key: nexar-dataset-2025
+short_name: Nexar Dataset License 2025
+name: Nexar Dataset License 2025
+category: Proprietary Free
+owner: Nexar
+homepage_url: https://huggingface.co/datasets/nexar-ai/nexar_collision_prediction/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-nexar-dataset-2025
+ignorable_copyrights:
+    - Copyright (c) 2025 Nexar Inc.
+ignorable_holders:
+    - Nexar Inc.
+ignorable_authors:
+    - consent from Nexar Inc.
+ignorable_urls:
+    - https://huggingface.co/datasets/nexar-ai/nexar_collision_prediction
+---
+
+Copyright (c) 2025 Nexar Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this dataset (the "Dataset") and associated documentation files (the "Documentation"), to use, copy, modify, and distribute the Dataset, subject to the following conditions:
+
+Attribution and Redistribution
+
+* Attribution: Proper attribution must be given to Nexar Inc. when using or sharing the Dataset. Any published work or research using the Dataset must cite its source as follows:
+Moura, Daniel C., and Zvitia, Orly. "Nexar Collison Dataset." Hugging Face, 2025, https://huggingface.co/datasets/nexar-ai/nexar_collision_prediction.
+* Redistribution: Redistributions of the Dataset must retain the above copyright notice, this list of conditions, and the following disclaimers.
+* No Resale: The Dataset may not be sold, sublicensed, or otherwise redistributed for profit without prior written consent from Nexar Inc.
+
+The Dataset License is limited to applications and uses that do not violate the following ethical use restrictions:
+* Malicious Systems: The Dataset may not be used to develop or train systems intended to cause harm, engage in unsafe driving, or simulate unsafe behavior.
+* Deepfakes and Misinformation: Users may not use the Dataset to create manipulated media or to spread deceptive or misleading content.
+* Privacy Violations: Users may not attempt to reidentify individuals, vehicles, or other entities in the Dataset through cross-referencing or other means. This includes but is not limited to unauthorized surveillance, tracking, or reverse engineering of anonymized data.
+* Weaponization: The Dataset may not be used in the development, testing, or deployment of weapon systems or technology intended for combat or armed conflict.
+* Exploitative Practices: Users may not exploit accident-prone regions or individuals for predatory financial purposes, such as unethical insurance practices.
+* Compliance with Laws: Users must comply with all applicable local, national, and international laws when using the Dataset.
+
+THE DATASET IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE DATASET OR THE USE OR OTHER DEALINGS IN THE DATASET.

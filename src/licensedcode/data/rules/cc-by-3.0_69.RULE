@@ -7,7 +7,7 @@ ignorable_urls:
     - http://fontawesome.io/
 ---
 
-*  - Font Awesome documentation licensed under CC BY 3.0 -
+*  - Font Awesome documentation {{licensed under CC BY 3.0}} -
  *    http://creativecommons.org/licenses/by/3.0/
 
  *  - Attribution is no longer required in Font Awesome 3.0, but much appreciated:

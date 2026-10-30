@@ -1,0 +1,34 @@
+---
+key: socigy-nc-2026
+short_name: Socigy Non-Commercial Database License 2026
+name: Socigy Non-Commercial Database License 2026
+category: Non-Commercial
+owner: Socigy s.r.o.
+homepage_url: https://github.com/Socigy-org/Socigy.OpenSource.DB/blob/master/LICENSE
+spdx_license_key: LicenseRef-scancode-socigy-nc-2026
+---
+
+MIT License with Non-Commercial and Graphic Attribution Clauses
+
+Copyright (c) Socigy.OpenSource.DB
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, and distribute copies of the Software,
+subject to the following conditions:
+
+1. Non-Commercial Use: The Software, whether modified or unmodified, may not
+   be sold for money, monetary gain, or used for any commercial purposes.
+2. Attribution: Any modified versions or distributions of the Software must
+   include clear attribution to the original project (Socigy.OpenSource.DB).
+   This attribution must be displayed alongside all graphics included with
+   or derived from the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -1,0 +1,23 @@
+---
+license_expression: lgpl-2.1-plus AND unrar
+is_license_notice: yes
+---
+
+Notes about unRAR license:
+
+Please check main restriction from unRar license:
+
+   2. The unRAR sources may be used in any software to handle RAR
+      archives without limitations free of charge, but cannot be used
+      to re-create the RAR compression algorithm, which is proprietary.
+      Distribution of modified unRAR sources in separate form or as a
+      part of other software is permitted, provided that it is clearly
+      stated in the documentation and source comments that the code may
+      not be used to develop a RAR (WinRAR) compatible archiver.
+
+In brief it means:
+1) You can compile and use compiled files under GNU LGPL rules, since 
+   unRAR license almost has no restrictions for compiled files.
+   You can link these compiled files to LGPL programs.
+2) You can fix bugs in source code and use compiled fixed version.
+3) You can not use unRAR sources to re-create the RAR compression algorithm.

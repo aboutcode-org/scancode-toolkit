@@ -7,8 +7,8 @@ ignorable_urls:
 ---
 
 | This software is subject to, and may be distributed under, the
- | GNU General Public License, either Version 2 of the license,
- | or (at your option) any later version. The license should have
+ | {{GNU General Public License, either Version 2 of the license,
+ | or (at your option) any later version}}. The license should have
  | accompanied the software or you may obtain a copy of the license
  | from the Free Software Foundation at http://www.fsf.org .
  |
@@ -18,8 +18,8 @@ ignorable_urls:
  | claims, LizardTech grants recipient a worldwide, royalty-free,
  | non-exclusive license to make, use, sell, or otherwise dispose of
  | the LIZARDTECH ORIGINAL CODE or of programs derived from the
- | LIZARDTECH ORIGINAL CODE in compliance with the terms of the GNU
- | General Public License.   This grant only confers the right to
+ | LIZARDTECH ORIGINAL CODE in compliance with the terms of the {{GNU
+ | General Public License}}.   This grant only confers the right to
  | infringe patent claims underlying the LIZARDTECH ORIGINAL CODE to
  | the extent such infringement is reasonably necessary to enable
  | recipient to make, have made, practice, sell, or otherwise dispose

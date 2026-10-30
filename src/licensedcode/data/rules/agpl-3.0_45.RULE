@@ -3,5 +3,4 @@ license_expression: agpl-3.0
 is_license_notice: yes
 relevance: 100
 ---
-
-Software is free software released under the "GNU Affero General Public License v3.0"
+Software is free software released under the "{{GNU Affero General Public License v3.0"}}

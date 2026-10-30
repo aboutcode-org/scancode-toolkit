@@ -7,7 +7,7 @@ ignorable_urls:
 ---
 
 <licenses>
-    <license>
-      <name>MIT License</name>
+    <{{license>
+      <name>MIT}} License</name>
       <url>http://httpunit.sourceforge.net/doc/license.html</url>
     </license>

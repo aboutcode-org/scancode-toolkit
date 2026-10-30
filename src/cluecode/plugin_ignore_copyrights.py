@@ -43,6 +43,7 @@ class IgnoreCopyrights(OutputFilterPlugin):
     options = [
         PluggableCommandLineOption(('--ignore-copyright-holder',),
                multiple=True,
+               default=None,
                metavar='<pattern>',
                help='Ignore a file (and all its findings) if a copyright holder '
                'contains a match to the <pattern> regular expression. '
@@ -52,6 +53,7 @@ class IgnoreCopyrights(OutputFilterPlugin):
         PluggableCommandLineOption(
             ('--ignore-author',),
             multiple=True,
+            default=None,
             metavar='<pattern>',
             help='Ignore a file (and all its findings) if an author '
                'contains a match to the <pattern> regular expression. '

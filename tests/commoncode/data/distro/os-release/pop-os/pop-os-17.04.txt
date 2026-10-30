@@ -1,0 +1,12 @@
+NAME="Pop_OS"
+VERSION="17.04 (Zesty Zapus)"
+ID=pop-os
+ID_LIKE=debian ubuntu
+PRETTY_NAME="Pop_OS 17.04"
+VERSION_ID="17.04"
+HOME_URL="http://www.system76.com"
+SUPPORT_URL="http://support.system76.com"
+BUG_REPORT_URL="https://github.com/system76/distro"
+PRIVACY_POLICY_URL="https://system76.com/privacy"
+VERSION_CODENAME=zesty
+UBUNTU_CODENAME=zesty

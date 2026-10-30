@@ -6,4 +6,4 @@ referenced_filenames:
     - /usr/share/common-licenses/LGPL
 ---
 
-On Debian systems, the complete text of the GNU Lesser General Public License can be found in usr/share/common-licenses/LGPL.
+On Debian systems, the complete text of the {{GNU Lesser General Public License}} can be found in usr/share/common-licenses/LGPL.

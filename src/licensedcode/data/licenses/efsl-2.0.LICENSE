@@ -1,0 +1,43 @@
+---
+key: efsl-2.0
+short_name: EFSL 2.0
+name: Eclipse Foundation Specification License - v2.0
+category: Proprietary Free
+owner: Eclipse Foundation
+homepage_url: https://www.eclipse.org/legal/efsl/
+spdx_license_key: LicenseRef-scancode-efsl-2.0
+text_urls:
+    - https://www.eclipse.org/legal/adoc/efsl-2.0.adoc
+other_urls:
+    - https://github.com/jakartaee/rest/blob/4.0.0/jaxrs-api/src/main/java/jakarta/ws/rs/core/EntityPart.java
+ignorable_copyrights:
+    - Copyright (c) Eclipse Foundation
+ignorable_holders:
+    - Eclipse Foundation
+---
+
+Eclipse Foundation Specification License - v2.0
+
+This license (the "`License`") governs the use, modification and distribution of a specification generated pursuant to the Eclipse Foundation Specification Process.
+
+By using the file or document that incorporates this License (the "`Document`"), you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions.
+
+Permission to copy and distribute the contents of the Document, in any medium for any purpose, and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the Document that you copy or distribute:
+
+- link or URL to the Document
+- All existing copyright notices, or if one does not exist, a notice (hypertext is preferred, but a textual representation is permitted) of the form: "`Copyright (C) [date-of-document] Eclipse Foundation AISBL [URL to this license] This document includes material copied from [title and URL of the Eclipse Foundation specification document].`"
+
+In addition to the license granted above, you are granted the  right to create modifications or derivatives of the Document:
+
+- in software that implements the Document, in supporting materials accompanying such software, and in documentation of such software (collectively the "`Works`"), such  Works to be made available under terms of your choice  PROVIDED that all such Works include a notice of the form: "`This [software/document (choose as applicable)] includes material derived from [title and URL of the Eclipse Foundation specification document].`"; and
+- in materials that demonstrate or describe conformance with the Document PROVIDED that all such materials include a notice of the form: "`This material demonstrates conformance with the [title and URL of the Eclipse Foundation specification document].`"
+
+NOTWITHSTANDING THE FOREGOING, the creation or publication of derivative works of the Document or portions of the Document for use as a specification or standard is expressly prohibited.
+
+== Disclaimers
+
+THE DOCUMENT IS PROVIDED "AS IS," AND TO THE EXTENT PERMITTED BY APPLICABLE LAW THE COPYRIGHT HOLDERS AND THE ECLIPSE FOUNDATION AISBL MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR TITLE; THAT THE CONTENTS OF THE DOCUMENT ARE SUITABLE FOR ANY PURPOSE; NOR THAT THE IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+
+TO THE EXTENT PERMITTED BY APPLICABLE LAW THE COPYRIGHT HOLDERS AND THE ECLIPSE FOUNDATION AISBL WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE DOCUMENT OR THE PERFORMANCE OR IMPLEMENTATION OF THE CONTENTS THEREOF.
+
+The name and trademarks of the copyright holders or the Eclipse Foundation AISBL may NOT be used in advertising or publicity pertaining to this document or its contents without specific, written prior permission.

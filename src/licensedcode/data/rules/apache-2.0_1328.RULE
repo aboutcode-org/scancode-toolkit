@@ -6,4 +6,4 @@ ignorable_urls:
 ---
 
 <url>http://ehcache.sourceforge.net/LICENSE.txt
-<comments>The license is the standard wording from the Apache license
+<comments>The license is the standard wording from the {{Apache license}}

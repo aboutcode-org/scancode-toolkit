@@ -6,5 +6,5 @@ referenced_filenames:
     - /usr/share/common-licenses/BSD
 ---
 
-Full text of 3-clause BSD license can be found on Debian systems in
+Full text of {{3-clause BSD license}} can be found on Debian systems in
   /usr/share/common-licenses/BSD

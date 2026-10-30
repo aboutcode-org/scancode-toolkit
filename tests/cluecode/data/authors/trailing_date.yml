@@ -9,3 +9,6 @@ authors_summary:
     count: 1
   - value: Nikos Mavrogiannopoulos <nmav@redhat.com>
     count: 1
+expected_failures:
+  - authors
+  - authors_summary

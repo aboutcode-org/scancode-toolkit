@@ -1,0 +1,27 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2001, 2002, 2003, 2004 David S. Miller (davem@redhat.com)
+  - Copyright (c) 2001 Jeff Garzik (jgarzik@pobox.com)
+  - Copyright (c) 2004 Sun Microsystems Inc.
+  - Copyright (c) 2007-2016 Broadcom Corporation
+  - Copyright (c) 2016-2017 Broadcom Limited
+  - Copyright (c) 2018 Broadcom
+holders:
+  - David S. Miller
+  - Jeff Garzik
+  - Sun Microsystems Inc.
+  - Broadcom Corporation
+  - Broadcom Limited
+  - Broadcom
+authors:
+  - Receive MAC.
+  - Transmit MAC.
+  - Receive List Placement
+  - Host Coalescing
+  - Receive MAC.
+  - Transmit MAC.
+  - Receive List Placement
+  - Host Coalescing

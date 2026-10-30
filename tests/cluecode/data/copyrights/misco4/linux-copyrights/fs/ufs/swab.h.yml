@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1997, 1998 Francois-Rene Rideau <fare@tunes.org>
+  - Copyright (c) 1998 Jakub Jelinek <jj@ultra.linux.cz>
+  - Copyright (c) 2001 Christoph Hellwig <hch@infradead.org>
+holders:
+  - Francois-Rene Rideau
+  - Jakub Jelinek
+  - Christoph Hellwig

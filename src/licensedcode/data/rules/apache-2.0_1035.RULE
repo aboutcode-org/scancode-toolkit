@@ -21,4 +21,4 @@ ignorable_urls:
  limitations under the License.
  .
  {{On Debian systems, a copy of the Apache license is available}} in
- <file://{{/usr/share/common-licenses/Apache-2.0}}>.
+ < file://{{/usr/share/common-licenses/Apache-2.0}} >.

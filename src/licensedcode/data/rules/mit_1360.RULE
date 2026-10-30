@@ -1,0 +1,8 @@
+---
+license_expression: mit
+is_license_reference: yes
+ignorable_urls:
+    - http://mit-license.org/
+---
+
+@{{license MIT}}: http://mit-license.org/

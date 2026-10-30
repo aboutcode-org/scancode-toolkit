@@ -1,10 +1,13 @@
 ---
 license_expression: lgpl-3.0-plus
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - lgpl-3.0-plus
 ignorable_urls:
     - https://www.gnu.org/licenses/lgpl.html
 ---
 
-is free software licensed under the GNU Lesser General Public license version 3 or later
+is free software licensed under the {{GNU Lesser General Public license version 3 or later}}
 (see licenses/gpl-3.txt or https://www.gnu.org/licenses/lgpl.html).

@@ -1,0 +1,106 @@
+---
+key: odb-floss-exception-2.0
+short_name: ODB FLOSS Exception to GPL 2.0
+name: ODB FLOSS Exception to GPL 2.0
+category: Copyleft
+owner: Code Synthesis
+homepage_url: https://www.codesynthesis.com/projects/xsd/FLOSSE
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-odb-floss-exception-2.0
+other_urls:
+    - https://www.codesynthesis.com/download/xsd/
+    - https://www.gnu.org/licenses/license-list.html
+    - https://lists.fedoraproject.org/archives/list/legal@lists.fedoraproject.org/thread/OO26TCOEUP7LW57654X4DAUMYEH3BQ5Q/
+ignorable_urls:
+    - http://www.gnu.org/licenses/license-list.html
+---
+
+1. Intent
+
+We want specified Free/Libre and Open Source Software ("FLOSS") to be
+able to use the specified GPL-licensed XSD runtime library (libxsd) and
+XSD generated code (collectively called the "Program") despite the fact
+that not all FLOSS licenses are compatible with version 2 of the GNU
+General Public License (the "GPL").
+
+It is our intent to allow distribution of the entire Derivative Work
+(including the Program) under one or more of the FLOSS licenses listed
+in section 3 (section 2.a). It is also our intent to disallow simple
+relicensing of the Program for the sole purpose of using it in
+proprietary applications (section 2.b and 2.c). As an example, consider
+two hypothetical scenarios:
+
+ a) You created a program that uses the XSD generated code and the XSD
+    runtime library to access information in XML instance documents.
+    Your program performs useful computations based on this information
+    (sections 2.b and 2.c are satisfied). You distribute your program,
+    including the XSD generated code and the XSD runtime library under
+    the BSD license and make it available at no charge to all third
+    parties (section 2.a is satisfied). Later you (or someone else) may
+    choose to base their proprietary application on your code since the
+    BSD license does not prohibit it.
+
+    This scenario falls under this FLOSS Exception.
+
+
+ b) You created a library that uses the XSD generated code and the XSD
+    runtime library to access information in XML instance documents. You
+    did not add to the library any other useful code that uses the XSD
+    generated code or the XSD runtime library (neither section 2.b nor
+    2.c is satisfied). You distribute your library, including the XSD
+    generated code and the XSD runtime library under the BSD license and
+    make it available at no charge to all third parties (section 2.a
+    is satisfied). Later you base your proprietary application on this
+    library since the BSD license does not prohibit it.
+
+    This scenario does not fall under this FLOSS Exception (neither
+    section 2.b nor 2.c is satisfied). You created the library for the
+    sole purpose of making the XSD generated code and the XSD runtime
+    library available to your proprietary application.
+
+
+2. Legal Terms and Conditions
+
+As a special exception to the terms and conditions of version 2 of
+the GPL you are free to distribute a verbatim copy of the Program
+as part of the Derivative Work that is formed from the Program or
+any part thereof and one or more works (each, a "FLOSS Work") as
+long as you also meet all of these conditions:
+
+  a) You must cause the Derivative Work that in whole or in part
+     contains or is derived from the Program or any part thereof,
+     to be licensed as a whole at no charge to all third parties
+     under the terms of one or more of the licenses listed in
+     section 3.
+
+  b) The Derivative Work should contain one or more FLOSS Work that
+     can be reasonably considered as derived from the Program or some
+     part thereof.
+
+  c) The Derivative Work should not contain any part of the Program
+     that cannot be reasonably considered as a base of one or more
+     FLOSS Work.
+
+
+3. FLOSS License List
+
+  a) Any license listed in the "GPL-Compatible Free Software Licenses"
+     and the "GPL-Incompatible Free Software Licenses" sections of the
+     License List as published by the Free Software Foundation (FSF):
+
+     http://www.gnu.org/licenses/license-list.html
+
+
+4. Definitions
+
+Terms used, but not defined, herein shall have the meaning provided in
+the GPL.
+
+Derivative Work means a derivative work under copyright law.
+
+
+5. Applicability
+
+You may choose to redistribute a copy of the Program exclusively under
+the terms of the GPL by removing the FLOSS Exception notice from that
+copy of the Program.

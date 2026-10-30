@@ -6,4 +6,4 @@ ignorable_urls:
     - https://lodash.com/license
 ---
 
-Available under MIT license <https://lodash.com/license>
+Available {{under MIT license}} <https://lodash.com/license>

@@ -1,0 +1,1 @@
+(c) NIST.800.53.R4-CloudWatchLogGroupEncrypted (https://docs.aws.amazon.com/config/latest/developerguide/cloudwatch-log-group-encrypted.html) The CloudWatch Log Group

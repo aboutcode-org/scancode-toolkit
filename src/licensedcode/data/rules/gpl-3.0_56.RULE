@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-LICENCE: GNU General Public Licence version 3. See LICENCE file for details.
+LICENCE: {{GNU General Public Licence version 3}}. See LICENCE file for details.

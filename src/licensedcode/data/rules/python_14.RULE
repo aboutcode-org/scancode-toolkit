@@ -13,7 +13,7 @@ ignorable_urls:
     - http://www.pythonlabs.com/logos.html
 ---
 
-PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2 
+{{PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2}} 
 -------------------------------------------- 
 
 1. This LICENSE AGREEMENT is between the Python Software Foundation 
@@ -62,10 +62,10 @@ products or services of Licensee, or any third party.
 agrees to be bound by the terms and conditions of this License 
 Agreement. 
 
-BEOPEN.COM LICENSE AGREEMENT FOR PYTHON 2.0 
+BEOPEN.COM {{LICENSE AGREEMENT FOR PYTHON 2.0}} 
 ------------------------------------------- 
 
-BEOPEN PYTHON OPEN SOURCE LICENSE AGREEMENT VERSION 1 
+BEOPEN {{PYTHON OPEN SOURCE LICENSE AGREEMENT VERSION 1}} 
 
 1. This LICENSE AGREEMENT is between BeOpen.com ("BeOpen"), having an 
 office at 160 Saratoga Avenue, Santa Clara, CA 95051, and the 

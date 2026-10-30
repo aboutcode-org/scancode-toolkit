@@ -1,0 +1,26 @@
+about_resource: gibberish.py
+name: Gibberish-Detector
+download_url: https://raw.githubusercontent.com/yapus/gibberish/01637fe1fda827529ca76b8d6fee2de9100719f1/gibberish/gibberish.py
+homepage_url: https://github.com/yapus/gibberish/
+authors: |
+ Rob Renaud
+ Petr Janata
+ Max Greenwald
+ vsobolmaven
+ Iakov Pustilnik
+owner: Iakov Pustilnik
+license_expression: mit
+license_file: gibberish.LICENSE
+copyright: Copyright (c) 2015 Rob Renaud
+notes: gibberish.py is a reorganization of the code at
+ https://github.com/rrenaud/Gibberish-Detector into an object oriented class.
+ gibberish.py was originally a Python script written by Rob Renaud as a solution
+ to a stack overflow question (https://stackoverflow.com/a/6298193). The original
+ repo at https://github.com/rrenaud/Gibberish-Detector has been cloned many times
+ and has been expanded upon by multiple authors. This instance of gibberish.py
+ was maintained by Iakov Pustilnik, where it was cloned from
+ https://github.com/yapus/gibberish, which was cloned from
+ https://github.com/vsobolmaven/gibberish, which was cloned from
+ https://github.com/mgreenw/gibberish, which was cloned from
+ https://github.com/pjanata/Gibberish-Detector, and ultimately all of these repos
+ are from https://github.com/rrenaud/Gibberish-Detector

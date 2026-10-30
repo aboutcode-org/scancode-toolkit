@@ -11,7 +11,9 @@ notes: A deprecated license from Creative Commons that predates the use of the "
     CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO
     WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING
     FROM ITS USE.
-spdx_license_key: LicenseRef-scancode-cc-sa-1.0
+spdx_license_key: CC-SA-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-cc-sa-1.0
 text_urls:
     - http://creativecommons.org/licenses/sa/1.0/legalcode
 faq_url: https://web.archive.org/web/20140321162027/http://creativecommons.org/licenses/sa/1.0/

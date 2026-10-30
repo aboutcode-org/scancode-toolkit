@@ -6,5 +6,5 @@ ignorable_urls:
     - http://www.apache.org/licenses/LICENSE
 ---
 
-This script falls under the Apache License.
+This script falls under the {{Apache License}}.
 See http://www.apache.org/licenses/LICENSE

@@ -6,4 +6,4 @@ ignorable_urls:
     - https://raw.githubusercontent.com/
 ---
 
-License [MIT License](https://raw.githubusercontent.com/ /master/LICENSE)
+License [{{MIT License}}](https://raw.githubusercontent.com/ /master/LICENSE)

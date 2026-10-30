@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2004 Simtec Electronics Ben Dooks <ben@simtec.co.uk>
+holders:
+  - Simtec Electronics Ben Dooks

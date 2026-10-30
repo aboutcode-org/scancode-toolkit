@@ -8,4 +8,4 @@ ignorable_urls:
     - http://www.apache.org/licenses
 ---
 
-'Apache 2.0 http://www.apache.org/licenses/': 'Apache-2.0',
+'{{Apache 2.0}} http://www.apache.org/licenses/': '{{Apache-2.0}}',

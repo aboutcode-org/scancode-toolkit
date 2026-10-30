@@ -1,0 +1,6 @@
+
+---
+is_false_positive: yes
+notes: This is a reference of a license not used in this context
+---
+notably on macOS, which ships make 3.81 from 2006 (the last one released under GPLv2). https://bugs.gnu.org/68808

@@ -1,10 +1,13 @@
 ---
 license_expression: antlr-pd OR bsd-new
 is_license_notice: yes
+is_deprecated: yes
 relevance: 99
 referenced_filenames:
     - LICENSE.txt
 notes: the license varies based on the ANTLR version
+replaced_by:
+    - antlr-pd OR bsd-new
 ---
 
 ## This file is part of ANTLR. See LICENSE.txt for license  ##

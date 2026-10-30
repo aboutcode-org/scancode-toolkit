@@ -6,6 +6,8 @@ notes: |
     Seen in mailprio
     Added in SPDX license list 3.23
     Replaced by license: mailprio
+replaced_by:
+    - mailprio
 ---
 
 Rights are hereby granted to download, use, modify, sell, copy, and

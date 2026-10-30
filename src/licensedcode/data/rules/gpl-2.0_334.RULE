@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-is licensed under the GNU General Public
-License, version 2 (GPL2),
+is licensed under {{the GNU General Public
+License, version 2}} (GPL2),

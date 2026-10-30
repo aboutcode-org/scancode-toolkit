@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1998-2008 Free Software Foundation, Inc.
+  - Copyright (c) 1998-2006 James Troup
+holders:
+  - Free Software Foundation, Inc.
+  - James Troup

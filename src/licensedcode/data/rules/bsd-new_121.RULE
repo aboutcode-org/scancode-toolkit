@@ -7,4 +7,4 @@ ignorable_urls:
     - http://framework.zend.com/license/new-bsd
 ---
 
-Code subject to the new BSD license (http://framework.zend.com/license/new-bsd).
+Code subject to the {{new BSD license}} (http://framework.zend.com/license/new-bsd).

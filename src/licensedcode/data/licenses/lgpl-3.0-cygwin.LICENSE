@@ -1,6 +1,8 @@
 ---
 key: lgpl-3.0-cygwin
 is_deprecated: yes
+replaced_by:
+    - lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus
 short_name: LGPL 3.0 or later with Cygwin exception
 name: LGPL 3.0 or later with Cygwin exception
 category: Copyleft Limited

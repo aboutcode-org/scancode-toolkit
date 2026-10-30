@@ -6,5 +6,5 @@ referenced_filenames:
     - system/lib/libc/musl/COPYRIGHT
 ---
 
-it has the MIT license, see
+it has {{the MIT license}}, see
 system/lib/libc/musl/COPYRIGHT

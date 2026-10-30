@@ -5,13 +5,18 @@ name: Ubuntu Font Licence v1.0
 category: Copyleft Limited
 owner: Ubuntu Font Family
 homepage_url: http://font.ubuntu.com/licence/
-spdx_license_key: LicenseRef-scancode-ubuntu-font-1.0
+spdx_license_key: Ubuntu-font-1.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-ubuntu-font-1.0
+    - LicenseRef-UFL-1.0
 text_urls:
     - https://assets.ubuntu.com/v1/81e5605d-ubuntu-font-licence-1.0.txt
 faq_url: https://www.ubuntu.com/legal/font-licence
 other_urls:
-    - https://launchpad.net/ubuntu-font-licence
     - https://design.ubuntu.com/font/
+    - https://launchpad.net/ubuntu-font-licence
+    - https://ubuntu.com/legal/font-licence
+    - https://assets.ubuntu.com/v1/81e5605d-ubuntu-font-licence-1.0.txt
 standard_notice: |
     This Font Software is licensed under the Ubuntu Font Licence, Version
     1.0.  https://launchpad.net/ubuntu-font-licence

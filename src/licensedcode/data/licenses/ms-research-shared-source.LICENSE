@@ -2,7 +2,7 @@
 key: ms-research-shared-source
 short_name: MS Research Shared Source License
 name: Microsoft Research Shared Source License
-category: Proprietary Free
+category: Non-Commercial
 owner: Microsoft
 homepage_url: http://research.microsoft.com/downloads
 spdx_license_key: LicenseRef-scancode-ms-research-shared-source

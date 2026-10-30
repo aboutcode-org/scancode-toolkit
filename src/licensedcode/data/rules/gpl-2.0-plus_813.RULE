@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-The documentation is licensed under
-the GPLv2 (or later),
+The documentation is {{licensed under
+the GPLv2 (or later}}),

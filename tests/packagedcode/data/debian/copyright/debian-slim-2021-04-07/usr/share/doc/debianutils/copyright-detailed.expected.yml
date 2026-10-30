@@ -1,7 +1,7 @@
 declared_license:
 declared_license_expression: (gpl-2.0-plus AND public-domain) AND smail-gpl
 declared_license_expression_spdx: (GPL-2.0-or-later AND LicenseRef-scancode-public-domain) AND
-  LicenseRef-scancode-smail-gpl
+  SMAIL-GPL
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -9,7 +9,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later AND LicenseRef-scancode-public-domain
     matches:
       - license_expression: gpl-2.0-plus AND public-domain
-        spdx_license_expression: GPL-2.0-or-later AND LicenseRef-scancode-public-domain
+        license_expression_spdx: GPL-2.0-or-later AND LicenseRef-scancode-public-domain
         from_file:
         start_line: 8
         end_line: 11
@@ -27,10 +27,10 @@ license_detections:
           which is in the public domain.
     identifier: gpl_2_0_plus_and_public_domain-e8510ebe-e9a6-c0d1-ae7e-42280922b32a
   - license_expression: smail-gpl
-    license_expression_spdx: LicenseRef-scancode-smail-gpl
+    license_expression_spdx: SMAIL-GPL
     matches:
       - license_expression: smail-gpl
-        spdx_license_expression: LicenseRef-scancode-smail-gpl
+        license_expression_spdx: SMAIL-GPL
         from_file:
         start_line: 18
         end_line: 161

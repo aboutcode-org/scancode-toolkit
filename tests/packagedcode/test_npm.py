@@ -246,6 +246,13 @@ class TestNpm(PackageTester):
         packages = npm.NpmPackageJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_package_json_is_private(self):
+        test_file = self.get_test_loc('npm/private/react-devtools-fusebox.package.json')
+        expected_loc = self.get_test_loc(
+            'npm/private/react-devtools-fusebox.package-expected.json')
+        packages = npm.NpmPackageJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_is_datafile_package_lock_json_v1(self):
         test_file = self.get_test_loc('npm/package-lock-v1/package-lock.json')
         assert npm.NpmPackageLockJsonHandler.is_datafile(test_file)
@@ -272,6 +279,13 @@ class TestNpm(PackageTester):
         test_file = self.get_test_loc('npm/package-lock-v2-2/package-lock.json')
         expected_loc = self.get_test_loc(
             'npm/package-lock-v2-2/package-lock.json-expected')
+        packages = npm.NpmPackageLockJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_package_lock_v2_alias(self):
+        test_file = self.get_test_loc('npm/alias/package-lock.json')
+        expected_loc = self.get_test_loc(
+            'npm/alias/package-lock.json.expected')
         packages = npm.NpmPackageLockJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
@@ -360,6 +374,13 @@ class TestNpm(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_npm_yarn_lock_v1_parse_alias(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v1-alias/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/v1-alias/yarn.lock-expected')
+        packages = npm.YarnLockV1Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_is_datafile_pnpm_shrinkwrap_yaml(self):
         test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
         assert npm.PnpmShrinkwrapYamlHandler.is_datafile(test_file)
@@ -380,15 +401,36 @@ class TestNpm(PackageTester):
         packages = npm.PnpmLockYamlHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_pnpm_lock_yaml_v9(self):
+        test_file = self.get_test_loc('npm/pnpm/pnpm-lock/v9/uView/pnpm-lock.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/pnpm-lock/v9/uView-pnpm-lock.yaml-expected')
+        packages = npm.PnpmLockYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_pnpm_shrinkwrap_yaml(self):
         test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
         expected_loc = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack-shrinkwrap.yaml-expected')
         packages = npm.PnpmLockYamlHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_package_json_alias_requirements(self):
+        test_file = self.get_test_loc('npm/alias/package.json')
+        expected_loc = self.get_test_loc('npm/alias/package.json.expected')
+        packages = npm.NpmPackageJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_pnpm_scan_with_workspace_package_json(self):
         test_folder = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe/')
         expected_file = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe-scan.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_folder, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_pnpm_scan_with_patterns_in_workspace(self):
+        test_folder = self.get_test_loc('npm/workspace/teleport/check-redirects/')
+        expected_file = self.get_test_loc('npm/workspace/teleport/check-redirects-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_folder, '--json', result_file])
         check_json_scan(

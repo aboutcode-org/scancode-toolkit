@@ -1,0 +1,13 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.txt
+ignorable_urls:
+    - http://opensource.org/licenses/BSD-3-Clause
+---
+
+/*
+* Licensed under the {{New BSD license}}. See LICENSE.txt or:
+* http://opensource.org/licenses/BSD-3-Clause
+*/

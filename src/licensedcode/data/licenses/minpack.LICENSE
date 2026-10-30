@@ -17,7 +17,7 @@ ignorable_copyrights:
 ignorable_holders:
     - University of Chicago
 ignorable_authors:
-    - the University of Chicago
+    - the University of Chicago, as Operator of Argonne National Laboratory
 ---
 
 Minpack Copyright Notice (1999) University of Chicago.  All rights reserved

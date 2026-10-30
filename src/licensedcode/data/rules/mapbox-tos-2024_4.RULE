@@ -1,0 +1,10 @@
+---
+license_expression: mapbox-tos-2024
+is_license_reference: yes
+is_required_phrase: yes
+relevance: 99
+ignorable_urls:
+    - http://mapbox.com/tos
+---
+
+http://mapbox.com/tos

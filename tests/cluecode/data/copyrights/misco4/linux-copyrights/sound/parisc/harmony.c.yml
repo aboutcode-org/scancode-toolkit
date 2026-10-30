@@ -1,0 +1,20 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2004, Kyle McMartin
+  - Copyright 2000 (c) Linuxcare Canada, Alex
+  - Copyright 2000-2003 (c) Helge Deller Copyright 2001
+  - (c) Matthieu Delahaye Copyright 2001
+  - (c) Jean-Christophe Vaugeois Copyright 2003
+  - (c) Laurent Canet Copyright 2004
+  - (c) Stuart Brady
+holders:
+  - Kyle McMartin
+  - Linuxcare Canada, Alex
+  - Helge Deller
+  - Matthieu Delahaye
+  - Jean-Christophe Vaugeois
+  - Laurent Canet
+  - Stuart Brady

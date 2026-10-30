@@ -14,10 +14,12 @@
   "organization_url": null,
   "licenses": [
     {
-      "name": "The P6Spy Software License, Version 1.1",
-      "url": "http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD",
-      "comments": null,
-      "distribution": null
+      "license": {
+        "name": "The P6Spy Software License, Version 1.1",
+        "url": "http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD",
+        "comments": null,
+        "distribution": null
+      }
     }
   ],
   "developers": [

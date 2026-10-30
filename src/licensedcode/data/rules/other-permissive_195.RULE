@@ -1,8 +1,11 @@
 ---
 license_expression: other-permissive
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
 notes: https://blitiri.com.ar/p/bola/
+replaced_by:
+    - bola10
 ---
 
 BOLA - Buena Onda License Agreement (v1.0)

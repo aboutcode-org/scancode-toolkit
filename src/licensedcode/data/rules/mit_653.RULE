@@ -6,4 +6,4 @@ ignorable_urls:
     - https://github.com/LICENSE
 ---
 
-licensed under the [MIT License](https://github.com//LICENSE).
+{{licensed under the [MIT}} License](https://github.com//LICENSE).

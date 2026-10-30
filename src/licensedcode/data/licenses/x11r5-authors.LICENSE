@@ -1,6 +1,8 @@
 ---
 key: x11r5-authors
 is_deprecated: yes
+replaced_by:
+    - standard-ml-nj
 short_name: X11-R5 Authors
 name: X11-R5 Authors
 category: Permissive

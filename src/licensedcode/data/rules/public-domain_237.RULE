@@ -4,4 +4,4 @@ is_license_text: yes
 relevance: 100
 ---
 
-License: This code is placed in the Public Domain.
+License: This code is placed {{in the Public Domain}}.

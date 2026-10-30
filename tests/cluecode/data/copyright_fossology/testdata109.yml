@@ -1,0 +1,17 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1989-2006 Free Software Foundation
+  - Copyright (c) 1995-1997 Chris Fearnley
+  - Copyright (c) 1998-2006 James Troup
+holders:
+  - Free Software Foundation
+  - Chris Fearnley
+  - James Troup
+authors:
+  - Diane Barlow Close, Arnold D. Robbins, Paul H. Rubin and Richard Stallman
+  - Chris Fearnley <cjf@netaxs.com>
+  - Ian Murdock <imurdock@debian.org>
+  - James Troup <james@nocrew.org>

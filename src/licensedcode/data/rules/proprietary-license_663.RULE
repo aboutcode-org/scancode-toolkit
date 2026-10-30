@@ -1,6 +1,9 @@
 ---
 license_expression: proprietary-license
 is_license_text: yes
+is_deprecated: yes
+replaced_by:
+    - mediatek-proprietary-2016
 ignorable_copyrights:
     - MediaTek Inc. (c)
 ignorable_holders:

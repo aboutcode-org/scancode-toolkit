@@ -1,7 +1,10 @@
 ---
 license_expression: apache-2.0
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - apache-2.0
 ignorable_urls:
     - http://apache.org/licences/LICENCE-2.0
 ---

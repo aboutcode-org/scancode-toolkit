@@ -1,0 +1,12 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - License.txt
+notes: no version with lesser implies 2.1 or later
+ignorable_urls:
+    - http://www.gnu.org/copyleft/lesser.html
+---
+
+Permission to use, copy, modify, and distribute this software and its documentation under the terms of the {{GNU Lesser General Public License}} (LGPL) is hereby granted. No representations are made about the suitability of this software for any purpose. It is provided "as is" without express or implied warranty. See the http://www.gnu.org/copyleft/lesser.html" GNU Lesser General Public License or the License.txt file accompanying this library for more details.

@@ -2,7 +2,7 @@
 key: activestate-community
 short_name: ActiveState Community License
 name: ActiveState Community License
-category: Proprietary Free
+category: Non-Commercial
 owner: ActiveState Software, Inc.
 spdx_license_key: LicenseRef-scancode-activestate-community
 ignorable_copyrights:

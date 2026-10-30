@@ -1,9 +1,11 @@
 ---
 license_expression: proprietary-license
 is_license_tag: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - proprietary-license
 ---
 
 licenses": [
- {
-   "name": "Other/Proprietary License",
+  "name": {{Other/Proprietary License}}

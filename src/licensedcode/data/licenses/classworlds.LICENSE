@@ -1,6 +1,8 @@
 ---
 key: classworlds
 is_deprecated: yes
+replaced_by:
+    - dom4j
 short_name: Classworlds License
 name: Classworlds License
 category: Permissive

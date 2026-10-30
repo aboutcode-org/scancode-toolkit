@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-plus-ada
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH ada-linking-exception
 short_name: GPL 2.0 or later with Ada exception
 name: GPL 2.0 or later with Ada exception
 category: Copyleft Limited

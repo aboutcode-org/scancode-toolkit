@@ -1,0 +1,3 @@
+ * Russ Dill <Russ.Dill@asu.edu> 2001-2003
+ * Rewrited by Vladimir Oleynik <dzo@simtreas.ru> (C) 2003
+

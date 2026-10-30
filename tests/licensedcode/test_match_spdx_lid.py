@@ -364,23 +364,44 @@ class TestMatchSpdx(FileBasedTesting):
 
     def test__split_spdx_lid(self):
         test = [
+            'SPDX-License-Identifier: BSD-3-Clause',
             'REM DNL SPDX  License   Identifier  : BSD-3-Clause',
             'SPDX-License-Identifier  : BSD-3-Clause',
             'spdx-license- identifier  : BSD-3-Clause',
             ' SPDX License--Identifier: BSD-3-Clause',
-            ' SPDX Licence--Identifier: BSD-3-Clause',
             'SPDX-License-Identifier : BSD-3-Clause',
             'SPDX-License-Identifer : BSD-3-Clause',
+            'SPDX--License--Identifer : BSD-3-Clause',
+
+            # weird spellings
+            'SPDZ-License-Identifier  : BSD-3-Clause',
+            'SPDX-Lincense-Identifier  : BSD-3-Clause',
+            'SPDX-Lisense-Identifier  : BSD-3-Clause',
+            'SPDX-Licence-Identifier  : BSD-3-Clause',
+            'SPDX-Licece-Identifier  : BSD-3-Clause',
+            'SPDZ-Licece-Identifer  : BSD-3-Clause',
+            'SPDX-Licenses-Identifier  : BSD-3-Clause',
+            'SPDX - - Licenses - - Identifier  : BSD-3-Clause',
         ]
         results = [_split_spdx_lid(l) for l in test]
         expected = [
+            ['', 'SPDX-License-Identifier: ', 'BSD-3-Clause'],
             ['REM DNL ', 'SPDX  License   Identifier  : ', 'BSD-3-Clause'],
             ['', 'SPDX-License-Identifier  : ', 'BSD-3-Clause'],
             ['', 'spdx-license- identifier  : ', 'BSD-3-Clause'],
             [' ', 'SPDX License--Identifier: ', 'BSD-3-Clause'],
-            [' ', 'SPDX Licence--Identifier: ', 'BSD-3-Clause'],
             ['', 'SPDX-License-Identifier : ', 'BSD-3-Clause'],
-            ['SPDX-License-Identifer : BSD-3-Clause'],
+            ['' ,'SPDX-License-Identifer : ', 'BSD-3-Clause'],
+            ['' ,'SPDX--License--Identifer : ', 'BSD-3-Clause'],
+
+            ['' ,'SPDZ-License-Identifier  : ', 'BSD-3-Clause'],
+            ['' ,'SPDX-Lincense-Identifier  : ', 'BSD-3-Clause'],
+            ['' ,'SPDX-Lisense-Identifier  : ', 'BSD-3-Clause'],
+            ['' ,'SPDX-Licence-Identifier  : ', 'BSD-3-Clause'],
+            ['' ,'SPDX-Licece-Identifier  : ', 'BSD-3-Clause'],
+            ['' ,'SPDZ-Licece-Identifer  : ', 'BSD-3-Clause'],
+            ['' ,'SPDX-Licenses-Identifier  : ', 'BSD-3-Clause'],
+            ['', 'SPDX - - Licenses - - Identifier  : ', 'BSD-3-Clause'],
         ]
         assert results == expected
 

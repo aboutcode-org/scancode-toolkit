@@ -1,0 +1,33 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1999-2007 Norman Walsh
+  - Copyright (c) 2003 Jiri Kosek
+  - Copyright (c) 2004-2007 Steve Ball
+  - Copyright (c) 2005-2007 The DocBook Project
+  - Copyright (c) 2005 Michal Molhanec
+  - Copyright (c) 2000 Bob Clary
+  - Copyright (c) 2001 The Netscape Corporation
+  - Copyright (c) 2003 The Netscape Corporation
+  - Copyright (c) 1997 Michael Bostock (Netscape Communications)
+  - Copyright (c) 2001 Bob Clary (Netscape Communications)
+  - Copyright (c) 2001 Seth Dillingham (Macrobyte Resources)
+  - Copyright (c) 2002 Mark Filanowicz (Amdahl IT Services)
+holders:
+  - Norman Walsh
+  - Jiri Kosek
+  - Steve Ball
+  - The DocBook Project
+  - Michal Molhanec
+  - Bob Clary
+  - The Netscape Corporation
+  - The Netscape Corporation
+  - Michael Bostock (Netscape Communications)
+  - Bob Clary (Netscape Communications)
+  - Seth Dillingham (Macrobyte Resources)
+  - Mark Filanowicz (Amdahl IT Services)
+authors:
+  - Daniel Leidert <daniel.leidert@wgdd.de>
+  - Mark Johnson <mrj@debian.org>

@@ -1,7 +1,10 @@
 ---
 license_expression: pddl-1.0
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - pddl-1.0
 ---
 
 licenses.nuget.org/PDDL-1.0

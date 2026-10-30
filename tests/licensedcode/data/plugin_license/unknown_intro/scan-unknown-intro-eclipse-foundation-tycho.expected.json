@@ -26,7 +26,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0-14c27abb-363c-4c38-b5c4-095fce7dd164",
+      "identifier": "apache_2_0-a6e2f0c7-bc81-4ff9-2c82-cf3897de2210",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 2,
@@ -37,16 +37,32 @@
           "license_expression_spdx": "Apache-2.0",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
           "start_line": 34,
+          "end_line": 34,
+          "matcher": "2-aho",
+          "score": 90.0,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "rule_relevance": 90,
+          "rule_identifier": "apache-2.0_required_phrase_29.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_required_phrase_29.RULE",
+          "matched_text": "<p>The plug-in includes SureFire JUnit Runner ${surefire-version} developed by the Apache Software Foundation.  Therefore:</p>",
+          "matched_text_diagnostics": "developed by the Apache Software Foundation."
+        },
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
+          "start_line": 37,
           "end_line": 37,
           "matcher": "2-aho",
           "score": 95.0,
-          "matched_length": 25,
+          "matched_length": 14,
           "match_coverage": 100.0,
           "rule_relevance": 95,
-          "rule_identifier": "apache-2.0_1203.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1203.RULE",
-          "matched_text": "<p>The plug-in includes SureFire JUnit Runner ${surefire-version} developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</a>).",
-          "matched_text_diagnostics": "developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</"
+          "rule_identifier": "apache_no-version_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache_no-version_1.RULE",
+          "matched_text": "This product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</a>).",
+          "matched_text_diagnostics": "This product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">"
         }
       ]
     },
@@ -280,7 +296,7 @@
           "matches": [
             {
               "license_expression": "epl-1.0",
-              "spdx_license_expression": "EPL-1.0",
+              "license_expression_spdx": "EPL-1.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
               "start_line": 12,
               "end_line": 25,
@@ -304,23 +320,39 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
               "start_line": 34,
+              "end_line": 34,
+              "matcher": "2-aho",
+              "score": 90.0,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "rule_relevance": 90,
+              "rule_identifier": "apache-2.0_required_phrase_29.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_required_phrase_29.RULE",
+              "matched_text": "<p>The plug-in includes SureFire JUnit Runner ${surefire-version} developed by the Apache Software Foundation.  Therefore:</p>",
+              "matched_text_diagnostics": "developed by the Apache Software Foundation."
+            },
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
+              "start_line": 37,
               "end_line": 37,
               "matcher": "2-aho",
               "score": 95.0,
-              "matched_length": 25,
+              "matched_length": 14,
               "match_coverage": 100.0,
               "rule_relevance": 95,
-              "rule_identifier": "apache-2.0_1203.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1203.RULE",
-              "matched_text": "<p>The plug-in includes SureFire JUnit Runner ${surefire-version} developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</a>).",
-              "matched_text_diagnostics": "developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</"
+              "rule_identifier": "apache_no-version_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache_no-version_1.RULE",
+              "matched_text": "This product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</a>).",
+              "matched_text_diagnostics": "This product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">"
             }
           ],
           "detection_log": [],
-          "identifier": "apache_2_0-14c27abb-363c-4c38-b5c4-095fce7dd164"
+          "identifier": "apache_2_0-a6e2f0c7-bc81-4ff9-2c82-cf3897de2210"
         },
         {
           "license_expression": "apache-2.0",
@@ -328,7 +360,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
               "start_line": 44,
               "end_line": 47,
@@ -348,7 +380,7 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 61.74,
+      "percentage_of_license_text": 60.56,
       "scan_errors": []
     },
     {
@@ -363,7 +395,7 @@
           "matches": [
             {
               "license_expression": "epl-1.0",
-              "spdx_license_expression": "EPL-1.0",
+              "license_expression_spdx": "EPL-1.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
               "start_line": 12,
               "end_line": 25,
@@ -387,23 +419,39 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
               "start_line": 34,
+              "end_line": 34,
+              "matcher": "2-aho",
+              "score": 90.0,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "rule_relevance": 90,
+              "rule_identifier": "apache-2.0_required_phrase_29.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_required_phrase_29.RULE",
+              "matched_text": "<p>The plug-in includes Surefire Shared Java 5 Provider Base ${surefire-version} developed by the Apache Software Foundation.  Therefore:</p>",
+              "matched_text_diagnostics": "developed by the Apache Software Foundation."
+            },
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
+              "start_line": 37,
               "end_line": 37,
               "matcher": "2-aho",
               "score": 95.0,
-              "matched_length": 25,
+              "matched_length": 14,
               "match_coverage": 100.0,
               "rule_relevance": 95,
-              "rule_identifier": "apache-2.0_1203.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1203.RULE",
-              "matched_text": "<p>The plug-in includes Surefire Shared Java 5 Provider Base ${surefire-version} developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</a>).",
-              "matched_text_diagnostics": "developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</"
+              "rule_identifier": "apache_no-version_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache_no-version_1.RULE",
+              "matched_text": "This product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</a>).",
+              "matched_text_diagnostics": "This product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">"
             }
           ],
           "detection_log": [],
-          "identifier": "apache_2_0-14c27abb-363c-4c38-b5c4-095fce7dd164"
+          "identifier": "apache_2_0-a6e2f0c7-bc81-4ff9-2c82-cf3897de2210"
         },
         {
           "license_expression": "apache-2.0",
@@ -411,7 +459,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
               "start_line": 44,
               "end_line": 47,
@@ -435,7 +483,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
               "start_line": 53,
               "end_line": 54,
@@ -459,7 +507,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
               "start_line": 59,
               "end_line": 60,
@@ -483,7 +531,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
               "start_line": 65,
               "end_line": 66,
@@ -507,7 +555,7 @@
           "matches": [
             {
               "license_expression": "epl-2.0",
-              "spdx_license_expression": "EPL-2.0",
+              "license_expression_spdx": "EPL-2.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
               "start_line": 71,
               "end_line": 72,
@@ -527,7 +575,7 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 52.59,
+      "percentage_of_license_text": 52.03,
       "scan_errors": []
     },
     {
@@ -542,7 +590,7 @@
           "matches": [
             {
               "license_expression": "epl-1.0",
-              "spdx_license_expression": "EPL-1.0",
+              "license_expression_spdx": "EPL-1.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
               "start_line": 12,
               "end_line": 25,
@@ -566,7 +614,7 @@
           "matches": [
             {
               "license_expression": "cpl-1.0",
-              "spdx_license_expression": "CPL-1.0",
+              "license_expression_spdx": "CPL-1.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
               "start_line": 40,
               "end_line": 41,
@@ -590,7 +638,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
               "start_line": 53,
               "end_line": 54,
@@ -606,7 +654,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
               "start_line": 57,
               "end_line": 59,
@@ -630,7 +678,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
               "start_line": 64,
               "end_line": 85,
@@ -665,7 +713,7 @@
           "matches": [
             {
               "license_expression": "epl-1.0",
-              "spdx_license_expression": "EPL-1.0",
+              "license_expression_spdx": "EPL-1.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_4.html",
               "start_line": 12,
               "end_line": 25,
@@ -689,7 +737,7 @@
           "matches": [
             {
               "license_expression": "cpl-1.0",
-              "spdx_license_expression": "CPL-1.0",
+              "license_expression_spdx": "CPL-1.0",
               "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_4.html",
               "start_line": 39,
               "end_line": 41,

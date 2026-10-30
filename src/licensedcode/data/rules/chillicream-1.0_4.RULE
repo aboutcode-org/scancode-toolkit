@@ -1,0 +1,11 @@
+---
+license_expression: chillicream-1.0
+is_license_notice: yes
+minimum_coverage: 90
+referenced_filenames:
+    - LICENSING
+---
+
+Source code in this repository is covered by the {{ChilliCream License 1.0}} license as designated by a licensing file
+in a subdirectory or file header. The default throughout the repository is a license under the {{ChilliCream License 1.0}},
+unless a file header or a licensing file in a subdirectory specifies another license.
