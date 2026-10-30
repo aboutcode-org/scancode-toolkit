@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+v33.0.0 - 2026-10-30
+------------------------
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
@@ -25,6 +28,7 @@ Next release
   hookspecs used by ``plugincode`` and scancode fails at import time with
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
+
 
 v33.0.0rc1 - 2026-05-14
 ------------------------

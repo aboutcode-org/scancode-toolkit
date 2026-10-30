@@ -54,6 +54,7 @@ cp -r \
   docs \
   samples \
   *NOTICE *LICENSE *ABOUT \
+  pyproject-commoncode.toml \
   $release_dir
 
 tarball=scancode-toolkit-$(git describe --tags)_sources.tar.gz
