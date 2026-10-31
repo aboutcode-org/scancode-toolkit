@@ -1,0 +1,15 @@
+pkgbase = rust-multiarch
+	pkgdesc = Multi-architecture Rust package
+	pkgver = 1.5.0
+	pkgrel = 2
+	arch = x86_64
+	arch = aarch64
+	license = GPL
+	depends = glibc
+	depends_x86_64 = lib32-glibc
+	depends_aarch64 = aarch64-specific-lib
+	makedepends = rust
+	source = source.tar.gz
+	sha256sums = SKIP
+
+pkgname = rust-multiarch
