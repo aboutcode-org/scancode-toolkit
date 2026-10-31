@@ -2023,3 +2023,44 @@ def keywords_mapper(keywords, package):
 
     package.keywords = keywords
     return package
+
+
+class NpmRcHandler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'npm_npmrc'
+    path_patterns = ('*/.npmrc', '.npmrc',)
+    default_package_type = 'npm'
+    description = 'npm configuration file'
+    documentation_url = 'https://docs.npmjs.com/cli/v10/configuring-npm/npmrc'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        config = {}
+        with io.open(location, encoding='utf-8') as loc:
+            for line in loc:
+                line = line.strip()
+                if not line or line.startswith((';', '#')):
+                    continue
+                if '=' in line:
+                    key, _, value = line.partition('=')
+                    key = key.strip()
+                    value = value.strip()
+                    if key.endswith('[]'):
+                        base_key = key[:-2].strip()
+                        if not base_key:
+                            continue
+                        if base_key not in config:
+                            config[base_key] = []
+                        elif not isinstance(config[base_key], list):
+                            config[base_key] = [config[base_key]]
+                        config[base_key].append(value)
+                    else:
+                        config[key] = value
+        if not config:
+            return
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            extra_data=config,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
