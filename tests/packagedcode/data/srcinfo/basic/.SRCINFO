@@ -1,0 +1,14 @@
+pkgbase = example
+	pkgver = 1.2.3
+	pkgrel = 1
+	pkgdesc = An example Arch package
+	url = https://example.test
+	license = MIT
+	source = https://example.test/example.tar.gz
+	sha256sums = abc123
+	depends = openssl
+	depends_x86_64 = zlib
+	makedepends = python
+	optdepends = docs: documentation
+	arch = x86_64
+pkgname = example
