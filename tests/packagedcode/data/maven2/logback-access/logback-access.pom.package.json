@@ -59,7 +59,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Logback Access Module"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/ch.qos.logback/logback-core",

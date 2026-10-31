@@ -67,7 +67,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Spring Framework: Beans"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/cglib/cglib-nodep@2.1_3",

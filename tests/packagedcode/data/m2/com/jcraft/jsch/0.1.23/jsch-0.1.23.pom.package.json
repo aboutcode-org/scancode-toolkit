@@ -82,7 +82,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "jsch"
+  },
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.23/",
   "repository_download_url": "https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.23/jsch-0.1.23.jar",

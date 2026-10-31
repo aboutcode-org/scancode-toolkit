@@ -149,7 +149,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "dom4j"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/jaxme/jaxme-api@0.3",

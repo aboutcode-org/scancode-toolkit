@@ -74,7 +74,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "TestNG"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/ant/ant@1.6.5",

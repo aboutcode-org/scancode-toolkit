@@ -36,7 +36,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Maven SCM Subversion Provider - SVN Executable Impl."
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-svn-commons@1.0-beta-3",

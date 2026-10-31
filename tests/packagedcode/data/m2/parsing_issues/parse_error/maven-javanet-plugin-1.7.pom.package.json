@@ -56,7 +56,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Maven java.net plugin"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/httpunit/httpunit@1.5.4",

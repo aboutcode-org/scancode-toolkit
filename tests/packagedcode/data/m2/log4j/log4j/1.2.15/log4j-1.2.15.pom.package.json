@@ -67,7 +67,9 @@
   "file_references": [],
   "is_private": false,
   "is_virtual": false,
-  "extra_data": {},
+  "extra_data": {
+    "pname": "Apache Log4j"
+  },
   "dependencies": [
     {
       "purl": "pkg:maven/javax.mail/mail@1.4",
