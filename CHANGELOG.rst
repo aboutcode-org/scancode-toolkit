@@ -26,6 +26,14 @@ Next release
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
+- Fix silent bugs found by static analysis:
+  ``IsRequiredPhrase.license_expression`` now returns the rule license expression
+  instead of None, and ``commoncode.command.find_in_path`` now computes the
+  searchable paths at call time rather than at import time. The
+  ``searchable_paths`` parameter of ``find_in_path`` is renamed to ``search_paths``.
+  Also remove a duplicate ``autogen.sh`` entry in the default ignores.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5405
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 

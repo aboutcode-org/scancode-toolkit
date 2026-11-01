@@ -316,12 +316,15 @@ def searchable_paths(env_vars=PATH_VARS):
     return tuple(d for d in dirs if os.path.isdir(d))
 
 
-def find_in_path(filename, searchable_paths=searchable_paths()):
+def find_in_path(filename, search_paths=None):
     """
-    Return the location of a ``filename`` found in the ``searchable_paths`` list
-    of directory or None.
+    Return the location of a ``filename`` found in the ``search_paths`` list
+    of directory or None. If ``search_paths`` is not provided, use the current
+    searchable_paths() computed at call time.
     """
-    for path in searchable_paths:
+    if search_paths is None:
+        search_paths = searchable_paths()
+    for path in search_paths:
         location = os.path.join(path, filename)
         if os.path.exists(location):
             return location

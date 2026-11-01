@@ -136,7 +136,7 @@ class TestCommand(FileBasedTesting):
 
         assert None == command.find_in_path(
             filename,
-            searchable_paths=(
+            search_paths=(
                 d1,
                 d2,
             ),
@@ -148,14 +148,14 @@ class TestCommand(FileBasedTesting):
 
         assert f2 == command.find_in_path(
             filename,
-            searchable_paths=(
+            search_paths=(
                 d1,
                 d2,
             ),
         )
         assert f2 == command.find_in_path(
             filename,
-            searchable_paths=(
+            search_paths=(
                 d2,
                 d1,
             ),
@@ -167,15 +167,29 @@ class TestCommand(FileBasedTesting):
 
         assert f1 == command.find_in_path(
             filename,
-            searchable_paths=(
+            search_paths=(
                 d1,
                 d2,
             ),
         )
         assert f2 == command.find_in_path(
             filename,
-            searchable_paths=(
+            search_paths=(
                 d2,
                 d1,
             ),
         )
+
+    def test_find_in_path_uses_current_path(self):
+        import tempfile
+
+        tool_dir = tempfile.mkdtemp()
+        tool = os.path.join(tool_dir, "mytool-xyz")
+        open(tool, "w").close()
+        old_path = os.environ["PATH"]
+        try:
+            os.environ["PATH"] = tool_dir + os.pathsep + old_path
+            assert command.find_in_path("mytool-xyz") == os.path.realpath(tool)
+        finally:
+            os.environ["PATH"] = old_path
+            
