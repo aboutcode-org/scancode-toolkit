@@ -10,6 +10,7 @@
 from unittest import TestCase
 
 from packagedcode.utils import normalize_vcs_url
+from packagedcode.utils import parse_maintainer_name_email
 
 
 class TestPackageUtils(TestCase):
@@ -128,3 +129,20 @@ class TestPackageUtils(TestCase):
         assert normalize_vcs_url(None) == None
         assert normalize_vcs_url('') == None
         assert normalize_vcs_url(' ') == None
+
+    def test_parse_maintainer_name_email_with_brackets(self):
+        test = 'Debian systemd Maintainers <pkg-systemd-maintainers@lists.alioth.debian.org>'
+        expected = ('Debian systemd Maintainers', 'pkg-systemd-maintainers@lists.alioth.debian.org')
+        assert parse_maintainer_name_email(test) == expected
+
+    def test_parse_maintainer_name_email_with_at_but_no_brackets(self):
+        test = 'John Doe john@example.com'
+        assert parse_maintainer_name_email(test) == (test, None)
+
+    def test_parse_maintainer_name_email_with_at_and_only_opening_bracket(self):
+        test = 'John Doe <john@example.com'
+        assert parse_maintainer_name_email(test) == (test, None)
+
+    def test_parse_maintainer_name_email_with_at_and_only_closing_bracket(self):
+        test = 'John Doe john@example.com>'
+        assert parse_maintainer_name_email(test) == (test, None)
