@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Add detection for the AIC and AEONSEMI firmware licenses from Linux-firmware.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5394
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

@@ -1,0 +1,30 @@
+---
+key: aic-firmware
+short_name: AIC Firmware License
+name: AIC Firmware License
+category: Proprietary Free
+owner: AIC Semiconductor
+homepage_url: https://gitlab.com/kernel-firmware/linux-firmware
+spdx_license_key: LicenseRef-scancode-aic-firmware
+text_urls:
+  - https://gitlab.com/kernel-firmware/linux-firmware/-/blob/1987bb2044a6c2d68c39d01c360bdbe17f1eb60c/LICENSES/LICENSE.aic
+---
+
+Anyone may copy and redistribute this firmware unchanged, alone or
+with other materials, and use it on its intended hardware, worldwide,
+royalty-free, without registration or a separate agreement. These
+rights are perpetual and irrevocable for distributed copies.
+Mirroring, installation media, container/cloud images, and reversible
+compression or packaging are permitted if the restored binary is
+unchanged. Redistribution must retain this notice and license.
+Modification of the firmware binary is not permitted.
+
+The copyright holder grants everyone a worldwide, non-exclusive,
+royalty-free, perpetual and irrevocable license under patent claims
+it owns or controls necessary to copy and redistribute the firmware
+and use it with its intended hardware for full device functionality.
+
+To the extent permitted by law, the firmware is provided without
+any express or implied warranty, including merchantability, fitness
+for a particular purpose or non-infringement, and the copyright
+holder is not liable for damages arising from its use or distribution.
