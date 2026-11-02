@@ -11,6 +11,9 @@
 import os
 import re
 from unittest.case import expectedFailure
+from unittest.mock import Mock
+from unittest.mock import call
+from unittest.mock import patch
 
 from commoncode.testcase import FileBasedTesting
 
@@ -40,6 +43,20 @@ def _find_tester(func, lines_or_location, with_lineno=False, unique=True):
 
 class TestEmail(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_find_emails_skips_regex_for_lines_without_at_sign(self):
+        lines = [
+            'This line has no email address.',
+            'Contact alice@python.org',
+            '',
+            'Contact alice@python.org',
+        ]
+        pattern = Mock(wraps=finder.emails_regex())
+        with patch.object(finder, 'emails_regex', return_value=pattern):
+            result = list(finder.find_emails(lines, unique=False))
+
+        assert result == [('alice@python.org', 2), ('alice@python.org', 4)]
+        assert pattern.findall.call_args_list == [call(lines[1]), call(lines[3])]
 
     def test_emails_regex(self):
         test_file = self.get_test_loc('finder/email/3w-xxxx.c')
@@ -192,6 +209,34 @@ class TestEmail(FileBasedTesting):
 
 class TestUrl(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_find_urls_prefilter_preserves_supported_url_forms(self):
+        lines = [
+            'No URL on this line',
+            '',
+            'http://python.org',
+            'WWW.python.org',
+            'FTP.python.org/pub',
+            'git@github.com:aboutcode-org/scancode-toolkit.git',
+            'http://8.8.8.8',
+            'http://[2001:4860:4860::8888]',
+            'http://localhost',
+        ]
+        pattern = Mock(wraps=finder.urls_regex())
+        expected = [
+            ('http://python.org/', 3),
+            ('http://www.python.org/', 4),
+            ('http://ftp.python.org/pub', 5),
+            ('git@github.com:aboutcode-org/scancode-toolkit.git', 6),
+            ('http://8.8.8.8/', 7),
+        ]
+        with patch.object(finder, 'urls_regex', return_value=pattern):
+            result = list(finder.find_urls(lines, unique=False))
+
+        assert result == expected
+        # IP literals and dotless hosts must still reach the regex even when
+        # the existing downstream URL filters exclude them from the results.
+        assert pattern.findall.call_args_list == [call(line) for line in lines[2:]]
 
     def test_urls_regex_without_http(self):
         result = re.match(finder.urls_regex(),
@@ -760,6 +805,15 @@ class TestUrl(FileBasedTesting):
 
 class TestSearch(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_find_without_prefilter_preserves_arbitrary_patterns(self):
+        lines = ['Copyright Alice', 'Copyright Bob']
+        pattern = re.compile('Copyright')
+        result = list(find(lines, [('emails', pattern)]))
+        assert result == [
+            ('emails', 'Copyright', lines[0], 1),
+            ('emails', 'Copyright', lines[1], 2),
+        ]
 
     def test_search_is_non_unique_by_default(self):
         test_dir = self.get_test_loc('finder/search', copy=True)

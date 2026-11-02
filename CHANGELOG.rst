@@ -4,6 +4,10 @@ Changelog
 Next release
 --------------
 
+- Skip email and URL regular expression matching on lines without the
+  required markers, while preserving detections and source line numbers.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/595
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
