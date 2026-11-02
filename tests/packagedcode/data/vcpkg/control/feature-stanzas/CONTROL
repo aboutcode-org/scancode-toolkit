@@ -1,0 +1,14 @@
+Source: feature-port
+Version: 3.4.5
+Port-Version: 0
+Description: A legacy port with features.
+Build-Depends: curl[core,openssl] (!windows), zlib (windows & (!uwp | x64))
+Default-Features: tools
+Supports: !uwp
+
+Feature: tools
+Description: Build optional tools.
+Build-Depends: python3, boost[filesystem,program-options] (!arm)
+
+Feature: empty
+Description: A feature without dependencies.

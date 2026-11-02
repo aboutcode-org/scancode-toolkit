@@ -1,0 +1,68 @@
+{
+  "name": "sample-port",
+  "version-semver": "1.2.3",
+  "port-version": 2,
+  "description": [
+    "A sample vcpkg port.",
+    "Used to exercise manifest metadata."
+  ],
+  "maintainers": [
+    "Alice Example <alice@example.com>",
+    "Bob Example",
+    ""
+  ],
+  "homepage": "https://example.com/sample-port",
+  "documentation": "https://example.com/sample-port/docs",
+  "license": "MIT",
+  "supports": "!uwp",
+  "builtin-baseline": "0123456789abcdef",
+  "default-features": [
+    "tls"
+  ],
+  "dependencies": [
+    "zlib",
+    {
+      "name": "cmake",
+      "host": true
+    },
+    {
+      "name": "curl",
+      "version>=": "8.0.0#1",
+      "features": [
+        "openssl",
+        {
+          "name": "schannel",
+          "platform": "windows"
+        }
+      ],
+      "default-features": false,
+      "platform": "!uwp"
+    },
+    {
+      "platform": "windows"
+    }
+  ],
+  "features": {
+    "tools": {
+      "description": "Build command-line tools.",
+      "supports": "!uwp",
+      "dependencies": [
+        {
+          "name": "python3",
+          "host": true
+        }
+      ]
+    }
+  },
+  "overrides": [
+    {
+      "name": "zlib",
+      "version": "1.3.1"
+    }
+  ],
+  "configuration": {
+    "overlay-ports": [
+      "ports"
+    ]
+  }
+}

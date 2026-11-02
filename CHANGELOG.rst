@@ -4,6 +4,11 @@ Changelog
 Next release
 --------------
 
+- Add vcpkg package support for modern ``vcpkg.json`` manifests,
+  legacy ``CONTROL`` files, and literal source metadata from
+  ``portfile.cmake`` files.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/1571
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
