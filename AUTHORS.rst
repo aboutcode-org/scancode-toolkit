@@ -36,6 +36,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Hanif Ali @hanif-ali
 - Horie Issei @is2ei
 - James Ward @jamesward
+- Jatin Pandey @satiricalguru
 - Jelmer Vernooĳ @jelmer
 - Jens Keim @pepper-jk
 - Kunal Chhabra @kunalchhabra37

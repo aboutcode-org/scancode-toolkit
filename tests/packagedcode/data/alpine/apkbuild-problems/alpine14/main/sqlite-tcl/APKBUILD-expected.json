@@ -42,7 +42,7 @@
           "rule_relevance": 100,
           "rule_identifier": "spdx-license-identifier-public_domain-3557a117ec0598b8a9056c438400584fec0415e6",
           "rule_url": null,
-          "matched_text": "licenseref-scancode-public-domain"
+          "matched_text": "Public-Domain"
         }
       ],
       "identifier": "public_domain-d4ddee47-afa0-e133-44e4-f06937fd663d"
