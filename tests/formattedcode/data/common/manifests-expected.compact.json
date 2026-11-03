@@ -1,0 +1,856 @@
+{
+  "packages": [
+    {
+      "primary_language": "Java",
+      "homepage_url": "http://www.jcp.org/en/jsr/detail?id=220",
+      "declared_license_expression_spdx": "CDDL-1.0",
+      "source_packages": [
+        "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
+      ],
+      "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
+      "repository_download_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.pom",
+      "package_uid": "pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "manifests/maven/persistence-api-1.0.pom"
+      ],
+      "license_detections": [
+        {
+          "identifier": "cddl_1_0-b17acf03-1e4f-20e6-cbb8-1b6945ee4c4c"
+        }
+      ]
+    },
+    {
+      "primary_language": "JavaScript",
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Spencer Alger",
+          "email": "spencer.alger@elasticsearch.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "gruntplugin"
+      ],
+      "homepage_url": "https://github.com/spenceralger/grunt-esvm",
+      "download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
+      "bug_tracking_url": "https://github.com/spenceralger/grunt-esvm/issues",
+      "vcs_url": "git://github.com/spenceralger/grunt-esvm.git",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "repository_homepage_url": "https://www.npmjs.com/package/grunt-esvm",
+      "repository_download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
+      "api_data_url": "https://registry.npmjs.org/grunt-esvm/3.2.8",
+      "package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "manifests/npm-license-mapping/package.json"
+      ],
+      "license_detections": [
+        {
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+        },
+        {
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+        }
+      ]
+    },
+    {
+      "primary_language": "JavaScript",
+      "parties": [
+        {
+          "type": "person",
+          "role": "maintainer",
+          "name": "georgdangl",
+          "email": "npm@dan.gl",
+          "url": null
+        }
+      ],
+      "homepage_url": "https://github.com/GeorgDangl/angular-compare-validator#readme",
+      "download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
+      "sha1": "d35a0754c8587b0502874e3636cf0f19565d09b7",
+      "sha512": "8f70ed5e3513185ad58fb2a3114769ac93ddd68836ce89146e586fc03e03ac93dcfb1f11354ac26f408b75c0ebf51663d5e4e8e27c38752a3c06bdde749a7c03",
+      "bug_tracking_url": "https://github.com/GeorgDangl/angular-compare-validator/issues",
+      "vcs_url": "git+https://github.com/GeorgDangl/angular-compare-validator.git",
+      "declared_license_expression_spdx": "MIT",
+      "repository_homepage_url": "https://www.npmjs.com/package/angular-compare-validator",
+      "repository_download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
+      "api_data_url": "https://registry.npmjs.org/angular-compare-validator/0.1.1",
+      "package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "manifests/npm-license-string/package.json"
+      ],
+      "license_detections": [
+        {
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ]
+    },
+    {
+      "primary_language": "Python",
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "BlueBrain Project, EPFL",
+          "email": "werner.vangeit@epfl.ch",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "optimisation",
+        "neuroscience",
+        "BlueBrainProject",
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Console",
+        "Programming Language :: Python :: 3 :: Only",
+        "Operating System :: POSIX",
+        "Topic :: Scientific/Engineering",
+        "Topic :: Utilities"
+      ],
+      "homepage_url": "https://github.com/BlueBrain/BluePyOpt",
+      "declared_license_expression_spdx": "LGPL-3.0-only",
+      "repository_homepage_url": "https://pypi.org/project/bluepyopt",
+      "api_data_url": "https://pypi.org/pypi/bluepyopt/json",
+      "package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "manifests/pypi/bluepyopt_setup.py"
+      ],
+      "license_detections": [
+        {
+          "identifier": "lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5"
+        },
+        {
+          "identifier": "lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/bluebird",
+      "extracted_requirement": "^2.9.30",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/bluebird?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json"
+    },
+    {
+      "purl": "pkg:npm/cli-color",
+      "extracted_requirement": "~0.3.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/cli-color?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json"
+    },
+    {
+      "purl": "pkg:npm/cli-table",
+      "extracted_requirement": "~0.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/cli-table?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json"
+    },
+    {
+      "purl": "pkg:npm/libesvm",
+      "extracted_requirement": "^3.8.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/libesvm?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json"
+    },
+    {
+      "purl": "pkg:npm/lodash",
+      "extracted_requirement": "^3.9.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/lodash?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json"
+    },
+    {
+      "purl": "pkg:npm/moment",
+      "extracted_requirement": "^2.10.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/moment?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json"
+    },
+    {
+      "purl": "pkg:npm/wreck",
+      "extracted_requirement": "^5.6.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/wreck?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json"
+    },
+    {
+      "purl": "pkg:npm/grunt",
+      "extracted_requirement": ">=0.4.0",
+      "scope": "devDependencies",
+      "is_optional": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json"
+    },
+    {
+      "purl": "pkg:npm/load-grunt-config",
+      "extracted_requirement": "~0.19.0",
+      "scope": "devDependencies",
+      "is_optional": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/load-grunt-config?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json"
+    },
+    {
+      "purl": "pkg:npm/grunt",
+      "extracted_requirement": ">=0.4.0",
+      "scope": "peerDependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json"
+    },
+    {
+      "purl": "pkg:npm/%40angular/core",
+      "extracted_requirement": ">=2.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/%40angular/core?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-string/package.json"
+    },
+    {
+      "purl": "pkg:npm/%40angular/forms",
+      "extracted_requirement": ">=2.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/%40angular/forms?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-string/package.json"
+    },
+    {
+      "purl": "pkg:npm/%40angular/common",
+      "extracted_requirement": ">=2.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/%40angular/common?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-string/package.json"
+    },
+    {
+      "purl": "pkg:npm/rxjs",
+      "extracted_requirement": ">=5.0.0-beta.12",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/rxjs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-string/package.json"
+    },
+    {
+      "purl": "pkg:npm/zone.js",
+      "extracted_requirement": ">=0.6.21",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:npm/zone.js?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-string/package.json"
+    },
+    {
+      "purl": "pkg:pypi/numpy",
+      "extracted_requirement": ">=1.6",
+      "scope": "install",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:pypi/numpy?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py"
+    },
+    {
+      "purl": "pkg:pypi/pandas",
+      "extracted_requirement": ">=0.18",
+      "scope": "install",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:pypi/pandas?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py"
+    },
+    {
+      "purl": "pkg:pypi/deap",
+      "scope": "install",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:pypi/deap?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py"
+    },
+    {
+      "purl": "pkg:pypi/efel",
+      "extracted_requirement": ">=2.13",
+      "scope": "install",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:pypi/efel?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py"
+    },
+    {
+      "purl": "pkg:pypi/ipyparallel",
+      "scope": "install",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:pypi/ipyparallel?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py"
+    },
+    {
+      "purl": "pkg:pypi/pickleshare",
+      "extracted_requirement": ">=0.7.3",
+      "scope": "install",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:pypi/pickleshare?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py"
+    },
+    {
+      "purl": "pkg:pypi/jinja2",
+      "extracted_requirement": ">=2.8",
+      "scope": "install",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:pypi/jinja2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py"
+    },
+    {
+      "purl": "pkg:pypi/future",
+      "scope": "install",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:pypi/future?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py"
+    },
+    {
+      "purl": "pkg:pypi/pebble",
+      "extracted_requirement": ">=4.3.10",
+      "scope": "install",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:pypi/pebble?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py"
+    },
+    {
+      "purl": "pkg:pypi/scoop",
+      "extracted_requirement": ">=0.7",
+      "scope": "all",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:pypi/scoop?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py"
+    },
+    {
+      "purl": "pkg:pypi/scoop",
+      "extracted_requirement": ">=0.7",
+      "scope": "scoop",
+      "is_runtime": true,
+      "is_direct": true,
+      "dependency_uid": "pkg:pypi/scoop?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "manifests/npm-license-mapping/package.json",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "apache_2_0-0d7a2023-aae9-2989-7f00-27b713b809bb",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "manifests/npm-license-mapping/package.json",
+          "start_line": 18,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_identifier": "apache-2.0_required_phrase_7.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "manifests/npm-license-mapping/package.json",
+          "start_line": 6,
+          "end_line": 6,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_identifier": "apache-2.0_65.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "cddl_1_0-0507fc0c-7fd5-3ecd-8c7b-5ea542059d4f",
+      "license_expression_spdx": "CDDL-1.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression_spdx": "CDDL-1.0",
+          "from_file": "manifests/maven/persistence-api-1.0.pom",
+          "start_line": 17,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 21,
+          "match_coverage": 100.0,
+          "rule_identifier": "cddl-1.0_95.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "cddl_1_0-b17acf03-1e4f-20e6-cbb8-1b6945ee4c4c",
+      "license_expression_spdx": "CDDL-1.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression_spdx": "CDDL-1.0",
+          "from_file": "manifests/maven/persistence-api-1.0.pom",
+          "start_line": 1,
+          "end_line": 2,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 17,
+          "match_coverage": 100.0,
+          "rule_identifier": "cddl-1.0_98.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321",
+      "license_expression_spdx": "LGPL-3.0-only",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression_spdx": "LGPL-3.0-only",
+          "from_file": "manifests/pypi/bluepyopt_setup.py",
+          "start_line": 74,
+          "end_line": 75,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 10,
+          "match_coverage": 100.0,
+          "rule_identifier": "pypi_gnu_lesser_general_public_license_v3.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "lgpl_3_0-121be3c2-9c80-df84-d3da-8f674e4125c0",
+      "license_expression_spdx": "LGPL-3.0-only",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression_spdx": "LGPL-3.0-only",
+          "from_file": "manifests/pypi/bluepyopt_setup.py",
+          "start_line": 9,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 106,
+          "match_coverage": 100.0,
+          "rule_identifier": "lgpl-3.0_276.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "lgpl_3_0-2db87bcf-56b4-9d7d-7075-2effae31c631",
+      "license_expression_spdx": "LGPL-3.0-only",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression_spdx": "LGPL-3.0-only",
+          "from_file": "manifests/pypi/bluepyopt_setup.py",
+          "start_line": 65,
+          "end_line": 65,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_identifier": "lgpl-3.0_152.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5",
+      "license_expression_spdx": "LGPL-3.0-only",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression_spdx": "LGPL-3.0-only",
+          "from_file": "manifests/pypi/bluepyopt_setup.py",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_identifier": "lgpl-3.0_29.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression_spdx": "MIT",
+          "from_file": "manifests/npm-license-string/package.json",
+          "start_line": 4,
+          "end_line": 4,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_identifier": "mit_30.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression_spdx": "MIT",
+          "from_file": "manifests/npm-license-string/package.json",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "manifests",
+      "type": "directory",
+      "files_count": 4,
+      "dirs_count": 4,
+      "size_count": 6962
+    },
+    {
+      "path": "manifests/maven",
+      "type": "directory",
+      "for_packages": [
+        "pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "files_count": 1,
+      "size_count": 1307
+    },
+    {
+      "path": "manifests/maven/persistence-api-1.0.pom",
+      "type": "file",
+      "size": 1307,
+      "sha1": "82107f6781df8da9aa7cb60abc649208256af5cb",
+      "md5": "e79938fe4e630b02e3526c0195292cc6",
+      "sha256": "f94648bd92ddf2464e62c56c3833b36927fa8b9803e8ebf3e4cfa7f2d797f3ad",
+      "sha1_git": "614191600be349e61331a3a0eb2b883493f0db0f",
+      "mime_type": "text/xml",
+      "file_type": "XML 1.0 document, ASCII text",
+      "is_text": true,
+      "for_packages": [
+        "pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression_spdx": "CDDL-1.0",
+      "percentage_of_license_text": 12.14,
+      "urls": [
+        {
+          "url": "http://www.jcp.org/en/jsr/detail?id=220",
+          "start_line": 15,
+          "end_line": 15
+        },
+        {
+          "url": "http://www.sun.com/cddl/cddl.html",
+          "start_line": 20,
+          "end_line": 20
+        }
+      ],
+      "package_data": [
+        {
+          "purl": "pkg:maven/javax.persistence/persistence-api@1.0"
+        }
+      ],
+      "license_detections": [
+        {
+          "identifier": "cddl_1_0-0507fc0c-7fd5-3ecd-8c7b-5ea542059d4f"
+        }
+      ]
+    },
+    {
+      "path": "manifests/npm-license-mapping",
+      "type": "directory",
+      "files_count": 1,
+      "size_count": 1184
+    },
+    {
+      "path": "manifests/npm-license-mapping/package.json",
+      "type": "file",
+      "size": 1184,
+      "sha1": "0ed61bf6912407a143ce96c95bea56ad13463f5b",
+      "md5": "427e6d3b579b128fed50328ac65b698e",
+      "sha256": "d292aa647dc82e007ba319c878ec182d6f235f0a923cfe012ffc0ae8b7fa23be",
+      "sha1_git": "fee016dc24204e079cb9e0217d4439d73e1398ac",
+      "mime_type": "application/json",
+      "file_type": "JSON data",
+      "is_text": true,
+      "for_packages": [
+        "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression_spdx": "Apache-2.0",
+      "percentage_of_license_text": 7.09,
+      "authors": [
+        {
+          "author": "Spencer Alger",
+          "start_line": 7,
+          "end_line": 8
+        }
+      ],
+      "emails": [
+        {
+          "email": "spencer.alger@elasticsearch.com",
+          "start_line": 9,
+          "end_line": 9
+        }
+      ],
+      "urls": [
+        {
+          "url": "https://github.com/spenceralger/grunt-esvm",
+          "start_line": 5,
+          "end_line": 5
+        },
+        {
+          "url": "git://github.com/spenceralger/grunt-esvm.git",
+          "start_line": 13,
+          "end_line": 13
+        },
+        {
+          "url": "https://github.com/spenceralger/grunt-esvm/issues",
+          "start_line": 16,
+          "end_line": 16
+        },
+        {
+          "url": "https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md",
+          "start_line": 21,
+          "end_line": 21
+        }
+      ],
+      "package_data": [
+        {
+          "purl": "pkg:npm/grunt-esvm@3.2.8"
+        }
+      ],
+      "license_detections": [
+        {
+          "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0"
+        },
+        {
+          "identifier": "apache_2_0-0d7a2023-aae9-2989-7f00-27b713b809bb"
+        }
+      ]
+    },
+    {
+      "path": "manifests/npm-license-string",
+      "type": "directory",
+      "files_count": 1,
+      "size_count": 1544
+    },
+    {
+      "path": "manifests/npm-license-string/package.json",
+      "type": "file",
+      "size": 1544,
+      "sha1": "e6acddf907b7089d197d9d46879cd18ffb8f5198",
+      "md5": "5ba816691af915c02567f459ae26ebd6",
+      "sha256": "11129bc3bbf44b2567307ad13a31bc231f08416919e36bbdeabb9195b3e6ad58",
+      "sha1_git": "99128a9e08f5a23c650d83af5dcf40c3b976753d",
+      "mime_type": "application/json",
+      "file_type": "JSON data",
+      "is_text": true,
+      "for_packages": [
+        "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression_spdx": "MIT",
+      "percentage_of_license_text": 1.32,
+      "emails": [
+        {
+          "email": "npm@dan.gl",
+          "start_line": 28,
+          "end_line": 28
+        }
+      ],
+      "urls": [
+        {
+          "url": "https://github.com/GeorgDangl/angular-compare-validator.git",
+          "start_line": 7,
+          "end_line": 7
+        },
+        {
+          "url": "https://github.com/GeorgDangl/angular-compare-validator/issues",
+          "start_line": 20,
+          "end_line": 20
+        },
+        {
+          "url": "https://github.com/GeorgDangl/angular-compare-validator#readme",
+          "start_line": 22,
+          "end_line": 22
+        },
+        {
+          "url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
+          "start_line": 33,
+          "end_line": 33
+        }
+      ],
+      "package_data": [
+        {
+          "purl": "pkg:npm/angular-compare-validator@0.1.1"
+        }
+      ],
+      "license_detections": [
+        {
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ]
+    },
+    {
+      "path": "manifests/pypi",
+      "type": "directory",
+      "files_count": 1,
+      "size_count": 2927
+    },
+    {
+      "path": "manifests/pypi/bluepyopt_setup.py",
+      "type": "file",
+      "size": 2927,
+      "sha1": "5507192502255517e006c531d07dd84dc2325be8",
+      "md5": "6795bed0c9c6b6cb915bfa959a2d1d4a",
+      "sha256": "4378d297df9fcb4f65fdcd1299e17eef7db86883baf149bc41b0335f943cf006",
+      "sha1_git": "887bd3bfe3bdba0c8f737a69df38454b3d489ac1",
+      "mime_type": "text/x-script.python",
+      "file_type": "Python script, ASCII text executable",
+      "programming_language": "Python",
+      "is_text": true,
+      "is_source": true,
+      "is_script": true,
+      "for_packages": [
+        "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression_spdx": "LGPL-3.0-only",
+      "percentage_of_license_text": 34.71,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2016-2020, EPFL/Blue Brain Project",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "holders": [
+        {
+          "holder": "EPFL/Blue Brain Project",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "authors": [
+        {
+          "author": "BlueBrain Project",
+          "start_line": 54,
+          "end_line": 54
+        }
+      ],
+      "emails": [
+        {
+          "email": "werner.vangeit@epfl.ch",
+          "start_line": 55,
+          "end_line": 55
+        }
+      ],
+      "urls": [
+        {
+          "url": "https://github.com/BlueBrain/BluePyOpt",
+          "start_line": 7,
+          "end_line": 7
+        }
+      ],
+      "package_data": [
+        {
+          "purl": "pkg:pypi/bluepyopt"
+        }
+      ],
+      "license_detections": [
+        {
+          "identifier": "lgpl_3_0-121be3c2-9c80-df84-d3da-8f674e4125c0"
+        },
+        {
+          "identifier": "lgpl_3_0-2db87bcf-56b4-9d7d-7075-2effae31c631"
+        },
+        {
+          "identifier": "lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321"
+        }
+      ]
+    }
+  ]
+}
