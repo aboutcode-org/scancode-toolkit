@@ -4343,19 +4343,18 @@ def is_candidate(prepared_line):
 
         return False
 
+    # check for years and markers first: gibberish detection is much slower
+    if not copyrights_hint.years(prepared_line):
+        lowered_line = prepared_line.lower()
+        if not any(marker in lowered_line for marker in copyrights_hint.statement_markers):
+            return False
+
     if gibberish_detector.detect_gibberish(prepared_line):
         if TRACE:
             logger_debug(f'is_candidate: gibberish_detector.detect_gibberish:\n{prepared_line!r}')
         return False
 
-    if copyrights_hint.years(prepared_line):
-        return True
-    else:
-        pass
-    prepared_line = prepared_line.lower()
-    for marker in copyrights_hint.statement_markers:
-        if marker in prepared_line:
-            return True
+    return True
 
 
 def is_inside_statement(

@@ -305,7 +305,25 @@ def strip_known_markup_from_text(text):
     """
     Str_ip markup tags from ``text`` using a list of tags
     """
+    if not may_have_known_markup(text):
+        # nothing in text could be dropped by keep_tag: only normalize spaces
+        return " ".join(text.split())
     return get_demarkuped_text(text, splitter=split_on_tags, keeper=keep_tag)
+
+
+def may_have_known_markup(text):
+    """
+    Return True if ``text`` may contain a token that ``keep_tag`` would drop.
+    Return False only when splitting ``text`` with ``split_on_tags`` cannot
+    yield any such token: there is no "<" or ">", no skipped attribute and
+    no tag without angle brackets.
+    """
+    if "<" in text or ">" in text:
+        return True
+    if any(attribute in text for attribute in SKIP_ATTRIBUTES):
+        return True
+    tlow = text.lower()
+    return any(tag in tlow for tag in BARE_TAGS)
 
 
 ALL_TAGS = frozenset(
@@ -1927,6 +1945,9 @@ ALL_TAGS = frozenset(
         "http://www.w3.org/xml/1998/namespace",
     ]
 )
+
+# tags that can match a token without any "<" or ">"
+BARE_TAGS = tuple(sorted(t for t in ALL_TAGS if "<" not in t and ">" not in t))
 
 
 SKIP_ATTRIBUTES = (
