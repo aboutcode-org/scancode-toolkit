@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Preserve Unicode characters in extracted URLs and remove surrounding typographic quotation marks.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4475
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

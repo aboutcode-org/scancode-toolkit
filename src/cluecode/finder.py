@@ -13,7 +13,6 @@ import re
 import ipaddress
 import urlpy
 
-from commoncode.text import toascii
 from cluecode import finder_data
 from textcode import analysis
 
@@ -67,7 +66,7 @@ def find(location, patterns):
                 if TRACE:
                     logger_debug('find: yielding match: key=%(key)r, '
                           'match=%(match)r,\n    line=%(line)r' % locals())
-                yield key, toascii(match), line, line_number
+                yield key, match, line, line_number
 
 
 def unique_filter(matches):
@@ -291,6 +290,14 @@ def verbatim_crlf_url_cleaner(matches):
         yield key, url, line, line_number
 
 
+END_OF_URL_DELIMITERS = (
+    '\\', '<', '>', '(', ')', '[', ']', '"', "'",
+    '”', '“', '’', '‘', '»', '«',
+)
+END_OF_URL_PUNCTUATION = string.punctuation + '“”‘’«»'
+END_OF_URL_PUNCTUATION_NO_SLASH = ''.join(c for c in END_OF_URL_PUNCTUATION if c != '/')
+
+
 def end_of_url_cleaner(matches):
     """
     Given an iterable of URL matches, return an iterable where junk characters
@@ -302,16 +309,10 @@ def end_of_url_cleaner(matches):
             url = url.replace(u'&lt;', u'<')
             url = url.replace(u'&gt;', u'>')
             url = url.replace(u'&amp;', u'&')
-            url = url.rstrip(string.punctuation)
-            url = url.split(u'\\')[0]
-            url = url.split(u'<')[0]
-            url = url.split(u'>')[0]
-            url = url.split(u'(')[0]
-            url = url.split(u')')[0]
-            url = url.split(u'[')[0]
-            url = url.split(u']')[0]
-            url = url.split(u'"')[0]
-            url = url.split(u"'")[0]
+            url = url.rstrip(END_OF_URL_PUNCTUATION)
+            for delim in END_OF_URL_DELIMITERS:
+                url = url.split(delim)[0]
+            url = url.rstrip(END_OF_URL_PUNCTUATION_NO_SLASH)
         yield key, url, line, line_number
 
 
