@@ -202,7 +202,6 @@ ignores_Build_scripts = {
     "stamp-h1": "Default ignore: autoconf artifact",
     "m4/": "Default ignore: autoconf artifact",
     "autogen.sh": "Default ignore: autotools artifact",
-    "autogen.sh": "Default ignore: autotools artifact",
     "CMakeCache.txt": "Default ignore: CMake artifact",
     "cmake_install.cmake": "Default ignore: CMake artifact",
     "install_manifest.txt": "Default ignore: CMake artifact",
