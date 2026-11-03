@@ -1153,6 +1153,9 @@ PATTERNS = [
     (r'^Upstream-Author:?$', 'JUNK'),
     (r'^Packaged-By:?$', 'JUNK'),
 
+    # Python package metadata fields must not extend an author name.
+    (r'^Project-URL:?$', 'JUNK'),
+
     # Windows XP
     (r'^Windows$', 'JUNK'),
     (r'^XP$', 'JUNK'),
