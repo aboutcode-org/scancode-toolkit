@@ -58,4 +58,4 @@ it is recommended to run the help command.
 
     For use in development, run instead ``configure --dev``. If your encounter
     issues while configuring a previous version, use ``configure --clean`` to
-    clean and reset your enviroment. After that, run ``configure`` again.
+    clean and reset your environment. After that, run ``configure`` again.
