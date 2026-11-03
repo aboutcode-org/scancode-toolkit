@@ -1,0 +1,8 @@
+pkgbase = example
+	pkgver = 2.0
+	pkgrel = 1
+	pkgdesc = A split package
+	license = Apache-2.0
+pkgname = example
+pkgname = example-tools
+	depends = example

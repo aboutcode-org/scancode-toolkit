@@ -37,6 +37,7 @@ from packagedcode import pypi
 from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
+from packagedcode import srcinfo
 from packagedcode import swift
 from packagedcode import win_pe
 from packagedcode import windows
@@ -190,6 +191,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     rubygems.GemMetadataArchiveExtractedHandler,
     rubygems.GemArchiveHandler,
+
+    srcinfo.SrcinfoHandler,
 
     # the order of these handlers matter
     rubygems.GemfileInExtractedGemHandler,

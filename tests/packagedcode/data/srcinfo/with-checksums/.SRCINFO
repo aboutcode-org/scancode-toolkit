@@ -1,0 +1,12 @@
+pkgbase = rust-checksums
+	pkgdesc = Package with checksums
+	pkgver = 1.0.0
+	pkgrel = 1
+	arch = x86_64
+	license = MIT
+	source = file1.tar.gz
+	source = file2.tar.gz
+	sha256sums = abc123def456
+	sha256sums = 789ghi012jkl
+
+pkgname = rust-checksums
