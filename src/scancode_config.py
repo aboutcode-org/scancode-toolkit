@@ -131,7 +131,7 @@ if not __version__:
 
 # 4. hardcoded This is the default, fallback version in case package is not installed or we
 # do not have a proper version otherwise.
-# See https://scancode-toolkit.readthedocs.io/en/latest/misc/versioning.html for
+# See https://scancode-toolkit.readthedocs.io/en/latest/explanation/scancode-versioning.html for
 # more information on versioning
 if not __version__:
     __version__ = '33.0.0rc1'
@@ -141,7 +141,7 @@ if not __version__:
 # this is (year, month, day)
 __release_date__ = datetime.datetime(2026, 1, 15)
 
-# See https://scancode-toolkit.readthedocs.io/en/latest/misc/versioning.html
+# See https://scancode-toolkit.readthedocs.io/en/latest/explanation/scancode-versioning.html
 # for more information on the data format version
 __output_format_version__ = '4.1.0'
 
