@@ -4440,11 +4440,25 @@ def collect_candidate_lines(numbered_lines):
                 logger_debug('   collect_candidate_lines: line is candidate')
 
         elif in_copyright > 0:
+            # Dash-list entries in C comments are changelog items, not part
+            # of the preceding copyright. Preserve plain leading dashes and
+            # SQL-style comment prefixes used in multiline holder names.
+            # see https://github.com/aboutcode-org/scancode-toolkit/issues/4867
+            if (
+                line.lstrip().startswith('* - ')
+                and not is_candidate(prepared)
+            ):
+                if candidates:
+                    yield list(candidates)
+                    candidates_clear()
+                in_copyright = 0
+                previous_chars = None
+
             # these are a sign that the copyrights continue after
             # a possibly empty line
             # see https://github.com/nexB/scancode-toolkit/issues/1565
             # if these are no present we treat empty lines... as empty!
-            if (
+            elif (
                 not chars_only
                 and (
                     not previous_chars.endswith((

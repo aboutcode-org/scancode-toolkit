@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Exclude C-comment changelog list entries from copyright and holder statements.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4867
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
