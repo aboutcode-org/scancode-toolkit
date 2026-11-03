@@ -949,6 +949,11 @@ class StructuredCopyrightProcessor(DebianDetector):
         name = paragraph.license.name
 
         if not name:
+            if 'license' not in paragraph.line_numbers_by_field:
+                return get_license_detections_from_other_fields(
+                    paragraph=paragraph,
+                    check_copyright=True,
+                ) or []
             license_detections.append(
                 get_license_detection_from_nameless_paragraph(paragraph=paragraph)
             )
@@ -1815,10 +1820,12 @@ def add_undetected_debian_matches(name, text):
     return get_undetected_matches(query_string)
 
 
-def get_license_detections_from_other_fields(paragraph):
+def get_license_detections_from_other_fields(paragraph, check_copyright=False):
     """
     Return a list of DebianLicenseDetection found in a ``paragraph`` comment,
-    disclaimer or extra_data fields, e.g. all but the "license" field
+    disclaimer or extra_data fields, e.g. all but the "license" field.
+    Also check the copyright field for misplaced notices when ``check_copyright``
+    is True (for paragraphs without a License field).
     """
 
     def detect_license_and_save(fname, fvalue):
@@ -1837,6 +1844,12 @@ def get_license_detections_from_other_fields(paragraph):
                 license_detections.append(fdetection)
 
     license_detections = []
+    if check_copyright and getattr(paragraph, 'copyright', None):
+        detect_license_and_save(
+            fname='copyright',
+            fvalue=paragraph.copyright.dumps(),
+        )
+
     for field_name in ('comment', 'disclaimer',):
         field = getattr(paragraph, field_name, None)
         if not field:
