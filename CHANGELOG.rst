@@ -26,6 +26,9 @@ Next release
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
+- Remove an unreachable duplicate ``LGPL`` key in the rubygems license mapping.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5314
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
