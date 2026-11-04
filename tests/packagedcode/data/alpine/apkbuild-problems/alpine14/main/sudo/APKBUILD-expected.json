@@ -42,7 +42,7 @@
           "rule_relevance": 100,
           "rule_identifier": "spdx-license-identifier-unknown_license_reference_and_isc-931c1a1fdf45228cefb05b09f05449a73fc24287",
           "rule_url": null,
-          "matched_text": "licenseref-scancode-unknown-license-reference AND isc"
+          "matched_text": "custom AND isc"
         }
       ],
       "identifier": "unknown_license_reference_and_isc-61129f5a-ee34-d370-e8c0-7a9b7c0679db"

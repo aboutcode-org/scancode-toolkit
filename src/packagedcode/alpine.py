@@ -1408,6 +1408,12 @@ def get_alpine_license_detection(declared):
         expression_symbols=expression_symbols,
     )
 
+    if declared and license_detections:
+        fix_alpine_matched_text(
+            license_detections=license_detections,
+            declared=declared,
+        )
+
     return ApkLicenseDetection(
         declared_license=declared,
         cleaned_license=cleaned_license,
@@ -1415,6 +1421,30 @@ def get_alpine_license_detection(declared):
         license_expression=license_expression,
         license_detections=license_detections,
     )
+
+
+def fix_alpine_matched_text(license_detections, declared):
+    """
+    Restore declared Alpine license tokens in matches containing synthetic SPDX
+    references. Keep the mapped expression used for license identification.
+    """
+    replacements = {}
+    for source, target in sorted(DECLARED_TO_SPDX.items(), key=lambda item: -len(item[0])):
+        if 'licenseref-scancode-' not in target.lower():
+            continue
+        original = re.search(r'\b' + re.escape(source) + r'\b', declared, re.IGNORECASE)
+        if original:
+            # Prefer the longest matching alias, e.g. custom:multiple to custom.
+            replacements.setdefault(target.lower(), original.group())
+
+    for detection in license_detections:
+        for match in detection['matches']:
+            match['matched_text'] = re.sub(
+                r'\blicenseref-scancode-[a-z0-9.+-]+\b',
+                lambda token: replacements.get(token.group().lower(), token.group()),
+                match['matched_text'],
+                flags=re.IGNORECASE,
+            )
 
 
 def detect_declared_license(declared):

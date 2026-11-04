@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Preserve declared Alpine license tokens in matched text instead of exposing synthetic SPDX references.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4307
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

@@ -42,7 +42,7 @@
           "rule_relevance": 100,
           "rule_identifier": "spdx-license-identifier-unknown_license_reference-555dc1c4c5d6d483173bdc629017bd81905d82ab",
           "rule_url": null,
-          "matched_text": "licenseref-scancode-unknown-license-reference"
+          "matched_text": "custom:multiple"
         }
       ],
       "identifier": "unknown_license_reference-50b9bf54-338e-5bf6-ccb9-ac71fdc12e10"

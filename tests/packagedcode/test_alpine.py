@@ -8,6 +8,7 @@
 #
 
 import os.path
+import unittest
 
 from packagedcode import alpine
 from packages_test_utils  import build_tests
@@ -107,3 +108,29 @@ build_tests(
     test_file_suffix='APKBUILD',
     regen=REGEN_TEST_FIXTURES,
 )
+
+
+class TestAlpineMatchedLicenseText(unittest.TestCase):
+    def test_alpine_license_detection_matched_text_custom_multiple(self):
+        # Regression test for https://github.com/aboutcode-org/scancode-toolkit/issues/4307
+        detection = alpine.get_alpine_license_detection("custom:multiple")
+        self.assertEqual(detection.declared_license, "custom:multiple")
+        self.assertEqual(detection.license_expression, "unknown-license-reference")
+        self.assertEqual(len(detection.license_detections), 1)
+        matches = detection.license_detections[0]["matches"]
+        self.assertEqual(len(matches), 1)
+        self.assertEqual(matches[0]["matched_text"], "custom:multiple")
+        self.assertNotIn("licenseref-scancode-", matches[0]["matched_text"])
+
+    def test_alpine_license_detection_matched_text_custom_isc(self):
+        detection = alpine.get_alpine_license_detection("custom ISC")
+        self.assertEqual(detection.license_expression, "unknown-license-reference AND isc")
+        matches = detection.license_detections[0]["matches"]
+        self.assertNotIn("licenseref-scancode-", matches[0]["matched_text"])
+
+    def test_alpine_license_detection_matched_text_public_domain(self):
+        detection = alpine.get_alpine_license_detection("Public-Domain")
+        self.assertEqual(detection.license_expression, "public-domain")
+        matches = detection.license_detections[0]["matches"]
+        self.assertEqual(matches[0]["matched_text"], "Public-Domain")
+        self.assertNotIn("licenseref-scancode-", matches[0]["matched_text"])
