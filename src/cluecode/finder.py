@@ -13,6 +13,7 @@ import re
 import ipaddress
 import urlpy
 
+from commoncode.text import toascii
 from cluecode import finder_data
 from textcode import analysis
 
@@ -46,13 +47,14 @@ Optionally apply filters to pattern matches.
 """
 
 
-def find(location, patterns):
+def find(location, patterns, *, ascii_matches=True):
     """
     Yield match and matched lines for patterns found in file at location as a
     tuple of (key, found text, text line). `patterns` is a list of tuples (key,
     compiled regex).
 
     Note: the location can be a list of lines for testing convenience.
+    Set `ascii_matches` to False to keep the original matched characters.
     """
     if TRACE:
         from pprint import pformat
@@ -66,7 +68,7 @@ def find(location, patterns):
                 if TRACE:
                     logger_debug('find: yielding match: key=%(key)r, '
                           'match=%(match)r,\n    line=%(line)r' % locals())
-                yield key, match, line, line_number
+                yield key, toascii(match) if ascii_matches else match, line, line_number
 
 
 def unique_filter(matches):
@@ -232,7 +234,7 @@ def find_urls(location, unique=True):
     `location` can be a list of strings for testing.
     """
     patterns = [('urls', urls_regex(),)]
-    matches = find(location, patterns)
+    matches = find(location, patterns, ascii_matches=False)
     if TRACE:
         matches = list(matches)
         for m in matches:
@@ -290,12 +292,12 @@ def verbatim_crlf_url_cleaner(matches):
         yield key, url, line, line_number
 
 
-END_OF_URL_DELIMITERS = (
-    '\\', '<', '>', '(', ')', '[', ']', '"', "'",
-    '”', '“', '’', '‘', '»', '«',
-)
-END_OF_URL_PUNCTUATION = string.punctuation + '“”‘’«»'
-END_OF_URL_PUNCTUATION_NO_SLASH = ''.join(c for c in END_OF_URL_PUNCTUATION if c != '/')
+URL_TEXT_TRANSLATION = str.maketrans({
+    '“': '"', '”': '"', '«': '"', '»': '"',
+    '‘': "'", '’': "'",
+    '\u200b': None,  # zero-width space inserted by formatted text
+    '\u2060': None,  # word joiner inserted by formatted text
+})
 
 
 def end_of_url_cleaner(matches):
@@ -305,14 +307,21 @@ def end_of_url_cleaner(matches):
     This is not entirely correct, but works practically.
     """
     for key, url, line, line_number in matches:
+        url = url.translate(URL_TEXT_TRANSLATION)
         if not url.endswith('/'):
             url = url.replace(u'&lt;', u'<')
             url = url.replace(u'&gt;', u'>')
             url = url.replace(u'&amp;', u'&')
-            url = url.rstrip(END_OF_URL_PUNCTUATION)
-            for delim in END_OF_URL_DELIMITERS:
-                url = url.split(delim)[0]
-            url = url.rstrip(END_OF_URL_PUNCTUATION_NO_SLASH)
+            url = url.rstrip(string.punctuation)
+            url = url.split(u'\\')[0]
+            url = url.split(u'<')[0]
+            url = url.split(u'>')[0]
+            url = url.split(u'(')[0]
+            url = url.split(u')')[0]
+            url = url.split(u'[')[0]
+            url = url.split(u']')[0]
+            url = url.split(u'"')[0]
+            url = url.split(u"'")[0]
         yield key, url, line, line_number
 
 
