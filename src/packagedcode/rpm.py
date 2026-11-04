@@ -19,6 +19,7 @@ from packagedcode import models
 from packagedcode import nevra
 from packagedcode.licensing import RESOURCE_TO_PACKAGE_LICENSE_FIELDS
 from packagedcode.pyrpm import RPM
+from packagedcode.pyrpm import RPMError
 from packagedcode.rpm_installed import collect_installed_rpmdb_xmlish_from_rpmdb_loc
 from packagedcode.rpm_installed import parse_rpm_xmlish
 from packagedcode.utils import build_description
@@ -82,13 +83,22 @@ def get_rpm_tags(location, include_desc=False):
     """
     Return an RPMtags object for the file at location or None.
     Include the long RPM description value if `include_desc` is True.
+    Return None if the file at location cannot be parsed as an RPM
+    archive, for instance a broken or truncated archive.
     """
-    with open(location, 'rb') as rpmf:
-        rpm = RPM(rpmf)
-        tags = {k: v for k, v in rpm.to_dict().items() if k in RPM_TAGS}
-        if not include_desc:
-            tags['description'] = None
-        return RPMtags(**tags)
+    try:
+        with open(location, 'rb') as rpmf:
+            rpm = RPM(rpmf)
+            tags = {k: v for k, v in rpm.to_dict().items() if k in RPM_TAGS}
+    except (RPMError, Exception) as e:
+        # A broken archive should not abort a scan: report no tags instead.
+        # Note that RPMError derives from BaseException and would not be
+        # caught by Exception alone.
+        if TRACE: logger_debug('get_rpm_tags: failed to parse:', location, e)
+        return
+    if not include_desc:
+        tags['description'] = None
+    return RPMtags(**tags)
 
 
 class EVR(namedtuple('EVR', 'epoch version release')):

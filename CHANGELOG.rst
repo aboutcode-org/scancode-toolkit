@@ -26,6 +26,12 @@ Next release
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
+- Do not abort a scan when encountering a broken RPM archive:
+  ``packagedcode.rpm.get_rpm_tags`` now returns no tags for an archive
+  that cannot be parsed, such as a non-RPM file with an ``.rpm``
+  extension or a truncated archive, instead of raising an error.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5407
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
