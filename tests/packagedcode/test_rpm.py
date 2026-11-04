@@ -113,6 +113,30 @@ class TestRpmBasics(FileBasedTesting):
         expected = expected._replace(description=None)
         assert rpm.get_rpm_tags(test_file, include_desc=False) == expected
 
+    def test_get_rpm_tags_returns_none_for_non_rpm_file(self):
+        test_file = self.get_test_loc('rpm/broken/not-an-rpm.rpm')
+        assert rpm.get_rpm_tags(test_file) is None
+
+    def test_get_rpm_tags_returns_none_for_empty_file(self):
+        test_file = self.get_test_loc('rpm/broken/empty.rpm')
+        assert rpm.get_rpm_tags(test_file) is None
+
+    def test_get_rpm_tags_returns_none_for_truncated_rpm(self):
+        test_file = self.get_test_loc('rpm/broken/truncated-lead.rpm')
+        assert rpm.get_rpm_tags(test_file) is None
+        test_file = self.get_test_loc('rpm/broken/truncated-header.rpm')
+        assert rpm.get_rpm_tags(test_file) is None
+
+    def test_parse_does_not_raise_for_broken_rpm(self):
+        for broken_loc in (
+            'rpm/broken/not-an-rpm.rpm',
+            'rpm/broken/empty.rpm',
+            'rpm/broken/truncated-lead.rpm',
+            'rpm/broken/truncated-header.rpm',
+        ):
+            test_file = self.get_test_loc(broken_loc)
+            assert list(rpm.RpmArchiveHandler.parse(test_file)) == []
+
     def test_rpm_is_manifest_non_rpm_file(self):
         test_file = self.get_test_loc('rpm/README.txt')
         assert not rpm.RpmArchiveHandler.is_datafile(test_file)
