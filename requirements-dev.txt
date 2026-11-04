@@ -8,7 +8,7 @@ commonmark==0.9.1
 docutils==0.19
 doc8==2.0.0
 et-xmlfile==1.1.0
-execnet==1.9.0
+execnet==2.1.1
 flot==0.7.3
 iniconfig==1.1.1
 isort==5.10.1
@@ -24,7 +24,7 @@ py==1.11.0
 pytest==9.0.3
 pytest-forked==1.4.0
 pytest-rerunfailures==16.1
-pytest-xdist==2.5.0
+pytest-xdist==3.8.0
 readme-renderer==35.0
 requests==2.32.5
 requests-toolbelt==0.9.1

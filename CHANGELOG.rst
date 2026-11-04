@@ -6,6 +6,9 @@ Next release
 
 - Add the missing ignorable template URL to two FSL license reference rules.
 
+- Update the pinned parallel test runner to execute worker tests in the main
+  thread, as required by the POSIX signal-based timeout tests.
+
 - Skip email and URL regular expression matching on lines without the
   required markers, while preserving detections and source line numbers.
   https://github.com/aboutcode-org/scancode-toolkit/issues/595
