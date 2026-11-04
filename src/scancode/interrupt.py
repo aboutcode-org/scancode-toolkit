@@ -46,8 +46,8 @@ class TimeoutError(Exception):  # NOQA
 
 DEFAULT_TIMEOUT = 120  # seconds
 
-TIMEOUT_MSG = 'ERROR: Processing interrupted: timeout after %(timeout)d seconds.'
-ERROR_MSG = 'ERROR: Unknown error:\n'
+TIMEOUT_MSG = "ERROR: Processing interrupted: timeout after %(timeout)d seconds."
+ERROR_MSG = "ERROR: Unknown error:\n"
 NO_ERROR = None
 NO_VALUE = None
 
@@ -85,9 +85,15 @@ if not on_windows:
         def handler(signum, frame):
             raise TimeoutError
 
+        has_signal = False
         try:
-            create_signal(SIGALRM, handler)
-            setitimer(ITIMER_REAL, timeout)
+            try:
+                create_signal(SIGALRM, handler)
+                setitimer(ITIMER_REAL, timeout)
+                has_signal = True
+            except ValueError:
+                # signal only works in main thread of the main interpreter
+                pass
             return NO_ERROR, func(*(args or ()), **(kwargs or {}))
 
         except TimeoutError:
@@ -97,7 +103,8 @@ if not on_windows:
             return ERROR_MSG + traceback_format_exc(), NO_VALUE
 
         finally:
-            setitimer(ITIMER_REAL, 0)
+            if has_signal:
+                setitimer(ITIMER_REAL, 0)
 
 elif on_windows:
     """
@@ -107,14 +114,13 @@ elif on_windows:
     But no code has been reused from this post.
     """
 
+    from _thread import start_new_thread
     from ctypes import c_long
     from ctypes import py_object
     from ctypes import pythonapi
     from multiprocessing import TimeoutError as MpTimeoutError
-
     from queue import Empty as Queue_Empty
     from queue import Queue
-    from _thread import start_new_thread
 
     def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
         """
@@ -131,9 +137,19 @@ elif on_windows:
             """
             try:
                 _res = func(*(args or ()), **(kwargs or {}))
-                results.put((NO_ERROR, _res,))
+                results.put(
+                    (
+                        NO_ERROR,
+                        _res,
+                    )
+                )
             except Exception:
-                results.put((ERROR_MSG + traceback_format_exc(), NO_VALUE,))
+                results.put(
+                    (
+                        ERROR_MSG + traceback_format_exc(),
+                        NO_VALUE,
+                    )
+                )
 
         tid = start_new_thread(runner, ())
 
@@ -167,18 +183,18 @@ elif on_windows:
         from http://tomerfiliba.com/recipes/Thread2/
         license: public domain.
         """
-        assert isinstance(tid, int), 'Invalid  thread id: must an integer'
+        assert isinstance(tid, int), "Invalid  thread id: must an integer"
 
         tid = c_long(tid)
         exception = py_object(Exception)
         res = pythonapi.PyThreadState_SetAsyncExc(tid, exception)
         if res == 0:
-            raise ValueError('Invalid thread id.')
+            raise ValueError("Invalid thread id.")
         elif res != 1:
             # if it returns a number greater than one, you're in trouble,
             # and you should call it again with exc=NULL to revert the effect
             pythonapi.PyThreadState_SetAsyncExc(tid, 0)
-            raise SystemError('PyThreadState_SetAsyncExc failed.')
+            raise SystemError("PyThreadState_SetAsyncExc failed.")
 
 
 def fake_interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):

@@ -80,7 +80,7 @@ class LicenseClarityScore(PostScanPlugin):
         codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
 
 
-def compute_license_score(codebase):
+def compute_license_score(codebase=None, resources=None):
     """
     Return a mapping of scoring elements and a license clarity score computed at
     the codebase level.
@@ -126,17 +126,21 @@ def compute_license_score(codebase):
       such as copyleft and proprietary, have been detected in lower level code.
     - Scoring Weight = -20
     """
+    if resources is None:
+        if codebase is None:
+            raise ValueError("Either codebase or resources must be provided.")
+        resources = list(codebase.walk(topdown=True))
 
     scoring_elements = ScoringElements()
-    license_detections = get_field_values_from_codebase_resources(
-        codebase=codebase,
+    license_detections = get_field_values_from_resources(
+        resources=resources,
         field_name='license_detections',
         key_files_only=True,
     )
     license_match_mappings = get_matches_from_detection_mappings(license_detections)
     license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
-    declared_license_expressions = get_field_values_from_codebase_resources(
-        codebase=codebase,
+    declared_license_expressions = get_field_values_from_resources(
+        resources=resources,
         field_name='detected_license_expression',
         key_files_only=True,
         is_string=True,
@@ -145,12 +149,16 @@ def compute_license_score(codebase):
     unique_declared_license_expressions = unique(declared_license_expressions)
     declared_license_categories = get_license_categories(license_matches)
 
-    copyrights = get_field_values_from_codebase_resources(
-        codebase=codebase, field_name='copyrights', key_files_only=True
+    copyrights = get_field_values_from_resources(
+        resources=resources,
+        field_name='copyrights',
+        key_files_only=True,
     )
 
-    other_license_detections = get_field_values_from_codebase_resources(
-        codebase=codebase, field_name='license_detections', key_files_only=False
+    other_license_detections = get_field_values_from_resources(
+        resources=resources,
+        field_name='license_detections',
+        key_files_only=False,
     )
     other_license_match_mappings = get_matches_from_detection_mappings(other_license_detections)
     other_license_matches = LicenseMatchFromResult.from_dicts(other_license_match_mappings)
@@ -305,11 +313,45 @@ def check_declared_licenses(license_match_objects):
     return any(is_good_license(license_match_object) for license_match_object in license_match_objects)
 
 
+def get_field_values_from_resources(
+    resources,
+    field_name,
+    key_files_only=False,
+    is_string=False,
+):
+    """
+    Return a list of values from the `field_name` field of `resources`.
+
+    If `key_files_only` is True, then we only return the field values from
+    Resources classified as key files.
+
+    If `key_files_only` is False, then we return the field values from Resources
+    that are not classified as key files.
+    """
+    values = []
+    for resource in resources:
+        is_key_file = getattr(resource, 'is_key_file', False)
+        if key_files_only:
+            if not is_key_file:
+                continue
+        else:
+            if is_key_file:
+                continue
+        if is_string:
+            value = getattr(resource, field_name, None) or None
+            if value:
+                values.append(value)
+        else:
+            for value in getattr(resource, field_name, []) or []:
+                values.append(value)
+    return values
+
+
 def get_field_values_from_codebase_resources(
     codebase,
     field_name,
     key_files_only=False,
-    is_string=False
+    is_string=False,
 ):
     """
     Return a list of values from the `field_name` field of the Resources from
@@ -321,22 +363,12 @@ def get_field_values_from_codebase_resources(
     If `key_files_only` is False, then we return the field values from Resources
     that are not classified as key files.
     """
-    values = []
-    for resource in codebase.walk(topdown=True):
-        if key_files_only:
-            if not resource.is_key_file:
-                continue
-        else:
-            if resource.is_key_file:
-                continue
-        if is_string:
-            value = getattr(resource, field_name, None) or None
-            if value:
-                values.append(value)
-        else:
-            for value in getattr(resource, field_name, []) or []:
-                values.append(value)
-    return values
+    return get_field_values_from_resources(
+        resources=codebase.walk(topdown=True),
+        field_name=field_name,
+        key_files_only=key_files_only,
+        is_string=is_string,
+    )
 
 
 def get_categories_from_match(license_match, licensing=Licensing()):

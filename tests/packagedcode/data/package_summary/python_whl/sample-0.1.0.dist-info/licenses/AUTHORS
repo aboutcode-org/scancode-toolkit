@@ -1,0 +1,13 @@
+Behold, mortal, the origins of Beautiful Soup...
+================================================
+
+Leonard Richardson is the primary maintainer.
+
+Aaron DeVore and Isaac Muse have made significant contributions to the
+code base.
+
+Mark Pilgrim provided the encoding detection code that forms the base
+of UnicodeDammit.
+
+Thomas Kluyver and Ezio Melotti finished the work of getting Beautiful
+Soup 4 working under Python 3.
