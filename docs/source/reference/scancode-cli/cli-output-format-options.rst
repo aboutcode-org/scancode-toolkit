@@ -330,6 +330,14 @@ Comparing different ``json`` output formats
 ``--spdx-rdf FILE``
 -------------------
 
+    .. note::
+
+        SPDX RDF and Tag/Value exports require file SHA1 checksums. Include
+        ``--info`` (``-i``) when scanning to collect them. When exporting an existing
+        scan with ``--from-json``, that scan must already contain the checksums.
+        Export fails with an error identifying the file if a non-empty file's
+        checksum is missing; an unknown checksum is not replaced by the empty-file hash.
+
     `SPDX <https://spdx.org/>`_ stands for "Software Package and Data Exchange" and is an open standard
     for communicating software bill of material information (including components, licenses,
     copyrights, and security references).
