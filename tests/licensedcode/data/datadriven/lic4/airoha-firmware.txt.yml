@@ -1,0 +1,7 @@
+license_expressions:
+  - airoha-firmware
+notes: |
+  Linux-firmware LICENSES/LICENSE.airoha, retrieved from canonical
+  GitLab upstream at commit 0cb5a7fb037ef9489deaa4ebecd78b40fe7c07c6.
+  Git blob: 82541b0d34209fa855cc0423b5cea1f318c5ddcf
+  https://gitlab.com/kernel-firmware/linux-firmware/-/blob/0cb5a7fb037ef9489deaa4ebecd78b40fe7c07c6/LICENSES/LICENSE.airoha

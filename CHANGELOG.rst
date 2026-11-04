@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Add Airoha firmware license detection instead of reporting it as MediaTek.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5394
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
