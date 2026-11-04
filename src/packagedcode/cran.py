@@ -64,19 +64,7 @@ class CranDescriptionFileHandler(models.DatafileHandler):
 
         package_dependencies = []
         dependencies = cran_desc.get('Depends') or ''
-        for dependency in dependencies.split(',\n'):
-            requirement = None
-            # TODO: IMHO we could do simpler and better here
-
-            for splitter in ('==', '>=', '<=', '>', '<'):
-                if splitter in dependency:
-                    splits = dependency.split(splitter)
-                    # Replace the package name and keep the relationship and version
-                    # For example: R (>= 2.1)
-                    requirement = dependency.replace(splits[0], '').strip().strip(')').strip()
-                    dependency = splits[0].strip().strip('(').strip()
-                    break
-
+        for dependency, requirement in get_dependencies(dependencies):
             package_dependencies.append(
                 models.DependentPackage(
                     purl=PackageURL(
@@ -123,12 +111,27 @@ def get_cran_description(location):
     return saneyaml.load('\n'.join(yaml_lines))
 
 
+def get_dependencies(dependencies):
+    """
+    Yield (name, requirement) tuples parsed from a comma-separated
+    ``dependencies`` field such as ``R (>= 3.5.0), methods, utils``.
+    """
+    for dependency in dependencies.split(','):
+        dependency = dependency.strip()
+        if not dependency:
+            continue
+        name, _, requirement = dependency.partition('(')
+        # For example: R (>= 2.1)
+        requirement = requirement.strip().rstrip(')').strip() or None
+        yield name.strip(), requirement
+
+
 def get_party_info(info):
     """
     Parse the info and return name, email.
     """
     if not info:
-        return
+        return None, None
     if '@' in info and '<' in info:
         splits = info.strip().strip(',').strip('>').split('<')
         name = splits[0].strip()

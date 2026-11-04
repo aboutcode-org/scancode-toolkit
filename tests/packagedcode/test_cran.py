@@ -30,3 +30,22 @@ class TestCran(PackageTester):
         expected_loc = self.get_test_loc(
             'cran/geometry/package.json.expected')
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_single_line_depends_without_author_or_maintainer(self):
+        test_file = self.get_test_loc('cran/single-line-depends/DESCRIPTION')
+        packages = cran.CranDescriptionFileHandler.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'cran/single-line-depends/package.json.expected')
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_without_depends(self):
+        test_file = self.get_test_loc('cran/no-depends/DESCRIPTION')
+        packages = cran.CranDescriptionFileHandler.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'cran/no-depends/package.json.expected')
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_get_dependencies(self):
+        results = list(cran.get_dependencies('R (>= 3.4.0),\nmethods, utils (>= 3.0), '))
+        expected = [('R', '>= 3.4.0'), ('methods', None), ('utils', '>= 3.0')]
+        assert results == expected
