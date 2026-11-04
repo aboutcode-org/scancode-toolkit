@@ -4,6 +4,8 @@ Changelog
 Next release
 --------------
 
+- Add the missing ignorable template URL to two FSL license reference rules.
+
 - Skip email and URL regular expression matching on lines without the
   required markers, while preserving detections and source line numbers.
   https://github.com/aboutcode-org/scancode-toolkit/issues/595
