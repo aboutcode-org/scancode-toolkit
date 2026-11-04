@@ -10,6 +10,9 @@ Next release
 
 - Improve copyright detection for statements with parens or trailing "authors"
 
+- Improve author detection for compact declarations and dotted author names.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4229
+
 - Add experimental option for using cached results during scan time. When the
   ``--use-cached-results`` option is enabled in the ScanCode CLI, during scan
   time for a given Resource, we iterate through the active scanners and see if we
