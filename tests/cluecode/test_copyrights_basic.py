@@ -319,6 +319,31 @@ class TestCopyrightDetector(FileBasedTesting):
         ))
         assert results == expected
 
+    def test_detect_copyright_busybox_env_bullet_changelog(self):
+        text = '''/*
+ * Modified by Vladimir Oleynik <dzo@simtreas.ru> (C) 2003
+ * - correct "-" option usage
+ * - multiple "-u unsetenv" support
+ * - GNU long option support
+ * - use xfunc_error_retval
+ */
+'''
+        numbered_lines = list(enumerate(text.splitlines(keepends=True), 1))
+        results = list(copyrights.detect_copyrights_from_lines(numbered_lines))
+        expected = [
+            copyrights.CopyrightDetection(
+                copyright='Vladimir Oleynik <dzo@simtreas.ru> (c) 2003',
+                start_line=2,
+                end_line=2,
+            ),
+            copyrights.HolderDetection(
+                holder='Vladimir Oleynik <dzo@simtreas.ru>',
+                start_line=2,
+                end_line=2,
+            ),
+        ]
+        assert results == expected
+
 
 def check_full_detections(expected, test_file):
     """
