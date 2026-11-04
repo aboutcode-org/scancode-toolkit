@@ -4,6 +4,11 @@ Changelog
 Next release
 --------------
 
+- Omit fields with no value such as a null ``group`` or ``copyright`` and skip
+  packages with no name or version in the CycloneDX JSON output, so that the
+  generated BOM validates against the official CycloneDX schema.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5355
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
