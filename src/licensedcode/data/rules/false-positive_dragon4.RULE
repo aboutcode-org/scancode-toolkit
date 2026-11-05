@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: False positive seen in numpy dragon4.c
+---
+
+As a special exception the smallest normal value
