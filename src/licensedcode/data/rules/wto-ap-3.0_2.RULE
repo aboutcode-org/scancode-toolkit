@@ -1,0 +1,11 @@
+---
+license_expression: wto-ap-3.0
+is_license_notice: yes
+ignorable_urls:
+    - https://k.sfconservancy.org/license-additional-permissions/
+---
+
+You should have received a copy of the Web Template Output Additional
+Permission, along with this program in a file in the toplevel directory
+called "Web-Template-Output-Additional-Permission.txt".  If not, see
+<https://k.sfconservancy.org/license-additional-permissions/>.
