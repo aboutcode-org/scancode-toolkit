@@ -8,6 +8,12 @@ Next release
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
 
+- Fix the ``--cyclonedx`` JSON output to use strings for all
+  ``metadata.properties[].value`` fields as required by the CycloneDX
+  specification. Lists of messages are joined with newlines, mappings are
+  serialized to JSON and empty or null values are dropped.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5349
+
 - Improve copyright detection for statements with parens or trailing "authors"
 
 - Add experimental option for using cached results during scan time. When the

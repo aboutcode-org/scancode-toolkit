@@ -22,6 +22,7 @@ from formattedcode.output_cyclonedx import CycloneDxHashObject
 from formattedcode.output_cyclonedx import CycloneDxLicenseExpression
 from formattedcode.output_cyclonedx import CycloneDxMetadata
 from formattedcode.output_cyclonedx import get_author_from_parties
+from formattedcode.output_cyclonedx import get_property_string_value
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
 
@@ -196,7 +197,7 @@ def test_CycloneDxMetadata_from_headers():
         'tool_version': '31.1.1',
         'notice': 'some notice',
         'message': 'some message',
-        'errors': ['some error'],
+        'errors': ['some error', 'another error'],
         'warnings': ['some warning'],
         'extra_data': {'spdx_version': '3.1.2'}
     }]
@@ -205,8 +206,8 @@ def test_CycloneDxMetadata_from_headers():
     expected = {
         'properties': [
             {'name': 'notice', 'value': 'some notice'},
-            {'name': 'errors', 'value': ['some error']},
-            {'name': 'warnings', 'value': ['some warning']},
+            {'name': 'errors', 'value': 'some error\nanother error'},
+            {'name': 'warnings', 'value': 'some warning'},
             {'name': 'message', 'value': 'some message'},
             {'name': 'spdx_version', 'value': '3.1.2'},
         ],
@@ -215,6 +216,67 @@ def test_CycloneDxMetadata_from_headers():
         ],
     }
     assert m == expected
+
+
+def test_CycloneDxMetadata_from_headers_property_values_are_always_strings():
+    headers = [{
+        'tool_name': 'scancode-toolkit',
+        'tool_version': '31.1.1',
+        'notice': 'some notice',
+        'errors': ['some error', 'another error'],
+        'warnings': ['some warning'],
+        'message': None,
+        'extra_data': {
+            'system_environment': {'operating_system': 'win', 'cpu_architecture': '64'},
+            'spdx_license_list_version': '3.28',
+        },
+    }]
+    properties = CycloneDxMetadata.from_headers(headers).to_dict()['properties']
+    # the CycloneDX schema types property values as strings in all versions
+    for prop in properties:
+        assert isinstance(prop['value'], str), prop
+    assert [p['name'] for p in properties] == [
+        'notice',
+        'errors',
+        'warnings',
+        'system_environment',
+        'spdx_license_list_version',
+    ]
+    assert properties[1]['value'] == 'some error\nanother error'
+    assert json.loads(properties[3]['value']) == {
+        'operating_system': 'win',
+        'cpu_architecture': '64',
+    }
+
+
+def test_CycloneDxMetadata_from_headers_drops_empty_property_values():
+    headers = [{
+        'tool_name': 'scancode-toolkit',
+        'tool_version': '31.1.1',
+        'notice': 'some notice',
+        'errors': [],
+        'warnings': [],
+        'message': None,
+        'extra_data': {'empty_mapping': {}, 'OUTDATED': 'a newer version is available'},
+    }]
+    properties = CycloneDxMetadata.from_headers(headers).to_dict()['properties']
+    assert properties == [
+        {'name': 'notice', 'value': 'some notice'},
+        {'name': 'OUTDATED', 'value': 'a newer version is available'},
+    ]
+
+
+def test_get_property_string_value():
+    assert get_property_string_value('some notice') == 'some notice'
+    assert get_property_string_value(['error 1', 'error 2']) == 'error 1\nerror 2'
+    assert get_property_string_value(['error 1', 2]) == 'error 1\n2'
+    assert get_property_string_value({'operating_system': 'win'}) == (
+        '{"operating_system": "win"}')
+    assert get_property_string_value(33) == '33'
+    assert get_property_string_value(None) is None
+    assert get_property_string_value('') is None
+    assert get_property_string_value([]) is None
+    assert get_property_string_value({}) is None
 
 
 def test_cyclonedx_plugin_does_not_fail_without_packages():
@@ -239,6 +301,18 @@ def test_cyclonedx_plugin_json_simple_package_npm():
     run_scan_click(['--package', '--license', test_dir, '--cyclonedx', result_file])
     expected_file = test_env.get_test_loc('cyclonedx/simple-npm-expected.json')
     check_cyclone_output(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_cyclonedx_json_metadata_property_values_are_strings():
+    test_dir = test_env.get_test_loc('cyclonedx/simple')
+    result_file = test_env.get_temp_file('cyclonedx.json')
+    run_scan_click(['--package', test_dir, '--cyclonedx', result_file])
+    with io.open(result_file, encoding='utf-8') as f:
+        bom = json.load(f)
+    properties = bom['metadata']['properties']
+    assert properties
+    for prop in properties:
+        assert isinstance(prop['value'], str), prop
 
 
 def test_cyclonedx_plugin_xml_components_and_dependencies_are_serialized_correctly():
