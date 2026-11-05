@@ -26,6 +26,11 @@ Next release
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
+- Fix the import typo in ``commoncode.fetch.ping_url``. It imported
+  ``urlib.request`` and fell back to ``urllib2``, so it always failed
+  on Python 3.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5423
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
