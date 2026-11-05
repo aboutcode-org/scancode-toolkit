@@ -47,11 +47,14 @@ Optionally apply filters to pattern matches.
 """
 
 
-def find(location, patterns):
+def find(location, patterns, prefilter=None):
     """
     Yield match and matched lines for patterns found in file at location as a
     tuple of (key, found text, text line). `patterns` is a list of tuples (key,
     compiled regex).
+
+    If provided, ``prefilter`` is a callable that takes a text line and returns
+    False to skip matching patterns against that line.
 
     Note: the location can be a list of lines for testing convenience.
     """
@@ -61,6 +64,8 @@ def find(location, patterns):
         logger_debug('find(location=%(loc)r,\n  patterns=%(patterns)r)' % locals())
 
     for line_number, line in analysis.numbered_text_lines(location, demarkup=False):
+        if prefilter is not None and not prefilter(line):
+            continue
         for key, pattern in patterns:
             for match in pattern.findall(line):
 
@@ -130,7 +135,7 @@ def find_emails(location, unique=True):
     Only return unique items if ``unique`` is True.
     """
     patterns = [('emails', emails_regex(),)]
-    matches = find(location, patterns)
+    matches = find(location, patterns, prefilter=lambda line: '@' in line)
 
     if TRACE_EMAIL:
         matches = list(matches)
@@ -233,7 +238,9 @@ def find_urls(location, unique=True):
     `location` can be a list of strings for testing.
     """
     patterns = [('urls', urls_regex(),)]
-    matches = find(location, patterns)
+    # Every supported URL contains either a scheme separator or a dot:
+    # www./ftp. prefixes and git-style URLs ending in .git contain a dot.
+    matches = find(location, patterns, prefilter=lambda line: '://' in line or '.' in line)
     if TRACE:
         matches = list(matches)
         for m in matches:
