@@ -8,16 +8,55 @@
 #
 
 import os
+import pytest
 
 from packagedcode import golang
 from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
 
 
+@pytest.mark.parametrize('directive', ['require', 'exclude'])
+@pytest.mark.parametrize('separator', ['', '\t ', '// Dependency group (comment)'])
+def test_gomod_dependency_blocks_allow_empty_lines(directive, separator, tmp_path):
+    location = tmp_path / 'go.mod'
+    location.write_text(
+        f'module example.com/main\n\n{directive} (\n'
+        f'{separator}\n'
+        'example.com/first v1.0.0 // First dependency\n'
+        f'{separator}\n'
+        'example.com/second v1.2.0\n'
+        f'{separator}\n)\n'
+        'require example.com/after v1.3.0\n',
+        encoding='utf-8',
+    )
+    package = list(golang.GoModHandler.parse(str(location), package_only=True))[0]
+    assert package.purl == 'pkg:golang/example.com/main'
+    result = [(dep.purl, dep.scope) for dep in package.dependencies]
+    expected = [
+        ('pkg:golang/example.com/first@v1.0.0', directive),
+        ('pkg:golang/example.com/second@v1.2.0', directive),
+        ('pkg:golang/example.com/after@v1.3.0', 'require'),
+    ]
+    assert sorted(result) == sorted(expected)
+
+
+@pytest.mark.parametrize('directive', ['require', 'exclude'])
+def test_gomod_dependency_blocks_allow_only_comments(directive, tmp_path):
+    location = tmp_path / 'go.mod'
+    location.write_text(
+        f'module example.com/main\n{directive} (\n\n// No dependencies\n\t\n)\n',
+        encoding='utf-8',
+    )
+    package = list(golang.GoModHandler.parse(str(location), package_only=True))[0]
+    assert package.purl == 'pkg:golang/example.com/main'
+    assert package.dependencies == []
+
+
 class TestGolang(PackageTester):
     """
     Check go.mod and go.sum file tests.
     """
+
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_gomod_is_package_data_file(self):

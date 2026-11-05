@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Parse Go module require and exclude blocks containing blank or comment-only
+  lines without losing their dependencies or raising an exception.
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
