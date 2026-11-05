@@ -9,6 +9,7 @@
 #
 
 import io
+import hashlib
 import os
 import re
 
@@ -24,6 +25,100 @@ from scancode_config import REGEN_TEST_FIXTURES
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+
+def write_spdx_for_checksum_test(file_data, as_tagvalue, monkeypatch):
+    from formattedcode.output_spdx import write_spdx
+    from licensedcode import cache
+
+    # These inputs contain no license detections and need no license database.
+    monkeypatch.setattr(cache, 'get_licenses_db', lambda: {})
+    output = io.StringIO()
+    write_spdx(
+        codebase=None,
+        output_file=output,
+        files=[file_data],
+        tool_name='ScanCode',
+        tool_version='test',
+        notice='test',
+        package_name='sample',
+        as_tagvalue=as_tagvalue,
+    )
+    return output.getvalue()
+
+
+@pytest.mark.parametrize('as_tagvalue', [True, False], ids=['tagvalue', 'rdf'])
+@pytest.mark.parametrize('checksum_data', [{}, {'sha1': None}, {'sha1': ''}])
+def test_spdx_missing_sha1_rejected(as_tagvalue, checksum_data, monkeypatch):
+    file_data = {'type': 'file', 'path': 'sample.txt', 'file_type': 'ASCII text'}
+    file_data.update(checksum_data)
+    with pytest.raises(ValueError, match='missing SHA1.*sample.txt'):
+        write_spdx_for_checksum_test(file_data, as_tagvalue, monkeypatch)
+
+
+@pytest.mark.parametrize('as_tagvalue', [True, False], ids=['tagvalue', 'rdf'])
+def test_spdx_file_checksum_preserves_known_sha1(as_tagvalue, monkeypatch):
+    checksum = hashlib.sha1(b'non-empty contents').hexdigest()
+    result = write_spdx_for_checksum_test(
+        {'type': 'file', 'path': 'sample.txt', 'sha1': checksum},
+        as_tagvalue,
+        monkeypatch,
+    )
+    assert checksum in result
+    assert hashlib.sha1(b'').hexdigest() not in result
+
+
+@pytest.mark.parametrize('as_tagvalue', [True, False], ids=['tagvalue', 'rdf'])
+def test_spdx_file_checksum_preserves_empty_file_hash(as_tagvalue, monkeypatch):
+    result = write_spdx_for_checksum_test(
+        {'type': 'file', 'path': 'empty.txt', 'file_type': 'empty'},
+        as_tagvalue,
+        monkeypatch,
+    )
+    assert hashlib.sha1(b'').hexdigest() in result
+
+
+@pytest.mark.parametrize('as_tagvalue', [True, False], ids=['tagvalue', 'rdf'])
+def test_spdx_file_checksum_does_not_require_directory_hash(as_tagvalue, monkeypatch):
+    result = write_spdx_for_checksum_test(
+        {'type': 'directory', 'path': 'directory'},
+        as_tagvalue,
+        monkeypatch,
+    )
+    assert "No results for package 'sample'." in result
+
+
+@pytest.mark.parametrize('output_option', ['--spdx-tv', '--spdx-rdf'])
+def test_spdx_missing_sha1_cli_error(output_option, tmp_path, monkeypatch):
+    from licensedcode import cache
+
+    monkeypatch.setattr(cache, 'get_licenses_db', lambda: {})
+    source = tmp_path / 'sample.txt'
+    source.write_text('non-empty contents', encoding='utf-8')
+    output = tmp_path / 'output.spdx'
+    result = run_scan_click(
+        ['--email', str(source), output_option, str(output)],
+        expected_rc=1,
+        retry=False,
+    )
+    assert 'missing SHA1' in result.output
+    assert 'sample.txt' in result.output
+    assert '--info' in result.output
+    if output.exists():
+        assert not output.read_text(encoding='utf-8')
+
+
+@pytest.mark.parametrize('output_option', ['--spdx-tv', '--spdx-rdf'])
+@pytest.mark.parametrize('content', [b'non-empty contents', b''])
+def test_spdx_file_checksum_cli_with_info(output_option, content, tmp_path, monkeypatch):
+    from licensedcode import cache
+
+    monkeypatch.setattr(cache, 'get_licenses_db', lambda: {})
+    source = tmp_path / 'sample.txt'
+    source.write_bytes(content)
+    output = tmp_path / 'output.spdx'
+    run_scan_click(['--info', str(source), output_option, str(output)])
+    assert hashlib.sha1(content).hexdigest() in output.read_text(encoding='utf-8')
 
 
 def strip_variable_text(rdf_text):
@@ -339,7 +434,10 @@ def test_spdx_rdf_with_empty_scan():
 
 
 @pytest.mark.scanslow
-def test_output_spdx_rdf_can_handle_non_ascii_paths():
+def test_output_spdx_rdf_can_handle_non_ascii_paths(monkeypatch):
+    from licensedcode import cache
+
+    monkeypatch.setattr(cache, 'get_licenses_db', lambda: {})
     test_file = test_env.get_test_loc('spdx/unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
     run_scan_click(['--from-json', test_file, '--spdx-rdf', result_file])
@@ -347,7 +445,10 @@ def test_output_spdx_rdf_can_handle_non_ascii_paths():
         results = res.read()
     assert 'han/据.svg' in results
 
-def test_output_spdx_tv_can_handle_non_ascii_paths():
+def test_output_spdx_tv_can_handle_non_ascii_paths(monkeypatch):
+    from licensedcode import cache
+
+    monkeypatch.setattr(cache, 'get_licenses_db', lambda: {})
     test_file = test_env.get_test_loc('spdx/unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
     run_scan_click(['--from-json', test_file, '--spdx-tv', result_file])
