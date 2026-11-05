@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import json
 import os
 import pytest
 
@@ -15,6 +16,43 @@ from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
+
+
+@pytest.mark.parametrize('workspace_authors, member_authors, expected_names', [
+    ('', 'authors = ["Member Author"]\n', ['Member Author']),
+    ('authors = ["Workspace Author"]\n', 'authors = ["Member Author"]\n', ['Member Author']),
+    ('authors = ["Workspace Author"]\n', 'authors.workspace = true\n', ['Workspace Author']),
+    ('authors = ["Workspace Author"]\n', '', []),
+    ('', '', []),
+])
+def test_workspace_preserves_member_authors(
+    workspace_authors, member_authors, expected_names, tmp_path,
+):
+    workspace = tmp_path / 'workspace'
+    member = workspace / 'crates/member'
+    member.mkdir(parents=True)
+    (workspace / 'Cargo.toml').write_text(
+        '[workspace]\nmembers = ["crates/member"]\n'
+        '[workspace.package]\nversion = "1.2.3"\n'
+        'repository = "https://example.com/workspace"\n'
+        f'{workspace_authors}',
+        encoding='utf-8',
+    )
+    (member / 'Cargo.toml').write_text(
+        '[package]\nname = "workspace-member"\n'
+        'version.workspace = true\nrepository.workspace = true\n'
+        f'{member_authors}',
+        encoding='utf-8',
+    )
+    result_file = tmp_path / 'results.json'
+    run_scan_click(['--package', str(workspace), '--json', str(result_file)])
+    results = json.loads(result_file.read_text(encoding='utf-8'))
+    packages = results['packages']
+    assert len(packages) == 1
+    package = packages[0]
+    assert package['purl'] == 'pkg:cargo/workspace-member@1.2.3'
+    assert package['vcs_url'] == 'https://example.com/workspace'
+    assert [party['name'] for party in package['parties']] == expected_names
 
 
 class TestCargo(PackageTester):

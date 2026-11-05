@@ -10,7 +10,22 @@
       "primary_language": "Rust",
       "description": "BoringSSL bindings",
       "release_date": null,
-      "parties": [],
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Steven Fackler",
+          "email": "sfackler@gmail.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Ivan Nikulin",
+          "email": "ifaaan@gmail.com",
+          "url": null
+        }
+      ],
       "keywords": [
         "crypto",
         "tls",
@@ -91,7 +106,29 @@
       "primary_language": "Rust",
       "description": "FFI bindings to BoringSSL",
       "release_date": null,
-      "parties": [],
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Alex Crichton",
+          "email": "alex@alexcrichton.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Steven Fackler",
+          "email": "sfackler@gmail.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Ivan Nikulin",
+          "email": "ifaaan@gmail.com",
+          "url": null
+        }
+      ],
       "keywords": [
         "cryptography",
         "external-ffi-bindings"
@@ -168,7 +205,22 @@
       "primary_language": "Rust",
       "description": "An implementation of SSL streams for Tokio backed by BoringSSL",
       "release_date": null,
-      "parties": [],
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Alex Crichton",
+          "email": "alex@alexcrichton.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Ivan Nikulin",
+          "email": "ifaaan@gmail.com",
+          "url": null
+        }
+      ],
       "keywords": [],
       "homepage_url": "https://github.com/cloudflare/boring",
       "download_url": null,
@@ -242,7 +294,22 @@
       "primary_language": "Rust",
       "description": "Hyper TLS support via BoringSSL",
       "release_date": null,
-      "parties": [],
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Steven Fackler",
+          "email": "sfackler@gmail.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Ivan Nikulin",
+          "email": "ifaaan@gmail.com",
+          "url": null
+        }
+      ],
       "keywords": [],
       "homepage_url": null,
       "download_url": null,
@@ -954,7 +1021,29 @@
           "primary_language": "Rust",
           "description": "FFI bindings to BoringSSL",
           "release_date": null,
-          "parties": [],
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Alex Crichton",
+              "email": "alex@alexcrichton.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Steven Fackler",
+              "email": "sfackler@gmail.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Ivan Nikulin",
+              "email": "ifaaan@gmail.com",
+              "url": null
+            }
+          ],
           "keywords": [
             "cryptography",
             "external-ffi-bindings"
@@ -1082,7 +1171,22 @@
           "primary_language": "Rust",
           "description": "BoringSSL bindings",
           "release_date": null,
-          "parties": [],
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Steven Fackler",
+              "email": "sfackler@gmail.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Ivan Nikulin",
+              "email": "ifaaan@gmail.com",
+              "url": null
+            }
+          ],
           "keywords": [
             "crypto",
             "tls",
@@ -1254,7 +1358,22 @@
           "primary_language": "Rust",
           "description": "Hyper TLS support via BoringSSL",
           "release_date": null,
-          "parties": [],
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Steven Fackler",
+              "email": "sfackler@gmail.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Ivan Nikulin",
+              "email": "ifaaan@gmail.com",
+              "url": null
+            }
+          ],
           "keywords": [],
           "homepage_url": null,
           "download_url": null,
@@ -1501,7 +1620,22 @@
           "primary_language": "Rust",
           "description": "An implementation of SSL streams for Tokio backed by BoringSSL",
           "release_date": null,
-          "parties": [],
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Alex Crichton",
+              "email": "alex@alexcrichton.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Ivan Nikulin",
+              "email": "ifaaan@gmail.com",
+              "url": null
+            }
+          ],
           "keywords": [],
           "homepage_url": "https://github.com/cloudflare/boring",
           "download_url": null,
