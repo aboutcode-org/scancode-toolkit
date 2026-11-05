@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Preserve Cargo workspace members' own authors and inherit workspace authors
+  only when a member explicitly declares ``authors.workspace = true``.
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
