@@ -25,7 +25,7 @@
   "md5": null,
   "sha256": null,
   "sha512": null,
-  "bug_tracking_url": null,
+  "bug_tracking_url": "https://github.com/jode/baz-bar-parent/issues",
   "code_view_url": "https://github.com/jode/baz-bar-parent/tree/master",
   "vcs_url": "git://github.com/jode/baz-bar-parent.git",
   "copyright": null,
