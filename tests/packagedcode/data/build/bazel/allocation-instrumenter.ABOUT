@@ -1,0 +1,8 @@
+about_resource: allocation-instrumenter/
+name: allocation-instrumenter
+version: 59d6bc4f8753e7cf76204be043075b5aa32487c8
+download_url: https://github.com/google/allocation-instrumenter/tree/59d6bc4f8753e7cf76204be043075b5aa32487c8
+vcs_repository: https://github.com/google/allocation-instrumenter.git
+license: apache-2.0
+description: Trimmed BUILD, MODULE.bazel, and MODULE.bazel.lock files used to test Bazel module assembly with sibling BUILD manifests.
+notes: MODULE.bazel.lock is a minimized subset of the upstream lockfile that preserves the fields needed for ScanCode tests.

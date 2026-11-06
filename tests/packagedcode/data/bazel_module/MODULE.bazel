@@ -1,0 +1,11 @@
+# Sample Bazel module manifest
+module(
+    name = "my_sample_project",
+    version = "0.5.0",
+    compatibility_level = 1,
+)
+
+bazel_dep(name = "rules_python", version = "0.24.0")
+bazel_dep(name = "rules_go", version = "0.41.0")
+bazel_dep(name = "googletest", version = "1.14.0", dev_dependency = True)
+bazel_dep(name = "abseil-cpp", version = "20230802.0", repo_name = "com_google_absl")
