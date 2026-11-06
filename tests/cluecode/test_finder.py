@@ -751,6 +751,51 @@ class TestUrl(FileBasedTesting):
         result = find_urls_tester(lines)
         assert result == expected
 
+    def test_find_urls_with_special_unicode_characters(self):
+        # Reproduces issue #4475
+        lines = [
+            'https://sk.wikipedia.org/wiki/Administratívne_členenie_Slovenska',
+            'https://ru.wikipedia.org/wiki/Федеральные_округа_Российской_Федерации',
+        ]
+        expected = [
+            'https://sk.wikipedia.org/wiki/Administrat%C3%ADvne_%C4%8Dlenenie_Slovenska',
+            'https://ru.wikipedia.org/wiki/%D0%A4%D0%B5%D0%B4%D0%B5%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BE%D0%BA%D1%80%D1%83%D0%B3%D0%B0_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9_%D0%A4%D0%B5%D0%B4%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8',
+        ]
+        result = find_urls_tester(lines)
+        assert result == expected
+
+    def test_find_urls_with_unicode_and_typographic_quotes(self):
+        lines = [
+            '“https://fr.wikipedia.org/wiki/café”.',
+            '«https://ru.wikipedia.org/wiki/путь»',
+        ]
+        assert find_urls_tester(lines) == [
+            'https://fr.wikipedia.org/wiki/caf%C3%A9',
+            'https://ru.wikipedia.org/wiki/%D0%BF%D1%83%D1%82%D1%8C',
+        ]
+
+    def test_find_urls_in_unspaced_japanese_prose(self):
+        lines = [
+            '参考は https://creativecommons.org/から、'
+            '連絡先はhttp://www.creativecommons.jp/から確認できます。',
+        ]
+        assert find_urls_tester(lines) == [
+            'https://creativecommons.org/',
+            'http://www.creativecommons.jp/',
+        ]
+
+    def test_find_urls_strips_trailing_unicode_punctuation(self):
+        lines = [
+            'http://www.mozilla.org/MPL/.¬† Software distributed under the license.',
+            'https://ja.wikipedia.org/wiki/東京・日本。',
+            'https://ja.wikipedia.org/からくり',
+        ]
+        assert find_urls_tester(lines) == [
+            'http://www.mozilla.org/MPL',
+            'https://ja.wikipedia.org/wiki/%E6%9D%B1%E4%BA%AC%E3%83%BB%E6%97%A5%E6%9C%AC',
+            'https://ja.wikipedia.org/%E3%81%8B%E3%82%89%E3%81%8F%E3%82%8A',
+        ]
+
     def test_find_in_go_does_not_crash_with_unicode_error(self):
         test_file = self.get_test_loc('finder/url/verify.go')
         patterns = [('urls', urls_regex(),)]
