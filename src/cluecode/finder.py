@@ -299,6 +299,19 @@ URL_TEXT_TRANSLATION = str.maketrans({
     '\u2060': None,  # word joiner inserted by formatted text
 })
 
+URL_TRAILING_PUNCTUATION = string.punctuation + '¬†、。！？'
+
+# A bare origin followed by CJK text could be a real Unicode path. Recover
+# bare origins only when a second explicit link and sentence punctuation
+# make it clear that the match has swallowed a pair of links in prose.
+HTTP_ORIGIN = r'https?://[a-z0-9.-]+(?::[0-9]+)?/'
+CJK_TEXT_CHAR = r'[\u3040-\u30ff\u3400-\u9fff]'
+LINKS_IN_CJK_PROSE = re.compile(
+    rf'({HTTP_ORIGIN}){CJK_TEXT_CHAR}+、{CJK_TEXT_CHAR}+'
+    rf'({HTTP_ORIGIN}){CJK_TEXT_CHAR}+。',
+    re.IGNORECASE,
+)
+
 
 def end_of_url_cleaner(matches):
     """
@@ -308,11 +321,17 @@ def end_of_url_cleaner(matches):
     """
     for key, url, line, line_number in matches:
         url = url.translate(URL_TEXT_TRANSLATION)
+        joined_links = LINKS_IN_CJK_PROSE.fullmatch(url)
+        if joined_links:
+            for origin in joined_links.groups():
+                yield key, origin, line, line_number
+            continue
+
         if not url.endswith('/'):
             url = url.replace(u'&lt;', u'<')
             url = url.replace(u'&gt;', u'>')
             url = url.replace(u'&amp;', u'&')
-            url = url.rstrip(string.punctuation)
+            url = url.rstrip(URL_TRAILING_PUNCTUATION)
             url = url.split(u'\\')[0]
             url = url.split(u'<')[0]
             url = url.split(u'>')[0]
