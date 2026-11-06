@@ -50,3 +50,22 @@ class TestHashMatch(FileBasedTesting):
         assert match.rule == rules[0]
         assert match.qspan == Span(0, 119)
         assert match.ispan == Span(0, 119)
+
+    def test_issue_4942_gpl_2_0_release_notices(self):
+        # Reproduces issue #4942
+        from licensedcode.cache import get_index
+        idx = get_index()
+
+        queries = [
+            "* released under GNU GPL v2 only licence",
+            "* released under GNU GPL v2 licence",
+            "* released under GNU GPL v2 only license",
+            "* released under GNU GPL v2 license",
+        ]
+        for q in queries:
+            matches = idx.match(query_string=q)
+            assert len(matches) == 1, f"Failed on {q}: {matches}"
+            m = matches[0]
+            assert m.rule.license_expression == "gpl-2.0", f"Wrong license on {q}: {m.rule.license_expression}"
+            assert m.matcher == match_hash.MATCH_HASH, f"Not a hash match on {q}: {m.matcher}"
+            assert m.coverage() == 100

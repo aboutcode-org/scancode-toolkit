@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Recognize GNU GPL v2 release notices without reporting unrelated composite licenses.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4942
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
