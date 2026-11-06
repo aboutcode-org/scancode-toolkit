@@ -121,6 +121,80 @@ def test_run_scan_includes_outdated_in_extra():
     assert results['headers'][0]['extra_data']['OUTDATED'] == 'out of date'
 
 
+def test_run_scan_return_codebase_with_strip_root_strips_paths():
+    from scancode.cli import run_scan
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    rc, codebase = run_scan(
+        test_dir,
+        info=True,
+        strip_root=True,
+        return_results=False,
+        return_codebase=True,
+    )
+    assert rc
+    assert codebase.root.path == ''
+    paths = [r.path for r in codebase.walk(skip_root=True)]
+    root_dir_name = os.path.basename(test_dir)
+    assert all(not p.startswith(root_dir_name) for p in paths)
+    assert 'basic' in paths
+    assert 'basic/main.c' in paths
+
+
+def test_run_scan_return_codebase_with_strip_root_single_file_does_not_strip():
+    from scancode.cli import run_scan
+    test_file = test_env.get_test_loc('single/iproute.c')
+    rc, codebase = run_scan(
+        test_file,
+        info=True,
+        strip_root=True,
+        return_results=False,
+        return_codebase=True,
+    )
+    assert rc
+    assert codebase.root.path != ''
+    assert 'iproute.c' in codebase.root.path
+
+
+def test_run_scan_return_codebase_with_strip_root_parent_traversal_works():
+    from scancode.cli import run_scan
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    rc, codebase = run_scan(
+        test_dir,
+        info=True,
+        strip_root=True,
+        return_results=False,
+        return_codebase=True,
+    )
+    assert rc
+    basic_resource = codebase.get_resource('basic')
+    assert basic_resource is not None
+    parent = basic_resource.parent(codebase)
+    assert parent is not None
+    assert parent.is_root
+
+    main_c = codebase.get_resource('basic/main.c')
+    assert main_c is not None
+    main_parent = main_c.parent(codebase)
+    assert main_parent is not None
+    assert main_parent.path == 'basic'
+
+
+def test_run_scan_return_codebase_without_strip_root_keeps_original_paths():
+    from scancode.cli import run_scan
+    test_dir = test_env.extract_test_tar('info/basic.tgz')
+    rc, codebase = run_scan(
+        test_dir,
+        info=True,
+        return_results=False,
+        return_codebase=True,
+    )
+    assert rc
+    root_path = codebase.root.path
+    assert root_path != ''
+    paths = [r.path for r in codebase.walk(skip_root=True)]
+    assert all(p.startswith(root_path) for p in paths)
+
+
 def test_no_version_check_run_is_successful():
     test_file = test_env.get_test_loc('single/iproute.c')
     result_file = test_env.get_temp_file('json')
