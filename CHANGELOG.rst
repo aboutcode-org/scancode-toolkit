@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Add Nordstjernen Source License v1.0 (nordstjernen-1.0) and detection rules.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5344
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
