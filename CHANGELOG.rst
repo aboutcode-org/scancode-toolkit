@@ -4,6 +4,10 @@ Changelog
 Next release
 --------------
 
+- Detect TiMidity's GPL, LGPL, or Perl Artistic license choice as alternatives,
+  and recognize its Perl Artistic source notice instead of the Frontier license.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5119
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

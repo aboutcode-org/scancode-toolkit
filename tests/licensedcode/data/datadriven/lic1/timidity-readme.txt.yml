@@ -1,0 +1,5 @@
+license_expressions:
+  - gpl-1.0-plus OR lgpl-2.0-plus OR artistic-perl-1.0
+notes: |
+  Regression test for https://github.com/aboutcode-org/scancode-toolkit/issues/5119
+  https://github.com/libsdl-org/SDL_mixer/blob/72a81869b45e249e8e67102db4e98dd2441f05a1/src/timidity/README
