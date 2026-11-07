@@ -204,7 +204,7 @@ class IsRequiredPhrase:
 
     @property
     def license_expression(self):
-        self.rule.license_expression
+        return self.rule.license_expression
 
     @staticmethod
     def sorted(isrequiredphrases):

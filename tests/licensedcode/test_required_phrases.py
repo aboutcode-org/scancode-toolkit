@@ -59,6 +59,20 @@ class TestIsRequiredPhraseCanSort(TestCaseClass):
         assert results == expected
 
 
+class TestIsRequiredPhraseLicenseExpression(TestCaseClass):
+
+    def test_license_expression_returns_the_rule_license_expression(self):
+        rule = Rule(
+            license_expression="mit",
+            identifier="mit_231.RULE",
+            text="MIT license",
+            is_required_phrase=True,
+            is_license_tag=True,
+        )
+        irp = IsRequiredPhrase(required_phrase_text="MIT license", rule=rule)
+        assert irp.license_expression == "mit"
+
+
 class TestFindPhraseInText:
 
     text_with_stopwords = (
