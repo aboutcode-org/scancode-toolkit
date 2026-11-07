@@ -365,6 +365,16 @@ class TestNpm(PackageTester):
         packages = npm.YarnLockV2Handler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_is_datafile_yarn_pnp(self):
+        test_file = self.get_test_loc('npm/yarn-pnp/.pnp.cjs')
+        assert npm.YarnPnpHandler.is_datafile(test_file)
+
+    def test_parse_yarn_pnp(self):
+        test_file = self.get_test_loc('npm/yarn-pnp/.pnp.cjs')
+        expected_loc = self.get_test_loc('npm/yarn-pnp/.pnp.cjs-expected')
+        packages = npm.YarnPnpHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_npm_yarn_with_package_json_resolve_dependencies(self):
         test_folder = self.get_test_loc('npm/yarn-lock/resolve-deps/')
         expected_file = self.get_test_loc('npm/yarn-lock/resolve-deps.expected.json')
