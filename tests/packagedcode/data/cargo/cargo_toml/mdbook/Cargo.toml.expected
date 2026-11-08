@@ -48,6 +48,7 @@
     "bug_tracking_url": null,
     "code_view_url": null,
     "vcs_url": "https://github.com/rust-lang-nursery/mdBook",
+    "documentation_url": "http://rust-lang-nursery.github.io/mdBook/index.html",
     "copyright": null,
     "holder": null,
     "declared_license_expression": "mpl-2.0",
@@ -85,9 +86,7 @@
     "file_references": [],
     "is_private": false,
     "is_virtual": false,
-    "extra_data": {
-      "documentation_url": "http://rust-lang-nursery.github.io/mdBook/index.html"
-    },
+    "extra_data": {},
     "dependencies": [
       {
         "purl": "pkg:cargo/clap",

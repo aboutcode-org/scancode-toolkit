@@ -31,6 +31,7 @@
   "bug_tracking_url": null,
   "code_view_url": null,
   "vcs_url": "git+https://somerepo.com/that.git",
+  "documentation_url": null,
   "copyright": null,
   "holder": null,
   "declared_license_expression": "apache-2.0",
