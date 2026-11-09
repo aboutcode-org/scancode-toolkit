@@ -78,6 +78,7 @@ dependencies = [
     "multiregex >= 2.0.3",
     "normality <= 2.6.1",
     "packageurl_python >= 0.9.0",
+    "packaging >= 26.1",
     "packvers >= 21.0.0",
     # use temp advanced patched release
     "parameter-expansion-patched >= 0.3.1",

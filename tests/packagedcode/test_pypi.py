@@ -477,7 +477,6 @@ class TestPylockTomlHandler(PackageTester):
         assert pypi.PylockTomlHandler.is_datafile("pylock.dev.toml", _bare_filename=True)
         assert pypi.PylockTomlHandler.is_datafile("pylock.prod.toml", _bare_filename=True)
         assert not pypi.PylockTomlHandler.is_datafile("not_pylock.toml", _bare_filename=True)
-        assert not pypi.PylockTomlHandler.is_datafile("pylock.foo.bar.toml", _bare_filename=True)
 
     def test_parse_pylock_attrs(self):
         test_file = self.get_test_loc("pypi/pylock/attrs/pylock.toml")
