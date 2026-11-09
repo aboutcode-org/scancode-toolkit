@@ -8,6 +8,9 @@
 #
 
 
+from fnmatch import fnmatchcase
+from functools import lru_cache
+
 from commoncode.fileutils import file_name
 from commoncode.fileutils import file_base_name
 
@@ -71,7 +74,7 @@ _MANIFEST_ENDS = {
     '/pipfile': 'pypi',
     '/setup.cfg': 'pypi',
     '/setup.py': 'pypi',
-    '/PKG-INFO': 'pypi',
+    '/pkg-info': 'pypi',
     '/pyproject.toml': 'pypi',
     '.spec': 'rpm',
     '/cargo.toml': 'rust',
@@ -88,6 +91,70 @@ _MANIFEST_ENDS = {
 }
 
 MANIFEST_ENDS = tuple(_MANIFEST_ENDS)
+
+# Package handlers can also recognize archives by their filenames. These are
+# package data files, but they are not manifests inside a package.
+PACKAGE_ARCHIVE_ENDS = (
+    '.apk', '.aar', '.jar', '.war', '.ear', '.sar', '.mar',
+    '.whl', '.egg', '.gem', '.rpm', '.deb', '.msi', '.exe',
+    '.dll', '.dmg', '.iso', '.udf', '.img', '.cab', '.xpi',
+    '.crx', '.ipa', '.shar', '.tgz', '.tar.gz', '.tar.bz2',
+    '.zip', '.tar.xz', '.sparseimage', '.mum',
+)
+
+
+@lru_cache(maxsize=1)
+def get_manifest_patterns():
+    """
+    Return path suffixes and glob patterns for active, non-archive package
+    datafile handlers. Build these once rather than matching every handler for
+    every file in a scan.
+    """
+    from packagedcode import APPLICATION_PACKAGE_DATAFILE_HANDLERS
+
+    suffixes = set(MANIFEST_ENDS)
+    globs = set()
+
+    for handler in APPLICATION_PACKAGE_DATAFILE_HANDLERS:
+        # Standalone Debian copyright files can have the generic name
+        # COPYRIGHT. Classifying every such legal file as a manifest would be
+        # a false positive; the specific debian/copyright path is covered by
+        # MANIFEST_ENDS above.
+        if getattr(handler, 'datasource_id', None) == 'debian_copyright_standalone':
+            continue
+
+        filetypes = getattr(handler, 'filetypes', ())
+        if filetypes and not all('xml' in filetype.lower() for filetype in filetypes):
+            continue
+
+        for pattern in getattr(handler, 'path_patterns', ()):
+            pattern = pattern.lower()
+            if pattern.endswith(PACKAGE_ARCHIVE_ENDS):
+                continue
+
+            if pattern.startswith('*') and not any(
+                char in pattern[1:] for char in '*?['
+            ):
+                suffixes.add(pattern[1:])
+            elif any(char in pattern for char in '*?['):
+                globs.add(pattern)
+            else:
+                suffixes.add('/' + pattern.lstrip('/'))
+
+    return tuple(sorted(suffixes)), tuple(sorted(globs))
+
+
+def is_manifest_path(path, manifest_ends=None):
+    """Return True if ``path`` matches a known package manifest pattern."""
+    if manifest_ends is None:
+        suffixes, globs = get_manifest_patterns()
+    else:
+        suffixes, globs = manifest_ends, ()
+
+    path = '/' + path.lower().lstrip('/')
+    return path.endswith(suffixes) or any(
+        fnmatchcase(path, pattern) for pattern in globs
+    )
 
 README_STARTS_ENDS = (
     'readme',
@@ -167,7 +234,7 @@ def check_resource_name_start_and_end(resource, STARTS_ENDS):
 
 def set_classification_flags(resource,
     _LEGAL=LEGAL_STARTS_ENDS,
-    _MANIF=MANIFEST_ENDS,
+    _MANIF=None,
     _README=README_STARTS_ENDS,
 ):
     """
@@ -180,6 +247,6 @@ def set_classification_flags(resource,
     resource.is_community = check_is_resource_community_file(resource)
     # FIXME: this will never be picked up as this is NOT available in a pre-scan plugin
     has_package_data = bool(getattr(resource, 'package_data', False))
-    resource.is_manifest = is_manifest = path.endswith(_MANIF) or has_package_data
+    resource.is_manifest = is_manifest = is_manifest_path(path, _MANIF) or has_package_data
     resource.is_key_file = (resource.is_top_level and (is_readme or is_legal or is_manifest))
     return resource
