@@ -754,7 +754,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
             resolved_package = models.PackageData.from_data(resolved_package_mapping, package_only)
             # these are paths t the root of the installed package in v2
             if dep:
-                resolved_package.file_references = [models.FileReference(path=dep)],
+                resolved_package.file_references = [models.FileReference(path=dep)]
 
             # v1 as name/constraint pairs
             subrequires = dep_data.get('requires') or {}
