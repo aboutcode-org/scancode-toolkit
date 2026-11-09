@@ -160,6 +160,8 @@ Try the '--help' option for help on options and arguments."""
         )
 
         for param in self.get_params(ctx):
+            if not isinstance(param, click.Option):
+                continue
             # Get the list of option's name and help text
             help_record = param.get_help_record(ctx)
             if not help_record:
@@ -299,7 +301,9 @@ def progressmanager(
         progress_class = ProgressLogger
     else:
         progress_class = EnhancedProgressBar
-        bar_template = "[%(bar)s]" + " " + "%(info)s" if bar_template is None else bar_template
+        bar_template = (
+            "[%(bar)s]" + " " + "%(info)s" if bar_template is None else bar_template
+        )
 
     kwargs = dict(
         iterable=iterable,
@@ -505,8 +509,12 @@ class PluggableCommandLineOption(click.Option):
         Validate `value` against declared `required_options` or
         `conflicting_options` dependencies.
         """
-        _validate_option_dependencies(ctx, self, value, self.required_options, required=True)
-        _validate_option_dependencies(ctx, self, value, self.conflicting_options, required=False)
+        _validate_option_dependencies(
+            ctx, self, value, self.required_options, required=True
+        )
+        _validate_option_dependencies(
+            ctx, self, value, self.conflicting_options, required=False
+        )
 
     def get_help_record(self, ctx):
         if not self.hidden:
@@ -533,11 +541,15 @@ def validate_option_dependencies(ctx):
             continue
         value = values.get(param.name)
         if TRACE:
-            logger_debug("  validate_option_dependencies: param:", param, "value:", value)
+            logger_debug(
+                "  validate_option_dependencies: param:", param, "value:", value
+            )
         param.validate_dependencies(ctx, value)
 
 
-def _validate_option_dependencies(ctx, param, value, other_option_names, required=False):
+def _validate_option_dependencies(
+    ctx, param, value, other_option_names, required=False
+):
     """
     Validate the `other_option_names` option dependencies and return a
     UsageError if the `param` `value` is set to a not-None non-default value and
