@@ -30,7 +30,7 @@
       "scan_errors": []
     },
     {
-      "path": "some /file",
+      "path": "some \\file",
       "type": "file",
       "name": "some \\file",
       "base_name": "some \\file",
@@ -117,7 +117,7 @@
       "scan_errors": []
     },
     {
-      "path": "some/\"file",
+      "path": "some\\\"file",
       "type": "file",
       "name": "some\\\"file",
       "base_name": "some\\\"file",

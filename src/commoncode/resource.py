@@ -8,6 +8,7 @@
 #
 
 import json
+import ntpath
 import os
 import sys
 import traceback
@@ -43,12 +44,12 @@ from commoncode.datautils import String
 from commoncode.fileset import is_included
 from commoncode.filetype import is_file as filetype_is_file
 from commoncode.filetype import is_special
-from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import create_dir
 from commoncode.fileutils import delete
 from commoncode.fileutils import file_name
 from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
+from commoncode.system import on_windows
 from commoncode.system import to_os_native_path
 
 """
@@ -1189,7 +1190,7 @@ def to_decoded_posix_path(path):
     """
     Return `path` as a Unicode POSIX path given a unicode or bytes path string.
     """
-    return clean_path(os.fsdecode(as_posixpath(path)))
+    return clean_path(os.fsdecode(path))
 
 
 @attr.attributes(slots=True)
@@ -1330,7 +1331,7 @@ class Resource(object):
         """
         location = self.location
         if location:
-            return clean_path(as_posixpath(self.location))
+            return clean_path(self.location)
         else:
             return self.path
 
@@ -1657,8 +1658,13 @@ def clean_path(path):
     Return a cleaned and normalized POSIX ``path``.
     """
     path = path or ""
-    # convert to posix and ensure we have no slash at the end
-    path = posixpath_normpath(path.replace("\\", "/").rstrip("/"))
+    # A backslash is a valid file name character on POSIX, even in a bare file
+    # name: only convert it on Windows or when the path has a Windows drive/UNC
+    # prefix, the only reliable sign of a Windows path.
+    if on_windows or ntpath.splitdrive(path)[0]:
+        path = path.replace("\\", "/")
+    # ensure we have no slash at the end
+    path = posixpath_normpath(path.rstrip("/"))
     if path == ".":
         path = ""
     return path
