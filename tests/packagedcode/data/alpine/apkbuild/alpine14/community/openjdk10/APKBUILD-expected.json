@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "openjdk10",
   "version": "10.0.2_p13-r3",
@@ -172,5 +172,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/openjdk10@10.0.2_p13-r3"
+  "purl": "pkg:apk/openjdk10@10.0.2_p13-r3"
 }

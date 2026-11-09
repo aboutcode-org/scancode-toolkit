@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "mpd",
   "version": "0.22.8-r2",
@@ -124,5 +124,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/mpd@0.22.8-r2"
+  "purl": "pkg:apk/mpd@0.22.8-r2"
 }

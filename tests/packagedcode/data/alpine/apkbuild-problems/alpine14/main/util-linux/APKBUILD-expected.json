@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "util-linux",
   "version": "2.37-r0",
@@ -100,5 +100,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/util-linux@2.37-r0"
+  "purl": "pkg:apk/util-linux@2.37-r0"
 }

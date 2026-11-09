@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "lua-unit",
   "version": "3.3-r2",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/lua-unit@3.3-r2"
+  "purl": "pkg:apk/lua-unit@3.3-r2"
 }
