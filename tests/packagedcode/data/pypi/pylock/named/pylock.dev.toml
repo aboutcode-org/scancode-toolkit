@@ -1,0 +1,25 @@
+# Test named pylock.dev.toml based on PEP 751 specification
+# SPDX-License-Identifier: MIT
+lock-version = "1.0"
+requires-python = ">=3.10"
+created-by = "uv"
+
+[[packages]]
+name = "pytest"
+version = "8.3.3"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+wheels = [
+    { name = "pytest-8.3.3-py3-none-any.whl", url = "https://files.pythonhosted.org/packages/pytest-8.3.3-py3-none-any.whl", size = 342300, hashes = { sha256 = "d6e3c09194e8ec67feef7a641d40db9b25fb513f508216fcb6b0cfa0b07b8eb5" } },
+]
+dependencies = [
+    { name = "iniconfig", version = "2.0.0" },
+    { name = "packaging", marker = "python_version >= '3.8'" },
+]
+
+[[packages]]
+name = "iniconfig"
+version = "2.0.0"
+wheels = [
+    { name = "iniconfig-2.0.0-py3-none-any.whl", url = "https://files.pythonhosted.org/packages/iniconfig-2.0.0-py3-none-any.whl", size = 5891, hashes = { sha256 = "b6a85871a79d2e3b22d2d1b04c6f0dec269e5d2e38da1811a232f2f7431c494b" } },
+]

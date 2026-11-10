@@ -1,0 +1,35 @@
+# Test pylock.toml based on PEP 751 specification
+# SPDX-License-Identifier: MIT
+lock-version = "1.0"
+requires-python = ">=3.9"
+created-by = "mousebender"
+environments = [
+    "sys_platform == 'linux'",
+    "sys_platform == 'win32'",
+]
+
+[[packages]]
+name = "attrs"
+directory = { path = ".", editable = true }
+
+[[packages]]
+name = "alabaster"
+version = "0.7.16"
+requires-python = ">=3.9"
+index = "https://pypi.org/simple/"
+sdist = { name = "alabaster-0.7.16.tar.gz", url = "https://files.pythonhosted.org/packages/c9/3e/13dd8e5ed9094e734ac430b5d0eb4f2bb001708a8b7856cbf8e084e001ba/alabaster-0.7.16.tar.gz", size = 23776, hashes = { sha256 = "75a8b99c28a5dad50dd7f8ccdd447a121ddb3892da9e53d1ca5cca3106d58d65" } }
+wheels = [
+    { name = "alabaster-0.7.16-py3-none-any.whl", url = "https://files.pythonhosted.org/packages/32/34/d4e1c02d3bee589efb5dfa17f88ea08bdb3e3eac12bc475462aec52ed223/alabaster-0.7.16-py3-none-any.whl", size = 13511, hashes = { sha256 = "b46733c07dce03ae4e150330b975c75737fa60f0a7c591b6c8bf4928a28e2c92" } },
+]
+
+[[packages]]
+name = "cattrs"
+version = "24.1.2"
+requires-python = ">=3.8"
+index = "https://pypi.org/simple/"
+dependencies = [
+    { name = "attrs" },
+]
+wheels = [
+    { name = "cattrs-24.1.2-py3-none-any.whl", url = "https://files.pythonhosted.org/packages/c8/d5/867e75361fc45f6de75fe277dd085627a9db5ebb511a87f27dc1396b5351/cattrs-24.1.2-py3-none-any.whl", size = 66446, hashes = { sha256 = "67c7495b760168d931a10233f979b28dc04daf853b30752246f4f8471c6d68d0" } },
+]

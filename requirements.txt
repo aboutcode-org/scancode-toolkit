@@ -47,7 +47,7 @@ multiregex==2.0.3
 normality==2.6.1
 openpyxl==3.0.10
 packageurl-python==0.17.6
-packaging==25.0
+packaging==26.3
 packvers==21.5
 parameter-expansion-patched==0.3.1
 pathspec==1.0.0
