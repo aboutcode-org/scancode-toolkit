@@ -1,0 +1,1 @@
+See the license files in licenses/*.

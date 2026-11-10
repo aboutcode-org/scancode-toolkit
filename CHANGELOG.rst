@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Support directory glob patterns in license rule ``referenced_filenames``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4276
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
