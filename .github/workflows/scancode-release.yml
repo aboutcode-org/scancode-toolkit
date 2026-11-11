@@ -41,7 +41,7 @@ jobs:
         # https://github.com/actions/setup-python/releases/tag/v7.1.0
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
-          python-version: 3.14
+          python-version: 3.15
 
       - name: Install requirements then build main and mini wheel, sdist
         run: etc/release/scancode-create-pypi-wheel-and-sdist.sh
@@ -71,7 +71,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+       pyver: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -108,7 +108,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+       pyver: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -145,7 +145,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+       pyver: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -190,7 +190,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
-          python-version: "3.14"
+          python-version: "3.15"
 
       - name: Build source archive with deps
         run: etc/release/scancode-create-release-app-sources.sh
@@ -219,7 +219,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-22.04, ubuntu-24.04]
-        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -276,7 +276,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [macos-14, macos-15, macos-15-intel]
-        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -332,7 +332,7 @@ jobs:
       fail-fast: true
       matrix:
        os: [windows-2025-vs2026, windows-2022]
-       pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+       pyver: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -383,7 +383,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-22.04, ubuntu-24.04]
-        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -434,7 +434,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-14, macos-15, macos-15-intel]
-        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -486,7 +486,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [windows-2025-vs2026, windows-2022]
-        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+        pyver: ["3.10", "3.11", "3.12", "3.13", "3.14", "3.15"]
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -567,6 +567,12 @@ jobs:
           name: macos_app_py_3.14
           path: dist
 
+      - name: Download a single artifact macos_app for python 3.15
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          name: macos_app_py_3.15
+          path: dist
+
       - name: Download a single artifact linux_app for python 3.10
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
         with:
@@ -597,6 +603,12 @@ jobs:
           name: linux_app_py_3.14
           path: dist
 
+      - name: Download a single artifact linux_app for python 3.15
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          name: linux_app_py_3.15
+          path: dist
+
       - name: Download a single artifact windows_app for python 3.10
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
         with:
@@ -625,6 +637,12 @@ jobs:
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
         with:
           name: windows_app_py_3.14
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.15
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          name: windows_app_py_3.15
           path: dist
 
       - name: Download scancode and licensedcode wheels
@@ -664,7 +682,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
-          python-version: 3.14
+          python-version: 3.15
 
       - name: scancode and licensedcode wheels
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
