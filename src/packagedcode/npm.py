@@ -18,6 +18,7 @@ import urllib.parse
 from functools import partial
 from itertools import islice
 
+import yaml
 from packageurl import PackageURL
 
 from packagedcode import models
@@ -1171,8 +1172,20 @@ class BasePnpmLockHandler(BaseNpmHandler):
         present in the spec: https://github.com/pnpm/spec/blob/master/lockfile/
         """
 
+        # A pnpm-lock.yaml can be a stream of several YAML documents: the
+        # last one is the lockfile of the project proper. The documents
+        # before it lock the package manager itself and are skipped for now.
         with open(location) as yl:
-            lock_data = saneyaml.load(yl.read())
+            documents = [
+                document for document
+                in yaml.load_all(yl.read(), Loader=saneyaml.SaneLoader)
+                if document
+            ]
+
+        if not documents:
+            return
+
+        lock_data = documents[-1]
 
         lockfile_version = lock_data.get("lockfileVersion")
         is_shrinkwrap = False

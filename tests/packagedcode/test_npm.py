@@ -407,6 +407,14 @@ class TestNpm(PackageTester):
         packages = npm.PnpmLockYamlHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_pnpm_lock_yaml_v9_with_multiple_yaml_documents(self):
+        # pnpm can write a first YAML document that locks the package
+        # manager itself, before the document for the project lockfile
+        test_file = self.get_test_loc('npm/pnpm/pnpm-lock/v9/multi-document/pnpm-lock.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/pnpm-lock/v9/multi-document-pnpm-lock.yaml-expected')
+        packages = npm.PnpmLockYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_pnpm_shrinkwrap_yaml(self):
         test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
         expected_loc = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack-shrinkwrap.yaml-expected')
