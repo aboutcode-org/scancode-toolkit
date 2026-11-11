@@ -401,6 +401,14 @@ class TestNpm(PackageTester):
         packages = npm.PnpmLockYamlHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_pnpm_lock_yaml_v9_with_non_registry_packages(self):
+        # packages from a local directory, a local tarball or a tarball URL
+        # have a path or a URL in their key in place of a version
+        test_file = self.get_test_loc('npm/pnpm/pnpm-lock/v9/non-registry/pnpm-lock.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/pnpm-lock/v9/non-registry-pnpm-lock.yaml-expected')
+        packages = npm.PnpmLockYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_pnpm_lock_yaml_v9(self):
         test_file = self.get_test_loc('npm/pnpm/pnpm-lock/v9/uView/pnpm-lock.yaml')
         expected_loc = self.get_test_loc('npm/pnpm/pnpm-lock/v9/uView-pnpm-lock.yaml-expected')
