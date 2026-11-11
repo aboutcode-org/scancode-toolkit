@@ -27,13 +27,15 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        # https://github.com/actions/checkout/releases/tag/v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
       - name: Set up Python
-        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
+        # https://github.com/actions/setup-python/releases/tag/v7.1.0
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
-          python-version: 3.14
+          python-version: 3.15
 
       - name: Install pypa/build and twine
         run: python -m pip install --user --upgrade build twine pkginfo flot
@@ -42,7 +44,8 @@ jobs:
         run: etc/release/commoncode-create-pypi-wheel-and-sdist.sh
 
       - name: Upload built archives
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        # https://github.com/actions/upload-artifact/releases/tag/v7.0.2
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: pypi_archives
           path: dist/*
@@ -59,13 +62,15 @@ jobs:
 
     steps:
       - name: Download built archives
-        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        # https://github.com/actions/download-artifact/releases/tag/v8.0.2
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: pypi_archives
           path: dist
 
       - name: Create GH release
-        uses: softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda
+        # https://github.com/softprops/action-gh-release/releases/tag/v3.0.4
+        uses: softprops/action-gh-release@8a0cd651e5b2365bd640854a3fa5dfc70e4875f3 # v3.0.4
         with:
           draft: true
           files: dist/*
@@ -82,11 +87,13 @@ jobs:
 
     steps:
       - name: Download built archives
-        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+        # https://github.com/actions/download-artifact/releases/tag/v8.0.2
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: pypi_archives
           path: dist
 
       - name: Publish to PyPI
         if: startsWith(github.ref, 'refs/tags')
-        uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b
+        # https://github.com/pypa/gh-action-pypi-publish/releases/tag/v1.14.3
+        uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086 #v1.14.3

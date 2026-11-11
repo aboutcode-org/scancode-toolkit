@@ -55,12 +55,14 @@ venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel
 cp -r \
   dist/scancode_*.whl \
   scancode extractcode configure \
+  pyproject-commoncode.toml \
   *.rst \
   samples \
   *NOTICE *LICENSE *ABOUT \
   $release_dir
 
 cp -r \
+  dist/commoncode*.whl \
   dist/licensedcode_index*.whl \
   $release_dir/thirdparty
 

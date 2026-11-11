@@ -115,7 +115,7 @@ TRACE_DEEP = False
 TRACE_ULTRA_DEEP = False
 
 # Supported environments
-PYTHON_VERSIONS = "310", "311", "312", "313", "314"
+PYTHON_VERSIONS = "310", "311", "312", "313", "314", "315"
 
 PYTHON_DOT_VERSIONS_BY_VER = {
     "310": "3.10",
@@ -123,6 +123,7 @@ PYTHON_DOT_VERSIONS_BY_VER = {
     "312": "3.12",
     "313": "3.13",
     "314": "3.14",
+    "315": "3.15",
 }
 
 
@@ -140,6 +141,7 @@ ABIS_BY_PYTHON_VERSION = {
     "312": ["cp312", "cp312m", "abi3"],
     "313": ["cp313", "cp313m", "abi3"],
     "314": ["cp314", "cp314m", "cp314t", "abi3"],
+    "315": ["cp315", "cp315m", "cp315t", "abi3"],
 }
 
 PLATFORMS_BY_OS = {

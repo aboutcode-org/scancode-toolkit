@@ -4,7 +4,9 @@ is_license_reference: yes
 is_continuous: yes
 relevance: 100
 minimum_coverage: 100
-notes: Rule based on the manifest file of the liquidbase source jar. 
+notes: Rule based on the manifest file of the liquidbase source jar.
+ignorable_urls:
+    - https://fsl.software/FSL-1.1-ALv2.template.md
 ---
 
 Bundle-License: https://fsl.software/FSL-1.1-ALv2.template.md
