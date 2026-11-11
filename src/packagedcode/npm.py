@@ -1162,6 +1162,47 @@ class UnknownPnpmLockFormat(Exception):
     pass
 
 
+# a reference starts with a scheme as in "file:", "link:", "https:" or "git+ssh:"
+is_pnpm_reference = re.compile(r'^[A-Za-z][A-Za-z0-9+.\-]*:').match
+
+
+def split_pnpm_package_key(package_key):
+    """
+    Return a tuple of (namespace, name, version) from a ``package_key``
+    string as used in the "packages" of a pnpm lockfile v9. For a package
+    that does not come from a registry, the version is a reference such as a
+    path or a URL. Return a tuple of three None if this is not a key with a
+    name and a version.
+
+    For example:
+    >>> split_pnpm_package_key('ms@2.1.3')
+    (None, 'ms', '2.1.3')
+    >>> split_pnpm_package_key('@babel/core@7.21.3')
+    ('@babel', 'core', '7.21.3')
+    >>> split_pnpm_package_key('@shared/ui@file:tooling/ui')
+    ('@shared', 'ui', 'file:tooling/ui')
+    >>> split_pnpm_package_key('ci-info@https://codeload.github.com/watson/ci-info/tar.gz/f43f6a1c')
+    (None, 'ci-info', 'https://codeload.github.com/watson/ci-info/tar.gz/f43f6a1c')
+    >>> split_pnpm_package_key('foo@git+ssh://git@github.com/foo/foo.git#1234')
+    (None, 'foo', 'git+ssh://git@github.com/foo/foo.git#1234')
+    >>> split_pnpm_package_key('ms')
+    (None, None, None)
+    """
+    # The name ends at the first "@" that is not the leading scope marker.
+    # What comes after can contain "/" and "@" as in a path or a URL.
+    at_position = package_key.find('@', 1)
+    if at_position == -1:
+        return None, None, None
+
+    full_name = package_key[:at_position]
+    version = package_key[at_position + 1:]
+    namespace, _, name = full_name.rpartition('/')
+    if not name or not version:
+        return None, None, None
+
+    return namespace or None, name, version
+
+
 class BasePnpmLockHandler(BaseNpmHandler):
 
     @classmethod
@@ -1189,26 +1230,13 @@ class BasePnpmLockHandler(BaseNpmHandler):
         major_v, minor_v = lockfile_version.split(".")
 
         resolved_packages = lock_data.get("packages", {})
-        dependency_relations = lock_data.get("snapshots", {})
-        dependency_relations_by_purl = {}
-        if dependency_relations:
-            for purl_fields, relations in dependency_relations.items():
-                clean_purl_fields = purl_fields.split("(")[0]
-                sections = clean_purl_fields.split("/")
-                namespace = None
-                if len(sections) == 2:
-                    namespace, name_version = sections
-                elif len(sections) == 1:
-                    name_version, = sections
-                name, version = name_version.split("@")
-
-                purl = PackageURL(
-                    type=cls.default_package_type,
-                    name=name,
-                    namespace=namespace,
-                    version=version,
-                ).to_string()
-                dependency_relations_by_purl[purl] = relations
+        # In v9, the dependency relations of a package are in a "snapshots"
+        # mapping. Its keys are a package key with an optional peers suffix
+        # as in "name@version(peer@version)"
+        dependency_relations_by_package_key = {}
+        for snapshot_key, relations in (lock_data.get("snapshots") or {}).items():
+            package_key = snapshot_key.split("(")[0]
+            dependency_relations_by_package_key[package_key] = relations
 
         dependencies_by_purl = {}
 
@@ -1236,17 +1264,22 @@ class BasePnpmLockHandler(BaseNpmHandler):
 
                 name, version = name_version.split("@")
             elif major_v == "9":
-                if len(sections) == 2:
-                    namespace, name_version = sections
-                elif len(sections) == 1:
-                    name_version, = sections
-
-                name, version = name_version.split("@")
+                namespace, name, version = split_pnpm_package_key(clean_purl_fields)
+                if not name:
+                    continue
             elif major_v == "5" or is_shrinkwrap:
                 if len(sections) == 3:
                     _, name, version = sections
                 elif len(sections) == 4:
                     _, namespace, name, version = sections
+
+            # A package that does not come from a registry has a reference
+            # such as a "file:" path or a tarball URL in its key in place of
+            # a version. pnpm stores its actual version in the data, if known.
+            reference = None
+            if major_v == "9" and is_pnpm_reference(version):
+                reference = version
+                version = data.get("version")
 
             purl = PackageURL(
                 type=cls.default_package_type,
@@ -1259,22 +1292,27 @@ class BasePnpmLockHandler(BaseNpmHandler):
             integrity = checksum.get('integrity')
             misc = get_algo_hexsum(integrity)
 
+            download_url = None
+            if reference:
+                tarball = checksum.get('tarball') or ''
+                if tarball.startswith(('http://', 'https://')):
+                    download_url = tarball
+
             dependencies = data.get('dependencies') or {}
             optional_dependencies = data.get('optionalDependencies') or {}
             transitive_peer_dependencies = data.get('transitivePeerDependencies') or []
 
-            if purl in dependency_relations_by_purl:
-                dependency_relations = dependency_relations_by_purl.get(purl)
-                if dependency_relations:
-                    deps = dependency_relations.get('dependencies')
-                    if deps:
-                        dependencies.update(deps)
-                    optional_deps = dependency_relations.get('optionalDependencies')
-                    if optional_deps:
-                        optional_dependencies.update(optional_deps)
-                    transitive_peer_deps = dependency_relations.get('transitivePeerDependencies')
-                    if transitive_peer_deps:
-                        transitive_peer_dependencies.extend(transitive_peer_deps)
+            relations = dependency_relations_by_package_key.get(purl_fields)
+            if relations:
+                deps = relations.get('dependencies')
+                if deps:
+                    dependencies.update(deps)
+                optional_deps = relations.get('optionalDependencies')
+                if optional_deps:
+                    optional_dependencies.update(optional_deps)
+                transitive_peer_deps = relations.get('transitivePeerDependencies')
+                if transitive_peer_deps:
+                    transitive_peer_dependencies.extend(transitive_peer_deps)
 
             peer_dependencies = data.get('peerDependencies') or {}
             peer_dependencies_meta = data.get('peerDependenciesMeta') or {}
@@ -1325,6 +1363,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 namespace=namespace,
                 name=name,
                 version=version,
+                download_url=download_url,
                 dependencies=dependencies_for_resolved,
                 is_virtual=True,
                 **misc,
@@ -1345,6 +1384,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
 
             dependency_data = models.DependentPackage(
                 purl=purl,
+                extracted_requirement=reference,
                 is_optional=is_optional,
                 is_runtime=is_runtime,
                 is_pinned=True,
@@ -1352,7 +1392,9 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 resolved_package=resolved_package.to_dict(),
                 extra_data=extra_data_deps,
             )
-            dependencies_by_purl[purl] = dependency_data
+            # several packages can have the same name and no version, as
+            # with local directories: the reference tells them apart
+            dependencies_by_purl[purl, reference] = dependency_data
 
         dependencies = [
             dep.to_dict()
