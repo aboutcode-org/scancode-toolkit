@@ -474,6 +474,31 @@ class TestNpm(PackageTester):
         packages = npm.PnpmWorkspaceYamlHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_update_dependencies_by_purl_pnpm_underscores(self):
+        dependencies_by_purl = {}
+        dependencies = {
+            'workbox-build': '7.3.0(@types/babel__core@7.20.5)',
+            '@types/node': '20.17.7(patch_hash=fe6957869a9b616ec526ededb72bbe846b863bd2349204218772df5c1e62d6ab)',
+            '@react-spring/animated': '9.5.5_react@18.2.0',
+        }
+        npm.PnpmLockYamlHandler.update_dependencies_by_purl(
+            dependencies_by_purl=dependencies_by_purl,
+            dependencies=dependencies,
+            scope='dependencies',
+            is_runtime=True,
+            is_optional=False,
+        )
+        expected = {
+            'pkg:npm/workbox-build': '7.3.0(@types/babel__core@7.20.5)',
+            'pkg:npm/%40types/node': '20.17.7(patch_hash=fe6957869a9b616ec526ededb72bbe846b863bd2349204218772df5c1e62d6ab)',
+            'pkg:npm/%40react-spring/animated': '9.5.5',
+        }
+        results = {
+            purl: dep.extracted_requirement
+            for purl, dep in dependencies_by_purl.items()
+        }
+        assert results == expected
+        
     def test_vcs_repository_mapper(self):
         package = MockPackage()
         repo = 'git+git://bitbucket.org/vendor/my-private-repo.git'
