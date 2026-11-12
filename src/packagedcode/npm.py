@@ -377,8 +377,8 @@ class BaseNpmHandler(models.DatafileHandler):
                 # TODO: store this relation too?
                 requirement = metadata
                 if 'pnpm' in cls.datasource_id:
-                    if '_' in metadata:
-                        requirement, _extra = metadata.split('_')
+                    if '_' in metadata and '(' not in metadata:
+                        requirement, _, _extra = metadata.partition('_')
 
                 if ':' in requirement and '@' in requirement:
                     # dependencies with requirements like this are aliases and should be reported
