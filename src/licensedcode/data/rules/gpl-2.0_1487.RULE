@@ -1,0 +1,8 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+relevance: 100
+notes: Rule found in test.cpp and tmp.cpp (#4942)
+---
+
+released under GNU GPL v2 only license
