@@ -162,8 +162,33 @@ if %ERRORLEVEL% neq 0 (
     %PIP_EXTRA_ARGS% ^
     %FLOT_REQUIREMENTS%
 
+if %ERRORLEVEL% neq 0 (
+    exit /b %ERRORLEVEL%
+)
+
+if exist dist\commoncode*.whl (
+    del /q dist\commoncode*.whl
+)
+
 "%CFG_BIN_DIR%\flot" --pyproject pyproject-commoncode.toml
-"%CFG_BIN_DIR%\pip" install --force-reinstall ./dist/commoncode-32.5.2-py3-none-any.whl
+if %ERRORLEVEL% neq 0 (
+    exit /b %ERRORLEVEL%
+)
+
+set "COMMONCODE_WHEEL="
+for %%f in (dist\commoncode*.whl) do (
+    set "COMMONCODE_WHEEL=%%f"
+)
+
+if not defined COMMONCODE_WHEEL (
+    echo Error: No commoncode wheel found in dist\
+    exit /b 1
+)
+
+"%CFG_BIN_DIR%\pip" install --force-reinstall "%COMMONCODE_WHEEL%"
+if %ERRORLEVEL% neq 0 (
+    exit /b %ERRORLEVEL%
+)
 
 "%CFG_BIN_DIR%\pip" install ^
     --upgrade ^
