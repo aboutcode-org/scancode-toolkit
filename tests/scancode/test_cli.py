@@ -11,6 +11,7 @@ import io
 import json
 import os
 
+import click
 import pytest
 from unittest import skipIf
 
@@ -721,6 +722,16 @@ def test_scan_cli_help(regen=REGEN_TEST_FIXTURES):
 
     with open(expected_file) as ef:
         expected = ef.read()
+
+    # Click 8.5.1 also lists arguments without help text.
+    input_argument = click.Argument(['input'])
+    if input_argument.get_help_record(click.Context(click.Command('scancode'))):
+        expected = expected.replace(
+            '  documentation:\n',
+            '  miscellaneous:\n'
+            '    <OUTPUT FORMAT OPTION(s)> <input>...\n\n'
+            '  documentation:\n',
+        )
 
     if no_spaces(result) != no_spaces(expected):
         assert result == expected
