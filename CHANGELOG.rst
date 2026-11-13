@@ -4,6 +4,10 @@ Changelog
 Next release
 --------------
 
+- Fix Cargo.toml dependency extraction when dependencies are renamed using the
+  ``package`` key. The dependency package URL is now set using the target package
+  name with the local alias preserved in ``extra_data``.
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

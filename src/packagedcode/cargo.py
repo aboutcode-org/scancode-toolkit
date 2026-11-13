@@ -330,7 +330,7 @@ class CargoLockHandler(CargoBaseHandler):
         yield models.PackageData.from_data(package_data, package_only)
 
 
-def dependency_mapper(dependencies, scope='dependencies'):
+def dependency_mapper(dependencies, scope='dependencies', target=None):
     """
     Yield DependentPackage collected from a list of cargo dependencies
     """
@@ -338,6 +338,8 @@ def dependency_mapper(dependencies, scope='dependencies'):
     for name, requirement in dependencies.items():
         extra_data = {}
         extracted_requirement = None
+        dep_name = name
+
         if isinstance(requirement, str):
             # plain version requirement
             is_optional = False
@@ -348,17 +350,26 @@ def dependency_mapper(dependencies, scope='dependencies'):
             # everything else is just dumped in extra data
             # here {workspace = true} means dependency version
             # should be inherited
+            requirement = requirement.copy()
             is_optional = requirement.pop('optional', False)
             if 'version' in requirement:
                 extracted_requirement = requirement.get('version')
 
+            package_rename = requirement.pop('package', None)
+            if package_rename:
+                dep_name = package_rename
+                extra_data['alias'] = name
+
             if requirement:
-                extra_data = requirement
+                extra_data.update(requirement)
+
+        if target:
+            extra_data['target'] = target
 
         yield models.DependentPackage(
             purl=PackageURL(
                 type='cargo',
-                name=name,
+                name=dep_name,
             ).to_string(),
             extracted_requirement=extracted_requirement,
             scope=scope,
