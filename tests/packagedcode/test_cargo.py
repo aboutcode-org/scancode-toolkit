@@ -173,6 +173,42 @@ class TestCargo(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_dependency_mapper_renamed_package(self):
+        deps = {
+            'foo': {'version': '1.0.0', 'package': 'bar'},
+            'serde': '1.0.0',
+        }
+        dependent_packages = list(cargo.dependency_mapper(deps))
+        assert len(dependent_packages) == 2
+
+        dep_bar = [d for d in dependent_packages if d.purl == 'pkg:cargo/bar'][0]
+        assert dep_bar.extracted_requirement == '1.0.0'
+        assert dep_bar.extra_data.get('alias') == 'foo'
+
+        dep_serde = [d for d in dependent_packages if d.purl == 'pkg:cargo/serde'][0]
+        assert dep_serde.extracted_requirement == '1.0.0'
+        assert not dep_serde.extra_data.get('alias')
+
+    def test_parse_cargo_toml_with_renamed_dependency(self):
+        test_file = self.get_temp_file('Cargo.toml')
+        with open(test_file, 'w') as f:
+            f.write('''[package]
+name = "my-crate"
+version = "0.1.0"
+
+[dependencies]
+my_regex = { version = "1.5.0", package = "regex" }
+''')
+        packages = list(cargo.CargoTomlHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0]
+        assert package.name == 'my-crate'
+        assert len(package.dependencies) == 1
+        dep = package.dependencies[0]
+        assert dep.purl == 'pkg:cargo/regex'
+        assert dep.extracted_requirement == '1.5.0'
+        assert dep.extra_data.get('alias') == 'my_regex'
+
 
 PERSON_PARSER_TEST_TABLE = [
     ('Barney Rubble <b@rubble.com>', ('Barney Rubble ', '<b@rubble.com>')),
