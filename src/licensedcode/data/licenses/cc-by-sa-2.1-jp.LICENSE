@@ -9,7 +9,8 @@ spdx_license_key: CC-BY-SA-2.1-JP
 other_urls:
     - https://creativecommons.org/licenses/by-sa/2.1/jp/legalcode
 ignorable_urls:
-    - https://creativecommons.org/http:/www.creativecommons.jp/
+    - http://www.creativecommons.jp/
+    - https://creativecommons.org/
 ---
 
 アトリビューション—シェアアライク 2.1
