@@ -225,6 +225,62 @@ class TestDebianDetector(FileBasedTesting):
         match = matches[0]
         assert match.matched_text() == 'license foo\nbar'
 
+    def test_parse_copyright_file_missing_license_field_with_license(self):
+        content = (
+            'Format: https://www.debian.org/doc/packaging-manuals/'
+            'copyright-format/1.0/\n'
+            '\n'
+            'Files: *\n'
+            'Copyright: 2020 ACME\n'
+            'License: Apache-2.0\n'
+            ' Licensed under Apache 2.0\n'
+            '\n'
+            'Files: clang/lib/Headers/cuda_wrappers/*\n'
+            'Copyright: 2016-2020, Google Inc.\n'
+            ' Permission is hereby granted, free of charge, to any person '
+            'obtaining a copy\n'
+            ' of this software and associated documentation files (the '
+            '"Software"), to deal\n'
+            ' in the Software without restriction, including without '
+            'limitation the rights\n'
+            ' to use, copy, modify, merge, publish, distribute, sublicense, '
+            'and/or sell\n'
+            ' copies of the Software, and to permit persons to whom the '
+            'Software is\n'
+            ' furnished to do so, subject to the following conditions:\n'
+        )
+        test_loc = self.get_temp_file(file_name='copyright', extension='')
+        with open(test_loc, 'w') as f:
+            f.write(content)
+
+        dc = debian_copyright.parse_copyright_file(location=test_loc)
+        assert dc is not None
+        lic_exp = dc.get_license_expression()
+        assert 'apache-2.0' in lic_exp
+        assert 'x11' in lic_exp or 'mit' in lic_exp
+
+    def test_parse_copyright_file_missing_license_field_without_license(self):
+        content = (
+            'Format: https://www.debian.org/doc/packaging-manuals/'
+            'copyright-format/1.0/\n'
+            '\n'
+            'Files: *\n'
+            'Copyright: 2020 ACME\n'
+            'License: Apache-2.0\n'
+            ' Licensed under Apache 2.0\n'
+            '\n'
+            'Files: no-license/*\n'
+            'Copyright: 2020 Bob\n'
+        )
+        test_loc = self.get_temp_file(file_name='copyright', extension='')
+        with open(test_loc, 'w') as f:
+            f.write(content)
+
+        dc = debian_copyright.parse_copyright_file(location=test_loc)
+        assert dc is not None
+        lic_exp = dc.get_license_expression()
+        assert 'apache-2.0' in lic_exp
+
 
 class TestMetadataDebianCopyright(PackageTester):
     test_data_dir = path.join(path.dirname(__file__), 'data/debian/copyright/')

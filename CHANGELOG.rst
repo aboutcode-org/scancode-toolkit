@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Handle Debian copyright paragraphs without a License field and detect misplaced license notices in their copyright text.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/2977
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
