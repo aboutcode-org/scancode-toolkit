@@ -895,10 +895,23 @@ class YarnLockV2Handler(BaseNpmHandler):
                 continue
             version = details.get('version')
             resolution = details.get('resolution')
-            ns_name, _, version = resolution.rpartition('@')
-            ns, _, name = ns_name.rpartition('/')
-            if version.startswith('npm:'):
-                _npm, _, version = version.partition(':')
+            if '@patch:' in resolution:
+                # A patch resolution embeds the patched locator, which can
+                # contain further @ characters, for instance in the patch
+                # file path of a scoped package, such as:
+                # "@scope/name@patch:@scope/name@npm%3A1.0.0#~/.yarn/patches/@scope-name-npm-1.0.0-1234.patch"
+                # Splitting at the last @ yields an empty or wrong name.
+                # The package name is what comes before the first @ that
+                # is not the scope marker, and the entry version field
+                # holds the actual version of the patched package.
+                start = 1 if resolution.startswith('@') else 0
+                ns_name = resolution[:resolution.index('@', start)]
+                ns, _, name = ns_name.rpartition('/')
+            else:
+                ns_name, _, version = resolution.rpartition('@')
+                ns, _, name = ns_name.rpartition('/')
+                if version.startswith('npm:'):
+                    _npm, _, version = version.partition(':')
             purl = PackageURL(
                 type=cls.default_package_type,
                 namespace=ns,
