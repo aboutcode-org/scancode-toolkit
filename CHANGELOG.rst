@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Add new rule for proprietary-license detection.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5290
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
