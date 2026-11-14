@@ -806,3 +806,12 @@ def test_parse_setup_py(test_loc):
 def test_parse_more_setup_py(test_loc):
     check_setup_py_parsing(test_loc)
 
+
+class TestPipCacheWheelHandler(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_parse_pip_cache_wheel(self):
+        test_file = self.get_test_loc('pip_cache/wheels/construct/origin.json')
+        expected_loc = self.get_test_loc('pip_cache/wheels/construct/origin.json.expected')
+        package = pypi.PipCacheWheelHandler.parse(test_file)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)

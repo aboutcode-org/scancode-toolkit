@@ -2955,3 +2955,77 @@ def get_requirement_from_section(section, sub_section):
     packages, _ = get_requirements_txt_dependencies(location=location)
     for req in packages:
         yield req.extracted_requirement
+
+
+class PipCacheWheelHandler(models.DatafileHandler):
+
+    
+    datasource_id = 'pip_wheel_cache'
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    path_patterns = ('*/.cache/pip/wheels/*/*/*/*/origin.json',)
+    filetypes = ('json',)
+    
+    @classmethod
+    def parse(cls, location, package_only=False):
+
+        with open(location, 'r') as f:
+            data = json.load(f)
+        
+        url = data.get('url', '')
+        archive_info = data.get('archive_info', {})
+        sha256 = archive_info.get('hash', '').replace('sha256=', '')
+        
+        if url:
+            filename = posixpath.basename(url)
+            name_version = filename.replace('.tar.gz', '').replace('.zip', '')
+            
+            if '-' in name_version:
+                parts = name_version.rsplit('-', 1)
+                name = parts[0]
+                version = parts[1] if len(parts) > 1 else None
+            else:
+                name = name_version
+                version = None
+        else:
+            name = None
+            version = None
+        
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+            download_url=url,
+            sha256=sha256,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+    
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder):
+
+        name = package_data.get('name')
+        version = package_data.get('version')
+        
+        if not name:
+            return
+        
+        package = models.Package(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+            download_url=package_data.get('download_url'),
+            sha256=package_data.get('sha256'),
+        )
+        
+        if version:
+            package.purl = PackageURL(
+                type='pypi',
+                name=name,
+                version=version,
+            ).to_string()
+        
+        package_adder(package.package_uid, package, resource)
+        
+        yield package
