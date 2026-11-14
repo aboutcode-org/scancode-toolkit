@@ -22,6 +22,7 @@ from configparser import ConfigParser
 from fnmatch import fnmatchcase
 from pathlib import Path
 from typing import NamedTuple
+from urllib.parse import urlsplit
 
 import dparse2
 # NOTE: we always want to use the external library rather than the built-in for now
@@ -37,6 +38,11 @@ from packvers.specifiers import SpecifierSet
 from packvers import markers
 from packvers.requirements import Requirement
 from packvers.utils import canonicalize_name
+from packvers.utils import InvalidSdistFilename
+from packvers.utils import InvalidWheelFilename
+from packvers.utils import parse_sdist_filename
+from packvers.utils import parse_wheel_filename
+from packvers.version import InvalidVersion
 
 from packagedcode import models
 from packagedcode.utils import build_description
@@ -1443,6 +1449,114 @@ class PypiSdistArchiveHandler(models.DatafileHandler):
             **urls,
         )
         yield models.PackageData.from_data(package_data, package_only)
+
+
+def parse_distribution_filename(filename):
+    """
+    Return a (name, version) tuple parsed from a wheel or sdist file name
+    such as ``pefile-2022.5.30-py3-none-any.whl`` or
+    ``pefile-2022.5.30.tar.gz``. Return None if the file name cannot be
+    parsed as a distribution file name.
+    """
+    if not filename:
+        return None
+    try:
+        if filename.endswith('.whl'):
+            name, version, _build, _tags = parse_wheel_filename(filename)
+        else:
+            name, version = parse_sdist_filename(filename)
+    except (InvalidWheelFilename, InvalidSdistFilename, InvalidVersion):
+        return None
+    return str(name), str(version)
+
+
+class PipWheelCacheOriginJsonHandler(models.DatafileHandler):
+    datasource_id = 'pypi_pip_cache_origin_json'
+    path_patterns = ('*origin.json',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'pip wheel cache origin.json'
+    documentation_url = 'https://pip.pypa.io/en/stable/topics/caching/'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        try:
+            with open(location) as f:
+                data = json.load(f)
+        except (OSError, ValueError):
+            # unreadable or invalid JSON: not a pip cache origin file
+            return
+
+        if not isinstance(data, dict):
+            return
+
+        url = data.get('url')
+        if not isinstance(url, str) or not url:
+            url = None
+
+        archive_info = data.get('archive_info') or {}
+        if not isinstance(archive_info, dict):
+            archive_info = {}
+
+        sha256 = None
+        hashes = archive_info.get('hashes') or {}
+        if isinstance(hashes, dict):
+            sha256 = hashes.get('sha256')
+        if not isinstance(sha256, str):
+            sha256 = None
+        if not sha256:
+            # the single hash is recorded as e.g. "sha256=<hex digest>"
+            hash_value = archive_info.get('hash') or ''
+            if isinstance(hash_value, str):
+                for prefix in ('sha256:', 'sha256='):
+                    if hash_value.startswith(prefix):
+                        sha256 = hash_value[len(prefix):]
+                        break
+
+        name, version = cls.get_name_version(location, url)
+        if not name:
+            return
+
+        urls = get_pypi_urls(name, version)
+        if url:
+            # prefer the exact URL recorded in the cache origin file
+            urls['repository_download_url'] = url
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            name=name,
+            version=version,
+            download_url=url,
+            sha256=sha256,
+            **urls,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+    @classmethod
+    def get_name_version(cls, location, url):
+        """
+        Return a (name, version) tuple for the package described by a pip
+        cache ``origin.json`` file, parsed from the download ``url`` file name
+        or, if there is no usable URL, from the name of a sibling wheel file
+        in the same cache directory. Return (None, None) if no name and
+        version can be determined.
+        """
+        candidates = []
+        if url:
+            candidates.append(posixpath.basename(urlsplit(url).path))
+        # a pip wheel cache directory holds the built wheel next to origin.json
+        location_path = Path(location)
+        if location_path.parent.is_dir():
+            candidates.extend(
+                sorted(p.name for p in location_path.parent.glob('*.whl'))
+            )
+        for filename in candidates:
+            name_version = parse_distribution_filename(filename)
+            if name_version:
+                return name_version
+        return None, None
 
 
 class PythonSetupPyHandler(BaseExtractedPythonLayout):

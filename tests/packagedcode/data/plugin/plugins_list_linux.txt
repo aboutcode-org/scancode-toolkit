@@ -749,6 +749,13 @@ Package type:  pypi
   path_patterns:    '*pip-inspect.deplock'
 --------------------------------------------
 Package type:  pypi
+  datasource_id:     pypi_pip_cache_origin_json
+  documentation URL: https://pip.pypa.io/en/stable/topics/caching/
+  primary language:  Python
+  description:       pip wheel cache origin.json
+  path_patterns:    '*origin.json'
+--------------------------------------------
+Package type:  pypi
   datasource_id:     pypi_poetry_lock
   documentation URL: https://python-poetry.org/docs/basic-usage/#installing-with-poetrylock
   primary language:  Python
