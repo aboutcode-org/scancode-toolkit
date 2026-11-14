@@ -62,13 +62,38 @@ Some URLs:
 - `faq_url`
 - `other_urls`
 
-Also attributes having ignorables in the license text:
+Clues that are ignored in the license text
+------------------------------------------
 
-- `ignorable_urls`
-- `ignorable_copyrights`
-- `ignorable_authors`
-- `ignorable_holders`
-- `ignorable_emails`
+License texts often contain clues that are part of the license itself, such as
+the license URL, a copyright statement, author and holder names, and contact
+emails. These are not clues about the scanned code, and reporting them as
+findings of the scanned code would be misleading.
+
+The ``ignorable_*`` attributes record these clues so that they can be ignored:
+
+- ``ignorable_urls``
+- ``ignorable_copyrights``
+- ``ignorable_authors``
+- ``ignorable_holders``
+- ``ignorable_emails``
+
+ScanCode detects these clues in the license text on its own, and
+``scancode-reindex-licenses`` checks that the declared values match the clues
+actually present in the text, so you normally do not need to write them by
+hand. For example, ``apache-2.0.LICENSE`` declares the two URLs that appear in
+the Apache 2.0 text:
+
+.. code-block:: yaml
+
+    ignorable_urls:
+        - http://www.apache.org/licenses/
+        - http://www.apache.org/licenses/LICENSE-2.0
+
+These attributes do not take part in license detection. They are used by the
+``--filter-clues`` post-scan option to drop redundant clues that are already
+part of a matched license text; without ``--filter-clues`` such clues are
+reported as ordinary detections.
 
 See the ``src/licensedcode/data/licenses/`` directory for many more examples.
 
