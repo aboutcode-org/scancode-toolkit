@@ -4,6 +4,12 @@ Changelog
 Next release
 --------------
 
+- Fix a crash when scanning Dart packages with ``path:``, ``git:`` or
+  ``hosted:`` dependencies in ``pubspec.yaml``: dependency sources given
+  as mappings are now parsed instead of raising
+  ``AttributeError: 'dict' object has no attribute 'replace'``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5482
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
