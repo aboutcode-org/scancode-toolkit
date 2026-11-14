@@ -81,6 +81,33 @@ def load_csv(location):
         return fields, values
 
 
+def test_flatten_scan_copyright_end_line():
+    # Verify that end_line for copyrights, holders, and authors comes from
+    # the actual end_line field, not start_line (regression for issue #4785).
+    test_json = test_env.get_test_loc('csv/flatten_scan/copyright_end_line.json')
+    scan = load_scan(test_json)
+    headers = dict([
+        ('info', []),
+        ('license', []),
+        ('copyright', []),
+        ('email', []),
+        ('url', []),
+        ('package', []),
+    ])
+    result = list(flatten_scan(scan, headers))
+    copyright_row = next(r for r in result if 'copyright' in r)
+    holder_row = next(r for r in result if 'holder' in r)
+    author_row = next(r for r in result if 'author' in r)
+    assert copyright_row['start_line'] == 3
+    assert copyright_row['end_line'] == 5
+    assert holder_row['start_line'] == 3
+    assert holder_row['end_line'] == 5
+    assert author_row['start_line'] == 7
+    assert author_row['end_line'] == 8
+    expected_file = test_env.get_test_loc('csv/flatten_scan/copyright_end_line.json-expected')
+    check_json(result, expected_file, regen=REGEN_TEST_FIXTURES)
+
+
 def test_flatten_scan_minimal():
     test_json = test_env.get_test_loc('csv/flatten_scan/minimal.json')
     scan = load_scan(test_json)
