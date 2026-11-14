@@ -21,6 +21,11 @@ Next release
   ``json.JSONDecodeError`` in ``get_results_cache_data`` and returning an empty mapping.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5345
 
+- Fix incorrect ``mpl-1.1`` expression in the RabbitMQ Java client triple-license
+  rule. The rule text declares "Mozilla Public License 2.0" but the expression was
+  ``mpl-1.1 OR gpl-2.0 OR apache-2.0``. Corrected to ``mpl-2.0 OR gpl-2.0 OR apache-2.0``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5229
+
 - Cap ``pluggy`` below 1.7.0. pluggy 1.7.0 no longer accepts the class-based
   hookspecs used by ``plugincode`` and scancode fails at import time with
   ``ValueError: did not find any 'pre_scan' hooks``.
