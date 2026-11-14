@@ -1131,6 +1131,334 @@
       "datasource_id": "cargo_toml"
     },
     {
+      "purl": "pkg:cargo/muda",
+      "extracted_requirement": "0.11",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"openbsd\", target_os = \"netbsd\", target_os = \"windows\", target_os = \"macos\"))",
+        "version": "0.11",
+        "default-features": false,
+        "features": [
+          "serde"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/muda?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tray-icon",
+      "extracted_requirement": "0.11",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"openbsd\", target_os = \"netbsd\", target_os = \"windows\", target_os = \"macos\"))",
+        "version": "0.11",
+        "default-features": false,
+        "features": [
+          "serde"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/tray-icon?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/gtk",
+      "extracted_requirement": "0.18",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"openbsd\", target_os = \"netbsd\"))",
+        "version": "0.18",
+        "features": [
+          "v3_24"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/gtk?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/webkit2gtk",
+      "extracted_requirement": "=2.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"openbsd\", target_os = \"netbsd\"))",
+        "version": "=2.0.1",
+        "features": [
+          "v2_38"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/webkit2gtk?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/embed_plist",
+      "extracted_requirement": "1.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"macos\")"
+      },
+      "dependency_uid": "pkg:cargo/embed_plist?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/cocoa",
+      "extracted_requirement": "0.25",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"macos\")"
+      },
+      "dependency_uid": "pkg:cargo/cocoa?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/objc",
+      "extracted_requirement": "0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"macos\")"
+      },
+      "dependency_uid": "pkg:cargo/objc?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/window-vibrancy",
+      "extracted_requirement": "0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"macos\")"
+      },
+      "dependency_uid": "pkg:cargo/window-vibrancy?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/webview2-com",
+      "extracted_requirement": "0.27",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(windows)"
+      },
+      "dependency_uid": "pkg:cargo/webview2-com?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/window-vibrancy",
+      "extracted_requirement": "0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(windows)"
+      },
+      "dependency_uid": "pkg:cargo/window-vibrancy?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/windows",
+      "extracted_requirement": "0.51",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(windows)",
+        "version": "0.51",
+        "features": [
+          "Win32_Foundation"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/windows?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/log",
+      "extracted_requirement": "0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(any(target_os = \"android\", target_os = \"ios\"))"
+      },
+      "dependency_uid": "pkg:cargo/log?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/heck",
+      "extracted_requirement": "0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(any(target_os = \"android\", target_os = \"ios\"))"
+      },
+      "dependency_uid": "pkg:cargo/heck?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/jni",
+      "extracted_requirement": "0.21",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"android\")"
+      },
+      "dependency_uid": "pkg:cargo/jni?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/libc",
+      "extracted_requirement": "0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"ios\")"
+      },
+      "dependency_uid": "pkg:cargo/libc?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/objc",
+      "extracted_requirement": "0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"ios\")"
+      },
+      "dependency_uid": "pkg:cargo/objc?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/cocoa",
+      "extracted_requirement": "0.25",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"ios\")"
+      },
+      "dependency_uid": "pkg:cargo/cocoa?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/swift-rs",
+      "extracted_requirement": "1.0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"ios\")"
+      },
+      "dependency_uid": "pkg:cargo/swift-rs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri@2.0.0-alpha.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
       "purl": "pkg:cargo/serde",
       "extracted_requirement": "1.0",
       "scope": "dependencies",
@@ -1239,6 +1567,82 @@
       "resolved_package": {},
       "extra_data": {
         "version": "2"
+      },
+      "dependency_uid": "pkg:cargo/url?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri-runtime@1.0.0-alpha.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri-runtime/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/windows",
+      "extracted_requirement": "0.51",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(windows)",
+        "version": "0.51",
+        "features": [
+          "Win32_Foundation"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/windows?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri-runtime@1.0.0-alpha.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri-runtime/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/gtk",
+      "extracted_requirement": "0.18",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"openbsd\", target_os = \"netbsd\"))",
+        "version": "0.18",
+        "features": [
+          "v3_24"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/gtk?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri-runtime@1.0.0-alpha.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri-runtime/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/jni",
+      "extracted_requirement": "0.21",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"android\")"
+      },
+      "dependency_uid": "pkg:cargo/jni?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri-runtime@1.0.0-alpha.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri-runtime/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/url",
+      "extracted_requirement": "2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"macos\")"
       },
       "dependency_uid": "pkg:cargo/url?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/tauri-runtime@1.0.0-alpha.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -1448,6 +1852,44 @@
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/dirs-next?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri-build@2.0.0-alpha.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri-build/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/swift-rs",
+      "extracted_requirement": "1.0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"macos\")",
+        "version": "1.0.6",
+        "features": [
+          "build"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/swift-rs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tauri-build@2.0.0-alpha.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/core/tauri-build/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/plist",
+      "extracted_requirement": "1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "target": "cfg(target_os = \"macos\")"
+      },
+      "dependency_uid": "pkg:cargo/plist?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:cargo/tauri-build@2.0.0-alpha.11?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "tauri/core/tauri-build/Cargo.toml",
       "datasource_id": "cargo_toml"
@@ -1910,6 +2352,36 @@
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/swift-rs",
+              "extracted_requirement": "1.0.6",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"macos\")",
+                "version": "1.0.6",
+                "features": [
+                  "build"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/plist",
+              "extracted_requirement": "1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"macos\")"
+              }
             }
           ],
           "repository_homepage_url": "https://crates.io/crates/tauri-build",
@@ -2075,6 +2547,66 @@
               "resolved_package": {},
               "extra_data": {
                 "version": "2"
+              }
+            },
+            {
+              "purl": "pkg:cargo/windows",
+              "extracted_requirement": "0.51",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(windows)",
+                "version": "0.51",
+                "features": [
+                  "Win32_Foundation"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/gtk",
+              "extracted_requirement": "0.18",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"openbsd\", target_os = \"netbsd\"))",
+                "version": "0.18",
+                "features": [
+                  "v3_24"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/jni",
+              "extracted_requirement": "0.21",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"android\")"
+              }
+            },
+            {
+              "purl": "pkg:cargo/url",
+              "extracted_requirement": "2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"macos\")"
               }
             }
           ],
@@ -2691,6 +3223,262 @@
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/muda",
+              "extracted_requirement": "0.11",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"openbsd\", target_os = \"netbsd\", target_os = \"windows\", target_os = \"macos\"))",
+                "version": "0.11",
+                "default-features": false,
+                "features": [
+                  "serde"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/tray-icon",
+              "extracted_requirement": "0.11",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"openbsd\", target_os = \"netbsd\", target_os = \"windows\", target_os = \"macos\"))",
+                "version": "0.11",
+                "default-features": false,
+                "features": [
+                  "serde"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/gtk",
+              "extracted_requirement": "0.18",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"openbsd\", target_os = \"netbsd\"))",
+                "version": "0.18",
+                "features": [
+                  "v3_24"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/webkit2gtk",
+              "extracted_requirement": "=2.0.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(any(target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"openbsd\", target_os = \"netbsd\"))",
+                "version": "=2.0.1",
+                "features": [
+                  "v2_38"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/embed_plist",
+              "extracted_requirement": "1.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"macos\")"
+              }
+            },
+            {
+              "purl": "pkg:cargo/cocoa",
+              "extracted_requirement": "0.25",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"macos\")"
+              }
+            },
+            {
+              "purl": "pkg:cargo/objc",
+              "extracted_requirement": "0.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"macos\")"
+              }
+            },
+            {
+              "purl": "pkg:cargo/window-vibrancy",
+              "extracted_requirement": "0.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"macos\")"
+              }
+            },
+            {
+              "purl": "pkg:cargo/webview2-com",
+              "extracted_requirement": "0.27",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(windows)"
+              }
+            },
+            {
+              "purl": "pkg:cargo/window-vibrancy",
+              "extracted_requirement": "0.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(windows)"
+              }
+            },
+            {
+              "purl": "pkg:cargo/windows",
+              "extracted_requirement": "0.51",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(windows)",
+                "version": "0.51",
+                "features": [
+                  "Win32_Foundation"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/log",
+              "extracted_requirement": "0.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(any(target_os = \"android\", target_os = \"ios\"))"
+              }
+            },
+            {
+              "purl": "pkg:cargo/heck",
+              "extracted_requirement": "0.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(any(target_os = \"android\", target_os = \"ios\"))"
+              }
+            },
+            {
+              "purl": "pkg:cargo/jni",
+              "extracted_requirement": "0.21",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"android\")"
+              }
+            },
+            {
+              "purl": "pkg:cargo/libc",
+              "extracted_requirement": "0.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"ios\")"
+              }
+            },
+            {
+              "purl": "pkg:cargo/objc",
+              "extracted_requirement": "0.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"ios\")"
+              }
+            },
+            {
+              "purl": "pkg:cargo/cocoa",
+              "extracted_requirement": "0.25",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"ios\")"
+              }
+            },
+            {
+              "purl": "pkg:cargo/swift-rs",
+              "extracted_requirement": "1.0.6",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"ios\")"
+              }
             }
           ],
           "repository_homepage_url": "https://crates.io/crates/tauri",
@@ -3288,6 +4076,34 @@
                 "features": [
                   "test"
                 ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/tauri-plugin-cli",
+              "extracted_requirement": null,
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(any(target_os = \"macos\", windows, target_os = \"linux\", target_os = \"dragonfly\", target_os = \"freebsd\", target_os = \"openbsd\", target_os = \"netbsd\"))",
+                "git": "https://github.com/tauri-apps/plugins-workspace",
+                "branch": "v2"
+              }
+            },
+            {
+              "purl": "pkg:cargo/window-shadows",
+              "extracted_requirement": "0.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "target": "cfg(target_os = \"windows\")"
               }
             }
           ],

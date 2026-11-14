@@ -98,6 +98,52 @@ class TestCargo(PackageTester):
         packages_data = cargo.CargoTomlHandler.parse(test_file)
         self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_cargo_toml_target_dependencies(self):
+        test_file = self.get_temp_file('Cargo.toml')
+        with open(test_file, 'w') as f:
+            f.write(
+                '[package]\n'
+                'name = "test-crate"\n'
+                'version = "1.0.0"\n\n'
+                '[dependencies]\n'
+                'serde = "1.0"\n\n'
+                '[target.\'cfg(windows)\'.dependencies]\n'
+                'winapi = "0.3"\n\n'
+                '[target.x86_64-unknown-linux-gnu.dependencies]\n'
+                'openssl = "0.10"\n\n'
+                '[target.\'cfg(unix)\'.dev-dependencies]\n'
+                'nix = "0.26"\n'
+            )
+        packages_data = list(cargo.CargoTomlHandler.parse(test_file))
+        assert len(packages_data) == 1
+        package = packages_data[0]
+        assert package.name == 'test-crate'
+        deps = package.dependencies
+        assert len(deps) == 4
+        deps_by_name = {d.purl: d for d in deps}
+        assert 'pkg:cargo/serde' in deps_by_name
+        assert 'pkg:cargo/winapi' in deps_by_name
+        assert 'pkg:cargo/openssl' in deps_by_name
+        assert 'pkg:cargo/nix' in deps_by_name
+
+        winapi_dep = deps_by_name['pkg:cargo/winapi']
+        assert winapi_dep.extracted_requirement == '0.3'
+        assert winapi_dep.scope == 'dependencies'
+        assert winapi_dep.is_runtime is True
+        assert winapi_dep.extra_data == {'target': 'cfg(windows)'}
+
+        openssl_dep = deps_by_name['pkg:cargo/openssl']
+        assert openssl_dep.extracted_requirement == '0.10'
+        assert openssl_dep.scope == 'dependencies'
+        assert openssl_dep.is_runtime is True
+        assert openssl_dep.extra_data == {'target': 'x86_64-unknown-linux-gnu'}
+
+        nix_dep = deps_by_name['pkg:cargo/nix']
+        assert nix_dep.extracted_requirement == '0.26'
+        assert nix_dep.scope == 'dev-dependencies'
+        assert nix_dep.is_runtime is False
+        assert nix_dep.extra_data == {'target': 'cfg(unix)'}
+
     def test_parse_cargo_lock_sample1(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample1/output.expected.json')
