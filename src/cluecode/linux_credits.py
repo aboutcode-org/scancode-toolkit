@@ -10,8 +10,10 @@
 
 import os
 import sys
+import re
 
 from collections import deque
+
 
 from commoncode.fileutils import file_name
 
@@ -25,7 +27,12 @@ An enetry looks like this:
   P: 3F69 2E64 6D92 3BBE E7AE  9258 5C0F 96E8 4EC1 6D6B
   B: 1DwxWb2J4vuX4vjsbzaCXW696rZfeamahz
 
-We only consider the entries: N: name, E: email and W: web URL
+We only consider the entries: N: name, E: email and W: web URL.
+Additionally, we support Author and Upstream Author formats:
+  Author: Author Name
+  Author:Author Name (no space after colon)
+  Upstream Author: Author Name
+  Upstream-Author: Author Name
 """
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_CREDITS', False)
@@ -103,17 +110,29 @@ def detect_credits_authors_from_lines(numbered_lines):
         names = []
         emails = []
         webs = []
+        authors = []
+        
         for _, line in lines:
-            ltype, _, line = line.partition(":")
-            line = line.strip()
+            # Extract the type and value using partition for N:, E:, W: format
+            ltype, _, line_value = line.partition(":")
+            line_value = line_value.strip()
+            
             if ltype == "N":
-                names.append(line)
+                names.append(line_value)
             elif ltype == "E":
-                emails.append(line)
+                emails.append(line_value)
             elif ltype == "W":
-                webs.append(line)
+                webs.append(line_value)
+            else:
+                # Handle Author: format (with or without space after colon)
+                # Extract author name using regex to handle both "Author:Name" and "Author: Name"
+                match = re.match(r'^(?:Author|Upstream[-\s]*Author):\s*(.+)$', line, re.IGNORECASE)
+                if match:
+                    author_name = match.group(1).strip()
+                    if author_name:
+                        authors.append(author_name)
 
-        items = list(" ".join(item) for item in (names, emails, webs) if item)
+        items = list(" ".join(item) for item in (names, emails, webs, authors) if item)
         if TRACE:
             logger_debug('detect_credits_authors_from_lines: items:', items)
 
@@ -142,7 +161,8 @@ def get_credit_lines_groups(numbered_lines):
             yield list(lines_group)
             lines_group_clear()
 
-        if line.startswith(("N:", "E:", "W:")):
+        # Support both standard format (N:, E:, W:) and Author: format (with or without space after colon)
+        if line.startswith(("N:", "E:", "W:")) or re.match(r'^(?:Author|Upstream[-\s]*Author):\s*', line, re.IGNORECASE):
             has_credits = True
             lines_group_append((ln, line))
 
