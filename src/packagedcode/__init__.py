@@ -171,6 +171,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     pypi.PypiEggHandler,
     # pypi.PypiSdistArchiveHandler,
     pypi.PypiWheelHandler,
+    pypi.PipWheelCacheOriginJsonHandler,
     pypi.PyprojectTomlHandler,
     pypi.PoetryPyprojectTomlHandler,
     pypi.PoetryLockHandler,

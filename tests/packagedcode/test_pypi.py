@@ -806,3 +806,66 @@ def test_parse_setup_py(test_loc):
 def test_parse_more_setup_py(test_loc):
     check_setup_py_parsing(test_loc)
 
+
+
+class TestPipWheelCacheOriginJsonHandler(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pip_wheel_cache_origin_json(self):
+        test_file = self.get_test_loc('pypi/pip-cache-origin-json/pefile/origin.json')
+        assert pypi.PipWheelCacheOriginJsonHandler.is_datafile(test_file)
+
+    def test_parse_pip_wheel_cache_origin_json(self):
+        test_file = self.get_test_loc('pypi/pip-cache-origin-json/pefile/origin.json')
+        package = pypi.PipWheelCacheOriginJsonHandler.parse(test_file)
+        expected_loc = self.get_test_loc(
+            'pypi/pip-cache-origin-json/pefile-origin.json-expected.json',
+            must_exist=False,
+        )
+        self.check_packages_data(
+            package, expected_loc, must_exist=False, regen=REGEN_TEST_FIXTURES,
+        )
+
+    def test_parse_origin_json_missing_hash_does_not_fail(self):
+        test_file = self.get_test_loc('pypi/pip-cache-origin-json/missing-hash/origin.json')
+        packages = list(pypi.PipWheelCacheOriginJsonHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0].to_dict()
+        assert package['name'] == 'requests'
+        assert package['version'] == '2.32.3'
+        assert package['download_url'] == (
+            'https://files.pythonhosted.org/packages/63/70/'
+            '2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz'
+        )
+        assert package['sha256'] is None
+
+    def test_parse_origin_json_missing_url_uses_sibling_wheel(self):
+        test_file = self.get_test_loc('pypi/pip-cache-origin-json/missing-url/origin.json')
+        packages = list(pypi.PipWheelCacheOriginJsonHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0].to_dict()
+        assert package['name'] == 'pefile'
+        assert package['version'] == '2022.5.30'
+        assert package['download_url'] is None
+        assert package['sha256'] == (
+            'a5488a3dd1fd021ce33f969780b88fe0f7eebb76eb20996d7318f307612a045b'
+        )
+
+    def test_parse_origin_json_invalid_content_does_not_fail(self):
+        test_file = self.get_test_loc('pypi/pip-cache-origin-json/invalid/origin.json')
+        packages = list(pypi.PipWheelCacheOriginJsonHandler.parse(test_file))
+        assert packages == []
+
+    def test_package_scan_pip_wheel_cache_origin_json_end_to_end(self):
+        test_dir = self.get_test_loc('pypi/pip-cache-origin-json/pefile/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc(
+            'pypi/pip-cache-origin-json/pefile-package-expected.json',
+            must_exist=False,
+        )
+        run_scan_click(
+            ['--package', '--strip-root', '--processes', '-1', test_dir, '--json-pp', result_file]
+        )
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES,
+        )
