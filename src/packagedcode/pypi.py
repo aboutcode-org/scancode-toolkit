@@ -32,6 +32,7 @@ import pkginfo2
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
+from packaging.pylock import Pylock
 from packageurl import PackageURL
 from packvers.specifiers import SpecifierSet
 from packvers import markers
@@ -1121,6 +1122,272 @@ class UvLockHandler(BaseUvPythonLayout):
             type=cls.default_package_type,
             primary_language='Python',
             extra_data=extra_data,
+            dependencies=dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+def format_pylock_requirement(version=None, marker=None):
+    """
+    Return a requirement string formatted from ``version`` and ``marker``,
+    or None if neither is provided.
+    """
+    if version and marker:
+        req = (
+            version
+            if any(version.startswith(op) for op in ('==', '>=', '<=', '!=', '~=', '<', '>'))
+            else f'=={version}'
+        )
+        return f'{req}; {marker}'
+    if version:
+        return (
+            version
+            if any(version.startswith(op) for op in ('==', '>=', '<=', '!=', '~=', '<', '>'))
+            else f'=={version}'
+        )
+    if marker:
+        return marker
+    return None
+
+
+def build_pylock_package_sources(package):
+    """
+    Return a tuple of ``(download_url, file_name, size, hashes, vcs_url, qualifiers, extra_data)``
+    extracted from the source definitions (sdist, wheels, archive, vcs, directory)
+    of a ``packaging.pylock.Package``.
+    """
+    download_url = None
+    file_name = None
+    size = None
+    hashes = {}
+    vcs_url = None
+    qualifiers = {}
+    extra_data = {}
+
+    if package.sdist:
+        sdist = package.sdist
+        download_url = sdist.url
+        file_name = sdist.name or (posixpath.basename(sdist.url) if sdist.url else None)
+        size = sdist.size
+        hashes = sdist.hashes or {}
+
+    if package.wheels:
+        first_wheel = package.wheels[0]
+        if not download_url:
+            download_url = first_wheel.url
+        if not file_name:
+            file_name = first_wheel.name or (
+                posixpath.basename(first_wheel.url) if first_wheel.url else None
+            )
+        if size is None:
+            size = first_wheel.size
+        if not hashes:
+            hashes = first_wheel.hashes or {}
+
+    if package.archive:
+        archive = package.archive
+        download_url = archive.url
+        file_name = getattr(archive, 'name', None) or (
+            posixpath.basename(archive.url) if archive.url else None
+        )
+        size = archive.size
+        hashes = archive.hashes or {}
+        if archive.subdirectory:
+            extra_data['subdirectory'] = archive.subdirectory
+
+    if package.vcs:
+        vcs = package.vcs
+        vcs_type = vcs.type
+        vcs_repo_url = vcs.url
+        commit_id = vcs.commit_id
+        if vcs_repo_url:
+            if vcs_type and not vcs_repo_url.startswith(f'{vcs_type}+'):
+                vcs_url = f'{vcs_type}+{vcs_repo_url}'
+            else:
+                vcs_url = vcs_repo_url
+            if commit_id:
+                vcs_url = f'{vcs_url}@{commit_id}'
+            qualifiers['vcs_url'] = vcs_url
+        if vcs.requested_revision:
+            extra_data['requested_revision'] = vcs.requested_revision
+        if vcs.subdirectory:
+            extra_data['subdirectory'] = vcs.subdirectory
+
+    if package.directory:
+        directory = package.directory
+        if directory.path:
+            extra_data['path'] = str(directory.path)
+        if directory.editable is not None:
+            extra_data['is_editable'] = directory.editable
+        if directory.subdirectory:
+            extra_data['subdirectory'] = directory.subdirectory
+
+    if file_name:
+        qualifiers['file_name'] = file_name
+
+    return download_url, file_name, size, hashes, vcs_url, qualifiers, extra_data
+
+
+def build_pylock_dependencies_for_resolved(package, default_package_type='pypi'):
+    """
+    Return a list of DependentPackage dictionaries for the direct dependencies
+    of ``package``.
+    """
+    dependencies = []
+    for dep in package.dependencies or []:
+        dep_name = dep.get('name')
+        if not dep_name:
+            continue
+        dep_purl = PackageURL(
+            type=default_package_type,
+            name=dep_name,
+        )
+        extracted_requirement = format_pylock_requirement(
+            version=dep.get('version'),
+            marker=dep.get('marker'),
+        )
+        dependencies.append(
+            models.DependentPackage(
+                purl=dep_purl.to_string(),
+                extracted_requirement=extracted_requirement,
+                scope='dependencies',
+                is_runtime=True,
+                is_optional=False,
+                is_direct=True,
+                is_pinned=bool(dep.get('version')),
+            ).to_dict()
+        )
+    return dependencies
+
+
+def build_pylock_lockfile_extra_data(lock):
+    """
+    Return a dictionary of extra_data fields extracted from a Pylock instance.
+    """
+    extra_data = {}
+    if lock.requires_python:
+        extra_data['python_requires'] = str(lock.requires_python)
+    if lock.lock_version:
+        extra_data['lock_version'] = str(lock.lock_version)
+    if lock.created_by:
+        extra_data['created_by'] = lock.created_by
+    if lock.environments:
+        extra_data['environments'] = [str(e) for e in lock.environments]
+    if lock.extras:
+        extra_data['extras'] = [str(e) for e in lock.extras]
+    if lock.dependency_groups:
+        extra_data['dependency_groups'] = list(lock.dependency_groups)
+    if lock.default_groups:
+        extra_data['default_groups'] = list(lock.default_groups)
+    return extra_data
+
+
+class PylockTomlHandler(models.DatafileHandler):
+    datasource_id = 'pypi_pylock_toml'
+    path_patterns = (
+        '*/pylock.toml',
+        'pylock.toml',
+        '*/pylock.*.toml',
+        'pylock.*.toml',
+    )
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python pylock.toml lockfile'
+    documentation_url = 'https://peps.python.org/pep-0751/'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        try:
+            with open(location, 'rb') as fp:
+                toml_data = tomllib.load(fp)
+        except Exception:
+            return
+
+        if not isinstance(toml_data, dict):
+            return
+
+        if 'lock-version' not in toml_data or 'packages' not in toml_data:
+            return
+
+        # Default created-by if omitted in mock or non-strict lockfiles
+        if 'created-by' not in toml_data:
+            toml_data['created-by'] = ''
+
+        try:
+            lock = Pylock.from_dict(toml_data)
+        except Exception:
+            return
+
+        dependencies = []
+        for package in lock.packages:
+            (
+                download_url,
+                file_name,
+                size,
+                hashes,
+                vcs_url,
+                qualifiers,
+                source_extra_data,
+            ) = build_pylock_package_sources(package)
+
+            version_str = str(package.version) if package.version else None
+            urls = get_pypi_urls(package.name, version_str)
+            if download_url:
+                urls['repository_download_url'] = download_url
+            if vcs_url:
+                urls['vcs_url'] = vcs_url
+
+            resolved_extra_data = dict(source_extra_data)
+            if package.marker:
+                resolved_extra_data['marker'] = str(package.marker)
+            if package.requires_python:
+                resolved_extra_data['python_requires'] = str(package.requires_python)
+            if package.index:
+                resolved_extra_data['index'] = package.index
+
+            dependencies_for_resolved = build_pylock_dependencies_for_resolved(
+                package=package,
+                default_package_type=cls.default_package_type,
+            )
+
+            resolved_package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                name=package.name,
+                version=version_str,
+                qualifiers=qualifiers,
+                md5=hashes.get('md5'),
+                sha1=hashes.get('sha1'),
+                sha256=hashes.get('sha256'),
+                sha512=hashes.get('sha512'),
+                size=size,
+                is_virtual=True,
+                dependencies=dependencies_for_resolved,
+                extra_data=resolved_extra_data,
+                **urls,
+            )
+            resolved_package = models.PackageData.from_data(
+                resolved_package_data, package_only
+            )
+            dependencies.append(
+                models.DependentPackage(
+                    purl=resolved_package.purl,
+                    extracted_requirement=None,
+                    scope=None,
+                    is_runtime=True,
+                    is_optional=False,
+                    is_direct=False,
+                    is_pinned=bool(version_str),
+                    resolved_package=resolved_package.to_dict(),
+                ).to_dict()
+            )
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            extra_data=build_pylock_lockfile_extra_data(lock),
             dependencies=dependencies,
         )
         yield models.PackageData.from_data(package_data, package_only)
