@@ -4,6 +4,11 @@ Changelog
 Next release
 --------------
 
+- Fix the early validation of ``--from-json`` input scan files: these are now
+  validated upfront to be existing, readable files with a ``.json`` extension
+  and a JSON object start instead of failing late during the scan.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5351
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
