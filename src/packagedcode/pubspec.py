@@ -205,13 +205,16 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
     Return DependentPackage from the provided data.
     """
 
-    # TODO: these can be more complex for SDKs
-    # https://dart.dev/tools/pub/dependencies#dependency-sources
-
-    if isinstance(version, dict) and 'sdk' in version:
-        # {'sdk': 'flutter'} type of deps....
-        # which is a wart that we keep as a requiremnet
+    # Dependency versions can be a plain version constraint string or a
+    # mapping describing the dependency source, e.g. {'sdk': 'flutter'},
+    # {'path': '../foo'}, {'git': {...}} or {'hosted': {...}}.
+    # See https://dart.dev/tools/pub/dependencies#dependency-sources
+    # Keep the source as the requirement instead of failing the whole
+    # parse when the version is not a plain string.
+    if isinstance(version, dict):
         version = ', '.join(': '.join([k, str(v)]) for k, v in version.items())
+    elif not isinstance(version, str):
+        version = str(version)
 
     if version.replace('.', '').isdigit():
         # version is pinned exactly if it is only made of dots and digits
