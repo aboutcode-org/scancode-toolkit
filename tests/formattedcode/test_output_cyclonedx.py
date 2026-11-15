@@ -273,6 +273,8 @@ def test_get_property_string_value():
     assert get_property_string_value({'operating_system': 'win'}) == (
         '{"operating_system": "win"}')
     assert get_property_string_value(33) == '33'
+    assert get_property_string_value(0) == '0'
+    assert get_property_string_value(False) == 'False'
     assert get_property_string_value(None) is None
     assert get_property_string_value('') is None
     assert get_property_string_value([]) is None

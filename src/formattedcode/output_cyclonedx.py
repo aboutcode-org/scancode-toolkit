@@ -572,8 +572,11 @@ def get_property_string_value(value):
     value to report. CycloneDX property values are always strings: lists of
     messages are joined with newlines, mappings are serialized to JSON and
     anything else is stringified. Falsy values such as None, empty strings
-    and empty collections return None.
+    and empty collections return None. Numbers and booleans, including 0 and
+    False, are stringified.
     """
+    if isinstance(value, (int, float)):
+        return str(value)
     if not value:
         return None
     if isinstance(value, str):
