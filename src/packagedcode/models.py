@@ -582,7 +582,7 @@ class PackageData(IdentifiablePackageData):
     download_url = String(
         label='Download URL',
         help='A direct download URL.')
-
+    
     size = Integer(
         default=None,
         label='download size',

@@ -1,0 +1,72 @@
+{
+  "packages": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "buildpack.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "generic",
+          "namespace": null,
+          "name": "PHP",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "Heroku buildpack for PHP",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "ignore_files": [
+              ".github/",
+              ".gitignore",
+              ".rspec_parallel",
+              "support/build/",
+              "support/devcenter/",
+              "test/",
+              "Gemfile",
+              "Gemfile.lock",
+              "hatchet.json",
+              "hatchet.lock",
+              "requirements.txt"
+            ]
+          },
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "buildpack_toml",
+          "purl": "pkg:generic/PHP"
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}
