@@ -35,6 +35,31 @@ class TestPubspecDatadriven(PackageTester):
         self.check_packages_data(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
+class TestBuildDepNonStringVersion:
+    """
+    build_dep() must not crash on non-string scalar versions.
+
+    The real YAML parse path yields strings, so these are defensive
+    guards for a single odd dependency, not a second reproduced defect:
+    a bare number or an empty version must not abort the whole parse.
+    """
+
+    def test_build_dep_with_none_version(self):
+        dep = pubspec.build_dep('some_dep', None, scope='dependencies')
+        assert dep.extracted_requirement == 'None'
+        assert dep.is_pinned is False
+
+    def test_build_dep_with_int_version(self):
+        dep = pubspec.build_dep('some_dep', 2, scope='dependencies')
+        assert dep.extracted_requirement == '2'
+        assert dep.is_pinned is True
+
+    def test_build_dep_with_float_version(self):
+        dep = pubspec.build_dep('some_dep', 1.5, scope='dependencies')
+        assert dep.extracted_requirement == '1.5'
+        assert dep.is_pinned is True
+
+
 def pub_tester(location,):
     manifests = []
     for package_data in pubspec.DartPubspecYamlHandler.parse(location):
