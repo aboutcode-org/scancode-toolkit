@@ -231,6 +231,14 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
             parts.append(f'{key}: {value}')
         version = ', '.join(parts)
 
+    if not isinstance(version, str):
+        # Defensive: a version should be a plain string, but a non-string
+        # scalar (e.g. None for an unversioned dependency, or a bare
+        # number) must not crash the whole parse. Coerce it to a string
+        # instead. The real YAML parse path yields strings, so this is
+        # robustness for unusual inputs, not a second defect.
+        version = str(version)
+
     if version.replace('.', '').isdigit():
         # version is pinned exactly if it is only made of dots and digits
         purl = PackageURL(
