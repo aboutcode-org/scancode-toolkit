@@ -26,6 +26,12 @@ Next release
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
+- Fix a GPL-2.0-only license notice, as found in the Linux kernel ``ray_cs.c``
+  driver, being detected as another GPL variant. Add rules for the
+  ``version 2 only`` and ``version 2 or later`` notice variants that end with
+  the old Free Software Foundation postal address.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5039
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 
