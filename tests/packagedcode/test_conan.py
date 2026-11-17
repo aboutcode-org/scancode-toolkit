@@ -204,3 +204,57 @@ def test_get_dependencies():
     ]
 
     assert conan.get_dependencies(requires) == expected
+
+
+def test_conanfile_qualified_base():
+    recipe = """import conan
+class MyPackage(conan.ConanFile):
+    name = "mypackage"
+    version = "1.0.0"
+    description = "Test package with qualified base"
+"""
+    package_data = conan.ConanFileHandler._parse(recipe)
+    assert package_data is not None
+    assert package_data.name == "mypackage"
+    assert package_data.version == "1.0.0"
+
+
+def test_conanfile_non_conanfile_or_empty_no_crash():
+    assert conan.ConanFileHandler._parse("") is None
+    assert conan.ConanFileHandler._parse("# only comments") is None
+    assert conan.ConanFileHandler._parse("class NonConan: pass") is None
+
+
+def test_conanfile_parse_yields_nothing_for_non_conanfile(tmp_path):
+    test_file = tmp_path / "conanfile.py"
+    test_file.write_text("x = 1\n", encoding="utf-8")
+    packages = list(conan.ConanFileHandler.parse(str(test_file)))
+    assert packages == []
+
+
+def test_conanfile_list_dependencies_topics_license():
+    recipe = """from conan import ConanFile
+class MyPackage(ConanFile):
+    name = "test_pkg"
+    version = "2.0.0"
+    requires = ["zlib/1.2.11", "fmt/8.1.1"]
+    topics = ["c++", "packaging"]
+    license = ["MIT"]
+"""
+    package_data = conan.ConanFileHandler._parse(recipe)
+    assert package_data is not None
+    assert package_data.keywords == ["c++", "packaging"]
+    assert "MIT" in package_data.extracted_license_statement
+    assert package_data.declared_license_expression == "mit"
+    purls = [dep.purl for dep in package_data.dependencies]
+    assert purls == ["pkg:conan/zlib@1.2.11", "pkg:conan/fmt@8.1.1"]
+
+
+def test_get_dependencies_without_slash():
+    requires = ["zlib", "bzip2/1.0.8"]
+    deps = conan.get_dependencies(requires)
+    assert len(deps) == 2
+    assert deps[0].purl == "pkg:conan/zlib"
+    assert deps[0].extracted_requirement is None
+    assert deps[1].purl == "pkg:conan/bzip2@1.0.8"
+    assert deps[1].extracted_requirement == "1.0.8"
