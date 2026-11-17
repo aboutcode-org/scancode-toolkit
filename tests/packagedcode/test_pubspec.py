@@ -34,6 +34,50 @@ class TestPubspecDatadriven(PackageTester):
         package_data = pubspec.DartPubspecLockHandler.parse(test_loc)
         self.check_packages_data(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_build_dep_path_dependency(self):
+        dep = pubspec.build_dep(
+            name='my_local_package',
+            version={'path': '../my_local_package'},
+            scope='dependencies',
+        )
+        assert dep.purl == 'pkg:pubspec/my_local_package'
+        assert dep.extracted_requirement is None
+        assert not dep.is_pinned
+        assert dep.extra_data == {'path': '../my_local_package'}
+
+    def test_build_dep_git_dependency(self):
+        dep = pubspec.build_dep(
+            name='kittens',
+            version={'git': {'url': 'git://github.com/munificent/kittens.git', 'ref': 'some-branch'}},
+            scope='dependencies',
+        )
+        assert dep.purl == 'pkg:pubspec/kittens'
+        assert dep.extracted_requirement is None
+        assert not dep.is_pinned
+        assert dep.extra_data == {'git': {'url': 'git://github.com/munificent/kittens.git', 'ref': 'some-branch'}}
+
+    def test_build_dep_unversioned_dependency(self):
+        dep = pubspec.build_dep(
+            name='collection',
+            version=None,
+            scope='dependencies',
+        )
+        assert dep.purl == 'pkg:pubspec/collection'
+        assert dep.extracted_requirement is None
+        assert not dep.is_pinned
+        assert dep.extra_data == {}
+
+    def test_build_dep_hosted_with_version(self):
+        dep = pubspec.build_dep(
+            name='transmogrify',
+            version={'hosted': 'https://some-package-repo.com', 'version': '^1.4.0'},
+            scope='dependencies',
+        )
+        assert dep.purl == 'pkg:pubspec/transmogrify'
+        assert dep.extracted_requirement == '^1.4.0'
+        assert not dep.is_pinned
+        assert dep.extra_data == {'hosted': 'https://some-package-repo.com', 'version': '^1.4.0'}
+
 
 def pub_tester(location,):
     manifests = []

@@ -208,17 +208,34 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
     # TODO: these can be more complex for SDKs
     # https://dart.dev/tools/pub/dependencies#dependency-sources
 
-    if isinstance(version, dict) and 'sdk' in version:
-        # {'sdk': 'flutter'} type of deps....
-        # which is a wart that we keep as a requiremnet
-        version = ', '.join(': '.join([k, str(v)]) for k, v in version.items())
+    extra_data = {}
+    extracted_requirement = None
 
-    if version.replace('.', '').isdigit():
+    if isinstance(version, dict):
+        if 'sdk' in version:
+            # {'sdk': 'flutter'} type of deps....
+            # which is a wart that we keep as a requirement
+            extracted_requirement = ', '.join(': '.join([k, str(v)]) for k, v in version.items())
+        else:
+            extra_data = dict(version)
+            if 'version' in version and isinstance(version['version'], str):
+                extracted_requirement = version['version']
+    elif isinstance(version, str):
+        extracted_requirement = version
+    elif version is not None:
+        extracted_requirement = str(version)
+
+    is_pinned = False
+    if (
+        extracted_requirement
+        and isinstance(extracted_requirement, str)
+        and extracted_requirement.replace('.', '').isdigit()
+    ):
         # version is pinned exactly if it is only made of dots and digits
         purl = PackageURL(
             type='pubspec',
             name=name,
-            version=version,
+            version=extracted_requirement,
         )
         is_pinned = True
     else:
@@ -226,15 +243,15 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
             type='pubspec',
             name=name,
         )
-        is_pinned = False
 
     dep = models.DependentPackage(
         purl=purl.to_string(),
-        extracted_requirement=version,
+        extracted_requirement=extracted_requirement,
         scope=scope,
         is_runtime=is_runtime,
         is_optional=is_optional,
         is_pinned=is_pinned,
+        extra_data=extra_data,
     )
     return dep
 
