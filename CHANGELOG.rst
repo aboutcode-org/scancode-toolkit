@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Fix KeyError in NuGet .nuspec parsing when dependency groups omit targetFramework,
+  support project references in packages.lock.json, and extract expression license text.
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
