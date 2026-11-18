@@ -26,6 +26,8 @@ Next release
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
+- Update DataTables to v3.1.5
+
 v33.0.0rc1 - 2026-05-14
 ------------------------
 

@@ -1,19 +1,20 @@
-about_resource: jquery.dataTables.min
-download_url: https://codeload.github.com/DataTables/DataTables/zip/1.10.9
+about_resource: dataTables.min.js
+download_url: https://registry.npmjs.org/datatables.net/-/datatables.net-3.1.5.tgz
 
-version: 1.10.9
-name: jQuery
+version: 3.1.5
+name: DataTables
 homepage_url: https://www.datatables.net/
 owner: SpryMedia Limited
-copyright: Copyright (c) 2008-2013 SpryMedia Limited
+copyright: Copyright (c) SpryMedia Ltd
 
 license_expression: mit
 licenses:
   - key: mit
     name: MIT License
     file: DataTables.LICENSE
-    url: https://github.com/DataTables/DataTables/blob/1.10.9/license.txt
+    url: https://github.com/DataTables/Dist-DataTables/blob/3.1.5/License.txt
     spdx_license_key: MIT
-notes: DataTables images are also included in /images directory.
+notes: dataTables.min.css is the default styling, from
+  https://registry.npmjs.org/datatables.net-dt/-/datatables.net-dt-3.1.5.tgz
 
-package_url: pkg:github/DataTables/DataTables@1.10.9
+package_url: pkg:npm/datatables.net@3.1.5
