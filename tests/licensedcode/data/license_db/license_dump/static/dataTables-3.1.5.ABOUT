@@ -1,0 +1,16 @@
+about_resource: datatables/
+name: datatables
+version: 3.1.5
+download_url: https://registry.npmjs.org/datatables.net/-/datatables.net-3.1.5.tgz
+description: DataTables is a dependency free Javascript table library (with optional jQuery
+  integration). It is a highly flexible tool, based upon the foundations of progressive
+  enhancement, and will add advanced interaction controls to any HTML table.
+  Includes the default styling from https://registry.npmjs.org/datatables.net-dt/-/datatables.net-dt-3.1.5.tgz
+homepage_url: https://www.datatables.net/
+license_expression: mit
+attribute: yes
+package_url: pkg:npm/datatables.net@3.1.5
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
