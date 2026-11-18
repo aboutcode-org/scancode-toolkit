@@ -1,0 +1,21 @@
+---
+key: awinic-firmware
+short_name: Awinic Firmware License
+name: Awinic Firmware License
+category: Proprietary Free
+owner: Shanghai awinic Technology Co., Ltd.
+homepage_url: https://gitlab.com/kernel-firmware/linux-firmware
+spdx_license_key: LicenseRef-scancode-awinic-firmware
+text_urls:
+  - https://gitlab.com/kernel-firmware/linux-firmware/-/blob/1cafb17a3ead182e37ab572964bee2a692a554c5/LICENSES/LICENSE.awinic
+ignorable_copyrights:
+  - Copyright (c) 2026, Shanghai awinic Technology Co., Ltd.
+ignorable_holders:
+  - Shanghai awinic Technology Co., Ltd.
+---
+
+Copyright © 2026, Shanghai awinic Technology Co., Ltd.
+
+Permission is hereby granted for the distribution of this firmware
+data in hexadecimal or equivalent format, provided this copyright
+notice is accompanying it.
