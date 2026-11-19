@@ -1,0 +1,8 @@
+{
+  "name": "hello",
+  "version-string": "1.2.3",
+  "port-version": 2,
+  "description": "A sample vcpkg port",
+  "homepage": "https://example.com/hello",
+  "license": "MIT"
+}

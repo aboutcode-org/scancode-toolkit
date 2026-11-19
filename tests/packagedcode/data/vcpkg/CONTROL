@@ -1,0 +1,10 @@
+Source: zlib
+Version: 1.2.11
+Port-Version: 2
+Description: A Massively Spiffy Yet Delicately Unobtrusive Compression Library
+Homepage: https://zlib.net/
+Build-Depends: openssl, curl
+
+Feature: minizip
+Description: Minizip contrib library
+Build-Depends: bzip2
