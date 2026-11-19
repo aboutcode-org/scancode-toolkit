@@ -1,0 +1,14 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: proprietary license text of Jakub Jirak as seen in https://github.com/JirakJ/lincense
+    reported in scancode-toolkit issue 5290
+ignorable_copyrights:
+    - Copyright (c) 2025 Jakub Jirak
+ignorable_holders:
+    - Jakub Jirak
+ignorable_emails:
+    - support@jakubjirak.com
+---
+
+Copyright (c) 2025 Jakub Jirák. All rights reserved.  This software and its source code are proprietary and confidential. Unauthorized copying, modification, distribution, or reverse engineering of this software, via any medium, is strictly prohibited.  You are granted a non-exclusive, non-transferable license to use this software only in accordance with the terms agreed upon at the time of purchase or download.  For licensing or support inquiries, contact: support@jakubjirak.com
