@@ -160,6 +160,8 @@ Try the '--help' option for help on options and arguments."""
         )
 
         for param in self.get_params(ctx):
+            if not isinstance(param, click.Option):
+                continue
             # Get the list of option's name and help text
             help_record = param.get_help_record(ctx)
             if not help_record:
