@@ -3,6 +3,7 @@
   "ProductVersion": "2.0.0.0",
   "FileVersion": "2.0.0.0",
   "Assembly Version": "2.0.0.0",
+  "AssemblyVersion": null,
   "BuildDate": null,
   "ProductName": "Microsoft Enterprise Library for .NET",
   "OriginalFilename": "Microsoft.Practices.EnterpriseLibrary.Caching.dll",
