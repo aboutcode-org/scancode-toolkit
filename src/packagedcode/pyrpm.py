@@ -586,7 +586,22 @@ class RPM:
 
     @property
     def package(self):
-        return '-'.join([self.name, self.version])
+        """
+        Return the full RPM package identifier: name-version-release if release exists.
+        Example: bash-4.4.20-4.el8_6
+        """
+        parts = [self.name, self.version]
+        if self.release:
+           parts.append(self.release)
+        return '-'.join(parts)
+
+
+    @property
+    def full_version(self):
+        """Return version + release, similar to package property"""
+        if self.release:
+            return f"{self.version}-{self.release}"
+        return self.version
 
     @property
     def files_digest_algo(self):
@@ -594,12 +609,12 @@ class RPM:
 
     @property
     def filename(self):
-        name = '-'.join([self.package, self.release])
+        name = self.package
         arch = self.arch
         if self.is_binary:
-            ext = 'rpm'
+           ext = 'rpm'
         else:
-            ext = 'src.rpm'
+             ext = 'src.rpm'
         return '.'.join([name, arch, ext])
 
     def get_tags(self):
