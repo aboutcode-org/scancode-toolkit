@@ -207,6 +207,61 @@ class PhpComposerLockHandler(BasePhpComposerHandler):
         for package in packages + packages_dev:
             yield package
 
+class PhpSymfonyLockHandler(models.DatafileHandler):
+    datasource_id = 'php_symfony_lock'
+    path_patterns = ('*symfony.lock',)
+    default_package_type = 'composer'
+    default_primary_language = 'PHP'
+    is_lockfile = True
+    description = 'Symfony Flex lockfile'
+    documentation_url = 'https://symfony.com/doc/current/setup/flex.html'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with io.open(location, encoding='utf-8') as loc:
+            lock_data = json.load(loc)
+
+        if not isinstance(lock_data, dict):
+            return
+
+        dependencies = []
+
+        for package_name, package_details in lock_data.items():
+            if not isinstance(package_details, dict):
+                continue
+
+            namespace, separator, name = package_name.rpartition('/')
+
+            if not separator or not namespace or not name:
+                continue
+
+            version = package_details.get('version')
+            if not isinstance(version, str):
+                version = None
+            else:
+                version = version.strip()
+
+                if not version:
+                    version = None
+
+            purl = models.PackageURL(
+                type=cls.default_package_type,
+                namespace=namespace,
+                name=name,
+                version=version,
+            ).to_string()
+
+            dependency = models.DependentPackage(
+                purl=purl,
+                extracted_requirement=version,
+                is_pinned=bool(version),
+            )
+
+            dependencies.append(dependency)
+
+        yield cls.create_default_package_data(
+            dependencies=dependencies,
+        )
 
 def licensing_mapper(licenses, package, is_private=False):
     """
