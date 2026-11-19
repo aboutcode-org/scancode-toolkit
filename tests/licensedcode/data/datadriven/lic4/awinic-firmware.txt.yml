@@ -1,0 +1,7 @@
+license_expressions:
+  - awinic-firmware
+notes: |
+  Linux-firmware LICENSES/LICENSE.awinic, retrieved from canonical
+  GitLab upstream at commit 1cafb17a3ead182e37ab572964bee2a692a554c5.
+  Git blob: 8b50aa400bf54dd736e68cc232b2a8cc653fe707
+  https://gitlab.com/kernel-firmware/linux-firmware/-/blob/1cafb17a3ead182e37ab572964bee2a692a554c5/LICENSES/LICENSE.awinic
