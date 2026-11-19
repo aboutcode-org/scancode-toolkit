@@ -169,3 +169,95 @@ class TestSwiftEndtoEnd(PackageTester):
         check_json_scan(
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
+
+
+def test_get_dependencies_local_dependency():
+    dependencies = [
+        {
+            "sourceControl": [
+                {
+                    "identity": "local_lib",
+                    "location": {"local": [{"path": "../local_lib"}]},
+                    "requirement": None,
+                }
+            ]
+        }
+    ]
+    deps = swift.get_dependencies(dependencies)
+    assert len(deps) == 1
+    assert deps[0].purl == "pkg:swift/local_lib"
+    assert deps[0].extracted_requirement is None
+    assert deps[0].is_pinned is False
+
+
+def test_get_dependencies_location_none():
+    dependencies = [
+        {
+            "sourceControl": [
+                {
+                    "identity": "some_lib",
+                    "location": None,
+                    "requirement": None,
+                }
+            ]
+        }
+    ]
+    deps = swift.get_dependencies(dependencies)
+    assert len(deps) == 1
+    assert deps[0].purl == "pkg:swift/some_lib"
+    assert deps[0].extracted_requirement is None
+
+
+def test_get_dependencies_branch_requirement():
+    dependencies = [
+        {
+            "sourceControl": [
+                {
+                    "identity": "swift-arg-parser",
+                    "location": {
+                        "remote": [
+                            {"urlString": "https://github.com/apple/swift-argument-parser"}
+                        ]
+                    },
+                    "requirement": {"branch": ["main"]},
+                }
+            ]
+        }
+    ]
+    deps = swift.get_dependencies(dependencies)
+    assert len(deps) == 1
+    assert deps[0].purl == "pkg:swift/github.com/apple/swift-argument-parser"
+    assert deps[0].extracted_requirement == "branch: main"
+    assert deps[0].is_pinned is False
+
+
+def test_get_dependencies_revision_requirement():
+    dependencies = [
+        {
+            "sourceControl": [
+                {
+                    "identity": "swift-arg-parser",
+                    "location": {
+                        "remote": [
+                            {"urlString": "https://github.com/apple/swift-argument-parser"}
+                        ]
+                    },
+                    "requirement": {"revision": ["abc1234567890"]},
+                }
+            ]
+        }
+    ]
+    deps = swift.get_dependencies(dependencies)
+    assert len(deps) == 1
+    assert deps[0].purl == "pkg:swift/github.com/apple/swift-argument-parser@abc1234567890"
+    assert deps[0].extracted_requirement == "abc1234567890"
+    assert deps[0].is_pinned is True
+
+
+def test_get_namespace_and_name():
+    assert swift.get_namespace_and_name("https://github.com/apple/swift-argument-parser.git") == [
+        "github.com/apple",
+        "swift-argument-parser",
+    ]
+    assert swift.get_namespace_and_name("") == (None, None)
+    assert swift.get_namespace_and_name(None) == (None, None)
