@@ -68,6 +68,16 @@ class TestTextPreparation(FileBasedTesting):
         result = prepare_text_line(cp)
         assert result == 'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org'
 
+    def test_prepare_text_line_normalizes_bracket_C_uppercase(self):
+        cp = '[C] The Regents of the University of Michigan and Merit Network, Inc. 1992, 1993, 1994, 1995 All Rights Reserved'
+        result = prepare_text_line(cp)
+        assert result == '(c) The Regents of the University of Michigan and Merit Network, Inc. 1992, 1993, 1994, 1995 All Rights Reserved'
+
+    def test_prepare_text_line_normalizes_bracket_c_lowercase(self):
+        cp = 'Copyright [c] 2005, 2017 by Alex McDonald (alex at rivadpm dot com)'
+        result = prepare_text_line(cp)
+        assert result == 'Copyright (c) 2005, 2017 by Alex McDonald (alex at rivadpm dot com)'
+
     def test_prepare_text_line_does_replace_copyright_signs(self):
         cp = 'Copyright \\A9 1991, 1999 Free Software Foundation, Inc.'
         result = prepare_text_line(cp)
