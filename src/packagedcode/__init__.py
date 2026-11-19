@@ -64,6 +64,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     cargo.CargoLockHandler,
     cargo.CargoTomlHandler,
+    cargo.CargoDenyHandler,
 
     chef.ChefMetadataJsonHandler,
     chef.ChefMetadataRbHandler,
