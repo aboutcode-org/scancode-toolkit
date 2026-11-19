@@ -550,6 +550,24 @@ class TestNpm(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_is_datafile_npmrc(self):
+        test_file = self.get_test_loc('npm/npmrc/sample1/.npmrc')
+        assert npm.NpmRcHandler.is_datafile(test_file)
+
+    def test_parse_npmrc_sample1(self):
+        """Test .npmrc with default registry and two scoped registries."""
+        test_file = self.get_test_loc('npm/npmrc/sample1/.npmrc')
+        expected_loc = self.get_test_loc('npm/npmrc/sample1/output.expected.json')
+        packages = npm.NpmRcHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_npmrc_sample2(self):
+        """Test minimal .npmrc with only a default registry."""
+        test_file = self.get_test_loc('npm/npmrc/sample2/.npmrc')
+        expected_loc = self.get_test_loc('npm/npmrc/sample2/output.expected.json')
+        packages = npm.NpmRcHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
 
 test_data = [
     (['MIT'], 'mit'),

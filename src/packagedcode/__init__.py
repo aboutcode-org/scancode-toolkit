@@ -152,6 +152,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     npm.PnpmShrinkwrapYamlHandler,
     npm.PnpmLockYamlHandler,
     npm.PnpmWorkspaceYamlHandler,
+    npm.NpmRcHandler,
 
     nuget.NugetNupkgHandler,
     nuget.NugetNuspecHandler,
