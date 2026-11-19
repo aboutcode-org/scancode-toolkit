@@ -443,6 +443,23 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
                 .strip()
             )
 
+            # remove leading plus sign
+            if tok.startswith('+') and len(tok) > 1:
+                tok = tok.lstrip('+')
+                # convert 'AUTHOR' to ('author' or 'Author')
+                if tok == 'AUTHOR':
+                    tok = 'author' 
+
+            # Split tokens like 'Author:Frankie.Chu' into 'Author' and 'Frankie.Chu'
+            if tok.startswith("Author:"):
+                parts = tok.split(":", 1)
+                for part in parts:
+                    part = part.strip()
+                    if part and part not in ':.':
+                        yield Token(value=part, start_line=start_line, pos=pos)
+                        pos += 1
+                continue  
+
             # the tokenizer allows a single colon or dot to be a token and we discard these
             if tok and tok not in ':.':
                 yield Token(value=tok, start_line=start_line, pos=pos)
@@ -3535,7 +3552,6 @@ GRAMMAR = """
 
     # developed by Atkinson, et al.
     AUTHOR: {<AUTH> <NNP>+ <CC> <AUTHDOT> } #Atkinson, et al.
-
 
 #######################################
 # Mixed AUTHOR and COPYRIGHT
