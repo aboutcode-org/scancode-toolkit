@@ -392,33 +392,71 @@ def clean_text(text):
 
 
 _split_spdx_lid = re.compile(
-    '(spd[xz][\\-\\s]+lin?[cs]en?[sc]es?[\\-\\s]+identifi?er\\s*:?\\s*)',
-    re.IGNORECASE).split
-
-_nuget_split_spdx_lid = re.compile(
-    '(licenses(?:\\.|\\s)+nuget(?:\\.|\\s)+org\\s*:?\\s*)',
-    re.IGNORECASE).split
+    r'('
+    r'(?:'
+    r'spd[xz][_\-\s]+'
+    r'(?:lin?[cs]en?[sc]es?|short)[_\-\s]+'
+    'identifi?ers?\s*:?'
+    r'|'
+    r'licenses[\.\s]+nuget[\.\s]+org\s*/?'
+    r')\s*'
+    r')',
+    re.IGNORECASE,
+).split
 
 
 def split_spdx_lid(text):
     """
-    Split text if it contains an "SPDX license identifier". Return a 2-tuple if if there is an SPDX
+    Split text if it contains an "SPDX license identifier". Return a 2-tuple if there is an SPDX
     license identifier where the first item contains the "SPDX license identifier" text proper and
     the second item contains the remainder of the line (expected to be a license expression).
     Otherwise return a 2-tuple where the first item is None and the second item contains the
     original text.
 
-    Also supports "https://licenses.nuget.org" followed by a license expression.
+    Also supports "https://licenses.nuget.org" followed by a license expression as well as minor
+    variants such as SPDX short Indentifier, and typos.
+
+    Split regex examples::
+
+    >>> _split_spdx_lid("licenses.nuget.org/MIT%20OR%20Unlicense")
+    ['', 'licenses.nuget.org/', 'MIT%20OR%20Unlicense']
+    >>> _split_spdx_lid("licenses.nuget.org / MIT")
+    ['', 'licenses.nuget.org / ', 'MIT']
+    >>> _split_spdx_lid("licenseUrl:https://licenses.nuget.org/MIT%20OR%20Unlicense")
+    ['licenseUrl:https://', 'licenses.nuget.org/', 'MIT%20OR%20Unlicense']
+    >>> _split_spdx_lid("SPDX-license-Identifier: MIT OR Unlicense")
+    ['', 'SPDX-license-Identifier: ', 'MIT OR Unlicense']
+    >>> _split_spdx_lid("SPDX-license-Identifer: MIT OR Unlicense")
+    ['', 'SPDX-license-Identifer: ', 'MIT OR Unlicense']
+    >>> _split_spdx_lid("SPDX short Identifer : MIT OR Unlicense")
+    ['', 'SPDX short Identifer : ', 'MIT OR Unlicense']
+    >>> _split_spdx_lid("For OR Unlicense")
+    ['For OR Unlicense']
+    >>> _split_spdx_lid(" REM DNL SPDX short Identifer : MIT OR Unlicense")
+    [' REM DNL ', 'SPDX short Identifer : ', 'MIT OR Unlicense']
+
+    Split full examples::
+
+    >>> split_spdx_lid("licenses.nuget.org/MIT%20OR%20Unlicense")
+    ('licenses.nuget.org/', 'MIT%20OR%20Unlicense')
+    >>> split_spdx_lid("licenses.nuget.org / MIT")
+    ('licenses.nuget.org / ', 'MIT')
+    >>> split_spdx_lid("licenseUrl:https://licenses.nuget.org/MIT%20OR%20Unlicense")
+    ('licenses.nuget.org/', 'MIT%20OR%20Unlicense')
+    >>> split_spdx_lid("SPDX-license-Identifier: MIT OR Unlicense")
+    ('SPDX-license-Identifier: ', 'MIT OR Unlicense')
+    >>> split_spdx_lid("SPDX-license-Identifer: MIT OR Unlicense")
+    ('SPDX-license-Identifer: ', 'MIT OR Unlicense')
+    >>> split_spdx_lid("SPDX short Identifer : MIT OR Unlicense")
+    ('SPDX short Identifer : ', 'MIT OR Unlicense')
+    >>> split_spdx_lid("For OR Unlicense")
+    (None, 'For OR Unlicense')
     """
     segments = _split_spdx_lid(text)
-    expression = segments[-1]
-    if len(segments) > 1:
-        return segments[-2], expression
+    if len(segments) == 3:
+        # we matched on split OK with exactly three segments
+        _, prefix, expression = segments
+        return prefix, expression
     else:
-        segments = _nuget_split_spdx_lid(text)
-        expression = segments[-1]
-        if len(segments) > 1:
-            return segments[-2], expression
-        else:
-            return None, text
+        return None, text
 
