@@ -3717,19 +3717,19 @@
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "copyright": "Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 Python Software Foundation",
         "start_line": 93,
-        "end_line": 93
+        "end_line": 94
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "copyright": "Copyright (c) 1995-2001 Corporation for National Research Initiatives",
         "start_line": 194,
-        "end_line": 194
+        "end_line": 195
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "copyright": "Copyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam, The Netherlands",
         "start_line": 254,
-        "end_line": 254
+        "end_line": 255
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
@@ -3741,19 +3741,19 @@
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "copyright": "Copyright (c) 1990-2005 Sleepycat Software",
         "start_line": 331,
-        "end_line": 331
+        "end_line": 332
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "copyright": "Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California",
         "start_line": 366,
-        "end_line": 366
+        "end_line": 367
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "copyright": "Copyright (c) 1995, 1996 The President and Fellows of Harvard University",
         "start_line": 394,
-        "end_line": 394
+        "end_line": 395
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
@@ -3777,13 +3777,13 @@
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "copyright": "copyrighted by the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState Corporation",
         "start_line": 554,
-        "end_line": 554
+        "end_line": 556
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "copyright": "copyrighted by the Regents of the University of California, Sun Microsystems, Inc.",
         "start_line": 597,
-        "end_line": 597
+        "end_line": 598
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
@@ -3801,7 +3801,7 @@
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "holder": "Stichting Mathematisch Centrum Amsterdam, The Netherlands",
         "start_line": 254,
-        "end_line": 254
+        "end_line": 255
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
@@ -3849,13 +3849,13 @@
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "holder": "the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation, ActiveState Corporation",
         "start_line": 554,
-        "end_line": 554
+        "end_line": 556
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "holder": "the Regents of the University of California, Sun Microsystems, Inc.",
         "start_line": 597,
-        "end_line": 597
+        "end_line": 598
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
@@ -3873,13 +3873,13 @@
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "author": "Eric Young (eay@cryptsoft.com)",
         "start_line": 485,
-        "end_line": 485
+        "end_line": 486
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
         "author": "Tim Hudson (tjh@cryptsoft.com)",
         "start_line": 486,
-        "end_line": 486
+        "end_line": 487
     },
     {
         "path": "samples/commoncode/src/commoncode/python.LICENSE",
@@ -5073,7 +5073,7 @@
         "path": "samples/JGroups/licenses/apache-1.1.txt",
         "author": "the Apache Software Foundation (http://www.apache.org/)",
         "start_line": 21,
-        "end_line": 21
+        "end_line": 22
     },
     {
         "path": "samples/JGroups/licenses/apache-1.1.txt",
@@ -7245,13 +7245,13 @@
         "path": "samples/zlib/iostream2/zstream.h",
         "copyright": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
         "start_line": 3,
-        "end_line": 3
+        "end_line": 5
     },
     {
         "path": "samples/zlib/iostream2/zstream.h",
         "holder": "Christian Michelsen Research AS Advanced Computing",
         "start_line": 4,
-        "end_line": 4
+        "end_line": 5
     },
     {
         "path": "samples/zlib/iostream2/zstream.h",
