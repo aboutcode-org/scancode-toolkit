@@ -1,0 +1,4 @@
+title: Missing CFF Version
+message: "This file is missing the required cff-version field"
+authors:
+  - name: Test Author

@@ -1,0 +1,5 @@
+cff-version: 1.2.0
+title: "Invalid YAML Test
+this is not valid yaml
+  - missing quotes
+[unclosed bracket
