@@ -1,3 +1,3 @@
 license_expressions:
-  - bsd-new OR gpl-1.0-plus
+  - bsd-3-clause-cryptogams
 notes: this is a license from fossology license reference Cryptogams (Cryptogams) http://www.openssl.org/~appro/cryptogams/
