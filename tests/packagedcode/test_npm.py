@@ -16,7 +16,23 @@ from packages_test_utils import PackageTester
 from scancode_config import REGEN_TEST_FIXTURES
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
+from packagedcode.npm import NpmPackageJsonHandler
 
+
+def test_git_authenticated_dependency_keeps_declared_name():
+    package_json = {
+        "name": "example",
+        "version": "1.0.0",
+        "dependencies": {
+            "private-lib": "git+ssh://git@github.com:org/repo.git#v1.0.0"
+        }
+    }
+
+    package = NpmPackageJsonHandler._parse(package_json)
+
+    deps = package.dependencies
+    assert len(deps) == 1
+    assert deps[0].purl == "pkg:npm/private-lib"
 
 class TestNpm(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
