@@ -232,7 +232,7 @@
       "category": "Copyleft Limited",
       "owner": "Perl Foundation",
       "homepage_url": "http://www.perlfoundation.org/",
-      "notes": "Per SPDX.org, this version was released 2006 This license is OSI\ncertifified.\n",
+      "notes": "Per SPDX.org, this version was released 2006 This license is OSI\ncertified.\n",
       "is_builtin": true,
       "is_exception": false,
       "is_unknown": false,
