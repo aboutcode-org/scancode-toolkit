@@ -660,3 +660,35 @@ class TestGetKeyPhrases(TestCaseClass):
             raise Exception('Exception should be raised')
         except InvalidRuleRequiredPhrase:
             pass
+
+
+class TestLicenseYamlFrontmatterSyntax(FileBasedTesting):
+    """
+    Validate that all license data files have valid YAML syntax.
+    See: https://github.com/aboutcode-org/scancode-toolkit/issues/3947
+    """
+    test_data_dir = TEST_DATA_DIR
+
+    def test_license_yaml_frontmatter_integrity(self):
+        """
+        Ensure all .LICENSE files in licenses_data_dir have valid YAML syntax
+        in their frontmatter section.
+        """
+        from pathlib import Path
+        from licensedcode.frontmatter import load_frontmatter
+        from licensedcode.models import licenses_data_dir
+
+        licenses_path = Path(licenses_data_dir)
+        errors = []
+
+        for license_file in sorted(licenses_path.glob('*.LICENSE')):
+            try:
+                load_frontmatter(str(license_file))
+            except Exception as e:
+                errors.append(f'{license_file.name}: {e}')
+
+        if errors:
+            error_msg = '\n'.join(errors[:20])  # Show first 20 errors
+            if len(errors) > 20:
+                error_msg += f'\n... and {len(errors) - 20} more errors'
+            assert False, f'Invalid YAML in {len(errors)} license files:\n{error_msg}'
