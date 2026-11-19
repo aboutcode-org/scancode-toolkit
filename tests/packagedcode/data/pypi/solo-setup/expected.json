@@ -1,6 +1,193 @@
 {
-  "packages": [],
-  "dependencies": [],
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "cdp-seattle-backend",
+      "version": "1.0.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "Package containing the gather functions for Example.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Council Data Project Contributors",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [
+        "civic technology",
+        "open government",
+        "Development Status :: 2 - Pre-Alpha",
+        "Intended Audience :: Developers",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 3.9"
+      ],
+      "homepage_url": "https://github.com/CouncilDataProject/seattle",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "setup.py",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_14.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+              "matched_text": "MIT license"
+            }
+          ],
+          "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "setup.py",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "pypi_mit_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+              "matched_text": "- 'License :: OSI Approved :: MIT License'"
+            }
+          ],
+          "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "license: MIT license\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "python_requires": ">=3.9"
+      },
+      "repository_homepage_url": "https://pypi.org/project/cdp-seattle-backend",
+      "repository_download_url": "https://pypi.org/packages/source/c/cdp-seattle-backend/cdp-seattle-backend-1.0.0.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/cdp-seattle-backend/1.0.0/json",
+      "package_uid": "pkg:pypi/cdp-seattle-backend@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "setup.py"
+      ],
+      "datasource_ids": [
+        "pypi_setup_py"
+      ],
+      "purl": "pkg:pypi/cdp-seattle-backend@1.0.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:pypi/cdp-backend@3.0.16",
+      "extracted_requirement": "==3.0.16",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": true,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/cdp-backend@3.0.16?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/cdp-seattle-backend@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/cdp-scrapers",
+      "extracted_requirement": ">=0.4.0",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/cdp-scrapers?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/cdp-seattle-backend@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/black",
+      "extracted_requirement": ">=19.10b0",
+      "scope": "test",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/black?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/cdp-seattle-backend@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/flake8",
+      "extracted_requirement": ">=3.8.3",
+      "scope": "test",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/flake8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/cdp-seattle-backend@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/flake8-debugger",
+      "extracted_requirement": ">=3.2.1",
+      "scope": "test",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/flake8-debugger?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/cdp-seattle-backend@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "setup.py",
+      "datasource_id": "pypi_setup_py"
+    }
+  ],
   "files": [
     {
       "path": "setup.py",
@@ -169,7 +356,9 @@
           "purl": "pkg:pypi/cdp-seattle-backend@1.0.0"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/cdp-seattle-backend@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     }
   ]

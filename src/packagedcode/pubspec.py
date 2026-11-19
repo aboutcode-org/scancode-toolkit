@@ -35,8 +35,10 @@ class BaseDartPubspecHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
-        datafile_name_patterns = \
-            DartPubspecYamlHandler.path_patterns + DartPubspecLockHandler.path_patterns
+        datafile_path_patterns = (
+            DartPubspecYamlHandler.path_patterns +
+            DartPubspecLockHandler.path_patterns
+        )
 
         if resource.has_parent():
             dir_resource = resource.parent(codebase)
@@ -44,8 +46,8 @@ class BaseDartPubspecHandler(models.DatafileHandler):
             dir_resource = resource
 
         yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=datafile_name_patterns,
-            directory=dir_resource,
+            datafile_path_patterns=datafile_path_patterns,
+            resource=dir_resource,
             codebase=codebase,
             package_adder=package_adder,
         )
