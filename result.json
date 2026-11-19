@@ -1,0 +1,2052 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "33.0.0rc1",
+      "options": {
+        "input": [
+          "samples"
+        ],
+        "--copyright": true,
+        "--json-pp": "result.json",
+        "--license": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2026-05-25T171531.903647",
+      "end_timestamp": "2026-05-25T173142.491711",
+      "output_format_version": "4.1.0",
+      "duration": 970.588152885437,
+      "message": null,
+      "errors": [],
+      "warnings": [],
+      "extra_data": {
+        "system_environment": {
+          "operating_system": "win",
+          "cpu_architecture": "64",
+          "platform": "Windows-11-10.0.26200-SP0",
+          "platform_version": "10.0.26200",
+          "python_version": "3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]"
+        },
+        "spdx_license_list_version": "3.28",
+        "files_count": 33
+      }
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "apache_1_1-43463ac7-69b6-151e-d9a8-597dc4212b7f",
+      "license_expression": "apache-1.1",
+      "license_expression_spdx": "Apache-1.1",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "apache-1.1",
+          "license_expression_spdx": "Apache-1.1",
+          "from_file": "samples/JGroups/licenses/apache-1.1.txt",
+          "start_line": 2,
+          "end_line": 56,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 361,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-1.1_71.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_71.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "apache_2_0-ab23f79b-ec38-9a8a-9b23-85059407f34d",
+      "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "samples/JGroups/licenses/apache-2.0.txt",
+          "start_line": 2,
+          "end_line": 202,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 1584,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE"
+        }
+      ]
+    },
+    {
+      "identifier": "boost_1_0-d2497bb7-4937-90c9-b38e-63d81d1b1d13",
+      "license_expression": "boost-1.0",
+      "license_expression_spdx": "BSL-1.0",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "boost-1.0",
+          "license_expression_spdx": "BSL-1.0",
+          "from_file": "samples/zlib/dotzlib/ChecksumImpl.cs",
+          "start_line": 4,
+          "end_line": 5,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 32,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "boost-1.0_21.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE"
+        },
+        {
+          "license_expression": "boost-1.0",
+          "license_expression_spdx": "BSL-1.0",
+          "from_file": "samples/zlib/dotzlib/LICENSE_1_0.txt",
+          "start_line": 1,
+          "end_line": 23,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 211,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "boost-1.0.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE"
+        }
+      ]
+    },
+    {
+      "identifier": "boost_1_0-5cff8c89-be8c-7d4a-7989-c20725314b4c",
+      "license_expression": "boost-1.0",
+      "license_expression_spdx": "BSL-1.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "from_file": "samples/zlib/dotzlib/readme.txt",
+          "start_line": 10,
+          "end_line": 10,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "unknown-license-reference_225.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_225.RULE"
+        },
+        {
+          "license_expression": "boost-1.0",
+          "license_expression_spdx": "BSL-1.0",
+          "from_file": "samples/zlib/dotzlib/LICENSE_1_0.txt",
+          "start_line": 1,
+          "end_line": 23,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 211,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "boost-1.0.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE"
+        }
+      ]
+    },
+    {
+      "identifier": "boost_1_0-dcd1a22a-7766-abc4-a96d-eefedae4fbf2",
+      "license_expression": "boost-1.0",
+      "license_expression_spdx": "BSL-1.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "boost-1.0",
+          "license_expression_spdx": "BSL-1.0",
+          "from_file": "samples/zlib/dotzlib/LICENSE_1_0.txt",
+          "start_line": 1,
+          "end_line": 23,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 211,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "boost-1.0.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE"
+        }
+      ]
+    },
+    {
+      "identifier": "cc_by_2_5-2664cdba-0ee6-a527-2588-8a3a1be3ecae",
+      "license_expression": "cc-by-2.5",
+      "license_expression_spdx": "CC-BY-2.5",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "cc-by-2.5",
+          "license_expression_spdx": "CC-BY-2.5",
+          "from_file": "samples/JGroups/src/GuardedBy.java",
+          "start_line": 10,
+          "end_line": 11,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 14,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "cc-by-2.5_4.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "gpl_2_0_plus_with_ada_linking_exception-ca27fab9-344b-58b2-3c05-f3ca150dad7e",
+      "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+          "license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
+          "from_file": "samples/zlib/ada/zlib.ads",
+          "start_line": 6,
+          "end_line": 25,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 176,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "lgpl_2_1-64dbac63-7b61-7151-023f-321235aeef62",
+      "license_expression": "lgpl-2.1",
+      "license_expression_spdx": "LGPL-2.1-only",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "lgpl-2.1",
+          "license_expression_spdx": "LGPL-2.1-only",
+          "from_file": "samples/JGroups/LICENSE",
+          "start_line": 1,
+          "end_line": 502,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 4288,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "lgpl-2.1_101.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_101.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "lgpl_2_1_plus-3fe3e5e6-cb18-c0a1-f831-f08fab3612c1",
+      "license_expression": "lgpl-2.1-plus",
+      "license_expression_spdx": "LGPL-2.1-or-later",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "lgpl-2.1-plus",
+          "license_expression_spdx": "LGPL-2.1-or-later",
+          "from_file": "samples/JGroups/src/ImmutableReference.java",
+          "start_line": 7,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 125,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "lgpl-2.1-plus_59.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit_old_style-578ee504-a9b5-6c26-1bb4-fd7b80a664f0",
+      "license_expression": "mit-old-style",
+      "license_expression_spdx": "Advanced-Cryptics-Dictionary",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "mit-old-style",
+          "license_expression_spdx": "Advanced-Cryptics-Dictionary",
+          "from_file": "samples/zlib/iostream2/zstream.h",
+          "start_line": 9,
+          "end_line": 15,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 71,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit-old-style_cmr-no_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "public_domain_disclaimer-5765d0b6-4dea-c655-1767-e7e398a296d3",
+      "license_expression": "public-domain-disclaimer",
+      "license_expression_spdx": "LicenseRef-scancode-public-domain-disclaimer",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "public-domain-disclaimer",
+          "license_expression_spdx": "LicenseRef-scancode-public-domain-disclaimer",
+          "from_file": "samples/JGroups/src/S3_PING.java",
+          "start_line": 1692,
+          "end_line": 1694,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 30,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "public-domain-disclaimer_77.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain-disclaimer_77.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+      "license_expression": "zlib",
+      "license_expression_spdx": "Zlib",
+      "detection_count": 5,
+      "reference_matches": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "from_file": "samples/zlib/adler32.c",
+          "start_line": 3,
+          "end_line": 3,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "zlib_5.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+        },
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "from_file": "samples/zlib/zlib.h",
+          "start_line": 6,
+          "end_line": 23,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 144,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "zlib_17.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296",
+      "license_expression": "zlib",
+      "license_expression_spdx": "Zlib",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "from_file": "samples/zlib/infback9/infback9.c",
+          "start_line": 3,
+          "end_line": 3,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "zlib_5.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "zlib-53b5e6f7-901a-4da6-f42e-e1c8e52100e9",
+      "license_expression": "zlib",
+      "license_expression_spdx": "Zlib",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "from_file": "samples/zlib/deflate.h",
+          "start_line": 93,
+          "end_line": 94,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 28,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "zlib_21.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_21.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "zlib-b04102d0-a663-78b5-de18-9677ee48ce9c",
+      "license_expression": "zlib",
+      "license_expression_spdx": "Zlib",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "from_file": "samples/zlib/zlib.h",
+          "start_line": 6,
+          "end_line": 23,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 144,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "zlib_17.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8",
+      "license_expression": "zlib",
+      "license_expression_spdx": "Zlib",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "from_file": "samples/zlib/gcc_gvmat64/gvmat64.S",
+          "start_line": 17,
+          "end_line": 31,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 132,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "zlib.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "samples",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/README",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/screenshot.png",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/arch",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/arch/zlib.tar.gz",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/EULA",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [
+        {
+          "copyright": "Copyright 2006 Red Hat, Inc.",
+          "start_line": 104,
+          "end_line": 104
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Red Hat, Inc.",
+          "start_line": 104,
+          "end_line": 104
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/LICENSE",
+      "type": "file",
+      "detected_license_expression": "lgpl-2.1",
+      "detected_license_expression_spdx": "LGPL-2.1-only",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-2.1",
+          "license_expression_spdx": "LGPL-2.1-only",
+          "matches": [
+            {
+              "license_expression": "lgpl-2.1",
+              "license_expression_spdx": "LGPL-2.1-only",
+              "from_file": "samples/JGroups/LICENSE",
+              "start_line": 1,
+              "end_line": 502,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 4288,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "lgpl-2.1_101.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_101.RULE"
+            }
+          ],
+          "identifier": "lgpl_2_1-64dbac63-7b61-7151-023f-321235aeef62"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1991, 1999 Free Software Foundation, Inc.",
+          "start_line": 4,
+          "end_line": 4
+        },
+        {
+          "copyright": "copyrighted by the Free Software Foundation",
+          "start_line": 429,
+          "end_line": 429
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Free Software Foundation, Inc.",
+          "start_line": 4,
+          "end_line": 4
+        },
+        {
+          "holder": "the Free Software Foundation",
+          "start_line": 429,
+          "end_line": 429
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/licenses",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/licenses/apache-1.1.txt",
+      "type": "file",
+      "detected_license_expression": "apache-1.1",
+      "detected_license_expression_spdx": "Apache-1.1",
+      "license_detections": [
+        {
+          "license_expression": "apache-1.1",
+          "license_expression_spdx": "Apache-1.1",
+          "matches": [
+            {
+              "license_expression": "apache-1.1",
+              "license_expression_spdx": "Apache-1.1",
+              "from_file": "samples/JGroups/licenses/apache-1.1.txt",
+              "start_line": 2,
+              "end_line": 56,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 361,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "apache-1.1_71.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_71.RULE"
+            }
+          ],
+          "identifier": "apache_1_1-43463ac7-69b6-151e-d9a8-597dc4212b7f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2000 The Apache Software Foundation",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "holders": [
+        {
+          "holder": "The Apache Software Foundation",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "authors": [
+        {
+          "author": "the Apache Software Foundation (http://www.apache.org/)",
+          "start_line": 21,
+          "end_line": 22
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/licenses/apache-2.0.txt",
+      "type": "file",
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "samples/JGroups/licenses/apache-2.0.txt",
+              "start_line": 2,
+              "end_line": 202,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 1584,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "apache-2.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE"
+            }
+          ],
+          "identifier": "apache_2_0-ab23f79b-ec38-9a8a-9b23-85059407f34d"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/licenses/bouncycastle.txt",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2000 - 2006 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "holders": [
+        {
+          "holder": "The Legion Of The Bouncy Castle",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/licenses/cpl-1.0.txt",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/licenses/lgpl.txt",
+      "type": "file",
+      "detected_license_expression": "lgpl-2.1",
+      "detected_license_expression_spdx": "LGPL-2.1-only",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-2.1",
+          "license_expression_spdx": "LGPL-2.1-only",
+          "matches": [
+            {
+              "license_expression": "lgpl-2.1",
+              "license_expression_spdx": "LGPL-2.1-only",
+              "from_file": "samples/JGroups/licenses/lgpl.txt",
+              "start_line": 1,
+              "end_line": 502,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 4288,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "lgpl-2.1_101.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_101.RULE"
+            }
+          ],
+          "identifier": "lgpl_2_1-64dbac63-7b61-7151-023f-321235aeef62"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1991, 1999 Free Software Foundation, Inc.",
+          "start_line": 4,
+          "end_line": 4
+        },
+        {
+          "copyright": "copyrighted by the Free Software Foundation",
+          "start_line": 429,
+          "end_line": 429
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Free Software Foundation, Inc.",
+          "start_line": 4,
+          "end_line": 4
+        },
+        {
+          "holder": "the Free Software Foundation",
+          "start_line": 429,
+          "end_line": 429
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/src",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/src/FixedMembershipToken.java",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [
+        {
+          "copyright": "Copyright 2005, JBoss Inc., and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "JBoss Inc., and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [
+        {
+          "author": "Chris Mills (millsy@jboss.com)",
+          "start_line": 51,
+          "end_line": 51
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/src/GuardedBy.java",
+      "type": "file",
+      "detected_license_expression": "cc-by-2.5",
+      "detected_license_expression_spdx": "CC-BY-2.5",
+      "license_detections": [
+        {
+          "license_expression": "cc-by-2.5",
+          "license_expression_spdx": "CC-BY-2.5",
+          "matches": [
+            {
+              "license_expression": "cc-by-2.5",
+              "license_expression_spdx": "CC-BY-2.5",
+              "from_file": "samples/JGroups/src/GuardedBy.java",
+              "start_line": 10,
+              "end_line": 11,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 14,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "cc-by-2.5_4.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE"
+            }
+          ],
+          "identifier": "cc_by_2_5-2664cdba-0ee6-a527-2588-8a3a1be3ecae"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 12.96,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
+          "start_line": 9,
+          "end_line": 9
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Brian Goetz and Tim Peierls",
+          "start_line": 9,
+          "end_line": 9
+        }
+      ],
+      "authors": [
+        {
+          "author": "Bela Ban",
+          "start_line": 16,
+          "end_line": 16
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/src/ImmutableReference.java",
+      "type": "file",
+      "detected_license_expression": "lgpl-2.1-plus",
+      "detected_license_expression_spdx": "LGPL-2.1-or-later",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-2.1-plus",
+          "license_expression_spdx": "LGPL-2.1-or-later",
+          "matches": [
+            {
+              "license_expression": "lgpl-2.1-plus",
+              "license_expression_spdx": "LGPL-2.1-or-later",
+              "from_file": "samples/JGroups/src/ImmutableReference.java",
+              "start_line": 7,
+              "end_line": 20,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 125,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "lgpl-2.1-plus_59.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
+            }
+          ],
+          "identifier": "lgpl_2_1_plus-3fe3e5e6-cb18-c0a1-f831-f08fab3612c1"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 48.83,
+      "copyrights": [
+        {
+          "copyright": "Copyright 2010, Red Hat, Inc. and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Red Hat, Inc. and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [
+        {
+          "author": "Brian Stansberry",
+          "start_line": 29,
+          "end_line": 29
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/src/RATE_LIMITER.java",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Bela Ban",
+          "start_line": 16,
+          "end_line": 16
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/src/RouterStub.java",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Bela Ban",
+          "start_line": 23,
+          "end_line": 23
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/src/RouterStubManager.java",
+      "type": "file",
+      "detected_license_expression": "lgpl-2.1-plus",
+      "detected_license_expression_spdx": "LGPL-2.1-or-later",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-2.1-plus",
+          "license_expression_spdx": "LGPL-2.1-or-later",
+          "matches": [
+            {
+              "license_expression": "lgpl-2.1-plus",
+              "license_expression_spdx": "LGPL-2.1-or-later",
+              "from_file": "samples/JGroups/src/RouterStubManager.java",
+              "start_line": 7,
+              "end_line": 20,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 125,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "lgpl-2.1-plus_59.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
+            }
+          ],
+          "identifier": "lgpl_2_1_plus-3fe3e5e6-cb18-c0a1-f831-f08fab3612c1"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 17.03,
+      "copyrights": [
+        {
+          "copyright": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Red Hat Middleware LLC, and individual contributors",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/JGroups/src/S3_PING.java",
+      "type": "file",
+      "detected_license_expression": "public-domain-disclaimer",
+      "detected_license_expression_spdx": "LicenseRef-scancode-public-domain-disclaimer",
+      "license_detections": [
+        {
+          "license_expression": "public-domain-disclaimer",
+          "license_expression_spdx": "LicenseRef-scancode-public-domain-disclaimer",
+          "matches": [
+            {
+              "license_expression": "public-domain-disclaimer",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain-disclaimer",
+              "from_file": "samples/JGroups/src/S3_PING.java",
+              "start_line": 1692,
+              "end_line": 1694,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 30,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "public-domain-disclaimer_77.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain-disclaimer_77.RULE"
+            }
+          ],
+          "identifier": "public_domain_disclaimer-5765d0b6-4dea-c655-1767-e7e398a296d3"
+        }
+      ],
+      "license_clues": [
+        {
+          "license_expression": "public-domain",
+          "license_expression_spdx": "LicenseRef-scancode-public-domain",
+          "from_file": "samples/JGroups/src/S3_PING.java",
+          "start_line": 1649,
+          "end_line": 1649,
+          "matcher": "2-aho",
+          "score": 70.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 70,
+          "rule_identifier": "public-domain_bare_words.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE"
+        }
+      ],
+      "percentage_of_license_text": 0.27,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Bela Ban",
+          "start_line": 37,
+          "end_line": 37
+        },
+        {
+          "author": "Robert Harder",
+          "start_line": 1698,
+          "end_line": 1698
+        },
+        {
+          "author": "rob@iharder.net",
+          "start_line": 1699,
+          "end_line": 1699
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/adler32.c",
+      "type": "file",
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "matches": [
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/adler32.c",
+              "start_line": 3,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
+            }
+          ],
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.06,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2011 Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/deflate.c",
+      "type": "file",
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "matches": [
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/deflate.c",
+              "start_line": 3,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
+            }
+          ],
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 0.13,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        },
+        {
+          "copyright": "Copyright 1995-2013 Jean-loup Gailly and Mark Adler",
+          "start_line": 55,
+          "end_line": 55
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly and Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        },
+        {
+          "holder": "Jean-loup Gailly and Mark Adler",
+          "start_line": 55,
+          "end_line": 55
+        }
+      ],
+      "authors": [
+        {
+          "author": "Leonid Broukhis",
+          "start_line": 34,
+          "end_line": 34
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/deflate.h",
+      "type": "file",
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "matches": [
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/deflate.h",
+              "start_line": 3,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
+            }
+          ],
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
+        },
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "matches": [
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/deflate.h",
+              "start_line": 93,
+              "end_line": 94,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 28,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_21.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_21.RULE"
+            }
+          ],
+          "identifier": "zlib-53b5e6f7-901a-4da6-f42e-e1c8e52100e9"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.14,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2012 Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/zlib.h",
+      "type": "file",
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "matches": [
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
+            }
+          ],
+          "identifier": "zlib-b04102d0-a663-78b5-de18-9677ee48ce9c"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.06,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly and Mark Adler",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/zutil.c",
+      "type": "file",
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "matches": [
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/zutil.c",
+              "start_line": 3,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
+            }
+          ],
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.19,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/zutil.h",
+      "type": "file",
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "matches": [
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/zutil.h",
+              "start_line": 3,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
+            }
+          ],
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.25,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/ada",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/ada/zlib.ads",
+      "type": "file",
+      "detected_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+      "detected_license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
+      "license_detections": [
+        {
+          "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+          "license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
+          "matches": [
+            {
+              "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
+              "license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
+              "from_file": "samples/zlib/ada/zlib.ads",
+              "start_line": 6,
+              "end_line": 25,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 176,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE"
+            }
+          ],
+          "identifier": "gpl_2_0_plus_with_ada_linking_exception-ca27fab9-344b-58b2-3c05-f3ca150dad7e"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 10.46,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Dmitriy Anisimkov",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/dotzlib",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/dotzlib/AssemblyInfo.cs",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2004 by Henrik Ravn",
+          "start_line": 14,
+          "end_line": 14
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Henrik Ravn",
+          "start_line": 14,
+          "end_line": 14
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/dotzlib/ChecksumImpl.cs",
+      "type": "file",
+      "detected_license_expression": "boost-1.0",
+      "detected_license_expression_spdx": "BSL-1.0",
+      "license_detections": [
+        {
+          "license_expression": "boost-1.0",
+          "license_expression_spdx": "BSL-1.0",
+          "matches": [
+            {
+              "license_expression": "boost-1.0",
+              "license_expression_spdx": "BSL-1.0",
+              "from_file": "samples/zlib/dotzlib/ChecksumImpl.cs",
+              "start_line": 4,
+              "end_line": 5,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 32,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "boost-1.0_21.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE"
+            },
+            {
+              "license_expression": "boost-1.0",
+              "license_expression_spdx": "BSL-1.0",
+              "from_file": "samples/zlib/dotzlib/LICENSE_1_0.txt",
+              "start_line": 1,
+              "end_line": 23,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 211,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "boost-1.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE"
+            }
+          ],
+          "identifier": "boost_1_0-d2497bb7-4937-90c9-b38e-63d81d1b1d13",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.85,
+      "copyrights": [
+        {
+          "copyright": "(c) Copyright Henrik Ravn 2004",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Henrik Ravn",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/dotzlib/LICENSE_1_0.txt",
+      "type": "file",
+      "detected_license_expression": "boost-1.0",
+      "detected_license_expression_spdx": "BSL-1.0",
+      "license_detections": [
+        {
+          "license_expression": "boost-1.0",
+          "license_expression_spdx": "BSL-1.0",
+          "matches": [
+            {
+              "license_expression": "boost-1.0",
+              "license_expression_spdx": "BSL-1.0",
+              "from_file": "samples/zlib/dotzlib/LICENSE_1_0.txt",
+              "start_line": 1,
+              "end_line": 23,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 211,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "boost-1.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE"
+            }
+          ],
+          "identifier": "boost_1_0-dcd1a22a-7766-abc4-a96d-eefedae4fbf2"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/dotzlib/readme.txt",
+      "type": "file",
+      "detected_license_expression": "boost-1.0",
+      "detected_license_expression_spdx": "BSL-1.0",
+      "license_detections": [
+        {
+          "license_expression": "boost-1.0",
+          "license_expression_spdx": "BSL-1.0",
+          "matches": [
+            {
+              "license_expression": "unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "samples/zlib/dotzlib/readme.txt",
+              "start_line": 10,
+              "end_line": 10,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "unknown-license-reference_225.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_225.RULE"
+            },
+            {
+              "license_expression": "boost-1.0",
+              "license_expression_spdx": "BSL-1.0",
+              "from_file": "samples/zlib/dotzlib/LICENSE_1_0.txt",
+              "start_line": 1,
+              "end_line": 23,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 211,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "boost-1.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE"
+            }
+          ],
+          "identifier": "boost_1_0-5cff8c89-be8c-7d4a-7989-c20725314b4c",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
+        },
+        {
+          "license_expression": "boost-1.0",
+          "license_expression_spdx": "BSL-1.0",
+          "matches": [
+            {
+              "license_expression": "boost-1.0",
+              "license_expression_spdx": "BSL-1.0",
+              "from_file": "samples/zlib/dotzlib/readme.txt",
+              "start_line": 57,
+              "end_line": 58,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 32,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "boost-1.0_21.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE"
+            },
+            {
+              "license_expression": "boost-1.0",
+              "license_expression_spdx": "BSL-1.0",
+              "from_file": "samples/zlib/dotzlib/LICENSE_1_0.txt",
+              "start_line": 1,
+              "end_line": 23,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 211,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "boost-1.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/boost-1.0.LICENSE"
+            }
+          ],
+          "identifier": "boost_1_0-d2497bb7-4937-90c9-b38e-63d81d1b1d13",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 11.18,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) Henrik Ravn 2004",
+          "start_line": 55,
+          "end_line": 55
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Henrik Ravn",
+          "start_line": 55,
+          "end_line": 55
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/gcc_gvmat64",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/gcc_gvmat64/gvmat64.S",
+      "type": "file",
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "matches": [
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/gcc_gvmat64/gvmat64.S",
+              "start_line": 17,
+              "end_line": 31,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 132,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE"
+            }
+          ],
+          "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 5.88,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "start_line": 10,
+          "end_line": 10
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Jean-loup Gailly, Brian Raiter and Gilles Vollant",
+          "start_line": 10,
+          "end_line": 10
+        }
+      ],
+      "authors": [
+        {
+          "author": "Gilles Vollant",
+          "start_line": 12,
+          "end_line": 12
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/infback9",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/infback9/infback9.c",
+      "type": "file",
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "matches": [
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/infback9/infback9.c",
+              "start_line": 3,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            }
+          ],
+          "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 0.53,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1995-2008 Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/infback9/infback9.h",
+      "type": "file",
+      "detected_license_expression": "zlib",
+      "detected_license_expression_spdx": "Zlib",
+      "license_detections": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "matches": [
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "samples/zlib/infback9/infback9.h",
+              "start_line": 3,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_5.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            }
+          ],
+          "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 5.74,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2003 Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Mark Adler",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/iostream2",
+      "type": "directory",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/iostream2/zstream.h",
+      "type": "file",
+      "detected_license_expression": "mit-old-style",
+      "detected_license_expression_spdx": "Advanced-Cryptics-Dictionary",
+      "license_detections": [
+        {
+          "license_expression": "mit-old-style",
+          "license_expression_spdx": "Advanced-Cryptics-Dictionary",
+          "matches": [
+            {
+              "license_expression": "mit-old-style",
+              "license_expression_spdx": "Advanced-Cryptics-Dictionary",
+              "from_file": "samples/zlib/iostream2/zstream.h",
+              "start_line": 9,
+              "end_line": 15,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 71,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit-old-style_cmr-no_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE"
+            }
+          ],
+          "identifier": "mit_old_style-578ee504-a9b5-6c26-1bb4-fd7b80a664f0"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 5.81,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
+          "start_line": 3,
+          "end_line": 5
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Christian Michelsen Research AS Advanced Computing",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "samples/zlib/iostream2/zstream_test.cpp",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    }
+  ]
+}
