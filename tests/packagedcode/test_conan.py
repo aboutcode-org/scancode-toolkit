@@ -231,6 +231,11 @@ def test_conanfile_parse_yields_nothing_for_non_conanfile(tmp_path):
     packages = list(conan.ConanFileHandler.parse(str(test_file)))
     assert packages == []
 
+    syntax_error_file = tmp_path / "syntax_error_conanfile.py"
+    syntax_error_file.write_text("invalid syntax :::\n", encoding="utf-8")
+    packages = list(conan.ConanFileHandler.parse(str(syntax_error_file)))
+    assert packages == []
+
 
 def test_conanfile_list_dependencies_topics_license():
     recipe = """from conan import ConanFile
