@@ -72,7 +72,8 @@ class ConanFileParser(ast.NodeVisitor):
         if not node.targets or not isinstance(node.targets[0], ast.Name):
             return
         if not node.value or not (
-            isinstance(node.value, ast.Constant) or isinstance(node.value, ast.Tuple)
+            isinstance(node.value, ast.Constant)
+            or isinstance(node.value, (ast.Tuple, ast.List))
         ):
             return
 
@@ -94,7 +95,7 @@ class ConanFileParser(ast.NodeVisitor):
             attribute_name = attribute_mapping[variable_name]
             if variable_name in ("topics", "requires", "license"):
                 current_list = getattr(self, attribute_name)
-                if isinstance(values, ast.Tuple):
+                if isinstance(values, (ast.Tuple, ast.List)):
                     current_list.extend(
                         [el.value for el in values.elts if isinstance(el, ast.Constant)]
                     )
@@ -132,11 +133,17 @@ class ConanFileHandler(models.DatafileHandler):
                     for node in tree.body
                     if isinstance(node, ast.ClassDef)
                     and node.bases
-                    and isinstance(node.bases[0], ast.Name)
-                    and node.bases[0].id == "ConanFile"
+                    and any(
+                        (isinstance(base, ast.Name) and base.id == "ConanFile")
+                        or (isinstance(base, ast.Attribute) and base.attr == "ConanFile")
+                        for base in node.bases
+                    )
                 ),
                 None,
             )
+
+            if not recipe_class_def:
+                return
 
             parser = ConanFileParser()
             parser.visit(recipe_class_def)
@@ -170,7 +177,9 @@ class ConanFileHandler(models.DatafileHandler):
         with io.open(location, encoding="utf-8") as loc:
             conan_recipe = loc.read()
 
-        yield cls._parse(conan_recipe, package_only)
+        package_data = cls._parse(conan_recipe, package_only)
+        if package_data:
+            yield package_data
 
 
 class ConanDataHandler(models.DatafileHandler):
@@ -232,7 +241,7 @@ class ConanDataHandler(models.DatafileHandler):
             conanfile_package_resource = conanfile_package_resource[0]
 
             conanfile_package_data = conanfile_package_resource.package_data
-            if conanfile_package_data:
+            if conanfile_package_data and conanfile_package_data[0]:
                 conanfile_package_data = conanfile_package_data[0]
 
                 package_data_dict["name"] = conanfile_package_data.get("name")
@@ -274,6 +283,8 @@ def is_constraint_pinned(constraint):
     """
     Checks if a constraint is pinned and it specifies an exact version.
     """
+    if not constraint:
+        return False
     range_characters = {">", "<", "[", "]", ">=", "<="}
     return not any(char in range_characters for char in constraint)
 
@@ -281,8 +292,14 @@ def is_constraint_pinned(constraint):
 def get_dependencies(requires):
     dependent_packages = []
     for req in requires:
-        name, constraint = req.split("/", 1)
-        is_pinned = is_constraint_pinned(constraint)
+        if not req or not isinstance(req, str):
+            continue
+        if "/" in req:
+            name, constraint = req.split("/", 1)
+        else:
+            name = req
+            constraint = None
+        is_pinned = is_constraint_pinned(constraint) if constraint else False
         version = None
         if is_pinned:
             version = constraint
