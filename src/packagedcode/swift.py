@@ -348,18 +348,34 @@ def get_dependencies(dependencies):
         is_pinned = False
 
         location = source.get("location")
-        if remote := location.get("remote"):
-            namespace, name = get_namespace_and_name(remote[0].get("urlString"))
+        if location and (remote := location.get("remote")):
+            if remote and isinstance(remote, list) and isinstance(remote[0], dict):
+                url = remote[0].get("urlString")
+                if url:
+                    namespace, name = get_namespace_and_name(url)
 
-        requirement = source.get("requirement")
+        requirement = source.get("requirement") or {}
         if exact := requirement.get("exact"):
-            version = exact[0]
-            is_pinned = True
-        elif range := requirement.get("range"):
-            bound = range[0]
-            lower_bound = bound.get("lowerBound")
-            upper_bound = bound.get("upperBound")
-            version = f"vers:swift/>={lower_bound}|<{upper_bound}"
+            if isinstance(exact, list) and exact:
+                version = exact[0]
+                is_pinned = True
+        elif range_req := requirement.get("range"):
+            if isinstance(range_req, list) and range_req:
+                bound = range_req[0]
+                lower_bound = bound.get("lowerBound")
+                upper_bound = bound.get("upperBound")
+                version = f"vers:swift/>={lower_bound}|<{upper_bound}"
+        elif branch := requirement.get("branch"):
+            if isinstance(branch, list) and branch:
+                version = f"branch: {branch[0]}"
+        elif revision := requirement.get("revision"):
+            if isinstance(revision, list) and revision:
+                version = revision[0]
+                is_pinned = True
+
+        name = name or source.get("identity")
+        if not name:
+            continue
 
         purl = PackageURL(
             type="swift",
@@ -382,12 +398,16 @@ def get_dependencies(dependencies):
 
 
 def get_namespace_and_name(url):
+    if not url:
+        return None, None
     parsed_url = parse.urlparse(url)
-    hostname = parsed_url.hostname
-    path = parsed_url.path.replace(".git", "")
+    hostname = parsed_url.hostname or ""
+    path = parsed_url.path.replace(".git", "") if parsed_url.path else ""
     canonical_name = hostname + path
 
-    return canonical_name.rsplit("/", 1)
+    if "/" in canonical_name:
+        return canonical_name.rsplit("/", 1)
+    return None, canonical_name
 
 
 def get_flatten_dependencies(dependency_tree):
