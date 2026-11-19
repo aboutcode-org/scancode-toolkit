@@ -1,0 +1,5 @@
+---
+is_false_positive: yes
+notes: This is a mention of GPL in relation to a website and not the code in question
+---
+(An updated version on the author's website came with a license that contained a GPL-incompatible advertising clause.) 
