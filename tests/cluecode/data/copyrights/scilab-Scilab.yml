@@ -28,3 +28,10 @@ expected_failures:
   - holders
   - authors
   - holders_summary
+allrights:
+  - Scilab (c) INRIA-ENPC.
+  - Scilab (c) INRIA-ENPC.
+  - Scilab (c) INRIA-ENPC.
+  - Scilab inside (c) INRIA-ENPC
+  - Scilab (c) INRIA-ENPC
+  - Scilab (c) INRIA-ENPC

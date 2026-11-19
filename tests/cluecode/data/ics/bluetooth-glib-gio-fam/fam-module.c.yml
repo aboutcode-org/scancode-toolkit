@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Sebastian Droge
     count: 1
+allrights:
+  - Copyright (c) 2006-2007 Red Hat, Inc.
+  - Copyright (c) 2007 Sebastian Droge.

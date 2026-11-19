@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: The Regents of the University of California
     count: 1
+allrights:
+  - Copyright (c) 1983, 1989, 1993 The Regents of the University of California. All rights reserved.
+  - Portions Copyright (c) 1993 by Digital Equipment Corporation.

@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Greg Valure
     count: 1
+allrights:
+  - Copyright (c) 2009 by Dimitri van Heesch.
+  - Copyright (c) 2003-2008 Greg Valure

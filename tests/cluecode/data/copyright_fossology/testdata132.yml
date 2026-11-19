@@ -8,3 +8,5 @@ holders:
   - Anthony Towns
 authors:
   - Anthony Towns <ajt@debian.org>
+allrights:
+  - Copyright (c) 1999, Anthony Towns. All rights reserved.

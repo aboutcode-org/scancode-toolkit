@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Sleepycat Software
     count: 1
+allrights:
+  - Copyright (c) 1990-1999 Sleepycat Software. All rights reserved.

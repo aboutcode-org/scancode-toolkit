@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: abc
     count: 1
+allrights:
+  - copyright abc 2001 all rights reserved

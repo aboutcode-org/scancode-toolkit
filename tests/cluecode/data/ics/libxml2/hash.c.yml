@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Bjorn Reese and Daniel Veillard
     count: 1
+allrights:
+  - Copyright (c) 2000 Bjorn Reese and Daniel Veillard.

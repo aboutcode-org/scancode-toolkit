@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: vonautomatisch werkstaetten
     count: 1
+allrights:
+  - Copyright (c) 2009, vonautomatisch werkstaetten. All rights reserved.

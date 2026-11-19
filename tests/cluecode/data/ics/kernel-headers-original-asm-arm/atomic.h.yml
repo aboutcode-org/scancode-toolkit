@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Russell King
     count: 1
+allrights:
+  - Copyright (c) 1996 Russell King.
+  - Copyright (c) 2002 Deep Blue Solutions Ltd.

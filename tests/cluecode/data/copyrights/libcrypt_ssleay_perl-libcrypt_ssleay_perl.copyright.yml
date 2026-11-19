@@ -17,3 +17,7 @@ holders_summary:
     count: 1
   - value: Stephen Zander
     count: 1
+allrights:
+  - Copyright (c) 1999-2003 Joshua Chamas.
+  - Copyright (c) 1998 Gisle Aas.
+  - copyright (c) 2003 Stephen Zander <gibreel@debian.org>

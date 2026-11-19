@@ -9,3 +9,5 @@ expected_failures:
   - copyrights
   - holders
 
+allrights:
+  - (c) Oss http://s.pudn.com/upload_log.asp?e

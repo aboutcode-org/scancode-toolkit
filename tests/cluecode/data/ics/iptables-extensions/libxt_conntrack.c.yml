@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Marc Boucher
     count: 1
+allrights:
+  - (c) 2001 Marc Boucher (marc@mbsi.ca).
+  - Copyright (c) CC Computer Consultants GmbH, 2007 - 2008 Jan Engelhardt <jengelh@computergmbh.de>
