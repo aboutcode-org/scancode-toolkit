@@ -158,6 +158,28 @@ def build_package(rpm_tags, datasource_id, package_type, package_namespace=None,
             except Exception as e:
                 raise Exception(value, converted) from e
             converted.update(handled)
+
+    version = converted.get('version')
+    release = converted.get('release')
+    epoch = converted.get('epoch')
+    
+    if version:
+        if release:
+            vr = f'{version}-{release}'
+        else:
+            vr = version
+        
+        if epoch:
+            try:
+                epoch_int = int(epoch)
+                if epoch_int:
+                    vr = f'{epoch}:{vr}'
+            except (ValueError, TypeError):
+                pass
+        
+        converted['version'] = vr
+        converted.pop('release', None)
+        converted.pop('epoch', None)
     
     current_filerefs = converted.get("current_filerefs", None)
     if current_filerefs:
@@ -301,6 +323,8 @@ RPM_TAG_HANDLER_BY_NAME = {
     # TODO: add these
     #  'Epoch'
     #  'Release' 11.3.2
+    'Epoch': name_value_str_handler('epoch'),
+    'Release': name_value_str_handler('release'),
     'Version': name_value_str_handler('version'),
     'Description': name_value_str_handler('description'),
     'Sha1header': name_value_str_handler('sha1'),
