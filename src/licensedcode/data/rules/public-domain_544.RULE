@@ -1,0 +1,14 @@
+---
+license_expression: public-domain
+is_license_tag: yes
+ignorable_urls:
+    - https://github.com/stleary/JSON-java/blob/master/LICENSE
+---
+
+<licenses>
+    {{<license>
+        <name>Public Domain}}</name>
+        <url>https://github.com/stleary/JSON-java/blob/master/LICENSE</url>
+        <distribution>repo</distribution>
+    </license>
+</licenses>
