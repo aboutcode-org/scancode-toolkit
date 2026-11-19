@@ -18,6 +18,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Ayush @macayu17
 - Ayan Sinha Mahapatra @AyanSinhaMahapatra
 - Ayush Jain @aj4ayushjain
+- Brian Wing @bwingconda
 - Bruno Oliveira @nicoddemus
 - Carmen Bianca Bakker @carmenbianca
 - Chaitya Shah @Chaitya62
