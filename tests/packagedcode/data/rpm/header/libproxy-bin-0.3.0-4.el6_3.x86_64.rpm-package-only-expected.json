@@ -46,7 +46,19 @@
     "is_private": false,
     "is_virtual": false,
     "extra_data": {},
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:rpm/libproxy-bin@0.3.0",
+        "extracted_requirement": "0.3.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }      
+    ],
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
