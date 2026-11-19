@@ -527,6 +527,20 @@ I.e. the identifier is a `RULE` or a `LICENSE` file.
 Example: ``apache-2.0_2.RULE``
 
 Other attributes are it's license-expression, the boolean fields, length, relevance etc.
+Relevance
+---------
+
+The `relevance` attribute represents the importance of a rule when detecting
+licenses. It acts as a scoring mechanism that helps ScanCode prioritize stronger
+matches over weaker ones.
+
+Rules with higher relevance values indicate stronger evidence that the matched
+text corresponds to a specific license. For example, rules matching the main
+license text usually have higher relevance, while rules matching smaller license
+references or fragments may have lower values.
+
+This scoring helps ScanCode select the most accurate license detection when
+multiple rules match the same piece of text.
 
 
 CLI option
