@@ -54,3 +54,87 @@ class TestBower(PackageTester):
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package-only', test_file, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_bower_json_string_repository(self):
+        test_file = self.get_temp_file('bower.json')
+        with open(test_file, 'w') as f:
+            f.write('''{
+                "name": "test-repo-string",
+                "version": "1.0.0",
+                "repository": "https://github.com/foo/bar.git"
+            }''')
+        packages = list(bower.BowerJsonHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0]
+        assert package.name == "test-repo-string"
+        assert package.vcs_url == "https://github.com/foo/bar.git"
+
+    def test_parse_bower_json_dict_repository_without_type(self):
+        test_file = self.get_temp_file('bower.json')
+        with open(test_file, 'w') as f:
+            f.write('''{
+                "name": "test-repo-dict-no-type",
+                "version": "1.0.0",
+                "repository": {
+                    "url": "https://github.com/foo/bar.git"
+                }
+            }''')
+        packages = list(bower.BowerJsonHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0]
+        assert package.name == "test-repo-dict-no-type"
+        assert package.vcs_url == "https://github.com/foo/bar.git"
+
+    def test_parse_bower_json_dict_repository_with_type(self):
+        test_file = self.get_temp_file('bower.json')
+        with open(test_file, 'w') as f:
+            f.write('''{
+                "name": "test-repo-dict-with-type",
+                "version": "1.0.0",
+                "repository": {
+                    "type": "git",
+                    "url": "https://github.com/foo/bar.git"
+                }
+            }''')
+        packages = list(bower.BowerJsonHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0]
+        assert package.name == "test-repo-dict-with-type"
+        assert package.vcs_url == "git+https://github.com/foo/bar.git"
+
+    def test_parse_bower_json_single_string_author(self):
+        test_file = self.get_temp_file('bower.json')
+        with open(test_file, 'w') as f:
+            f.write('''{
+                "name": "test-author-string",
+                "version": "1.0.0",
+                "authors": "Betty Beta <bbeta@example.com>"
+            }''')
+        packages = list(bower.BowerJsonHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0]
+        assert len(package.parties) == 1
+        assert package.parties[0].name == "Betty Beta <bbeta@example.com>"
+        assert package.parties[0].role == "author"
+
+    def test_parse_bower_json_author_object_preserves_package_name(self):
+        test_file = self.get_temp_file('bower.json')
+        with open(test_file, 'w') as f:
+            f.write('''{
+                "name": "my-actual-package",
+                "version": "2.0.0",
+                "authors": [
+                    {
+                        "name": "Author Person",
+                        "email": "author@example.com"
+                    }
+                ]
+            }''')
+        packages = list(bower.BowerJsonHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0]
+        assert package.name == "my-actual-package"
+        assert package.purl == "pkg:bower/my-actual-package@2.0.0"
+        assert len(package.parties) == 1
+        assert package.parties[0].name == "Author Person"
+        assert package.parties[0].email == "author@example.com"

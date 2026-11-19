@@ -38,16 +38,20 @@ class BowerJsonHandler(models.DatafileHandler):
         version = package_data.get('version')
         extracted_license_statement = package_data.get('license')
         keywords = package_data.get('keywords') or []
+        if isinstance(keywords, str):
+            keywords = [k.strip() for k in keywords.split(',') if k.strip()]
 
         parties = []
 
         authors = package_data.get('authors') or []
+        if isinstance(authors, (str, dict)):
+            authors = [authors]
         for author in authors:
             if isinstance(author, dict):
-                name = author.get('name')
+                author_name = author.get('name')
                 email = author.get('email')
                 url = author.get('homepage')
-                party = models.Party(name=name, role='author', email=email, url=url)
+                party = models.Party(name=author_name, role='author', email=email, url=url)
                 parties.append(party)
             elif isinstance(author, str):
                 parties.append(models.Party(name=author, role='author'))
@@ -56,38 +60,44 @@ class BowerJsonHandler(models.DatafileHandler):
 
         homepage_url = package_data.get('homepage')
 
-        repository = package_data.get('repository') or {}
-        repo_type = repository.get('type')
-        repo_url = repository.get('url')
-
+        repository = package_data.get('repository')
         vcs_url = None
-        if repo_type and repo_url:
-            vcs_url = f'{repo_type}+{repo_url}'
+        if isinstance(repository, dict):
+            repo_type = repository.get('type')
+            repo_url = repository.get('url')
+            if repo_type and repo_url:
+                vcs_url = f'{repo_type}+{repo_url}'
+            elif repo_url:
+                vcs_url = repo_url
+        elif isinstance(repository, str):
+            vcs_url = repository
 
-        deps = package_data.get('dependencies') or {}
+        deps = package_data.get('dependencies')
         dependencies = []
-        for dep_name, requirement in deps.items():
-            dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(type='bower', name=dep_name).to_string(),
-                    scope='dependencies',
-                    extracted_requirement=requirement,
-                    is_runtime=True,
-                    is_optional=False,
+        if isinstance(deps, dict):
+            for dep_name, requirement in deps.items():
+                dependencies.append(
+                    models.DependentPackage(
+                        purl=PackageURL(type='bower', name=dep_name).to_string(),
+                        scope='dependencies',
+                        extracted_requirement=requirement,
+                        is_runtime=True,
+                        is_optional=False,
+                    )
                 )
-            )
 
-        dev_dependencies = package_data.get('devDependencies') or {}
-        for dep_name, requirement in dev_dependencies.items():
-            dependencies.append(
-                models.DependentPackage(
-                    purl=PackageURL(type='bower', name=dep_name).to_string(),
-                    scope='devDependencies',
-                    extracted_requirement=requirement,
-                    is_runtime=False,
-                    is_optional=True,
+        dev_dependencies = package_data.get('devDependencies')
+        if isinstance(dev_dependencies, dict):
+            for dep_name, requirement in dev_dependencies.items():
+                dependencies.append(
+                    models.DependentPackage(
+                        purl=PackageURL(type='bower', name=dep_name).to_string(),
+                        scope='devDependencies',
+                        extracted_requirement=requirement,
+                        is_runtime=False,
+                        is_optional=True,
+                    )
                 )
-            )
 
         package_data = dict(
             datasource_id=cls.datasource_id,
