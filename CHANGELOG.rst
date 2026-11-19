@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Ensure each license rule has a unique generated validation test name.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5257
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
