@@ -16,7 +16,7 @@
         {
           "type": "bower",
           "namespace": null,
-          "name": "John Doe",
+          "name": "blue-leaf",
           "version": null,
           "qualifiers": {},
           "subpath": null,
@@ -108,7 +108,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "bower_json",
-          "purl": "pkg:bower/John%20Doe"
+          "purl": "pkg:bower/blue-leaf"
         }
       ],
       "for_packages": [],

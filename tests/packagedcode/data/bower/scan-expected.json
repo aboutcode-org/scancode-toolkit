@@ -3,7 +3,7 @@
     {
       "type": "bower",
       "namespace": null,
-      "name": "John Doe",
+      "name": "blue-leaf",
       "version": null,
       "qualifiers": {},
       "subpath": null,
@@ -125,14 +125,14 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "package_uid": "pkg:bower/John%20Doe?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "scan/bower.json"
       ],
       "datasource_ids": [
         "bower_json"
       ],
-      "purl": "pkg:bower/John%20Doe"
+      "purl": "pkg:bower/blue-leaf"
     }
   ],
   "dependencies": [
@@ -147,7 +147,7 @@
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:bower/get-size?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:bower/John%20Doe?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/bower.json",
       "datasource_id": "bower_json"
     },
@@ -162,7 +162,7 @@
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:bower/eventEmitter?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:bower/John%20Doe?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/bower.json",
       "datasource_id": "bower_json"
     },
@@ -177,7 +177,7 @@
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:bower/qunit?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": "pkg:bower/John%20Doe?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "scan/bower.json",
       "datasource_id": "bower_json"
     }
@@ -197,7 +197,7 @@
         {
           "type": "bower",
           "namespace": null,
-          "name": "John Doe",
+          "name": "blue-leaf",
           "version": null,
           "qualifiers": {},
           "subpath": null,
@@ -356,11 +356,11 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "bower_json",
-          "purl": "pkg:bower/John%20Doe"
+          "purl": "pkg:bower/blue-leaf"
         }
       ],
       "for_packages": [
-        "pkg:bower/John%20Doe?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:bower/blue-leaf?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }
