@@ -1,7 +1,7 @@
 /* -*- Mode: c; tab-width: 8; c-basic-offset: 4; indent-tabs-mode: t; -*- */
 /* Cairo - a vector graphics library with display and print output
  *
- * Copyright © 2010 Mozilla Foundation
+ * Copyright ï¿½ 2010 Mozilla Foundation
  *
  * This library is free software; you can redistribute it and/or
  * modify it either under the terms of the GNU Lesser General Public
@@ -1739,7 +1739,7 @@ _cairo_d2d_create_linear_gradient_brush(cairo_d2d_surface_t *d2dsurf,
  * \param pattern The pattern to create a brush for
  * \param unique We cache the bitmap/color brush for speed. If this
  * needs a brush that is unique (i.e. when more than one is needed),
- * this will make the function return a seperate brush.
+ * this will make the function return a separate brush.
  * \return A brush object
  */
 static RefPtr<ID2D1Brush>
