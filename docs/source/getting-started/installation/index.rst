@@ -11,6 +11,7 @@ Installing ScanCode
    install-scancode-using-docker
    install-scancode-from-source
    install-scancode-using-pip
+   windows-troubleshooting
 
 .. note::
 
