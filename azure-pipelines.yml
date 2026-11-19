@@ -111,8 +111,8 @@ jobs:
               # and we use the special --test-suite=plugins marker for these
               # tests
               additional_license_combined: |
-                venv/bin/pip install tests/licensedcode/data/additional_licenses/additional_plugin_1/
-                venv/bin/pip install tests/licensedcode/data/additional_licenses/additional_plugin_2/
+                venv/bin/pip install --no-deps tests/licensedcode/data/additional_licenses/additional_plugin_1/
+                venv/bin/pip install --no-deps tests/licensedcode/data/additional_licenses/additional_plugin_2/
                 venv/bin/scancode-reindex-licenses \
                   --additional-directory tests/licensedcode/data/additional_licenses/additional_dir/
                 venv/bin/pytest -vvs --test-suite=plugins \

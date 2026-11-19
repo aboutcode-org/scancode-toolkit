@@ -27,6 +27,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Daniel Eder @daniel-eder
 - Dan Kegel @dankegel
 - Dennis Clark @DennisClark
+- Diana Galeana @diana-galeana
 - Divyansh Sharma @Divyansh2512
 - Duncan Howe @Duncan-Howe
 - Felix Kauselmann @selmf
@@ -61,6 +62,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Nisha Kumar @nishakm
 - Nishchith Shetty @inishchith
 - Nitish Sharma @nitish81299
+- Octavio Valdivia Mendoza @OctavioValdiviaMendoza
 - Paul Gier @pgier
 - Philippe Ombredanne @pombredanne
 - Pi Delport @PiDelport
