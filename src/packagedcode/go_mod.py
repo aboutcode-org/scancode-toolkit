@@ -14,6 +14,18 @@ from packageurl import PackageURL
 
 
 @attr.s()
+class GoWorkspace(object):
+    """
+    Represents a parsed go.work file for a Go workspace.
+    A workspace is a collection of multiple Go modules that can be edited together.
+    See https://go.dev/ref/mod#go-work-files for details.
+    """
+    go_version = attr.ib(default=None)
+    use = attr.ib(default=attr.Factory(list))
+    require = attr.ib(default=attr.Factory(list))
+
+
+@attr.s()
 class GoModule(object):
     namespace = attr.ib(default=None)
     name = attr.ib(default=None)
@@ -253,3 +265,102 @@ def parse_gosum(location):
         gosums.append(dep)
 
     return gosums
+
+
+def parse_gowork(location):
+    """
+    Return a GoWorkspace parsed from a go.work file at ``location``.
+
+    Handle go.work files from Go workspaces introduced in Go 1.18.
+    See https://go.dev/ref/mod#go-work-files for details.
+
+    A go.work file specifies a workspace containing multiple modules with:
+    - ``go`` directive: Go version
+    - ``use`` directives: paths to local modules in the workspace
+    - ``require`` directives: external module requirements (like go.mod)
+
+    For example::
+
+        go 1.18
+
+        use (
+            ./mymodule
+            ./tools
+        )
+
+        require (
+            github.com/some/dep v1.2.3
+        )
+    """
+    with io.open(location, encoding='utf-8', closefd=True) as data:
+        lines = data.readlines()
+
+    workspace = GoWorkspace()
+    use_dirs = []
+    require = []
+
+    for i, line in enumerate(lines):
+        line = preprocess(line)
+
+        if not line:
+            continue
+
+        # Parse 'go <version>' directive
+        if line.startswith('go '):
+            workspace.go_version = line[3:].strip()
+            continue
+
+        # Parse multi-line 'use ( ... )' block
+        if line == 'use (' or line.startswith('use ('):
+            for use_line in lines[i + 1:]:
+                use_line = preprocess(use_line)
+                if ')' in use_line:
+                    break
+                if use_line:
+                    use_dirs.append(use_line)
+            continue
+
+        # Parse inline 'use ./path'
+        if line.startswith('use ') and '(' not in line:
+            path = line[4:].strip()
+            if path:
+                use_dirs.append(path)
+            continue
+
+        # Parse multi-line 'require ( ... )' block
+        if line == 'require (' or (line.startswith('require') and '(' in line):
+            for req_line in lines[i + 1:]:
+                req_line = preprocess(req_line)
+                if ')' in req_line:
+                    break
+                if not req_line:
+                    continue
+                parsed_dep = parse_dep_link(req_line)
+                if parsed_dep:
+                    ns_name = parsed_dep.group('ns_name')
+                    namespace, _, name = ns_name.rpartition('/')
+                    version = parsed_dep.group('version')
+                    require.append(GoModule(
+                        namespace=namespace,
+                        name=name,
+                        version=version,
+                    ))
+            continue
+
+        # Parse inline 'require module version'
+        if line.startswith('require ') and '(' not in line:
+            parsed = parse_module(line)
+            if parsed:
+                ns_name = parsed.group('ns_name')
+                namespace, _, name = ns_name.rpartition('/')
+                version = parsed.group('version').strip()
+                require.append(GoModule(
+                    namespace=namespace,
+                    name=name,
+                    version=version,
+                ))
+            continue
+
+    workspace.use = use_dirs
+    workspace.require = require
+    return workspace

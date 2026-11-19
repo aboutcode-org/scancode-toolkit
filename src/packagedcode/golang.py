@@ -22,7 +22,7 @@ Handle Go packages including go.mod and go.sum files.
 # CHECK: https://forum.golangbridge.org/t/url-to-download-package/19811
 
 # TODO: use the LICENSE file convention!
-# TODO: support "vendor" and "workspace" layouts
+# TODO: support "vendor" layout
 
 
 class BaseGoModuleHandler(models.DatafileHandler):
@@ -108,7 +108,7 @@ class GoSumHandler(BaseGoModuleHandler):
     path_patterns = ('*/go.sum',)
     default_package_type = 'golang'
     default_primary_language = 'Go'
-    description = 'Go module cheksums file'
+    description = 'Go module checksums file'
     documentation_url = 'https://go.dev/ref/mod#go-sum-files'
 
     @classmethod
@@ -132,5 +132,56 @@ class GoSumHandler(BaseGoModuleHandler):
             type=cls.default_package_type,
             dependencies=package_dependencies,
             primary_language=cls.default_primary_language,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+class GoWorkHandler(models.DatafileHandler):
+    """
+    Handle Go workspace files (go.work) introduced in Go 1.18.
+
+    A go.work file identifies a workspace: a collection of Go modules
+    that can be developed together. It lists ``use`` directives pointing
+    to local module directories, and optional ``require`` directives for
+    external dependencies.
+
+    See https://go.dev/ref/mod#go-work-files for details.
+    """
+    datasource_id = 'go_work'
+    path_patterns = ('*/go.work',)
+    default_package_type = 'golang'
+    default_primary_language = 'Go'
+    description = 'Go workspace file'
+    documentation_url = 'https://go.dev/ref/mod#go-work-files'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        workspace = go_mod.parse_gowork(location)
+
+        dependencies = []
+        for req in workspace.require or []:
+            dependencies.append(
+                models.DependentPackage(
+                    purl=req.purl(include_version=True),
+                    extracted_requirement=req.version,
+                    scope='require',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_pinned=False,
+                )
+            )
+
+        extra_data = {}
+        if workspace.go_version:
+            extra_data['go_version'] = workspace.go_version
+        if workspace.use:
+            extra_data['use'] = workspace.use
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+            extra_data=extra_data,
         )
         yield models.PackageData.from_data(package_data, package_only)
