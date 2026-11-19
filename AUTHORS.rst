@@ -7,6 +7,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Agni Bhattacharyya @PyAgni
 - Akanksha Garg @akugarg
 - Alex Blekhman @a-tinsmith
+- Alex Dongzeyu @AlexDongzeyu
 - Alexander Gschrei @agschrei
 - Armijn Hemmel @armijnhemel
 - Armin Tänzer @armintaenzertng

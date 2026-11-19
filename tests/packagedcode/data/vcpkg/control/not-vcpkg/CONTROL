@@ -1,0 +1,7 @@
+Source: example
+Section: utils
+Priority: optional
+Maintainer: Example Maintainer <maintainer@example.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Description: A Debian source package control file.
