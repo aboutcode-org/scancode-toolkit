@@ -46,9 +46,101 @@
         font-weight: normal;
         font-size: 12px;
       }
+      details {
+          margin: 5px 0;
+      }
+      summary {
+          cursor: pointer;
+          color: #5E81B7;
+          font-weight: bold;
+      }
+      summary:hover {
+          text-decoration: underline;
+      }
+      pre {
+          background: #f5f5f5;
+          padding: 10px;
+          border: 1px solid #ddd;
+          overflow-x: auto;
+          font-family: monospace;
+          font-size: 11px;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+      }
+      .summary-section {
+          background: #f0f8ff;
+          padding: 15px;
+          margin-bottom: 20px;
+          border-left: 4px solid #5E81B7;
+      }
+      .summary-section h3 {
+          margin-top: 0;
+          color: #5E81B7;
+          font-size: 16px;
+      }
+      .summary-section p {
+          margin: 5px 0;
+      }
     </style>
   </head>
   <body>
+    {% if summary %}
+    <div class="summary-section">
+      <h3>Scan Summary</h3>
+      {% if summary.declared_license_expression %}
+      <p><strong>Declared License:</strong> {{ summary.declared_license_expression }}</p>
+      {% endif %}
+      {% if summary.declared_holder %}
+      <p><strong>Declared Holder:</strong> {{ summary.declared_holder }}</p>
+      {% endif %}
+      {% if summary.primary_language %}
+      <p><strong>Primary Language:</strong> {{ summary.primary_language }}</p>
+      {% endif %}
+      {% if summary.other_license_expressions %}
+      <p><strong>Other License Expressions:</strong></p>
+      <ul>
+        {% for expr in summary.other_license_expressions %}
+        <li>{{ expr.value }} (count: {{ expr.count }})</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% if summary.other_holders %}
+      <p><strong>Other Holders:</strong></p>
+      <ul>
+        {% for holder in summary.other_holders %}
+        <li>{{ holder.value }}{% if holder.count is not none %} (count: {{ holder.count }}){% endif %}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    {% endif %}
+    {% if summary and summary.license_clarity_score %}
+    <table>
+      <caption>License Clarity Score</caption>
+      <thead>
+        <tr>
+          <th>Overall Score</th>
+          <th>Declared License</th>
+          <th>Identification Precision</th>
+          <th>Has License Text</th>
+          <th>Declared Copyrights</th>
+          <th>Ambiguous Compound</th>
+          <th>Conflicting Categories</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>{{ summary.license_clarity_score.score }}</strong></td>
+          <td>{{ summary.license_clarity_score.declared_license }}</td>
+          <td>{{ summary.license_clarity_score.identification_precision }}</td>
+          <td>{{ summary.license_clarity_score.has_license_text }}</td>
+          <td>{{ summary.license_clarity_score.declared_copyrights }}</td>
+          <td>{{ summary.license_clarity_score.ambiguous_compound_licensing }}</td>
+          <td>{{ summary.license_clarity_score.conflicting_license_categories }}</td>
+        </tr>
+      </tbody>
+    </table>
+    {% endif %}
     {% if files.license_copyright %}
     <table>
       <caption>Copyrights and Licenses Information</caption>
@@ -59,6 +151,7 @@
           <th>end</th>
           <th>what</th>
           <th>value</th>
+          <th>matched text/ diagnostics</th>
         </tr>
       </thead>
       <tbody>
@@ -71,8 +164,26 @@
               <td>{{ row.what }}</td>
               {% if row.what == 'license' %}
                 <td><a href="#license_{{ row.value }}">{{ row.value }}</a></td>
+                <td>
+                  {% if row.matched_text %}
+                  <details>
+                    <summary>View Matched Text</summary>
+                    <pre>{{ row.matched_text|escape }}</pre>
+                  </details>
+                  {% endif %}
+                  {% if row.matched_text_diagnostics %}
+                  <details>
+                    <summary>View Diagnostics</summary>
+                    <pre>{{ row.matched_text_diagnostics|escape }}</pre>
+                  </details>
+                  {% endif %}
+                  {% if not row.matched_text and not row.matched_text_diagnostics %}
+                  -
+                  {% endif %}
+                </td>
               {% else %}
                 <td>{{ row.value|escape }}</td>
+                <td></td>
               {% endif %}
             </tr>
           {% endfor %}
