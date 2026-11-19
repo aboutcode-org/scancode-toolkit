@@ -253,3 +253,68 @@ def parse_gosum(location):
         gosums.append(dep)
 
     return gosums
+
+
+def split_module_version(token):
+    """
+    Return a GoModule parsed from a ``go mod graph`` token.
+
+    Each token is a module path, optionally followed by ``@`` and a version.
+    The main module is typically printed without a version.
+
+    For example::
+
+        >>> m = split_module_version('example.com/my/thing')
+        >>> assert m.namespace == 'example.com/my'
+        >>> assert m.name == 'thing'
+        >>> assert m.version is None
+        >>> assert m.module == 'example.com/my/thing'
+
+        >>> m = split_module_version('github.com/davecgh/go-spew@v1.1.1')
+        >>> assert m.namespace == 'github.com/davecgh'
+        >>> assert m.name == 'go-spew'
+        >>> assert m.version == 'v1.1.1'
+        >>> assert m.module == 'github.com/davecgh/go-spew'
+    """
+    if '@' in token:
+        path, version = token.rsplit('@', 1)
+    else:
+        path, version = token, None
+    namespace, _, name = path.rpartition('/')
+    return GoModule(
+        namespace=namespace or None,
+        name=name,
+        version=version,
+        module=path,
+    )
+
+
+def parse_gograph(location):
+    """
+    Return a list of (requiring, required) GoModule pairs from a ``go mod graph``
+    dump at ``location``.
+
+    See https://go.dev/ref/mod#go-mod-graph
+
+    Each line is two space-separated module versions: the requiring module,
+    then the required module.
+
+    For example::
+
+        example.com/main example.com/m1@v1.0.0
+        example.com/m1@v1.0.0 example.com/m2@v1.1.0
+    """
+    edges = []
+    with io.open(location, encoding='utf-8', closefd=True) as data:
+        for raw_line in data:
+            line = raw_line.strip()
+            if not line or line.startswith('#'):
+                continue
+            parts = line.split()
+            if len(parts) != 2:
+                continue
+            edges.append((
+                split_module_version(parts[0]),
+                split_module_version(parts[1]),
+            ))
+    return edges
