@@ -56,8 +56,8 @@
             "license_expression": "apache-2.0",
             "license_expression_spdx": "Apache-2.0",
             "from_file": null,
-            "start_line": 1,
-            "end_line": 1,
+            "start_line": 18,
+            "end_line": 18,
             "matcher": "1-hash",
             "score": 95.0,
             "matched_length": 6,
@@ -65,7 +65,7 @@
             "rule_relevance": 95,
             "rule_identifier": "pypi_apache_no-version.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
-            "matched_text": "- 'License :: OSI Approved :: Apache Software License'"
+            "matched_text": "License :: OSI Approved :: Apache Software License"
           }
         ],
         "identifier": "apache_2_0-e267f9d9-ae62-e9c9-9cc2-8cd0a1e4928f"

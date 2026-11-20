@@ -38,6 +38,7 @@ from packvers import markers
 from packvers.requirements import Requirement
 from packvers.utils import canonicalize_name
 
+from packagedcode import licensing
 from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import parse_maintainer_name_email
@@ -1251,6 +1252,137 @@ class PipInspectDeplockHandler(models.DatafileHandler):
 META_DIR_SUFFIXES = '.dist-info', '.egg-info', 'EGG-INFO',
 
 
+def get_metadata_lines(location):
+    """
+    Return a list of lines (strings) from the metadata file at ``location``.
+    ``location`` can be a file path string, Path, or ZipPath.
+    """
+    if not location:
+        return []
+
+    path = location
+    if not isinstance(location, (Path, ZipPath)):
+        path = Path(location)
+
+    try:
+        if hasattr(path, "is_file") and path.is_file():
+            return path.read_text(encoding="utf-8", errors="replace").splitlines()
+        elif hasattr(path, "is_dir") and path.is_dir():
+            for name in ("METADATA", "PKG-INFO"):
+                candidate = path / name
+                if hasattr(candidate, "is_file") and candidate.is_file():
+                    return candidate.read_text(encoding="utf-8", errors="replace").splitlines()
+    except Exception:
+        pass
+
+    if isinstance(location, str) and os.path.exists(location):
+        try:
+            if os.path.isfile(location):
+                with open(location, encoding="utf-8", errors="replace") as f:
+                    return f.read().splitlines()
+            elif os.path.isdir(location):
+                for name in ("METADATA", "PKG-INFO"):
+                    candidate = os.path.join(location, name)
+                    if os.path.isfile(candidate):
+                        with open(candidate, encoding="utf-8", errors="replace") as f:
+                            return f.read().splitlines()
+        except Exception:
+            pass
+
+    return []
+
+
+def parse_metadata_headers(lines):
+    """
+    Yield tuples of (field_name, field_value_lines, start_line, end_line)
+    from RFC 822 header lines.
+    """
+    current_field = None
+    current_value_lines = []
+    current_start_line = None
+    current_end_line = None
+
+    for line_idx, line in enumerate(lines, start=1):
+        # In RFC 822, an empty line marks the end of headers
+        if not line.strip() and not line.startswith((" ", "\t")):
+            break
+
+        if line.startswith((" ", "\t")):
+            if current_field is not None:
+                current_value_lines.append(line)
+                current_end_line = line_idx
+        elif ":" in line:
+            if current_field is not None:
+                yield current_field, current_value_lines, current_start_line, current_end_line
+            field_name, _, rest = line.partition(":")
+            field_name = field_name.strip()
+            if all(c.isalnum() or c in "-_" for c in field_name):
+                current_field = field_name
+                current_value_lines = [rest]
+                current_start_line = line_idx
+                current_end_line = line_idx
+            else:
+                current_field = None
+                break
+        else:
+            break
+
+    if current_field is not None:
+        yield current_field, current_value_lines, current_start_line, current_end_line
+
+
+def extract_header_text_and_start_line(value_lines, start_line):
+    """
+    Return (text, text_start_line) given the list of raw value lines from a header
+    and its header start_line.
+    """
+    if not value_lines:
+        return None, None
+
+    first = value_lines[0]
+    rest = value_lines[1:]
+
+    if first.strip():
+        if first.startswith(" "):
+            first = first[1:]
+        text_lines = [first] + rest
+        return "\n".join(text_lines), start_line
+
+    offset = 1
+    while rest and not rest[0].strip():
+        rest = rest[1:]
+        offset += 1
+
+    if not rest:
+        return None, None
+
+    return "\n".join(rest), start_line + offset
+
+
+def get_metadata_license_items(lines, declared_license=None):
+    """
+    Yield (statement, start_line) tuples for license items in `lines`.
+    Only items corresponding to fields present in `declared_license`
+    (or all license fields if `declared_license` is None) are yielded.
+    """
+    want_license = True
+    want_classifiers = True
+    if declared_license is not None:
+        want_license = "license" in declared_license
+        want_classifiers = "classifiers" in declared_license
+
+    for field_name, value_lines, start_line, end_line in parse_metadata_headers(lines):
+        field_lower = field_name.lower()
+        if want_license and field_lower in ("license", "license-expression"):
+            text, text_start_line = extract_header_text_and_start_line(value_lines, start_line)
+            if text and text.strip() and text.strip().upper() != "UNKNOWN":
+                yield text, text_start_line
+        elif want_classifiers and field_lower == "classifier":
+            text, text_start_line = extract_header_text_and_start_line(value_lines, start_line)
+            if text and text.strip().startswith("License ::"):
+                yield text.strip(), text_start_line
+
+
 def parse_metadata(location, datasource_id, package_type, package_only=False):
     """
     Return a PackageData object from a PKG-INFO or METADATA file at ``location``
@@ -1281,6 +1413,43 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
     if license_file:
         extra_data['license_file'] = license_file
 
+    declared_license_expression = None
+    declared_license_expression_spdx = None
+    license_detections = []
+
+    if not package_only and extracted_license_statement:
+        lines = get_metadata_lines(location)
+        if lines:
+            license_items = list(
+                get_metadata_license_items(
+                    lines=lines,
+                    declared_license=extracted_license_statement,
+                )
+            )
+            if license_items:
+                all_detections = []
+                for stmt, start_line in license_items:
+                    detections = licensing.get_license_detections_for_extracted_license_statement(
+                        extracted_license_statement=stmt,
+                        start_line=start_line,
+                    )
+                    if detections:
+                        all_detections.extend(detections)
+                if all_detections:
+                    detection_data, declared_license_expression = (
+                        licensing.get_mapping_and_expression_from_detections(
+                            license_detections=all_detections,
+                            relation="AND",
+                        )
+                    )
+                    license_detections = detection_data
+                    if declared_license_expression:
+                        declared_license_expression_spdx = (
+                            models.get_declared_license_expression_spdx(
+                                declared_license_expression=declared_license_expression
+                            )
+                        )
+
     # FIXME: We are getting dependencies from other sibling files, this is duplicated
     # data at the package_data level, is this necessary? We also have the entire dependency
     # relationships here at requires.txt present in ``.egg-info`` should we store these
@@ -1295,6 +1464,9 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
         name=name,
         version=version,
         extracted_license_statement=extracted_license_statement,
+        declared_license_expression=declared_license_expression,
+        declared_license_expression_spdx=declared_license_expression_spdx,
+        license_detections=license_detections,
         description=get_description(metainfo=meta, location=str(location)),
         keywords=get_keywords(meta),
         parties=get_parties(meta),

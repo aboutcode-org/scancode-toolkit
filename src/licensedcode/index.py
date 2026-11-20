@@ -906,6 +906,7 @@ class LicenseIndex(object):
         unknown_licenses=False,
         deadline=sys.maxsize,
         _skip_hash_match=False,
+        start_line=1,
         **kwargs,
     ):
         """
@@ -943,6 +944,7 @@ class LicenseIndex(object):
             idx=self,
             text_line_threshold=15,
             bin_line_threshold=50,
+            start_line=start_line,
         )
 
         if TRACE:
@@ -973,6 +975,7 @@ class LicenseIndex(object):
         unknown_licenses=False,
         deadline=sys.maxsize,
         _skip_hash_match=False,
+        start_line=1,
         **kwargs,
     ):
         """

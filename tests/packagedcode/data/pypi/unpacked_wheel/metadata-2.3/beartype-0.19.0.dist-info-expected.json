@@ -56,8 +56,8 @@
             "license_expression": "mit",
             "license_expression_spdx": "MIT",
             "from_file": null,
-            "start_line": 1,
-            "end_line": 1,
+            "start_line": 11,
+            "end_line": 11,
             "matcher": "2-aho",
             "score": 100.0,
             "matched_length": 2,
@@ -71,8 +71,8 @@
             "license_expression": "mit",
             "license_expression_spdx": "MIT",
             "from_file": null,
-            "start_line": 5,
-            "end_line": 21,
+            "start_line": 15,
+            "end_line": 31,
             "matcher": "2-aho",
             "score": 100.0,
             "matched_length": 161,
@@ -80,7 +80,7 @@
             "rule_relevance": 100,
             "rule_identifier": "mit.LICENSE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-            "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+            "matched_text": "        Permission is hereby granted, free of charge, to any person obtaining a copy\n        of this software and associated documentation files (the \"Software\"), to deal\n        in the Software without restriction, including without limitation the rights\n        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n        copies of the Software, and to permit persons to whom the Software is\n        furnished to do so, subject to the following conditions:\n        \n        The above copyright notice and this permission notice shall be included in all\n        copies or substantial portions of the Software.\n        \n        THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n        SOFTWARE."
           }
         ],
         "identifier": "mit-ac40beba-5702-f54d-755f-333441314bb0"
@@ -93,8 +93,8 @@
             "license_expression": "mit",
             "license_expression_spdx": "MIT",
             "from_file": null,
-            "start_line": 1,
-            "end_line": 1,
+            "start_line": 36,
+            "end_line": 36,
             "matcher": "1-hash",
             "score": 100.0,
             "matched_length": 5,
@@ -102,7 +102,7 @@
             "rule_relevance": 100,
             "rule_identifier": "pypi_mit_license.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
-            "matched_text": "- 'License :: OSI Approved :: MIT License'"
+            "matched_text": "License :: OSI Approved :: MIT License"
           }
         ],
         "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
