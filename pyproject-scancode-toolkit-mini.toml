@@ -93,7 +93,7 @@ dependencies = [
     "pymaven_patch >= 0.2.8",
     "requests >= 2.7.0",
     "saneyaml >= 0.6.0",
-    "spdx_tools == 0.8.2",
+    "spdx_tools == 0.8.5",
     "text_unidecode >= 1.0",
     "tomli >= 2",
     "urlpy",
@@ -158,7 +158,7 @@ files = [
     { filename = "pyproject.toml" },
     { filename = "pyproject-scancode-toolkit-mini.toml" },
     { filename = "pyproject-packagedcode.toml" },
-    
+
 ]
 
 
