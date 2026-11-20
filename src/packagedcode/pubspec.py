@@ -7,12 +7,15 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import re
 import warnings
 
 import saneyaml
 from packageurl import PackageURL
-
+from packageurl.contrib.url2purl import url2purl
 from packagedcode import models
+from urllib.parse import urlparse
+
 """
 Collect data from Dart pub packages.
 See https://dart.dev/tools/pub/pubspec
@@ -27,6 +30,9 @@ is limited and only returns all versions of a package
 
 See https://github.com/dart-lang/pub/blob/master/doc/repository-spec-v2.md
 """
+
+SSH_GIT_URL_PATTERN = re.compile(r"^[^@/:]+@[^/:]+:.+$")
+
 
 # FIXME: warnings reported here DO NOT work. We should have a better way
 
@@ -200,43 +206,113 @@ def collect_deps(data, dependency_field_name, is_runtime=True, is_optional=False
             yield dep
 
 
-def build_dep(name, version, scope, is_runtime=True, is_optional=False):
+def build_dep(name, constraint, scope, is_runtime=True, is_optional=False):
     """
     Return DependentPackage from the provided data.
     """
-
     # TODO: these can be more complex for SDKs
     # https://dart.dev/tools/pub/dependencies#dependency-sources
 
-    if isinstance(version, dict) and "path" in version:
+    default_repo_url = "https://pub.dev"
+    pkg_type = "pubspec"
+    pkg_namespace = None
+    pkg_name = name
+    pkg_version_exp = None
+    pkg_qualifiers = {}
+    pkg_subpath = None
+
+    if isinstance(constraint, dict) and "path" in constraint:
         # https://dart.dev/tools/pub/dependencies#path-packages
         # you cannot upload a package to the pub.dev site if
         # it has any path dependencies in its pubspec.
         return
 
-    elif isinstance(version, dict) and "sdk" in version:
+    elif isinstance(constraint, dict) and "sdk" in constraint:
         # {'sdk': 'flutter'} type of deps....
-        # which is a wart that we keep as a requiremnet
-        version = ', '.join(': '.join([k, str(v)]) for k, v in version.items())
+        # which is a wart that we keep as a requirement
+        pkg_version_exp = ", ".join(": ".join([k, str(v)]) for k, v in constraint.items())
 
-    if version.replace('.', '').isdigit():
-        # version is pinned exactly if it is only made of dots and digits
+    elif isinstance(constraint, dict) and "hosted" in constraint:
+        # A hosted package can be declared in following ways:
+        # transmogrify:
+        #     hosted: https://some-package-server.com
+        #     version: ^1.4.0
+
+        # For SDK before 2.15
+        # transmogrify:
+        #     hosted:
+        #         name: transmogrify
+        #         url: https://some-package-server.com
+        #     version: ^1.4.0
+
+        hosted = constraint.get("hosted")
+        hosted_repo_url = hosted
+        pkg_version_exp = constraint.get("version", "")
+        if isinstance(hosted, dict) and "url" in hosted:
+            hosted_repo_url = hosted.get("url")
+            pkg_name = hosted.get("name", pkg_name)
+
+        if isinstance(hosted_repo_url, str) and not hosted_repo_url.startswith(default_repo_url):
+            pkg_qualifiers["repository_url"]=hosted_repo_url
+
+    elif isinstance(constraint, dict) and "git" in constraint:
+        # Git package can be declared in following ways:
+        # kittens:
+        #     git: https://github.com/munificent/kittens.git
+
+        # kittens:
+        #     git: git@github.com:munificent/kittens.git
+
+        # kittens:
+        #     git:
+        #         url: git@github.com:munificent/kittens.git
+        #         ref: some-branch
+
+        # kittens:
+        #     git:
+        #         url: git@github.com:munificent/cats.git
+        #         path: path/to/kittens
+        git_pkg = constraint.get("git")
+        pkg_version_exp = constraint.get("version", "")
+        git_url = git_pkg.get("url") if isinstance(git_pkg, dict) else git_pkg
+        base_purl = get_purl_from_git_url(git_url)
+        if not base_purl:
+            return
+
+        pkg_subpath = git_pkg.get("path") if isinstance(git_pkg, dict) else None
+        pkg_type = base_purl.type
+        pkg_namespace = base_purl.namespace
+        pkg_name = base_purl.name
+    else:
+        # A flat package dependency
+        # dependencies:
+        #     transmogrify: ^1.4.0
+        pkg_version_exp = constraint
+
+    pkg_version_exp = pkg_version_exp.strip()
+    if is_version_pinned(pkg_version_exp):
         purl = PackageURL(
-            type='pubspec',
-            name=name,
-            version=version,
+            type=pkg_type,
+            namespace=pkg_namespace,
+            name=pkg_name,
+            version=pkg_version_exp,
+            qualifiers=pkg_qualifiers,
+            subpath=pkg_subpath,
         )
         is_pinned = True
     else:
         purl = PackageURL(
-            type='pubspec',
-            name=name,
+            type=pkg_type,
+            namespace=pkg_namespace,
+            name=pkg_name,
+            qualifiers=pkg_qualifiers,
+            subpath=pkg_subpath,
         )
         is_pinned = False
 
     dep = models.DependentPackage(
         purl=purl.to_string(),
-        extracted_requirement=version,
+        extracted_requirement=pkg_version_exp,
         scope=scope,
         is_runtime=is_runtime,
         is_optional=is_optional,
@@ -341,3 +417,41 @@ def build_package(pubspec_data, package_only=False):
         repository_download_url=repository_download_url,
     )
     return models.PackageData.from_data(package_data, package_only)
+
+def is_version_pinned(version_exp):
+    """
+    Return whether the version expression is pinned.
+    https://dart.dev/tools/pub/dependencies#version-constraints
+    """
+    expression = version_exp.strip()
+    if not expression or expression == "any":
+        return False
+    return not any(char in expression for char in (">", "<", "^", " "))
+
+
+
+def get_purl_from_git_url(url):
+    """Parse an HTTP(S) or SSH git repo URL into a PackageURL."""
+    url = url.strip()
+
+    if url.startswith(("https://", "http://")):
+        parsed = urlparse(url)
+        domain = parsed.netloc
+        raw_path = parsed.path
+        lookup_url = url
+    elif SSH_GIT_URL_PATTERN.fullmatch(url):
+        host, raw_path = url.split(":", 1)
+        domain = host.rsplit("@", 1)[-1]
+        lookup_url = f"https://{domain}/{raw_path}"
+    else:
+        return None
+
+    clean_path = raw_path.strip("/").removesuffix(".git")
+    if not domain or not clean_path:
+        return None
+
+    return url2purl(lookup_url) or PackageURL(
+        type="git",
+        namespace=domain,
+        name=clean_path,
+    )
