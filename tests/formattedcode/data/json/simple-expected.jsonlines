@@ -6,10 +6,11 @@
         "options": {
           "input": "<path>",
           "--info": true,
-          "--json-lines": "<file>"
+          "--json-lines": "<file>",
+          "--processes": "-1"
         },
         "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-        "output_format_version": "4.0.0",
+        "output_format_version": "4.1.0",
         "message": null,
         "errors": [],
         "warnings": [],
@@ -17,9 +18,9 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-5.15.0-141-generic-x86_64-with-glibc2.35",
-            "platform_version": "#151-Ubuntu SMP Sun May 18 21:35:19 UTC 2025",
-            "python_version": "3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]"
+            "platform": "Linux-7.3.4+deb14-amd64-x86_64-with-glibc2.43",
+            "platform_version": "#1 SMP PREEMPT_DYNAMIC Debian 7.3.4-1 (2026-11-11)",
+            "python_version": "3.14.6 (main, Jul 23 2026, 15:51:39) [GCC 15.3.0]"
           },
           "spdx_license_list_version": "3.28",
           "files_count": 1
@@ -70,7 +71,7 @@
         "sha256": "234d690ec9a5ac134e01847f34581b0ea83dfd1f3d4c79bee046297baa5f5925",
         "sha1_git": "23dbd722d5dab05fbc0c49b61130ac421338c77a",
         "mime_type": "text/plain",
-        "file_type": "UTF-8 Unicode text, with no line terminators",
+        "file_type": "UTF-8 text",
         "programming_language": "C",
         "is_binary": false,
         "is_text": true,

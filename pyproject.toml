@@ -100,8 +100,7 @@ dependencies = [
     "urlpy",
     "xmltodict >= 0.11.0",
     "zipp >= 3.0.0; python_version < \"3.9\"",
-    "typecode >= 30.0.1",
-    "typecode[full] >= 30.1.0",
+    "typecode[full] @ git+https://github.com/aboutcode-org/typecode@6d75de09b791fbec08ad13bf2f917372c6b97603",
     "extractcode[full] >= 31.0.0",
 ]
 

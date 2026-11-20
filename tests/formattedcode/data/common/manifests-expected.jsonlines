@@ -21,9 +21,9 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-5.15.0-198-generic-x86_64-with-glibc2.35",
-            "platform_version": "#208-Ubuntu SMP Fri Sep 4 10:22:38 UTC 2026",
-            "python_version": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]"
+            "platform": "Linux-7.3.4+deb14-amd64-x86_64-with-glibc2.43",
+            "platform_version": "#1 SMP PREEMPT_DYNAMIC Debian 7.3.4-1 (2026-11-11)",
+            "python_version": "3.14.6 (main, Jul 23 2026, 15:51:39) [GCC 15.3.0]"
           },
           "spdx_license_list_version": "3.28",
           "files_count": 4
@@ -1141,7 +1141,7 @@
         "sha256": "f94648bd92ddf2464e62c56c3833b36927fa8b9803e8ebf3e4cfa7f2d797f3ad",
         "sha1_git": "614191600be349e61331a3a0eb2b883493f0db0f",
         "mime_type": "text/xml",
-        "file_type": "XML 1.0 document, ASCII text",
+        "file_type": "XML 1.0 document text",
         "programming_language": null,
         "is_binary": false,
         "is_text": true,
@@ -1315,7 +1315,7 @@
         "sha256": "d292aa647dc82e007ba319c878ec182d6f235f0a923cfe012ffc0ae8b7fa23be",
         "sha1_git": "fee016dc24204e079cb9e0217d4439d73e1398ac",
         "mime_type": "application/json",
-        "file_type": "JSON data",
+        "file_type": "JSON text data",
         "programming_language": null,
         "is_binary": false,
         "is_text": true,
@@ -1659,7 +1659,7 @@
         "sha256": "11129bc3bbf44b2567307ad13a31bc231f08416919e36bbdeabb9195b3e6ad58",
         "sha1_git": "99128a9e08f5a23c650d83af5dcf40c3b976753d",
         "mime_type": "application/json",
-        "file_type": "JSON data",
+        "file_type": "JSON text data",
         "programming_language": null,
         "is_binary": false,
         "is_text": true,
@@ -1893,7 +1893,7 @@
         "sha256": "4378d297df9fcb4f65fdcd1299e17eef7db86883baf149bc41b0335f943cf006",
         "sha1_git": "887bd3bfe3bdba0c8f737a69df38454b3d489ac1",
         "mime_type": "text/x-script.python",
-        "file_type": "Python script, ASCII text executable",
+        "file_type": "Python script text executable",
         "programming_language": "Python",
         "is_binary": false,
         "is_text": true,

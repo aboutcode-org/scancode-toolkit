@@ -483,7 +483,7 @@
               "rule_relevance": 100,
               "rule_identifier": "unknown-license-reference_see-license_1.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see-license_1.RULE",
-              "matched_text": "See LICENSE.)",
+              "matched_text": "// (See LICENSE.)",
               "matched_text_diagnostics": "See LICENSE.)"
             },
             {

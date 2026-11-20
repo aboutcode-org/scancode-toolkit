@@ -170,7 +170,7 @@
       "sha256": "9d24fe2cdbced95e4b49e63c86960500e2f262a23f75a767c7145c8bca37473f",
       "sha1_git": "5e8b1f741798eb5a58804ff06e5f5e799f61312d",
       "mime_type": "application/json",
-      "file_type": "JSON data",
+      "file_type": "JSON text data",
       "programming_language": null,
       "is_binary": false,
       "is_text": true,
