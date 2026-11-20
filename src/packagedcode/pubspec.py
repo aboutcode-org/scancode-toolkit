@@ -112,14 +112,14 @@ def collect_locks(locks_data):
     # FIXME: we treat all as nno optioanl for now
     sdks = locks_data.get('sdks') or {}
     for name, version in sdks.items():
-        dep = build_dep(
+        if dep := build_dep(
             name,
             version,
             scope='sdk',
             is_runtime=True,
             is_optional=False,
-        )
-        yield dep
+        ):
+            yield dep
 
     packages = locks_data.get('packages') or {}
     for name, details in packages.items():
@@ -162,14 +162,14 @@ def collect_locks(locks_data):
                 stacklevel=1,
             )
 
-        dep = build_dep(
+        if dep := build_dep(
             name,
             version,
             scope=scope,
             is_runtime=is_runtime,
             is_optional=False,
-        )
-        yield dep
+        ):
+            yield dep
 
 
 def collect_deps(data, dependency_field_name, is_runtime=True, is_optional=False):
@@ -190,14 +190,14 @@ def collect_deps(data, dependency_field_name, is_runtime=True, is_optional=False
     # https://dart.dev/tools/pub/dependencies#dependency-sources
     dependencies = data.get(dependency_field_name) or {}
     for name, version in dependencies.items():
-        dep = build_dep(
+        if dep := build_dep(
             name,
             version,
             scope=dependency_field_name,
             is_runtime=is_runtime,
             is_optional=is_optional,
-        )
-        yield dep
+        ):
+            yield dep
 
 
 def build_dep(name, version, scope, is_runtime=True, is_optional=False):
@@ -208,7 +208,13 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
     # TODO: these can be more complex for SDKs
     # https://dart.dev/tools/pub/dependencies#dependency-sources
 
-    if isinstance(version, dict) and 'sdk' in version:
+    if isinstance(version, dict) and "path" in version:
+        # https://dart.dev/tools/pub/dependencies#path-packages
+        # you cannot upload a package to the pub.dev site if
+        # it has any path dependencies in its pubspec.
+        return
+
+    elif isinstance(version, dict) and "sdk" in version:
         # {'sdk': 'flutter'} type of deps....
         # which is a wart that we keep as a requiremnet
         version = ', '.join(': '.join([k, str(v)]) for k, v in version.items())
