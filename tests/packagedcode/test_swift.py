@@ -231,6 +231,29 @@ def test_get_dependencies_branch_requirement():
     assert deps[0].is_pinned is False
 
 
+def test_get_dependencies_empty_branch_requirement():
+    dependencies = [
+        {
+            "sourceControl": [
+                {
+                    "identity": "swift-arg-parser",
+                    "location": {
+                        "remote": [
+                            {"urlString": "https://github.com/apple/swift-argument-parser"}
+                        ]
+                    },
+                    "requirement": {"branch": [""]},
+                }
+            ]
+        }
+    ]
+    deps = swift.get_dependencies(dependencies)
+    assert len(deps) == 1
+    assert deps[0].purl == "pkg:swift/github.com/apple/swift-argument-parser"
+    assert deps[0].extracted_requirement is None
+    assert deps[0].is_pinned is False
+
+
 def test_get_dependencies_revision_requirement():
     dependencies = [
         {
@@ -254,10 +277,72 @@ def test_get_dependencies_revision_requirement():
     assert deps[0].is_pinned is True
 
 
+def test_get_dependencies_empty_revision_requirement():
+    dependencies = [
+        {
+            "sourceControl": [
+                {
+                    "identity": "swift-arg-parser",
+                    "location": {
+                        "remote": [
+                            {"urlString": "https://github.com/apple/swift-argument-parser"}
+                        ]
+                    },
+                    "requirement": {"revision": [""]},
+                }
+            ]
+        }
+    ]
+    deps = swift.get_dependencies(dependencies)
+    assert len(deps) == 1
+    assert deps[0].purl == "pkg:swift/github.com/apple/swift-argument-parser"
+    assert deps[0].extracted_requirement is None
+    assert deps[0].is_pinned is False
+
+
+def test_get_dependencies_trailing_slash_url():
+    dependencies = [
+        {
+            "sourceControl": [
+                {
+                    "identity": "swift-arg-parser",
+                    "location": {
+                        "remote": [
+                            {"urlString": "https://github.com/apple/swift-argument-parser/"}
+                        ]
+                    },
+                    "requirement": {"exact": ["1.2.0"]},
+                }
+            ]
+        }
+    ]
+    deps = swift.get_dependencies(dependencies)
+    assert len(deps) == 1
+    assert deps[0].purl == "pkg:swift/github.com/apple/swift-argument-parser@1.2.0"
+    assert deps[0].extracted_requirement == "1.2.0"
+    assert deps[0].is_pinned is True
+
+
 def test_get_namespace_and_name():
     assert swift.get_namespace_and_name("https://github.com/apple/swift-argument-parser.git") == [
         "github.com/apple",
         "swift-argument-parser",
+    ]
+    assert swift.get_namespace_and_name("https://github.com/apple/swift-argument-parser/") == [
+        "github.com/apple",
+        "swift-argument-parser",
+    ]
+    assert swift.get_namespace_and_name("https://github.com/apple/swift-argument-parser.git/") == [
+        "github.com/apple",
+        "swift-argument-parser",
+    ]
+    assert swift.get_namespace_and_name("https://my.github.io/repo.git") == [
+        "my.github.io",
+        "repo",
+    ]
+    assert swift.get_namespace_and_name("my.github.io/repo.git") == [
+        "my.github.io",
+        "repo",
     ]
     assert swift.get_namespace_and_name("") == (None, None)
     assert swift.get_namespace_and_name(None) == (None, None)

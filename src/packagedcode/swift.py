@@ -356,7 +356,7 @@ def get_dependencies(dependencies):
 
         requirement = source.get("requirement") or {}
         if exact := requirement.get("exact"):
-            if isinstance(exact, list) and exact:
+            if isinstance(exact, list) and exact and exact[0]:
                 version = exact[0]
                 is_pinned = True
         elif range_req := requirement.get("range"):
@@ -366,10 +366,10 @@ def get_dependencies(dependencies):
                 upper_bound = bound.get("upperBound")
                 version = f"vers:swift/>={lower_bound}|<{upper_bound}"
         elif branch := requirement.get("branch"):
-            if isinstance(branch, list) and branch:
+            if isinstance(branch, list) and branch and branch[0]:
                 version = f"branch: {branch[0]}"
         elif revision := requirement.get("revision"):
-            if isinstance(revision, list) and revision:
+            if isinstance(revision, list) and revision and revision[0]:
                 version = revision[0]
                 is_pinned = True
 
@@ -402,8 +402,12 @@ def get_namespace_and_name(url):
         return None, None
     parsed_url = parse.urlparse(url)
     hostname = parsed_url.hostname or ""
-    path = parsed_url.path.replace(".git", "") if parsed_url.path else ""
-    canonical_name = hostname + path
+    path = parsed_url.path or ""
+    path = path.rstrip("/").removesuffix(".git")
+    canonical_name = (hostname + path).rstrip("/")
+
+    if not canonical_name:
+        return None, None
 
     if "/" in canonical_name:
         return canonical_name.rsplit("/", 1)
