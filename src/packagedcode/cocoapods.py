@@ -459,11 +459,12 @@ class PodfileLockDataByPurl:
     This class parses these information and stores them in mappings by purl.
     """
 
-    versions_by_base_purl = {}
-    direct_dependency_purls = []
-    spec_by_base_purl = {}
-    checksum_by_base_purl = {}
-    external_sources_by_base_purl = {}
+    def __init__(self):
+        self.versions_by_base_purl = {}
+        self.direct_dependency_purls = []
+        self.spec_by_base_purl = {}
+        self.checksum_by_base_purl = {}
+        self.external_sources_by_base_purl = {}
 
     @classmethod
     def collect_dependencies_data_by_purl(cls, data, package_type):
