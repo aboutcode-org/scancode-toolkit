@@ -146,6 +146,25 @@ class TestPyPiPkgInfoAndMetadata(PackageTester):
         expected_loc = self.get_test_loc('pypi/metadata/v23/PKG-INFO-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_sdist_pkg_infometadata_private(self):
+        test_file = self.get_test_loc('pypi/metadata/private/PKG-INFO')
+        package = pypi.PythonSdistPkgInfoFile.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/metadata/private/PKG-INFO-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_is_private_package(self):
+        assert pypi.is_private_package(
+            {'classifiers': ['Private :: Do Not Upload']}
+        )
+        assert pypi.is_private_package(
+            {'classifiers': ['Private :: Something Else']}
+        )
+        assert not pypi.is_private_package(
+            {'classifiers': ['Development Status :: 5 - Production/Stable']}
+        )
+        assert not pypi.is_private_package({})
+        assert not pypi.is_private_package({'classifiers': []})
+
     def test_parse_sdist_pkg_info_basic(self):
         test_file = self.get_test_loc('pypi/metadata/PKG-INFO')
         package = pypi.PythonSdistPkgInfoFile.parse(test_file)
@@ -337,6 +356,12 @@ class TestPyprojectTomlFileHandler(PackageTester):
         test_file = self.get_test_loc('pypi/pyproject-toml/standard/attrs/pyproject.toml')
         package = pypi.PyprojectTomlHandler.parse(test_file)
         expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/attrs-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_private(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/private/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/private-pyproject.toml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_pyproject_toml_standard_apache_airflow(self):
