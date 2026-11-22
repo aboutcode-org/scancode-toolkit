@@ -4,6 +4,11 @@ Changelog
 Next release
 --------------
 
+- Add a new ``Dockerfile``/``Containerfile`` package data handler that collects
+  OCI image labels as file-level package data without creating a top-level
+  package.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3561
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

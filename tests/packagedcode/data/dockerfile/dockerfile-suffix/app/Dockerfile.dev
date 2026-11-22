@@ -1,0 +1,2 @@
+FROM node:20-slim
+LABEL org.opencontainers.image.title="Dev Image" org.opencontainers.image.version="0.1.0"

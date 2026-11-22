@@ -1,0 +1,68 @@
+{
+  "packages": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "Dockerfile",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "docker",
+          "namespace": null,
+          "name": "Jitsi Broadcasting Infrastructure (jibri)",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "Components for recording and/or streaming a conference.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "https://github.com/jitsi/jibri",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/jitsi/docker-jitsi-meet",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "documentation_url": "https://jitsi.github.io/handbook/",
+            "base_image": "openjdk:11-jre-slim",
+            "labels": {
+              "org.opencontainers.image.title": "Jitsi Broadcasting Infrastructure (jibri)",
+              "org.opencontainers.image.description": "Components for recording and/or streaming a conference.",
+              "org.opencontainers.image.url": "https://github.com/jitsi/jibri",
+              "org.opencontainers.image.source": "https://github.com/jitsi/docker-jitsi-meet",
+              "org.opencontainers.image.documentation": "https://jitsi.github.io/handbook/"
+            }
+          },
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "dockerfile",
+          "purl": "pkg:docker/Jitsi%20Broadcasting%20Infrastructure%20%28jibri%29"
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}
