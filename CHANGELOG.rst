@@ -4,6 +4,12 @@ Changelog
 Next release
 --------------
 
+- Add support for Gradle Module Metadata (``.module``) files: parse the
+  component coordinates, variant dependencies (deduplicated across
+  ``apiElements``/``runtimeElements``), main artifact checksums and source
+  packages.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3522
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

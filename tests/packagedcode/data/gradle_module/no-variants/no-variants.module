@@ -1,0 +1,16 @@
+{
+    "component": {
+        "attributes": {
+            "org.gradle.status": "release"
+        },
+        "group": "com.example",
+        "module": "no-variants",
+        "version": "1.0.0"
+    },
+    "createdBy": {
+        "gradle": {
+            "version": "8.7"
+        }
+    },
+    "formatVersion": "1.1"
+}

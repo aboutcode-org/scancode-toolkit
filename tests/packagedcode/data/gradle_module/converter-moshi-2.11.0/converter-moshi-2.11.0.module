@@ -1,0 +1,112 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.squareup.retrofit2",
+    "module": "converter-moshi",
+    "version": "2.11.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "com.squareup.moshi",
+          "module": "moshi",
+          "version": {
+            "requires": "1.15.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "converter-moshi-2.11.0.jar",
+          "url": "converter-moshi-2.11.0.jar",
+          "size": 5292,
+          "sha512": "0889ca2b7b016684601f1d183d0c241531d219e5011a04a6f386f8510c018e380c68cdc08a9a80787305cb69509a5b9c9036140d8f10281881677104bac6d6ae",
+          "sha256": "dbfae9dbde0b61e5c5671648c8d9fd486efae9ad07d573ed01bd0de4688d9b2c",
+          "sha1": "4f2d4d0eb902e4be4f6a4419a84c7678b9ccd48b",
+          "md5": "cacc4ac3b4e20bb08dbc7252353be436"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.11.0"
+          }
+        },
+        {
+          "group": "com.squareup.moshi",
+          "module": "moshi",
+          "version": {
+            "requires": "1.15.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "converter-moshi-2.11.0.jar",
+          "url": "converter-moshi-2.11.0.jar",
+          "size": 5292,
+          "sha512": "0889ca2b7b016684601f1d183d0c241531d219e5011a04a6f386f8510c018e380c68cdc08a9a80787305cb69509a5b9c9036140d8f10281881677104bac6d6ae",
+          "sha256": "dbfae9dbde0b61e5c5671648c8d9fd486efae9ad07d573ed01bd0de4688d9b2c",
+          "sha1": "4f2d4d0eb902e4be4f6a4419a84c7678b9ccd48b",
+          "md5": "cacc4ac3b4e20bb08dbc7252353be436"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "converter-moshi-2.11.0-sources.jar",
+          "url": "converter-moshi-2.11.0-sources.jar",
+          "size": 4629,
+          "sha512": "96c6576b2d6785ebafcf573e828637e3e3f5a0323b334d9110cb612909843289ffbccfc4aa70851caef8595b95d0f9616f27458b6fef2922388177f4b6d1ef2c",
+          "sha256": "41b6c659c4401cbbf63d0787b78a13d52848b29f71ae9f4c69bfc9641cd88f47",
+          "sha1": "cb9e7c72b67cdc041736be5b18fc2695026ca3be",
+          "md5": "8ce3ef44c9300dee950bd7cd380a24dd"
+        }
+      ]
+    }
+  ]
+}

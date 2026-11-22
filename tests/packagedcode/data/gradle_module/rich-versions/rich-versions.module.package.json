@@ -1,0 +1,171 @@
+[
+  {
+    "type": "maven",
+    "namespace": "com.example",
+    "name": "rich-versions",
+    "version": "1.0.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Java",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": "https://repo1.maven.org/maven2/com/example/rich-versions/1.0.0/rich-versions-1.0.0.jar",
+    "size": 1234,
+    "sha1": "aabbccddeeff00112233445566778899aabbccdd",
+    "md5": "00112233445566778899aabbccddeeff",
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "format_version": "1.1",
+      "component_attributes": {
+        "org.gradle.status": "release"
+      },
+      "gradle_version": "8.7",
+      "variants": {
+        "apiElements": {
+          "attributes": {
+            "org.gradle.category": "library",
+            "org.gradle.usage": "java-api"
+          },
+          "files": [
+            {
+              "md5": "00112233445566778899aabbccddeeff",
+              "name": "rich-versions-1.0.0.jar",
+              "sha1": "aabbccddeeff00112233445566778899aabbccdd",
+              "size": 1234,
+              "url": "rich-versions-1.0.0.jar"
+            }
+          ]
+        },
+        "runtimeElements": {
+          "attributes": {
+            "org.gradle.category": "library",
+            "org.gradle.usage": "java-runtime"
+          },
+          "files": [
+            {
+              "md5": "00112233445566778899aabbccddeeff",
+              "name": "rich-versions-1.0.0.jar",
+              "sha1": "aabbccddeeff00112233445566778899aabbccdd",
+              "size": 1234,
+              "url": "rich-versions-1.0.0.jar"
+            }
+          ]
+        }
+      }
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:maven/com.example/prefers-lib",
+        "extracted_requirement": "2.0.0",
+        "scope": "runtimeElements",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": {
+            "prefers": "2.0.0"
+          },
+          "variants": [
+            "apiElements",
+            "runtimeElements"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:maven/com.example/strictly-lib@3.0.0",
+        "extracted_requirement": "3.0.0",
+        "scope": "apiElements",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": null
+      },
+      {
+        "purl": "pkg:maven/com.example/plain-lib@4.0.0",
+        "extracted_requirement": "4.0.0",
+        "scope": "apiElements",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": null
+      },
+      {
+        "purl": "pkg:maven/com.example/no-version-lib",
+        "extracted_requirement": null,
+        "scope": "apiElements",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": null
+      },
+      {
+        "purl": "pkg:maven/com.example/rejects-lib@5.0.0",
+        "extracted_requirement": "5.0.0",
+        "scope": "apiElements",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "rejects": [
+            "5.0.1",
+            "5.0.2"
+          ],
+          "reason": "needed for tests",
+          "excludes": [
+            {
+              "group": "com.example",
+              "module": "excluded-lib"
+            }
+          ]
+        }
+      },
+      {
+        "purl": "pkg:maven/com.example/runtime-only-lib@6.0.0",
+        "extracted_requirement": "6.0.0",
+        "scope": "runtimeElements",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": null
+      }
+    ],
+    "repository_homepage_url": "https://repo1.maven.org/maven2/com/example/rich-versions/1.0.0/",
+    "repository_download_url": "https://repo1.maven.org/maven2/com/example/rich-versions/1.0.0/rich-versions-1.0.0.jar",
+    "api_data_url": "https://repo1.maven.org/maven2/com/example/rich-versions/1.0.0/rich-versions-1.0.0.module",
+    "datasource_id": "gradle_module_metadata",
+    "purl": "pkg:maven/com.example/rich-versions@1.0.0"
+  }
+]

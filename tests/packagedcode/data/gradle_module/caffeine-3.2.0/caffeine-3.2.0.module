@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.ben-manes.caffeine",
+    "module": "caffeine",
+    "version": "3.2.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.12"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jspecify",
+          "module": "jspecify",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "com.google.errorprone",
+          "module": "error_prone_annotations",
+          "version": {
+            "requires": "2.36.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "caffeine-3.2.0.jar",
+          "url": "caffeine-3.2.0.jar",
+          "size": 906581,
+          "sha512": "898fe3e0c069424d2f2741e8b94c8ef1c3ec8ed6aad0b04d8ccff0167ee7ad8cd66b227606c7f408e188479e9a4dcdae0b1ce7c0207576e0a3fa74636cd3415a",
+          "sha256": "ec411dfdf0c03f25218648ce89861630b71680e5858a9a7278ebac8e55cab3d7",
+          "sha1": "35eba09997476a39492ac7f7b2bb0e8292c09d17",
+          "md5": "9d19840ccf667df46f8d839bc9aec5c5"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jspecify",
+          "module": "jspecify",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "com.google.errorprone",
+          "module": "error_prone_annotations",
+          "version": {
+            "requires": "2.36.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "caffeine-3.2.0.jar",
+          "url": "caffeine-3.2.0.jar",
+          "size": 906581,
+          "sha512": "898fe3e0c069424d2f2741e8b94c8ef1c3ec8ed6aad0b04d8ccff0167ee7ad8cd66b227606c7f408e188479e9a4dcdae0b1ce7c0207576e0a3fa74636cd3415a",
+          "sha256": "ec411dfdf0c03f25218648ce89861630b71680e5858a9a7278ebac8e55cab3d7",
+          "sha1": "35eba09997476a39492ac7f7b2bb0e8292c09d17",
+          "md5": "9d19840ccf667df46f8d839bc9aec5c5"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "caffeine-3.2.0-javadoc.jar",
+          "url": "caffeine-3.2.0-javadoc.jar",
+          "size": 276702,
+          "sha512": "ed7edfd0232dc9000ae005235dbeafc59986f6a65ef9778367b574744ce1d58a7818f0327578a9394dd64edab405bd8f446df16478da4c76a7dd2db48ae12ee0",
+          "sha256": "50d1cd26ffdea74731e03c51fe76597a48e5ab03677349acd20686dde45675a0",
+          "sha1": "41544c2f401308dc040cfae6ff644874c8196b20",
+          "md5": "da53deb8ce1031b6b21b40ece94540a0"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "caffeine-3.2.0-sources.jar",
+          "url": "caffeine-3.2.0-sources.jar",
+          "size": 164384,
+          "sha512": "188653f33c0388296418ec2731d2f824b039343f02a76e41cd830f2241e025d3b7b328368f6059cffa994a08800c6e5a49c0d2f1e46bc4aa2965ab62e333a9f2",
+          "sha256": "67e14ef5c04c193a7fcafa788b55b89a079fd584b202469721ce6d2d6c753090",
+          "sha1": "ad5fbdd3e638c5e157f056c53c7e8e1cea2dc920",
+          "md5": "fc087ea057091d0da1ce4e58080a14fe"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+    "component": {
+        "attributes": {
+            "org.gradle.status": "release"
+        },
+        "group": "com.example",
+        "module": "format-one",
+        "version": "1.0.0"
+    },
+    "createdBy": {
+        "gradle": {
+            "version": "8.0"
+        }
+    },
+    "formatVersion": "1.0",
+    "variants": [
+        {
+            "attributes": {
+                "org.gradle.category": "library",
+                "org.gradle.usage": "java-api"
+            },
+            "dependencies": [
+                {
+                    "group": "com.example",
+                    "module": "dep-one",
+                    "version": {
+                        "requires": "1.0.0"
+                    }
+                }
+            ],
+            "files": [
+                {
+                    "md5": "00112233445566778899aabbccddeeff",
+                    "name": "format-one-1.0.0.jar",
+                    "sha1": "aabbccddeeff00112233445566778899aabbccdd",
+                    "size": 1000,
+                    "url": "format-one-1.0.0.jar"
+                }
+            ],
+            "name": "apiElements"
+        }
+    ]
+}
