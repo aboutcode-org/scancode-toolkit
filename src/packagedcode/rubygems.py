@@ -524,12 +524,17 @@ def licenses_mapper(lic, lics):
     """
     declared_licenses = []
     if lic:
-        declared_licenses.append(str(license).strip())
+        clean_lic = str(lic).strip()
+        if clean_lic:
+            declared_licenses.append(clean_lic)
     if lics:
-        for lic in lics:
-            lic = lic.strip()
-            if lic:
-                declared_licenses.append(lic)
+        if isinstance(lics, str):
+            lics = [lics]
+        for l in lics:
+            if l:
+                clean_l = str(l).strip()
+                if clean_l and clean_l not in declared_licenses:
+                    declared_licenses.append(clean_l)
     return declared_licenses
 
 

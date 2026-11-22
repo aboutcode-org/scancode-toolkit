@@ -112,6 +112,44 @@ class TestRubyGemMetadata(FileBasedTesting):
         test_file = self.get_test_loc('rubygems/metadata/metadata.gz-extract')
         rubygems.GemMetadataArchiveExtractedHandler.parse(test_file)
 
+    def test_licenses_mapper_single_license(self):
+        result = rubygems.licenses_mapper('MIT', None)
+        assert result == ['MIT']
+        assert 'Type license() to see the full license text' not in result
+
+    def test_licenses_mapper_multiple_licenses(self):
+        result = rubygems.licenses_mapper(None, ['MIT', 'Apache-2.0'])
+        assert result == ['MIT', 'Apache-2.0']
+
+    def test_licenses_mapper_both_single_and_multiple_licenses(self):
+        result = rubygems.licenses_mapper('MIT', ['Apache-2.0'])
+        assert result == ['MIT', 'Apache-2.0']
+
+    def test_licenses_mapper_deduplication(self):
+        result = rubygems.licenses_mapper('MIT', ['MIT', 'Apache-2.0'])
+        assert result == ['MIT', 'Apache-2.0']
+
+    def test_licenses_mapper_string_lics(self):
+        result = rubygems.licenses_mapper(None, 'MIT')
+        assert result == ['MIT']
+
+    def test_licenses_mapper_empty_and_whitespace(self):
+        result = rubygems.licenses_mapper('  ', ['', '  ', 'MIT'])
+        assert result == ['MIT']
+
+    def test_build_rubygem_package_data_single_license(self):
+        gem_data = {
+            'name': 'testgem',
+            'version': {'version': '1.0.0'},
+            'license': 'MIT',
+        }
+        package = rubygems.build_rubygem_package_data(gem_data, datasource_id='gem')
+        assert 'MIT' in package.extracted_license_statement
+        assert 'Type license() to see the full license text' not in package.extracted_license_statement
+        package.populate_license_fields()
+        assert package.declared_license_expression == 'mit'
+        assert package.declared_license_expression_spdx == 'MIT'
+
 
 def relative_walk(dir_path, extension='.gem'):
     """
