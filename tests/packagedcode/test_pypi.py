@@ -22,6 +22,34 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 
 
+
+
+@pytest.mark.parametrize(
+    "license_value",
+    [
+        "MIT (see LICENSE for full text)",
+        "Free text license",
+        "MIT",
+    ],
+)
+def test_get_declared_license_with_string(license_value):
+    declared_license, license_file = pypi.get_declared_license(
+        {"License": license_value}
+    )
+
+    assert declared_license == {"license": license_value}
+    assert license_file is None
+
+
+def test_get_declared_license_with_text_dict():
+    declared_license, license_file = pypi.get_declared_license(
+        {"License": {"text": "MIT"}}
+    )
+
+    assert declared_license == {"license": "MIT"}
+    assert license_file is None
+
+
 class TestPyPiEndtoEnd(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
