@@ -119,7 +119,7 @@ class OpamFileHandler(models.DatafileHandler):
 
 
 def get_repository_homepage_url(name):
-    return name and '{https://opam.ocaml.org/packages}/{name}'
+    return name and f'https://opam.ocaml.org/packages/{name}'
 
 
 def get_api_data_url(name, version):
@@ -201,24 +201,44 @@ def parse_opam_from_text(text):
 
         if key == 'maintainer':
             stripped_val = value.strip('["] ')
-            stripped_val = stripped_val.split('" "')
+            stripped_val = [m.strip() for m in stripped_val.split('" "') if m.strip()]
             opam_data[key] = stripped_val
         elif key == 'authors':
-            if '[' in line:  # If authors are present in multiple lines
+            if '[' in line and ']' in line:
+                start = line.find('[')
+                end = line.rfind(']')
+                value = line[start + 1:end].strip()
+            elif '[' in line:  # If authors are present in multiple lines
                 for authors in lines[i + 1:]:
                     value += ' ' + authors.strip()
                     if ']' in authors:
                         break
-                value = value.strip('["] ')
             else:
                 value = clean_data(value)
-            value = value.split('" "')
+            value = value.strip('["] ')
+            value = [a.strip() for a in value.split('" "') if a.strip()]
             opam_data[key] = value
-        elif key == 'depends':  # Get multiline dependencies
+        elif key == 'depends':  # Get dependencies
+            dep_lines = []
+            if '[' in line and ']' in line:
+                start = line.find('[')
+                end = line.rfind(']')
+                inner = line[start + 1:end].strip()
+                if inner:
+                    dep_lines.append(inner)
+            elif '[' in line:
+                for dep in lines[i + 1:]:
+                    if ']' in dep:
+                        before = dep.split(']')[0].strip()
+                        if before:
+                            dep_lines.append(before)
+                        break
+                    dep_lines.append(dep.strip())
+
             value = []
-            for dep in lines[i + 1:]:
-                if ']' in dep:
-                    break
+            for dep in dep_lines:
+                if not dep or dep.startswith('#'):
+                    continue
                 parsed_dep = parse_dep(dep)
                 if parsed_dep:
                     version = parsed_dep.group('version').strip('{ } ').replace('"', '')
@@ -227,6 +247,14 @@ def parse_opam_from_text(text):
                         purl=PackageURL(type='opam', name=name).to_string(),
                         version=version,
                     ))
+                else:
+                    for match in re.finditer(r'\"(?P<name>[A-Za-z0-9_\-+]+)\"(?:\s*\{(?P<version>[^}]*)\})?', dep):
+                        name = match.group('name').strip()
+                        version = (match.group('version') or '').strip('{ } ').replace('"', '')
+                        value.append(dict(
+                            purl=PackageURL(type='opam', name=name).to_string(),
+                            version=version,
+                        ))
             opam_data[key] = value
 
         elif key == 'src':  # Get multiline src
@@ -240,16 +268,17 @@ def parse_opam_from_text(text):
                     if ']' in checksum:
                         break
                     parsed_checksum = parse_checksum(checksum)
-                    key = clean_data(parsed_checksum.group('key').strip())
-                    value = clean_data(parsed_checksum.group('value').strip())
-                    opam_data[key] = value
+                    if parsed_checksum:
+                        chk_key = clean_data(parsed_checksum.group('key').strip())
+                        chk_val = clean_data(parsed_checksum.group('value').strip())
+                        opam_data[chk_key] = chk_val
             else:
                 value = value.strip('" ')
                 parsed_checksum = parse_checksum(value)
                 if parsed_checksum:
-                    key = clean_data(parsed_checksum.group('key').strip())
-                    value = clean_data(parsed_checksum.group('value').strip())
-                    opam_data[key] = value
+                    chk_key = clean_data(parsed_checksum.group('key').strip())
+                    chk_val = clean_data(parsed_checksum.group('value').strip())
+                    opam_data[chk_key] = chk_val
 
     return opam_data
 

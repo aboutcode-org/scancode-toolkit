@@ -71,6 +71,55 @@ class TestOcaml(PackageTester):
         packages = opam.OpamFileHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_get_repository_homepage_url(self):
+        assert opam.get_repository_homepage_url('dune') == 'https://opam.ocaml.org/packages/dune'
+        assert opam.get_repository_homepage_url(None) is None
+
+    def test_parse_opam_single_line_depends_and_authors(self):
+        test_file = self.get_temp_file('test.opam')
+        with open(test_file, 'w') as f:
+            f.write('''opam-version: "2.0"
+name: "single-line-pkg"
+version: "1.2.3"
+authors: ["Jane Doe <jane@example.com>"]
+maintainer: ["Maintainer Team <maintainer@example.com>"]
+homepage: "https://example.com"
+license: "MIT"
+depends: [ "dune" {>= "2.0.0"} ]
+''')
+        packages = list(opam.OpamFileHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0]
+        assert package.name == "single-line-pkg"
+        assert package.version == "1.2.3"
+        assert package.repository_homepage_url == "https://opam.ocaml.org/packages/single-line-pkg"
+        assert len(package.parties) == 2
+        author = [p for p in package.parties if p.role == 'author'][0]
+        assert author.name == "Jane Doe <jane@example.com>"
+        assert len(package.dependencies) == 1
+        dep = package.dependencies[0]
+        assert dep.purl == "pkg:opam/dune"
+        assert dep.extracted_requirement == ">= 2.0.0"
+
+    def test_parse_opam_checksum_with_comments_and_blank_lines(self):
+        test_file = self.get_temp_file('checksum.opam')
+        with open(test_file, 'w') as f:
+            f.write('''opam-version: "2.0"
+name: "checksum-pkg"
+version: "1.0.0"
+checksum: [
+  # Comment inside checksum block
+  "md5=b7a7b7cce64eabf224d05ed9f2b9d471"
+
+  "sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+]
+''')
+        packages = list(opam.OpamFileHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0]
+        assert package.md5 == "b7a7b7cce64eabf224d05ed9f2b9d471"
+        assert package.sha256 == "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+
 
 FILE_LINE = [
     ('authors: "BAP Team"', ('authors', '"BAP Team"')),
