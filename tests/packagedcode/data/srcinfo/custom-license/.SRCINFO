@@ -1,0 +1,5 @@
+pkgbase = custom-license-example
+	pkgver = 1.0
+	pkgrel = 1
+	license = custom:vendor-license
+pkgname = custom-license-example
