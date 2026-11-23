@@ -1,0 +1,21 @@
+---
+key: aeonsemi-firmware
+short_name: AEONSEMI Firmware License
+name: AEONSEMI Firmware License
+category: Proprietary Free
+owner: AEONSEMI Corporation
+homepage_url: https://gitlab.com/kernel-firmware/linux-firmware
+spdx_license_key: LicenseRef-scancode-aeonsemi-firmware
+text_urls:
+  - https://gitlab.com/kernel-firmware/linux-firmware/-/blob/1987bb2044a6c2d68c39d01c360bdbe17f1eb60c/LICENSES/LICENSE.aeonsemi
+---
+
+Grants permission to use and redistribute aforementioned firmware
+files for the use with devices containing AEONSEMI silicon products, but not as part of
+the Linux kernel or in any other form which would require these files themselves
+to be covered by the terms of the GNU General Public License or the GNU Lesser
+General Public License.
+
+These firmware files are distributed in the hope that they will be useful, but
+are provided WITHOUT ANY WARRANTY, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTY
+OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.

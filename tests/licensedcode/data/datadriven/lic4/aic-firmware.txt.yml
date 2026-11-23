@@ -1,0 +1,6 @@
+license_expressions:
+  - aic-firmware
+notes: |
+  Linux-firmware LICENSES/LICENSE.aic at commit
+  1987bb2044a6c2d68c39d01c360bdbe17f1eb60c.
+  https://gitlab.com/kernel-firmware/linux-firmware/-/blob/1987bb2044a6c2d68c39d01c360bdbe17f1eb60c/LICENSES/LICENSE.aic
