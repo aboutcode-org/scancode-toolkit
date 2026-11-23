@@ -37,9 +37,9 @@ other_license_expression: (apache-2.0 AND apache-2.0) AND ((apache-2.0 AND apach
   (apache-2.0 AND apache-2.0)
 other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND ((Apache-2.0 AND Apache-2.0)
   AND BSD-3-Clause) AND BSD-3-Clause AND ((GPL-3.0-or-later AND GPL-3.0-or-later) OR Bison-exception-2.2)
-  AND LicenseRef-scancode-bsd-unchanged AND ((Apache-2.0 AND Apache-2.0) AND (Apache-2.0 AND
-  Spencer-94)) AND (Apache-2.0 AND Apache-2.0) AND BSD-2-Clause-Darwin AND ((Apache-2.0 AND
-  Apache-2.0) AND LicenseRef-scancode-public-domain) AND ((Apache-2.0 AND Apache-2.0) AND (HPND-sell-variant
+  AND BSD-2-Clause-pos-unchanged AND ((Apache-2.0 AND Apache-2.0) AND (Apache-2.0 AND Spencer-94))
+  AND (Apache-2.0 AND Apache-2.0) AND BSD-2-Clause-Darwin AND ((Apache-2.0 AND Apache-2.0) AND
+  LicenseRef-scancode-public-domain) AND ((Apache-2.0 AND Apache-2.0) AND (HPND-sell-variant
   AND metamail)) AND ((Apache-2.0 AND Apache-2.0) AND LicenseRef-scancode-zeusbench) AND ((Apache-2.0
   AND Apache-2.0) OR (GPL-2.0-or-later AND GPL-2.0-or-later)) AND MIT AND (Apache-2.0 AND Apache-2.0)
 license_detections: []
@@ -451,10 +451,10 @@ other_license_detections:
           4. This notice may not be removed or altered.
     identifier: apache_2_0_and_hs_regexp-b58332f1-4f96-ae87-9f3d-691331c863c9
   - license_expression: bsd-unchanged
-    license_expression_spdx: LicenseRef-scancode-bsd-unchanged
+    license_expression_spdx: BSD-2-Clause-pos-unchanged
     matches:
       - license_expression: bsd-unchanged
-        license_expression_spdx: LicenseRef-scancode-bsd-unchanged
+        license_expression_spdx: BSD-2-Clause-pos-unchanged
         from_file:
         start_line: 370
         end_line: 391

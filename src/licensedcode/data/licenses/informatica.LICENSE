@@ -1,0 +1,24 @@
+---
+key: informatica
+short_name: Informatica License
+name: Informatica License
+category: Permissive
+owner: Informatica Inc.
+spdx_license_key: Informatica
+other_urls:
+    - https://raw.githubusercontent.com/landtuna/open-mtools/6c04c2882eca7c4313ec267766ea53ac9bfe129b/msend.c
+    - https://raw.githubusercontent.com/landtuna/open-mtools/6c04c2882eca7c4313ec267766ea53ac9bfe129b/mdump.c
+---
+
+Redistribution and use in source and binary forms, with or without
+ modification, are permitted without restriction.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND INFORMATICA DISCLAIMS ALL WARRANTIES
+EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF
+NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR
+PURPOSE.  INFORMATICA DOES NOT WARRANT THAT USE OF THE SOFTWARE WILL BE
+UNINTERRUPTED OR ERROR-FREE.  INFORMATICA SHALL NOT, UNDER ANY CIRCUMSTANCES,
+BE LIABLE TO LICENSEE FOR LOST PROFITS, CONSEQUENTIAL, INCIDENTAL, SPECIAL OR
+INDIRECT DAMAGES ARISING OUT OF OR RELATED TO THIS AGREEMENT OR THE
+TRANSACTIONS CONTEMPLATED HEREUNDER, EVEN IF INFORMATICA HAS BEEN APPRISED OF
+THE LIKELIHOOD OF SUCH DAMAGES.

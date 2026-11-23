@@ -5,7 +5,13 @@ name: MVT License 1.1
 category: Free Restricted
 owner: MVT
 homepage_url: https://github.com/mvt-project/license/blob/main/MVT%20License%201.1.txt
-spdx_license_key: LicenseRef-scancode-mvt-1.1
+spdx_license_key: MVT-1.1
+other_spdx_license_keys:
+    - LicenseRef-scancode-mvt-1.1
+other_urls:
+    - https://github.com/mvt-project/mvt/blob/main/LICENSE
+    - https://docs.mvt.re/en/latest/license/
+    - https://license.mvt.re/1.1/
 ignorable_urls:
     - https://license.mvt.re/1.1
 ---
