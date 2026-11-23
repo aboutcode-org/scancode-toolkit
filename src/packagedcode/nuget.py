@@ -39,7 +39,8 @@ def get_dependencies(nuspec):
                 groups = [groups]
 
             for group in groups:
-                extra_data = dict(framework=group['@targetFramework'])
+                framework = group.get('@targetFramework')
+                extra_data = dict(framework=framework) if framework else {}
                 deps = group.get('dependency') or []
                 yield from _get_dep_packs(deps, extra_data)
         else:
@@ -214,6 +215,7 @@ class NugetPackagesLockHandler(models.DatafileHandler):
             return
 
         top_dependencies = []
+        extra_data = {}
         for target_framework, packages in parsed.get('dependencies', {}).items():
             extra_data = dict(
                 target_framework=target_framework,
