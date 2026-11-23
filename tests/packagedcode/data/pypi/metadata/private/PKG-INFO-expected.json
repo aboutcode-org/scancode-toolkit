@@ -1,0 +1,94 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "pbr",
+    "version": "4.0.1",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Python Build Reasonableness\nIntroduction\n============\n\n.. image:: https://img.shields.io/pypi/v/pbr.svg\n    :target: https://pypi.python.org/pypi/pbr/\n    :alt: Latest Version\n\n.. image:: https://img.shields.io/pypi/dm/pbr.svg\n    :target: https://pypi.python.org/pypi/pbr/\n    :alt: Downloads\n\nPBR is a library that injects some useful and sensible default behaviors\ninto your setuptools run. It started off life as the chunks of code that\nwere copied between all of the `OpenStack`_ projects. Around the time that\nOpenStack hit 18 different projects each with at least 3 active branches,\nit seemed like a good time to make that code into a proper reusable library.\n\nPBR is only mildly configurable. The basic idea is that there's a decent\nway to run things and if you do, you should reap the rewards, because then\nit's simple and repeatable. If you want to do things differently, cool! But\nyou've already got the power of Python at your fingertips, so you don't\nreally need PBR.\n\nPBR builds on top of the work that `d2to1`_ started to provide for declarative\nconfiguration. `d2to1`_ is itself an implementation of the ideas behind\n`distutils2`_. Although `distutils2`_ is now abandoned in favor of work towards\n`PEP 426`_ and Metadata 2.0, declarative config is still a great idea and\nspecifically important in trying to distribute setup code as a library\nwhen that library itself will alter how the setup is processed. As Metadata\n2.0 and other modern Python packaging PEPs come out, PBR aims to support\nthem as quickly as possible.\n\n* License: Apache License, Version 2.0\n* Documentation: https://docs.openstack.org/pbr/latest/\n* Source: https://git.openstack.org/cgit/openstack-dev/pbr\n* Bugs: https://bugs.launchpad.net/pbr\n* Change Log: https://docs.openstack.org/pbr/latest/user/history.html\n\n.. _d2to1: https://pypi.python.org/pypi/d2to1\n.. _distutils2: https://pypi.python.org/pypi/Distutils2\n.. _PEP 426: http://legacy.python.org/dev/peps/pep-0426/\n.. _OpenStack: https://www.openstack.org/",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "OpenStack",
+        "email": "openstack-dev@lists.openstack.org",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Development Status :: 5 - Production/Stable",
+      "Environment :: Console",
+      "Environment :: OpenStack",
+      "Intended Audience :: Developers",
+      "Intended Audience :: Information Technology",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 2",
+      "Programming Language :: Python :: 2.7",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.3",
+      "Programming Language :: Python :: 3.4",
+      "Programming Language :: Python :: 3.5",
+      "Private :: Do Not Upload"
+    ],
+    "homepage_url": "https://docs.openstack.org/pbr/latest/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": "https://bugs.launchpad.net/pbr/",
+    "code_view_url": "https://git.openstack.org/cgit/openstack-dev/pbr/",
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "apache-2.0",
+    "declared_license_expression_spdx": "Apache-2.0",
+    "license_detections": [
+      {
+        "license_expression": "apache-2.0",
+        "license_expression_spdx": "Apache-2.0",
+        "matches": [
+          {
+            "license_expression": "apache-2.0",
+            "license_expression_spdx": "Apache-2.0",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 95.0,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "rule_relevance": 95,
+            "rule_identifier": "pypi_apache_no-version.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
+            "matched_text": "- 'License :: OSI Approved :: Apache Software License'"
+          }
+        ],
+        "identifier": "apache_2_0-e267f9d9-ae62-e9c9-9cc2-8cd0a1e4928f"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "classifiers:\n  - 'License :: OSI Approved :: Apache Software License'\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": true,
+    "is_virtual": false,
+    "extra_data": {
+      "Documentation": "https://docs.openstack.org/pbr/"
+    },
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/pbr",
+    "repository_download_url": "https://pypi.org/packages/source/p/pbr/pbr-4.0.1.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/pbr/4.0.1/json",
+    "datasource_id": "pypi_sdist_pkginfo",
+    "purl": "pkg:pypi/pbr@4.0.1"
+  }
+]

@@ -514,6 +514,7 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
             keywords=get_keywords(project_data),
             parties=get_pyproject_toml_parties(project_data),
             dependencies=dependencies,
+            is_private=is_private_package(project_data),
             extra_data=extra_data,
             **urls,
         )
@@ -721,6 +722,7 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
             parties=get_pyproject_toml_parties(poetry_data),
             extra_data=extra_data,
             dependencies=dependencies,
+            is_private=is_private_package(poetry_data),
             **urls,
         )
         yield models.PackageData.from_data(package_data, package_only)
@@ -999,6 +1001,7 @@ class UvPyprojectTomlHandler(BaseUvPythonLayout):
             keywords=get_keywords(project_data),
             parties=get_pyproject_toml_parties(project_data),
             dependencies=dependencies,
+            is_private=is_private_package(project_data),
             extra_data=extra_data,
             **urls,
         )
@@ -1300,6 +1303,7 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
         parties=get_parties(meta),
         dependencies=dependencies,
         file_references=file_references,
+        is_private=is_private_package(meta),
         extra_data=extra_data,
         **urls,
     )
@@ -1439,6 +1443,7 @@ class PypiSdistArchiveHandler(models.DatafileHandler):
             extracted_license_statement=extracted_license_statement,
             keywords=get_keywords(sdist),
             parties=get_parties(sdist),
+            is_private=is_private_package(sdist),
             extra_data=extra_data,
             **urls,
         )
@@ -1487,6 +1492,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             extracted_license_statement=extracted_license_statement,
             dependencies=dependencies,
             keywords=get_keywords(setup_args),
+            is_private=is_private_package(setup_args),
             extra_data=extra_data,
             **urls,
         )
@@ -1994,6 +2000,20 @@ def get_classifiers(metainfo):
             else:
                 other_classifiers.append(classifier)
     return license_classifiers, other_classifiers
+
+
+def is_private_package(metainfo):
+    """
+    Return True if the ``metainfo`` mapping has a classifier starting with
+    "Private ::" (e.g. "Private :: Do Not Upload"), meaning that the package
+    is not meant to be published on a package repository such as PyPI.
+    See https://github.com/aboutcode-org/scancode-toolkit/issues/3968
+    """
+    license_classifiers, other_classifiers = get_classifiers(metainfo)
+    return any(
+        classifier.startswith('Private ::')
+        for classifier in license_classifiers + other_classifiers
+    )
 
 
 def get_keywords(metainfo):
