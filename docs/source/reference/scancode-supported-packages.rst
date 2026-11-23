@@ -398,6 +398,16 @@ parsers in scancode-toolkit during documentation builds.
      - ``apple_dmg``
      - None
      - https://en.wikipedia.org/wiki/Apple_Disk_Image
+   * - Dockerfile or Containerfile with OCI image labels
+     - ``*/Dockerfile``
+       ``*/Dockerfile.*``
+       ``*/Containerfile``
+       ``*/Containerfile.*``
+     - ``docker``
+     - ``linux``, ``win``, ``mac``
+     - ``dockerfile``
+     - None
+     - https://github.com/opencontainers/image-spec/blob/main/annotations.md
    * - Java EAR application.xml
      - ``*/META-INF/application.xml``
      - ``ear``
