@@ -1,0 +1,21 @@
+---
+key: airoha-firmware
+short_name: Airoha Firmware License
+name: Airoha Firmware License
+category: Proprietary Free
+owner: Airoha Inc.
+homepage_url: https://gitlab.com/kernel-firmware/linux-firmware
+spdx_license_key: LicenseRef-scancode-airoha-firmware
+text_urls:
+  - https://gitlab.com/kernel-firmware/linux-firmware/-/blob/0cb5a7fb037ef9489deaa4ebecd78b40fe7c07c6/LICENSES/LICENSE.airoha
+---
+
+Airoha Inc. grants permission to use and redistribute aforementioned firmware
+files for the use with devices containing Airoha chipsets, but not as part of
+the Linux kernel or in any other form which would require these files themselves
+to be covered by the terms of the GNU General Public License or the GNU Lesser
+General Public License.
+
+These firmware files are distributed in the hope that they will be useful, but
+are provided WITHOUT ANY WARRANTY, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTY
+OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
