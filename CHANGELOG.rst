@@ -29,6 +29,8 @@ v33.0.0 - 2026-10-30
   ``ValueError: did not find any 'pre_scan' hooks``.
   https://github.com/aboutcode-org/scancode-toolkit/issues/5363
 
+- Add a new CLI option for a compact JSON output with ``--compact-json``
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4555
 
 v33.0.0rc1 - 2026-05-14
 ------------------------

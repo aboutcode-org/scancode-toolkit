@@ -38,7 +38,7 @@ setup(
         'open source', 'scancode_licenses',
     ],
     install_requires=[
-        'scancode-toolkit',
+        #'scancode-toolkit',
     ],
     entry_points={
         'scancode_additional_license_location_provider': [

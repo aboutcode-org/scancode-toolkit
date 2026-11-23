@@ -9,6 +9,9 @@
 import jsonstreams
 
 from formattedcode import FileOptionType
+from formattedcode.output_compact import COMPACT_CONFLICTING_OPTIONS
+from formattedcode.output_compact import write_compact_codebase_attributes
+from formattedcode.output_compact import get_compact_resource
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import OUTPUT_GROUP
 from plugincode.output import output_impl
@@ -40,14 +43,14 @@ if TRACE:
 
 
 @output_impl
-class JsonCompactOutput(OutputPlugin):
+class JsonOutput(OutputPlugin):
 
     options = [
         PluggableCommandLineOption(('--json', 'output_json',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             default=None,
-            help='Write scan output as compact JSON to FILE.',
+            help='Write scan output as JSON to FILE.',
             help_group=OUTPUT_GROUP,
             sort_order=10),
     ]
@@ -57,6 +60,27 @@ class JsonCompactOutput(OutputPlugin):
 
     def process_codebase(self, codebase, output_json, **kwargs):
         write_results(codebase, output_file=output_json, pretty=False, **kwargs)
+
+
+@output_impl
+class JsonCompactOutput(OutputPlugin):
+
+    options = [
+        PluggableCommandLineOption(('--compact-json', 'output_compact_json',),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            metavar='FILE',
+            default=None,
+            conflicting_options=COMPACT_CONFLICTING_OPTIONS,
+            help='Write scan output as compact JSON to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order=10),
+    ]
+
+    def is_enabled(self, output_compact_json, **kwargs):
+        return output_compact_json
+
+    def process_codebase(self, codebase, output_compact_json, **kwargs):
+        write_results(codebase, output_file=output_compact_json, pretty=True, compact=True, **kwargs)
 
 
 @output_impl
@@ -79,11 +103,12 @@ class JsonPrettyOutput(OutputPlugin):
         write_results(codebase, output_file=output_json_pp, pretty=True, **kwargs)
 
 
-def write_results(codebase, output_file, pretty=False, **kwargs):
+def write_results(codebase, output_file, pretty=False, compact=False, **kwargs):
     """
     Write headers, files, and other attributes from `codebase` to `output_file`
 
     Enable JSON indentation if `pretty` is True
+    Only return useful, non-duplicated 
     """
     # Set indentation for JSON output if `pretty` is True
     # We use a separate dict for jsonstream kwargs since we are passing
@@ -114,12 +139,22 @@ def write_results(codebase, output_file, pretty=False, **kwargs):
         # Write attributes
         if codebase.attributes:
             for attribute_key, attribute_value in codebase.attributes.to_dict().items():
-                s.write(attribute_key, attribute_value)
+                if compact:
+                    write_compact_codebase_attributes(stream=s, key=attribute_key, value=attribute_value)
+                else:
+                    s.write(attribute_key, attribute_value)
 
         # Write files
         codebase_files = OutputPlugin.get_files(codebase, **kwargs)
         # OutputPlugin.get_files() returns a generator, not JSON-serializable
-        codebase_files = list(codebase_files)
+        if compact:
+            codebase_files = list(
+                get_compact_resource(codebase_file)
+                for codebase_file in codebase_files
+            )
+        else:
+            codebase_files = list(codebase_files)
+
         s.write('files', codebase_files)
 
 

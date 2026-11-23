@@ -1,6 +1,10 @@
 ---
 license_expression: bsd-axis-nomod OR gpl-1.0-plus
 is_license_notice: yes
+is_deprecated: yes
+replaced_by:
+   - bsd-source-alt-gpl
+notes: replaced by the bsd-source-alt-gpl.LICENSE added in spdx license list 3.29
 ---
 
 Redistribution and use in source and binary forms, with or without

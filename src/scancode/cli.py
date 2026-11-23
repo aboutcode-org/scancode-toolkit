@@ -1524,7 +1524,7 @@ def scan_resource(
     results_cache_index = ''
     if use_cached_results and is_file:
         # compute results_cache_index
-        filename = commoncode.fileutils.file_name(path)
+        filename = commoncode.fileutils.file_name(location)
         results_cache_index = results_cache.compute_results_cache_index(location=location, filename=filename)
 
         # update `results` with cached data or add scanner to scanners_to_run if no
