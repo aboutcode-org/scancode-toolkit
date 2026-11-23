@@ -10,6 +10,7 @@
 
 import os
 import sys
+from unittest import mock
 from unittest.case import skipIf
 
 from commoncode import command
@@ -17,6 +18,7 @@ from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 from commoncode.testcase import FileBasedTesting
+from unittest import mock
 
 
 class TestCommand(FileBasedTesting):
@@ -129,6 +131,16 @@ class TestCommand(FileBasedTesting):
         else:
             assert expected == results
 
+    def test_find_in_path_uses_current_path(self):
+        directory = self.get_temp_dir("dynamic_path")
+        filename = "dynamic_tool"
+        filepath = os.path.join(directory, filename)
+
+        with open(filepath, "w") as output:
+            output.write("test")
+
+        with mock.patch.dict(os.environ, {"PATH": directory}):
+            assert filepath == command.find_in_path(filename)
     def test_find_in_path(self):
         d1 = self.get_temp_dir("foo")
         d2 = self.get_temp_dir("bar")
