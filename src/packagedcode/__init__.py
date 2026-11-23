@@ -147,6 +147,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     npm.NpmPackageJsonHandler,
     npm.NpmPackageLockJsonHandler,
     npm.NpmShrinkwrapJsonHandler,
+    npm.NpmRcHandler,
     npm.YarnLockV1Handler,
     npm.YarnLockV2Handler,
     npm.PnpmShrinkwrapYamlHandler,
