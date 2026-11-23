@@ -593,6 +593,13 @@ parsers in scancode-toolkit during documentation builds.
      - ``build_gradle``
      - None
      - None
+   * - Gradle Module Metadata (.module)
+     - ``*.module``
+     - ``maven``
+     - ``linux``, ``win``, ``mac``
+     - ``gradle_module_metadata``
+     - Java
+     - https://docs.gradle.org/current/userguide/supported_metadata_formats.html
    * - Apache Maven pom
      - ``*.pom``
        ``*pom.xml``

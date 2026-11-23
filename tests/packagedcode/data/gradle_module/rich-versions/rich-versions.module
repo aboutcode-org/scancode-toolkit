@@ -1,0 +1,109 @@
+{
+    "component": {
+        "attributes": {
+            "org.gradle.status": "release"
+        },
+        "group": "com.example",
+        "module": "rich-versions",
+        "version": "1.0.0"
+    },
+    "createdBy": {
+        "gradle": {
+            "version": "8.7"
+        }
+    },
+    "formatVersion": "1.1",
+    "variants": [
+        {
+            "attributes": {
+                "org.gradle.category": "library",
+                "org.gradle.usage": "java-api"
+            },
+            "dependencies": [
+                {
+                    "group": "com.example",
+                    "module": "prefers-lib",
+                    "version": {
+                        "prefers": "2.0.0"
+                    }
+                },
+                {
+                    "group": "com.example",
+                    "module": "strictly-lib",
+                    "version": {
+                        "strictly": "3.0.0"
+                    }
+                },
+                {
+                    "group": "com.example",
+                    "module": "plain-lib",
+                    "version": "4.0.0"
+                },
+                {
+                    "group": "com.example",
+                    "module": "no-version-lib"
+                },
+                {
+                    "excludes": [
+                        {
+                            "group": "com.example",
+                            "module": "excluded-lib"
+                        }
+                    ],
+                    "group": "com.example",
+                    "module": "rejects-lib",
+                    "reason": "needed for tests",
+                    "version": {
+                        "rejects": [
+                            "5.0.1",
+                            "5.0.2"
+                        ],
+                        "requires": "5.0.0"
+                    }
+                }
+            ],
+            "files": [
+                {
+                    "md5": "00112233445566778899aabbccddeeff",
+                    "name": "rich-versions-1.0.0.jar",
+                    "sha1": "aabbccddeeff00112233445566778899aabbccdd",
+                    "size": 1234,
+                    "url": "rich-versions-1.0.0.jar"
+                }
+            ],
+            "name": "apiElements"
+        },
+        {
+            "attributes": {
+                "org.gradle.category": "library",
+                "org.gradle.usage": "java-runtime"
+            },
+            "dependencies": [
+                {
+                    "group": "com.example",
+                    "module": "prefers-lib",
+                    "version": {
+                        "prefers": "2.0.0"
+                    }
+                },
+                {
+                    "group": "com.example",
+                    "module": "runtime-only-lib",
+                    "version": {
+                        "requires": "6.0.0"
+                    }
+                }
+            ],
+            "files": [
+                {
+                    "md5": "00112233445566778899aabbccddeeff",
+                    "name": "rich-versions-1.0.0.jar",
+                    "sha1": "aabbccddeeff00112233445566778899aabbccdd",
+                    "size": 1234,
+                    "url": "rich-versions-1.0.0.jar"
+                }
+            ],
+            "name": "runtimeElements"
+        }
+    ]
+}

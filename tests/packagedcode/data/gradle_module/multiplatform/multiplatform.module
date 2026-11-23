@@ -1,0 +1,109 @@
+{
+    "component": {
+        "attributes": {
+            "org.gradle.status": "release"
+        },
+        "group": "org.example",
+        "module": "multiplatform-lib",
+        "version": "2.0.0"
+    },
+    "createdBy": {
+        "gradle": {
+            "version": "8.7"
+        }
+    },
+    "formatVersion": "1.1",
+    "variants": [
+        {
+            "attributes": {
+                "org.gradle.category": "library",
+                "org.gradle.usage": "java-api",
+                "org.jetbrains.kotlin.platform.type": "jvm"
+            },
+            "dependencies": [
+                {
+                    "group": "org.jetbrains.kotlin",
+                    "module": "kotlin-stdlib",
+                    "version": {
+                        "requires": "1.9.0"
+                    }
+                },
+                {
+                    "group": "com.example",
+                    "module": "shared-lib",
+                    "version": {
+                        "requires": "1.0.0"
+                    }
+                }
+            ],
+            "files": [
+                {
+                    "md5": "00112233445566778899aabbccddeeff",
+                    "name": "multiplatform-lib-jvm-2.0.0.jar",
+                    "sha1": "aabbccddeeff00112233445566778899aabbccdd",
+                    "size": 5000,
+                    "url": "multiplatform-lib-jvm-2.0.0.jar"
+                }
+            ],
+            "name": "jvmApiElements"
+        },
+        {
+            "attributes": {
+                "org.gradle.category": "library",
+                "org.gradle.usage": "java-api",
+                "org.jetbrains.kotlin.platform.type": "js"
+            },
+            "dependencies": [
+                {
+                    "group": "org.jetbrains.kotlin",
+                    "module": "kotlin-stdlib-js",
+                    "version": {
+                        "requires": "1.9.0"
+                    }
+                },
+                {
+                    "group": "com.example",
+                    "module": "shared-lib",
+                    "version": {
+                        "requires": "1.0.0"
+                    }
+                }
+            ],
+            "files": [
+                {
+                    "md5": "11223344556677889900aabbccddeeff",
+                    "name": "multiplatform-lib-js-2.0.0.klib",
+                    "sha1": "11223344556677889900aabbccddeeff00112233",
+                    "size": 3000,
+                    "url": "multiplatform-lib-js-2.0.0.klib"
+                }
+            ],
+            "name": "jsApiElements"
+        },
+        {
+            "attributes": {
+                "org.gradle.category": "library",
+                "org.gradle.usage": "kotlin-metadata"
+            },
+            "dependencies": [
+                {
+                    "group": "com.example",
+                    "module": "shared-lib",
+                    "version": {
+                        "requires": "1.0.0"
+                    }
+                }
+            ],
+            "files": [
+                {
+                    "md5": "223344556677889900aabbccddeeff",
+                    "name": "multiplatform-lib-metadata-2.0.0.jar",
+                    "sha1": "223344556677889900aabbccddeeff0011223344",
+                    "size": 1000,
+                    "url": "multiplatform-lib-metadata-2.0.0.jar"
+                }
+            ],
+            "name": "metadataElements"
+        }
+    ]
+}
