@@ -1,7 +1,14 @@
 **Output formats**
 ------------------
 
---json FILE             Write scan output as compact JSON to FILE.
+--json FILE             Write scan output as standard JSON to FILE.
+
+--compact-json FILE     Write scan output as compact JSON to FILE.
+                        This output format only keeps the information
+                        in scans which are most important parts,
+                        removes any redundant information or empty
+                        attributes to make the output as compact as
+                        possible.
 
 --json-pp FILE          Write scan output as pretty-printed JSON to
                         FILE. This is one of the recommended output
