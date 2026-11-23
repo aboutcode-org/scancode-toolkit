@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Fix OCaml OPAM parsing for single-line depends and authors, handle comments in checksums, and fix repository_homepage_url template.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5519
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

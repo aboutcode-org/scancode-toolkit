@@ -131,7 +131,7 @@
         "extra_data": {}
       }
     ],
-    "repository_homepage_url": "{https://opam.ocaml.org/packages}/{name}",
+    "repository_homepage_url": "https://opam.ocaml.org/packages/bap-elf",
     "repository_download_url": null,
     "api_data_url": "https://github.com/ocaml/opam-repository/blob/master/packages/bap-elf/bap-elf.1.0.0/opam",
     "datasource_id": "opam_file",

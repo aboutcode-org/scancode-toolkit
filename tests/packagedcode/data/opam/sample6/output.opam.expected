@@ -13,7 +13,7 @@
       {
         "type": "person",
         "role": "author",
-        "name": "Romain Beauxis <toots@rastageeks.org>\"] license: \"GPL-2.0\" homepage: \"https://github.com/savonet/ocaml-winsvc\" bug-reports: \"https://github.com/savonet/ocaml-winsvc/issues\" depends: [ \"dune\" {> \"2.0\"}",
+        "name": "Romain Beauxis <toots@rastageeks.org>",
         "email": null,
         "url": null
       },

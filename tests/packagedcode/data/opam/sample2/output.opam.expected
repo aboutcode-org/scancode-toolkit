@@ -119,7 +119,7 @@
         "extra_data": {}
       }
     ],
-    "repository_homepage_url": "{https://opam.ocaml.org/packages}/{name}",
+    "repository_homepage_url": "https://opam.ocaml.org/packages/js_of_ocaml",
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "opam_file",
