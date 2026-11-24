@@ -27,6 +27,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Daniel Eder @daniel-eder
 - Dan Kegel @dankegel
 - Dennis Clark @DennisClark
+- Dhruv @DHRUV-1-star
 - Divyansh Sharma @Divyansh2512
 - Duncan Howe @Duncan-Howe
 - Felix Kauselmann @selmf
