@@ -1158,6 +1158,107 @@ class YarnLockV1Handler(BaseNpmHandler):
         yield models.PackageData.from_data(package_data, package_only)
 
 
+class YarnPnpHandler(BaseNpmHandler):
+    """
+    Handle Yarn v2+ Plug and Play manifests (.pnp.cjs).
+    See https://yarnpkg.com/features/pnp and issue #2728.
+    A .pnp.cjs file embeds its package registry as JSON inside a
+    ``const RAW_RUNTIME_STATE = {...};`` assignment. The registry
+    (``packageRegistryData``) is a list of [ident, [[reference, data], ...]]
+    pairs, where references are locators such as ``npm:7.0.0``,
+    ``workspace:.`` or ``virtual:<hash>#npm:7.0.0``; the null/null entry
+    is the top-level package itself and is skipped.
+    """
+    datasource_id = 'yarn_pnp'
+    path_patterns = ('*/.pnp.cjs',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'Yarn Plug and Play manifest'
+    documentation_url = 'https://yarnpkg.com/features/pnp'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with io.open(location, encoding='utf-8') as f:
+            content = f.read()
+
+        # Pull the embedded registry JSON out of the JS assignment.
+        # If the file does not contain it, this is not a PnP manifest:
+        # yield nothing rather than crashing the scan.
+        # Anchored on RAW_RUNTIME_STATE and decoded with raw_decode, trying
+        # each occurrence until one decodes, so a mention of the constant
+        # in a comment cannot misdirect the parse and nested braces
+        # cannot truncate it.
+        pnp_data = None
+        pos = 0
+        while True:
+            marker = content.find('const RAW_RUNTIME_STATE', pos)
+            if marker < 0:
+                break
+            start = content.find('{', marker)
+            if start < 0:
+                break
+            try:
+                pnp_data, _ = json.JSONDecoder().raw_decode(content[start:])
+                break
+            except ValueError:
+                pos = start + 1
+        if pnp_data is None:
+            return
+        registry = pnp_data.get('packageRegistryData') or []
+
+        # Normalise to (name, [(reference, data), ...]) pairs.
+        # Real shape: a list of pairs. A dict shape is kept only as a
+        # fallback, so neither shape crashes the scan.
+        if isinstance(registry, dict):
+            pairs = [(name, list(versions.items())) for name, versions in registry.items()]
+        else:
+            pairs = registry
+
+        dependencies = []
+        for name, versions in pairs:
+            # The null/null entry is the workspace root itself, not a dependency.
+            if not name:
+                continue
+            for reference, _data in (versions or []):
+                if not reference:
+                    continue
+                version = None
+                if reference.startswith('npm:'):
+                    version = reference[4:]
+                elif reference.startswith('virtual:') and '#npm:' in reference:
+                    version = reference.split('#npm:', 1)[1]
+                else:
+                    # workspace:, patch:, link: and anything else: not an
+                    # npm registry package -- skip rather than invent a version.
+                    continue
+                if not version:
+                    continue
+                ns, _, pkg_name = name.rpartition('/')
+                purl = PackageURL(
+                    type=cls.default_package_type,
+                    namespace=ns or None,
+                    name=pkg_name,
+                    version=version,
+                ).to_string()
+                dep = models.DependentPackage(
+                    purl=purl,
+                    extracted_requirement=version,
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_pinned=True,
+                )
+                dependencies.append(dep.to_dict())
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
 class UnknownPnpmLockFormat(Exception):
     pass
 

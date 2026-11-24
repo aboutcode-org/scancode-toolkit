@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Add support for Yarn v2+ Plug and Play manifests (``.pnp.cjs``) for parsing npm dependencies.
+  https://github.com/nexB/scancode-toolkit/issues/2728
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
