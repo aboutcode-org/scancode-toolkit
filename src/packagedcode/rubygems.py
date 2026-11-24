@@ -676,7 +676,6 @@ LICENSES_MAPPING = {
     'ISC': 'isc',
     'LGPL-2.1+': 'lgpl-2.1-plus',
     'LGPL-3': 'lgpl-3.0',
-    'LGPL': 'lgpl',
     'LGPL': 'lgpl-2.0-plus',
     'LGPLv2.1+': 'lgpl-2.1-plus',
     'MIT': 'mit',
