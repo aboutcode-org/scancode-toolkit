@@ -450,8 +450,13 @@ def get_purl_from_git_url(url):
     if not domain or not clean_path:
         return None
 
-    return url2purl(lookup_url) or PackageURL(
-        type="git",
-        namespace=domain,
-        name=clean_path,
-    )
+    parsed_purl = url2purl(lookup_url)
+
+    if parsed_purl.type == "generic":
+        parsed_purl = PackageURL(
+            type="git",
+            namespace=domain,
+            name=clean_path,
+        )
+
+    return parsed_purl
