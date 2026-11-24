@@ -4,7 +4,7 @@ How to generate attribution doc from a ScanCode scan
 ====================================================
 
 Users can use an Open Source Project "AboutCode Toolkit" to generate
-attrbution document from a ScanCode scan.
+attribution document from a ScanCode scan.
 
 Read more about AboutCode Toolkit here: https://aboutcode-toolkit.readthedocs.io/.
 

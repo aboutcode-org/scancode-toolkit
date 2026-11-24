@@ -65,7 +65,7 @@ Core features
 ^^^^^^^^^^^^^
 
 - |white_check_mark| pre scan filtering (ignore binaries, etc)
-- |white_check_mark| pre/post/ouput plugins! (worked as part of the GSoC by @yadsharaf )
+- |white_check_mark| pre/post/output plugins! (worked as part of the GSoC by @yadsharaf )
 - |white_check_mark| scan plugins (e.g. plugins that run a scan to collect data)
 - |white_check_mark| support Python 3 #295
 - |clock1030| transparent archive extraction (as opposed to on-demand with extractcode)
@@ -110,7 +110,7 @@ Packaging
 
 - |white_large_square| simpler installation, automated installer
 - |white_check_mark| distro-friendly packaging
-- |clock1030| unbundle and package as multiple libaries (commoncode, extractcode, etc)
+- |clock1030| unbundle and package as multiple libraries (commoncode, extractcode, etc)
 
 Documentation
 ^^^^^^^^^^^^^

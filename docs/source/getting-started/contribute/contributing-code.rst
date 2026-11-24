@@ -8,7 +8,7 @@ TL;DR:
 - Contributions comes as bugs/questions/issues and as pull requests.
 - Source code and runtime data are in the /src/ directory.
 - Test code and test data are in the /tests/ directory.
-- Datasets (inluding licenses) and test data are in /data/ sub-directories.
+- Datasets (including licenses) and test data are in /data/ sub-directories.
 - We use DCO signoff in commit messages, like Linux does.
 - Porting ScanCode to other OS (FreeBSD is supported, etc.) is possible. Enter an issue for help.
 
@@ -99,7 +99,7 @@ Another useful option after a test run with some failures is to re-run only the
 failed tests with the ``--lf`` option, for instance: ``pytest -vvs --lf`` would
 only run only test functions that failed in the previous run.
 
-Because we have a lot of tests (over 29,000), we organized theses in test suites
+Because we have a lot of tests (over 29,000), we organized these in test suites
 using pytest markers that are defined in the ``conftest.py`` pytest plugin.
 These are enabled by adding a ``--test-suite`` option to the pytest command.
 
@@ -109,8 +109,8 @@ These are enabled by adding a ``--test-suite`` option to the pytest command.
   extensive data-driven and data validations (for package, copyright and license
   detection)
 
-In some cases we need to regenerate test data when expected behavious/result data
-structures change, and we have an environement variable to regenerate test data.
+In some cases we need to regenerate test data when expected behaviour/result data
+structures change, and we have an environment variable to regenerate test data.
 `SCANCODE_REGEN_TEST_FIXTURES` is present in `scancode_config` and this can be
 set to regenerate test data for specific tests like this:
 
@@ -124,7 +124,7 @@ If test data is regenerated, it is important to review the diff for test files a
 carefully go through all of it to make sure there are no unintended changes there,
 and then commit all the regenerated test data.
 
-To help debug in scancode, we use logging. There are different environement variables
+To help debug in scancode, we use logging. There are different environment variables
 you need to set to turn on logging. In packagedcode::
 
 ``SCANCODE_DEBUG_PACKAGE=yes pytest -vvs tests/packagedcode/ --lf``
@@ -134,9 +134,9 @@ logging variables and shows code execution paths by logging and printing the log
 in the terminal. If debugging full scans run by click, you have to raise exceptions
 in addition to setting the TRACE to enable logging.
 
-.. _scancode_toolkit_development_thirdparty_libraries:
+.. _scancode_toolkit_development_Third party_libraries:
 
-Thirdparty libraries and dependencies management
+Third party libraries and dependencies management
 -----------------------------------------------------
 
 ScanCode uses the ``configure`` and ``configure.bat`` scripts to install a
@@ -157,7 +157,7 @@ from ``setup.cfg``.
 And to ensure that we also all use well known version of the core virtualenv,
 pip, setuptools and wheel libraries, we use the ``virtualenv.pyz`` Python
 zipp app from https://github.com/pypa/get-virtualenv/tree/main/public and
-store it in the Git repo in the ``etc/thirdparty`` directory.
+store it in the Git repo in the ``etc/Third party`` directory.
 
 We bundle pre-built bundled native binaries as plugins which are installed as
 wheels. These binaries are organized by OS and architecture; they ensure that
@@ -170,18 +170,18 @@ https://github.com/aboutcode-org/scancode-plugins
 
 ScanCode app archives should not require network access for installation or
 configuration of its third-party libraries and dependencies. To enable this,
-we store bundled thirdparty components and  libraries in the ``thirdparty``
+we store bundled Third party components and  libraries in the ``Third party``
 directory of released app archives; this is done at build time.
 These dependencies are stored as pre-built wheels. These wheels are sometimes
 built by us when there is no wheel available upstream on PyPI. We store all
 these prebuilt wheels with corresponding .ABOUT and .LICENSE files in
-https://github.com/nexB/thirdparty-packages/tree/main/pypi which is published
-for download at  https://thirdparty.aboutcode.org/pypi/
+https://github.com/nexB/Third party-packages/tree/main/pypi which is published
+for download at  https://Third party.aboutcode.org/pypi/
 
-Because this is used by the configure script, all the thirdparty dependencies
+Because this is used by the configure script, all the Third party dependencies
 used in ScanCode MUST be available there first. Therefore adding a new
 dependency means requesting a merge/PR in
-https://github.com/nexB/thirdparty-packages/ first that contains all the
+https://github.com/nexB/Third party-packages/ first that contains all the
 recursive dependencies.
 
 There are utility scripts in ``etc/release`` that can help with the dependencies
