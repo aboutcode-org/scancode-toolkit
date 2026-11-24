@@ -1,0 +1,10 @@
+license_expressions:
+  - lgpl-2.1-plus
+  - lgpl-2.1-plus
+notes: |
+    Header of usbmuxd src/utils.h as reported in
+    https://github.com/aboutcode-org/scancode-toolkit/issues/5539
+    This is an LGPL 2.1 or later notice that reuses the GPL wording
+    "See the GNU General Public License for more details" without "Lesser".
+    It must not be split into gpl-1.0-plus and lgpl-2.0-plus matches.
+    The second expression is the SPDX-License-Identifier line.
