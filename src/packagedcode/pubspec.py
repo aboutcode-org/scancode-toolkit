@@ -283,6 +283,8 @@ def build_dep(name, constraint, scope, is_runtime=True, is_optional=False):
         pkg_type = base_purl.type
         pkg_namespace = base_purl.namespace
         pkg_name = base_purl.name
+    elif isinstance(constraint, dict) and "version" in constraint:
+        pkg_version_exp = constraint.get("version", "")
     else:
         # A flat package dependency
         # dependencies:
