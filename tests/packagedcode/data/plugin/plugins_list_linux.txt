@@ -447,6 +447,13 @@ Package type:  gem
   description:       RubyGems gemspec manifest - extracted data layout
   path_patterns:    '*/data.gz-extract/*.gemspec'
 --------------------------------------------
+Package type:  generic
+  datasource_id:     android_metadata
+  documentation URL: https://android.googlesource.com/platform/external/
+  primary language:  None
+  description:       Android third_party METADATA file
+  path_patterns:    '*/METADATA'
+--------------------------------------------
 Package type:  golang
   datasource_id:     go_mod
   documentation URL: https://go.dev/ref/mod
