@@ -1,0 +1,3 @@
+license_expressions:
+  - mit
+notes: https://github.com/aboutcode-org/scancode-toolkit/issues/5347 'licensed under the' should not trigger osl-3.0_54

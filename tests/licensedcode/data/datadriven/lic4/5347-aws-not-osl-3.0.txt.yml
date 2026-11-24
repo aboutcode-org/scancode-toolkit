@@ -1,0 +1,5 @@
+license_expressions:
+  - unknown-spdx
+  - mit
+  - unknown-spdx
+notes: https://github.com/aboutcode-org/scancode-toolkit/issues/5347 'the full text of the license' should not trigger osl-3.0_26
