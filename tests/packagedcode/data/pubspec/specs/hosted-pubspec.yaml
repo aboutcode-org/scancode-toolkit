@@ -1,0 +1,31 @@
+name: flutter_oss_licenses
+description: A tool for generating detail and better OSS license list using pubspec.lock.
+homepage: https://github.com/espresso3389/flutter_oss_licenses
+version: "1.0.1"
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+executables:
+  generate:
+
+dependencies:
+  transmogrify:
+    hosted:
+      name: transmogrify
+      url: https://some-package-server.com
+    version: ^1.4.0
+  transmogrify2:
+    hosted:
+      name: transmogrify2
+    version: ^1.4.0
+  foobar:
+    hosted: https://some-package-server.com
+    version: ^1.4.0
+  foobar2:
+    hosted: https://some-package-server.com
+  foobar3:
+    version: ^1.4.0
+
+
+dev_dependencies:
