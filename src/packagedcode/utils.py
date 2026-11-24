@@ -217,11 +217,10 @@ def parse_maintainer_name_email(maintainer):
     Debian systemd Maintainers <pkg-systemd-maintainers@lists.alioth.debian.org>
     """
     email_wrappers = ["<", ">"]
-    has_email = "@" in maintainer and all([
-        True 
+    has_email = "@" in maintainer and all(
+        char in maintainer
         for char in email_wrappers
-        if char in maintainer
-    ])
+    )
     if not has_email:
         return maintainer, None
 

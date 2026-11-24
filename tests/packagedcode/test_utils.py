@@ -10,9 +10,28 @@
 from unittest import TestCase
 
 from packagedcode.utils import normalize_vcs_url
+from packagedcode.utils import parse_maintainer_name_email
 
 
 class TestPackageUtils(TestCase):
+
+    def test_parse_maintainer_name_email(self):
+        maintainer = 'Debian systemd Maintainers <pkg-systemd-maintainers@lists.alioth.debian.org>'
+        expected = (
+            'Debian systemd Maintainers',
+            'pkg-systemd-maintainers@lists.alioth.debian.org',
+        )
+        assert parse_maintainer_name_email(maintainer) == expected
+
+    def test_parse_maintainer_name_email_without_angle_brackets(self):
+        maintainer = 'John Doe john@example.com'
+        expected = ('John Doe john@example.com', None)
+        assert parse_maintainer_name_email(maintainer) == expected
+
+    def test_parse_maintainer_name_email_with_unmatched_angle_bracket(self):
+        maintainer = 'John Doe <john@example.com'
+        expected = ('John Doe <john@example.com', None)
+        assert parse_maintainer_name_email(maintainer) == expected
 
     def test_normalize_vcs_url_basic(self):
         url = 'https://pear2.php.net'
