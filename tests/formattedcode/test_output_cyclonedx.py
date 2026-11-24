@@ -111,12 +111,8 @@ def test_can_encode_component():
         licenses=licenses,
     )
     expected = {
-        'author': None,
         'bom-ref': 'pkg:generic/test@1',
-        'copyright': None,
-        'description': None,
         'externalReferences': [],
-        'group': None,
         'hashes': [{'alg': 'MD5',
                     'content': 'not-a-hash'}],
         'licenses': [{'expression': 'MIT or Apache-2.0'}],
@@ -128,6 +124,41 @@ def test_can_encode_component():
         'version': '1',
     }
     assert component.to_dict() == expected
+
+
+def test_can_encode_component_omits_fields_with_no_value():
+    component = CycloneDxComponent(name='test', version='1')
+    assert component.to_dict() == {
+        'name': 'test',
+        'version': '1',
+        'type': 'library',
+        'scope': 'required',
+        'hashes': [],
+        'licenses': [],
+        'externalReferences': [],
+        'properties': [],
+    }
+
+
+def test_CycloneDxExternalRef_to_dict_omits_null_comment():
+    ref = CycloneDxExternalRef(url='https://example.com/about', type='website')
+    expected = {'url': 'https://example.com/about', 'type': 'website', 'hashes': []}
+    assert ref.to_dict() == expected
+
+    ref = CycloneDxExternalRef(url='https://example.com/about', type='website', comment='docs')
+    expected['comment'] = 'docs'
+    assert ref.to_dict() == expected
+
+
+def test_CycloneDxComponent_from_package_skips_missing_name_or_version():
+    package_no_name = {'name': None, 'version': '1', 'purl': 'pkg:generic/x@1'}
+    assert CycloneDxComponent.from_package(package_no_name) is None
+
+    package_no_version = {'name': 'x', 'version': None, 'purl': 'pkg:generic/x@1'}
+    assert CycloneDxComponent.from_package(package_no_version) is None
+
+    packages = [package_no_name, package_no_version]
+    assert list(CycloneDxComponent.from_packages(packages)) == []
 
 
 def test_get_author_from_parties():
