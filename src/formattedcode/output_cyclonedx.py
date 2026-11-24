@@ -566,6 +566,28 @@ def get_ts():
     return datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
+def get_property_string_value(value):
+    """
+    Return a CycloneDX property value as a string, or None when there is no
+    value to report. CycloneDX property values are always strings: lists of
+    messages are joined with newlines, mappings are serialized to JSON and
+    anything else is stringified. Falsy values such as None, empty strings
+    and empty collections return None. Numbers and booleans, including 0 and
+    False, are stringified.
+    """
+    if isinstance(value, (int, float)):
+        return str(value)
+    if not value:
+        return None
+    if isinstance(value, str):
+        return value
+    if isinstance(value, (list, tuple)):
+        return '\n'.join(str(item) for item in value)
+    if isinstance(value, dict):
+        return json.dumps(value)
+    return str(value)
+
+
 @attr.s
 class CycloneDxMetadata:
     """
@@ -615,7 +637,12 @@ class CycloneDxMetadata:
             message=scancode_header.get('message'),
         )
         props.update(scancode_header.get('extra_data', {}))
-        properties = [CycloneDxProperty(k, v) for k, v in props.items()]
+        properties = []
+        for name, value in props.items():
+            value = get_property_string_value(value)
+            if value is None:
+                continue
+            properties.append(CycloneDxProperty(name, value))
 
         if TRACE:
             logger_debug('CycloneDxMetadata: properties')
