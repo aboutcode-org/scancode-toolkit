@@ -287,6 +287,41 @@ def test_strip_markup_text_tagset(test_text, expected_demarkup):
     assert markup.strip_known_markup_from_text(test_text) == expected_demarkup
 
 
+no_markup_tests = [
+    "Copyright (c) 2003-2024 The LLVM project.",
+    "  some   text\twith  spaces  ",
+    "Contact MAILTO:foo@example.com for details",
+    "",
+]
+
+maybe_markup_tests = [
+    "Copyright <b>2024</b> Foo",
+    "a > b",
+    "@end copying",
+    "see mailto:foo@example.com",
+    'xmlns="http://www.w3.org/1999/xhtml" by Foo',
+    "HTTP://WWW.W3.ORG/2000/SVG Copyright Foo",
+]
+
+
+@pytest.mark.parametrize("test_text", no_markup_tests)
+def test_may_have_known_markup_is_false_for_plain_text(test_text):
+    assert not markup.may_have_known_markup(test_text)
+
+
+@pytest.mark.parametrize("test_text", maybe_markup_tests)
+def test_may_have_known_markup_is_true_for_markup_or_skipped_tokens(test_text):
+    assert markup.may_have_known_markup(test_text)
+
+
+@pytest.mark.parametrize("test_text", no_markup_tests + maybe_markup_tests)
+def test_strip_known_markup_from_text_fast_path_matches_full_split(test_text):
+    expected = markup.get_demarkuped_text(
+        test_text, splitter=markup.split_on_tags, keeper=markup.keep_tag
+    )
+    assert markup.strip_known_markup_from_text(test_text) == expected
+
+
 split_tests = [
     (
         """<a href="https://licenses.nuget.org/Apache-2.0">Apache-2.0</a>""",
