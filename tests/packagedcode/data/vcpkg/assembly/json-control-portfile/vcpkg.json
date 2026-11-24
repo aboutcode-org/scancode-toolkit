@@ -1,0 +1,9 @@
+{
+  "name": "assembly-port",
+  "version-string": "2.0",
+  "description": "A port assembled from sibling files.",
+  "license": "MIT",
+  "dependencies": [
+    "zlib"
+  ]
+}

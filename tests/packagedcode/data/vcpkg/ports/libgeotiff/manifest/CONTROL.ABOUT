@@ -1,0 +1,4 @@
+about_resource: CONTROL
+download_url: https://raw.githubusercontent.com/microsoft/vcpkg/2020.01/ports/libgeotiff/CONTROL
+name: vcpkg libgeotiff CONTROL fixture
+version: 2020.01
