@@ -1,0 +1,10 @@
+license_expressions:
+  - gpl-2.0 OR gpl-3.0
+  - lgpl-2.1-plus
+notes: |
+    License section of the usbmuxd README.md as reported in
+    https://github.com/aboutcode-org/scancode-toolkit/issues/5539
+    usbmuxd is dual-licensed under GPL 2.0 only or GPL 3.0 only at your
+    option and src/utils.c and src/utils.h are LGPL 2.1 or later. The
+    licensing prose used to be detected as a mix of gpl-2.0, gpl-3.0,
+    gpl-1.0-plus and lgpl-2.0-plus references.

@@ -1,0 +1,9 @@
+license_expressions:
+  - gpl-2.0 OR gpl-3.0
+  - gpl-2.0 OR gpl-3.0
+notes: |
+    Header of usbmuxd src/conf.c as reported in
+    https://github.com/aboutcode-org/scancode-toolkit/issues/5539
+    This is a copy-pasted GPL 2 or GPL 3 notice: "either version 2 or
+    version 3". It must not be detected as gpl-2.0 alone, nor as gpl-1.0-plus.
+    The second expression is the SPDX-License-Identifier line.

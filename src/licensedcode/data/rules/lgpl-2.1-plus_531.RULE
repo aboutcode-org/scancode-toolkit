@@ -1,0 +1,18 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
+notes: |
+    License section of the usbmuxd README.md as reported in
+    https://github.com/aboutcode-org/scancode-toolkit/issues/5539
+    The usbmuxd src/utils.c and src/utils.h files are LGPL 2.1 or later.
+---
+
+The files `src/utils.c` and `src/utils.h` are licensed under the
+[GNU Lesser General Public License v2.1](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html) or
+(at your option) any later version, as stated in their file headers.
+*Note: This does not conflict with the licensing of usbmuxd as a whole: the LGPL permits code to be used
+under the terms of the GPL instead (section 3 of the LGPL v2.1), so these files can be combined with the
+rest of usbmuxd and distributed under either GPL option above.*

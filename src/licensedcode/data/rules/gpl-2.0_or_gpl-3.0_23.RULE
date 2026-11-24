@@ -1,0 +1,18 @@
+---
+license_expression: gpl-2.0 OR gpl-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+    - https://www.gnu.org/licenses/gpl-3.0.en.html
+notes: |
+    License section of the usbmuxd README.md as reported in
+    https://github.com/aboutcode-org/scancode-toolkit/issues/5539
+    usbmuxd is dual-licensed under GPL 2.0 only or GPL 3.0 only at your option.
+---
+
+usbmuxd is dual-licensed: you may use, modify and redistribute it under the terms of either the
+[GNU General Public License v2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) only or the
+[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) only, at your option.
+The license texts are included in the repository in the `COPYING.GPLv2` and `COPYING.GPLv3` files.
+This matches the notice in the source file headers ("either version 2 or version 3").
