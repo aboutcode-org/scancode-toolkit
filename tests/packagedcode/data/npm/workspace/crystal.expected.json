@@ -13110,8 +13110,8 @@
       "datasource_id": "yarn_lock_v2"
     },
     {
-      "purl": "pkg:npm/typescript%40patch:typescript@npm%253A5.2.2%23optional%21builtin%3Ccompat/typescript%3E::version%3D5.2.2%26hash%3Dad5954",
-      "extracted_requirement": "npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=ad5954",
+      "purl": "pkg:npm/typescript@5.2.2",
+      "extracted_requirement": "5.2.2",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
@@ -13120,8 +13120,8 @@
       "resolved_package": {
         "type": "npm",
         "namespace": "",
-        "name": "typescript@patch:typescript",
-        "version": "npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=ad5954",
+        "name": "typescript",
+        "version": "5.2.2",
         "qualifiers": {},
         "subpath": null,
         "primary_language": "JavaScript",
@@ -13159,10 +13159,10 @@
         "repository_download_url": null,
         "api_data_url": null,
         "datasource_id": "yarn_lock_v2",
-        "purl": "pkg:npm/typescript%40patch:typescript@npm%253A5.2.2%23optional%21builtin%3Ccompat/typescript%3E::version%3D5.2.2%26hash%3Dad5954"
+        "purl": "pkg:npm/typescript@5.2.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/typescript%40patch:typescript@npm%253A5.2.2%23optional%21builtin%3Ccompat/typescript%3E::version%3D5.2.2%26hash%3Dad5954?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:npm/typescript@5.2.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "crystal/yarn.lock",
       "datasource_id": "yarn_lock_v2"
@@ -25164,8 +25164,8 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/typescript%40patch:typescript@npm%253A5.2.2%23optional%21builtin%3Ccompat/typescript%3E::version%3D5.2.2%26hash%3Dad5954",
-              "extracted_requirement": "npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=ad5954",
+              "purl": "pkg:npm/typescript@5.2.2",
+              "extracted_requirement": "5.2.2",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
@@ -25174,8 +25174,8 @@
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
-                "name": "typescript@patch:typescript",
-                "version": "npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=ad5954",
+                "name": "typescript",
+                "version": "5.2.2",
                 "qualifiers": {},
                 "subpath": null,
                 "primary_language": "JavaScript",
@@ -25213,7 +25213,7 @@
                 "repository_download_url": null,
                 "api_data_url": null,
                 "datasource_id": "yarn_lock_v2",
-                "purl": "pkg:npm/typescript%40patch:typescript@npm%253A5.2.2%23optional%21builtin%3Ccompat/typescript%3E::version%3D5.2.2%26hash%3Dad5954"
+                "purl": "pkg:npm/typescript@5.2.2"
               },
               "extra_data": {}
             },
