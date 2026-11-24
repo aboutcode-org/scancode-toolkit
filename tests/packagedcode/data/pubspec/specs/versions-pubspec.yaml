@@ -1,0 +1,28 @@
+name: flutter_oss_licenses
+description: A tool for generating detail and better OSS license list using pubspec.lock.
+homepage: https://github.com/espresso3389/flutter_oss_licenses
+version: "1.0.1"
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+executables:
+  generate:
+
+dependencies:
+  blue_mango: ^1.2.3
+  swift_panda: any
+  cosmic_leaf: ">=1.0.0 <3.0.0"
+  happy_pixel: "1.2.3"
+  neon_turtle: ">=2.0.0"
+  magic_cactus: "<2.5.0"
+  silent_comet: ">=1.0.0 <=2.0.0"
+  rocket_bloom: "<=3.0.0"
+  alpha_package: 1.0.0-alpha.1
+  beta_package: 2.0.0-beta.1
+  package_five: 1.2.0-beta.1+5
+  package_six: ^2.0.0-rc.1+build.25
+
+
+
+dev_dependencies:

@@ -1,0 +1,53 @@
+name: flutter_oss_licenses
+description: A tool for generating detail and better OSS license list using pubspec.lock.
+homepage: https://github.com/espresso3389/flutter_oss_licenses
+version: "1.0.1"
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+ 
+executables:
+  generate:
+
+dependencies:
+  blue_mango:
+    git: https://github.com/aboutcode-org/blue_mango.git
+  swift_panda:
+    git: git@github.com:aboutcode-org/swift_panda.git
+  cosmic_leaf:
+    git:
+      url: git@github.com:aboutcode-org/cosmic_leaf.git
+      ref: some-branch
+  magic_cactus:
+    git:
+      url: https://github.com/aboutcode-org/magic_cactus.git
+      ref: some-branch
+  happy_pixel:
+    git:
+      url: git@github.com:aboutcode-org/happy_pixel.git
+      tag_pattern: v{{version}}
+    version: ^2.0.1
+  silent_comet:
+    git:
+      url: https://github.com/aboutcode-org/silent_comet.git
+      tag_pattern: v{{version}}
+    version: ^5.0.1
+  neon_turtle:
+    git:
+      url: git@github.com:aboutcode-org/neon_turtle.git
+      path: path/to/neon_turtle
+  fuzzy_orbit:
+    git:
+      url: https://github.com/aboutcode-org/fuzzy_orbit.git
+      path: path/to/fuzzy_orbit
+
+  tiny_dragon:
+    git: https://random-git.com/aboutcode-org/group/tiny_dragon.git
+  golden_rocket:
+    git: git@random-git.com:aboutcode-org/swift_panda.git
+  crystal_wolf:
+    git:
+      url: https://some-git.com/aboutcode-org/crystal_wolf.git
+      path: path/to/crystal_wolf
+
+dev_dependencies:

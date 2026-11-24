@@ -34,6 +34,29 @@ class TestPubspecDatadriven(PackageTester):
         package_data = pubspec.DartPubspecLockHandler.parse(test_loc)
         self.check_packages_data(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_yaml_hosted_package_parse(self):
+        test_loc = self.get_test_loc('pubspec/specs/hosted-pubspec.yaml')
+        expected_loc = self.get_test_loc('pubspec/specs/hosted-pubspec.yaml-expected.json')
+        package_data = pubspec.DartPubspecYamlHandler.parse(test_loc)
+        self.check_packages_data(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_yaml_git_package_parse(self):
+        test_loc = self.get_test_loc('pubspec/specs/git-pubspec.yaml')
+        expected_loc = self.get_test_loc('pubspec/specs/git-pubspec.yaml-expected.json')
+        package_data = pubspec.DartPubspecYamlHandler.parse(test_loc)
+        self.check_packages_data(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_yaml_local_package_parse(self):
+        test_loc = self.get_test_loc('pubspec/specs/local-package-pubspec.yaml')
+        expected_loc = self.get_test_loc('pubspec/specs/local-package-pubspec.yaml-expected.json')
+        package_data = pubspec.DartPubspecYamlHandler.parse(test_loc)
+        self.check_packages_data(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_yaml_package_version_parse(self):
+        test_loc = self.get_test_loc('pubspec/specs/versions-pubspec.yaml')
+        expected_loc = self.get_test_loc('pubspec/specs/versions-pubspec.yaml-expected.json')
+        package_data = pubspec.DartPubspecYamlHandler.parse(test_loc)
+        self.check_packages_data(package_data, expected_loc, regen=True)
 
 def pub_tester(location,):
     manifests = []
