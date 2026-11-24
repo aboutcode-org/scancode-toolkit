@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import json
 import os.path
 
 from packagedcode import bower
@@ -40,6 +41,58 @@ class TestBower(PackageTester):
         package = bower.BowerJsonHandler.parse(test_file)
         expected_loc = self.get_test_loc('bower/author-objects/expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_bower_json_string_repository(self):
+        temp_file = self.get_temp_file('bower.json')
+        with open(temp_file, 'w') as f:
+            json.dump({
+                'name': 'test-pkg',
+                'version': '1.0.0',
+                'repository': 'https://github.com/foo/bar.git',
+            }, f)
+        packages = list(bower.BowerJsonHandler.parse(temp_file))
+        assert len(packages) == 1
+        assert packages[0].vcs_url == 'https://github.com/foo/bar.git'
+
+    def test_parse_bower_json_dict_repository_without_type(self):
+        temp_file = self.get_temp_file('bower.json')
+        with open(temp_file, 'w') as f:
+            json.dump({
+                'name': 'test-pkg',
+                'version': '1.0.0',
+                'repository': {'url': 'https://github.com/foo/bar.git'},
+            }, f)
+        packages = list(bower.BowerJsonHandler.parse(temp_file))
+        assert len(packages) == 1
+        assert packages[0].vcs_url == 'https://github.com/foo/bar.git'
+
+    def test_parse_bower_json_string_authors(self):
+        temp_file = self.get_temp_file('bower.json')
+        with open(temp_file, 'w') as f:
+            json.dump({
+                'name': 'test-pkg',
+                'version': '1.0.0',
+                'authors': 'Jane Doe',
+            }, f)
+        packages = list(bower.BowerJsonHandler.parse(temp_file))
+        assert len(packages) == 1
+        assert len(packages[0].parties) == 1
+        assert packages[0].parties[0].name == 'Jane Doe'
+        assert packages[0].parties[0].role == 'author'
+
+    def test_parse_bower_json_single_author_key(self):
+        temp_file = self.get_temp_file('bower.json')
+        with open(temp_file, 'w') as f:
+            json.dump({
+                'name': 'test-pkg',
+                'version': '1.0.0',
+                'author': 'John Smith',
+            }, f)
+        packages = list(bower.BowerJsonHandler.parse(temp_file))
+        assert len(packages) == 1
+        assert len(packages[0].parties) == 1
+        assert packages[0].parties[0].name == 'John Smith'
+        assert packages[0].parties[0].role == 'author'
 
     def test_end2end_bower_scan_is_moved_to_parent(self):
         test_file = self.get_test_loc('bower/scan')
