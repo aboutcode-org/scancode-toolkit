@@ -2,7 +2,7 @@
 name: "\U0001F41B License Detection Bug report"
 about: Create a Report for a License Detection Bug
 title: ''
-labels: 'bug', 'license scan', 'new and improved data'
+labels: 'bug, license scan, new and improved data'
 assignees: ''
 
 ---
