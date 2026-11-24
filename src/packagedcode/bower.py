@@ -41,7 +41,10 @@ class BowerJsonHandler(models.DatafileHandler):
 
         parties = []
 
-        authors = package_data.get('authors') or []
+        authors = package_data.get('authors') or package_data.get('author') or []
+        if isinstance(authors, (str, dict)):
+            authors = [authors]
+
         for author in authors:
             if isinstance(author, dict):
                 name = author.get('name')
@@ -57,12 +60,16 @@ class BowerJsonHandler(models.DatafileHandler):
         homepage_url = package_data.get('homepage')
 
         repository = package_data.get('repository') or {}
-        repo_type = repository.get('type')
-        repo_url = repository.get('url')
-
         vcs_url = None
-        if repo_type and repo_url:
-            vcs_url = f'{repo_type}+{repo_url}'
+        if isinstance(repository, str):
+            vcs_url = repository
+        elif isinstance(repository, dict):
+            repo_type = repository.get('type')
+            repo_url = repository.get('url')
+            if repo_type and repo_url:
+                vcs_url = f'{repo_type}+{repo_url}'
+            elif repo_url:
+                vcs_url = repo_url
 
         deps = package_data.get('dependencies') or {}
         dependencies = []
