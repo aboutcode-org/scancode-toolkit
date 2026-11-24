@@ -39,7 +39,8 @@ def get_dependencies(nuspec):
                 groups = [groups]
 
             for group in groups:
-                extra_data = dict(framework=group['@targetFramework'])
+                framework = group.get('@targetFramework')
+                extra_data = dict(framework=framework) if framework else {}
                 deps = group.get('dependency') or []
                 yield from _get_dep_packs(deps, extra_data)
         else:
@@ -159,7 +160,11 @@ class NugetNuspecHandler(models.DatafileHandler):
         # See https://docs.microsoft.com/en-us/nuget/reference/nuspec#license
         # This is a SPDX license expression
         if 'license' in nuspec:
-            extracted_license_statement = nuspec.get('license')
+            license_val = nuspec.get('license')
+            if isinstance(license_val, dict):
+                extracted_license_statement = license_val.get('#text')
+            else:
+                extracted_license_statement = license_val
         # Deprecated and not a license expression, just a URL
         elif 'licenseUrl' in nuspec:
             extracted_license_statement = nuspec.get('licenseUrl')
@@ -233,7 +238,7 @@ class NugetPackagesLockHandler(models.DatafileHandler):
                 )
                 resolved_package = models.PackageData.from_data(resolved_package_mapping)
                 package_type = package_info.get('type')
-                if package_type == "Direct":
+                if package_type in ("Direct", "Project"):
                     is_direct = True
                 elif package_type == "Transitive":
                     is_direct = False
