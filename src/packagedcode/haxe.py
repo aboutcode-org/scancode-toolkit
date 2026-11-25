@@ -49,6 +49,10 @@ class HaxelibJsonHandler(models.DatafileHandler):
         name = json_data.get('name')
         version = json_data.get('version')
 
+        tags = json_data.get('tags') or []
+        if isinstance(tags, str):
+            tags = [t.strip() for t in tags.split(',') if t.strip()]
+
         package_mapping = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -56,7 +60,7 @@ class HaxelibJsonHandler(models.DatafileHandler):
             version=version,
             homepage_url=json_data.get('url'),
             extracted_license_statement=json_data.get('license'),
-            keywords=json_data.get('tags'),
+            keywords=tags,
             description=json_data.get('description'),
             primary_language=cls.default_primary_language,
         )
@@ -70,23 +74,60 @@ class HaxelibJsonHandler(models.DatafileHandler):
         if name:
             package_data.repository_homepage_url = f'https://lib.haxe.org/p/{name}'
 
-        for contrib in json_data.get('contributors', []):
+        contributors = json_data.get('contributors') or []
+        if isinstance(contributors, (str, dict)):
+            contributors = [contributors]
+        for contrib in contributors:
+            if isinstance(contrib, dict):
+                contrib_name = contrib.get('name') or repr(contrib)
+            else:
+                contrib_name = str(contrib)
             party = models.Party(
                 type=models.party_person,
-                name=contrib,
+                name=contrib_name,
                 role='contributor',
-                url='https://lib.haxe.org/u/{}'.format(contrib))
+                url=f'https://lib.haxe.org/u/{contrib_name}')
             package_data.parties.append(party)
 
-        for dep_name, dep_version in json_data.get('dependencies', {}).items():
-            dep_version = dep_version and dep_version.strip()
-            is_pinned = bool(dep_version)
+        deps = json_data.get('dependencies') or {}
+        if isinstance(deps, dict):
+            dep_items = deps.items()
+        elif isinstance(deps, list):
+            dep_items = [(dep_name, None) for dep_name in deps]
+        else:
+            dep_items = []
+
+        for dep_name, dep_version in dep_items:
+            if not dep_name or not isinstance(dep_name, str):
+                continue
+            dep_name = dep_name.strip()
+            if not dep_name:
+                continue
+
+            extracted_requirement = None
+            if dep_version and isinstance(dep_version, str):
+                extracted_requirement = dep_version.strip() or None
+
+            is_pinned = False
+            purl_version = None
+            if extracted_requirement:
+                if not any(c in extracted_requirement for c in ('<', '>', '=', '^', '~', ':', ' ')):
+                    is_pinned = True
+                    purl_version = extracted_requirement
+
             dep_purl = PackageURL(
                 type=cls.default_package_type,
                 name=dep_name,
-                version=dep_version
+                version=purl_version
             ).to_string()
-            dep = models.DependentPackage(purl=dep_purl, is_pinned=is_pinned)
+            dep = models.DependentPackage(
+                purl=dep_purl,
+                extracted_requirement=extracted_requirement,
+                scope='dependencies',
+                is_runtime=True,
+                is_optional=False,
+                is_pinned=is_pinned,
+            )
             package_data.dependencies.append(dep)
 
         return package_data

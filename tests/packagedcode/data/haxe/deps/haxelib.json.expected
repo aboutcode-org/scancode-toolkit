@@ -84,7 +84,7 @@
       {
         "purl": "pkg:haxe/tink_core",
         "extracted_requirement": null,
-        "scope": null,
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_pinned": false,
@@ -94,8 +94,8 @@
       },
       {
         "purl": "pkg:haxe/tink_macro@3.23",
-        "extracted_requirement": null,
-        "scope": null,
+        "extracted_requirement": "3.23",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_pinned": true,
