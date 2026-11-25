@@ -51,6 +51,33 @@ Page 1
 
         assert result == expected
 
+    def test_get_text_lines_extracts_all_pages_up_to_max_pages(self):
+        # regression test: text extraction must not stop after the first page
+        test_file = self.get_test_loc('pdf/multi_page.pdf')
+        result = pdf.get_text_lines(test_file)
+        text = b''.join(result)
+        assert b'This is page 1 of a multi-page test document.' in text
+        assert b'This notice is on page 2.' in text
+        assert b'The last page 5 of this test document.' in text
+        # the default max_pages=5 must still be honored
+        assert b'Page 6' not in text
+
+    def test_get_text_lines_returns_lines_when_max_pages_is_one(self):
+        # regression test: reaching max_pages must not return None
+        test_file = self.get_test_loc('pdf/multi_page.pdf')
+        result = pdf.get_text_lines(test_file, max_pages=1)
+        assert result
+        text = b''.join(result)
+        assert b'This is page 1 of a multi-page test document.' in text
+        assert b'page 2' not in text
+
+    def test_get_text_lines_extracts_all_pages_when_max_pages_is_zero(self):
+        test_file = self.get_test_loc('pdf/multi_page.pdf')
+        result = pdf.get_text_lines(test_file, max_pages=0)
+        text = b''.join(result)
+        assert b'Page 6 is beyond the default max_pages limit.' in text
+        assert b'Page 7 is also beyond the default max_pages limit.' in text
+
     def test_pdfminer_can_parse_faulty_broadcom_doc(self):
         # test for https://github.com/euske/pdfminer/issues/118
         test_file = self.get_test_loc('pdf/pdfminer_bug_118/faulty.pdf')
