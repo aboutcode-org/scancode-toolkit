@@ -60,6 +60,36 @@ class TestGolang(PackageTester):
         package = golang.GoModHandler.parse(test_file)
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_gomod_with_comments_and_blank_lines(self):
+        test_file = self.get_temp_file('go.mod')
+        with open(test_file, 'w') as f:
+            f.write(
+                'module example.com/hello\n\n'
+                'go 1.21\n\n'
+                'require (\n'
+                '    // Direct dependencies\n'
+                '    github.com/stretchr/testify v1.8.4\n\n'
+                '    // Indirect dependencies\n'
+                '    github.com/davecgh/go-spew v1.1.1\n'
+                ')\n\n'
+                'exclude (\n'
+                '    // Excluded versions\n'
+                '    github.com/bad/pkg v1.0.0\n\n'
+                '    github.com/another/bad v2.0.0\n'
+                ')\n'
+            )
+        packages = list(golang.GoModHandler.parse(test_file))
+        assert len(packages) == 1
+        pkg = packages[0]
+        assert pkg.name == 'hello'
+        purls = [d.purl for d in pkg.dependencies]
+        assert purls == [
+            'pkg:golang/github.com/stretchr/testify@v1.8.4',
+            'pkg:golang/github.com/davecgh/go-spew@v1.1.1',
+            'pkg:golang/github.com/bad/pkg@v1.0.0',
+            'pkg:golang/github.com/another/bad@v2.0.0',
+        ]
+
     def test_gosum_is_package_data_file(self):
         test_file = self.get_test_loc('golang/gosum/sample1/go.sum')
         assert golang.GoSumHandler.is_datafile(test_file)

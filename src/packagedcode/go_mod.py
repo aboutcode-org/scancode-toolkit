@@ -129,10 +129,12 @@ def parse_gomod(location):
                 req = preprocess(req)
                 if ')' in req:
                     break
+                if not req:
+                    continue
                 parsed_dep_link = parse_dep_link(req)
-                ns_name = parsed_dep_link.group('ns_name')
-                namespace, _, name = ns_name.rpartition('/')
                 if parsed_dep_link:
+                    ns_name = parsed_dep_link.group('ns_name')
+                    namespace, _, name = ns_name.rpartition('/')
                     require.append(GoModule(
                             namespace=namespace,
                             name=name,
@@ -146,10 +148,12 @@ def parse_gomod(location):
                 exc = preprocess(exc)
                 if ')' in exc:
                     break
+                if not exc:
+                    continue
                 parsed_dep_link = parse_dep_link(exc)
-                ns_name = parsed_dep_link.group('ns_name')
-                namespace, _, name = ns_name.rpartition('/')
                 if parsed_dep_link:
+                    ns_name = parsed_dep_link.group('ns_name')
+                    namespace, _, name = ns_name.rpartition('/')
                     exclude.append(GoModule(
                             namespace=namespace,
                             name=name,
