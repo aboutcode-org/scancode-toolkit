@@ -4,6 +4,10 @@ Changelog
 Next release
 --------------
 
+- Reject SPDX output for non-empty files without a SHA1 checksum instead
+  of substituting the empty-file hash. Scan with ``--info`` to collect checksums.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3453
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

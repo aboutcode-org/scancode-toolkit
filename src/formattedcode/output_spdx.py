@@ -172,7 +172,7 @@ def check_sha1(codebase):
 
         click.secho(
             'WARNING: Files are missing a SHA1 attribute. '
-            'Incomplete SPDX document created.',
+            'Include --info when scanning to collect file checksums.',
             err=True,
             fg='red',
         )
@@ -261,8 +261,13 @@ def write_spdx(
         if file_data.get('file_type') == 'empty':
             checksum = Checksum(ChecksumAlgorithm.SHA1, "da39a3ee5e6b4b0d3255bfef95601890afd80709")
         else:
-            # FIXME: this sets the checksum of a file to the empty string hash if unknown; tracked in https://github.com/nexB/scancode-toolkit/issues/3453
-            checksum = Checksum(ChecksumAlgorithm.SHA1, file_data.get('sha1') or 'da39a3ee5e6b4b0d3255bfef95601890afd80709')
+            sha1 = file_data.get('sha1')
+            if not sha1:
+                raise ValueError(
+                    f'Cannot create SPDX output: missing SHA1 for file {name!r}. '
+                    'Run a scan with --info to collect file checksums.'
+                )
+            checksum = Checksum(ChecksumAlgorithm.SHA1, sha1)
 
         file_entry = File(
             spdx_id=f'SPDXRef-{sid}',
