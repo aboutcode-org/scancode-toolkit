@@ -31,6 +31,13 @@ class TestBuild(PackageTester):
         run_scan_click(['--package', test_file, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
+    def test_end2end_scan_can_detect_MetadataBazel(self):
+        test_file = self.get_test_loc('metadatabzl/new-format/METADATA.bzl')
+        expected_file = self.get_test_loc('metadatabzl/new-format/metadatabzl-expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
     def test_end2end_scan_can_detect_buck(self):
         test_file = self.get_test_loc('buck/end2end')
         expected_file = self.get_test_loc('buck/end2end-expected.json')

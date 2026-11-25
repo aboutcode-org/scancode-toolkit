@@ -424,7 +424,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         models.DatafileHandler.assign_package_to_parent_tree(
-            package_=package,
+            package=package,
             resource=resource,
             codebase=codebase,
             package_adder=package_adder,
