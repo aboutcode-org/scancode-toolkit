@@ -17,6 +17,7 @@ import subprocess
 import tempfile
 import time
 import urllib
+import urllib3
 from collections import defaultdict
 from urllib.parse import quote_plus
 
@@ -1925,27 +1926,41 @@ def get_remote_file_content(
     # several redirects and that we can ignore content there. A HEAD request may
     # not get us this last header
     print(f"    DOWNLOADING: {url}")
-    with requests.get(url, allow_redirects=True, stream=True, headers=headers) as response:
-        status = response.status_code
-        if status != requests.codes.ok:  # NOQA
-            if status == 429 and _delay < 20:
-                # too many requests: start some exponential delay
-                increased_delay = (_delay * 2) or 1
+    try:
+        response = requests.get(url, allow_redirects=True, stream=True, headers=headers)
+    except (
+        urllib3.exceptions.ConnectTimeoutError,
+        urllib3.exceptions.MaxRetryError,
+        requests.exceptions.ConnectTimeout
+    ):
+        increased_delay = (_delay * 2) or 1
+        return get_remote_file_content(
+            url,
+            as_text=as_text,
+            headers_only=headers_only,
+            _delay=increased_delay,
+        )
 
-                return get_remote_file_content(
-                    url,
-                    as_text=as_text,
-                    headers_only=headers_only,
-                    _delay=increased_delay,
-                )
+    status = response.status_code
+    if status != requests.codes.ok:  # NOQA
+        if status == 429 and _delay < 20:
+            # too many requests: start some exponential delay
+            increased_delay = (_delay * 2) or 1
 
-            else:
-                raise RemoteNotFetchedException(f"Failed HTTP request from {url} with {status}")
+            return get_remote_file_content(
+                url,
+                as_text=as_text,
+                headers_only=headers_only,
+                _delay=increased_delay,
+            )
 
-        if headers_only:
-            return response.headers, None
+        else:
+            raise RemoteNotFetchedException(f"Failed HTTP request from {url} with {status}")
 
-        return response.headers, response.text if as_text else response.content
+    if headers_only:
+        return response.headers, None
+
+    return response.headers, response.text if as_text else response.content
 
 
 def fetch_and_save(

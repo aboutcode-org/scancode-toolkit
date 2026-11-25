@@ -164,6 +164,9 @@ Options:
                              and including the starting directory. Use 0 for no
                              scan depth limit.
 
+  miscellaneous:
+    <OUTPUT FORMAT OPTION(s)> <input>...
+
   documentation:
     -h, --help       Show this message and exit.
     -A, --about      Show information about ScanCode and licensing and exit.

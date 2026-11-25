@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+v33.0.0 - 2026-10-30
+------------------------
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

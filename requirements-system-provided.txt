@@ -1,0 +1,3 @@
+typecode_libmagic_system_provided==32.0.0
+extractcode-7z_system_provided==32.0.0
+extractcode_libarchive_system_provided==32.0.0

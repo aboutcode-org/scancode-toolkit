@@ -17,6 +17,8 @@ set -e
 #set -x
 
 
+
+
 operating_system=linux
 python_dot_version=$1
 python_version=${python_dot_version//.}
@@ -33,14 +35,25 @@ mkdir -p $thirdparty_dir
 
 ./configure --dev
 
-venv/bin/python etc/scripts/fetch_thirdparty.py \
-  --requirements requirements-linux.txt \
-  --requirements requirements.txt \
-  --dest $thirdparty_dir \
-  --operating-system=$operating_system \
-  --python-version=$python_version \
-  --wheels \
-  --use-cached-index
+if [ "$arch" = "arm64" ]; then
+    venv/bin/python etc/scripts/fetch_thirdparty.py \
+    --requirements requirements.txt \
+    --requirements requirements-system-provided.txt \
+    --dest $thirdparty_dir \
+    --operating-system=$operating_system \
+    --python-version=$python_version \
+    --wheels \
+    --use-cached-index
+else
+    venv/bin/python etc/scripts/fetch_thirdparty.py \
+    --requirements requirements-linux.txt \
+    --requirements requirements.txt \
+    --dest $thirdparty_dir \
+    --operating-system=$operating_system \
+    --python-version=$python_version \
+    --wheels \
+    --use-cached-index
+fi
 
 mkdir -p $release_dir/etc
 cp -r etc/thirdparty $release_dir/etc
@@ -50,18 +63,24 @@ cp -r etc/thirdparty $release_dir/etc
 venv/bin/scancode-reindex-package-patterns
 venv/bin/scancode-train-gibberish-model
 venv/bin/scancode-reindex-licenses
-venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --wheel
+if [ "$arch" = "arm64" ]; then
+    venv/bin/flot --pyproject pyproject-scancode-toolkit-mini.toml --wheel
+else
+    venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --wheel
+fi
 venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel
 
 cp -r \
   dist/scancode_*.whl \
   scancode extractcode configure \
+  pyproject-commoncode.toml \
   *.rst \
   samples \
   *NOTICE *LICENSE *ABOUT \
   $release_dir
 
 cp -r \
+  dist/commoncode*.whl \
   dist/licensedcode_index*.whl \
   $release_dir/thirdparty
 
