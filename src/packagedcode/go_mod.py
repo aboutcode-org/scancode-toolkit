@@ -127,6 +127,8 @@ def parse_gomod(location):
         if 'require' in line and '(' in line:
             for req in lines[i + 1:]:
                 req = preprocess(req)
+                if not req:
+                    continue
                 if ')' in req:
                     break
                 parsed_dep_link = parse_dep_link(req)
@@ -144,6 +146,8 @@ def parse_gomod(location):
         if 'exclude' in line and '(' in line:
             for exc in lines[i + 1:]:
                 exc = preprocess(exc)
+                if not exc:
+                    continue
                 if ')' in exc:
                     break
                 parsed_dep_link = parse_dep_link(exc)
