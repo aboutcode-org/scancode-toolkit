@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: example_egg
+Version: 1.0.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Private :: Do Not Upload
