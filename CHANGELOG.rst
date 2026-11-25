@@ -4,6 +4,12 @@ Changelog
 Next release
 --------------
 
+- Fix Haxelib package parsing in ``HaxelibJsonHandler`` to handle null, dict, or
+  string contributors and null or list dependencies without crashing. Normalize
+  comma-separated string tags and populate ``extracted_requirement`` and ``scope``
+  metadata on dependent packages.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5556
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
