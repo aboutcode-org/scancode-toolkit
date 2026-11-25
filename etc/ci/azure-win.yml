@@ -11,29 +11,35 @@ jobs:
       pool:
           vmImage: ${{ parameters.image_name }}
 
+      # Fan out on both Python version AND test suite so each
+      # (python_version, test_suite) combination runs as its own parallel
+      # job on its own agent VM. Previously python_versions were iterated
+      # as sequential steps inside a single job, so a failure on the first
+      # Python version skipped all subsequent ones.
       strategy:
           matrix:
-              ${{ each tsuite in parameters.test_suites }}:
-                 ${{ tsuite.key }}:
-                     test_suite_label: ${{ tsuite.key }}
-                     test_suite: ${{ tsuite.value }}
+              ${{ each pyver in parameters.python_versions }}:
+                  ${{ each tsuite in parameters.test_suites }}:
+                      py${{ replace(pyver, '.', '_') }}_${{ tsuite.key }}:
+                          python_version: ${{ pyver }}
+                          test_suite_label: ${{ tsuite.key }}
+                          test_suite: ${{ tsuite.value }}
 
       steps:
           - checkout: self
             fetchDepth: 10
 
-          - ${{ each pyver in parameters.python_versions }}:
-              - task: UsePythonVersion@0
-                inputs:
-                    versionSpec: '${{ pyver }}'
-                    architecture: '${{ parameters.python_architecture }}'
-                displayName: '${{ pyver }} - Install Python'
+          - task: UsePythonVersion@0
+            inputs:
+                versionSpec: '$(python_version)'
+                architecture: '${{ parameters.python_architecture }}'
+            displayName: 'Install Python $(python_version)'
 
-              - script: |
-                   python --version
-                   echo | set /p=python> PYTHON_EXECUTABLE
-                   configure --clean && configure --dev
-                displayName: '${{ pyver }} - Configure'
+          - script: |
+               python --version
+               echo | set /p=python> PYTHON_EXECUTABLE
+               configure --clean && configure --dev
+            displayName: 'Configure with Python $(python_version)'
 
-              - script: $(test_suite)
-                displayName: '${{ pyver }} - $(test_suite_label) on ${{ parameters.job_name }}'
+          - script: $(test_suite)
+            displayName: '$(test_suite_label) on ${{ parameters.job_name }} with Python $(python_version)'
