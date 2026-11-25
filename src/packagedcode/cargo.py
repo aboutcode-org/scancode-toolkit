@@ -223,6 +223,20 @@ class CargoTomlHandler(CargoBaseHandler):
             if key.endswith('dependencies'):
                 dependencies.extend(dependency_mapper(dependencies=value, scope=key))
 
+        targets = package_data_toml.get('target', {})
+        if isinstance(targets, dict):
+            for target_name, target_data in targets.items():
+                if isinstance(target_data, dict):
+                    for key, value in target_data.items():
+                        if key.endswith('dependencies') and isinstance(value, dict):
+                            dependencies.extend(
+                                dependency_mapper(
+                                    dependencies=value,
+                                    scope=key,
+                                    extra_data=dict(target=target_name),
+                                )
+                            )
+
         # TODO: add file refs:
         # - readme, include and exclude
 
@@ -330,13 +344,15 @@ class CargoLockHandler(CargoBaseHandler):
         yield models.PackageData.from_data(package_data, package_only)
 
 
-def dependency_mapper(dependencies, scope='dependencies'):
+def dependency_mapper(dependencies, scope='dependencies', extra_data=None):
     """
     Yield DependentPackage collected from a list of cargo dependencies
     """
     is_runtime = not scope.endswith(('dev-dependencies', 'build-dependencies'))
     for name, requirement in dependencies.items():
-        extra_data = {}
+        dep_extra_data = {}
+        if extra_data:
+            dep_extra_data.update(extra_data)
         extracted_requirement = None
         if isinstance(requirement, str):
             # plain version requirement
@@ -348,12 +364,13 @@ def dependency_mapper(dependencies, scope='dependencies'):
             # everything else is just dumped in extra data
             # here {workspace = true} means dependency version
             # should be inherited
+            requirement = requirement.copy()
             is_optional = requirement.pop('optional', False)
             if 'version' in requirement:
                 extracted_requirement = requirement.get('version')
 
             if requirement:
-                extra_data = requirement
+                dep_extra_data.update(requirement)
 
         yield models.DependentPackage(
             purl=PackageURL(
@@ -365,7 +382,7 @@ def dependency_mapper(dependencies, scope='dependencies'):
             is_runtime=is_runtime,
             is_optional=is_optional,
             is_pinned=False,
-            extra_data=extra_data,
+            extra_data=dep_extra_data,
         )
 
 

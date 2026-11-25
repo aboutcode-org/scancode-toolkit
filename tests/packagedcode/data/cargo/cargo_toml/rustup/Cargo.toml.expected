@@ -344,6 +344,54 @@
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/winapi",
+        "extracted_requirement": "0.3",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "target": "cfg(windows)",
+          "version": "0.3",
+          "features": [
+            "jobapi",
+            "jobapi2",
+            "processthreadsapi",
+            "psapi",
+            "synchapi",
+            "winuser"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:cargo/winreg",
+        "extracted_requirement": "0.5.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "target": "cfg(windows)"
+        }
+      },
+      {
+        "purl": "pkg:cargo/gcc",
+        "extracted_requirement": "0.3.50",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "target": "cfg(windows)"
+        }
       }
     ],
     "repository_homepage_url": "https://crates.io/crates/rustup",
