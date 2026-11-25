@@ -1,0 +1,3 @@
+http://biblio.cesga.es:81/search*gag/aXove,+Xosé/axove+xose/7,-1,0,B/frameset&F=axuntanza&1,,3
+http://example.com/path/(c)/test
+http://test.org/query?param=(c)&other=value
