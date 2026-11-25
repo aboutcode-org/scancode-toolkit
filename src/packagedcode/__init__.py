@@ -25,6 +25,7 @@ from packagedcode import cran
 from packagedcode import freebsd
 from packagedcode import godeps
 from packagedcode import golang
+from packagedcode import gradle
 from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import misc
@@ -40,6 +41,7 @@ from packagedcode import rubygems
 from packagedcode import swift
 from packagedcode import win_pe
 from packagedcode import windows
+from packagedcode.gradle import GradleModuleHandler
 
 if on_linux:
     from packagedcode import msi
@@ -56,6 +58,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     bower.BowerJsonHandler,
 
     build_gradle.BuildGradleHandler,
+    gradle.GradleModuleHandler,
 
     build.AutotoolsConfigureHandler,
     build.BazelBuildHandler,

@@ -1,0 +1,74 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.google.android.material",
+    "module": "material",
+    "version": "1.9.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.3.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "material-1.9.0.aar",
+          "url": "material-1.9.0.aar",
+          "sha512": "7630aacb9e3073b2064397ed080b8d5bf7db06ba2022d6c927e05b7d53c5787d",
+          "sha256": "6cc2359979269e4d9eddce7d84682d2bb06a35a14edce806bf0da6e8d4d31806",
+          "sha1": "08f4a93a381be223a5bbaacd46eaab92381ab6a8",
+          "md5": "3287103cfb083fb998a35ef8a1983c58"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.google.errorprone",
+          "module": "error_prone_annotations",
+          "version": {
+            "requires": "2.15.0"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.2.0"
+          }
+        }
+      ]
+    }
+  ]
+}
