@@ -1,0 +1,83 @@
+# Copyright 2018-2021 the original author or authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+api = "0.7"
+
+[buildpack]
+  description = "A Cloud Native Buildpack that installs the Java Memory Assistant agent"
+  homepage = "https://github.com/paketo-buildpacks/java-memory-assistant"
+  id = "paketo-buildpacks/java-memory-assistant"
+  keywords = ["agent"]
+  name = "Paketo Buildpack for Java Memory Assistant"
+  sbom-formats = ["application/vnd.syft+json", "application/vnd.cyclonedx+json"]
+  version = "{{.version}}"
+
+  [[buildpack.licenses]]
+    type = "Apache-2.0"
+    uri = "https://github.com/paketo-buildpacks/java-memory-assistant/blob/main/LICENSE"
+
+[metadata]
+  include-files = ["LICENSE", "NOTICE", "README.md", "linux/amd64/bin/build", "linux/amd64/bin/detect", "linux/amd64/bin/main", "linux/amd64/bin/helper", "linux/arm64/bin/build", "linux/arm64/bin/detect", "linux/arm64/bin/main", "linux/arm64/bin/helper", "buildpack.toml"]
+  pre-package = "scripts/build.sh"
+
+  [[metadata.configurations]]
+    build = true
+    default = "false"
+    description = "whether to contribute the JMA agent at build time"
+    name = "BP_JMA_ENABLED"
+
+  [[metadata.configurations]]
+    default = "false"
+    description = "whether to enable the JMA agent at runtime"
+    launch = true
+    name = "BPL_JMA_ENABLED"
+
+  [[metadata.configurations]]
+    default = "check_interval=5s,log_level=ERROR,max_frequency=1/1m,heap_dump_folder=/tmp,thresholds.heap=80%"
+    description = "arguments to configure the JMA agent"
+    launch = true
+    name = "BPL_JMA_ARGS"
+
+  [[metadata.dependencies]]
+    cpes = ["cpe:2.3:a:sap:java-memory-assistant:0.5.0:*:*:*:*:*:*:*"]
+    id = "java-memory-assistant"
+    name = "Java Memory Assistant Agent"
+    purl = "pkg:generic/sap-java-memory-assistant@0.5.0?arch=amd64"
+    sha256 = "9c5ffb4bdeec5ed6b4f1d734469500754a857d1452c3d253d89e2315addb04c5"
+    source = "https://github.com/sap/java-memory-assistant/archive/refs/tags/0.5.0.tar.gz"
+    source-sha256 = "dedf82a5c10df5b12e602c1237f00a459a38b6a55c0ff8d671fa0d3909dfe4fc"
+    stacks = ["io.buildpacks.stacks.bionic", "io.paketo.stacks.tiny", "*"]
+    uri = "https://github.com/SAP-archive/java-memory-assistant/releases/download/0.5.0/java-memory-assistant-0.5.0.jar"
+    version = "0.5.0"
+
+    [[metadata.dependencies.licenses]]
+      type = "Apache-2.0"
+      uri = "https://github.com/SAP/java-memory-assistant/blob/master/LICENSE"
+
+[[stacks]]
+  id = "io.buildpacks.stacks.bionic"
+
+[[stacks]]
+  id = "io.paketo.stacks.tiny"
+
+[[stacks]]
+  id = "*"
+
+[[targets]]
+  arch = "amd64"
+  os = "linux"
+
+[[targets]]
+  arch = "arm64"
+  os = "linux"

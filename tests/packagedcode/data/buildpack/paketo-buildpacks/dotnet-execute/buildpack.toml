@@ -1,0 +1,20 @@
+api = "0.8"
+
+[buildpack]
+  description = "A buildpack for running the `dotnet execute` command for an app"
+  homepage = "https://github.com/paketo-buildpacks/dotnet-execute"
+  id = "paketo-buildpacks/dotnet-execute"
+  keywords = ["dotnet"]
+  name = "Paketo Buildpack for .NET Execute"
+  sbom-formats = ["application/vnd.cyclonedx+json", "application/spdx+json", "application/vnd.syft+json"]
+
+  [[buildpack.licenses]]
+    type = "Apache-2.0"
+    uri = "https://github.com/paketo-buildpacks/dotnet-execute/blob/main/LICENSE"
+
+[metadata]
+  include-files = ["bin/build", "bin/detect", "bin/run", "bin/port-chooser", "buildpack.toml"]
+  pre-package = "./scripts/build.sh"
+
+[[stacks]]
+  id = "*"

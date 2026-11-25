@@ -1,0 +1,133 @@
+[
+  {
+    "type": "generic",
+    "namespace": "paketo-buildpacks",
+    "name": "java-memory-assistant",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "A Cloud Native Buildpack that installs the Java Memory Assistant agent",
+    "release_date": null,
+    "parties": [],
+    "keywords": [
+      "agent"
+    ],
+    "homepage_url": "https://github.com/paketo-buildpacks/java-memory-assistant",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "apache-2.0",
+    "declared_license_expression_spdx": "Apache-2.0",
+    "license_detections": [
+      {
+        "license_expression": "apache-2.0",
+        "license_expression_spdx": "Apache-2.0",
+        "matches": [
+          {
+            "license_expression": "apache-2.0",
+            "license_expression_spdx": "Apache-2.0",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "2-aho",
+            "score": 100.0,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "matched_text": "type: Apache-2.0"
+          }
+        ],
+        "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "type: Apache-2.0",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "api_version": "0.7",
+      "id": "paketo-buildpacks/java-memory-assistant",
+      "include_files": [
+        "LICENSE",
+        "NOTICE",
+        "README.md",
+        "linux/amd64/bin/build",
+        "linux/amd64/bin/detect",
+        "linux/amd64/bin/main",
+        "linux/amd64/bin/helper",
+        "linux/arm64/bin/build",
+        "linux/arm64/bin/detect",
+        "linux/arm64/bin/main",
+        "linux/arm64/bin/helper",
+        "buildpack.toml"
+      ],
+      "targets": [
+        {
+          "arch": "amd64",
+          "os": "linux"
+        },
+        {
+          "arch": "arm64",
+          "os": "linux"
+        }
+      ]
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:generic/sap-java-memory-assistant@0.5.0?arch=amd64",
+        "extracted_requirement": null,
+        "scope": "runtime",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {
+          "id": "java-memory-assistant",
+          "name": "Java Memory Assistant Agent",
+          "sha256": "9c5ffb4bdeec5ed6b4f1d734469500754a857d1452c3d253d89e2315addb04c5",
+          "stacks": [
+            "io.buildpacks.stacks.bionic",
+            "io.paketo.stacks.tiny",
+            "*"
+          ],
+          "uri": "https://github.com/SAP-archive/java-memory-assistant/releases/download/0.5.0/java-memory-assistant-0.5.0.jar",
+          "licenses": [
+            {
+              "type": "Apache-2.0",
+              "uri": "https://github.com/SAP/java-memory-assistant/blob/master/LICENSE"
+            }
+          ],
+          "cpes": [
+            "cpe:2.3:a:sap:java-memory-assistant:0.5.0:*:*:*:*:*:*:*"
+          ],
+          "download_url": "https://github.com/SAP-archive/java-memory-assistant/releases/download/0.5.0/java-memory-assistant-0.5.0.jar"
+        },
+        "extra_data": {
+          "source": "https://github.com/sap/java-memory-assistant/archive/refs/tags/0.5.0.tar.gz",
+          "source-sha256": "dedf82a5c10df5b12e602c1237f00a459a38b6a55c0ff8d671fa0d3909dfe4fc"
+        }
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "buildpack_toml",
+    "purl": "pkg:generic/paketo-buildpacks/java-memory-assistant"
+  }
+]
