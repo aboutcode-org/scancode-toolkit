@@ -25,7 +25,9 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "fake"
+    ],
     "homepage_url": "http://github.com/fake/fake",
     "download_url": null,
     "size": null,

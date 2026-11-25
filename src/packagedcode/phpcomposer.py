@@ -119,7 +119,6 @@ def build_package_data(package_data, package_only=False):
     plain_fields = [
         ('version', 'version'),
         ('description', 'summary'),
-        ('keywords', 'keywords'),
         ('homepage', 'homepage_url'),
     ]
 
@@ -135,6 +134,7 @@ def build_package_data(package_data, package_only=False):
     # key, values Package Object to update
     field_mappers = [
         ('authors', author_mapper),
+        ('keywords', keywords_mapper),
         ('license', partial(licensing_mapper, is_private=is_private)),
         ('support', support_mapper),
         ('require', partial(_deps_mapper, scope='require', is_runtime=True)),
@@ -242,6 +242,24 @@ def author_mapper(authors_content, package):
     return package
 
 
+def keywords_mapper(keywords, package):
+    """
+    Update package keywords and return package.
+    https://getcomposer.org/doc/04-schema.md#keywords
+    """
+    if isinstance(keywords, str):
+        if ',' in keywords:
+            keywords = [k.strip() for k in keywords.split(',') if k.strip()]
+        else:
+            keywords = [keywords.strip()] if keywords.strip() else []
+    elif isinstance(keywords, list):
+        keywords = [k.strip() for k in keywords if isinstance(k, str) and k.strip()]
+    else:
+        keywords = []
+    package.keywords = keywords
+    return package
+
+
 def support_mapper(support, package):
     """
     Update support and bug tracking url.
@@ -258,6 +276,8 @@ def source_mapper(source, package):
     Add vcs_url from source tag, if present. Typically only present in
     composer.lock
     """
+    if not isinstance(source, dict):
+        return package
     tool = source.get('type')
     if not tool:
         return package
@@ -265,7 +285,10 @@ def source_mapper(source, package):
     if not url:
         return package
     version = source.get('reference')
-    package.vcs_url = '{tool}+{url}@{version}'.format(**locals())
+    if version:
+        package.vcs_url = f'{tool}+{url}@{version}'
+    else:
+        package.vcs_url = f'{tool}+{url}'
     return package
 
 

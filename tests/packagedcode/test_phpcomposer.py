@@ -86,3 +86,51 @@ class TestPHPcomposer(PackageTester):
         expected_loc = self.get_test_loc('phpcomposer/composer.lock-expected.json')
         packages = phpcomposer.PhpComposerLockHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_build_package_data_keywords_list(self):
+        data = {
+            'name': 'monolog/monolog',
+            'keywords': ['logging', 'psr-3', 'log'],
+        }
+        package = phpcomposer.build_package_data(data)
+        assert package.keywords == ['logging', 'psr-3', 'log']
+
+    def test_build_package_data_keywords_comma_separated_string(self):
+        data = {
+            'name': 'monolog/monolog',
+            'keywords': 'logging, psr-3, log',
+        }
+        package = phpcomposer.build_package_data(data)
+        assert package.keywords == ['logging', 'psr-3', 'log']
+
+    def test_build_package_data_keywords_single_string(self):
+        data = {
+            'name': 'monolog/monolog',
+            'keywords': 'logging',
+        }
+        package = phpcomposer.build_package_data(data)
+        assert package.keywords == ['logging']
+
+    def test_source_mapper_with_reference(self):
+        data = {
+            'name': 'monolog/monolog',
+            'source': {
+                'type': 'git',
+                'url': 'https://github.com/Seldaek/monolog.git',
+                'reference': 'abc1234',
+            },
+        }
+        package = phpcomposer.build_package_data(data)
+        assert package.vcs_url == 'git+https://github.com/Seldaek/monolog.git@abc1234'
+
+    def test_source_mapper_without_reference(self):
+        data = {
+            'name': 'monolog/monolog',
+            'source': {
+                'type': 'git',
+                'url': 'https://github.com/Seldaek/monolog.git',
+            },
+        }
+        package = phpcomposer.build_package_data(data)
+        assert package.vcs_url == 'git+https://github.com/Seldaek/monolog.git'
+        assert '@None' not in package.vcs_url
