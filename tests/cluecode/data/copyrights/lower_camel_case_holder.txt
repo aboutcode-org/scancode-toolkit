@@ -1,0 +1,2 @@
+Copyright (c) 2021, drGlennPierce
+Copyright (c) 2022, myCompany
