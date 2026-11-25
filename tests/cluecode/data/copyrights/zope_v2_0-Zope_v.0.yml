@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Zope Corporation (tm) and Contributors
     count: 1
+allrights:
+  - Copyright (c) Zope Corporation (tm) and Contributors. All rights reserved.

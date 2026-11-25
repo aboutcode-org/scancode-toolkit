@@ -11,3 +11,6 @@ holders:
 holders_summary:
   - value: Id Software, Inc.
     count: 2
+allrights:
+  - Copyright (c) 1996-1997 Id Software, Inc.
+  - (c) 1996 Id Software, Inc. All rights reserved.

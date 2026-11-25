@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Wichert Akkerman
     count: 1
+allrights:
+  - Copyright (c) 2001 Wichert Akkerman <wichert@cistron.nl> All rights reserved.

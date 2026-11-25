@@ -21,3 +21,8 @@ holders_summary:
     count: 1
   - value: Silicon Graphics Computer Systems, Inc.
     count: 1
+allrights:
+  - Copyright 1999,2000 Boris Fomitchev
+  - Copyright 1994 Hewlett-Packard Company
+  - Copyright 1996,97 Silicon Graphics Computer Systems, Inc.
+  - Copyright 1997 Moscow Center for SPARC Technology.

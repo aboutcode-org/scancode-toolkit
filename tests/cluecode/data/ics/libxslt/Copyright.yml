@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Thomas Broyer, Charlie Bozeman and Daniel Veillard
     count: 1
+allrights:
+  - Copyright (c) 2001-2002 Daniel Veillard. All Rights Reserved.
+  - Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard. All Rights Reserved.

@@ -13,3 +13,6 @@ holders_summary:
     count: 1
   - value: Red Hat
     count: 1
+allrights:
+  - Copyright 2001 Red Hat, Inc.
+  - Copyright Linus Torvalds and others.

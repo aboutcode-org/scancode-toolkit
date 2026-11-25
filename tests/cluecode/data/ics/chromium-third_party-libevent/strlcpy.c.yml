@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Todd C. Miller
     count: 1
+allrights:
+  - Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com> All rights reserved.

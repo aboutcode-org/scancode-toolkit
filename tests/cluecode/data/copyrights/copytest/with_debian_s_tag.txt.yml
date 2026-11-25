@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Trolltech ASA.
     count: 1
+allrights:
+  - Copyright (c) Trolltech ASA. All Rights Reserved.

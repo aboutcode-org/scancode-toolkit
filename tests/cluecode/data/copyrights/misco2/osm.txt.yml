@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: OpenStreetMap contributors
     count: 1
+allrights:
+  - (c) OpenStreetMap contributors.

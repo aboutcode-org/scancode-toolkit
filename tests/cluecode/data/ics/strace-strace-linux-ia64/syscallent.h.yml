@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Hewlett-Packard Co David Mosberger-Tang
     count: 1
+allrights:
+  - Copyright (c) 1999, 2001 Hewlett-Packard Co David Mosberger-Tang <davidm@hpl.hp.com> All rights reserved.

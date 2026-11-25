@@ -21,3 +21,10 @@ authors:
   - Greg Kroah-Hartman <gregkh@suse.de>
   - Bastien Nocera <hadess@hadess.net>
   - Benjamin Tissoires <benjamin.tissoires@gmail.com>
+allrights:
+  - Copyright (c) 2006 James McKenzie
+  - Copyright (c) 2008 Greg Kroah-Hartman <greg@kroah.com>
+  - Copyright (c) 2008 Novell Inc.
+  - Copyright (c) 2010, 2012 Bastien Nocera <hadess@hadess.net>
+  - Copyright (c) 2013 Benjamin Tissoires <benjamin.tissoires@gmail.com>
+  - Copyright (c) 2013 Red Hat Inc. All Rights Reserved

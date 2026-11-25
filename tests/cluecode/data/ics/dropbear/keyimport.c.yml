@@ -20,3 +20,7 @@ holders_summary:
     count: 1
   - value: Simon Tatham
     count: 1
+allrights:
+  - copyright 2003 Matt Johnston
+  - copyright 1997-2003 Simon Tatham.
+  - Portions copyright Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.

@@ -9,3 +9,5 @@ holders:
 holders_summary:
   - value: Eric Young
     count: 1
+allrights:
+  - Copyright (c) 1995-1997 Eric Young (eay@cryptsoft.com) All rights reserved.
