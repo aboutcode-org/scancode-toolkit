@@ -1023,13 +1023,13 @@ def test_getting_version_returns_valid_yaml():
 
 
 faulty_json = [
-    ('various-inputs/not-a-json-but-png.json', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
-    ('various-inputs/not-a-yaml-but-png.yaml', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
-    ('various-inputs/png.png', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
+    ('various-inputs/not-a-json-but-png.json', 2, 'is not a well formed JSON file'),
+    ('various-inputs/not-a-yaml-but-png.yaml', 2, 'is not a JSON file with a .json extension'),
+    ('various-inputs/png.png', 2, 'is not a JSON file with a .json extension'),
     ('various-inputs/true-json.json', 2, 'Error: Invalid value: Failed to process codebase'),
-    ('various-inputs/true-yaml.yaml', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
-    ('various-inputs/true-yaml-license-policy-yaml.yml', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
-    ('various-inputs/true-yaml.yml', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
+    ('various-inputs/true-yaml.yaml', 2, 'is not a JSON file with a .json extension'),
+    ('various-inputs/true-yaml-license-policy-yaml.yml', 2, 'is not a JSON file with a .json extension'),
+    ('various-inputs/true-yaml.yml', 2, 'is not a JSON file with a .json extension'),
 ]
 
 
@@ -1052,6 +1052,39 @@ def test_scan_does_validate_input_and_fails_on_faulty_json_input(test_file, expe
 def test_scan_does_validate_input_and_does_not_fail_on_valid_json_input():
     test_file = test_env.get_test_loc('various-inputs/true-scan-json.json')
     run_scan_click(['--from-json', test_file, '--json-pp', '-'], retry=False)
+
+
+def test_scan_from_json_input_is_validated_early_before_scanning():
+    test_file = test_env.get_test_loc('various-inputs/png.png')
+    result = run_scan_click(
+        [
+            '--from-json',
+            test_file,
+            '--json-pp',
+            '-',
+        ],
+        expected_rc=2,
+        retry=False,
+    )
+    assert 'is not a JSON file with a .json extension' in result.output
+    assert 'Collect file inventory' not in result.output
+
+
+def test_scan_from_json_fails_early_on_directory_input():
+    test_dir = test_env.get_test_loc('various-inputs')
+    result = run_scan_click(
+        [
+            '--from-json',
+            test_dir,
+            '--json-pp',
+            '-',
+        ],
+        expected_rc=2,
+        retry=False,
+    )
+    assert 'JSON input:' in result.output
+    assert 'is not a file' in result.output
+    assert 'Collect file inventory' not in result.output
 
 
 @skipIf(on_windows, 'Test does not work on CI runners')
