@@ -36,6 +36,7 @@
     "bug_tracking_url": null,
     "code_view_url": null,
     "vcs_url": "https://github.com/clap-rs/clap",
+    "documentation_url": "https://docs.rs/clap/",
     "copyright": null,
     "holder": null,
     "declared_license_expression": "mit",
@@ -73,9 +74,7 @@
     "file_references": [],
     "is_private": false,
     "is_virtual": false,
-    "extra_data": {
-      "documentation_url": "https://docs.rs/clap/"
-    },
+    "extra_data": {},
     "dependencies": [
       {
         "purl": "pkg:cargo/bitflags",

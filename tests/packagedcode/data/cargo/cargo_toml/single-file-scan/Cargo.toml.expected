@@ -40,6 +40,7 @@
           "bug_tracking_url": null,
           "code_view_url": null,
           "vcs_url": "https://github.com/cesarb/constant_time_eq",
+          "documentation_url": "https://docs.rs/constant_time_eq",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "cc0-1.0 OR mit-0 OR apache-2.0",
@@ -78,7 +79,6 @@
           "is_private": false,
           "is_virtual": false,
           "extra_data": {
-            "documentation_url": "https://docs.rs/constant_time_eq",
             "rust_version": "1.85.0",
             "rust_edition": "2024"
           },

@@ -53,6 +53,7 @@ class TestModels(PackageTester):
             ('bug_tracking_url', None),
             ('code_view_url', None),
             ('vcs_url', None),
+            ('documentation_url', None),
             ('copyright', None),
             ('holder', None),
             ('declared_license_expression', None),
