@@ -58,3 +58,5 @@ ExtractedText: <text>See details at https://github.com/nexB/scancode-toolkit/blo
 LicenseName: Other Copyleft Licenses
 LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.LICENSE
 </text>
+## Relationships
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-001

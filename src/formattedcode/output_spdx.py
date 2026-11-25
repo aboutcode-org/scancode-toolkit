@@ -239,6 +239,9 @@ def write_spdx(
     doc = Document(
         creation_info=creation_info,
         packages=[package],
+        relationships=[
+            Relationship(creation_info.spdx_id, RelationshipType.DESCRIBES, package.spdx_id)
+        ],
     )
 
     # Use a set of unique copyrights for the package.

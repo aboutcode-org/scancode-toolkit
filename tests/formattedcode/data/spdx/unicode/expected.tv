@@ -77,3 +77,5 @@ ExtractedText: <text> * SOFTWARE LICENSE
 LicenseName: Agere BSD
 LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/agere-bsd.LICENSE
 </text>
+## Relationships
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-001

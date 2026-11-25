@@ -1,99 +1,108 @@
 {
   "rdf:RDF": {
-    "spdx:Package": {
-      "spdx:filesAnalyzed": {
-        "#text": "true",
-        "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
-      },
-      "spdx:downloadLocation": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseConcluded": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseDeclared": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "@rdf:about": "#SPDXRef-001",
-      "spdx:licenseInfoFromFiles": [
-        {
-          "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
-        },
-        {
-          "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
-        }
-      ],
-      "spdx:packageVerificationCode": {
-        "spdx:PackageVerificationCode": {
-          "spdx:packageVerificationCodeValue": "517c26f04b5a3edaaa0c17bf1a6571953209e209"
-        }
-      },
-      "spdx:relationship": [
-        {
-          "spdx:Relationship": {
-            "spdx:relationshipType": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
-            },
-            "spdx:relatedSpdxElement": {
-              "spdx:File": {
-                "spdx:licenseInfoInFile": {
-                  "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
-                },
-                "spdx:licenseConcluded": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-                },
-                "@rdf:about": "#SPDXRef-2",
-                "spdx:checksum": {
-                  "spdx:Checksum": {
-                    "spdx:algorithm": {
-                      "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                    },
-                    "spdx:checksumValue": "2b8b815229aa8a61e483fb4ba0588b8b6c491890"
-                  }
-                },
-                "spdx:fileName": "./scan/apache-2.0.LICENSE",
-                "spdx:copyrightText": "NONE"
-              }
-            }
-          }
-        },
-        {
-          "spdx:Relationship": {
-            "spdx:relationshipType": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
-            },
-            "spdx:relatedSpdxElement": {
-              "spdx:File": {
-                "spdx:licenseInfoInFile": {
-                  "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
-                },
-                "spdx:licenseConcluded": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-                },
-                "@rdf:about": "#SPDXRef-3",
-                "spdx:checksum": {
-                  "spdx:Checksum": {
-                    "spdx:algorithm": {
-                      "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                    },
-                    "spdx:checksumValue": "172444e7c137eb5cd3cae530aca0879c90f7fada"
-                  }
-                },
-                "spdx:fileName": "./scan/cc0-1.0.LICENSE",
-                "spdx:copyrightText": "NONE"
-              }
-            }
-          }
-        }
-      ],
-      "spdx:copyrightText": "NONE",
-      "spdx:name": "scan"
-    },
     "spdx:SpdxDocument": {
       "spdx:dataLicense": {
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
       },
       "@rdf:about": "#SPDXRef-DOCUMENT",
+      "spdx:relationship": {
+        "spdx:Relationship": {
+          "spdx:relationshipType": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_describes"
+          },
+          "spdx:relatedSpdxElement": {
+            "spdx:Package": {
+              "spdx:filesAnalyzed": {
+                "#text": "true",
+                "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+              },
+              "spdx:downloadLocation": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "spdx:licenseConcluded": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "spdx:licenseDeclared": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "@rdf:about": "#SPDXRef-001",
+              "spdx:licenseInfoFromFiles": [
+                {
+                  "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
+                },
+                {
+                  "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+                }
+              ],
+              "spdx:packageVerificationCode": {
+                "spdx:PackageVerificationCode": {
+                  "spdx:packageVerificationCodeValue": "517c26f04b5a3edaaa0c17bf1a6571953209e209"
+                }
+              },
+              "spdx:relationship": [
+                {
+                  "spdx:Relationship": {
+                    "spdx:relationshipType": {
+                      "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                    },
+                    "spdx:relatedSpdxElement": {
+                      "spdx:File": {
+                        "spdx:licenseInfoInFile": {
+                          "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
+                        },
+                        "spdx:licenseConcluded": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                        },
+                        "@rdf:about": "#SPDXRef-2",
+                        "spdx:checksum": {
+                          "spdx:Checksum": {
+                            "spdx:algorithm": {
+                              "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                            },
+                            "spdx:checksumValue": "2b8b815229aa8a61e483fb4ba0588b8b6c491890"
+                          }
+                        },
+                        "spdx:fileName": "./scan/apache-2.0.LICENSE",
+                        "spdx:copyrightText": "NONE"
+                      }
+                    }
+                  }
+                },
+                {
+                  "spdx:Relationship": {
+                    "spdx:relationshipType": {
+                      "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                    },
+                    "spdx:relatedSpdxElement": {
+                      "spdx:File": {
+                        "spdx:licenseInfoInFile": {
+                          "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+                        },
+                        "spdx:licenseConcluded": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                        },
+                        "@rdf:about": "#SPDXRef-3",
+                        "spdx:checksum": {
+                          "spdx:Checksum": {
+                            "spdx:algorithm": {
+                              "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                            },
+                            "spdx:checksumValue": "172444e7c137eb5cd3cae530aca0879c90f7fada"
+                          }
+                        },
+                        "spdx:fileName": "./scan/cc0-1.0.LICENSE",
+                        "spdx:copyrightText": "NONE"
+                      }
+                    }
+                  }
+                }
+              ],
+              "spdx:copyrightText": "NONE",
+              "spdx:name": "scan"
+            }
+          }
+        }
+      },
       "rdfs:comment": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.\nSPDX License List: 3.28",
       "spdx:name": "SPDX Document created by ScanCode Toolkit",
       "spdx:specVersion": "SPDX-2.2"

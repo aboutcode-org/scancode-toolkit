@@ -362,3 +362,31 @@ def test_output_spdx_tv_sh1_of_empty_file():
     with io.open(result_file, encoding='utf-8') as res:
         results = res.read()
     assert 'FileChecksum: SHA1: da39a3ee5e6b4b0d3255bfef95601890afd80709' in results
+
+
+def _assert_valid_spdx_with_describes(result_file):
+    from spdx_tools.spdx.model import Relationship
+    from spdx_tools.spdx.model import RelationshipType
+    from spdx_tools.spdx.parser.parse_anything import parse_file
+    from spdx_tools.spdx.validation.document_validator import validate_full_spdx_document
+
+    doc = parse_file(result_file)
+    validation_messages = validate_full_spdx_document(doc)
+    assert [m.validation_message for m in validation_messages] == []
+    assert Relationship('SPDXRef-DOCUMENT', RelationshipType.DESCRIBES, 'SPDXRef-001') in doc.relationships
+
+
+def test_spdx_tv_validates_with_describes_relationship():
+    test_file = test_env.get_test_loc('spdx/simple/test.txt')
+    result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
+    run_scan_click([test_file, '-clip', '--spdx-tv', result_file])
+    _assert_valid_spdx_with_describes(result_file)
+    with io.open(result_file, encoding='utf-8') as res:
+        assert 'Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-001' in res.read()
+
+
+def test_spdx_rdf_validates_with_describes_relationship():
+    test_file = test_env.get_test_loc('spdx/simple/test.txt')
+    result_file = test_env.get_temp_file(extension='spdx.rdf', file_name='test_spdx')
+    run_scan_click([test_file, '-clip', '--spdx-rdf', result_file])
+    _assert_valid_spdx_with_describes(result_file)

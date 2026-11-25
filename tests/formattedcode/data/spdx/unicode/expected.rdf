@@ -1,59 +1,5 @@
 {
   "rdf:RDF": {
-    "spdx:Package": {
-      "spdx:filesAnalyzed": {
-        "#text": "true",
-        "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
-      },
-      "spdx:licenseInfoFromFiles": {
-        "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-agere-bsd"
-      },
-      "spdx:downloadLocation": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseConcluded": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseDeclared": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "@rdf:about": "#SPDXRef-001",
-      "spdx:packageVerificationCode": {
-        "spdx:PackageVerificationCode": {
-          "spdx:packageVerificationCodeValue": "ce09fd939153fe02b82fefb764381ba40234e6ca"
-        }
-      },
-      "spdx:relationship": {
-        "spdx:Relationship": {
-          "spdx:relationshipType": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
-          },
-          "spdx:relatedSpdxElement": {
-            "spdx:File": {
-              "spdx:licenseInfoInFile": {
-                "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-agere-bsd"
-              },
-              "spdx:licenseConcluded": {
-                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-              },
-              "@rdf:about": "#SPDXRef-1",
-              "spdx:checksum": {
-                "spdx:Checksum": {
-                  "spdx:algorithm": {
-                    "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                  },
-                  "spdx:checksumValue": "3903b654c47ea95203567230d72093ad1c5c4b90"
-                }
-              },
-              "spdx:fileName": "./et131x.h",
-              "spdx:copyrightText": "Copyright (c) 2005 Agere Systems Inc.\nCopyright (c) 2005 Agere Systems Inc."
-            }
-          }
-        }
-      },
-      "spdx:copyrightText": "Copyright (c) 2005 Agere Systems Inc.",
-      "spdx:name": "unicode"
-    },
     "spdx:SpdxDocument": {
       "spdx:dataLicense": {
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
@@ -66,6 +12,69 @@
           "spdx:name": "Agere BSD",
           "spdx:licenseId": "LicenseRef-scancode-agere-bsd",
           "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/agere-bsd.LICENSE"
+        }
+      },
+      "spdx:relationship": {
+        "spdx:Relationship": {
+          "spdx:relationshipType": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_describes"
+          },
+          "spdx:relatedSpdxElement": {
+            "spdx:Package": {
+              "spdx:filesAnalyzed": {
+                "#text": "true",
+                "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+              },
+              "spdx:licenseInfoFromFiles": {
+                "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-agere-bsd"
+              },
+              "spdx:downloadLocation": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "spdx:licenseConcluded": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "spdx:licenseDeclared": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "@rdf:about": "#SPDXRef-001",
+              "spdx:packageVerificationCode": {
+                "spdx:PackageVerificationCode": {
+                  "spdx:packageVerificationCodeValue": "ce09fd939153fe02b82fefb764381ba40234e6ca"
+                }
+              },
+              "spdx:relationship": {
+                "spdx:Relationship": {
+                  "spdx:relationshipType": {
+                    "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                  },
+                  "spdx:relatedSpdxElement": {
+                    "spdx:File": {
+                      "spdx:licenseInfoInFile": {
+                        "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-agere-bsd"
+                      },
+                      "spdx:licenseConcluded": {
+                        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                      },
+                      "@rdf:about": "#SPDXRef-1",
+                      "spdx:checksum": {
+                        "spdx:Checksum": {
+                          "spdx:algorithm": {
+                            "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                          },
+                          "spdx:checksumValue": "3903b654c47ea95203567230d72093ad1c5c4b90"
+                        }
+                      },
+                      "spdx:fileName": "./et131x.h",
+                      "spdx:copyrightText": "Copyright (c) 2005 Agere Systems Inc.\nCopyright (c) 2005 Agere Systems Inc."
+                    }
+                  }
+                }
+              },
+              "spdx:copyrightText": "Copyright (c) 2005 Agere Systems Inc.",
+              "spdx:name": "unicode"
+            }
+          }
         }
       },
       "rdfs:comment": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.\nSPDX License List: 3.28",
