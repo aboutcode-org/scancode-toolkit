@@ -350,8 +350,14 @@ def compute_candidates(query_run, idx, matchable_rids, top=50,
     if not sortable_candidates:
         return sortable_candidates
 
-    # rank candidates
-    candidates = sorted(filter_dupes(sortable_candidates), reverse=True)[:top]
+    # Long lines (such as minified code) can fill the candidate pool and push
+    # a notice past the cutoff. Keep ties there, but preserve the normal cutoff
+    # for prose, where extra weak candidates can span separate notices.
+    ranked_candidates = sorted(filter_dupes(sortable_candidates), reverse=True)
+    if query_run.query.has_long_lines:
+        candidates = truncate_candidates_on_score_boundary(ranked_candidates, top)
+    else:
+        candidates = ranked_candidates[:top]
 
     if TRACE_CANDIDATES_MSET and candidates:
         logger_debug('\n\n\ncompute_candidates: FINAL: sortable_candidates:', len(candidates))
@@ -364,7 +370,40 @@ def compute_candidates(query_run, idx, matchable_rids, top=50,
         for rank, ((score_vec1, score_vec2), rid, rule, high_set_intersection) in enumerate(candidates, 1):
             print(','.join(str(x) for x in ([rank, rule.identifier] + list(score_vec1) + list(score_vec2))))
 
-    return candidates[:top]
+    return candidates
+
+
+def truncate_candidates_on_score_boundary(candidates, top):
+    """
+    Return a list of ranked ``candidates`` truncated around ``top`` candidates,
+    extended to include all the candidates that have the same rounded scores as
+    the last kept candidate.
+
+    Candidates are ranked using a tuple of ``ScoresVector`` where the first
+    vector holds coarse rounded scores and the second vector holds the full
+    precision scores. The rounded scores define the ranking buckets and the
+    full precision scores only order candidates within a bucket. Truncating
+    the list inside a bucket would keep or discard candidates that are ranked
+    equally well only because of tiny score differences that are mostly noise.
+
+    For instance, a short license notice contained in a long query run made of
+    code can rank after many other rules. Cutting inside its bucket would make
+    its detection depend on how many other candidates happen to fall in the
+    same bucket.
+    """
+    if top <= 0:
+        return []
+
+    if len(candidates) <= top:
+        return candidates
+
+    last_kept_scores = candidates[top - 1][0][0]
+
+    cutoff = top
+    while cutoff < len(candidates) and candidates[cutoff][0][0] == last_kept_scores:
+        cutoff += 1
+
+    return candidates[:cutoff]
 
 
 def compare_token_sets(qset, iset,
