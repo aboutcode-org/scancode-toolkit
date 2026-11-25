@@ -512,7 +512,7 @@ The  server currently  does very  little  sanity checking,  so if  you
 configure it wrong, it will just  fail in odd ways.  I would recommend
 therefore that you either do  failover or don't do failover, but don't
 do any mixed pools.  Also,  use the same master configuration file for
-both  servers,  and  have  a  seperate file  that  contains  the  peer
+both  servers,  and  have  a  separate file  that  contains  the  peer
 declaration and includes the master file.  This will help you to avoid
 configuration  mismatches.  As our  implementation evolves,  this will
 become  less of  a  problem.  A  basic  sample dhcpd.conf  file for  a
@@ -1149,7 +1149,7 @@ zone 17.127.10.in-addr.arpa. {
 Note that the zone declarations have to correspond to authority
 records in your name server - in the above example, there must be an
 SOA record for "example.org." and for "17.10.10.in-addr.arpa.".   For
-example, if there were a subdoman "foo.example.org" with no seperate
+example, if there were a subdoman "foo.example.org" with no separate
 SOA, you could not write a zone declaration for "foo.example.org."  
 Also keep in mind that zone names in your DHCP configuration should end in a
 "."; this is the preferred syntax.  If you do not end your zone name in a

@@ -168,7 +168,7 @@ isc_result_t find_failover_peer (peer, name, file, line)
    each failover partner declaration in the dhcpd.conf file, primary
    or secondary, there is a failover_state object.  For any primary or
    secondary state object that has a connection to its peer, there is
-   also a failover_link object, which has its own input state seperate
+   also a failover_link object, which has its own input state separate
    from the failover protocol state for managing the actual bytes
    coming in off the wire.  Finally, there will be one listener object
    for every distinct port number associated with a secondary

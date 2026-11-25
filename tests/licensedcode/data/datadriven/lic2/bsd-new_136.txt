@@ -88,7 +88,7 @@ extern int h_errno;
    in /var/state/misc - indeed, given that there's only one lease file, it
    would probably be better.   However, I have some ideas for optimizing
    the lease database that may result in a _lot_ of smaller files being
-   created, so in that context it makes more sense to have a seperate
+   created, so in that context it makes more sense to have a separate
    directory. */
 
 #ifndef _PATH_DHCPD_DB

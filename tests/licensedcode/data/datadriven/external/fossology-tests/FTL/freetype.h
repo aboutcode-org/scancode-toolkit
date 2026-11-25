@@ -216,7 +216,7 @@
   /* and advance height for vertical layouts.                           */
   /*                                                                    */
   /* Finally, the library (ver. 1.1) doesn't support vertical text yet  */
-  /* but these changes were introduced to accomodate it, as it will     */
+  /* but these changes were introduced to accommodate it, as it will     */
   /* most certainly be introduced in later releases.                    */
 
   struct  TT_Glyph_Metrics_
