@@ -37,7 +37,7 @@ LEGAL_STARTS_ENDS = (
     'legal',
     'eula',
     'agreement',
-    'copyleft',
+
     'patent',
     'patents',
 )
