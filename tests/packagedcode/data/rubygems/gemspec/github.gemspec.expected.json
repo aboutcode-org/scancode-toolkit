@@ -3,7 +3,7 @@
     "type": "gem",
     "namespace": null,
     "name": "github",
-    "version": "GitHub::VERSION",
+    "version": null,
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Ruby",
@@ -48,7 +48,7 @@
     ],
     "keywords": [],
     "homepage_url": "https://github.com/defunkt/github-gem",
-    "download_url": "https://rubygems.org/downloads/github-GitHub::VERSION.gem",
+    "download_url": null,
     "size": null,
     "sha1": null,
     "md5": null,
@@ -162,10 +162,10 @@
         "extra_data": {}
       }
     ],
-    "repository_homepage_url": "https://rubygems.org/gems/github/versions/GitHub::VERSION",
-    "repository_download_url": "https://rubygems.org/downloads/github-GitHub::VERSION.gem",
-    "api_data_url": "https://rubygems.org/api/v2/rubygems/github/versions/GitHub::VERSION.json",
+    "repository_homepage_url": "https://rubygems.org/gems/github",
+    "repository_download_url": null,
+    "api_data_url": "https://rubygems.org/api/v1/versions/github.json",
     "datasource_id": "gemspec",
-    "purl": "pkg:gem/github@GitHub::VERSION"
+    "purl": "pkg:gem/github"
   }
 ]

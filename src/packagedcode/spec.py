@@ -133,6 +133,40 @@ PARSER_BY_NAME = {
 }
 
 
+def is_ruby_version_constant(value):
+    """
+    Return True if value looks like a Ruby constant expression
+    that cannot be resolved statically, such as:
+    Elasticsearch::API::VERSION or MyGem::VERSION
+
+    These are dynamic values that reference Ruby constants
+    and cannot be determined without executing the Ruby code.
+
+    For example:
+    >>> is_ruby_version_constant('Elasticsearch::API::VERSION')
+    True
+    >>> is_ruby_version_constant('MyGem::VERSION')
+    True
+    >>> is_ruby_version_constant('1.0.0')
+    False
+    >>> is_ruby_version_constant("'2.3.4'")
+    False
+    >>> is_ruby_version_constant(None)
+    False
+    """
+    if not value:
+        return False
+    # Ruby constants use :: as namespace separator
+    if '::' in value:
+        return True
+    # A bare constant starts with uppercase and has no dots/quotes
+    # e.g. VERSION (unlikely but possible)
+    stripped = value.strip('\'"')
+    if stripped and stripped[0].isupper() and '.' not in stripped:
+        return True
+    return False
+
+
 def parse_spec(location, package_type):
     """
     Return a mapping of data parsed from a podspec/gemspec/Pofile/Gemfile file
@@ -151,6 +185,10 @@ def parse_spec(location, package_type):
             parsed = parser(line=line)
             if parsed:
                 spec_data[attribute_name] = parsed
+    
+    version = spec_data.get('version')
+    if is_ruby_version_constant(version):
+        spec_data['version'] = None
 
     # description can be in single or multi-lines
     # There are many different ways to write description.
