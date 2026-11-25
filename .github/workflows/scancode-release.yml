@@ -826,7 +826,7 @@ jobs:
       - smoke_test_install_and_run_pypi_wheels_on_windows
       - smoke_test_install_and_run_pypi_wheels_on_macos
       - smoke_test_install_and_run_pypi_wheels_on_linux
-      - smoke_test_install_and_run_pypi_wheels_on_arm
+      - smoke_test_install_and_run_pypi_wheels_on_linux_arm
       - publish_to_gh_release
     runs-on: ubuntu-24.04
     environment: pypi-publish
