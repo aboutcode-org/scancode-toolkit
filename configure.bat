@@ -163,7 +163,23 @@ if %ERRORLEVEL% neq 0 (
     %FLOT_REQUIREMENTS%
 
 "%CFG_BIN_DIR%\flot" --pyproject pyproject-commoncode.toml
-"%CFG_BIN_DIR%\pip" install --force-reinstall ./dist/commoncode-32.5.2-py3-none-any.whl
+if errorlevel 1 exit /b 1
+
+@rem # Discover the local wheel without pinning its filename to a release.
+set "COMMONCODE_WHEEL="
+set "COMMONCODE_WHEEL_COUNT=0"
+for %%W in ("%CFG_ROOT_DIR%\dist\commoncode-*.whl") do (
+    if exist "%%W" (
+        set /a COMMONCODE_WHEEL_COUNT+=1 >nul
+        set "COMMONCODE_WHEEL=%%~fW"
+    )
+)
+if not "%COMMONCODE_WHEEL_COUNT%"=="1" (
+    echo ERROR: Expected one local commoncode wheel in dist. Remove stale wheels and retry.
+    exit /b 1
+)
+"%CFG_BIN_DIR%\pip" install --force-reinstall "%COMMONCODE_WHEEL%"
+if errorlevel 1 exit /b 1
 
 "%CFG_BIN_DIR%\pip" install ^
     --upgrade ^

@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Install the locally built commoncode wheel on Windows without hardcoding
+  its version, and fail if building or installing that wheel fails.
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
