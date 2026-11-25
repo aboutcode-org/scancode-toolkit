@@ -99,3 +99,21 @@ class TestGolang(PackageTester):
         expected_loc = self.get_test_loc('golang/gosum/sample6/output.expected.json')
         package = golang.GoSumHandler.parse(test_file)
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_gowork_is_package_data_file(self):
+        test_file = self.get_test_loc('golang/gowork/sample1/go.work')
+        assert golang.GoWorkHandler.is_datafile(test_file)
+
+    def test_parse_gowork_sample1(self):
+        """Test go.work with multi-line use block and require dependencies."""
+        test_file = self.get_test_loc('golang/gowork/sample1/go.work')
+        expected_loc = self.get_test_loc('golang/gowork/sample1/output.expected.json')
+        package = golang.GoWorkHandler.parse(test_file)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_gowork_sample2(self):
+        """Test minimal go.work with a single use directive and no require block."""
+        test_file = self.get_test_loc('golang/gowork/sample2/go.work')
+        expected_loc = self.get_test_loc('golang/gowork/sample2/output.expected.json')
+        package = golang.GoWorkHandler.parse(test_file)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
