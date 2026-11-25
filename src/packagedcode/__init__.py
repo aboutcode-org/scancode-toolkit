@@ -172,6 +172,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     # pypi.PypiSdistArchiveHandler,
     pypi.PypiWheelHandler,
     pypi.PyprojectTomlHandler,
+    pypi.PylockTomlHandler,
     pypi.PoetryPyprojectTomlHandler,
     pypi.PoetryLockHandler,
     pypi.UvPyprojectTomlHandler,
