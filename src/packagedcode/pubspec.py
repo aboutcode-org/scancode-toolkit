@@ -208,10 +208,36 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
     # TODO: these can be more complex for SDKs
     # https://dart.dev/tools/pub/dependencies#dependency-sources
 
-    if isinstance(version, dict) and 'sdk' in version:
-        # {'sdk': 'flutter'} type of deps....
-        # which is a wart that we keep as a requiremnet
-        version = ', '.join(': '.join([k, str(v)]) for k, v in version.items())
+    if isinstance(version, dict):
+        # Dependency sources can be mappings, e.g. `path:`, `git:` or
+        # `hosted:` dependencies, such as:
+        #   my_package:
+        #     path: ../my_package
+        #   my_package:
+        #     git:
+        #       url: https://github.com/example/my_package.git
+        #       ref: some-branch
+        #   my_package:
+        #     hosted: https://example.com
+        #     version: ^1.0.0
+        # Flatten the mapping into a requirement string, keeping the
+        # source information, e.g. `path: ../my_package`.
+        # The `sdk:` form, e.g. `{'sdk': 'flutter'}`, is handled the
+        # same way and keeps its previous rendering: `sdk: flutter`.
+        parts = []
+        for key, value in version.items():
+            if isinstance(value, dict):
+                value = ', '.join(f'{k}: {v}' for k, v in value.items())
+            parts.append(f'{key}: {value}')
+        version = ', '.join(parts)
+
+    if not isinstance(version, str):
+        # Defensive: a version should be a plain string, but a non-string
+        # scalar (e.g. None for an unversioned dependency, or a bare
+        # number) must not crash the whole parse. Coerce it to a string
+        # instead. The real YAML parse path yields strings, so this is
+        # robustness for unusual inputs, not a second defect.
+        version = str(version)
 
     if version.replace('.', '').isdigit():
         # version is pinned exactly if it is only made of dots and digits

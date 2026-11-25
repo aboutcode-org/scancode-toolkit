@@ -1,0 +1,25 @@
+name: dependency-sources
+version: 1.0.0
+description: Test pubspec with dependency sources as mappings
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  hosted_dep:
+    hosted: https://example.com
+    version: ^1.0.0
+  git_dep:
+    git:
+      url: https://github.com/example/git_dep.git
+      ref: main
+  git_url_dep:
+    git: https://github.com/example/git_url_dep.git
+  path_dep:
+    path: ../path_dep
+  sdk_dep:
+    sdk: flutter
+
+dev_dependencies:
+  dev_path_dep:
+    path: ../dev_path_dep
