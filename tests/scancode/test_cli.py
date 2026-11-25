@@ -143,6 +143,42 @@ def test_usage_and_help_return_a_correct_script_name_on_all_platforms():
     assert 'scancode-script.py' not in result.output
 
 
+def test_from_json_rejects_non_json_extension():
+    test_file = test_env.get_temp_file('txt')
+    with open(test_file, 'w') as f:
+        f.write('{"headers": []}')
+    result = run_scan_click(
+        ['--from-json', test_file, '--json-pp', '-'],
+        expected_rc=2,
+        retry=False,
+    )
+    assert 'is not a JSON file with a .json extension' in result.output
+
+
+def test_from_json_rejects_malformed_json_content():
+    test_file = test_env.get_temp_file('json')
+    with open(test_file, 'w') as f:
+        f.write('not json at all')
+    result = run_scan_click(
+        ['--from-json', test_file, '--json-pp', '-'],
+        expected_rc=2,
+        retry=False,
+    )
+    assert 'is not a well formed JSON file' in result.output
+
+
+def test_from_json_rejects_binary_content_without_crashing():
+    test_file = test_env.get_temp_file('json')
+    with open(test_file, 'wb') as f:
+        f.write(b'\x89PNG\r\n\x1a\n\x00\x00IHDR')
+    result = run_scan_click(
+        ['--from-json', test_file, '--json-pp', '-'],
+        expected_rc=2,
+        retry=False,
+    )
+    assert 'is not a well formed JSON file' in result.output
+
+
 def test_scan_info_does_collect_info():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
