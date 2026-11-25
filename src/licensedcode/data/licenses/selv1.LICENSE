@@ -4,9 +4,9 @@ short_name: SELv1
 name: Stalwart Enterprise License 1.0 (SELv1) Agreement
 category: Commercial
 owner: Stalwart Labs
-homepage_url: https://github.com/stalwartlabs/mail-server/blob/main/LICENSES/LicenseRef-SEL.txt
+homepage_url: https://github.com/stalwartlabs/stalwart/blob/f10ec68d493062c68dbf425c6a557239a3d9a01a/LICENSES/LicenseRef-SEL.txt
 spdx_license_key: LicenseRef-scancode-selv1
-faq_url: https://github.com/stalwartlabs/mail-server/blob/main/LICENSES/LicenseRef-SEL.txt
+faq_url: https://github.com/stalwartlabs/stalwart/blob/f10ec68d493062c68dbf425c6a557239a3d9a01a/LICENSES/LicenseRef-SEL.txt
 ignorable_emails:
     - hello@stalw.art
 ---
