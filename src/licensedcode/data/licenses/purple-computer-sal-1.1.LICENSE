@@ -1,0 +1,53 @@
+---
+key: purple-computer-sal-1.1
+short_name: Purple Computer Source-Available License 1.1
+name: Purple Computer Source-Available License 1.1
+category: Source-available
+owner: Purple Computer
+homepage_url: https://github.com/purplecomputerorg/purplecomputer/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-purple-computer-sal-1.1
+text_urls:
+    - https://raw.githubusercontent.com/purplecomputerorg/purplecomputer/main/LICENSE
+ignorable_copyrights:
+    - Copyright (c) 2025 Purple Computer
+ignorable_holders:
+    - Purple Computer
+---
+
+Purple Computer Source-Available License 1.1
+Copyright (c) 2025 Purple Computer
+
+Permission is hereby granted to any individual to download, view, run, and
+modify the source code in this repository ("the Software") for personal,
+private use only. Personal, private use includes making your own
+modifications, add-ons, or content packs, provided they are not shared or
+distributed.
+
+All other rights are reserved. Except for the personal-use permission above,
+you may not, without prior written permission from the Licensor:
+
+  • copy, redistribute, publish, or share the Software or any part of it,
+    in original or modified form;
+  • distribute, publish, or share derivative works of the Software;
+  • distribute or publish plugins, add-ons, modules, content packs, or
+    extensions that interact with or depend on the Software;
+  • compile or distribute binaries or packaged versions of the Software;
+  • use the Software for any commercial purpose, whether direct or indirect;
+  • host, deploy, or make the Software available to others as a service;
+  • incorporate the Software into any other product or project;
+  • use any Purple Computer names, logos, designs, or trademarks.
+
+No rights are granted to sublicense or relicense the Software.
+
+All third-party requests for redistribution, add-on publication, commercial
+licensing, or integration must be made in writing to the Licensor.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+End of License.
