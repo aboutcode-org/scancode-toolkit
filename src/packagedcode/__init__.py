@@ -9,6 +9,7 @@
 
 from commoncode.system import on_linux
 from packagedcode import about
+from packagedcode import git_submodules
 from packagedcode import alpine
 from packagedcode import bower
 from packagedcode import build
@@ -214,6 +215,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     # These are handlers for deplock generated files
     pypi.PipInspectDeplockHandler,
+
+    git_submodules.GitSubmodulesHandler,
 ]
 
 if on_linux:
