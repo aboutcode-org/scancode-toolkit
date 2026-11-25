@@ -15,7 +15,7 @@ jobs:
       parameters:
           job_name: core_tests
           image_name: ubuntu-24.04
-          python_versions: ['3.14']
+          python_versions: ['3.13', '3.14']
           test_suites:
               misc_and_scancode: |
                # cli tests are launched below on all OSes
