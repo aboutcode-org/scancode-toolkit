@@ -1,0 +1,23 @@
+name: foobar
+version: 1.0.0
+
+environment:
+  sdk: ">=2.0.0 <3.0.0"
+
+dependencies:
+  # path dependencies are mappings, not version strings
+  # see https://github.com/aboutcode-org/scancode-toolkit/issues/5482
+  path_dep:
+    path: ../shared_package
+  git_dep:
+    git:
+      url: https://github.com/example/some_package.git
+      ref: main
+  hosted_dep:
+    hosted: https://pub.example.com
+    version: ^1.2.0
+  plain_dep: ^0.18.0
+
+dev_dependencies:
+  _shared_test:
+    path: ../shared_test
