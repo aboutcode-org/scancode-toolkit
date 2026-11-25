@@ -219,3 +219,46 @@ class TestCocoapodsEndToEndAssemble(PackageTester):
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', '--license', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+
+def test_podfile_lock_data_by_purl_instances_do_not_share_state():
+    from packagedcode.cocoapods import PodfileLockDataByPurl
+
+    dep_data_1 = PodfileLockDataByPurl.collect_dependencies_data_by_purl(
+        {
+            'PODS': [{'Foo (1.0.0)': ['Bar (= 2.0.0)']}],
+            'DEPENDENCIES': ['Foo (1.0.0)'],
+            'SPEC REPOS': {'trunk': ['Foo']},
+            'SPEC CHECKSUMS': {'Foo': 'abc123sha'},
+            'EXTERNAL SOURCES': {'Foo': {'path': '../local_foo'}},
+        },
+        'cocoapods',
+    )
+
+    dep_data_2 = PodfileLockDataByPurl.collect_dependencies_data_by_purl(
+        {
+            'PODS': ['Baz (3.0.0)'],
+            'DEPENDENCIES': ['Baz (3.0.0)'],
+        },
+        'cocoapods',
+    )
+
+    assert 'pkg:cocoapods/Foo' in dep_data_1.direct_dependency_purls
+    assert 'pkg:cocoapods/Foo' not in dep_data_2.direct_dependency_purls
+    assert 'pkg:cocoapods/Baz' in dep_data_2.direct_dependency_purls
+    assert 'pkg:cocoapods/Baz' not in dep_data_1.direct_dependency_purls
+
+    assert 'pkg:cocoapods/Foo' in dep_data_1.versions_by_base_purl
+    assert 'pkg:cocoapods/Foo' not in dep_data_2.versions_by_base_purl
+
+    assert 'pkg:cocoapods/Foo' in dep_data_1.spec_by_base_purl
+    assert 'pkg:cocoapods/Foo' not in dep_data_2.spec_by_base_purl
+
+    assert 'pkg:cocoapods/Foo' in dep_data_1.checksum_by_base_purl
+    assert 'pkg:cocoapods/Foo' not in dep_data_2.checksum_by_base_purl
+
+    assert 'pkg:cocoapods/Foo' in dep_data_1.external_sources_by_base_purl
+    assert 'pkg:cocoapods/Foo' not in dep_data_2.external_sources_by_base_purl
+
+    assert dep_data_1.direct_dependency_purls is not dep_data_2.direct_dependency_purls
+    assert dep_data_1.versions_by_base_purl is not dep_data_2.versions_by_base_purl
