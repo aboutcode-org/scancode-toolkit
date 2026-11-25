@@ -353,6 +353,13 @@ class TestNpm(PackageTester):
         packages = npm.YarnLockV1Handler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_yarn_lock_v1_scoped_alias_of_unscoped_package(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v1-scoped-alias/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/v1-scoped-alias/yarn.lock-expected')
+        packages = npm.YarnLockV1Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_is_datafile_yarn_lock_v2(self):
         test_file = self.get_test_loc('npm/yarn-lock/v2/yarn.lock')
         assert npm.YarnLockV2Handler.is_datafile(test_file)
