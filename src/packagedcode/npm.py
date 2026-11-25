@@ -380,7 +380,14 @@ class BaseNpmHandler(models.DatafileHandler):
                     if '_' in metadata:
                         requirement, _extra = metadata.split('_')
 
-                if ':' in requirement and '@' in requirement:
+                if (
+    ':' in requirement
+    and '@' in requirement
+    and not requirement.startswith(
+        ('git+', 'git:', 'git@', 'http://', 'https://', 'ssh://')
+    )
+):
+
                     # dependencies with requirements like this are aliases and should be reported
                     aliased_package, _, constraint = requirement.rpartition('@')
                     _, _, aliased_package_name = aliased_package.rpartition(':')
@@ -1848,7 +1855,15 @@ def deps_mapper(deps, package, field_name, is_direct=True):
         if not name:
             continue
 
-        if ':' in requirement and '@' in requirement:
+        if (
+    ':' in requirement
+    and '@' in requirement
+    and not requirement.startswith(
+        ('git+', 'git:', 'git@', 'http://', 'https://', 'ssh://')
+    )
+):
+
+
             # dependencies with requirements like this are aliases and should be reported
             aliased_package, _, requirement = requirement.rpartition('@')
             _, _, aliased_package_name = aliased_package.rpartition(':')
