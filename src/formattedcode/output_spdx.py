@@ -119,6 +119,97 @@ class SpdxRdfOutput(OutputPlugin):
             input_path=kwargs.get('input', ''),
             output_file=spdx_rdf,
             as_tagvalue=False,
+            output_format='rdf',
+            **kwargs
+        )
+
+
+@output_impl
+class SpdxJsonOutput(OutputPlugin):
+
+    options = [
+        PluggableCommandLineOption(('--spdx-json',),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            metavar='FILE',
+            default=None,
+            help='Write scan output as SPDX 2.3 JSON to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order=70,
+        )
+    ]
+
+    def is_enabled(self, spdx_json, **kwargs):
+        return spdx_json
+
+    def process_codebase(self, codebase, spdx_json, **kwargs):
+        _process_codebase(
+            spdx_plugin=self,
+            codebase=codebase,
+            input_path=kwargs.get('input', ''),
+            output_file=spdx_json,
+            as_tagvalue=False,
+            output_format='json',
+            spdx_version=(2, 3),
+            **kwargs
+        )
+
+
+@output_impl
+class SpdxYamlOutput(OutputPlugin):
+
+    options = [
+        PluggableCommandLineOption(('--spdx-yaml',),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            metavar='FILE',
+            default=None,
+            help='Write scan output as SPDX 2.3 YAML to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order=70,
+        )
+    ]
+
+    def is_enabled(self, spdx_yaml, **kwargs):
+        return spdx_yaml
+
+    def process_codebase(self, codebase, spdx_yaml, **kwargs):
+        _process_codebase(
+            spdx_plugin=self,
+            codebase=codebase,
+            input_path=kwargs.get('input', ''),
+            output_file=spdx_yaml,
+            as_tagvalue=False,
+            output_format='yaml',
+            spdx_version=(2, 3),
+            **kwargs
+        )
+
+
+@output_impl
+class SpdxXmlOutput(OutputPlugin):
+
+    options = [
+        PluggableCommandLineOption(('--spdx-xml',),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            metavar='FILE',
+            default=None,
+            help='Write scan output as SPDX 2.3 XML to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order=70,
+        )
+    ]
+
+    def is_enabled(self, spdx_xml, **kwargs):
+        return spdx_xml
+
+    def process_codebase(self, codebase, spdx_xml, **kwargs):
+        _process_codebase(
+            spdx_plugin=self,
+            codebase=codebase,
+            input_path=kwargs.get('input', ''),
+            output_file=spdx_xml,
+            as_tagvalue=False,
+            output_format='xml',
+            spdx_version=(2, 3),
             **kwargs
         )
 
@@ -129,6 +220,8 @@ def _process_codebase(
     input_path,
     output_file,
     as_tagvalue=True,
+    output_format=None,
+    spdx_version=(2, 2),
     **kwargs,
 ):
     check_sha1(codebase)
@@ -148,6 +241,8 @@ def _process_codebase(
         notice=notice,
         package_name=package_name,
         as_tagvalue=as_tagvalue,
+        output_format=output_format,
+        spdx_version=spdx_version,
     )
 
 
@@ -188,13 +283,16 @@ def write_spdx(
     package_name='',
     download_location=SpdxNoAssertion(),
     as_tagvalue=True,
-    spdx_version = (2, 2),
+    spdx_version=(2, 2),
     with_notice_text=False,
+    output_format=None,
 ):
     """
-    Write scan output as SPDX Tag/value to ``output_file`` file-like
-    object using the ``files`` list of scanned file data.
-    Write as RDF XML if ``as_tagvalue`` is False.
+    Write scan output as SPDX to ``output_file`` file-like object using the
+    ``files`` list of scanned file data.
+    ``output_format`` may be one of ``'tv'``, ``'rdf'``, ``'json'``, ``'yaml'``,
+    or ``'xml'``. When omitted, writes Tag/Value if ``as_tagvalue`` is True or
+    RDF XML otherwise.
 
     Use the ``notice`` string as a notice included in a document comment.
     Include the ``tool_name`` and ``tool_version`` to indicate which tool is
@@ -205,7 +303,10 @@ def write_spdx(
     licenses = cache.get_licenses_db()
     licensing = Licensing()
 
-    as_rdf = not as_tagvalue
+    if output_format is None:
+        output_format = 'tv' if as_tagvalue else 'rdf'
+    as_tagvalue = output_format == 'tv'
+    as_rdf = output_format == 'rdf'
 
     ns_prefix = '_'.join(package_name.lower().split())
     comment = notice + f'\nSPDX License List: {scancode_config.spdx_license_list_version}'
@@ -350,10 +451,10 @@ def write_spdx(
     if not doc.files:
         if as_tagvalue:
             msg = "# No results for package '{}'.\n".format(package.name)
-        else:
-            # rdf
+            output_file.write(msg)
+        elif as_rdf:
             msg = "<!-- No results for package '{}'. -->\n".format(package.name)
-        output_file.write(msg)
+            output_file.write(msg)
 
     # Remove duplicate licenses from the list for the package.
     package.license_info_from_files = list(set(package.license_info_from_files))
@@ -388,19 +489,26 @@ def write_spdx(
     # one case we do need to deal with bytes and decode before writing (rdf) and
     # in the other case we deal with text all the way.
 
-    if doc.files:
-        if as_tagvalue:
-            from spdx_tools.spdx.writer.tagvalue.tagvalue_writer import write_document_to_stream  # NOQA
-            spdx_output = StringIO()
-        elif as_rdf:
-            from spdx_tools.spdx.writer.rdf.rdf_writer import write_document_to_stream  # NOQA
-            # rdf is utf-encoded bytes
-            spdx_output = BytesIO()
+    if doc.files or output_format in ('json', 'yaml', 'xml'):
+        import importlib
+        writers = {
+            'tv': ('spdx_tools.spdx.writer.tagvalue.tagvalue_writer', False),
+            'rdf': ('spdx_tools.spdx.writer.rdf.rdf_writer', True),
+            'json': ('spdx_tools.spdx.writer.json.json_writer', False),
+            'yaml': ('spdx_tools.spdx.writer.yaml.yaml_writer', False),
+            'xml': ('spdx_tools.spdx.writer.xml.xml_writer', False),
+        }
+        if output_format not in writers:
+            raise ValueError(f'Unsupported SPDX output format: {output_format!r}')
+
+        writer_module, is_bytes = writers[output_format]
+        write_document_to_stream = importlib.import_module(writer_module).write_document_to_stream
+        spdx_output = BytesIO() if is_bytes else StringIO()
 
         write_document_to_stream(doc, spdx_output, validate=False)
         result = spdx_output.getvalue()
 
-        if as_rdf:
+        if is_bytes:
             # rdf is utf-encoded bytes
             result = result.decode('utf-8')
 
