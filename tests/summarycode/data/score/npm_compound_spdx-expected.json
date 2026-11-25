@@ -1,0 +1,310 @@
+{
+  "summary": {
+    "declared_license_expression": "apache-2.0",
+    "license_clarity_score": {
+      "score": 80,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": false,
+      "declared_copyrights": false,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": false
+    }
+  },
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": "@swc",
+      "name": "core-darwin-arm64",
+      "version": "1.11.18",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "SWC bindings for darwin-arm64 platform",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.11.18.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/nicolo-ribaudo/nicolo-ribaudo-swc.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0 AND mit",
+      "declared_license_expression_spdx": "Apache-2.0 AND MIT",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0 AND mit",
+          "license_expression_spdx": "Apache-2.0 AND MIT",
+          "matches": [
+            {
+              "license_expression": "apache-2.0 AND mit",
+              "license_expression_spdx": "Apache-2.0 AND MIT",
+              "from_file": "npm_compound_spdx/package.json",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-apache_2_0_and_mit-843f5f3391f392620355e32456cff860f38c4985",
+              "rule_url": null,
+              "matched_text": "Apache-2.0 AND MIT"
+            }
+          ],
+          "identifier": "apache_2_0_and_mit-4e003cb0-3920-2cf1-e2a4-e7c84ee738bf"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- Apache-2.0 AND MIT\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/@swc/core-darwin-arm64",
+      "repository_download_url": "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.11.18.tgz",
+      "api_data_url": "https://registry.npmjs.org/@swc%2fcore-darwin-arm64/1.11.18",
+      "package_uid": "pkg:npm/%40swc/core-darwin-arm64@1.11.18?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "npm_compound_spdx/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/%40swc/core-darwin-arm64@1.11.18"
+    }
+  ],
+  "dependencies": [],
+  "license_detections": [
+    {
+      "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0",
+      "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "npm_compound_spdx/package.json",
+          "start_line": 5,
+          "end_line": 5,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_65.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "apache_2_0_and_mit-4e003cb0-3920-2cf1-e2a4-e7c84ee738bf",
+      "license_expression": "apache-2.0 AND mit",
+      "license_expression_spdx": "Apache-2.0 AND MIT",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0 AND mit",
+          "license_expression_spdx": "Apache-2.0 AND MIT",
+          "from_file": "npm_compound_spdx/package.json",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-apache_2_0_and_mit-843f5f3391f392620355e32456cff860f38c4985",
+          "rule_url": null
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "npm_compound_spdx",
+      "type": "directory",
+      "name": "npm_compound_spdx",
+      "base_name": "npm_compound_spdx",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha1_git": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 325,
+      "scan_errors": []
+    },
+    {
+      "path": "npm_compound_spdx/package.json",
+      "type": "file",
+      "name": "package.json",
+      "base_name": "package",
+      "extension": ".json",
+      "size": 325,
+      "sha1": "584de1f4f8f09e1e70cc106cf71200555322e00f",
+      "md5": "0d16009a88bc2813d6004ecf203404bc",
+      "sha256": "4d9031478d1392c672e0fe1389ce3ada7f71a6ac2853b7d1ad8f952105a67a4a",
+      "sha1_git": "15f8362c4a66de937d4567232f21d742f342062a",
+      "mime_type": "application/json",
+      "file_type": "JSON data",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_community": false,
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": "@swc",
+          "name": "core-darwin-arm64",
+          "version": "1.11.18",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": "SWC bindings for darwin-arm64 platform",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.11.18.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "git+https://github.com/nicolo-ribaudo/nicolo-ribaudo-swc.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0 AND mit",
+          "declared_license_expression_spdx": "Apache-2.0 AND MIT",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0 AND mit",
+              "license_expression_spdx": "Apache-2.0 AND MIT",
+              "matches": [
+                {
+                  "license_expression": "apache-2.0 AND mit",
+                  "license_expression_spdx": "Apache-2.0 AND MIT",
+                  "from_file": "npm_compound_spdx/package.json",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-apache_2_0_and_mit-843f5f3391f392620355e32456cff860f38c4985",
+                  "rule_url": null,
+                  "matched_text": "Apache-2.0 AND MIT"
+                }
+              ],
+              "identifier": "apache_2_0_and_mit-4e003cb0-3920-2cf1-e2a4-e7c84ee738bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- Apache-2.0 AND MIT\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://www.npmjs.com/package/@swc/core-darwin-arm64",
+          "repository_download_url": "https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.11.18.tgz",
+          "api_data_url": "https://registry.npmjs.org/@swc%2fcore-darwin-arm64/1.11.18",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/%40swc/core-darwin-arm64@1.11.18"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/%40swc/core-darwin-arm64@1.11.18?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "npm_compound_spdx/package.json",
+              "start_line": 5,
+              "end_line": 5,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_65.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 10.26,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}
