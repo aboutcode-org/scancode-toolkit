@@ -99,3 +99,17 @@ class TestGolang(PackageTester):
         expected_loc = self.get_test_loc('golang/gosum/sample6/output.expected.json')
         package = golang.GoSumHandler.parse(test_file)
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_gograph_is_package_data_file(self):
+        test_file = self.get_test_loc('golang/gograph/sample/go-mod-graph.deplock')
+        assert golang.GoModGraphHandler.is_datafile(test_file)
+        assert golang.GoModGraphHandler.is_datafile(
+            'project/go.mod.graph',
+            _bare_filename=True,
+        )
+
+    def test_parse_gograph_sample(self):
+        test_file = self.get_test_loc('golang/gograph/sample/go-mod-graph.deplock')
+        expected_loc = self.get_test_loc('golang/gograph/sample/output.expected.json')
+        package = golang.GoModGraphHandler.parse(test_file)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)

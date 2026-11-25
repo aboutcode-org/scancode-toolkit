@@ -1,0 +1,4 @@
+example.com/my/thing example.com/other/thing@v1.0.2
+example.com/my/thing example.com/new/thing@v2.3.4
+example.com/other/thing@v1.0.2 golang.org/x/text@v0.3.0
+example.com/new/thing@v2.3.4 github.com/davecgh/go-spew@v1.1.1
