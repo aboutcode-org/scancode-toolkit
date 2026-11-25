@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: ansible-core
+Version: 2.19.13
+Summary: Radically simple IT automation
+Author: Ansible Project
+Project-URL: Homepage, https://ansible.com/
+Project-URL: Source Code, https://github.com/ansible/ansible/
+Project-URL: Bug Tracker, https://github.com/ansible/ansible/issues/
+Project-URL: CI Azure Pipelines, https://dev.azure.com/ansible/ansible/
+Project-URL: Documentation, https://docs.ansible.com/ansible-core
+
+Author: Michael DeHaan (https://github.com/mpdehaan)

@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Stop author detections at ``Project-URL`` fields in Python package metadata.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5303
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
