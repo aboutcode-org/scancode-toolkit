@@ -57,7 +57,7 @@ Learn via practical step-by-step guides.
 Helps you accomplish things.
 
 - :ref:`how-to-add-new-license`
-- :ref:`how-to-add-new-license-detection-rule`
+- :ref:`how-to-add-modify-license-detection-rule`
 - :ref:`how-to-install-new-license-plugin`
 - :ref:`how-to-generate-attribution-docs`
 
