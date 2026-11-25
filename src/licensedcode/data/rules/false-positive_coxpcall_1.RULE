@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: The license page of keplerproject/coxpcall just refers to GPL, but it is MIT. https://github.com/keplerproject/coxpcall/blob/master/doc/license.html#L58 
+---
+
+Its licenses are compatible with <a href=
+"http://www.gnu.org/licenses/gpl.html">GPL</a>. Coxpcall is not in
