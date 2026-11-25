@@ -1,0 +1,219 @@
+[
+  {
+    "type": "golang",
+    "namespace": "github.com/milvus-io",
+    "name": "milvus",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Go",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "https://pkg.go.dev/github.com/milvus-io/milvus",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": "https://github.com/milvus-io/milvus.git",
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "local_replacements": [
+        {
+          "replaces": "github.com/milvus-io/milvus/pkg",
+          "local_path": "./pkg"
+        }
+      ]
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:golang/github.com/apache/arrow/go/v12@v12.0.1",
+        "extracted_requirement": "v12.0.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/milvus-io/milvus-storage/go@v0.0.0-20231227072638-ebd0b8e56d70",
+        "extracted_requirement": "v0.0.0-20231227072638-ebd0b8e56d70",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/go-playground/validator/v10@v10.14.0",
+        "extracted_requirement": "v10.14.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/quasilyte/go-ruleguard/dsl@v0.3.22",
+        "extracted_requirement": "v0.3.22",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/golang.org/x/net@v0.19.0",
+        "extracted_requirement": "v0.19.0",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/milvus-io/pulsar-client-go@v0.6.10",
+        "extracted_requirement": "v0.6.10",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/bketelsen/crypt@v0.0.4",
+        "extracted_requirement": "v0.0.4",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/SimFG/expr@v0.0.0-20231218130003-94d085776dc5",
+        "extracted_requirement": "v0.0.0-20231218130003-94d085776dc5",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/xiaofan-luan/pulsarctl@v0.5.1",
+        "extracted_requirement": "v0.5.1",
+        "scope": "require",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/apache/pulsar-client-go",
+        "extracted_requirement": null,
+        "scope": "exclude",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/bketelsen/crypt@v0.0.3",
+        "extracted_requirement": "v0.0.3",
+        "scope": "exclude",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/expr-lang/expr",
+        "extracted_requirement": null,
+        "scope": "exclude",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/milvus-io/milvus/pkg",
+        "extracted_requirement": null,
+        "scope": "exclude",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/streamnative/pulsarctl",
+        "extracted_requirement": null,
+        "scope": "exclude",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:golang/github.com/apache/pulsar-client-go/oauth2@v0.0.0-20211108044248-fe3b7c4e445b",
+        "extracted_requirement": "v0.0.0-20211108044248-fe3b7c4e445b",
+        "scope": "exclude",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pkg.go.dev/github.com/milvus-io/milvus",
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "go_mod",
+    "purl": "pkg:golang/github.com/milvus-io/milvus"
+  }
+]
