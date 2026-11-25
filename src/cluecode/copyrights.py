@@ -4338,35 +4338,36 @@ def is_candidate(prepared_line):
         return False
 
     if is_only_digit_and_punct(prepared_line):
-        if TRACE:
-            logger_debug(f'is_candidate: is_only_digit_and_punct:\n{prepared_line!r}')
-
         return False
 
     if gibberish_detector.detect_gibberish(prepared_line):
-        if TRACE:
-            logger_debug(f'is_candidate: gibberish_detector.detect_gibberish:\n{prepared_line!r}')
         return False
 
+    lowered = prepared_line.lower()
+
+    # ----------------------------------------------------------
+    # Ignore (c) ONLY when it appears inside a URL path
+    # ----------------------------------------------------------
+    if '(c)' in lowered:
+        # remove spaces to reconstruct possible broken URL
+        compact = lowered.replace(' ', '')
+
+        # match http://.../(c)/...
+        if re.search(r'https?://[^ ]*\(c\)[^ ]*', compact):
+            return False
+
+    # ----------------------------------------------------------
+    # Original logic continues
+    # ----------------------------------------------------------
     if copyrights_hint.years(prepared_line):
         return True
-    else:
-        pass
-    prepared_line = prepared_line.lower()
+
     for marker in copyrights_hint.statement_markers:
-        if marker in prepared_line:
+        if marker in lowered:
             return True
 
+    return False
 
-def is_inside_statement(
-    chars_only_line,
-    markers=('copyright', 'copyrights', 'copyrightby',) + copyrights_hint.all_years,
-):
-    """
-    Return True if a line ends with some strings that indicate we are still
-    inside a statement.
-    """
-    return chars_only_line and chars_only_line.endswith(markers)
 
 
 def is_end_of_statement(chars_only_line):
