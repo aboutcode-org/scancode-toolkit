@@ -1,0 +1,87 @@
+[
+  {
+    "type": "nuget",
+    "namespace": null,
+    "name": "FileLicense",
+    "version": "1.0.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "Sample package with file-based license reference.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "author",
+        "name": "Example Org",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": null,
+        "role": "owner",
+        "name": "Example Org",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "unknown-license-reference",
+    "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+    "license_detections": [
+      {
+        "license_expression": "unknown-license-reference",
+        "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+        "matches": [
+          {
+            "license_expression": "unknown-license-reference",
+            "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 90.0,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 90,
+            "rule_identifier": "unknown-license-reference_339.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_339.RULE",
+            "matched_text": "license LICENSE.txt"
+          }
+        ],
+        "identifier": "unknown_license_reference-bf47ad8c-fa3f-0e58-e5e5-d0aef2c37b43"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "LICENSE.txt",
+    "license_file_references": [
+      "LICENSE.txt"
+    ],
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://www.nuget.org/packages/FileLicense/1.0.0",
+    "repository_download_url": "https://www.nuget.org/api/v2/package/FileLicense/1.0.0",
+    "api_data_url": "https://api.nuget.org/v3/registration3/filelicense/1.0.0.json",
+    "datasource_id": "nuget_nupsec",
+    "purl": "pkg:nuget/FileLicense@1.0.0"
+  }
+]
