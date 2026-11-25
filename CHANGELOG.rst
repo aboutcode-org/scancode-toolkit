@@ -4,6 +4,12 @@ Changelog
 Next release
 --------------
 
+- Add support for PEP 751 ``pylock.toml`` lockfiles. The new package
+  data handler parses ``pylock.toml`` and ``pylock.<name>.toml`` files,
+  reporting the locked packages together with their resolved download
+  URLs, hashes and dependency relationships.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4638
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
