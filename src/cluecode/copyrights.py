@@ -4568,6 +4568,8 @@ def prepare_text_line(line):
 
         # normalize copyright signs, quotes and spacing around them
         .replace('"Copyright', '" Copyright')
+        .replace('[C]', '(c)')
+        .replace('[c]', '(c)')
         .replace('( C)', ' (c) ')
         .replace('(C)', ' (c) ')
         .replace('(c)', ' (c) ')
