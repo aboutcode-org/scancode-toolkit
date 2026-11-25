@@ -1,0 +1,9 @@
+# Changes made by Aditya issue no. #4229 regarding to Author detection
+what:
+  - authors
+  - authors_summary
+authors:
+  - Frankie.Chu
+authors_summary:
+  - value: Frankie.Chu
+    count: 1
