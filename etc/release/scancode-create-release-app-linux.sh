@@ -37,8 +37,8 @@ mkdir -p $thirdparty_dir
 
 if [ "$arch" = "arm64" ]; then
     venv/bin/python etc/scripts/fetch_thirdparty.py \
-    --requirements requirements-linux.txt \
     --requirements requirements.txt \
+    --requirements requirements-system-provided.txt \
     --dest $thirdparty_dir \
     --operating-system=$operating_system \
     --python-version=$python_version \
@@ -63,7 +63,11 @@ cp -r etc/thirdparty $release_dir/etc
 venv/bin/scancode-reindex-package-patterns
 venv/bin/scancode-train-gibberish-model
 venv/bin/scancode-reindex-licenses
-venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --wheel
+if [ "$arch" = "arm64" ]; then
+    venv/bin/flot --pyproject pyproject-scancode-toolkit-mini.toml --wheel
+else
+    venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --wheel
+fi
 venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel
 
 cp -r \
