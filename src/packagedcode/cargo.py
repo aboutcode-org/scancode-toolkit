@@ -132,7 +132,7 @@ class CargoBaseHandler(models.DatafileHandler):
                 replace_by_value = workspace_package_data.get(replace_by_attribute)
                 if replace_by_value:
                     resource_package_data[attribute] = replace_by_value
-            elif attribute == "parties":
+            elif attribute == "parties" and "authors" in extra_data:
                 resource_package_data[attribute] = list(get_parties(
                     person_names=workspace_package_data.get("authors", []),
                     party_role='author',
