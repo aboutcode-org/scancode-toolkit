@@ -1672,7 +1672,7 @@ PATTERNS = [
     (r'^Vendor', 'NN'),
     (r'^VIEW$', 'NN'),
     (r'^Visit', 'NN'),
-    # (r'^Website', 'NN'),
+    (r'^Website', 'NN'),
     (r'^Wheel$', 'NN'),
     (r'^Win32$', 'NN'),
     (r'^Work', 'NN'),
@@ -1687,7 +1687,11 @@ PATTERNS = [
     (r'^While$', 'NN'),
     (r'^Review', 'NN'),
     (r'^Help', 'NN'),
-    (r'^Web', 'NN'),
+    # only the standalone word "Web" or a Web-prefixed acronym such as
+    # WebKit or WebRTC is an NN: a titlecase word that continues with
+    # lowercase letters such as Weber, Webber or Webster is a proper noun.
+    # "Website" stays an NN through its own pattern above.
+    (r'^Web(?![a-z])', 'NN'),
     (r'^Weld$', 'NN'),
     (r'^Common[A-Z]', 'NN'),
     (r'^MultiPart', 'NN'),
