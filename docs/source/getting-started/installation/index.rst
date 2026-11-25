@@ -74,13 +74,13 @@ System requirements
   least 8GB of RAM and 2GB of disk space. These are minimum requirements.
 
 - Supported operating systems: ScanCode should run on these 64-bit OSes running
-  X86_64 processors:
+  X86_64/ARM processors:
 
     - Linux: any recent 64-bit Linux distributions
+    - Linux (ARM): arm support is native with additional system dependencies
     - Mac (Intel): x86 64-bit macOS 10.15 or newer
-    - | Mac (Apple Silicon): use the X86 emulation mode on Apple ARM M1 CPUs.
-      | (Note that `pip install` does not work on ARM CPUs)
-    - Windows: Windows 10 or newer
+    - Mac (Apple Silicon): arm support is native with additional system dependencies
+    - Windows: Windows 10 or newer (x86-64 only)
     - FreeBSD
 
 .. _install-scancode-required-packages:
@@ -133,6 +133,30 @@ Download and install Python 3.9 from https://www.python.org/
 .. Note::
 
     64-bit Python interpreters (x86-64) are the only interpreters supported by
-    ScanCode on all operating systems which means only 64-bit Windows is supported.
+    ScanCode on Windows which means only 64-bit Windows is supported.
 
 See the :ref:`install-scancode-from-release-archives-windows` section for more installation details.
+
+.. _install-scancode-arm-system-packages:
+
+System packages for ARM (Linux aarch64 and macOS Apple Silicon)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Install the system packages.
+
+   - On Debian, Ubuntu and other Debian-based distros run::
+
+       sudo apt install p7zip-full libarchive-dev libmagic1 libmagic-dev
+
+   - On macOS (Apple Silicon) with `Homebrew <https://brew.sh/>`_ run::
+
+       brew install p7zip libarchive libmagic
+
+.. Note::
+
+    The default ``extractcode[full]`` and ``typecode[full]`` dependencies ship
+    pre-built native binaries (7zip, libarchive and libmagic) for x86_64 only.
+    On ARM 64-bit machines, the ``system_provided`` plugins are used instead
+    and these expect the 7zip, libarchive and libmagic libraries to be
+    installed on your system.
+

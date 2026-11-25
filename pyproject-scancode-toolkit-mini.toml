@@ -99,6 +99,7 @@ dependencies = [
     "urlpy",
     "xmltodict >= 0.11.0",
     "zipp >= 3.0.0; python_version < \"3.9\"",
+    "extractcode[system_provided] >= 31.1.0",
     "typecode[system_provided] >= 30.2.0",
     #"typecode[full] >= 30.2.0",
     #"extractcode[full] >= 31.0.0",

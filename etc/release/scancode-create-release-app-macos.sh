@@ -35,6 +35,7 @@ mkdir -p $thirdparty_dir
 
 venv/bin/python etc/scripts/fetch_thirdparty.py \
   --requirements requirements.txt \
+  --requirements requirements-system-provided.txt \
   --dest $thirdparty_dir \
   --operating-system=$operating_system \
   --python-version=$python_version \
@@ -49,7 +50,7 @@ cp -r etc/thirdparty $release_dir/etc
 venv/bin/scancode-reindex-package-patterns
 venv/bin/scancode-train-gibberish-model
 venv/bin/scancode-reindex-licenses
-venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --wheel
+venv/bin/flot --pyproject pyproject-scancode-toolkit-mini.toml --wheel
 venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel
 
 cp -r \

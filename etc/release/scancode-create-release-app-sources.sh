@@ -34,6 +34,7 @@ venv/bin/python etc/scripts/fetch_thirdparty.py \
   --requirements requirements.txt \
   --requirements requirements-native.txt \
   --requirements requirements-linux.txt \
+  --requirements requirements-system-provided.txt \
   --wheel-only packagedcode-msitools \
   --wheel-only rpm-inspector-rpm \
   --wheel-only extractcode-7z \
@@ -49,6 +50,7 @@ cp -r etc/thirdparty $release_dir/etc
 
 cp -r \
   scancode.bat scancode extractcode extractcode.bat configure configure.bat \
+  pyproject-commoncode.toml \
   *.rst \
   *.toml \
   docs \

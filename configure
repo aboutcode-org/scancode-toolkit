@@ -118,12 +118,6 @@ CFG_ROOT_DIR="$( cd "$( dirname "${CFG_BIN}" )" && pwd )"
 
 CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
-# force relaunching under X86-64 architecture on macOS M1/ARM
-if [[ $OSTYPE == 'darwin'* && $(uname -m) == 'arm64' && $(sysctl -in sysctl.proc_translated) == 0 ]]; then
-    arch -x86_64 /bin/bash -c "$CFG_ROOT_DIR/configure $*"
-    exit $?
-fi
-
 ################################
 # A configuration script to set things up:
 # create a virtualenv and install or update thirdparty packages.
@@ -152,8 +146,14 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 fi
 
 # Requirement arguments passed to pip and used by default or with --dev.
-REQUIREMENTS="--no-build-isolation --editable $BASE --constraint requirements.txt --constraint requirements-linux.txt"
-DEV_REQUIREMENTS="--no-build-isolation --editable $BASE_DEV --constraint requirements.txt --constraint requirements-linux.txt --constraint requirements-dev.txt"
+if [ "$arch" = "arm64" ]; then
+    REQUIREMENTS="--no-build-isolation --editable $BASE --constraint requirements.txt"
+    DEV_REQUIREMENTS="--no-build-isolation --editable $BASE_DEV --constraint requirements.txt --constraint requirements-system-provided.txt --constraint requirements-dev.txt"
+else
+    REQUIREMENTS="--no-build-isolation --editable $BASE --constraint requirements.txt --constraint requirements-linux.txt"
+    DEV_REQUIREMENTS="--no-build-isolation --editable $BASE_DEV --constraint requirements.txt --constraint requirements-linux.txt --constraint requirements-dev.txt"
+fi
+
 PROD_REQUIREMENTS="--no-build-isolation scancode_toolkit*.whl"
 FLOT_REQUIREMENTS="etc/thirdparty/flot-0.7.3-py3-none-any.whl"
 
