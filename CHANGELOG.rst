@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Fix Bower package name shadowing by author object names and support string repository URLs in bower.json.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5502
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
