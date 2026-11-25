@@ -1,11 +1,11 @@
 ---
 license_expression: apache-2.0 OR bsd-new
 is_license_notice: yes
-relevance: 99
+relevance: 100
 referenced_filenames:
     - LICENSE.APACHE
     - LICENSE.BSD
 ---
 
 This software is made available under the terms of *either* of the licenses
-found in LICENSE.APACHE or LICENSE.BSD.
+found in {{LICENSE.APACHE}} or {{LICENSE.BSD}}. Both must be present for this rule to apply.

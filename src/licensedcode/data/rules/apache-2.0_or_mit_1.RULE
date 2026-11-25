@@ -1,20 +1,11 @@
 ---
 license_expression: apache-2.0 OR mit
 is_license_notice: yes
-minimum_coverage: 80
+relevance: 100
 referenced_filenames:
-    - LICENSE-APACHE
-    - LICENSE-MIT
-ignorable_urls:
-    - http://opensource.org/licenses/MIT
-    - http://www.apache.org/licenses/LICENSE-2.0
+    - LICENSE.APACHE2
+    - LICENSE.MIT
 ---
 
-License
-
-Licensed under either of
-
-    {{Apache License, Version 2.0 }}(LICENSE-APACHE or http://www.apache.org/licenses/LICENSE-2.0)
-    {{MIT license }}(LICENSE-MIT or http://opensource.org/licenses/MIT)
-
-{{at your option.}}
+This software is made available under the terms of *either* of the licenses
+found in LICENSE.APACHE2 or LICENSE.MIT.
