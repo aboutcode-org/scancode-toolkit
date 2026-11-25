@@ -102,20 +102,11 @@ class LicenseCache:
         create_dir(idx_cache_dir)
         cache_file = os.path.join(idx_cache_dir, LICENSE_INDEX_FILENAME)
 
-        has_cache = os.path.exists(cache_file) and os.path.getsize(cache_file)
-
         # bypass build if cache exists
-        if has_cache and not force:
-            try:
-                # save the list of additional directories included in the cache, or None if the cache does not
-                # include any additional directories
-                return load_cache_file(cache_file)
-            except Exception as e:
-                # work around some rare Windows quirks
-                import traceback
-                print('Inconsistent License cache: rebuilding index.')
-                print(str(e))
-                print(traceback.format_exc())
+        if not force:
+            license_cache = _load_cache_file_if_exists(cache_file)
+            if license_cache is not None:
+                return license_cache
 
         from licensedcode.models import licenses_data_dir as ldd
         from licensedcode.models import rules_data_dir as rdd
@@ -134,6 +125,10 @@ class LicenseCache:
         try:
             # acquire lock and wait until timeout to get a lock or die
             with lockfile.FileLock(lock_file).locked(timeout=timeout):
+                if not force:
+                    license_cache = _load_cache_file_if_exists(cache_file)
+                    if license_cache is not None:
+                        return license_cache
 
                 additional_directories = []
                 if only_builtin:
@@ -204,6 +199,24 @@ class LicenseCache:
         """
         with open(cache_file, 'wb') as fn:
             pickle.dump(self, fn, protocol=PICKLE_PROTOCOL)
+
+
+def _load_cache_file_if_exists(cache_file):
+    """
+    Return a LicenseCache loaded from ``cache_file`` if it exists.
+    """
+    if os.path.exists(cache_file) and os.path.getsize(cache_file):
+        try:
+            # save the list of additional directories included in the cache, or None if the cache does not
+            # include any additional directories
+            return load_cache_file(cache_file)
+        except Exception as e:
+            # work around some rare Windows quirks
+            import traceback
+            print('Inconsistent License cache: rebuilding index.')
+            print(str(e))
+            print(traceback.format_exc())
+    return None
 
 
 def build_index(
