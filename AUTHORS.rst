@@ -8,6 +8,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Akanksha Garg @akugarg
 - Alex Blekhman @a-tinsmith
 - Alexander Gschrei @agschrei
+- Anbarasu @Anbarasu2410
 - Armijn Hemmel @armijnhemel
 - Armin Tänzer @armintaenzertng
 - Arnaud Jeansen @ajeans

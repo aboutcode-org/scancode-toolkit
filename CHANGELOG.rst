@@ -4,6 +4,9 @@ Changelog
 Next release
 --------------
 
+- Fix npm package-lock parser returning nested list for ``file_references``.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5449
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056
