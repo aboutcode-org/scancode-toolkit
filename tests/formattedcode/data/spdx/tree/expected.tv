@@ -79,3 +79,5 @@ LicenseConcluded: NOASSERTION
 LicenseInfoInFile: NONE
 FileCopyrightText: <text>Copyright (c) 2000 ACME, Inc.
 </text>
+## Relationships
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-001

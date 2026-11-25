@@ -1,64 +1,73 @@
 {
   "rdf:RDF": {
-    "spdx:Package": {
-      "spdx:filesAnalyzed": {
-        "#text": "true",
-        "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
-      },
-      "spdx:downloadLocation": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseConcluded": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseDeclared": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseInfoFromFiles": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#none"
-      },
-      "@rdf:about": "#SPDXRef-001",
-      "spdx:packageVerificationCode": {
-        "spdx:PackageVerificationCode": {
-          "spdx:packageVerificationCodeValue": "a83523bcfc10441aa94a575b88aa1d3269902485"
-        }
-      },
-      "spdx:relationship": {
-        "spdx:Relationship": {
-          "spdx:relationshipType": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
-          },
-          "spdx:relatedSpdxElement": {
-            "spdx:File": {
-              "spdx:licenseConcluded": {
-                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-              },
-              "spdx:licenseInfoInFile": {
-                "@rdf:resource": "http://spdx.org/rdf/terms#none"
-              },
-              "@rdf:about": "#SPDXRef-1",
-              "spdx:checksum": {
-                "spdx:Checksum": {
-                  "spdx:algorithm": {
-                    "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                  },
-                  "spdx:checksumValue": "b8a793cce3c3a4cd3a4646ddbe86edd542ed0cd8"
-                }
-              },
-              "spdx:fileName": "./test.txt",
-              "spdx:copyrightText": "NONE"
-            }
-          }
-        }
-      },
-      "spdx:copyrightText": "NONE",
-      "spdx:name": "simple"
-    },
     "spdx:SpdxDocument": {
       "spdx:dataLicense": {
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
       },
       "@rdf:about": "#SPDXRef-DOCUMENT",
+      "spdx:relationship": {
+        "spdx:Relationship": {
+          "spdx:relationshipType": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_describes"
+          },
+          "spdx:relatedSpdxElement": {
+            "spdx:Package": {
+              "spdx:filesAnalyzed": {
+                "#text": "true",
+                "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+              },
+              "spdx:downloadLocation": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "spdx:licenseConcluded": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "spdx:licenseDeclared": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "spdx:licenseInfoFromFiles": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#none"
+              },
+              "@rdf:about": "#SPDXRef-001",
+              "spdx:packageVerificationCode": {
+                "spdx:PackageVerificationCode": {
+                  "spdx:packageVerificationCodeValue": "a83523bcfc10441aa94a575b88aa1d3269902485"
+                }
+              },
+              "spdx:relationship": {
+                "spdx:Relationship": {
+                  "spdx:relationshipType": {
+                    "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                  },
+                  "spdx:relatedSpdxElement": {
+                    "spdx:File": {
+                      "spdx:licenseConcluded": {
+                        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                      },
+                      "spdx:licenseInfoInFile": {
+                        "@rdf:resource": "http://spdx.org/rdf/terms#none"
+                      },
+                      "@rdf:about": "#SPDXRef-1",
+                      "spdx:checksum": {
+                        "spdx:Checksum": {
+                          "spdx:algorithm": {
+                            "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                          },
+                          "spdx:checksumValue": "b8a793cce3c3a4cd3a4646ddbe86edd542ed0cd8"
+                        }
+                      },
+                      "spdx:fileName": "./test.txt",
+                      "spdx:copyrightText": "NONE"
+                    }
+                  }
+                }
+              },
+              "spdx:copyrightText": "NONE",
+              "spdx:name": "simple"
+            }
+          }
+        }
+      },
       "rdfs:comment": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.\nSPDX License List: 3.28",
       "spdx:name": "SPDX Document created by ScanCode Toolkit",
       "spdx:specVersion": "SPDX-2.2"

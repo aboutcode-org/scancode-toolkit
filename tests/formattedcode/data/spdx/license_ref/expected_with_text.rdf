@@ -1,54 +1,32 @@
 {
   "rdf:RDF": {
-    "spdx:Package": {
-      "spdx:filesAnalyzed": {
-        "#text": "true",
-        "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+    "spdx:SpdxDocument": {
+      "spdx:dataLicense": {
+        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
       },
-      "spdx:downloadLocation": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseConcluded": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseDeclared": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "@rdf:about": "#SPDXRef-001",
-      "spdx:licenseInfoFromFiles": [
-        {
-          "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
-        },
-        {
-          "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
-        },
-        {
-          "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-other-copyleft"
-        },
-        {
-          "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-other-permissive"
-        },
-        {
-          "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-scancode-acknowledgment"
-        }
-      ],
-      "spdx:packageVerificationCode": {
-        "spdx:PackageVerificationCode": {
-          "spdx:packageVerificationCodeValue": "b49eeefd776fb76555378d07fd05d986a249a2b3"
-        }
-      },
+      "@rdf:about": "#SPDXRef-DOCUMENT",
       "spdx:relationship": {
         "spdx:Relationship": {
           "spdx:relationshipType": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+            "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_describes"
           },
           "spdx:relatedSpdxElement": {
-            "spdx:File": {
+            "spdx:Package": {
+              "spdx:filesAnalyzed": {
+                "#text": "true",
+                "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+              },
+              "spdx:downloadLocation": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
               "spdx:licenseConcluded": {
                 "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
               },
-              "@rdf:about": "#SPDXRef-2",
-              "spdx:licenseInfoInFile": [
+              "spdx:licenseDeclared": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "@rdf:about": "#SPDXRef-001",
+              "spdx:licenseInfoFromFiles": [
                 {
                   "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
                 },
@@ -65,28 +43,59 @@
                   "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-scancode-acknowledgment"
                 }
               ],
-              "spdx:checksum": {
-                "spdx:Checksum": {
-                  "spdx:algorithm": {
-                    "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                  },
-                  "spdx:checksumValue": "f9c28fa2714ad0c2e36d3e5561afb0031fa76831"
+              "spdx:packageVerificationCode": {
+                "spdx:PackageVerificationCode": {
+                  "spdx:packageVerificationCodeValue": "b49eeefd776fb76555378d07fd05d986a249a2b3"
                 }
               },
-              "spdx:fileName": "./scan/NOTICE",
-              "spdx:copyrightText": "Copyright (c) 2017 nexB Inc. and others"
+              "spdx:relationship": {
+                "spdx:Relationship": {
+                  "spdx:relationshipType": {
+                    "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                  },
+                  "spdx:relatedSpdxElement": {
+                    "spdx:File": {
+                      "spdx:licenseConcluded": {
+                        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                      },
+                      "@rdf:about": "#SPDXRef-2",
+                      "spdx:licenseInfoInFile": [
+                        {
+                          "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
+                        },
+                        {
+                          "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+                        },
+                        {
+                          "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-other-copyleft"
+                        },
+                        {
+                          "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-other-permissive"
+                        },
+                        {
+                          "@rdf:resource": "http://spdx.org/licenses/LicenseRef-scancode-scancode-acknowledgment"
+                        }
+                      ],
+                      "spdx:checksum": {
+                        "spdx:Checksum": {
+                          "spdx:algorithm": {
+                            "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                          },
+                          "spdx:checksumValue": "f9c28fa2714ad0c2e36d3e5561afb0031fa76831"
+                        }
+                      },
+                      "spdx:fileName": "./scan/NOTICE",
+                      "spdx:copyrightText": "Copyright (c) 2017 nexB Inc. and others"
+                    }
+                  }
+                }
+              },
+              "spdx:copyrightText": "Copyright (c) 2017 nexB Inc. and others",
+              "spdx:name": "scan"
             }
           }
         }
       },
-      "spdx:copyrightText": "Copyright (c) 2017 nexB Inc. and others",
-      "spdx:name": "scan"
-    },
-    "spdx:SpdxDocument": {
-      "spdx:dataLicense": {
-        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
-      },
-      "@rdf:about": "#SPDXRef-DOCUMENT",
       "spdx:hasExtractedLicensingInfo": [
         {
           "spdx:ExtractedLicensingInfo": {

@@ -1,234 +1,243 @@
 {
   "rdf:RDF": {
-    "spdx:Package": {
-      "spdx:filesAnalyzed": {
-        "#text": "true",
-        "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
-      },
-      "spdx:downloadLocation": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseConcluded": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseDeclared": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-      },
-      "spdx:licenseInfoFromFiles": {
-        "@rdf:resource": "http://spdx.org/rdf/terms#none"
-      },
-      "@rdf:about": "#SPDXRef-001",
-      "spdx:packageVerificationCode": {
-        "spdx:PackageVerificationCode": {
-          "spdx:packageVerificationCodeValue": "ed7a0c42e0411fe584d7c6d04105416593624be3"
-        }
-      },
-      "spdx:relationship": [
-        {
-          "spdx:Relationship": {
-            "spdx:relationshipType": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
-            },
-            "spdx:relatedSpdxElement": {
-              "spdx:File": {
-                "spdx:licenseConcluded": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-                },
-                "spdx:licenseInfoInFile": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#none"
-                },
-                "@rdf:about": "#SPDXRef-2",
-                "spdx:checksum": {
-                  "spdx:Checksum": {
-                    "spdx:algorithm": {
-                      "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                    },
-                    "spdx:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
-                  }
-                },
-                "spdx:fileName": "./scan/copy1.c",
-                "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
-              }
-            }
-          }
-        },
-        {
-          "spdx:Relationship": {
-            "spdx:relationshipType": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
-            },
-            "spdx:relatedSpdxElement": {
-              "spdx:File": {
-                "spdx:licenseConcluded": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-                },
-                "spdx:licenseInfoInFile": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#none"
-                },
-                "@rdf:about": "#SPDXRef-3",
-                "spdx:checksum": {
-                  "spdx:Checksum": {
-                    "spdx:algorithm": {
-                      "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                    },
-                    "spdx:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
-                  }
-                },
-                "spdx:fileName": "./scan/copy2.c",
-                "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
-              }
-            }
-          }
-        },
-        {
-          "spdx:Relationship": {
-            "spdx:relationshipType": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
-            },
-            "spdx:relatedSpdxElement": {
-              "spdx:File": {
-                "spdx:licenseConcluded": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-                },
-                "spdx:licenseInfoInFile": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#none"
-                },
-                "@rdf:about": "#SPDXRef-4",
-                "spdx:checksum": {
-                  "spdx:Checksum": {
-                    "spdx:algorithm": {
-                      "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                    },
-                    "spdx:checksumValue": "c91811eb5fdc7ab440355f9f8d1580e1518b0c2f"
-                  }
-                },
-                "spdx:fileName": "./scan/copy3.c",
-                "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
-              }
-            }
-          }
-        },
-        {
-          "spdx:Relationship": {
-            "spdx:relationshipType": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
-            },
-            "spdx:relatedSpdxElement": {
-              "spdx:File": {
-                "spdx:licenseConcluded": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-                },
-                "spdx:licenseInfoInFile": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#none"
-                },
-                "@rdf:about": "#SPDXRef-6",
-                "spdx:checksum": {
-                  "spdx:Checksum": {
-                    "spdx:algorithm": {
-                      "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                    },
-                    "spdx:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
-                  }
-                },
-                "spdx:fileName": "./scan/subdir/copy1.c",
-                "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
-              }
-            }
-          }
-        },
-        {
-          "spdx:Relationship": {
-            "spdx:relationshipType": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
-            },
-            "spdx:relatedSpdxElement": {
-              "spdx:File": {
-                "spdx:licenseConcluded": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-                },
-                "spdx:licenseInfoInFile": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#none"
-                },
-                "@rdf:about": "#SPDXRef-7",
-                "spdx:checksum": {
-                  "spdx:Checksum": {
-                    "spdx:algorithm": {
-                      "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                    },
-                    "spdx:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
-                  }
-                },
-                "spdx:fileName": "./scan/subdir/copy2.c",
-                "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
-              }
-            }
-          }
-        },
-        {
-          "spdx:Relationship": {
-            "spdx:relationshipType": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
-            },
-            "spdx:relatedSpdxElement": {
-              "spdx:File": {
-                "spdx:licenseConcluded": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-                },
-                "spdx:licenseInfoInFile": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#none"
-                },
-                "@rdf:about": "#SPDXRef-8",
-                "spdx:checksum": {
-                  "spdx:Checksum": {
-                    "spdx:algorithm": {
-                      "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                    },
-                    "spdx:checksumValue": "389af7e629a9853056e42b262d5e30bf4579a74f"
-                  }
-                },
-                "spdx:fileName": "./scan/subdir/copy3.c",
-                "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
-              }
-            }
-          }
-        },
-        {
-          "spdx:Relationship": {
-            "spdx:relationshipType": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
-            },
-            "spdx:relatedSpdxElement": {
-              "spdx:File": {
-                "spdx:licenseConcluded": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-                },
-                "spdx:licenseInfoInFile": {
-                  "@rdf:resource": "http://spdx.org/rdf/terms#none"
-                },
-                "@rdf:about": "#SPDXRef-9",
-                "spdx:checksum": {
-                  "spdx:Checksum": {
-                    "spdx:algorithm": {
-                      "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
-                    },
-                    "spdx:checksumValue": "58748872d25374160692f1ed7075d0fe80a544b1"
-                  }
-                },
-                "spdx:fileName": "./scan/subdir/copy4.c",
-                "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
-              }
-            }
-          }
-        }
-      ],
-      "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc.",
-      "spdx:name": "scan"
-    },
     "spdx:SpdxDocument": {
       "spdx:dataLicense": {
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
       },
       "@rdf:about": "#SPDXRef-DOCUMENT",
+      "spdx:relationship": {
+        "spdx:Relationship": {
+          "spdx:relationshipType": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_describes"
+          },
+          "spdx:relatedSpdxElement": {
+            "spdx:Package": {
+              "spdx:filesAnalyzed": {
+                "#text": "true",
+                "@rdf:datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+              },
+              "spdx:downloadLocation": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "spdx:licenseConcluded": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "spdx:licenseDeclared": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+              },
+              "spdx:licenseInfoFromFiles": {
+                "@rdf:resource": "http://spdx.org/rdf/terms#none"
+              },
+              "@rdf:about": "#SPDXRef-001",
+              "spdx:packageVerificationCode": {
+                "spdx:PackageVerificationCode": {
+                  "spdx:packageVerificationCodeValue": "ed7a0c42e0411fe584d7c6d04105416593624be3"
+                }
+              },
+              "spdx:relationship": [
+                {
+                  "spdx:Relationship": {
+                    "spdx:relationshipType": {
+                      "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                    },
+                    "spdx:relatedSpdxElement": {
+                      "spdx:File": {
+                        "spdx:licenseConcluded": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                        },
+                        "spdx:licenseInfoInFile": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#none"
+                        },
+                        "@rdf:about": "#SPDXRef-2",
+                        "spdx:checksum": {
+                          "spdx:Checksum": {
+                            "spdx:algorithm": {
+                              "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                            },
+                            "spdx:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
+                          }
+                        },
+                        "spdx:fileName": "./scan/copy1.c",
+                        "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
+                      }
+                    }
+                  }
+                },
+                {
+                  "spdx:Relationship": {
+                    "spdx:relationshipType": {
+                      "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                    },
+                    "spdx:relatedSpdxElement": {
+                      "spdx:File": {
+                        "spdx:licenseConcluded": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                        },
+                        "spdx:licenseInfoInFile": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#none"
+                        },
+                        "@rdf:about": "#SPDXRef-3",
+                        "spdx:checksum": {
+                          "spdx:Checksum": {
+                            "spdx:algorithm": {
+                              "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                            },
+                            "spdx:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
+                          }
+                        },
+                        "spdx:fileName": "./scan/copy2.c",
+                        "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
+                      }
+                    }
+                  }
+                },
+                {
+                  "spdx:Relationship": {
+                    "spdx:relationshipType": {
+                      "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                    },
+                    "spdx:relatedSpdxElement": {
+                      "spdx:File": {
+                        "spdx:licenseConcluded": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                        },
+                        "spdx:licenseInfoInFile": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#none"
+                        },
+                        "@rdf:about": "#SPDXRef-4",
+                        "spdx:checksum": {
+                          "spdx:Checksum": {
+                            "spdx:algorithm": {
+                              "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                            },
+                            "spdx:checksumValue": "c91811eb5fdc7ab440355f9f8d1580e1518b0c2f"
+                          }
+                        },
+                        "spdx:fileName": "./scan/copy3.c",
+                        "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
+                      }
+                    }
+                  }
+                },
+                {
+                  "spdx:Relationship": {
+                    "spdx:relationshipType": {
+                      "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                    },
+                    "spdx:relatedSpdxElement": {
+                      "spdx:File": {
+                        "spdx:licenseConcluded": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                        },
+                        "spdx:licenseInfoInFile": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#none"
+                        },
+                        "@rdf:about": "#SPDXRef-6",
+                        "spdx:checksum": {
+                          "spdx:Checksum": {
+                            "spdx:algorithm": {
+                              "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                            },
+                            "spdx:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
+                          }
+                        },
+                        "spdx:fileName": "./scan/subdir/copy1.c",
+                        "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
+                      }
+                    }
+                  }
+                },
+                {
+                  "spdx:Relationship": {
+                    "spdx:relationshipType": {
+                      "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                    },
+                    "spdx:relatedSpdxElement": {
+                      "spdx:File": {
+                        "spdx:licenseConcluded": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                        },
+                        "spdx:licenseInfoInFile": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#none"
+                        },
+                        "@rdf:about": "#SPDXRef-7",
+                        "spdx:checksum": {
+                          "spdx:Checksum": {
+                            "spdx:algorithm": {
+                              "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                            },
+                            "spdx:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
+                          }
+                        },
+                        "spdx:fileName": "./scan/subdir/copy2.c",
+                        "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
+                      }
+                    }
+                  }
+                },
+                {
+                  "spdx:Relationship": {
+                    "spdx:relationshipType": {
+                      "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                    },
+                    "spdx:relatedSpdxElement": {
+                      "spdx:File": {
+                        "spdx:licenseConcluded": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                        },
+                        "spdx:licenseInfoInFile": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#none"
+                        },
+                        "@rdf:about": "#SPDXRef-8",
+                        "spdx:checksum": {
+                          "spdx:Checksum": {
+                            "spdx:algorithm": {
+                              "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                            },
+                            "spdx:checksumValue": "389af7e629a9853056e42b262d5e30bf4579a74f"
+                          }
+                        },
+                        "spdx:fileName": "./scan/subdir/copy3.c",
+                        "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
+                      }
+                    }
+                  }
+                },
+                {
+                  "spdx:Relationship": {
+                    "spdx:relationshipType": {
+                      "@rdf:resource": "http://spdx.org/rdf/terms#relationshipType_contains"
+                    },
+                    "spdx:relatedSpdxElement": {
+                      "spdx:File": {
+                        "spdx:licenseConcluded": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+                        },
+                        "spdx:licenseInfoInFile": {
+                          "@rdf:resource": "http://spdx.org/rdf/terms#none"
+                        },
+                        "@rdf:about": "#SPDXRef-9",
+                        "spdx:checksum": {
+                          "spdx:Checksum": {
+                            "spdx:algorithm": {
+                              "@rdf:resource": "http://spdx.org/rdf/terms#checksumAlgorithm_sha1"
+                            },
+                            "spdx:checksumValue": "58748872d25374160692f1ed7075d0fe80a544b1"
+                          }
+                        },
+                        "spdx:fileName": "./scan/subdir/copy4.c",
+                        "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc."
+                      }
+                    }
+                  }
+                }
+              ],
+              "spdx:copyrightText": "Copyright (c) 2000 ACME, Inc.",
+              "spdx:name": "scan"
+            }
+          }
+        }
+      },
       "rdfs:comment": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.\nSPDX License List: 3.28",
       "spdx:name": "SPDX Document created by ScanCode Toolkit",
       "spdx:specVersion": "SPDX-2.2"
