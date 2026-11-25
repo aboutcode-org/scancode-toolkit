@@ -25,7 +25,18 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "framework",
+      "narrowspark",
+      "http",
+      "request",
+      "response",
+      "viserio",
+      "container",
+      "pipeline",
+      "event",
+      "translation"
+    ],
     "homepage_url": "https://github.com/narrowspark/framework",
     "download_url": null,
     "size": null,

@@ -46,7 +46,12 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "framework",
+      "micro",
+      "api",
+      "router"
+    ],
     "homepage_url": "https://slimframework.com",
     "download_url": null,
     "size": null,

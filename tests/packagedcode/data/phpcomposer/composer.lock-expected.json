@@ -428,7 +428,10 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "cache",
+      "caching"
+    ],
     "homepage_url": "http://www.doctrine-project.org",
     "download_url": "https://api.github.com/repos/doctrine/cache/zipball/eb152c5100571c7a45470ff2a35095ab3f3b900b",
     "size": null,
@@ -566,7 +569,10 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "Guzzle",
+      "cache"
+    ],
     "homepage_url": "http://guzzlephp.org/",
     "download_url": "https://api.github.com/repos/guzzle/cache-subscriber/zipball/8c766ba399e4c46383e3eaa220201be62abd101e",
     "size": null,
@@ -693,7 +699,15 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "client",
+      "curl",
+      "framework",
+      "http",
+      "http client",
+      "rest",
+      "web service"
+    ],
     "homepage_url": "http://guzzlephp.org/",
     "download_url": "https://api.github.com/repos/guzzle/guzzle/zipball/93bbdb30d59be6cd9839495306c65f2907370eb9",
     "size": null,
@@ -980,7 +994,10 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "Guzzle",
+      "stream"
+    ],
     "homepage_url": "http://guzzlephp.org/",
     "download_url": "https://api.github.com/repos/guzzle/streams/zipball/47aaa48e27dae43d39fc1cea0ccf0d84ac1a2ba5",
     "size": null,
@@ -1318,7 +1335,10 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "promise",
+      "promises"
+    ],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/reactphp/promise/zipball/31ffa96f8d2ed0341a57848cbb84d88b89dd664d",
     "size": null,
@@ -1545,7 +1565,12 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "semantic",
+      "semver",
+      "validation",
+      "versioning"
+    ],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/composer/semver/zipball/46d9139568ccb8d9e7cdd4539cab7347568a5e2e",
     "size": null,
@@ -1661,7 +1686,10 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "Xdebug",
+      "performance"
+    ],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/composer/xdebug-handler/zipball/46867cbf8ca9fb8d60c506895449eb799db1184f",
     "size": null,
@@ -1805,7 +1833,11 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "annotations",
+      "docblock",
+      "parser"
+    ],
     "homepage_url": "http://www.doctrine-project.org",
     "download_url": "https://api.github.com/repos/doctrine/annotations/zipball/54cacc9b81758b14e3ce750f205a393d52339e97",
     "size": null,
@@ -1946,7 +1978,13 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "annotations",
+      "docblock",
+      "lexer",
+      "parser",
+      "php"
+    ],
     "homepage_url": "https://www.doctrine-project.org/projects/lexer.html",
     "download_url": "https://api.github.com/repos/doctrine/lexer/zipball/1febd6c3ef84253d7c815bed85fc622ad207a9f8",
     "size": null,
@@ -2493,7 +2531,12 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "csprng",
+      "polyfill",
+      "pseudorandom",
+      "random"
+    ],
     "homepage_url": null,
     "download_url": "https://api.github.com/repos/paragonie/random_compat/zipball/0a58ef6e3146256cc3dc7cc393927bcc7d1b72db",
     "size": null,
@@ -2623,7 +2666,9 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "diff"
+    ],
     "homepage_url": "https://github.com/PHP-CS-Fixer",
     "download_url": "https://api.github.com/repos/PHP-CS-Fixer/diff/zipball/78bb099e9c16361126c86ce82ec4405ebab8e756",
     "size": null,
@@ -2870,7 +2915,11 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "log",
+      "psr",
+      "psr-3"
+    ],
     "homepage_url": "https://github.com/php-fig/log",
     "download_url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
     "size": null,
@@ -2964,7 +3013,10 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "phpcs",
+      "standards"
+    ],
     "homepage_url": "https://github.com/squizlabs/PHP_CodeSniffer",
     "download_url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
     "size": null,
@@ -3911,7 +3963,11 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "config",
+      "configuration",
+      "options"
+    ],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/options-resolver/zipball/a7c00586a9ef70acf0f17085e51c399bf9620e03",
     "size": null,
@@ -4012,7 +4068,12 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "compatibility",
+      "ctype",
+      "polyfill",
+      "portable"
+    ],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/550ebaac289296ce228a706d0867afc34687e3f4",
     "size": null,
@@ -4124,7 +4185,13 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "compatibility",
+      "mbstring",
+      "polyfill",
+      "portable",
+      "shim"
+    ],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b42a2f66e8f1b15ccf25652c3424265923eb4f17",
     "size": null,
@@ -4236,7 +4303,12 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "compatibility",
+      "polyfill",
+      "portable",
+      "shim"
+    ],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/54b4c428a0054e254223797d2713c31e08610831",
     "size": null,
@@ -4348,7 +4420,12 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "compatibility",
+      "polyfill",
+      "portable",
+      "shim"
+    ],
     "homepage_url": "https://symfony.com",
     "download_url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/04ce3335667451138df4307d6a9b61565560199e",
     "size": null,

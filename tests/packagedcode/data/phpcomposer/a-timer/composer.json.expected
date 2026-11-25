@@ -25,7 +25,11 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "timer",
+      "timing",
+      "benchmark"
+    ],
     "homepage_url": "http://github.com/jandreasn/a-timer",
     "download_url": null,
     "size": null,
