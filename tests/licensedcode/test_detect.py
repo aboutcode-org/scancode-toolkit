@@ -1331,4 +1331,32 @@ class TestRegression(FileBasedTesting):
         query_location = self.get_test_loc('false_positive/false-positive-gpl3.txt')
         matches = idx.match(location=query_location)
         assert not matches
+
+    def test_detection_is_consistent_for_notice_followed_by_minified_code(self):
+        # A license notice must be detected the same way whether it is alone or
+        # immediately followed by code on the same lines. The minified code
+        # makes the license notice a small part of a long query run and it used
+        # to be discarded from the ranked candidates while a weaker match to
+        # another license was kept.
+        # See https://github.com/aboutcode-org/scancode-toolkit/issues/5540
+        idx = cache.get_index()
+
+        notice_location = self.get_test_loc('detect/issue5540/notice.txt')
+        notice_with_code_location = self.get_test_loc(
+            'detect/issue5540/notice_with_minified_code.txt')
+
+        alone = idx.match(location=notice_location)
+        with_code = idx.match(location=notice_with_code_location)
+
+        assert len(alone) == 1
+        assert len(with_code) == 1
+
+        alone_match = alone[0]
+        with_code_match = with_code[0]
+
+        assert alone_match.rule.license_expression == 'lgpl-2.0-plus'
+        assert with_code_match.rule.license_expression == alone_match.rule.license_expression
+        assert with_code_match.rule.identifier == alone_match.rule.identifier
+        assert with_code_match.score() == alone_match.score()
+        assert with_code_match.qspan == alone_match.qspan
     
