@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-dual licensed under  LLVM's license and MIT:
+dual licensed under  {{LLVM's license and MIT}}:
