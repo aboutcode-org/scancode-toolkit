@@ -121,6 +121,34 @@ class TestConda(PackageTester):
         expected_loc = self.get_test_loc('conda/conda-yaml/test/environment_host_port.yml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_conda_yaml_with_build_strings(self):
+        env_yaml = self.get_temp_file('environment.yaml')
+        with open(env_yaml, 'w', encoding='utf-8') as f:
+            f.write(
+                'name: minenv\n'
+                'channels:\n'
+                '  - defaults\n'
+                'dependencies:\n'
+                '  - bzip2=1.0.8=hda65f42_10\n'
+                '  - zlib=1.3.1=hb9d3cd8_2\n'
+                '  - conda-forge::openssl=3.0.15=h5eee18b_0\n'
+                '  - python=3.12.1=h1234567_0\n'
+                '  - pip=24.0=py312h06a4308_0\n'
+            )
+
+        packages = list(conda.CondaYamlHandler.parse(env_yaml))
+        assert len(packages) == 1
+        package = packages[0]
+        assert package.purl == 'pkg:conda/minenv'
+        deps = {d['purl']: d for d in package.dependencies}
+        assert set(deps.keys()) == {
+            'pkg:conda/bzip2@1.0.8',
+            'pkg:conda/zlib@1.3.1',
+            'pkg:conda/conda-forge/openssl@3.0.15',
+        }
+        assert deps['pkg:conda/bzip2@1.0.8']['extracted_requirement'] == '=1.0.8=hda65f42_10'
+        assert deps['pkg:conda/bzip2@1.0.8']['is_pinned'] is True
+
     def test_conda_get_conda_meta_json(self):
         meta_yaml_path = 'conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe/meta.yaml'
         conda_meta_json_path = 'conda/conda-meta/requests-2.32.3-py312h06a4308_1.json'

@@ -536,7 +536,7 @@ def get_conda_yaml_dependencies(conda_data):
             is_pinned = False
 
             if "::" in dep:
-                namespace, dep = dep.split("::")
+                namespace, dep = dep.split("::", 1)
                 if "/" in namespace or ":" in namespace:
                     namespace = None
 
@@ -551,10 +551,13 @@ def get_conda_yaml_dependencies(conda_data):
                     is_pinned = True
                 purl = PackageURL(type='pypi', name=name, version=version)
             else:
+                version = None
                 if "=" in dep:
-                    dep, version = dep.split("=")
+                    parts = dep.split("=")
+                    dep = parts[0]
+                    version = parts[1]
                     is_pinned = True
-                    specs = f"={version}"
+                    specs = "=" + "=".join(parts[1:])
 
                 purl = PackageURL(
                     type='conda',
