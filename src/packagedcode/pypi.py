@@ -806,7 +806,7 @@ class PoetryLockHandler(BasePoetryPythonLayout):
             )
             resolved_package = models.PackageData.from_data(package_data, package_only)
 
-            is_optional = package.get("is_optional") or True
+            is_optional = package.get("optional", False)
             dependency = models.DependentPackage(
                 purl=resolved_package.purl,
                 extracted_requirement=None,
