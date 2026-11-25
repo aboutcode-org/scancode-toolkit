@@ -38,6 +38,7 @@ from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
 from packagedcode import swift
+from packagedcode import vcpkg
 from packagedcode import win_pe
 from packagedcode import windows
 
@@ -79,6 +80,10 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     conan.ConanFileHandler,
     conan.ConanDataHandler,
+
+    vcpkg.VcpkgJsonHandler,
+    vcpkg.VcpkgPortfileHandler,
+    vcpkg.VcpkgControlHandler,
 
     cran.CranDescriptionFileHandler,
 

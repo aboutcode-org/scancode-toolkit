@@ -1,0 +1,113 @@
+[
+  {
+    "type": "vcpkg",
+    "namespace": null,
+    "name": "fmt",
+    "version": "8.1.1",
+    "qualifiers": {
+      "port_version": "1"
+    },
+    "subpath": null,
+    "primary_language": "C++",
+    "description": "Formatting library for C++",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "fmt maintainers <fmt@example.com>",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/fmtlib/fmt",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_url": null,
+            "matched_text": "MIT"
+          }
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "MIT",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": null,
+    "dependencies": [
+      {
+        "purl": "pkg:vcpkg/zlib",
+        "extracted_requirement": null,
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:vcpkg/boost-system",
+        "extracted_requirement": ">= 1.75.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:vcpkg/boost-core",
+        "extracted_requirement": null,
+        "scope": "features:header-only",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "vcpkg_json",
+    "purl": "pkg:vcpkg/fmt@8.1.1?port_version=1"
+  }
+]
