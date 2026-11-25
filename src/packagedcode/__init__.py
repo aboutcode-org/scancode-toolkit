@@ -33,6 +33,7 @@ from packagedcode import nuget
 from packagedcode import opam
 from packagedcode import phpcomposer
 from packagedcode import pubspec
+from packagedcode import publiccode
 from packagedcode import pypi
 from packagedcode import readme
 from packagedcode import rpm
@@ -76,6 +77,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     conda.CondaMetaJsonHandler,
     conda.CondaMetaYamlHandler,
     conda.CondaYamlHandler,
+
+    publiccode.PubliccodeYmlHandler,
 
     conan.ConanFileHandler,
     conan.ConanDataHandler,
