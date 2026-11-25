@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "kamailio",
   "version": "5.4.5-r0",
@@ -84,5 +84,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/kamailio@5.4.5-r0"
+  "purl": "pkg:apk/kamailio@5.4.5-r0"
 }

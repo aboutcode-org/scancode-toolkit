@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "acccheck",
   "version": "0.2.1-r1",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/acccheck@0.2.1-r1"
+  "purl": "pkg:apk/acccheck@0.2.1-r1"
 }

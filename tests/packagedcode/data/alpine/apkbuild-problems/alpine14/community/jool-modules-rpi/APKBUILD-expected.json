@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "jool-modules-lts",
   "version": "5.10.43-r$((",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/jool-modules-lts@5.10.43-r%24%28%28"
+  "purl": "pkg:apk/jool-modules-lts@5.10.43-r%24%28%28"
 }

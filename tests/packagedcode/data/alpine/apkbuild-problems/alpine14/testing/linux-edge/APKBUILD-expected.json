@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "linux-edge",
   "version": "5.12.10-r0",
@@ -104,5 +104,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/linux-edge@5.12.10-r0"
+  "purl": "pkg:apk/linux-edge@5.12.10-r0"
 }

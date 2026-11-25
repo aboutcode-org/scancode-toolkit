@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "accerciser",
   "version": "3.38.0-r1",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/accerciser@3.38.0-r1"
+  "purl": "pkg:apk/accerciser@3.38.0-r1"
 }

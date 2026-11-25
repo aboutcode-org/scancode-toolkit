@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "buildbot",
   "version": "1.6.0-r0",
@@ -92,5 +92,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/buildbot@1.6.0-r0"
+  "purl": "pkg:apk/buildbot@1.6.0-r0"
 }

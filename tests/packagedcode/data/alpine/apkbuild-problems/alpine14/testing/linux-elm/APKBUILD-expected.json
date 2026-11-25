@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "linux-elm",
   "version": "5.12.10-r0",
@@ -100,5 +100,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/linux-elm@5.12.10-r0"
+  "purl": "pkg:apk/linux-elm@5.12.10-r0"
 }
