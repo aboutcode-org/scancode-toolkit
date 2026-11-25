@@ -5,7 +5,8 @@
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
-#
+
+
 import base64
 import io
 import fnmatch
@@ -30,13 +31,13 @@ from packagedcode.utils import is_simple_path_pattern
 import saneyaml
 
 """
-Handle Node.js npm packages
-per https://docs.npmjs.com/files/package.json
+This module helps ScanCode understand and work with Node.js (npm) packages.
+
+It reads information from package.json files, such as the package name,
+version, dependencies, and other metadata. This helps ScanCode detect
+licenses, dependencies, and package details when scanning JavaScript projects.
 """
 
-"""
-To check https://github.com/npm/normalize-package-data
-"""
 
 
 SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
