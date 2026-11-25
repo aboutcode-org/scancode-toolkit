@@ -12,10 +12,10 @@ import logging
 import os
 import sys
 
+from license_expression import combine_expressions
 from commoncode.filetype import get_last_modified_date
 from commoncode.hash import multi_checksums
 from scancode import ScancodeError
-from typecode.contenttype import get_type
 
 TRACE = os.environ.get('SCANCODE_DEBUG_API', False)
 
@@ -179,7 +179,6 @@ def get_licenses(
     from licensedcode.cache import build_spdx_license_expression
     from licensedcode.cache import get_cache
     from licensedcode.detection import detect_licenses
-    from packagedcode.utils import combine_expressions
 
     license_clues = []
     license_detections = []
@@ -340,6 +339,7 @@ def get_file_info(location, **kwargs):
     """
     Return a mapping of file information collected for the file at `location`.
     """
+    from typecode.contenttype import get_type
     result = {}
 
     # TODO: move date and size these to the inventory collection step???

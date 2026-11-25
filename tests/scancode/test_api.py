@@ -8,6 +8,8 @@
 #
 
 import os
+import subprocess
+import sys
 
 from commoncode.testcase import FileBasedTesting
 from scancode import api
@@ -144,3 +146,13 @@ class TestAPI(FileBasedTesting):
         assert results['detected_license_expression'] == 'mit'
         assert results['license_detections'][0]['matches'][0]['start_line'] == 2
         assert results['license_detections'][0]['matches'][0]['end_line'] == 4
+
+    def test_get_licenses_imports_without_heavy_dependencies(self):
+        script = (
+            'import sys; '
+            'from scancode.api import get_licenses; '
+            'assert "typecode" not in sys.modules; '
+            'assert "extractcode" not in sys.modules; '
+            'assert "packagedcode" not in sys.modules'
+        )
+        subprocess.check_call([sys.executable, '-c', script])
