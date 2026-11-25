@@ -291,7 +291,7 @@ jobs:
       - name: Install system dependencies
         run: |
           brew update
-          brew install libarchive libmagic
+          brew install libarchive libmagic p7zip sevenzip
 
       - name: Download wheels artifact
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
