@@ -4,6 +4,12 @@ Changelog
 Next release
 --------------
 
+- Fix CocoaPods ``PodspecJsonHandler`` to safely handle missing source, null or
+  dict/list authors without string concatenation crashes or corrupting emails into
+  invalid URLs, safely handle non-string license values, and parse declared
+  dependencies and subspec dependencies.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5563
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

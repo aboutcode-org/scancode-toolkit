@@ -540,10 +540,7 @@ class PodspecJsonHandler(models.DatafileHandler):
     documentation_url = 'https://guides.cocoapods.org/syntax/podspec.html'
 
     @classmethod
-    def parse(cls, location, package_only=False):
-        with open(location) as psj:
-            data = json.load(psj)
-
+    def _parse(cls, data, package_only=False):
         name = data.get('name')
         version = data.get('version')
         summary = data.get('summary', '')
@@ -552,9 +549,13 @@ class PodspecJsonHandler(models.DatafileHandler):
 
         lic = data.get('license')
         if isinstance(lic, dict):
-            extracted_license_statement = ' '.join(list(lic.values()))
+            extracted_license_statement = ' '.join(
+                [v.strip() for v in lic.values() if isinstance(v, str) and v.strip()]
+            ) or None
+        elif isinstance(lic, str):
+            extracted_license_statement = lic.strip() or None
         else:
-            extracted_license_statement = lic
+            extracted_license_statement = None
 
         source = data.get('source')
         vcs_url = None
@@ -571,7 +572,7 @@ class PodspecJsonHandler(models.DatafileHandler):
             if not vcs_url:
                 vcs_url = source
 
-        authors = data.get('authors') or {}
+        authors = data.get('authors')
 
         if summary and not description.startswith(summary):
             desc = [summary]
@@ -583,31 +584,111 @@ class PodspecJsonHandler(models.DatafileHandler):
         if authors:
             if isinstance(authors, dict):
                 for key, value in authors.items():
-                    party = models.Party(
-                        type=models.party_org,
-                        name=key,
-                        url=value + '.com',
-                        role='owner'
+                    email = None
+                    url = None
+                    if isinstance(value, str) and value:
+                        value = value.strip()
+                        if '@' in value:
+                            email = value
+                        elif value.startswith(('http://', 'https://')):
+                            url = value
+                    parties.append(
+                        models.Party(
+                            type=models.party_org if not email else models.party_person,
+                            name=str(key).strip() if key else None,
+                            email=email,
+                            url=url,
+                            role='owner',
+                        )
                     )
-                    parties.append(party)
-            else:
-                party = models.Party(
-                    type=models.party_org,
-                    name=authors,
-                    role='owner'
+            elif isinstance(authors, (list, tuple)):
+                for author in authors:
+                    if isinstance(author, dict):
+                        for key, value in author.items():
+                            email = None
+                            url = None
+                            if isinstance(value, str) and value:
+                                value = value.strip()
+                                if '@' in value:
+                                    email = value
+                                elif value.startswith(('http://', 'https://')):
+                                    url = value
+                            parties.append(
+                                models.Party(
+                                    type=models.party_org if not email else models.party_person,
+                                    name=str(key).strip() if key else None,
+                                    email=email,
+                                    url=url,
+                                    role='owner',
+                                )
+                            )
+                    elif isinstance(author, str) and author.strip():
+                        parties.append(
+                            models.Party(
+                                type=models.party_org,
+                                name=author.strip(),
+                                role='owner',
+                            )
+                        )
+            elif isinstance(authors, str) and authors.strip():
+                parties.append(
+                    models.Party(
+                        type=models.party_org,
+                        name=authors.strip(),
+                        role='owner',
+                    )
                 )
-                parties.append(party)
 
-        extra_data = {}
-        extra_data['source'] = data['source']
-        dependencies = data.get('dependencies', '')
-        if dependencies:
-            extra_data['dependencies'] = dependencies
-        extra_data['podspec.json'] = data
+        package_dependencies = []
+
+        def _add_dependencies(deps_dict, scope='dependencies'):
+            if not isinstance(deps_dict, dict):
+                return
+            for dep_name, req in deps_dict.items():
+                if not dep_name or not isinstance(dep_name, str):
+                    continue
+                dep_name = dep_name.strip()
+                if not dep_name:
+                    continue
+
+                extracted_requirement = None
+                if isinstance(req, list):
+                    req_parts = [str(r).strip() for r in req if r and isinstance(r, str) and str(r).strip()]
+                    extracted_requirement = ', '.join(req_parts) or None
+                elif isinstance(req, str):
+                    extracted_requirement = req.strip() or None
+
+                is_pinned = False
+                if extracted_requirement:
+                    if not any(c in extracted_requirement for c in ('<', '>', '=', '~', '^', ':', ' ')):
+                        is_pinned = True
+
+                dep_purl = PackageURL(type='cocoapods', name=dep_name).to_string()
+                dep = models.DependentPackage(
+                    purl=dep_purl,
+                    extracted_requirement=extracted_requirement,
+                    scope=scope,
+                    is_runtime=True,
+                    is_optional=False,
+                    is_pinned=is_pinned,
+                )
+                package_dependencies.append(dep)
+
+        _add_dependencies(data.get('dependencies'))
+
+        for subspec in data.get('subspecs') or []:
+            if isinstance(subspec, dict):
+                sub_deps = subspec.get('dependencies')
+                sub_name = subspec.get('name')
+                scope = f'subspecs.{sub_name}' if sub_name else 'dependencies'
+                _add_dependencies(sub_deps, scope=scope)
 
         urls = get_urls(
             name=name,
-            version=version, homepage_url=homepage_url, vcs_url=vcs_url)
+            version=version,
+            homepage_url=homepage_url,
+            vcs_url=vcs_url,
+        )
 
         package_data = dict(
             datasource_id=cls.datasource_id,
@@ -618,12 +699,19 @@ class PodspecJsonHandler(models.DatafileHandler):
             description=description,
             extracted_license_statement=extracted_license_statement,
             parties=parties,
+            dependencies=package_dependencies,
             vcs_url=vcs_url,
             homepage_url=homepage_url,
             download_url=download_url,
             **urls,
         )
-        yield models.PackageData.from_data(package_data, package_only)
+        return models.PackageData.from_data(package_data, package_only)
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location) as psj:
+            data = json.load(psj)
+        yield cls._parse(data, package_only=package_only)
 
 
 def get_urls(name=None, version=None, homepage_url=None, vcs_url=None, **kwargs):

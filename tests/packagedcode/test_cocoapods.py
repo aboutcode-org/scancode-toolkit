@@ -140,6 +140,97 @@ class TestCocoaPodspecJson(PackageTester):
         packages = PodspecJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_podspec_json_missing_source(self):
+        data = {
+            'name': 'TestPod',
+            'version': '1.0.0',
+        }
+        package = PodspecJsonHandler._parse(data)
+        assert package.name == 'TestPod'
+        assert package.version == '1.0.0'
+        assert package.vcs_url is None
+        assert package.download_url is None
+
+    def test_podspec_json_authors_dict_with_email_and_null(self):
+        data = {
+            'name': 'TestPod',
+            'version': '1.0.0',
+            'authors': {
+                'Darth Vader': 'darth@darkside.com',
+                'Wookie': None,
+                'Org': 'https://example.com',
+            },
+        }
+        package = PodspecJsonHandler._parse(data)
+        assert len(package.parties) == 3
+        parties = {p.name: p for p in package.parties}
+
+        vader = parties['Darth Vader']
+        assert vader.email == 'darth@darkside.com'
+        assert vader.url is None
+
+        wookie = parties['Wookie']
+        assert wookie.email is None
+        assert wookie.url is None
+
+        org = parties['Org']
+        assert org.email is None
+        assert org.url == 'https://example.com'
+
+    def test_podspec_json_authors_list(self):
+        data = {
+            'name': 'TestPod',
+            'version': '1.0.0',
+            'authors': ['Author One', 'Author Two'],
+        }
+        package = PodspecJsonHandler._parse(data)
+        assert len(package.parties) == 2
+        assert package.parties[0].name == 'Author One'
+        assert package.parties[1].name == 'Author Two'
+
+    def test_podspec_json_license_dict_with_null_and_non_string(self):
+        data = {
+            'name': 'TestPod',
+            'version': '1.0.0',
+            'license': {
+                'type': 'MIT',
+                'text': None,
+                'file': 'LICENSE',
+            },
+        }
+        package = PodspecJsonHandler._parse(data)
+        assert package.extracted_license_statement == 'MIT LICENSE'
+
+    def test_podspec_json_dependencies_pinned_and_range(self):
+        data = {
+            'name': 'TestPod',
+            'version': '1.0.0',
+            'dependencies': {
+                'pinned_dep': '1.2.3',
+                'range_dep': '~> 2.0.0',
+                'list_req': ['>= 1.0', '< 2.0'],
+            },
+        }
+        package = PodspecJsonHandler._parse(data)
+        assert len(package.dependencies) == 3
+        deps = {d.purl: d for d in package.dependencies}
+
+        pinned = deps['pkg:cocoapods/pinned_dep']
+        assert pinned.extracted_requirement == '1.2.3'
+        assert pinned.is_pinned is True
+        assert pinned.scope == 'dependencies'
+
+        ranged = deps['pkg:cocoapods/range_dep']
+        assert ranged.extracted_requirement == '~> 2.0.0'
+        assert ranged.is_pinned is False
+        assert ranged.scope == 'dependencies'
+
+        listed = deps['pkg:cocoapods/list_req']
+        assert listed.extracted_requirement == '>= 1.0, < 2.0'
+        assert listed.is_pinned is False
+        assert listed.scope == 'dependencies'
+
+
 
 class TestCocoaPodfileLock(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
