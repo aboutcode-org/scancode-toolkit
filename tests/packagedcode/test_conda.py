@@ -170,3 +170,62 @@ class TestConda(PackageTester):
         check_json_scan(
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
+
+    def test_parse_conda_meta_yaml_dependencies_with_build_string(self):
+        meta_yaml_text = """
+package:
+  name: testpkg
+  version: 1.0.0
+
+requirements:
+  run:
+    - numpy=1.19.2=py38h54f3933_0
+    - conda-forge::scipy=1.7.1=py39_1
+"""
+        test_file = self.get_temp_file('meta.yaml')
+        with open(test_file, 'w') as f:
+            f.write(meta_yaml_text)
+
+        packages = list(conda.CondaMetaYamlHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0]
+        assert package.name == 'testpkg'
+        assert package.version == '1.0.0'
+        assert len(package.dependencies) == 2
+
+        dep1 = package.dependencies[0]
+        assert dep1.purl == 'pkg:conda/numpy@1.19.2'
+        assert dep1.extracted_requirement == '=1.19.2=py38h54f3933_0'
+        assert dep1.is_pinned is True
+
+        dep2 = package.dependencies[1]
+        assert dep2.purl == 'pkg:conda/conda-forge/scipy@1.7.1'
+        assert dep2.extracted_requirement == '=1.7.1=py39_1'
+        assert dep2.is_pinned is True
+
+    def test_parse_conda_yaml_dependencies_with_build_string(self):
+        env_yaml_text = """
+name: testenv
+dependencies:
+  - scipy=1.7.1=py39h292c36d_2
+  - conda-forge::mkl=2021.4.0=h06a4308_640
+"""
+        test_file = self.get_temp_file('environment.yml')
+        with open(test_file, 'w') as f:
+            f.write(env_yaml_text)
+
+        packages = list(conda.CondaYamlHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0]
+        assert package.name == 'testenv'
+        assert len(package.dependencies) == 2
+
+        dep1 = package.dependencies[0]
+        assert dep1['purl'] == 'pkg:conda/scipy@1.7.1'
+        assert dep1['extracted_requirement'] == '=1.7.1=py39h292c36d_2'
+        assert dep1['is_pinned'] is True
+
+        dep2 = package.dependencies[1]
+        assert dep2['purl'] == 'pkg:conda/conda-forge/mkl@2021.4.0'
+        assert dep2['extracted_requirement'] == '=2021.4.0=h06a4308_640'
+        assert dep2['is_pinned'] is True
