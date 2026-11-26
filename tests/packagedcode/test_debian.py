@@ -199,7 +199,8 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
             datasource_id='debian_deb',
             package_type='deb',
         )
-        assert str(result.purl) == 'pkg:deb/debian/libapache2-mod-md@2.4.38-3%2Bdeb10u10?architecture=amd64'
+        assert result.qualifiers == {'arch': 'amd64'}
+        assert str(result.purl) == 'pkg:deb/debian/libapache2-mod-md@2.4.38-3%2Bdeb10u10?arch=amd64'
 
     def test_build_package_data_from_package_filename_orig_sdoes_not_crash_on_version(self):
         filename = 'abseil_0~20200923.3.orig.tar.gz'
@@ -222,4 +223,5 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
     def test_DebianDebPackageHandler_parse_does_not_crash_on_version(self):
         location = 'foo/bar/libapache2-mod-md_2.4.38-3+deb10u10_amd64.deb'
         result = list(DebianDebPackageHandler.parse(location))[0]
-        assert str(result.purl) == 'pkg:deb/debian/libapache2-mod-md@2.4.38-3%2Bdeb10u10?architecture=amd64'
+        assert result.qualifiers == {'arch': 'amd64'}
+        assert str(result.purl) == 'pkg:deb/debian/libapache2-mod-md@2.4.38-3%2Bdeb10u10?arch=amd64'
