@@ -66,8 +66,11 @@ Options:
     --custom-template FILE  Use this Jinja template FILE as a custom template.
     --cyclonedx FILE        Write scan output in CycloneDX JSON format to FILE.
     --cyclonedx-xml FILE    Write scan output in CycloneDX XML format to FILE.
+    --spdx-json FILE        Write scan output as SPDX 2.3 JSON to FILE.
     --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
+    --spdx-xml FILE         Write scan output as SPDX 2.3 XML to FILE.
+    --spdx-yaml FILE        Write scan output as SPDX 2.3 YAML to FILE.
 
   output filters:
     --ignore-author <pattern>       Ignore a file (and all its findings) if an
