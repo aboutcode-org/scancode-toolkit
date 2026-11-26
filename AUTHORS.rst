@@ -48,6 +48,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Lali Akhil Raj @lf32
 - Lemo Shi @lemoshi
 - Li Ha @linexb
+- Love Yadav @loveyadav1015
 - Mankaran Singh @MankaranSingh
 - Marc-Etienne Vargenau @vargenau
 - Martin Petkov @MartinPetkov

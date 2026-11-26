@@ -1953,7 +1953,7 @@ def get_declared_license(metainfo):
             license_file = lic.pop('file')
 
     if lic and not lic == 'UNKNOWN':
-        if 'text' in lic:
+        if isinstance(lic, dict) and 'text' in lic:
             declared_license['license'] = lic.get('text')
         else:
             declared_license['license'] = lic

@@ -363,6 +363,31 @@ class TestPyprojectTomlFileHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/lc0-pyproject.toml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_pyproject_toml_license_string_containing_text(self):
+        temp_dir = self.get_temp_dir()
+        test_file = os.path.join(temp_dir, 'pyproject.toml')
+        with open(test_file, 'w') as f:
+            f.write(
+                '[project]\n'
+                'name = "demo-pkg"\n'
+                'version = "0.1.0"\n'
+                'license = "See license text in LICENSE"\n'
+            )
+        packages = list(pypi.PyprojectTomlHandler.parse(test_file))
+        assert len(packages) == 1
+        assert packages[0].name == 'demo-pkg'
+        assert packages[0].version == '0.1.0'
+        assert packages[0].extracted_license_statement == 'license: See license text in LICENSE\n'
+
+    def test_get_declared_license_string_containing_text(self):
+        declared, lic_file = pypi.get_declared_license({'License': 'See license text in LICENSE'})
+        assert declared == {'license': 'See license text in LICENSE'}
+        assert lic_file is None
+
+        declared, lic_file = pypi.get_declared_license({'License': {'text': 'MIT'}})
+        assert declared == {'license': 'MIT'}
+        assert lic_file is None
+
 
 class TestPoetryHandler(PackageTester):
 
