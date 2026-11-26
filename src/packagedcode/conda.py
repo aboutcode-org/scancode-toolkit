@@ -459,19 +459,21 @@ class CondaMetaYamlHandler(CondaBaseHandler):
                 name, _, requirement = req.partition(" ")
                 version = None
                 if requirement.startswith("=="):
-                    _, version = requirement.split("==") 
+                    _, version = requirement.split("==", 1) 
 
                 # requirements may have namespace, version too
                 # - conda-forge::numpy=1.15.4
                 namespace = None
                 if "::" in name:
-                    namespace, name = name.split("::")
+                    namespace, name = name.split("::", 1)
 
                 is_pinned = False
                 if "=" in name:
-                    name, version = name.split("=")
+                    parts = name.split("=")
+                    name = parts[0]
+                    version = parts[1]
                     is_pinned = True
-                    requirement = f"={version}"
+                    requirement = f"={'='.join(parts[1:])}"
 
                 if name in ('pip', 'python'):
                     if not scope in extra_data:
@@ -536,7 +538,7 @@ def get_conda_yaml_dependencies(conda_data):
             is_pinned = False
 
             if "::" in dep:
-                namespace, dep = dep.split("::")
+                namespace, dep = dep.split("::", 1)
                 if "/" in namespace or ":" in namespace:
                     namespace = None
 
@@ -552,9 +554,11 @@ def get_conda_yaml_dependencies(conda_data):
                 purl = PackageURL(type='pypi', name=name, version=version)
             else:
                 if "=" in dep:
-                    dep, version = dep.split("=")
+                    parts = dep.split("=")
+                    dep = parts[0]
+                    version = parts[1]
                     is_pinned = True
-                    specs = f"={version}"
+                    specs = f"={'='.join(parts[1:])}"
 
                 purl = PackageURL(
                     type='conda',
