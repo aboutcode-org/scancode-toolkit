@@ -563,7 +563,7 @@ def build_package_data_from_package_filename(filename, datasource_id, package_ty
     deb = DebArchive.from_filename(filename=filename)
 
     if deb.architecture:
-        qualifiers = dict(architecture=deb.architecture)
+        qualifiers = dict(arch=deb.architecture)
     else:
         qualifiers = {}
 
