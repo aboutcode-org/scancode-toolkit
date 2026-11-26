@@ -130,8 +130,8 @@
               "license_expression": "mit",
               "license_expression_spdx": "MIT",
               "from_file": "pypi/atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
-              "start_line": 1,
-              "end_line": 1,
+              "start_line": 8,
+              "end_line": 8,
               "matcher": "1-spdx-id",
               "score": 100.0,
               "matched_length": 1,
@@ -152,8 +152,8 @@
               "license_expression": "mit",
               "license_expression_spdx": "MIT",
               "from_file": "pypi/atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
-              "start_line": 1,
-              "end_line": 1,
+              "start_line": 10,
+              "end_line": 10,
               "matcher": "1-hash",
               "score": 100.0,
               "matched_length": 5,
@@ -161,7 +161,7 @@
               "rule_relevance": 100,
               "rule_identifier": "pypi_mit_license.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
-              "matched_text": "- 'License :: OSI Approved :: MIT License'"
+              "matched_text": "License :: OSI Approved :: MIT License"
             }
           ],
           "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
@@ -308,8 +308,8 @@
               "license_expression": "mit",
               "license_expression_spdx": "MIT",
               "from_file": "pypi/Six/Six.dist-info/METADATA",
-              "start_line": 1,
-              "end_line": 1,
+              "start_line": 8,
+              "end_line": 8,
               "matcher": "1-spdx-id",
               "score": 100.0,
               "matched_length": 1,
@@ -330,8 +330,8 @@
               "license_expression": "mit",
               "license_expression_spdx": "MIT",
               "from_file": "pypi/Six/Six.dist-info/METADATA",
-              "start_line": 1,
-              "end_line": 1,
+              "start_line": 13,
+              "end_line": 13,
               "matcher": "1-hash",
               "score": 100.0,
               "matched_length": 5,
@@ -339,7 +339,7 @@
               "rule_relevance": 100,
               "rule_identifier": "pypi_mit_license.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
-              "matched_text": "- 'License :: OSI Approved :: MIT License'"
+              "matched_text": "License :: OSI Approved :: MIT License"
             }
           ],
           "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
@@ -409,8 +409,8 @@
               "license_expression": "bsd-new",
               "license_expression_spdx": "BSD-3-Clause",
               "from_file": "pypi/TicketImport/PKG-INFO",
-              "start_line": 1,
-              "end_line": 1,
+              "start_line": 8,
+              "end_line": 8,
               "matcher": "1-hash",
               "score": 99.0,
               "matched_length": 2,
@@ -856,8 +856,8 @@
                   "license_expression": "mit",
                   "license_expression_spdx": "MIT",
                   "from_file": "pypi/Six/Six.dist-info/METADATA",
-                  "start_line": 1,
-                  "end_line": 1,
+                  "start_line": 8,
+                  "end_line": 8,
                   "matcher": "1-spdx-id",
                   "score": 100.0,
                   "matched_length": 1,
@@ -878,8 +878,8 @@
                   "license_expression": "mit",
                   "license_expression_spdx": "MIT",
                   "from_file": "pypi/Six/Six.dist-info/METADATA",
-                  "start_line": 1,
-                  "end_line": 1,
+                  "start_line": 13,
+                  "end_line": 13,
                   "matcher": "1-hash",
                   "score": 100.0,
                   "matched_length": 5,
@@ -887,7 +887,7 @@
                   "rule_relevance": 100,
                   "rule_identifier": "pypi_mit_license.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
-                  "matched_text": "- 'License :: OSI Approved :: MIT License'"
+                  "matched_text": "License :: OSI Approved :: MIT License"
                 }
               ],
               "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
@@ -1047,8 +1047,8 @@
                   "license_expression": "bsd-new",
                   "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "pypi/TicketImport/PKG-INFO",
-                  "start_line": 1,
-                  "end_line": 1,
+                  "start_line": 8,
+                  "end_line": 8,
                   "matcher": "1-hash",
                   "score": 99.0,
                   "matched_length": 2,
@@ -1479,8 +1479,8 @@
                   "license_expression": "mit",
                   "license_expression_spdx": "MIT",
                   "from_file": "pypi/atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
-                  "start_line": 1,
-                  "end_line": 1,
+                  "start_line": 8,
+                  "end_line": 8,
                   "matcher": "1-spdx-id",
                   "score": 100.0,
                   "matched_length": 1,
@@ -1501,8 +1501,8 @@
                   "license_expression": "mit",
                   "license_expression_spdx": "MIT",
                   "from_file": "pypi/atomicwrites/atomicwrites-1.2.1-py2.py3-none-any.whl",
-                  "start_line": 1,
-                  "end_line": 1,
+                  "start_line": 10,
+                  "end_line": 10,
                   "matcher": "1-hash",
                   "score": 100.0,
                   "matched_length": 5,
@@ -1510,7 +1510,7 @@
                   "rule_relevance": 100,
                   "rule_identifier": "pypi_mit_license.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
-                  "matched_text": "- 'License :: OSI Approved :: MIT License'"
+                  "matched_text": "License :: OSI Approved :: MIT License"
                 }
               ],
               "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"

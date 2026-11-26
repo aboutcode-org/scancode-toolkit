@@ -162,6 +162,94 @@ class TestPyPiPkgInfoAndMetadata(PackageTester):
         expected_loc = self.get_test_loc('pypi/dist-info-metadata/METADATA-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_pypi_pkg_info_license_line_numbers_single_line_and_classifiers(self):
+        content = (
+            "Metadata-Version: 2.3\n"
+            "Name: openai\n"
+            "Version: 2.41.1\n"
+            "Summary: The official Python library for the openai API\n"
+            "Project-URL: Homepage, https://github.com/openai/openai-python\n"
+            "Project-URL: Repository, https://github.com/openai/openai-python\n"
+            "Author-email: OpenAI <support@openai.com>\n"
+            "License: Apache-2.0\n"
+            "Classifier: Intended Audience :: Developers\n"
+            "Classifier: License :: OSI Approved :: Apache Software License\n"
+            "Classifier: Operating System :: MacOS\n"
+        )
+        test_file = self.get_temp_file("PKG-INFO")
+        with open(test_file, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        package = list(pypi.PythonSdistPkgInfoFile.parse(test_file))[0]
+        assert package.declared_license_expression == "apache-2.0"
+        assert package.declared_license_expression_spdx == "Apache-2.0"
+        assert len(package.license_detections) == 2
+
+        m1 = package.license_detections[0]["matches"][0]
+        assert m1["license_expression"] == "apache-2.0"
+        assert m1["start_line"] == 8
+        assert m1["end_line"] == 8
+        assert m1["matched_text"] == "Apache-2.0"
+
+        m2 = package.license_detections[1]["matches"][0]
+        assert m2["license_expression"] == "apache-2.0"
+        assert m2["start_line"] == 10
+        assert m2["end_line"] == 10
+        assert m2["matched_text"] == "License :: OSI Approved :: Apache Software License"
+
+    def test_pypi_pkg_info_license_line_numbers_folded_multiline(self):
+        content = (
+            "Metadata-Version: 2.1\n"
+            "Name: testpkg\n"
+            "Version: 1.0.0\n"
+            "License: MIT\n"
+            "    and Apache-2.0\n"
+            "Classifier: License :: OSI Approved :: MIT License\n"
+        )
+        test_file = self.get_temp_file("PKG-INFO")
+        with open(test_file, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        package = list(pypi.PythonSdistPkgInfoFile.parse(test_file))[0]
+        assert package.declared_license_expression == "(mit AND apache-2.0) AND mit"
+
+        matches = [m for d in package.license_detections for m in d["matches"]]
+        assert len(matches) == 2
+        for m in matches:
+            assert m["start_line"] > 1
+            assert m["end_line"] >= m["start_line"]
+
+        # Match 1 spans lines 4 to 5
+        assert matches[0]["start_line"] == 4
+        assert matches[0]["end_line"] == 5
+        assert matches[0]["license_expression"] == "mit AND apache-2.0"
+
+        # Classifier is on line 6
+        assert matches[1]["start_line"] == 6
+        assert matches[1]["end_line"] == 6
+        assert matches[1]["license_expression"] == "mit"
+
+    def test_pypi_pkg_info_license_line_numbers_folded_empty_first_line(self):
+        content = (
+            "Metadata-Version: 2.1\n"
+            "Name: testpkg\n"
+            "Version: 1.0.0\n"
+            "License:\n"
+            "    Apache-2.0\n"
+            "Classifier: Intended Audience :: Developers\n"
+        )
+        test_file = self.get_temp_file("PKG-INFO")
+        with open(test_file, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        package = list(pypi.PythonSdistPkgInfoFile.parse(test_file))[0]
+        assert package.declared_license_expression == "apache-2.0"
+        assert len(package.license_detections) == 1
+        m = package.license_detections[0]["matches"][0]
+        assert m["start_line"] == 5
+        assert m["end_line"] == 5
+        assert m["matched_text"].strip() == "Apache-2.0"
+
 
 class TestPypiWheelAndEggArchive(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

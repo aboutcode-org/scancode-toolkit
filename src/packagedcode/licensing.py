@@ -910,6 +910,7 @@ def get_license_detections_for_extracted_license_statement(
     try_as_expression=True,
     approximate=True,
     expression_symbols=None,
+    start_line=1,
 ):
     """
     Return a list of LicenseDetection detected in the ``extracted_license_statement`` string.
@@ -925,6 +926,7 @@ def get_license_detections_for_extracted_license_statement(
         try_as_expression=try_as_expression,
         approximate=approximate,
         expression_symbols=expression_symbols,
+        start_line=start_line,
     )
 
     if not matches:
@@ -934,6 +936,7 @@ def get_license_detections_for_extracted_license_statement(
             try_as_expression=False,
             approximate=approximate,
             expression_symbols=expression_symbols,
+            start_line=start_line,
         )
 
         if not matches:
@@ -958,6 +961,7 @@ def get_license_matches_for_extracted_license_statement(
     try_as_expression=True,
     approximate=True,
     expression_symbols=None,
+    start_line=1,
 ):
     """
     Return `matches` list of LicenseMatch and a flag `matched_as_expression`
@@ -979,6 +983,7 @@ def get_license_matches_for_extracted_license_statement(
                 query_string=query_string,
                 as_expression=True,
                 expression_symbols=expression_symbols,
+                start_line=start_line,
             )
             if matches_have_unknown(matches):
                 # rematch also if we have unknowns
@@ -987,6 +992,7 @@ def get_license_matches_for_extracted_license_statement(
                     query_string=query_string,
                     as_expression=False,
                     approximate=approximate,
+                    start_line=start_line,
                 )
 
         except Exception:
@@ -995,6 +1001,7 @@ def get_license_matches_for_extracted_license_statement(
                 query_string=query_string,
                 as_expression=False,
                 approximate=approximate,
+                start_line=start_line,
             )
     else:
         matched_as_expression = False
@@ -1002,6 +1009,7 @@ def get_license_matches_for_extracted_license_statement(
             query_string=query_string,
             as_expression=False,
             approximate=approximate,
+            start_line=start_line,
         )
 
     return matches, matched_as_expression
