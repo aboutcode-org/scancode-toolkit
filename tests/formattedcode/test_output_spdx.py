@@ -362,3 +362,43 @@ def test_output_spdx_tv_sh1_of_empty_file():
     with io.open(result_file, encoding='utf-8') as res:
         results = res.read()
     assert 'FileChecksum: SHA1: da39a3ee5e6b4b0d3255bfef95601890afd80709' in results
+
+
+def test_spdx_json_basic():
+    import json
+
+    test_file = test_env.get_test_loc('spdx/simple/test.txt')
+    result_file = test_env.get_temp_file('json')
+    run_scan_click([test_file, '-clip', '--spdx-json', result_file])
+    with io.open(result_file, encoding='utf-8') as res:
+        data = json.load(res)
+    assert data['spdxVersion'] == 'SPDX-2.3'
+    assert data['SPDXID'] == 'SPDXRef-DOCUMENT'
+    assert len(data['files']) == 1
+    assert data['files'][0]['fileName'] == './test.txt'
+
+
+def test_spdx_yaml_basic():
+    import yaml
+
+    test_file = test_env.get_test_loc('spdx/simple/test.txt')
+    result_file = test_env.get_temp_file('yaml')
+    run_scan_click([test_file, '-clip', '--spdx-yaml', result_file])
+    with io.open(result_file, encoding='utf-8') as res:
+        data = yaml.safe_load(res)
+    assert data['spdxVersion'] == 'SPDX-2.3'
+    assert data['SPDXID'] == 'SPDXRef-DOCUMENT'
+    assert len(data['files']) == 1
+    assert data['files'][0]['fileName'] == './test.txt'
+
+
+def test_spdx_xml_basic():
+    test_file = test_env.get_test_loc('spdx/simple/test.txt')
+    result_file = test_env.get_temp_file('xml')
+    run_scan_click([test_file, '-clip', '--spdx-xml', result_file])
+    with io.open(result_file, encoding='utf-8') as res:
+        data = xmltodict.parse(res.read())
+    doc = data['Document']
+    assert doc['spdxVersion'] == 'SPDX-2.3'
+    assert doc['SPDXID'] == 'SPDXRef-DOCUMENT'
+    assert doc['files']['fileName'] == './test.txt'
