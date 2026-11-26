@@ -56,8 +56,8 @@
               "license_expression": "mit",
               "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/PKG-INFO",
-              "start_line": 1,
-              "end_line": 1,
+              "start_line": 8,
+              "end_line": 8,
               "matcher": "1-spdx-id",
               "score": 100.0,
               "matched_length": 1,
@@ -78,8 +78,8 @@
               "license_expression": "mit",
               "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/PKG-INFO",
-              "start_line": 1,
-              "end_line": 1,
+              "start_line": 15,
+              "end_line": 15,
               "matcher": "1-hash",
               "score": 100.0,
               "matched_length": 5,
@@ -87,7 +87,7 @@
               "rule_relevance": 100,
               "rule_identifier": "pypi_mit_license.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
-              "matched_text": "- 'License :: OSI Approved :: MIT License'"
+              "matched_text": "License :: OSI Approved :: MIT License"
             }
           ],
           "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
@@ -217,8 +217,8 @@
                   "license_expression": "mit",
                   "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/PKG-INFO",
-                  "start_line": 1,
-                  "end_line": 1,
+                  "start_line": 8,
+                  "end_line": 8,
                   "matcher": "1-spdx-id",
                   "score": 100.0,
                   "matched_length": 1,
@@ -239,8 +239,8 @@
                   "license_expression": "mit",
                   "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/PKG-INFO",
-                  "start_line": 1,
-                  "end_line": 1,
+                  "start_line": 15,
+                  "end_line": 15,
                   "matcher": "1-hash",
                   "score": 100.0,
                   "matched_length": 5,
@@ -248,7 +248,7 @@
                   "rule_relevance": 100,
                   "rule_identifier": "pypi_mit_license.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
-                  "matched_text": "- 'License :: OSI Approved :: MIT License'"
+                  "matched_text": "License :: OSI Approved :: MIT License"
                 }
               ],
               "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
@@ -911,8 +911,8 @@
                   "license_expression": "mit",
                   "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/src/pip.egg-info/PKG-INFO",
-                  "start_line": 1,
-                  "end_line": 1,
+                  "start_line": 8,
+                  "end_line": 8,
                   "matcher": "1-spdx-id",
                   "score": 100.0,
                   "matched_length": 1,
@@ -933,8 +933,8 @@
                   "license_expression": "mit",
                   "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/src/pip.egg-info/PKG-INFO",
-                  "start_line": 1,
-                  "end_line": 1,
+                  "start_line": 15,
+                  "end_line": 15,
                   "matcher": "1-hash",
                   "score": 100.0,
                   "matched_length": 5,
@@ -942,7 +942,7 @@
                   "rule_relevance": 100,
                   "rule_identifier": "pypi_mit_license.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
-                  "matched_text": "- 'License :: OSI Approved :: MIT License'"
+                  "matched_text": "License :: OSI Approved :: MIT License"
                 }
               ],
               "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
