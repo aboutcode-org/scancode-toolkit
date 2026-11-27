@@ -41,11 +41,15 @@ class GodepsHandler(models.NonAssemblableDatafileHandler):
     def parse(cls, location, package_only=False):
         godeps = Godep(location)
 
-        if godeps.import_path:
+        if godeps.import_path and godeps.import_path.strip():
             # we create a purl from the import path to parse ns/name nicely
-            purl = PackageURL.from_string(f'pkg:golang/{godeps.import_path}')
-            namespace = purl.namespace
-            name = purl.name
+            try:
+                purl = PackageURL.from_string(f'pkg:golang/{godeps.import_path.strip()}')
+                namespace = purl.namespace
+                name = purl.name
+            except Exception:
+                namespace = None
+                name = None
         else:
             namespace = None
             name = None
@@ -53,9 +57,16 @@ class GodepsHandler(models.NonAssemblableDatafileHandler):
         dependencies = []
         deps = godeps.dependencies or []
         for dep in deps:
+            if not dep.import_path or not dep.import_path.strip():
+                continue
+            try:
+                dep_purl = str(PackageURL.from_string(f'pkg:golang/{dep.import_path.strip()}'))
+            except Exception:
+                continue
+
             dependencies.append(
                 models.DependentPackage(
-                    purl=str(PackageURL.from_string(f'pkg:golang/{dep.import_path}')),
+                    purl=dep_purl,
                     extracted_requirement=dep.revision,
                     scope='Deps',
                     is_runtime=True,
@@ -97,6 +108,19 @@ NAMES = {
     'Deps': 'dependencies',
     'Comment': 'comment',
     'Rev': 'revision',
+}
+
+GODEP_NAMES = {
+    'ImportPath': 'import_path',
+    'GoVersion': 'go_version',
+    'Packages': 'packages',
+    'Deps': 'dependencies',
+}
+
+DEP_NAMES = {
+    'ImportPath': 'import_path',
+    'Rev': 'revision',
+    'Comment': 'comment',
 }
 
 
@@ -146,10 +170,21 @@ class Godep:
         """
         Load a Godeps JSON text.
         """
-        data = json.loads(text)
+        if not text:
+            return self
+
+        try:
+            data = json.loads(text)
+        except Exception:
+            return self
+
+        if not isinstance(data, dict):
+            return self
 
         for key, value in data.items():
-            name = NAMES.get(key)
+            name = GODEP_NAMES.get(key)
+            if not name:
+                continue
             if name == 'dependencies':
                 self.dependencies = self.parse_deps(value)
             else:
@@ -160,11 +195,19 @@ class Godep:
         """
         Return a list of Dep from a ``deps`` list of dependency mappings.
         """
+        if not deps or not isinstance(deps, list):
+            return []
         deps_list = []
         for dep in deps:
-            data = dict((NAMES[key], value) for key, value in dep.items())
+            if not isinstance(dep, dict):
+                continue
+            data = {}
+            for key, value in dep.items():
+                name = DEP_NAMES.get(key)
+                if name:
+                    data[name] = value
             deps_list.append(Dep(**data))
-        return deps_list or []
+        return deps_list
 
     def to_dict(self):
         return {
