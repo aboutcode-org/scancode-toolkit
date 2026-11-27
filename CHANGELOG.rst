@@ -4,6 +4,11 @@ Changelog
 Next release
 --------------
 
+- Fix Go Godeps parser in ``packagedcode.godeps`` to safely ignore unknown top-level
+  and dependency fields, handle null dependencies, and skip dependencies with
+  empty or invalid import paths without crashing.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/5569
+
 - Fix the optional ``licenses`` extra dependency typo to install
   ``licensedcode-data``.
   https://github.com/aboutcode-org/scancode-toolkit/pull/5056

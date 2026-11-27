@@ -60,6 +60,79 @@ class TestGodeps(FileBasedTesting):
         results = gd.to_dict()
         assert results == expected
 
+    def test_godeps_loads_with_unknown_top_level_fields(self):
+        test = '''
+        {
+            "ImportPath": "github.com/example/repo",
+            "GoVersion": "go1.16",
+            "ExtraField": "extra_value",
+            "UnknownNumber": 42
+        }'''
+        gd = godeps.Godep()
+        gd.loads(test)
+        assert gd.import_path == 'github.com/example/repo'
+        assert gd.go_version == 'go1.16'
+
+    def test_godeps_parse_deps_with_unknown_fields(self):
+        test = '''
+        {
+            "ImportPath": "github.com/example/repo",
+            "Deps": [
+                {
+                    "ImportPath": "github.com/pkg/errors",
+                    "Rev": "v0.9.1",
+                    "Comment": "tagged release",
+                    "ExtraMetadata": "custom_data",
+                    "VCS": "git"
+                }
+            ]
+        }'''
+        gd = godeps.Godep()
+        gd.loads(test)
+        assert len(gd.dependencies) == 1
+        dep = gd.dependencies[0]
+        assert dep.import_path == 'github.com/pkg/errors'
+        assert dep.revision == 'v0.9.1'
+        assert dep.comment == 'tagged release'
+
+    def test_godeps_loads_with_null_deps(self):
+        test = '{"ImportPath": "github.com/example/repo", "Deps": null}'
+        gd = godeps.Godep()
+        gd.loads(test)
+        assert gd.dependencies == []
+
+    def test_godeps_handler_parse_skips_empty_or_whitespace_import_path(self):
+        test = '''
+        {
+            "ImportPath": "github.com/example/repo",
+            "Deps": [
+                {"ImportPath": "", "Rev": "123"},
+                {"ImportPath": "   ", "Rev": "456"},
+                {"Rev": "789"},
+                {"ImportPath": "github.com/valid/dep", "Rev": "abc"}
+            ]
+        }'''
+        test_file = self.get_temp_file()
+        with open(test_file, 'w') as f:
+            f.write(test)
+
+        packages = list(godeps.GodepsHandler.parse(test_file))
+        assert len(packages) == 1
+        package = packages[0]
+        assert len(package.dependencies) == 1
+        dep = package.dependencies[0]
+        assert dep.purl == 'pkg:golang/github.com/valid/dep'
+        assert dep.extracted_requirement == 'abc'
+
+    def test_godeps_loads_malformed_and_non_dict_json(self):
+        gd = godeps.Godep()
+        assert gd.loads('') == gd
+        assert gd.loads('   ') == gd
+        assert gd.loads('invalid json {') == gd
+        assert gd.loads('[1, 2, 3]') == gd
+        assert gd.loads('null') == gd
+
+
     def check_parse(self, test_file, regen=REGEN_TEST_FIXTURES):
         """
         Test godeps parsing and package data creation
